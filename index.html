@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الموسوعة الإسلامية الشاملة - الرئيسية</title>
+
+    <meta name="description" content="الموسوعة الإسلامية الشاملة - المنصة الرقمية الموثوقة لعلوم القرآن والسنة والفقه والسيرة والتاريخ بعقيدة صحيحة.">
+    <meta name="keywords" content="قرآن, حديث, إسلام, فقه, عقيدة, سيرة, تاريخ إسلامي, الموسوعة الإسلامية">
+    <meta name="author" content="ST Islamic Web">
+    <meta property="og:title" content="الموسوعة الإسلامية الشاملة">
+    <meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
+    
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold-light:#f9f1d8;--gold-dark:#aa8a2a;--dark:#0b192c;--primary:#0369a1;}
+body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
+
+/* MEGA NAVBAR */
+.navbar {background:linear-gradient(135deg,#0b192c,var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
+.navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
+.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+.nav-link:hover, .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
+
+/* MEGA HERO - INDEX (CYAN & GOLD) */
+.mega-hero{min-height:90vh;background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
+.hero-glass{background:rgba(11,25,44,0.4);backdrop-filter:blur(15px);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:60px 40px;box-shadow:0 20px 50px rgba(0,0,0,0.5);position:relative;z-index:5;text-align:center;}
+.hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.1;mix-blend-mode:overlay;}
+.hero-eyebrow{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#0b192c;padding:8px 30px;border-radius:50px;font-weight:bold;font-size:1rem;margin-bottom:25px;box-shadow:0 4px 15px rgba(212,175,55,0.4);}
+.mega-hero h1{font-size:5.5rem;font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.8);line-height:1.2;margin-bottom:20px;}
+.mega-hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-moz-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.tagline{color:#e2e8f0;font-size:1.3rem;line-height:2.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);max-width:800px;margin:0 auto;}
+
+/* ANIMATED ORBS */
+.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3;animation:floatOrb 15s ease-in-out infinite alternate;}
+.orb-1{width:600px;height:600px;background:var(--gold);top:-150px;right:-100px;}
+.orb-2{width:500px;height:500px;background:#0ea5e9;bottom:-100px;left:-50px;animation-delay:5s;}
+@keyframes floatOrb{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,50px) scale(1.1);}}
+
+/* SECTION HEADERS */
+.sec-head{text-align:center;margin-bottom:60px;position:relative;}
+.sec-head .tag{display:inline-block;background:rgba(212,175,55,0.1);color:var(--gold-dark);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:8px 25px;font-size:1rem;font-weight:bold;margin-bottom:20px;}
+.sec-head h3{font-size:3rem;font-family:'Amiri',serif;color:var(--dark);font-weight:900;margin-bottom:15px;}
+.sec-head h3 span{color:var(--primary);}
+.sec-head p{color:#64748b;font-size:1.2rem;max-width:800px;margin:0 auto;line-height:1.8;}
+.sec-head .divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:25px auto 0;}
+
+/* CAT GRID CARDS */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px;position:relative;z-index:6;margin-top:-60px;padding:0 15px;}
+.mega-cat-card{background:white;border-radius:24px;padding:40px 30px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,0.08);border:1px solid #f1f5f9;transition:all .4s;text-decoration:none;display:block;}
+.mega-cat-card:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(3,105,161,0.15);border-color:var(--gold);}
+.cat-icon{width:90px;height:90px;border-radius:50%;background:rgba(3,105,161,0.05);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:2.8rem;margin:0 auto 25px;transition:all .4s;border:1px solid rgba(3,105,161,0.1);}
+.mega-cat-card:hover .cat-icon{background:linear-gradient(135deg,var(--primary),var(--dark));color:var(--gold);transform:scale(1.1);border-color:var(--gold);}
+.mega-cat-card h4{color:var(--dark);font-weight:800;margin-bottom:15px;font-family:'Amiri',serif;font-size:1.8rem;}
+.mega-cat-card p{color:#64748b;font-size:1.05rem;line-height:1.8;margin:0;}
+
+/* SCHOLARS MEGA BAR */
+.scholars-bar{background:radial-gradient(circle at bottom, #0b192c, #020617);padding:100px 0;position:relative;border-top:3px solid var(--gold-dark);border-bottom:3px solid var(--gold-dark);overflow:hidden;}
+.s-orb{position:absolute;width:400px;height:400px;background:var(--primary);filter:blur(150px);opacity:0.2;top:0;left:20%;}
+.scholar-quote{background:rgba(255,255,255,0.02);backdrop-filter:blur(10px);border:1px solid rgba(212,175,55,0.2);border-radius:24px;padding:40px;height:100%;transition:all .4s;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+.scholar-quote:hover{transform:translateY(-10px);background:rgba(255,255,255,0.05);border-color:var(--gold);}
+.s-icon{font-size:3rem;color:var(--gold);opacity:0.4;margin-bottom:20px;display:block;}
+.s-text{font-family:'Amiri',serif;font-size:1.4rem;line-height:2.2;color:#e2e8f0;margin-bottom:25px;position:relative;z-index:2;}
+.s-author{color:var(--gold-light);font-weight:700;font-size:1.1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:15px;display:inline-block;}
+
+/* MEGA FOOTER */
+.mega-footer{background:linear-gradient(135deg,#0b192c,#020617);color:white;padding:80px 0 30px;margin-top:0;border-top:3px solid var(--gold-dark);}
+.mega-footer-link{color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;}
+.mega-footer-link:hover{color:var(--gold);padding-right:5px;}
+/* DAILY CONTENT WIDGETS */
+.daily-widget { background:white; border-radius:24px; padding:30px; border:1px solid #f1f5f9; box-shadow:0 15px 40px rgba(0,0,0,0.05); text-align:center; height:100%; position:relative; overflow:hidden; transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);}
+.daily-widget:hover { transform:translateY(-10px); box-shadow:0 25px 50px rgba(3,105,161,0.15); border-color:var(--gold);}
+.dw-icon { font-size:3rem; color:var(--primary); margin-bottom:20px; opacity:0.8; transition:all 0.3s;}
+.daily-widget:hover .dw-icon { color:var(--gold); transform:scale(1.1);}
+.dw-title { font-family:'Amiri',serif; font-size:1.6rem; color:var(--dark); font-weight:900; margin-bottom:20px; border-bottom:2px solid var(--gold-light); display:inline-block; padding-bottom:5px;}
+.dw-text { font-size:1.15rem; color:#334155; line-height:2; font-family:'Amiri',serif;}
+.dw-meta { font-size:0.95rem; color:#94a3b8; margin-top:20px; font-weight:bold;}
+
+/* PRAYER TIMES WIDGET */
+.prayer-widget { background:linear-gradient(135deg,var(--dark),var(--primary)); color:white; border-radius:24px; padding:30px; box-shadow:0 15px 40px rgba(3,105,161,0.2); position:relative; overflow:hidden;}
+.prayer-widget::before { content:''; position:absolute; inset:0; background:url('https://www.transparenttextures.com/patterns/arabesque.png'); opacity:0.05;}
+.pt-title { font-family:'Amiri',serif; font-size:1.8rem; font-weight:900; margin-bottom:25px; text-align:center; color:var(--gold); position:relative;}
+.pt-item { display:flex; justify-content:space-between; align-items:center; padding:12px 15px; border-bottom:1px solid rgba(255,255,255,0.1); font-size:1.1rem; position:relative;}
+.pt-item:last-child { border-bottom:none;}
+.pt-name { font-weight:bold; color:#e2e8f0;}
+.pt-time { color:var(--gold); font-family:'Cairo',sans-serif; font-weight:bold; font-size:1.2rem;}
+</style>
+
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+</script>
+</head>
+
+<body>
+
+<!-- MEGA NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" style="color:var(--gold)!important;" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
+        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MEGA HERO INDEX -->
+<section class="mega-hero">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="hero-pattern"></div>
+  <div class="container relative z-10">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="hero-glass">
+            <div class="hero-eyebrow"><i class="fas fa-star-and-crescent me-2"></i>منصة معرفية كبرى، مبنية على الجمال واليقين</div>
+            <h1>الموسوعة الإسلامية <span>الشاملة</span></h1>
+            <p class="tagline mt-4">نجمع بين أصالة المنهج، وعمق المعرفة، وروعة التصميم. تصفح علوم القرآن المتواتر، وصحيح السنة النبوية، والفقه، والسيرة، والتاريخ، والفتاوى في أعظم واجهة رقمية متكاملة وموثقة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEGA CATEGORY GRID -->
+<div class="container" style="margin-bottom:100px;">
+  <div class="cat-grid">
+    <!-- 1 -->
+    <a href="recitations.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-quran"></i></div>
+      <h4>أكاديمية التلاوات</h4>
+      <p>المصحف المرتل، مكتبة صوتية شاملة، القراءات العشر المتواترة، أحكام التجويد، والمقامات.</p>
+    </a>
+    <!-- 2 -->
+    <a href="hadith.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-book-open"></i></div>
+      <h4>الحديث الشريف</h4>
+      <p>الصحاح والسنن، الأربعون النووية، مصطلح الحديث للبيطري، والبحث الذكي في الأحاديث.</p>
+    </a>
+    <!-- 3 -->
+    <a href="fiqh.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-balance-scale"></i></div>
+      <h4>الفقه الإسلامي</h4>
+      <p>أحكام العبادات والمعاملات على أصول المذاهب الأربعة، الفروق الفقهية، وأصول التشريع.</p>
+    </a>
+    <!-- 4 -->
+    <a href="seerah.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-route"></i></div>
+      <h4>السيرة والصحابة</h4>
+      <p>التسلسل الزمني لسيرة المصطفى، الغزوات الباسلة، فضائل العشرة المبشرين والمهاجرين.</p>
+    </a>
+    <!-- 5 -->
+    <a href="aqeedah.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-pray"></i></div>
+      <h4>العقيدة الإسلامية</h4>
+      <p>أصول الإيمان والتوحيد، أسماء الله الحسنى، نواقض الإسلام، وأهم متون العقيدة السنية.</p>
+    </a>
+    <!-- 6 -->
+    <a href="history.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-globe-asia"></i></div>
+      <h4>التاريخ الإسلامي</h4>
+      <p>عصور الخلافة الراشدة والأموية والعباسية، أعظم المعارك، وإنجازات الحضارة التي أنارت العالم.</p>
+    </a>
+    <!-- 7 -->
+    <a href="fatwa.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-gavel"></i></div>
+      <h4>فتاوى العلماء</h4>
+      <p>محرك بحث موحد في مواقع كبار العلماء والمجامع الفقهية الموثوقة كالإمامين ابن باز وابن عثيمين.</p>
+    </a>
+    <!-- 8 -->
+    <a href="library.html" class="mega-cat-card">
+      <div class="cat-icon"><i class="fas fa-book-reader"></i></div>
+      <h4>المكتبة الشاملة</h4>
+      <p>مكتبة ضخمة تضم آلاف الكتب الإسلامية القيمة للتحميل المباشر والقراءة بضغطة زر.</p>
+    </a>
+  </div>
+</div>
+
+<!-- DAILY CONTENT & PRAYER TIMES -->
+<section class="container" style="margin-bottom:100px;">
+  <div class="sec-head">
+    <span class="tag">زادك اليومي</span>
+    <h3>إشراقات <span>يومية</span></h3>
+    <p>محتوى متجدد يضيء يومك بالقرآن والسنة، مع مواقيت الصلاة لتبقى على اتصال دائم بخالقك.</p>
+    <div class="divider"></div>
+  </div>
+  
+  <div class="row g-4 align-items-stretch">
+    <!-- Daily Ayah -->
+    <div class="col-lg-3 col-md-6">
+      <div class="daily-widget">
+        <i class="fas fa-quran dw-icon"></i>
+        <h4 class="dw-title">آية اليوم</h4>
+        <p class="dw-text" id="dailyAyah">جاري التحميل...</p>
+        <div class="dw-meta" id="dailyAyahRef"></div>
+      </div>
+    </div>
+    <!-- Daily Hadith -->
+    <div class="col-lg-3 col-md-6">
+      <div class="daily-widget">
+        <i class="fas fa-book-reader dw-icon"></i>
+        <h4 class="dw-title">حديث اليوم</h4>
+        <p class="dw-text" id="dailyHadith">جاري التحميل...</p>
+        <div class="dw-meta" id="dailyHadithRef"></div>
+      </div>
+    </div>
+    <!-- Daily Dua/Hikmah -->
+    <div class="col-lg-3 col-md-6">
+      <div class="daily-widget">
+        <i class="fas fa-hands-praying dw-icon"></i>
+        <h4 class="dw-title">دعاء اليوم</h4>
+        <p class="dw-text" id="dailyDua">جاري التحميل...</p>
+        <div class="dw-meta" id="dailyDuaRef"></div>
+      </div>
+    </div>
+    <!-- Prayer Times -->
+    <div class="col-lg-3 col-md-12">
+      <div class="prayer-widget h-100">
+        <h4 class="pt-title"><i class="fas fa-clock me-2"></i>مواقيت الصلاة</h4>
+        <div id="prayerTimesContainer" class="position-relative">
+           <div class="text-center mt-5 mb-4">
+             <div class="spinner-border text-warning mb-3" style="width:3rem;height:3rem;" role="status"></div>
+             <p class="small opacity-75">جاري تحديد الموقع وجلب المواقيت...</p>
+           </div>
+        </div>
+        <p class="text-center small opacity-50 mt-4 mb-0 position-relative" id="ptLocation"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEGA SCHOLARS QUOTES -->
+<section class="scholars-bar">
+  <div class="s-orb"></div>
+  <div class="container position-relative z-10">
+    <div class="sec-head" style="margin-bottom:50px;">
+      <span class="tag" style="color:var(--gold-light);border-color:var(--gold);">حِكم ودرر مضيئة</span>
+      <h3 class="text-white">أقوال <span>العلماء</span> الأعلام</h3>
+      <p class="text-white opacity-50">قبسات من مشاعل العلم الربانيين الذين تركوا أثراً لا يُمحى في قلوب وعقول الأمة.</p>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="row g-4 justify-content-center">
+      <!-- Q1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="scholar-quote">
+          <i class="fas fa-quote-right s-icon"></i>
+          <p class="s-text">«إذا رأيت الرجل يمشي على الماء أو يطير في الهواء، فلا تغتر به حتى تعرض أمره على الكتاب والسنة»</p>
+          <div class="s-author">— الإمام الشافعي رحمه الله</div>
+        </div>
+      </div>
+      <!-- Q2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="scholar-quote">
+          <i class="fas fa-quote-right s-icon"></i>
+          <p class="s-text">«القلب إنما خُلق لأجل حب الله تعالى، فلا تشتت قلبك في غير محبوه، فإنك لن تجد راحة إلا في الله»</p>
+          <div class="s-author">— شيخ الإسلام ابن تيمية</div>
+        </div>
+      </div>
+      <!-- Q3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="scholar-quote">
+          <i class="fas fa-quote-right s-icon"></i>
+          <p class="s-text">«ما أنعم الله على عبد نعمة فانتزعها منه، فعاضه مكانها الصبر، إلا كان ما عوّضه خيراً مما انتزعه»</p>
+          <div class="s-author">— عمر بن عبد العزيز</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEGA FOOTER -->
+<footer class="mega-footer" style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+  <div class="container">
+    <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+      <div class="col-lg-4 text-md-end text-center">
+        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+          <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+          <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+          <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+          <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+          <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-md-start text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+        <a href="contact.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+        <a href="login.html" class="mega-footer-link text-warning mt-3" style="text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-user-circle me-2 ms-1"></i> تسجيل الدخول</a>
+      </div>
+    </div>
+    <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// 1. Daily Content Logic
+const ayahs = [
+  {text: "﴿وَقُل رَبِّ زِدني عِلمًا﴾", ref: "سورة طه: 114"},
+  {text: "﴿فَإِنَّ مَعَ العُسرِ يُسرًا * إِنَّ مَعَ العُسرِ يُسرًا﴾", ref: "سورة الشرح: 5-6"},
+  {text: "﴿وَلَسَوفَ يُعطيكَ رَبُّكَ فَتَرضى﴾", ref: "سورة الضحى: 5"},
+  {text: "﴿إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا﴾", ref: "سورة الأحزاب: 56"},
+  {text: "﴿وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ﴾", ref: "سورة البقرة: 186"}
+];
+const hadiths = [
+  {text: "«خَيْرُكُمْ مَنْ تَعَلَّمَ القُرْآنَ وعَلَّمَهُ»", ref: "صحيح البخاري"},
+  {text: "«الدِّينُ النَّصِيحَةُ»", ref: "صحيح مسلم"},
+  {text: "«مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا، سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الجَنَّةِ»", ref: "صحيح مسلم"},
+  {text: "«كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي المِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَنِ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ العَظِيمِ»", ref: "صحيح البخاري"},
+  {text: "«اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ»", ref: "سنن الترمذي"}
+];
+const duas = [
+  {text: "«اللهم إني أسألك علماً نافعاً، ورزقاً طيباً، وعملاً متقبلاً»", ref: "حسن الإسناد"},
+  {text: "«رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ»", ref: "القرآن الكريم"},
+  {text: "«اللهم إنك عفو تحب العفو فاعف عني»", ref: "سنن الترمذي"},
+  {text: "«يا مقلب القلوب ثبت قلبي على دينك»", ref: "سنن الترمذي"},
+  {text: "«اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والبخل والجبن، وضلع الدين، وغلبة الرجال»", ref: "صحيح البخاري"}
+];
+
+// Determine item by day of year ensures it changes daily but is consistent for all users
+const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
+const todayAyah = ayahs[dayOfYear % ayahs.length];
+const todayHadith = hadiths[dayOfYear % hadiths.length];
+const todayDua = duas[dayOfYear % duas.length];
+
+document.getElementById('dailyAyah').textContent = todayAyah.text;
+document.getElementById('dailyAyahRef').textContent = todayAyah.ref;
+
+document.getElementById('dailyHadith').textContent = todayHadith.text;
+document.getElementById('dailyHadithRef').textContent = todayHadith.ref;
+
+document.getElementById('dailyDua').textContent = todayDua.text;
+document.getElementById('dailyDuaRef').textContent = todayDua.ref;
+
+// 2. Prayer Times Logic (Using Aladhan API)
+document.addEventListener('DOMContentLoaded', () => {
+    // Check local storage so we don't spam location prompt if cached
+    const cachedLoc = localStorage.getItem('prayers_cache');
+    const cacheTime = localStorage.getItem('prayers_cache_time');
+    const now = new Date().getTime();
+    
+    // Use cache if less than 6 hours old
+    if(cachedLoc && cacheTime && (now - cacheTime < 6 * 60 * 60 * 1000)) {
+        const d = JSON.parse(cachedLoc);
+        renderPrayerTimes(d.timings, d.locName);
+        return;
+    }
+
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                getPrayerTimes(position.coords.latitude, position.coords.longitude, "موقعك الحالي");
+            },
+            (error) => {
+                getPrayerTimes(21.4225, 39.8262, "مكة المكرمة");
+            },
+            {timeout: 5000} // Don't hang forever
+        );
+    } else {
+        getPrayerTimes(21.4225, 39.8262, "مكة المكرمة");
+    }
+});
+
+function getPrayerTimes(lat, lng, locName) {
+    const d = new Date();
+    const dateStr = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`;
+    const url = `https://api.aladhan.com/v1/timings/${dateStr}?latitude=${lat}&longitude=${lng}&method=4`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if(data.code !== 200) throw new Error("API Error");
+            renderPrayerTimes(data.data.timings, locName);
+            // Cache it
+            localStorage.setItem('prayers_cache', JSON.stringify({timings: data.data.timings, locName: locName}));
+            localStorage.setItem('prayers_cache_time', new Date().getTime().toString());
+        })
+        .catch(err => {
+            document.getElementById('prayerTimesContainer').innerHTML = `<div class="text-center text-white-50 mt-4"><i class="fas fa-exclamation-triangle mb-3 fa-2x"></i><br>تعذر جلب المواقيت اليوم</div>`;
+        });
+}
+
+function renderPrayerTimes(timings, locName) {
+    const formatTime = (t) => {
+        let [h, m] = t.split(':');
+        let hInt = parseInt(h);
+        let ampm = hInt >= 12 ? 'م' : 'ص';
+        if(hInt > 12) hInt -= 12;
+        if(hInt === 0) hInt = 12;
+        return `${hInt}:${m} <span class="small opacity-75">${ampm}</span>`;
+    };
+    
+    const html = `
+        <div class="pt-item"><span class="pt-name">الفجر</span><span class="pt-time">${formatTime(timings.Fajr)}</span></div>
+        <div class="pt-item"><span class="pt-name">الشروق</span><span class="pt-time">${formatTime(timings.Sunrise)}</span></div>
+        <div class="pt-item"><span class="pt-name">الظهر</span><span class="pt-time">${formatTime(timings.Dhuhr)}</span></div>
+        <div class="pt-item"><span class="pt-name">العصر</span><span class="pt-time">${formatTime(timings.Asr)}</span></div>
+        <div class="pt-item"><span class="pt-name">المغرب</span><span class="pt-time">${formatTime(timings.Maghrib)}</span></div>
+        <div class="pt-item"><span class="pt-name" style="color:var(--gold);">العشاء</span><span class="pt-time">${formatTime(timings.Isha)}</span></div>
+    `;
+    document.getElementById('prayerTimesContainer').innerHTML = html;
+    document.getElementById('ptLocation').innerHTML = `<i class="fas fa-map-marker-alt me-1 text-warning"></i> ${locName}`;
+}
+</script>
+</body>
+</html>

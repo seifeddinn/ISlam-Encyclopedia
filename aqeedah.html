@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موسوعة العقيدة الإسلامية - الموسوعة الإسلامية الشاملة</title>
+<meta name="description" content="الموسوعة الإسلامية الشاملة - المنصة الرقمية الموثوقة لعلوم القرآن والسنة والفقه والسيرة والتاريخ بعقيدة صحيحة.">
+<meta name="keywords" content="قرآن, حديث, إسلام, فقه, عقيدة, سيرة, تاريخ إسلامي, الموسوعة الإسلامية, أركان الإيمان, نواقض الإسلام">
+<meta name="author" content="ST Islamic Web">
+<meta property="og:title" content="الموسوعة الإسلامية الشاملة">
+<meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold-light:#f9f1d8;--gold-dark:#aa8a2a;--dark:#3b0764;--primary:#6b21a8;--accent:#4c1d95;}
+body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6,.ar,.poetry, .title-amiri{font-family:'Amiri',serif;}
+
+/* MEGA NAVBAR */
+.navbar {background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
+.navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
+.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+.nav-link:hover, .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
+
+/* MEGA HERO - AQEEDAH (PURPLE & GOLD) */
+.mega-hero{min-height:90vh;background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
+.hero-glass{background:rgba(59,7,100,0.5);backdrop-filter:blur(15px);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:60px 40px;box-shadow:0 20px 50px rgba(0,0,0,0.5);position:relative;z-index:5;text-align:center;}
+.hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.15;mix-blend-mode:overlay;}
+.hero-eyebrow{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#170229;padding:8px 30px;border-radius:50px;font-weight:bold;font-size:1rem;margin-bottom:25px;box-shadow:0 4px 15px rgba(212,175,55,0.4);}
+.mega-hero h1{font-size:5.5rem;font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.8);line-height:1.2;margin-bottom:20px;}
+.mega-hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.tagline{color:#f3e8ff;font-size:1.3rem;line-height:2.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);max-width:800px;margin:0 auto;}
+
+/* STATS MEGA */
+.stats-mega{background:linear-gradient(90deg,var(--dark),var(--primary));border-top:2px solid var(--gold-dark);border-bottom:2px solid var(--gold-dark);padding:40px 0;position:relative;z-index:10;margin-top:-5px;}
+.stat-box{text-align:center;color:white;padding:20px;border-left:1px solid rgba(212,175,55,0.2);}
+.stat-box:last-child{border-left:none;}
+.stat-num{font-family:'Amiri',serif;font-size:3.5rem;font-weight:bold;color:var(--gold);line-height:1;margin-bottom:10px;text-shadow:0 5px 15px rgba(212,175,55,0.3);}
+.stat-label{font-size:1.1rem;font-weight:bold;letter-spacing:1px;color:#e9d5ff;}
+
+/* SECTION HEADERS */
+.sec-head{text-align:center;margin-bottom:60px;position:relative;}
+.sec-head .tag{display:inline-block;background:rgba(212,175,55,0.1);color:var(--gold-dark);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:8px 25px;font-size:1rem;font-weight:bold;margin-bottom:20px;}
+.sec-head h3{font-size:3rem;font-family:'Amiri',serif;color:var(--dark);font-weight:900;margin-bottom:15px;}
+.sec-head h3 span{color:var(--primary);}
+.sec-head p{color:#64748b;font-size:1.2rem;max-width:800px;margin:0 auto;line-height:1.8;}
+.sec-head .divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:25px auto 0;}
+
+/* TABS NAVIGATION MEGA */
+.main-tabs-wrapper{background:white;padding:20px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.05);margin:40px auto 60px;position:sticky;top:80px;z-index:900;border:1px solid #e2e8f0;}
+.main-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;border-bottom:none;}
+.main-tabs::-webkit-scrollbar{height:6px;}
+.main-tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
+.main-tabs .nav-link{border:1px solid #e2e8f0;border-radius:12px;color:#475569;font-weight:bold;padding:15px 25px;font-size:1.1rem;white-space:nowrap;transition:all .3s;}
+.main-tabs .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
+.main-tabs .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(107,33,168,0.3);}
+
+/* Custom Box styles */
+.belief-box {border-right:5px solid var(--primary); background:rgba(107,33,168,0.03); padding:30px; border-radius:15px 0 0 15px; margin-bottom:25px; transition:.3s; border-left:1px solid #f3e8ff; border-top:1px solid #f3e8ff; border-bottom:1px solid #f3e8ff;}
+.belief-box:hover {background:rgba(107,33,168,0.06); transform:translateX(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+
+/* MIND MAP CSS */
+.mind-map {display:flex; flex-direction:column; align-items:center; position:relative; padding-top:20px; margin-bottom:40px;}
+.mind-root {background:linear-gradient(135deg,var(--dark),var(--primary)); color:white; padding:15px 40px; border-radius:30px; font-family:'Amiri',serif; font-size:1.8rem; font-weight:bold; position:relative; z-index:2; box-shadow:0 10px 20px rgba(107,33,168,0.3);}
+.mind-branches {display:flex; justify-content:center; gap:30px; position:relative; padding-top:40px; flex-wrap:wrap;}
+.mind-branches::before {content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:2px; height:40px; background:var(--gold);}
+.mind-branch {position:relative; padding-top:20px;}
+.mind-branch::before {content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:2px; height:20px; background:var(--gold);}
+.mind-branches::after {content:''; position:absolute; top:40px; left:20%; right:20%; height:2px; background:var(--gold);}
+.mind-node {background:white; border:2px solid var(--gold); border-radius:15px; padding:20px; text-align:center; width:250px; box-shadow:0 5px 15px rgba(0,0,0,0.05); position:relative; z-index:2; transition:.3s;}
+.mind-node:hover {transform:translateY(-5px); box-shadow:0 10px 25px rgba(212,175,55,0.2);}
+.mind-node h4 {color:var(--dark); font-family:'Amiri',serif; font-weight:bold; margin-bottom:10px;}
+
+/* NAMES OF ALLAH GRID */
+.names-grid {display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:15px;}
+.name-card {background:linear-gradient(135deg,#fff,#f8fafc); border:1px solid var(--gold); border-radius:12px; padding:15px 5px; text-align:center; font-family:'Amiri',serif; font-size:1.5rem; font-weight:bold; color:var(--dark); transition:.3s; box-shadow:0 4px 10px rgba(0,0,0,0.03);}
+.name-card:hover {background:linear-gradient(135deg,var(--dark),var(--primary)); color:var(--gold-light); transform:translateY(-5px) scale(1.05); box-shadow:0 10px 20px rgba(107,33,168,0.3);}
+
+/* MEGA FOOTER */
+.mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);}
+.mega-footer-link{color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;}
+.mega-footer-link:hover{color:var(--gold);padding-right:5px;}
+</style>
+
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+</script>
+</head>
+
+<body>
+
+<!-- MEGA NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
+        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link active" href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MEGA HERO AQEEDAH -->
+<section class="mega-hero">
+  <div class="orb" style="width:600px;height:600px;background:var(--gold);top:-150px;right:-100px;"></div>
+  <div class="orb" style="width:500px;height:500px;background:#a855f7;bottom:-100px;left:-50px;animation-delay:5s;"></div>
+  <div class="hero-pattern"></div>
+  <div class="container relative z-10">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10">
+        <div class="hero-glass">
+            <div class="hero-eyebrow"><i class="fas fa-pray me-2 text-dark pt-1"></i>الإيمان الراسخ والتوحيد الخالص</div>
+            <h1>موسوعة <span>العقيدة</span> الإسلامية</h1>
+            <p class="tagline mt-4">جوهر الدين وأساس دعوة الأنبياء والمرسلين. تعرف على أركان الإيمان، وأقسام التوحيد، وأسماء الله الحسنى، ونواقض الإسلام، وفق منهج أهل السنة والجماعة الأنقياء.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-mega">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">3</div><div class="stat-label">أقسام للتوحيد المعظم</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">6</div><div class="stat-label">أركان للإيمان الراسخ</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">99</div><div class="stat-label">اسماً لله سبحانه</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">10</div><div class="stat-label">نواقض عظيمة للإسلام</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- TABS NAV -->
+  <div class="main-tabs-wrapper">
+    <ul class="nav nav-pills main-tabs justify-content-center" id="aqeedahTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-pillars"><i class="fas fa-cubes fs-4 d-block mb-1"></i>أركان الإيمان</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-tawheed"><i class="fas fa-fingerprint fs-4 d-block mb-1"></i>أقسام التوحيد</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-names"><i class="fas fa-star fs-4 d-block mb-1"></i>أسماء الله الحسنى</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-usul"><i class="fas fa-book-reader fs-4 d-block mb-1"></i>أصول أهل السنة</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-nullifiers"><i class="fas fa-exclamation-triangle fs-4 d-block mb-1"></i>نواقض الإسلام</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-shubuhat"><i class="fas fa-shield-alt fs-4 d-block mb-1"></i>شبهات وردود</button></li>
+    </ul>
+  </div>
+
+  <div class="tab-content pb-5">
+    
+    <!-- TAB 1: أركان الإيمان -->
+    <div class="tab-pane fade show active" id="tab-pillars">
+      <div class="sec-head">
+        <span class="tag">قواعد الاعتقاد الغيبي</span>
+        <h3>أركان <span>الإيمان</span> الستة</h3>
+        <p>لا يصح إسلام عبد ولا يقبل عمله حتى يؤمن بهذه الأركان كاملة غير منقوصة كما بيّنها النبي ﷺ في حديث جبريل المشهور.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row g-4">
+         <div class="col-lg-6">
+            <div class="belief-box">
+               <h4 class="title-amiri text-dark fw-bold mb-3"><i class="fas fa-circle text-primary me-2 ms-2 fs-6"></i> الإيمان بالله عز وجل</h4>
+               <p class="text-muted mb-0 fs-5 line-height-2">هو الأصل والأساس. اعتقاد جازم بربوبيته (أنه الخالق الرازق المدبر)، وألوهيته (أنه المستحق الوحيد للعبادة)، وأنه متصف بأسماء الجلال وصفات الكمال، ومنزه عن كل نقص وشريك وولد.</p>
+            </div>
+            <div class="belief-box">
+               <h4 class="title-amiri text-dark fw-bold mb-3"><i class="fas fa-circle text-primary me-2 ms-2 fs-6"></i> الإيمان بالملائكة الكرام</h4>
+               <p class="text-muted mb-0 fs-5 line-height-2">اعتقاد بوجود مخلوقات نورانية عظيمة، لا تأكل ولا تشرب، لا يعصون الله ما أمرهم ويفعلون ما يؤمرون. كجبريل الموكل بالوحي، وميكائيل الموكل بالقطر، وإسرافيل الموكل بالنفخ في الصور.</p>
+            </div>
+            <div class="belief-box">
+               <h4 class="title-amiri text-dark fw-bold mb-3"><i class="fas fa-circle text-primary me-2 ms-2 fs-6"></i> الإيمان بالكتب السماوية</h4>
+               <p class="text-muted mb-0 fs-5 line-height-2">التصديق بأن الله أنزل كتباً على رسله هداية للبشرية، ومنها التوراة والإنجيل والزبور وصحف إبراهيم وموسى. وأن القرآن ختامها، والمهيمن عليها، والمحفوظ من التحريف.</p>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="belief-box">
+               <h4 class="title-amiri text-dark fw-bold mb-3"><i class="fas fa-circle text-primary me-2 ms-2 fs-6"></i> الإيمان بالرسل والأنبياء</h4>
+               <p class="text-muted mb-0 fs-5 line-height-2">التصديق بمن سمى الله منهم وبمن لم يسم. وأنهم اصطفاء الله من خلقه، عصمهم في التبليغ، وأكملهم وخاتمهم هو محمد ﷺ المبعوث للثقلين (الجن والإنس) كافة.</p>
+            </div>
+            <div class="belief-box">
+               <h4 class="title-amiri text-dark fw-bold mb-3"><i class="fas fa-circle text-primary me-2 ms-2 fs-6"></i> الإيمان باليوم الآخر</h4>
+               <p class="text-muted mb-0 fs-5 line-height-2">التصديق يقيناً بانقضاء هذه الدنيا، والبعث بعد الموت، والحساب، والميزان، والصراط. وأن الله يجازي المحسن بإحسانه بدخول الجنة، والمسيء بإساءته في النار.</p>
+            </div>
+            <div class="belief-box">
+               <h4 class="title-amiri text-dark fw-bold mb-3"><i class="fas fa-circle text-primary me-2 ms-2 fs-6"></i> الإيمان بالقدر خيره وشره</h4>
+               <p class="text-muted mb-0 fs-5 line-height-2">الإيمان بأن الله علم مقادير الأشياء، وكتبها في اللوح المحفوظ، وشاءها، وخلقها. فلا يقع في ملكه كفر ولا إيمان ولا طاعة ولا معصية إلا بعلمه ومشيئته وحكمته البالغة.</p>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: أقسام التوحيد -->
+    <div class="tab-pane fade" id="tab-tawheed">
+      <div class="sec-head">
+        <span class="tag">إفراد البارئ جل جلاله</span>
+        <h3>أقسام <span>التوحيد</span> الثلاثة</h3>
+        <p>استقراء نصوص الكتاب والسنة أظهر أن التوحيد الذي دعت إليه الرسل ينقسم إلى ثلاثة أقسام متكاملة. من أخل بواحد منها لم يصح توحيده.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="mind-map mt-4">
+         <div class="mind-root">التوحيد المطلق لله رب العالمين</div>
+         <div class="mind-branches w-100 pb-5">
+            <div class="mind-branch">
+               <div class="mind-node">
+                  <i class="fas fa-globe fa-3x text-primary mb-3 mt-2"></i>
+                  <h4>توحيد الربوبية</h4>
+                  <p class="text-muted mb-0">إفراد الله تبارك وتعالى بأفعاله هو سبحانه (الخلق، الرزق، الإحياء، الإماتة، وتدبير الكون والمقادير).</p>
+               </div>
+            </div>
+            <div class="mind-branch">
+               <div class="mind-node">
+                  <i class="fas fa-pray fa-3x text-primary mb-3 mt-2"></i>
+                  <h4>توحيد الألوهية</h4>
+                  <p class="text-muted mb-0">إفراد الله بأفعال العباد الناشئة عن نية التقرب (الدعاء، الصلاة، الذبح، النذر، الخوف، الرجاء).</p>
+               </div>
+            </div>
+            <div class="mind-branch">
+               <div class="mind-node">
+                  <i class="fas fa-gem fa-3x text-primary mb-3 mt-2"></i>
+                  <h4>الأسماء والصفات</h4>
+                  <p class="text-muted mb-0">إثبات ما أثبته لنفسه وما أثبته له رسوله من الأسماء الحسنى والصفات العلى، بلا تمثيل ولا تكييف ولا تعطيل.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: أسماء الله -->
+    <div class="tab-pane fade" id="tab-names">
+      <div class="sec-head">
+        <span class="tag">ولله الأسماء الحسنى فادعوه بها</span>
+        <h3>أسماء <span>الله</span> الحسنى الكاملة</h3>
+        <p>(إن لله تسعة وتسعين اسماً، مائة إلا واحدا، من أحصاها دخل الجنة) أخرجه البخاري.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="names-grid mt-4 px-3">
+         <div class="name-card">الرَّحْمَن</div>
+         <div class="name-card">الرَّحِيم</div>
+         <div class="name-card">الْمَلِك</div>
+         <div class="name-card">الْقُدُّوس</div>
+         <div class="name-card">السَّلَام</div>
+         <div class="name-card">الْمُؤْمِن</div>
+         <div class="name-card">الْمُهَيْمِن</div>
+         <div class="name-card">الْعَزِيز</div>
+         <div class="name-card">الْجَبَّار</div>
+         <div class="name-card">الْمُتَكَبِّر</div>
+         <div class="name-card">الْخَالِق</div>
+         <div class="name-card">الْبَارِئ</div>
+         <div class="name-card">الْمُصَوِّر</div>
+         <div class="name-card">الْغَفَّار</div>
+         <div class="name-card">الْقَهَّار</div>
+         <div class="name-card">الْوَهَّاب</div>
+         <div class="name-card">الرَّزَّاق</div>
+         <div class="name-card">الْفَتَّاح</div>
+         <div class="name-card">الْعَلِيم</div>
+         <div class="name-card">الْقَابِض</div>
+         <div class="name-card">الْبَاسِط</div>
+         <div class="name-card">الْخَافِض</div>
+         <div class="name-card">الرَّافِع</div>
+         <div class="name-card">الْمُعِزّ</div>
+         <div class="name-card">الْمُذِلّ</div>
+         <div class="name-card">السَّمِيع</div>
+         <div class="name-card">الْبَصِير</div>
+         <div class="name-card">الْحَكَم</div>
+         <div class="name-card">الْعَدْل</div>
+         <div class="name-card">اللَّطِيف</div>
+         <div class="name-card">الْخَبِير</div>
+         <div class="name-card">الْحَلِيم</div>
+         <div class="name-card">الْعَظِيم</div>
+         <div class="name-card">الْغَفُور</div>
+         <div class="name-card">الشَّكُور</div>
+         <div class="name-card">الْعَلِيّ</div>
+         <div class="name-card">الْكَبِير</div>
+         <div class="name-card">الْحَفِيظ</div>
+         <div class="name-card">الْمُقِيت</div>
+         <div class="name-card">الْحَسِيب</div>
+         <div class="name-card">الْجَلِيل</div>
+         <div class="name-card">الْكَرِيم</div>
+         <div class="name-card">الرَّقِيب</div>
+         <div class="name-card">الْمُجِيب</div>
+         <div class="name-card">الْوَاسِع</div>
+         <div class="name-card">الْحَكِيم</div>
+         <div class="name-card">الْوَدُود</div>
+         <div class="name-card">الْمَجِيد</div>
+         <div class="name-card">الْبَاعِث</div>
+         <div class="name-card">الشَّهِيد</div>
+         <div class="name-card">الْحَقّ</div>
+         <div class="name-card">الْوَكِيل</div>
+         <div class="name-card">الْقَوِيّ</div>
+         <div class="name-card">الْمَتِين</div>
+         <div class="name-card">الْوَلِيّ</div>
+         <div class="name-card">الْحَمِيد</div>
+         <div class="name-card">الْمُحْصِي</div>
+         <div class="name-card">الْمُبْدِئ</div>
+         <div class="name-card">الْمُعِيد</div>
+         <div class="name-card">الْمُحْيِي</div>
+         <div class="name-card">الْمُمِيت</div>
+         <div class="name-card">الْحَيّ</div>
+         <div class="name-card">الْقَيُّوم</div>
+         <div class="name-card">الْوَاجِد</div>
+         <div class="name-card">الْمَاجِد</div>
+         <div class="name-card">الْوَاحِد</div>
+         <div class="name-card">الْأَحَد</div>
+         <div class="name-card">الصَّمَد</div>
+         <div class="name-card">الْقَادِر</div>
+         <div class="name-card">الْمُقْتَدِر</div>
+         <div class="name-card">الْمُقَدِّم</div>
+         <div class="name-card">الْمُؤَخِّر</div>
+         <div class="name-card">الْأَوَّل</div>
+         <div class="name-card">الْآخِر</div>
+         <div class="name-card">الظَّاهِر</div>
+         <div class="name-card">الْبَاطِن</div>
+         <div class="name-card">الْوَالِي</div>
+         <div class="name-card">الْمُتَعَالِي</div>
+         <div class="name-card">الْبَرّ</div>
+         <div class="name-card">التَّوَّاب</div>
+         <div class="name-card">الْمُنْتَقِم</div>
+         <div class="name-card">الْعَفُوّ</div>
+         <div class="name-card">الرَّءُوف</div>
+         <div class="name-card">مَالِكُ الْمُلْكِ</div>
+         <div class="name-card">ذُو الْجَلَالِ وَالْإِكْرَامِ</div>
+         <div class="name-card">الْمُقْسِط</div>
+         <div class="name-card">الْجَامِع</div>
+         <div class="name-card">الْغَنِيّ</div>
+         <div class="name-card">الْمُغْنِي</div>
+         <div class="name-card">الْمَانِع</div>
+         <div class="name-card">الضَّارّ</div>
+         <div class="name-card">النَّافِع</div>
+         <div class="name-card">النُّور</div>
+         <div class="name-card">الْهَادِي</div>
+         <div class="name-card">الْبَدِيع</div>
+         <div class="name-card">الْبَاقِي</div>
+         <div class="name-card">الْوَارِث</div>
+         <div class="name-card">الرَّشِيد</div>
+         <div class="name-card">الصَّبُور</div>
+
+      </div>
+      <div class="text-center mt-5">
+         <div class="badge bg-gold text-dark fs-6 px-4 py-2" style="background:var(--gold);"><i class="fas fa-info-circle me-2"></i> إحصاء الأسماء يعني: حفظها، وفهم معانيها، والعمل بمقتضاها، ودعاء الله بها.</div>
+      </div>
+    </div>
+
+    <!-- TAB NEW: أصول أهل السنة -->
+    <div class="tab-pane fade" id="tab-usul">
+      <div class="sec-head">
+        <span class="tag">الفرقة الناجية والطائفة المنصورة</span>
+        <h3>أصول <span>أهل السنة</span> والجماعة</h3>
+        <p>المنهج الصافي الذي كان عليه رسول الله ﷺ وأصحابه الكرام، والتابعون لهم بإحسان.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="row g-4">
+         <div class="col-md-4">
+            <div class="mega-card text-center border-top border-4" style="border-top-color:var(--primary)!important;">
+                <i class="fas fa-book-open fa-3x text-primary mb-3"></i>
+                <h4 class="title-amiri fw-bold mb-3">مصدر التلقي</h4>
+                <p class="text-muted small">الاعتماد على الكتاب والسنة بفهم سلف الأمة (الصحابة والتابعين)، وتقديم النقل الصحيح على العقل الصريح عند التعارض الظاهري.</p>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="mega-card text-center border-top border-4" style="border-top-color:var(--primary)!important;">
+                <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                <h4 class="title-amiri fw-bold mb-3">حقيقة الإيمان</h4>
+                <p class="text-muted small">الإيمان عندهم: قول باللسان، واعتقاد بالقلب، وعمل بالجوارح. يزيد بالطاعة وينقص بالمعصية. ولا يكفرون أحداً من أهل القبلة بذنب دون الشرك.</p>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="mega-card text-center border-top border-4" style="border-top-color:var(--primary)!important;">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h4 class="title-amiri fw-bold mb-3">موقفهم من الصحابة</h4>
+                <p class="text-muted small">محبة كل الصحابة والترضي عنهم، ويعتقدون أنهم خير القرون. ويمسكون عما شجر بينهم، ويتبرؤون من طريقة الروافض والخوارج في الطعن فيهم.</p>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: النواقض -->
+    <div class="tab-pane fade" id="tab-nullifiers">
+      <div class="sec-head">
+        <span class="tag">احذرها لئلا يحبط عملك</span>
+        <h3>نواقض <span>الإسلام</span> الكبرى</h3>
+        <p>كما للوضوء نواقض تبطله، فللإسلام نواقض تخرج فاعلها من الملة وتجعله مرتداً إذا انتفت الموانع واكتملت شروط التكفير.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+         <div class="col-lg-10">
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">01</div>
+               <div><h4 class="title-amiri fw-bold text-dark">الشرك الأكبر في عبادة الله</h4><p class="text-muted fs-5 mb-0">كالذبح أو النذر لغير الله، أو دعاء الأموات والاستغاثة بهم لكشف الضر الذي لا يقدر عليه إلا الله.</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">02</div>
+               <div><h4 class="title-amiri fw-bold text-dark">اتخاذ وسائط بين العبد وربه</h4><p class="text-muted fs-5 mb-0">من جعل بينه وبين الله وسائط يدعوهم ويسألهم الشفاعة ويتوكل عليهم، كفر إجماعاً.</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">03</div>
+               <div><h4 class="title-amiri fw-bold text-dark">عدم تكفير المشركين أو الشك في كفرهم</h4><p class="text-muted fs-5 mb-0">أو تصحيح مذهبهم الباطل، كفر للإجماع القطعي على كفر من خالف التوحيد وعبد غير الله.</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">04</div>
+               <div><h4 class="title-amiri fw-bold text-dark">اعتقاد أن هدي غير النبي أكمل من هديه</h4><p class="text-muted fs-5 mb-0">أو أن حكم غيره أحسن من حكمه (كاسْتبدال الشريعة الإسلامية بالقوانين الوضعية واعتقاد أفضليتها).</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">05</div>
+               <div><h4 class="title-amiri fw-bold text-dark">بغض شيء مما جاء به الرسول ﷺ</h4><p class="text-muted fs-5 mb-0">حتى ولو عمل به، فقد كفر لقوله تعالى: ﴿ذَلِكَ بِأَنَّهُمْ كَرِهُوا مَا أَنزَلَ اللَّهُ فَأَحْبَطَ أَعْمَالَهُمْ﴾.</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">06</div>
+               <div><h4 class="title-amiri fw-bold text-dark">الاستهزاء بشيء من دين الله</h4><p class="text-muted fs-5 mb-0">أو ثوابه أو عقابه. القرآن الكريم قاطع: ﴿قُلْ أَبِاللَّهِ وَآيَاتِهِ وَرَسُولِهِ كُنتُمْ تَسْتَهْزِئُونَ * لا تَعْتَذِرُوا قَدْ كَفَرْتُم بَعْدَ إِيمَانِكُمْ﴾.</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">07</div>
+               <div><h4 class="title-amiri fw-bold text-dark">السحر بجميع أنواعه</h4><p class="text-muted fs-5 mb-0">(ومنها الصرف والعطف). من فعله أو رضي به كفر: ﴿وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّى يَقُولا إِنَّمَا نَحْنُ فِتْنَةٌ فَلا تَكْفُرْ﴾.</p></div>
+            </div>
+            <div class="d-flex p-4 rounded-4 shadow-sm mb-3 bg-white border-end border-4 border-danger position-relative overflow-hidden">
+               <div class="fs-2 fw-bold text-danger opacity-25 position-absolute" style="left:20px; top:20px;">08</div>
+               <div><h4 class="title-amiri fw-bold text-dark">مظاهرة المشركين ومعاونتهم على المسلمين</h4><p class="text-muted fs-5 mb-0">التحالف والقتال مع المشركين ضد المسلمين. ﴿وَمَن يَتَوَلَّهُم مِّنكُمْ فَإِنَّهُ مِنْهُمْ﴾.</p></div>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: شبهات وردود -->
+    <div class="tab-pane fade" id="tab-shubuhat">
+      <div class="sec-head">
+        <span class="tag">فاسألوا أهل الذكر إن كنتم لا تعلمون</span>
+        <h3>شبهات <span>وردود</span> علمية وعقلية</h3>
+        <p>تفنيد أبرز الشبهات المعاصرة ودحضها بالحجة البالغة والبرهان الساطع من الكتاب والسنة ومقتضى العقل الصريح.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row justify-content-center">
+         <div class="col-lg-10">
+            <div class="accordion shadow-sm rounded-4 overflow-hidden border border-light" id="shubuhatAccordion">
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button  fw-bold font-amiri fs-4 text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#sh0">
+                    <i class="fas fa-question-circle text-primary me-3 ms-2"></i> هل الدين الإسلامي انتشر بحد السيف؟
+                  </button>
+                </h2>
+                <div id="sh0" class="accordion-collapse collapse show" data-bs-parent="#shubuhatAccordion">
+                  <div class="accordion-body text-dark fs-5 line-height-2 p-4" style="background:#f8fafc; border-right:4px solid var(--primary);">
+                    <strong class="text-success"><i class="fas fa-check-circle me-1"></i> الجواب الشافي:</strong><br/> هذا ادعاء باطل تاريخياً وعقلياً. الإسلام يقرر قاعدة بينة (لَا إِكْرَاهَ فِي الدِّينِ). الفتوحات الإسلامية كانت لكسر شوكة الطواغيت الذين يمنعون حرية الدعوة، وبمجرد إزالتهم كان الناس يدخلون في دين الله أفواجاً طواعية. والدليل أن أكبر دولة إسلامية اليوم (إندونيسيا) لم يدخلها جيش إسلامي قط، بل انتشر فيها بالإقناع وأخلاق التجار المسلمين.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold font-amiri fs-4 text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#sh1">
+                    <i class="fas fa-question-circle text-primary me-3 ms-2"></i> لماذا المرأة ترث نصف الرجل؟ أليس هذا ظلماً؟
+                  </button>
+                </h2>
+                <div id="sh1" class="accordion-collapse collapse " data-bs-parent="#shubuhatAccordion">
+                  <div class="accordion-body text-dark fs-5 line-height-2 p-4" style="background:#f8fafc; border-right:4px solid var(--primary);">
+                    <strong class="text-success"><i class="fas fa-check-circle me-1"></i> الجواب الشافي:</strong><br/> الميراث في الإسلام لا يُبنى على معيار الذكورة والأنوثة، بل يُبنى على التكليف المالي ودرجة القرابة. الرجل مكلّف بالنفقة الشرعية على الزوجة، والأبناء، ودفع المهر والسكن، بينما المرأة مالها ذمة مالية مستقلة غير مطالبة بالإنفاق. ومع ذلك، هناك أكثر من 30 حالة ترث فيها المرأة مثل الرجل أو أكثر منه، ولا ترث النصف إلا في 4 حالات فقط.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold font-amiri fs-4 text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#sh2">
+                    <i class="fas fa-question-circle text-primary me-3 ms-2"></i> كيف نؤمن بالقضاء والقدر وهل الإنسان مسير أم مخير؟
+                  </button>
+                </h2>
+                <div id="sh2" class="accordion-collapse collapse " data-bs-parent="#shubuhatAccordion">
+                  <div class="accordion-body text-dark fs-5 line-height-2 p-4" style="background:#f8fafc; border-right:4px solid var(--primary);">
+                    <strong class="text-success"><i class="fas fa-check-circle me-1"></i> الجواب الشافي:</strong><br/> الإنسان مخير فيما يعلم (أفعاله الاختيارية كالصلاة، المعاصي، السعي للكسب)، ومسير فيما لا يعلم ولا يملك إرادته (كلونه، طوله، دقات قلبه، والمصائب التي تقع عليه). وعِلمُ الله المسبق بما سيختاره الإنسان (كتابته في اللوح المحفوظ) لا يعني الجبر، كما أن علم المعلم بأن أحد طلابه سيرسب لأنه لا يذاكر، لا يعني أنه من أجبره على الرسوب.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold font-amiri fs-4 text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#sh3">
+                    <i class="fas fa-question-circle text-primary me-3 ms-2"></i> هل الإسلام يظلم العقل بفرضه الغيبيات؟
+                  </button>
+                </h2>
+                <div id="sh3" class="accordion-collapse collapse " data-bs-parent="#shubuhatAccordion">
+                  <div class="accordion-body text-dark fs-5 line-height-2 p-4" style="background:#f8fafc; border-right:4px solid var(--primary);">
+                    <strong class="text-success"><i class="fas fa-check-circle me-1"></i> الجواب الشافي:</strong><br/> الإسلام يحترم العقل وجعله مناط التكليف، ومئات الآيات في القرآن تحث على التفكر والتدبر والنظر في الكون. أما الغيبيات (كالروح، الملائكة، الجنة والنار) فهي خارج النطاق المادي التجريبي للإنسان. والعقل السليم يدرك أن قدرته محدودة، فلا يمكنه إدراك ماهية الخالق بحواسه القاصرة، بل يدرك وجوده بآثاره ومخلوقاته.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold font-amiri fs-4 text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#sh4">
+                    <i class="fas fa-question-circle text-primary me-3 ms-2"></i> كيف يكون القرآن صالحاً لكل زمان ومكان؟
+                  </button>
+                </h2>
+                <div id="sh4" class="accordion-collapse collapse " data-bs-parent="#shubuhatAccordion">
+                  <div class="accordion-body text-dark fs-5 line-height-2 p-4" style="background:#f8fafc; border-right:4px solid var(--primary);">
+                    <strong class="text-success"><i class="fas fa-check-circle me-1"></i> الجواب الشافي:</strong><br/> القرآن قدم كليات ومقاصد كبرى (كالعدل، الشورى، حفظ النفس، حفظ المال، مكارم الأخلاق) وترك التفصيلات المتغيرة لاجتهاد العقول المعتبرة ضمن قوالب (القياس، المصالح المرسلة، سد الذرائع). هذه المرونة التشريعية المذهلة هي التي تجعل أحكامه تتسع لنوازل العصر، فالحرام واضح والمقاصد أوسع من أن تُحصر.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold font-amiri fs-4 text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#sh5">
+                    <i class="fas fa-question-circle text-primary me-3 ms-2"></i> لماذا خلق الله الشر والأمراض؟
+                  </button>
+                </h2>
+                <div id="sh5" class="accordion-collapse collapse " data-bs-parent="#shubuhatAccordion">
+                  <div class="accordion-body text-dark fs-5 line-height-2 p-4" style="background:#f8fafc; border-right:4px solid var(--primary);">
+                    <strong class="text-success"><i class="fas fa-check-circle me-1"></i> الجواب الشافي:</strong><br/> الشر لم يُخلق لذاته كشئ مطلق، بل هو جزئي ونسبي. الدنيا أصلها دار ابتلاء واختبار وليست دار جزاء واستقرار. والأمراض والمصائب فيها ابتلاء للعبد ليُكفر عنه سيئاته وترتب درجاته في الجنة، وفيها تذكره بضعفه وحاجته لربه، فرب ضارة نافعة، وفي كبد الدنيا شحذ لهمم الأطباء والعلماء لاكتشاف الدواء والعمارة.
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+         </div>
+      </div>
+    </div>
+
+  </div> <!-- End Tabs -->
+</div>
+
+<!-- MEGA FOOTER -->
+<footer class="mega-footer" style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+  <div class="container">
+    <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+      <div class="col-lg-4 text-md-end text-center">
+        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+          <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+          <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+          <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+          <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+          <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-md-start text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+        <a href="contact.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+        <a href="login.html" class="mega-footer-link text-warning mt-3" style="text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-user-circle me-2 ms-1"></i> تسجيل الدخول</a>
+      </div>
+    </div>
+    <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

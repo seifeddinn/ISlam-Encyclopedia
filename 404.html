@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة غير موجودة - الموسوعة الإسلامية الشاملة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{--gold:#d4af37;--dark:#0f172a;--primary:#1e293b;}
+        body{font-family:'Cairo',sans-serif; background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 100%); color:white; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;}
+        h1, h2, .amiri {font-family:'Amiri',serif;}
+        .error-code {font-size:8rem; font-weight:900; background:linear-gradient(135deg, white, var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-shadow:0 10px 30px rgba(212,175,55,0.3); margin-bottom:0;}
+        .card-404 {background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(212,175,55,0.2); border-radius:30px; padding:60px 40px; box-shadow:0 25px 50px rgba(0,0,0,0.5); max-width:600px; width:90%; position:relative; z-index:10;}
+        .pattern {position:absolute; inset:0; background:url('https://www.transparenttextures.com/patterns/arabesque.png'); opacity:0.1; mix-blend-mode:overlay; z-index:1;}
+        .btn-home {background:linear-gradient(90deg, var(--gold), #b4860b); color:#111; border:none; padding:15px 40px; border-radius:50px; font-weight:bold; font-size:1.2rem; transition:0.3s; margin-top:30px; text-decoration:none; display:inline-block;}
+        .btn-home:hover {transform:translateY(-3px); box-shadow:0 10px 20px rgba(212,175,55,0.4); color:black;}
+        i.floating {animation:float 3s ease-in-out infinite;}
+        @keyframes float {0%{transform:translateY(0);} 50%{transform:translateY(-15px);} 100%{transform:translateY(0);}}
+    </style>
+
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+</script>
+</head>
+
+<body>
+    <div class="pattern"></div>
+    <div class="card-404">
+        <i class="fas fa-compass fa-4x text-warning floating mb-3"></i>
+        <h1 class="error-code amiri">404</h1>
+        <h2 class="amiri mb-3 text-warning">عذراً، الصفحة غير موجودة!</h2>
+        <p class="fs-5 opacity-75 mb-4">يبدو أنك ضللت الطريق. الصفحة التي تبحث عنها إما تم نقلها أو أنها غير متوفرة حالياً في الموسوعة.</p>
+        <p class="amiri text-gold-light fs-4 mb-2 fst-italic">"وَأَنَّ هَٰذَا صِرَاطِي مُسْتَقِيمًا فَاتَّبِعُوهُ ۖ وَلَا تَتَّبِعُوا السُّبُلَ"</p>
+        
+        <a href="index.html" class="btn-home"><i class="fas fa-home me-2"></i> العودة للرئيسية المأمونة</a>
+    </div>
+</body>
+</html>

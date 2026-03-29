@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بالمطور - الموسوعة الإسلامية الشاملة</title>
+
+  <meta name="description"
+    content="الموسوعة الإسلامية الشاملة - المنصة الرقمية الموثوقة لعلوم القرآن والسنة والفقه والسيرة والتاريخ بعقيدة صحيحة.">
+  <meta name="keywords" content="قرآن, حديث, إسلام, فقه, عقيدة, سيرة, تاريخ إسلامي, الموسوعة الإسلامية">
+  <meta name="author" content="ST Islamic Web">
+  <meta property="og:title" content="الموسوعة الإسلامية الشاملة">
+  <meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #0f172a;
+      --primary: #1e293b;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    h1,
+    h2,
+    h3,
+    .amiri {
+      font-family: 'Amiri', serif;
+    }
+
+    /* MEGA NAVBAR */
+    .navbar {
+      background: linear-gradient(135deg, var(--dark), var(--primary)) !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, .5);
+      z-index: 1000;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .navbar-brand {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      color: white !important;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .hero-contact {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      padding: 100px 0 60px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero-contact::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: white;
+      clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    }
+
+    .dev-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+      border: 1px solid #e2e8f0;
+    }
+
+    .dev-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #baa54d);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: var(--dark);
+      font-size: 1.5rem;
+      transition: 0.3s;
+      margin: 0 10px;
+    }
+
+    .contact-btn:hover {
+      background: var(--gold);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(212, 175, 55, 0.3);
+    }
+  </style>
+
+  <!-- Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+  </script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة
+        الإسلامية الشاملة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav1">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
+          <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
+          <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
+          <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a>
+          </li>
+          <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
+          <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
+          <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
+          <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-contact">
+    <div class="container">
+      <h1 class="display-4 fw-bold amiri mb-3 text-warning">اتصل بالمطور</h1>
+      <p class="fs-4 amiri opacity-75">يسعدنا تواصلكم لتقديم الاقتراحات أو التبليغ عن الأخطاء</p>
+    </div>
+  </section>
+
+  <div class="container pb-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="dev-card">
+          <div class="dev-avatar">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h2 class="amiri fw-bold text-dark mb-1">لخذاري محمد سيف الدين</h2>
+          <span class="badge bg-dark text-warning p-2 px-3 rounded-pill mb-4 fs-6">المصمم والمطور الرئيسي</span>
+          <p class="text-muted mb-4 line-height-2">
+            تم تصميم وتطوير هذه الموسوعة لتكون صدقة جارية وعملاً خالصاً لوجه الله، تعتمد على تقنيات الويب الحديثة لتقديم
+            تجربة قراءة فريدة ووصول سريع للمعلومة الشرعية.
+          </p>
+          <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+            <a href="mailto:contact@example.com" class="contact-btn" title="البريد الإلكتروني"><i
+                class="fas fa-envelope"></i></a>
+            <a href="#" class="contact-btn" title="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="contact-btn" title="جيت هاب"><i class="fab fa-github"></i></a>
+            <a target="_blank" href="https://t.me/Moh_lkh7" class="contact-btn text-info" title="تيليجرام"><i
+                class="fab fa-telegram-plane"></i></a>
+            <a target="_blank" href="#" class="contact-btn" style="color:var(--gold);" title="الموقع الشخصي للمطور"><i
+                class="fas fa-globe"></i></a>
+          </div>
+
+          <hr class="opacity-10 my-4">
+
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="text-start">
+            <h4 class="amiri text-center mb-4 text-dark fw-bold">أرسل رسالة سريعة</h4>
+            <div class="mb-3">
+              <label class="form-label text-muted small">الاسم الكريم</label>
+              <input type="text" name="name" class="form-control rounded-4 p-3 border-light bg-light" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-muted small">محتوى الرسالة</label>
+              <textarea name="message" class="form-control rounded-4 p-3 border-light bg-light" rows="4"
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 rounded-pill py-3 fw-bold">إرسال الرسالة <i
+                class="fas fa-paper-plane ms-2 text-warning"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mega-footer"
+    style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+    <div class="container">
+      <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+        <div class="col-lg-4 text-md-end text-center">
+          <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+          <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+          <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء
+            المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+            <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+            <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+            <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+            <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+            <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+            <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+            <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-md-start text-center">
+          <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+          <a href="contact.html" class="mega-footer-link"
+            style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i
+              class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+          <a href="share.html" class="mega-footer-link"
+            style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i
+              class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+          <a href="login.html" class="mega-footer-link text-warning mt-3"
+            style="text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i
+              class="fas fa-user-circle me-2 ms-1"></i> تسجيل الدخول</a>
+        </div>
+      </div>
+      <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+        <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+        <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

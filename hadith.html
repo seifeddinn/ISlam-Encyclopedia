@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موسوعة الحديث الشريف - الموسوعة الإسلامية الشاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold-light:#f9f1d8;--gold-dark:#aa8a2a;--dark:#1e1b4b;--primary:#3730a3;}
+body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6,.ar,.poetry, .hadith-text{font-family:'Amiri',serif;}
+
+/* MEGA NAVBAR */
+.navbar {background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
+.navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
+.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+.nav-link:hover, .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
+
+/* MEGA HERO - HADITH (INDIGO & GOLD) */
+.mega-hero{min-height:90vh;background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
+.hero-glass{background:rgba(30,27,75,0.5);backdrop-filter:blur(15px);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:60px 40px;box-shadow:0 20px 50px rgba(0,0,0,0.5);position:relative;z-index:5;text-align:center;}
+.hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.1;mix-blend-mode:overlay;}
+.hero-eyebrow{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:var(--dark);padding:8px 30px;border-radius:50px;font-weight:bold;font-size:1rem;margin-bottom:25px;box-shadow:0 4px 15px rgba(212,175,55,0.4);}
+.mega-hero h1{font-size:5.5rem;font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.8);line-height:1.2;margin-bottom:20px;}
+.mega-hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.tagline{color:#e0e7ff;font-size:1.3rem;line-height:2.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);max-width:800px;margin:0 auto;}
+
+/* ANIMATED ORBS */
+.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3;animation:floatOrb 15s ease-in-out infinite alternate;}
+.orb-1{width:600px;height:600px;background:var(--gold);top:-150px;right:-100px;}
+.orb-2{width:500px;height:500px;background:#6366f1;bottom:-100px;left:-50px;animation-delay:5s;}
+@keyframes floatOrb{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,50px) scale(1.1);}}
+
+/* STATS MEGA */
+.stats-mega{background:linear-gradient(90deg,var(--dark),var(--primary));border-top:2px solid var(--gold-dark);border-bottom:2px solid var(--gold-dark);padding:40px 0;position:relative;z-index:10;margin-top:-5px;}
+.stat-box{text-align:center;color:white;padding:20px;border-left:1px solid rgba(212,175,55,0.2);}
+.stat-box:last-child{border-left:none;}
+.stat-num{font-family:'Amiri',serif;font-size:3.5rem;font-weight:bold;color:var(--gold);line-height:1;margin-bottom:10px;text-shadow:0 5px 15px rgba(212,175,55,0.3);}
+.stat-label{font-size:1.1rem;font-weight:bold;letter-spacing:1px;color:#c7d2fe;}
+
+/* SECTION HEADERS */
+.sec-head{text-align:center;margin-bottom:60px;position:relative;}
+.sec-head .tag{display:inline-block;background:rgba(212,175,55,0.1);color:var(--gold-dark);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:8px 25px;font-size:1rem;font-weight:bold;margin-bottom:20px;}
+.sec-head h3{font-size:3rem;font-family:'Amiri',serif;color:var(--dark);font-weight:900;margin-bottom:15px;}
+.sec-head h3 span{color:var(--primary);}
+.sec-head p{color:#64748b;font-size:1.2rem;max-width:800px;margin:0 auto;line-height:1.8;}
+.sec-head .divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:25px auto 0;}
+
+/* TABS NAVIGATION MEGA */
+.main-tabs-wrapper{background:white;padding:20px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.05);margin:40px auto 60px;position:sticky;top:80px;z-index:900;border:1px solid #e2e8f0;}
+.main-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;border-bottom:none;}
+.main-tabs::-webkit-scrollbar{height:6px;}
+.main-tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
+.main-tabs .nav-link{border:1px solid #e2e8f0;border-radius:12px;color:#475569;font-weight:bold;padding:15px 25px;font-size:1.1rem;white-space:nowrap;transition:all .3s;}
+.main-tabs .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
+.main-tabs .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(55,48,163,0.3);}
+
+/* CARDS */
+.mega-card{background:white;border-radius:24px;padding:35px;box-shadow:0 15px 35px rgba(0,0,0,0.04);border:1px solid #e0e7ff;transition:all .4s;height:100%;}
+.mega-card:hover{transform:translateY(-8px);box-shadow:0 25px 50px rgba(55,48,163,0.1);border-color:var(--gold);}
+.mega-icon{font-size:3.5rem;background:linear-gradient(135deg,var(--primary),var(--dark));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;display:inline-block;}
+
+/* HADITH SPECIFIC */
+.book-cover{width:160px;height:230px;border-radius:10px 20px 20px 10px;box-shadow:inset 5px 0 15px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.3);display:flex;flex-direction:column;justify-content:center;align-items:center;color:var(--gold);text-align:center;padding:15px;position:relative;overflow:hidden;margin:0 auto 25px;transition:all 0.4s;}
+.book-cover::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:3px;background:rgba(255,255,255,.1);}
+.book-spine{position:absolute;left:0;top:0;bottom:0;width:5px;background:rgba(0,0,0,.3);}
+.book-cover h4{font-family:'Amiri',serif;font-weight:bold;margin-top:15px;font-size:1.4rem;line-height:1.4;text-shadow:0 2px 5px rgba(0,0,0,0.5);}
+.mega-card:hover .book-cover{transform:scale(1.05) rotateY(-10deg);}
+
+.hadith-quote{background:url('https://www.transparenttextures.com/patterns/cream-paper.png') #fdfbf7;border:2px solid var(--gold);border-radius:15px;padding:45px;text-align:center;box-shadow:inset 0 0 50px rgba(212,175,55,0.1), 0 15px 30px rgba(0,0,0,0.05);position:relative;margin-bottom:30px;}
+.hadith-quote::before, .hadith-quote::after{content:'ﷺ';position:absolute;color:var(--gold);font-size:2rem;font-family:'Amiri',serif;}
+.hadith-quote::before{top:15px;right:20px;} .hadith-quote::after{bottom:15px;left:20px;}
+.hadith-text{font-size:2rem;line-height:2.2;color:var(--dark);margin-bottom:20px;font-weight:bold;}
+
+/* TREE TIMELINE */
+.scholar-tree{position:relative;padding-right:50px;border-right:3px dashed var(--gold);max-width:800px;margin:0 auto;}
+.tree-node{position:relative;margin-bottom:40px;background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border:1px solid #e0e7ff;}
+.tree-node::before{content:'';position:absolute;width:25px;height:25px;background:var(--primary);border:4px solid var(--gold);border-radius:50%;right:-64px;top:40px;box-shadow:0 0 15px var(--gold);}
+
+/* MEGA FOOTER */
+.mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);}
+.mega-footer-link{color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;}
+.mega-footer-link:hover{color:var(--gold);padding-right:5px;}
+</style>
+
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+</script>
+</head>
+
+<body>
+
+<!-- MEGA NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link active" href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
+        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MEGA HERO HADITH -->
+<section class="mega-hero">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="hero-pattern"></div>
+  <div class="container relative z-10">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10">
+        <div class="hero-glass">
+            <div class="hero-eyebrow"><i class="fas fa-book-reader me-2"></i>المصدر الثاني للتشريع والبيان الإلهي</div>
+            <h1>موسوعة <span>الحديث</span> الشريف</h1>
+            <p class="tagline mt-4">المحجة البيضاء ومصابيح الدجى؛ تصفح أمهات الكتب التسعة، وتعلم مصطلح الحديث النبوي الشريف، واقرأ في سير أمراء المؤمنين وحفاظ السنة بعمق وتفصيل.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-mega">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">9</div><div class="stat-label">كتب أمهات الحديث</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">42</div><div class="stat-label">حديثاً نووياً جامعاً</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">8</div><div class="stat-label">أئمة محدثين كبار</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">100+</div><div class="stat-label">فائدة في المصطلح</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- TABS NAV -->
+  <div class="main-tabs-wrapper">
+    <ul class="nav nav-pills main-tabs justify-content-center" id="hadithTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-sahih"><i class="fas fa-book-open fs-4 d-block mb-1"></i>الكتب التسعة</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mustalah"><i class="fas fa-project-diagram fs-4 d-block mb-1"></i>علم المصطلح</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-nawawi"><i class="fas fa-star fs-4 d-block mb-1"></i>الأربعون النووية</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-imams"><i class="fas fa-users fs-4 d-block mb-1"></i>أعلام المحدثين</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-search"><i class="fas fa-search fs-4 d-block mb-1"></i>باحث الحديث</button></li>
+    </ul>
+  </div>
+
+  <div class="tab-content pb-5">
+    
+    <!-- TAB 1: الصحاح والسنن (الكتب التسعة Expanded) -->
+    <div class="tab-pane fade show active" id="tab-sahih">
+      <div class="sec-head">
+        <span class="tag">دواوين الإسلام الكبرى</span>
+        <h3>الكتب <span>التسعة</span> المعتمدة</h3>
+        <p>أصول الدين المكتوبة ودواوين السنة النبوية الشريفة التي أجمعت الأمة على تلقيها بالقبول، وهي المرجع الأول لأحكام الفقه والعقيدة.</p>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="row g-4">
+         <!-- Card 1 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#0f172a;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>الجامع الصحيح<br><span style="font-size:1rem;font-weight:normal;">للبخاري</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">صحيح البخاري</h3>
+               <p class="text-muted small mb-3">أصح كتاب بعد كتاب الله، جمعه الإمام أبو عبد الله البخاري واشترط فيه أعلى درجات الصحة وثبوت اللقاء والمعاصرة للرواة.</p>
+               <span class="badge bg-primary px-3 py-2 rounded-pill">7563 حديثاً بالمكرر</span>
+            </div>
+         </div>
+         <!-- Card 2 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#064e3b;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>الجامع الصحيح<br><span style="font-size:1rem;font-weight:normal;">لمسلم</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">صحيح مسلم</h3>
+               <p class="text-muted small mb-3">الكتاب الثاني في الصحة، امتاز بحسن الترتيب والصياغة الدقيقة وجمع طرق الحديث في موضع واحد دون تقطيعه.</p>
+               <span class="badge bg-success px-3 py-2 rounded-pill">3033 حديثاً بدون المكرر</span>
+            </div>
+         </div>
+         <!-- Card 3 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#7c2d12;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>سنن<br><span style="font-size:1rem;font-weight:normal;">أبي داود</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">سنن أبي داود</h3>
+               <p class="text-muted small mb-3">جمع فيه مؤلفه أحاديث الأحكام التي يُستدل بها الفقهاء، وانتقاها من نصف مليون حديث، وهو ثالث الكتب الستة.</p>
+               <span class="badge bg-danger px-3 py-2 rounded-pill">5274 حديثاً</span>
+            </div>
+         </div>
+         <!-- Card 4 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#581c87;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>جامع<br><span style="font-size:1rem;font-weight:normal;">الترمذي</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">جامع الترمذي</h3>
+               <p class="text-muted small mb-3">يتميز ببيان مذاهب الفقهاء ودرجة صحة الحديث (صحيح، حسن، غريب)، ويعتبر مدرسة متكاملة في الفقه والعلل.</p>
+               <span class="badge bg-dark px-3 py-2 rounded-pill">3956 حديثاً</span>
+            </div>
+         </div>
+         <!-- Card 5 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#0369a1;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>السنن الصغرى<br><span style="font-size:1rem;font-weight:normal;">للنسائي</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">سنن النسائي</h3>
+               <p class="text-muted small mb-3">يعرف بالمجتبى، شرطه مقارب لشرط الشيخين، وفيه دقة عجيبة في تراجم الأبواب وبيان العلل الدقيقة للأسانيد.</p>
+               <span class="badge bg-info text-dark px-3 py-2 rounded-pill">5761 حديثاً</span>
+            </div>
+         </div>
+         <!-- Card 6 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#115e59;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>سنن<br><span style="font-size:1rem;font-weight:normal;">ابن ماجه</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">سنن ابن ماجه</h3>
+               <p class="text-muted small mb-3">الكتاب السادس من الكتب الستة المعتمدة، امتاز بحسن الترتيب وكثرة الأبواب الفقهية، وفيه زوائد كثيرة على الكتب الخمسة.</p>
+               <span class="badge bg-secondary px-3 py-2 rounded-pill">4341 حديثاً</span>
+            </div>
+         </div>
+         <!-- Card 7 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#b45309;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>موطأ<br><span style="font-size:1rem;font-weight:normal;">الإمام مالك</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">موطأ الإمام مالك</h3>
+               <p class="text-muted small mb-3">من أقدم كتب الحديث المدونة، جمعه إمام دار الهجرة، ويجمع بين الحديث النبوي وأقوال الصحابة وفتاوى التابعين بالمدينة.</p>
+               <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">1912 أثراً وحديثاً</span>
+            </div>
+         </div>
+         <!-- Card 8 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#4338ca;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>مسند<br><span style="font-size:1rem;font-weight:normal;">الإمام أحمد</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">مسند الإمام أحمد</h3>
+               <p class="text-muted small mb-3">أضخم دواوين السنة على الإطلاق، رتبه الإمام على أسماء الصحابة الرواة بدلاً من الأبواب الفقهية، وهو مرجع هائل للسنة.</p>
+               <span class="badge bg-primary px-3 py-2 rounded-pill">حوالي 40,000 حديث</span>
+            </div>
+         </div>
+         <!-- Card 9 -->
+         <div class="col-lg-4 col-md-6">
+            <div class="mega-card text-center">
+               <div class="book-cover" style="background:#1d4ed8;"><div class="book-spine"></div><i class="fas fa-book fa-2x"></i><h4>سنن<br><span style="font-size:1rem;font-weight:normal;">الدارمي</span></h4></div>
+               <h3 class="font-amiri fw-bold text-dark mb-3">سنن الدارمي</h3>
+               <p class="text-muted small mb-3">من أجل الكتب وأعظمها، اعتبره بعض العلماء سادس الكتب الستة بدل ابن ماجه لقلة أحاديثه الضعيفة وجودة إسناده وعلله.</p>
+               <span class="badge bg-light text-dark px-3 py-2 rounded-pill border">3506 أحاديث</span>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: المصطلح (Expanded) -->
+    <div class="tab-pane fade" id="tab-mustalah">
+      <div class="sec-head">
+        <span class="tag">ضوابط النقل والرواية</span>
+        <h3>علم <span>مصطلح</span> الحديث</h3>
+        <p>القواعد والأصول التي وضعها جهابذة علماء الأمة لتمحيص الروايات ومعرفة حال الراوي والمروي من حيث القبول والرد والتوثيق والعلل.</p>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="row g-4 justify-content-center">
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #16a34a;">
+               <div class="mega-icon"><i class="fas fa-check-circle text-success"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث الصحيح</h4>
+               <p class="text-muted small">ما اتصل سنده بنقل العدل الضابط عن مثله إلى منتهاه من غير شذوذ ولا علة قادحة. وهو أعلى مراتب القبول والمحتج به بالاتفاق في العقائد والأحكام.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #2563eb;">
+               <div class="mega-icon"><i class="fas fa-thumbs-up text-primary"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث الحسن</h4>
+               <p class="text-muted small">هو ما توفرت فيه شروط الصحة، إلا أن أحد رواته خفيف الضبط. وهو يمثل الغالب في أسانيد أهل العلم، وهو حجة ويُعمل به.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #dc2626;">
+               <div class="mega-icon"><i class="fas fa-exclamation-triangle text-danger"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث الضعيف</h4>
+               <p class="text-muted small">ما فقد شرطاً أو أكثر من شروط الحديث المقبول. قد يكون بسبب انقطاع في السند، أو ضعف في حفظ أحد الرواة أو عدالته، ولا يحتج به.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #000;">
+               <div class="mega-icon"><i class="fas fa-ban text-dark"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث الموضوع</h4>
+               <p class="text-muted small">هو الكذب المختلق المصنوع المنسوب زوراً إلى النبي ﷺ. وهو شر الأحاديث ولا تحل روايته مطلقاً إلا لبيان وضعه والتحذير منه.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #eab308;">
+               <div class="mega-icon"><i class="fas fa-users text-warning"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث المتواتر</h4>
+               <p class="text-muted small">ما رواه في كل طبقة من طبقات السند عدد كثير تحيل العادة تواطؤهم على الكذب، ويُفيد العلم اليقيني القطعي الذي لا يقبل الشك.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #8b5cf6;">
+               <div class="mega-icon"><i class="fas fa-user text-purple"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث الآحاد</h4>
+               <p class="text-muted small">ما لم يجمع شروط المتواتر، وهو الغالبية العظمى من السنة النبوية، وينقسم إلى الغريب والعزيز والمشهور بحسب عدد رواته.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #f97316;">
+               <div class="mega-icon"><i class="fas fa-link text-orange"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث المرسل</h4>
+               <p class="text-muted small">ما سقط من آخر إسناده من بعد التابعي (أي التابعي يقول: قال رسول الله دون ذكر الصحابي)، وهو من أقسام الضعيف، إلا بشروط.</p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="mega-card" style="border-top:5px solid #14b8a6;">
+               <div class="mega-icon"><i class="fas fa-search-plus text-teal"></i></div>
+               <h4 class="font-amiri fw-bold mb-3">الحديث الشاذ</h4>
+               <p class="text-muted small">ما رواه الراوي المقبول (الثقة أو الصدوق) مخالِفاً لمن هو أَوْلَى منه لكون المخالف أحفظ منه أو أكثر عدداً. وهو مردود.</p>
+            </div>
+         </div>
+      </div>
+      
+      <div class="bg-indigo-50 p-5 rounded-4 mt-5 text-center" style="background:rgba(55,48,163,0.05);border:1px dashed var(--primary);">
+         <h4 class="font-amiri text-primary fw-bold mb-3">قال الإمام عبد الله بن المبارك رحمه الله:</h4>
+         <h3 class="font-amiri text-dark">«الإسناد من الدين، ولولا الإسناد لقال من شاء ما شاء»</h3>
+         <p class="text-muted mt-3">لقد حبا الله هذه الأمة بخصيصة الإسناد، فلم تعرف أمة من الأمم السابقة حفظ أقوال أنبيائها كما حفظت أمة محمد ﷺ سنته بتمحيص عجيب ودقة لا مثيل لها.</p>
+      </div>
+    </div>
+
+    <!-- TAB 3: النووية المكتملة (Interactive with nawawi.js array) -->
+    <div class="tab-pane fade" id="tab-nawawi">
+      <div class="sec-head">
+        <span class="tag">جوامع الكلم</span>
+        <h3>الأربعون <span>النووية</span></h3>
+        <p>متن جمع فيه الإمام يحيى بن شرف النووي 42 حديثاً جامعاً لأصول الدين الإسلامي، لا يستغني عنها مسلم في دينه ودنياه.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row justify-content-center">
+         <div class="col-lg-10">
+            <div class="hadith-quote text-center">
+               <h5 class="text-warning mb-4" id="nawawiTitle">الحديث الأول: إنما الأعمال بالنيات</h5>
+               <div class="hadith-text" id="nawawiText">« سَمِعْتُ رَسُولَ اللَّهِ ﷺ يَقُولُ: إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى... »</div>
+               <p class="text-muted small mt-4 mb-0" id="nawawiNarrator">رواه أمير المؤمنين في الحديث أبو عبد الله البخاري وأبو الحسين مسلم في صحيحيهما.</p>
+               
+               <div class="mt-4 pt-4 border-top border-warning border-opacity-25 d-flex justify-content-between align-items-center">
+                  <button class="btn btn-outline-warning rounded-circle" onclick="prevNawawi()"><i class="fas fa-chevron-right"></i></button>
+                  <span class="text-muted fw-bold" id="nawawiCounter">1 / 42</span>
+                  <button class="btn btn-outline-warning rounded-circle" onclick="nextNawawi()"><i class="fas fa-chevron-left"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="text-center">
+         <button class="btn btn-lg px-5 py-3 text-white rounded-pill fw-bold" style="background:var(--primary);box-shadow:0 10px 20px rgba(55,48,163,0.3);" onclick="document.getElementById('nawawiListModal').style.display='block'; var modal=new bootstrap.Modal(document.getElementById('nawawiListModal')); modal.show();">عرض فهرس الأحاديث الـ 42 كاملة <i class="fas fa-list ms-2"></i></button>
+      </div>
+    </div>
+
+    <!-- TAB 4: طبقات المحدثين (Expanded Timeline) -->
+    <div class="tab-pane fade" id="tab-imams">
+      <div class="sec-head">
+        <span class="tag">حراس السنة المطهرة</span>
+        <h3>أعلام <span>المحدثين</span> وحفاظها</h3>
+        <p>تسلسل زمني لأبرز أمراء المؤمنين في الحديث الذين أفنوا أعمارهم في تتبع الأسانيد وتدوين وحفظ السنة النبوية العظيمة.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="scholar-tree mt-5">
+         
+         <!-- 1 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">أبو هريرة عبد الرحمن بن صخر (ت 59 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">راوية الإسلام الأكبر - الصحابة</div>
+            <p class="text-muted mb-0">أكثر الصحابة رواية للحديث على الإطلاق (5374 حديثاً). دعا له النبي ﷺ بأن لا ينسى شيئاً فكان معجزة الحفظ، وتفرغ لطلب الحديث وملازمة النبي.</p>
+         </div>
+
+         <!-- 2 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام محمد بن مسلم الزهري (ت 124 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">التابعين - أول المدونين</div>
+            <p class="text-muted mb-0">أول من دوّن الحديث بشكل رسمي بأمر من الخليفة المرواني عمر بن عبد العزيز لحفظه من الضياع. كان بحراً لا تكدره الدلاء في حفظ السنة المتفرقة بالآفاق.</p>
+         </div>
+
+         <!-- 3 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام مالك بن أنس (ت 179 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">أتباع التابعين - إمام دار الهجرة</div>
+            <p class="text-muted mb-0">شيخ الإسلام ومفتي الحرمين، صاحب كتاب המوطأ الذي كان أقوى كتب الحديث في زمانه. سلسلة رواته (مالك عن نافع عن ابن عمر) هي أصح الأسانيد وتُعرف بـ "السلسلة الذهبية".</p>
+         </div>
+         
+         <!-- 4 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام محمد بن إدريس الشافعي (ت 204 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">ناصر السنة</div>
+            <p class="text-muted mb-0">أول من دَوّن في أصول الفقه وعلم المصطلح في كتابه العظيم (الرسالة). جمع بين فقه أهل الرأي والعراق وفقه أهل الحديث والحجاز.</p>
+         </div>
+
+         <!-- 5 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام أحمد بن حنبل (ت 241 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">إمام أهل السنة - جامع المسند</div>
+            <p class="text-muted mb-0">حافظ الدنيا في زمانه، صاحبأكبر موسوعة حديثية (المسند) الذي يحوي قرابة 40 ألف حديث. ثبت في المحنة العظيمة ورفع الله به شأن السنة ودفع عنها البدع.</p>
+         </div>
+
+         <!-- 6 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام محمد بن إسماعيل البخاري (ت 256 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">أمير المؤمنين في الحديث</div>
+            <p class="text-muted mb-0">صاحب أصح كتاب بعد القرآن. اشترط في صحيحه المعاصرة وثبوت اللقاء بين الرواة. لم يكتب حديثاً في صحيحه إلا بعد أن يغتسل ويصلي ركعتين استخارة لله.</p>
+         </div>
+         
+         <!-- 7 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام مسلم بن الحجاج النيسابوري (ت 261 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">تلميذ البخاري وأصحاب الصحاح</div>
+            <p class="text-muted mb-0">صاحب الجامع الصحيح الثاني بقوة الاعتماد، تميز بحسن ترتيب الأبواب وجمع طرق الحديث بلفظها الدقيق دون تقطيع في موضع واحد.</p>
+         </div>
+         
+         <!-- 8 -->
+         <div class="tree-node">
+            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام أبو داود السجستاني (ت 275 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">صاحب السنن المُجمَع عليها</div>
+            <p class="text-muted mb-0">جمع (السنن) واعتنى بأحاديث الأحكام وقدمها للفقهاء. قالوا: أُلِين الحديث لأبي داود كما أُلِينَ الحديد لداود عليه السلام. كتابه المرجع الأول لكل مفتٍ.</p>
+         </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: باحث الحديث (Expanded Database) -->
+    <div class="tab-pane fade" id="tab-search">
+      <div class="sec-head">
+        <span class="tag">التحقق الذكي والدقيق</span>
+        <h3>الباحث <span>الحديثي</span> والمخرج</h3>
+        <p>محرك بحث فوري لكلمات الحديث النبوي للتحقق من صحتها ومعرفة ومخارج الروايات المعتمدة.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row justify-content-center">
+         <div class="col-lg-10">
+            <div class="mega-card text-center" style="background:var(--primary);color:white;border:1px solid var(--gold);">
+               <i class="fas fa-search fa-4x text-warning mb-4"></i>
+               <h3 class="font-amiri fw-bold mb-3">البحث السريع في الأحاديث الشهيرة</h3>
+               <p class="text-light opacity-75 small">ابحث عن أطراف الأحاديث للوقوف على التخريج. (اكتب كلمة مثل: علم، جنة، صدقة)</p>
+               
+               <div class="input-group input-group-lg mb-4 shadow-lg mx-auto" dir="ltr" style="max-width:800px;">
+                  <button class="btn btn-warning fw-bold px-4" type="button" onclick="performHadithSearch()">ابحث <i class="fas fa-search ms-1"></i></button>
+                  <input type="text" id="hadithSearchInput" class="form-control text-end" placeholder="اكتب جزءاً من الحديث للبحث..." dir="rtl" onkeypress="if(event.key === 'Enter') performHadithSearch()">
+               </div>
+               
+               <!-- Search Results Container -->
+               <div id="hadithSearchResults" class="text-end bg-white text-dark rounded-4 p-4 mt-4 text-start shadow-sm d-none" style="max-height:500px; overflow-y:auto;">
+                  <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">نتائج البحث: <span id="hadithResultCount" class="text-danger">0</span></h5>
+                  <div id="hadithResultsList"></div>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+    </div>
+
+  </div> <!-- End Tabs -->
+</div>
+
+<!-- MEGA FOOTER -->
+<footer class="mega-footer" style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+  <div class="container">
+    <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+      <div class="col-lg-4 text-md-end text-center">
+        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+          <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+          <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+          <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+          <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+          <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-md-start text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+        <a href="contact.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+        <a href="login.html" class="mega-footer-link text-warning mt-3" style="text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-user-circle me-2 ms-1"></i> تسجيل الدخول</a>
+      </div>
+    </div>
+    <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Nawawi Modal -->
+<div class="modal fade" id="nawawiListModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content border-0" style="border-radius:20px; overflow:hidden;">
+      <div class="modal-header bg-dark text-white border-0 py-3">
+        <h5 class="modal-title font-amiri fw-bold text-warning"><i class="fas fa-list me-2"></i>فهرس الأربعين النووية الشامل (42 حديثاً)</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body bg-light p-0">
+        <div class="list-group list-group-flush" id="nawawiListContainer">
+           <!-- Injected via JS from nawawi.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- External Nawawi Array file to deeply enrich the page -->
+<script src="nawawi.js"></script>
+
+<script>
+// --- 40 Nawawi Interactive Logic Using the loaded nawawiHadiths (42 Hadiths!) ---
+let currentNawawiIndex = 0;
+
+function updateNawawiView(index) {
+    if(typeof nawawiHadiths === 'undefined' || nawawiHadiths.length === 0) return;
+    
+    currentNawawiIndex = index;
+    const h = nawawiHadiths[index];
+    document.getElementById('nawawiTitle').innerText = `الحديث ${h.number}: ${h.title}`;
+    document.getElementById('nawawiText').innerText = `« ${h.text} »`;
+    document.getElementById('nawawiNarrator').innerText = `الراوي: ${h.narrator} | التخريج: ${h.source}`;
+    document.getElementById('nawawiCounter').innerText = `${index + 1} / ${nawawiHadiths.length}`;
+}
+function nextNawawi() {
+    let next = currentNawawiIndex + 1;
+    if (next >= nawawiHadiths.length) next = 0;
+    updateNawawiView(next);
+}
+function prevNawawi() {
+    let prev = currentNawawiIndex - 1;
+    if (prev < 0) prev = nawawiHadiths.length - 1;
+    updateNawawiView(prev);
+}
+
+// Populate Modal List dynamically from external logic
+document.addEventListener('DOMContentLoaded', () => {
+    if(typeof nawawiHadiths !== 'undefined' && nawawiHadiths.length > 0) {
+        updateNawawiView(0);
+        const listHtml = nawawiHadiths.map((h, i) => `
+            <button class="list-group-item list-group-item-action py-3 fw-bold font-amiri fs-5 text-dark" onclick="updateNawawiView(${i}); bootstrap.Modal.getInstance(document.getElementById('nawawiListModal')).hide(); document.querySelector('[data-bs-target=\'#tab-nawawi\']').click();">
+                <span class="text-warning me-2">${h.number}.</span> ${h.title} <small class="text-muted fs-6 d-block mt-1"><i class="fas fa-user-circle ms-1"></i> ${h.narrator}</small>
+            </button>
+        `).join('');
+        document.getElementById('nawawiListContainer').innerHTML = listHtml;
+    } else {
+        document.getElementById('nawawiText').innerText = 'جاري التحميل... (تأكد من وجود ملف nawawi.js)';
+    }
+});
+
+// --- Expanded Hadith Search Engine Logic ---
+const hadithDatabase = [
+    { text: "إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى", book: "صحيح البخاري ومسلم", حكم: "صحيح متفق عليه" },
+    { text: "من سلك طريقا يلتمس فيه علما سهل الله له به طريقا إلى الجنة", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "الدين النصيحة، قلنا: لمن يا رسول الله؟ قال: لله ولكتابه ولرسوله ولأئمة المسلمين وعامتهم", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "كلمتان خفيفتان على اللسان ثقيلتان في الميزان حبيبتان إلى الرحمن: سبحان الله وبحمده سبحان الله العظيم", book: "صحيح البخاري", حكم: "صحيح" },
+    { text: "الطهور شطر الإيمان، والحمد لله تملأ الميزان", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "اتق الله حيثما كنت، وأتبع السيئة الحسنة تمحها، وخالق الناس بخلق حسن", book: "سنن الترمذي", حكم: "حسن صحيح" },
+    { text: "احفظ الله يحفظك، احفظ الله تجده تجاهك، إذا سألت فاسأل الله", book: "سنن الترمذي", حكم: "حسن صحيح" },
+    { text: "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه", book: "صحيح البخاري ومسلم", حكم: "صحيح متفق عليه" },
+    { text: "بني الإسلام على خمس: شهادة أن لا إله إلا الله، وأن محمدا رسول الله، وإقام الصلاة، وإيتاء الزكاة، وحج البيت، وصوم رمضان", book: "صحيح البخاري ومسلم", حكم: "صحيح متفق عليه" },
+    { text: "دع ما يريبك إلى ما لا يريبك", book: "سنن الترمذي والنسائي", حكم: "صحيح" },
+    { text: "من حسن إسلام المرء تركه ما لا يعنيه", book: "سنن الترمذي", حكم: "حسن" },
+    { text: "لا تحاسدوا، ولا تناجشوا، ولا تباغضوا، ولا تدابروا", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "كل سلامى من الناس عليه صدقة", book: "صحيح البخاري ومسلم", حكم: "صحيح" },
+    { text: "البر حسن الخلق، والإثم ما حاك في صدرك وكرهت أن يطلع عليه الناس", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "إن الله لا ينظر إلى صوركم وأموالكم ولكن ينظر إلى قلوبكم وأعمالكم", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "خيركم من تعلم القرآن وعلمه", book: "صحيح البخاري", حكم: "صحيح" },
+    { text: "عجبا لأمر المؤمن إن أمره كله خير", book: "صحيح مسلم", حكم: "صحيح" },
+    { text: "من يرد الله به خيرا يفقهه في الدين", book: "صحيح البخاري", حكم: "صحيح" },
+    { text: "تبسمك في وجه أخيك لك صدقة", book: "سنن الترمذي", حكم: "صحيح" },
+    { text: "الراحمون يرحمهم الرحمن، ارحموا من في الأرض يرحمكم من في السماء", book: "سنن الترمذي", حكم: "صحيح" }
+];
+
+function performHadithSearch() {
+    const query = document.getElementById('hadithSearchInput').value.trim();
+    const resultsContainer = document.getElementById('hadithSearchResults');
+    const resultsList = document.getElementById('hadithResultsList');
+    const countBadge = document.getElementById('hadithResultCount');
+    
+    if(!query) return;
+    
+    resultsContainer.classList.remove('d-none');
+    resultsList.innerHTML = `<div class="text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">جاري البحث الشامل...</p></div>`;
+    
+    setTimeout(() => {
+        // Broad search: text or book
+        const matches = hadithDatabase.filter(h => h.text.includes(query) || h.book.includes(query) || h.حكم.includes(query));
+        countBadge.innerText = matches.length;
+        
+        if(matches.length === 0) {
+            resultsList.innerHTML = `<div class="alert alert-warning text-center fw-bold"><i class="fas fa-exclamation-circle me-2"></i>عذراً، لم نجد نتائج مطابقة لبحثك في قاعدة البيانات المصغرة. جرب كلمات مفتاحية أخرى كالتقوى، الجنة، الصلاة.</div>`;
+            return;
+        }
+        
+        let out = '';
+        matches.forEach(m => {
+            const highlightedText = m.text.replace(new RegExp(query, 'gi'), match => `<mark class="bg-warning text-dark px-1 rounded">${match}</mark>`);
+            out += `
+                <div class="mb-3 p-3 bg-light rounded-3 border border-light shadow-sm">
+                    <p class="font-amiri fs-4 fw-bold mb-2 text-dark">« ${highlightedText} »</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <span class="badge bg-primary px-3 py-2 fs-6"><i class="fas fa-book me-1"></i> ${m.book}</span>
+                        <span class="badge ${m.حكم.includes('صحيح') ? 'bg-success' : 'bg-warning text-dark'} px-3 py-2 fs-6"><i class="fas fa-check-circle me-1"></i> ${m.حكم}</span>
+                    </div>
+                </div>
+            `;
+        });
+        resultsList.innerHTML = out;
+    }, 400); // 400ms simulate search delay
+}
+</script>
+</body>
+</html>

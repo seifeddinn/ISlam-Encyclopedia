@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة الإسلامية الشاملة - الموسوعة الإسلامية</title>
+
+    <meta name="description"
+        content="الموسوعة الإسلامية الشاملة - المنصة الرقمية الموثوقة لعلوم القرآن والسنة والفقه والسيرة والتاريخ بعقيدة صحيحة.">
+    <meta name="keywords" content="قرآن, حديث, إسلام, فقه, عقيدة, سيرة, تاريخ إسلامي, الموسوعة الإسلامية">
+    <meta name="author" content="ST Islamic Web">
+    <meta property="og:title" content="الموسوعة الإسلامية الشاملة">
+    <meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f9f1d8;
+            --gold-dark: #aa8a2a;
+            --dark: #0b192c;
+            --primary: #92400e;
+            --secondary: #b45309;
+        }
+
+        /* Bronze/Brown Theme for Library */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .ar,
+        .poetry {
+            font-family: 'Amiri', serif;
+        }
+
+        /* MEGA NAVBAR */
+        .navbar {
+            background: linear-gradient(135deg, #0b192c, var(--dark)) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .5);
+            z-index: 1000;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .navbar-brand {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: white !important;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, .8) !important;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold) !important;
+            transform: translateX(-2px);
+        }
+
+        /* MEGA HERO - LIBRARY (BRONZE & GOLD) */
+        .mega-hero {
+            min-height: 70vh;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 120px 0;
+        }
+
+        .hero-glass {
+            background: rgba(11, 25, 44, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 5;
+            text-align: center;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: .1;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+            color: #0b192c;
+            padding: 8px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .mega-hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .mega-hero h1 span {
+            background: linear-gradient(135deg, #fff, var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: #e2e8f0;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Floating Books Animation */
+        .book-float {
+            position: absolute;
+            opacity: 0.1;
+            color: var(--gold);
+            animation: floatUp 20s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.2;
+            }
+
+            90% {
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Search Area */
+        .search-container {
+            position: relative;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .search-container input {
+            border-radius: 30px;
+            padding: 15px 25px;
+            border: none;
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.9);
+            margin-left: 10px;
+            font-size: 1.1rem;
+            font-family: 'Amiri', serif;
+        }
+
+        .search-container input:focus {
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+            background: #fff;
+        }
+
+        .btn-search {
+            border-radius: 30px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border: none;
+            color: #0b192c;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+            color: #000;
+        }
+
+        /* Filter Tabs */
+        .mega-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: -30px auto 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mega-tabs button {
+            background: white;
+            color: var(--dark);
+            border: 1px solid #e2e8f0;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all .3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .mega-tabs button:hover,
+        .mega-tabs button.active {
+            background: var(--gold);
+            color: #0b192c;
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Book Cards */
+        .book-item {
+            margin-bottom: 30px;
+        }
+
+        .book-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            position: relative;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(146, 64, 14, 0.15);
+            border-color: var(--gold);
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(146, 64, 14, 0.1), rgba(212, 175, 55, 0.1));
+            color: var(--primary);
+            transition: all 0.4s;
+            font-size: 2rem;
+        }
+
+        .book-card:hover .icon-wrapper {
+            background: linear-gradient(135deg, var(--primary), var(--gold));
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(146, 64, 14, 0.3);
+        }
+
+        .card-title {
+            font-weight: 800;
+            color: #1e293b;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Amiri', serif;
+            line-height: 1.5;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        /* Category Badges inside cards */
+        .badge-quran {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+
+        .badge-hadith {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #bbdefb;
+        }
+
+        .badge-fiqh {
+            background-color: #fff3e0;
+            color: #ef6c00;
+            border: 1px solid #ffe0b2;
+        }
+
+        .badge-aqeedah {
+            background-color: #fce4ec;
+            color: #c2185b;
+            border: 1px solid #f8bbd0;
+        }
+
+        .badge-seerah {
+            background-color: #fff8e1;
+            color: #f57f17;
+            border: 1px solid #ffecb3;
+        }
+
+        .badge-tazkiyah {
+            background-color: #e0f2f1;
+            color: #00695c;
+            border: 1px solid #b2dfdb;
+        }
+
+        .custom-badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Quick View Button */
+        .quick-view-btn {
+            background: #f8fafc;
+            border: none;
+            color: #475569;
+            border-radius: 15px;
+            padding: 12px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 0 20px 20px;
+            width: calc(100% - 40px);
+        }
+
+        .book-card:hover .quick-view-btn {
+            background: linear-gradient(90deg, var(--primary), var(--gold-dark));
+            color: white;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Modal Mega Design */
+        .modal-content {
+            border-radius: 25px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), #0b192c);
+            color: white;
+            border: none;
+            padding: 25px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .modal-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .modal-header .btn-close {
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+
+        #qvDownloadBtn {
+            border-radius: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border: none;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            color: #0b192c;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #qvDownloadBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+            color: white;
+        }
+
+        /* MEGA FOOTER */
+        .mega-footer {
+            background: linear-gradient(135deg, #0b192c, #020617);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 0;
+            border-top: 3px solid var(--gold-dark);
+        }
+
+        .mega-footer-link {
+            color: rgba(255, 255, 255, .7);
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .mega-footer-link:hover {
+            color: var(--gold);
+            padding-right: 5px;
+        }
+    </style>
+
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+</script>
+</head>
+
+
+<body>
+
+    <!-- MEGA NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
+        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color:var(--gold)!important;" href="library.html">المكتبة الشاملة</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- MEGA HERO LIBRARY -->
+    <section class="mega-hero">
+        <!-- Decorative Books -->
+        <i class="fas fa-book book-float" style="left:10%; font-size:4rem; animation-duration:15s;"></i>
+        <i class="fas fa-scroll book-float"
+            style="left:30%; font-size:3rem; animation-duration:22s; animation-delay:2s"></i>
+        <i class="fas fa-quran book-float"
+            style="right:15%; font-size:5rem; animation-duration:18s; animation-delay:5s"></i>
+        <i class="fas fa-book-open book-float"
+            style="right:40%; font-size:2.5rem; animation-duration:25s; animation-delay:1s"></i>
+
+        <div class="hero-pattern"></div>
+        <div class="container relative z-10">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hero-glass">
+                        <div class="hero-eyebrow"><i class="fas fa-book-reader me-2"></i>اقرأ باسم ربك الذي خلق</div>
+                        <h1>المكتبة <span>الإسلامية</span> الشاملة</h1>
+                        <p class="tagline mt-3">تصفح وحمل آلاف المصادر والمراجع العلمية الموثوقة وبشكل حيّ من الأرشيف العالمي لتُغني الباحث والطالب والمسلم.</p>
+
+                        <div class="search-container">
+                            <input type="text" class="form-control" id="bookSearch"
+                                placeholder="ابحث في آلاف الكتب من الأرشيف العالمي (مثال: الشافعي، البخاري)...">
+                            <button class="btn btn-search" type="button" id="btnSearchSubmit"><i
+                                    class="fas fa-search"></i> بحث في الأرشيف</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="container" style="margin-bottom:100px;">
+        <!-- FILTER TABS -->
+        <div class="mega-tabs">
+            <button class="active" data-filter="all">جميع الكتب</button>
+            <button data-filter="quran">علوم القرآن</button>
+            <button data-filter="hadith">الحديث الشريف</button>
+            <button data-filter="fiqh">الفقه وأصوله</button>
+            <button data-filter="aqeedah">العقيدة والتزكية</button>
+            <button data-filter="seerah">السيرة والتاريخ</button>
+        </div>
+
+        <div class="row g-4" id="bookGrid">
+            <div class="col-12 text-center py-5">
+                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+                <h4 class="mt-3 font-amiri">جاري تحميل رفوف المكتبة من الأرشيف العالمي...</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel"><i
+                            class="fas fa-book-open me-2 text-warning"></i>معاينة التفاصيل</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center mb-4 mb-md-0 border-end border-1">
+                            <div
+                                style="background:linear-gradient(135deg,rgba(146,64,14,0.1),rgba(212,175,55,0.1)); padding:30px; border-radius:50%; display:inline-block; margin-bottom:20px;">
+                                <i id="qvIcon" class="fas fa-book fa-5x" style="color:var(--primary);"></i>
+                            </div>
+                            <h4 id="qvTitle" class="fw-bold mb-3"
+                                style="color:#0b192c; font-family:'Amiri',serif; line-height: 1.6;">اسم الكتاب</h4>
+                            <span class="badge mb-3 custom-badge badge-quran" id="qvCategory">القسم</span>
+                        </div>
+                        <div class="col-md-8 px-md-4">
+                            <h5 id="qvAuthor" class="text-dark mb-4 fw-bold font-amiri fs-4">المؤلف: </h5>
+
+                            <h6 class="fw-bold text-muted border-bottom pb-2"><i
+                                    class="fas fa-info-circle me-2 text-primary"></i> نبذة عن الكتاب:</h6>
+                            <p id="qvDesc" class="text-secondary mb-4 fs-5"
+                                style="line-height:1.8; font-family:'Amiri',serif;"></p>
+
+                            <h6 class="fw-bold text-muted border-bottom pb-2"><i
+                                    class="fas fa-list-ul me-2 text-primary"></i> محتويات (الفهرس):</h6>
+                            <ul class="text-secondary list-unstyled fs-6">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>هذا الكتاب مجلوب من
+                                    الأرشيف العالمي.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>يتوفر الكتاب للتحميل
+                                    بصيغة PDF وأحياناً بصيغ أخرى.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>يمكنك القراءة مباشرة من
+                                    المتصفح عبر موقع الأرشيف.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light border-0">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill fw-bold"
+                        data-bs-dismiss="modal">إغلاق</button>
+                    <a href="#" class="btn px-4" id="qvDownloadBtn" target="_blank"><i
+                            class="fas fa-external-link-alt me-2"></i>صفحة التحميل والتصفح</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEGA FOOTER -->
+    <footer class="mega-footer" style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+  <div class="container">
+    <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+      <div class="col-lg-4 text-md-end text-center">
+        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+          <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+          <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+          <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+          <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+          <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-md-start text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+        <a href="contact.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+        <a href="login.html" class="mega-footer-link text-warning mt-3" style="text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-user-circle me-2 ms-1"></i> تسجيل الدخول</a>
+      </div>
+    </div>
+    <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const grid = document.querySelector('#bookGrid');
+            const searchInput = document.getElementById('bookSearch');
+            const searchBtn = document.getElementById('btnSearchSubmit');
+            let iso;
+
+            // Default query: Focus on Islamic Arabic books, mostly texts.
+            const defaultQuery = 'subject:(islam OR quran OR hadith OR fiqh OR seerah OR aqeedah OR "الفقه" OR "تفسير" OR "حديث" OR "إسلام") AND language:(ara) AND mediatype:(texts)';
+
+            async function fetchArchiveBooks(queryStr, rows = 60) {
+                // Loading State
+                grid.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-primary" style="width:4rem;height:4rem;"></div><h4 class="mt-4 font-amiri fw-bold text-dark">جاري جلب الكتب من الأرشيف العالمي...</h4></div>';
+                if (iso) { iso.destroy(); iso = null; }
+
+                try {
+                    const url = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json`;
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    const docs = data.response.docs;
+
+                    renderBooks(docs);
+                } catch (err) {
+                    grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ أثناء الاتصال بالمكتبة الخارجية. يرجى التأكد من اتصالك بالإنترنت.</h5></div>';
+                }
+            }
+
+            function renderBooks(docs) {
+                if (!docs || docs.length === 0) {
+                    grid.innerHTML = '<div class="col-12 text-center py-5"><i class="fas fa-search-minus fa-3x text-muted mb-3"></i><h5>لم يتم العثور على كتب مطابقة لبحثك في الأرشيف العالمي.</h5></div>';
+                    return;
+                }
+
+                let htmlContent = '';
+                docs.forEach(book => {
+                    const title = book.title || 'بدون عنوان';
+                    const author = book.creator ? (Array.isArray(book.creator) ? book.creator[0] : book.creator) : 'مؤلف غير معروف';
+                    const cat = categorizeBook(book.subject || []);
+                    const id = book.identifier;
+
+                    let badgeClass = "badge-seerah";
+                    if (cat.id === 'quran') badgeClass = "badge-quran";
+                    else if (cat.id === 'hadith') badgeClass = "badge-hadith";
+                    else if (cat.id === 'fiqh') badgeClass = "badge-fiqh";
+                    else if (cat.id === 'aqeedah') badgeClass = "badge-aqeedah";
+                    else if (cat.id === 'tazkiyah') badgeClass = "badge-tazkiyah";
+
+                    htmlContent += `
+            <div class="col-md-4 col-lg-3 book-item" data-category="${cat.filter}" data-original-id="${id}">
+                <div class="card book-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-wrapper"><i class="fas fa-${cat.icon}"></i></div>
+                        <h5 class="card-title" title="${title}">${title}</h5>
+                        <p class="card-text fw-bold mb-2"><i class="fas fa-pen-nib me-1 opacity-50"></i>${author}</p>
+                        <span class="badge custom-badge ${badgeClass} mb-0">${cat.name}</span>
+                        <div class="d-none full-subject">${Array.isArray(book.subject) ? book.subject.join('، ') : (book.subject || 'عام')}</div>
+                    </div>
+                    <button type="button" class="btn quick-view-btn mt-auto" data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                        <i class="fas fa-eye me-2"></i>معاينة وتحميل
+                    </button>
+                </div>
+            </div>`;
+                });
+
+                grid.innerHTML = htmlContent;
+
+                // Re-initialize Isotope layout after DOM updates
+                setTimeout(() => {
+                    iso = new Isotope(grid, {
+                        itemSelector: '.book-item',
+                        layoutMode: 'fitRows',
+                        isOriginLeft: false
+                    });
+                    const activeBtn = document.querySelector('[data-filter].active');
+                    if (activeBtn) {
+                        const val = activeBtn.getAttribute('data-filter');
+                        iso.arrange({ filter: val === 'all' ? '*' : `[data-category="${val}"]` });
+                    }
+                }, 100);
+            }
+
+            function categorizeBook(subjects) {
+                if (!subjects) return { id: 'seerah', filter: 'seerah', name: 'كتب عامة', icon: 'book' };
+                const s = Array.isArray(subjects) ? subjects.join(' ').toLowerCase() : subjects.toLowerCase();
+
+                if (s.includes('quran') || s.includes('قرآن') || s.includes('تفسير') || s.includes('المصحف')) return { id: 'quran', filter: 'quran', name: 'علوم القرآن', icon: 'quran' };
+                if (s.includes('hadith') || s.includes('حديث') || s.includes('bukhari') || s.includes('صحيح') || s.includes('سنة')) return { id: 'hadith', filter: 'hadith', name: 'الحديث الشريف', icon: 'scroll' };
+                if (s.includes('fiqh') || s.includes('فقه') || s.includes('اصول') || s.includes('fatwa') || s.includes('مذهب')) return { id: 'fiqh', filter: 'fiqh', name: 'الفقه وأصوله', icon: 'balance-scale' };
+                if (s.includes('aqeedah') || s.includes('عقيدة') || s.includes('تزكية') || s.includes('تصوف') || s.includes('tazkiyah')) return { id: 'aqeedah', filter: 'aqeedah', name: 'العقيدة والتزكية', icon: 'heart' };
+
+                return { id: 'seerah', filter: 'seerah', name: 'تاريخ إسلامي', icon: 'history' };
+            }
+
+            // Load initial Top 60 books
+            fetchArchiveBooks(defaultQuery, 60);
+
+            // Live Web API Search
+            function doSearch() {
+                const q = searchInput.value.trim();
+                if (q) {
+                    const queryData = `(${defaultQuery}) AND (title:(*${q}*) OR creator:(*${q}*))`;
+                    fetchArchiveBooks(queryData, 80);
+                } else {
+                    fetchArchiveBooks(defaultQuery, 60);
+                }
+            }
+
+            searchBtn.addEventListener('click', doSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') doSearch();
+            });
+
+            // Filtering Tabs logic
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    if (iso) {
+                        const filterValue = btn.getAttribute('data-filter');
+                        iso.arrange({
+                            filter: filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`
+                        });
+                    }
+                });
+            });
+
+            // Dynamic Modal Populating
+            grid.addEventListener('click', function (e) {
+                const btn = e.target.closest('.quick-view-btn');
+                if (!btn) return;
+
+                const card = btn.closest('.book-card');
+                const title = card.querySelector('.card-title').textContent.trim();
+                const author = card.querySelector('.card-text').textContent.trim();
+                const badge = card.querySelector('.badge').textContent.trim();
+                const iconClass = card.querySelector('.icon-wrapper i').className;
+                const badgeClass = card.querySelector('.badge').className.match(/badge-[a-z]+/)[0];
+                const subject = card.querySelector('.full-subject').textContent;
+                const identifier = card.closest('.book-item').getAttribute('data-original-id');
+
+                document.getElementById('qvTitle').textContent = title;
+                document.getElementById('qvAuthor').innerHTML = `<i class="fas fa-user-edit me-2 text-warning"></i>${author}`;
+
+                const catElem = document.getElementById('qvCategory');
+                catElem.textContent = badge;
+                catElem.className = `badge custom-badge mb-3 px-4 py-2 fs-6 ${badgeClass}`;
+
+                document.getElementById('qvIcon').className = iconClass + " fa-5x";
+
+                document.getElementById('qvDesc').innerHTML = `
+            <strong>تصنيف الأرشيف:</strong> <span class="text-muted">${subject}</span>
+            <br><br>
+            هذا الكتاب متاح للقراءة والتحميل المباشر من مكتبة الأرشيف العالمي عبر منصتنا لتوفير عناء البحث. يتميز الأرشيف بتوفير نسخ أصلية للكتب بصيغة PDF وأحياناً Word.
+        `;
+
+                // Link to Archive Details page where the actual PDFs live
+                const downloadUrl = `https://archive.org/details/${identifier}`;
+                const downloadBtn = document.getElementById('qvDownloadBtn');
+                downloadBtn.setAttribute('href', downloadUrl);
+                downloadBtn.setAttribute('target', '_blank');
+                downloadBtn.innerHTML = `<i class="fas fa-external-link-alt me-2"></i>عرض صفحة التحميل بالمكتبة`;
+            });
+        });
+    </script>
+</body>
+
+</html>
