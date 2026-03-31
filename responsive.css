@@ -1,0 +1,752 @@
+/* =========================================================
+   RESPONSIVE.CSS — الموسوعة الإسلامية الشاملة
+   ملف مركزي لضمان التجاوب الكامل مع جميع الأجهزة
+   هواتف | أجهزة لوحية | حاسوب مكتبي
+   ========================================================= */
+
+/* -------------------------------------------------------
+   1. RESETS & GLOBAL OVERFLOW FIX
+   ------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    scroll-behavior: smooth;
+}
+
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    max-width: 100%;
+}
+
+/* -------------------------------------------------------
+   2. NAVBAR — RESPONSIVE FIXES
+   ------------------------------------------------------- */
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* أيقونة gavel الزائدة في رابط الفتاوى — إخفاؤها CSS */
+.nav-link .fa-gavel {
+    display: none;
+}
+
+/* Hamburger toggler style */
+.navbar-toggler {
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    padding: 6px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(212,175,55,0.4) !important;
+}
+
+/* -------------------------------------------------------
+   3. HERO SECTIONS — ALL PAGES
+   ------------------------------------------------------- */
+.mega-hero, .rec-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-glass {
+    width: 100%;
+}
+
+/* Orbs — hidden properly */
+.orb, .s-orb, [class*="-orb"] {
+    pointer-events: none;
+}
+
+/* -------------------------------------------------------
+   4. TABS NAVIGATION
+   ------------------------------------------------------- */
+.main-tabs-wrapper {
+    overflow: hidden;
+}
+
+.main-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #f1f5f9;
+    gap: 8px;
+    padding-bottom: 4px;
+}
+
+.main-tabs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.main-tabs::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+/* -------------------------------------------------------
+   5. CARDS — GLOBAL
+   ------------------------------------------------------- */
+.mega-card, .mega-cat-card, .scholar-quote, .daily-widget, .prayer-widget, .reciter-item {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------
+   6. BUTTONS — GLOBAL
+   ------------------------------------------------------- */
+.btn-group {
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* -------------------------------------------------------
+   7. MIND MAP — FIX ON ALL SCREENS
+   ------------------------------------------------------- */
+.mind-map {
+    overflow-x: auto;
+}
+
+.mind-branches {
+    flex-wrap: wrap;
+}
+
+.mind-node {
+    min-width: 180px;
+    max-width: 260px;
+}
+
+/* -------------------------------------------------------
+   8. TABLES — ALWAYS SCROLLABLE
+   ------------------------------------------------------- */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    min-width: 500px; /* prevent table from squishing */
+}
+
+/* Exception: small tables don't need min-width */
+.table-sm {
+    min-width: unset;
+}
+
+/* -------------------------------------------------------
+   9. POETRY BOXES
+   ------------------------------------------------------- */
+.poetry-shatr {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.poetry-gap {
+    display: none;
+}
+
+/* -------------------------------------------------------
+   10. STATS BAR
+   ------------------------------------------------------- */
+.stats-mega .stat-box {
+    position: relative;
+}
+
+
+/* =========================================================
+   TABLET (max-width: 991px)
+   ========================================================= */
+@media (max-width: 991px) {
+
+    /* Stats bar */
+    .stats-mega .stat-box {
+        border-left: none !important;
+        border-bottom: 1px solid rgba(212,175,55,0.2);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    .stats-mega .stat-box:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    /* Section heads */
+    .sec-head h3 {
+        font-size: 2.2rem !important;
+    }
+
+    /* Hero h1 */
+    .mega-hero h1, .rec-hero h1, .mega-hero h1, section h1 {
+        font-size: 3rem !important;
+    }
+
+    /* Footer */
+    .mega-footer .col-lg-4 {
+        text-align: center !important;
+    }
+
+    /* Tabs */
+    .main-tabs .nav-link {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+
+    /* Mind map branches */
+    .mind-branches {
+        justify-content: center;
+    }
+
+    /* Cat grid */
+    .cat-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE (max-width: 768px) — MAIN BREAKPOINT
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* --- HTML/BODY --- */
+    html, body {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    /* --- TYPOGRAPHY SCALE --- */
+    h1, .mega-hero h1, .rec-hero h1, div[class*="hero"] h1, section[class*="hero"] h1 {
+        font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+        line-height: 1.4 !important;
+        word-break: break-word;
+    }
+    h2, section h2 {
+        font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
+        line-height: 1.4 !important;
+    }
+    h3, .sec-head h3, section h3 {
+        font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+    }
+
+    /* --- SECTION PADDING NORMALIZATION --- */
+    section,
+    div[class*="hero"],
+    .mega-hero,
+    .rec-hero,
+    header {
+        padding-top: min(50px, 10vw) !important;
+        padding-bottom: min(50px, 10vw) !important;
+        min-height: auto !important;
+    }
+
+    /* Specific hero fix */
+    .mega-hero, .rec-hero {
+        padding: 60px 15px 50px !important;
+    }
+
+    /* Hero glass card */
+    .hero-glass {
+        padding: 25px 18px !important;
+        border-radius: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Hero eyebrow pill */
+    .hero-eyebrow {
+        font-size: 0.85rem !important;
+        padding: 6px 18px !important;
+        word-break: break-word;
+        white-space: normal !important;
+    }
+
+    /* Hero tagline */
+    .tagline {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+    }
+
+    /* --- DECORATIVE ORBS (HIDE) --- */
+    .orb, .s-orb, [class*="-orb"], .hero-pattern {
+        display: none !important;
+    }
+
+    /* --- CONTAINER & GRID SYSTEM --- */
+    .container,
+    .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Every col becomes full-width on mobile */
+    [class*="col-"] {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    /* Force 1-column grids */
+    .cat-grid,
+    .names-grid,
+    div[style*="grid-template-columns"],
+    div[class*="grid-"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        margin-top: 0 !important;
+    }
+
+    /* Names grid exception: 2 columns min on mobile */
+    .names-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    /* --- STATS BAR --- */
+    .stat-num {
+        font-size: 2.2rem !important;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar-brand {
+        font-size: 1.3rem !important;
+        max-width: 70%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .navbar-collapse {
+        background: rgba(11,25,44,0.97) !important;
+        backdrop-filter: blur(15px) !important;
+        padding: 15px 10px !important;
+        border-radius: 12px !important;
+        margin-top: 8px !important;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.5) !important;
+        border: 1px solid rgba(212,175,55,0.15) !important;
+    }
+
+    .nav-link {
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        padding: 12px 8px !important;
+        font-size: 1rem !important;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none !important;
+    }
+
+    /* --- TABS --- */
+    .main-tabs-wrapper {
+        margin: 15px 0 25px !important;
+        padding: 10px 8px !important;
+        top: 56px !important;
+        border-radius: 12px !important;
+        position: relative !important; /* disable sticky on mobile to avoid layout issues */
+    }
+
+    .main-tabs {
+        gap: 6px !important;
+    }
+
+    .main-tabs .nav-link {
+        font-size: 0.82rem !important;
+        padding: 9px 12px !important;
+        border-radius: 8px !important;
+        text-align: center;
+    }
+
+    .main-tabs .nav-link i {
+        font-size: 1.1rem !important;
+    }
+
+    /* --- CARDS --- */
+    .mega-card,
+    .mega-cat-card,
+    .scholar-quote,
+    .daily-widget,
+    .reciter-item {
+        padding: 18px 14px !important;
+        border-radius: 14px !important;
+        margin-bottom: 15px;
+    }
+
+    /* Card with flex content (like fiqh madhabs cards) */
+    .mega-card.d-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .mega-card.d-flex > div:first-child {
+        margin-bottom: 15px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Prayer widget stacked below daily widgets */
+    .prayer-widget {
+        padding: 20px 15px !important;
+        border-radius: 14px !important;
+    }
+
+    /* --- BELIEF BOXES (Aqeedah) --- */
+    .belief-box {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+        border-right-width: 3px !important;
+        border-left: none !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* --- MIND MAP (Aqeedah tawheed) --- */
+    .mind-map {
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .mind-root {
+        font-size: 1.2rem !important;
+        padding: 12px 20px !important;
+    }
+
+    .mind-branches {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        padding-top: 20px !important;
+    }
+
+    .mind-branches::before,
+    .mind-branches::after,
+    .mind-branch::before {
+        display: none !important;
+    }
+
+    .mind-branch {
+        width: 100% !important;
+        padding-top: 0 !important;
+    }
+
+    .mind-node {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: unset !important;
+        padding: 15px !important;
+    }
+
+    /* --- BUTTONS --- */
+    .btn-group {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        justify-content: center !important;
+    }
+
+    .btn-group .btn {
+        flex: 1 !important;
+        min-width: 120px !important;
+    }
+
+    /* Footer buttons in nav */
+    .mega-footer .btn {
+        padding: 6px 12px !important;
+    }
+
+    /* Filter button groups (recitations page) */
+    #megaFilters {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        width: 100%;
+    }
+
+    #megaFilters .btn {
+        flex: 1 1 auto !important;
+        min-width: 100px !important;
+        font-size: 0.85rem !important;
+        padding: 8px 10px !important;
+    }
+
+    /* CTA Buttons */
+    .btn-lg {
+        padding: 10px 20px !important;
+        font-size: 1rem !important;
+    }
+
+    /* Log Wird Buttons */
+    #btnLogWird, #btnResetWird {
+        display: inline-flex !important;
+        width: auto !important;
+    }
+
+    /* --- WIRD TRACKER (Recitations daily card) --- */
+    .d-flex.align-items-center.gap-4 {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+
+    .d-flex.align-items-center.gap-4 .flex-grow-1 {
+        width: 100% !important;
+    }
+
+    /* --- FORMS --- */
+    form {
+        padding: 0 !important;
+    }
+
+    input, textarea, select {
+        width: 100% !important;
+        font-size: 16px !important; /* prevent iOS zoom */
+    }
+
+    /* --- TABLES --- */
+    table {
+        min-width: unset !important; /* allow tables to shrink in table-responsive */
+    }
+
+    .table-responsive {
+        margin-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table th, .table td {
+        font-size: 0.85rem !important;
+        padding: 8px 6px !important;
+        white-space: nowrap;
+    }
+
+    /* --- POETRY (recitations) --- */
+    .poetry-box {
+        padding: 30px 15px !important;
+    }
+
+    .poetry-line {
+        font-size: 1.4rem !important;
+        line-height: 2.2 !important;
+    }
+
+    /* --- SECTION HEADS --- */
+    .sec-head {
+        margin-bottom: 30px !important;
+    }
+
+    .sec-head .tag {
+        font-size: 0.9rem !important;
+        padding: 6px 16px !important;
+    }
+
+    .sec-head p {
+        font-size: 1rem !important;
+    }
+
+    /* --- SCHOLARS BAR --- */
+    .scholars-bar {
+        padding: 50px 15px !important;
+    }
+
+    .s-text {
+        font-size: 1.1rem !important;
+        line-height: 1.9 !important;
+    }
+
+    /* --- FOOTER --- */
+    .mega-footer {
+        padding: 50px 15px 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .mega-footer .row.g-5 {
+        gap: 30px !important;
+    }
+
+    .mega-footer .col-lg-4 {
+        text-align: center !important;
+    }
+
+    .mega-footer-link {
+        display: inline-block !important;
+        margin: 0 8px 10px !important;
+    }
+
+    /* --- LIBRARY PAGE --- */
+    .books-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- FIQH PAGE --- */
+    .fiqh-level-card {
+        border-radius: 12px !important;
+        padding: 18px !important;
+    }
+
+    /* --- FATWA PAGE --- */
+    .fatwa-box {
+        padding: 18px !important;
+        margin: 12px 0 !important;
+    }
+
+    /* --- RECITATIONS PLAYER --- */
+    .player-container {
+        padding: 15px !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+
+    /* Search box (recitations) */
+    .bg-white.p-4.rounded-4 > div {
+        width: 100% !important;
+    }
+
+    /* --- NULLIFIERS LIST (aqeedah) --- */
+    .d-flex.p-4.rounded-4 {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .d-flex.p-4.rounded-4 > div:first-child {
+        position: static !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* Absolute numbered labels */
+    .fs-2.fw-bold.text-danger.opacity-25.position-absolute {
+        position: static !important;
+        display: inline-block !important;
+        opacity: 0.3 !important;
+        margin-bottom: 8px !important;
+        font-size: 1.5rem !important;
+    }
+
+    /* --- HISTORY BATTLES --- */
+    .battle-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 20px 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .battle-sword {
+        font-size: 5rem !important;
+    }
+
+    /* --- CONTACT BUTTONS (share page) --- */
+    .contact-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+        display: inline-flex !important;
+    }
+
+    /* --- UTILITY CLASSES FIX --- */
+    .d-flex.justify-content-center {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    /* Spacing patches */
+    .mb-lg-0 { margin-bottom: 15px !important; }
+    .pb-5 { padding-bottom: 2rem !important; }
+
+    /* Flex row to column on mobile */
+    .flex-md-row {
+        flex-direction: column !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES (max-width: 400px)
+   ========================================================= */
+@media (max-width: 400px) {
+    .mega-hero h1, .rec-hero h1 {
+        font-size: 1.7rem !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem !important;
+    }
+
+    .sec-head h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.78rem !important;
+    }
+
+    .tagline {
+        font-size: 0.92rem !important;
+    }
+
+    .main-tabs .nav-link {
+        font-size: 0.75rem !important;
+        padding: 7px 9px !important;
+    }
+
+    .mega-card {
+        padding: 14px 12px !important;
+    }
+
+    .stat-num {
+        font-size: 2rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.9rem !important;
+    }
+
+    /* Name cards in aqeedah — min 2 per row */
+    .names-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .name-card {
+        font-size: 1.1rem !important;
+        padding: 10px 4px !important;
+    }
+}
+
+
+/* =========================================================
+   PRINT MEDIA — BASIC CLEANUP
+   ========================================================= */
+@media print {
+    .navbar, .mega-footer, .main-tabs-wrapper, .orb, .s-orb,
+    .hero-pattern, .prayer-widget, .btn, .navbar-toggler {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    .mega-hero, .rec-hero {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 20px 0 !important;
+        min-height: auto !important;
+    }
+}
