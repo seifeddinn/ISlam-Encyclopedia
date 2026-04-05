@@ -640,22 +640,35 @@
             // Default query: Focus on Islamic Arabic books, mostly texts.
             const defaultQuery = 'subject:(islam OR quran OR hadith OR fiqh OR seerah OR aqeedah OR "الفقه" OR "تفسير" OR "حديث" OR "إسلام") AND language:(ara) AND mediatype:(texts)';
 
-            async function fetchArchiveBooks(queryStr, rows = 60) {
+            function fetchArchiveBooks(queryStr, rows = 60) {
                 // Loading State
                 grid.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-primary" style="width:4rem;height:4rem;"></div><h4 class="mt-4 font-amiri fw-bold text-dark">جاري جلب الكتب من الأرشيف العالمي...</h4></div>';
                 if (iso) { iso.destroy(); iso = null; }
 
-                try {
-                    const targetUrl = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json`;
-                    const url = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`;
-                    const res = await fetch(url);
-                    const data = await res.json();
-                    const docs = data.response.docs;
+                const cbName = 'archive_cb_' + Date.now() + Math.floor(Math.random() * 1000);
+                
+                window[cbName] = function(data) {
+                    if (data && data.response && data.response.docs) {
+                        renderBooks(data.response.docs);
+                    } else {
+                        grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ متوقع في صيغة البيانات المجلوبة.</h5></div>';
+                    }
+                    delete window[cbName];
+                    const scriptTag = document.getElementById(cbName);
+                    if (scriptTag) scriptTag.remove();
+                };
 
-                    renderBooks(docs);
-                } catch (err) {
-                    grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ أثناء الاتصال بالمكتبة الخارجية. يرجى التأكد من اتصالك بالإنترنت.</h5></div>';
-                }
+                const script = document.createElement('script');
+                script.id = cbName;
+                script.src = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json&callback=${cbName}`;
+                
+                script.onerror = function() {
+                    grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ وعجز المتصفح عن جلب البيانات. تأكد من الإنترنت أو قد تم حظر الطلب.</h5></div>';
+                    delete window[cbName];
+                    script.remove();
+                };
+                
+                document.body.appendChild(script);
             }
 
             function renderBooks(docs) {
