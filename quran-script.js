@@ -1,23 +1,17 @@
         // Use an IIFE or normal script without wrapping in a function to ensure immediate execution when parsed,
         // or ensure the initialization is called properly.
-        console.log("Quran Page Script Parsed");
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log("DOMContentLoaded Fired");
-            const container = document.getElementById('surah-list');
-            console.log("Container:", container);
-            if (!container) return;
+document.addEventListener('DOMContentLoaded', function () {
+const container = document.getElementById('surah-list');
+if (!container) return;
 
             // Give a tiny timeout to ensure surahs.js has attached window.surahs
             setTimeout(() => {
-                console.log("Timeout triggered. window.surahs:", typeof window.surahs);
-                if (typeof window.surahs === 'undefined') {
+if (typeof window.surahs === 'undefined') {
                     console.error("surahs is undefined!");
                     container.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-2x mb-3"></i><p>فشل في تحميل السور. يرجى التأكد من اتصالك أو تحديث الصفحة.</p></div>';
                     return;
                 }
-
-                console.log("Initializing State");
-                // Global State for Quran logic
+// Global State for Quran logic
                 window.quranState = {
                     currentFilter: 'all',
                     searchQuery: '',
@@ -92,8 +86,7 @@
                     container.innerHTML = surahsHTML;
 
                     // Attach Events to new buttons
-                    console.log("Attaching Events");
-                    attachSurahEvents();
+attachSurahEvents();
 
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
@@ -106,13 +99,10 @@
 
                     document.querySelectorAll('#surah-list .surah-item').forEach(el => observer.observe(el));
                 }
-
-                console.log("Calling renderSurahs");
-                // Initial Render
+// Initial Render
                 try {
                     renderSurahs();
-                    console.log("renderSurahs finished successfully");
-                } catch (e) {
+} catch (e) {
                     console.error("Error in renderSurahs:", e);
                 }
 
@@ -148,8 +138,7 @@
                     audioPlayerContainer.style.transform = 'translateY(0)';
                     
                     mainAudio.play().catch(e => {
-                         console.log("Audio play blocked, waiting for interaction");
-                    });
+});
                 }
 
                 if (closePlayerBtn) {

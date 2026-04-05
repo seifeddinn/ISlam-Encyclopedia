@@ -2,6 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>أكاديمية الموسوعة للقرآن والتلاوات - النسخة الكبرى</title>
 
@@ -25,8 +29,8 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 /* NAVBAR */
 .navbar {background:linear-gradient(135deg,#0b192c,#0f766e)!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
 .navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
-.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;}
-.nav-link:hover, .nav-link.active{color:var(--gold)!important;}
+.navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;}
+.navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;}
 
 /* MEGA HERO */
 .rec-hero{min-height:700px;background:radial-gradient(circle at 50% 50%, #0f766e 0%, #0b192c 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
@@ -34,7 +38,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 .hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.1;mix-blend-mode:overlay;}
 .hero-eyebrow{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#0b192c;padding:8px 30px;border-radius:50px;font-weight:bold;font-size:1rem;margin-bottom:25px;box-shadow:0 4px 15px rgba(212,175,55,0.4);}
 .hero h1{font-size:5rem;font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.8);line-height:1.2;margin-bottom:20px;}
-.hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .tagline{color:#e2e8f0;font-size:1.3rem;line-height:2.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);}
 
 /* ANIMATED ORBS */
@@ -51,13 +55,13 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 .stat-label{font-size:1.1rem;font-weight:bold;letter-spacing:1px;color:#cbd5e1;}
 
 /* TABS NAVIGATION */
-.main-tabs-wrapper{background:white;padding:20px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.05);margin:40px auto 60px;position:sticky;top:80px;z-index:900;border:1px solid #e2e8f0;}
-.main-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;border-bottom:none;}
+
+
 .main-tabs::-webkit-scrollbar{height:6px;}
 .main-tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
-.main-tabs .nav-link{border:1px solid #e2e8f0;border-radius:12px;color:#475569;font-weight:bold;padding:15px 25px;font-size:1rem;white-space:nowrap;transition:all .3s;}
-.main-tabs .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
-.main-tabs .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--cyan));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(15,118,110,0.3);}
+
+.main-tabs .navbar .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
+.main-tabs .navbar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--cyan));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(15,118,110,0.3);}
 
 /* SECTION HEADERS */
 .sec-head{text-align:center;margin-bottom:60px;position:relative;}
@@ -84,15 +88,23 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 .reciter-item { background:white; border:1px solid #e2e8f0; border-radius:15px; padding:20px; text-align:center; transition:0.3s; cursor:pointer; }
 .reciter-item:hover { background:var(--emerald); color:white!important; transform:translateY(-5px); box-shadow:0 15px 30px rgba(6,78,59,0.2); border-color:var(--emerald); }
 .reciter-item:hover h5, .reciter-item:hover i { color:white!important; }
+
+.maqam-examples { border-top: 1px solid #e2e8f0; padding-top: 12px; }
+.maqam-example-btn {
+  display: block; width: 100%; text-align: right; direction: rtl;
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 8px 12px; margin-bottom: 6px; font-size: 0.85rem; cursor: pointer;
+  transition: all 0.2s; color: #374151;
+}
+.maqam-example-btn:hover { background: #ecfdf5; border-color: #6ee7b7; transform: translateX(-3px); }
+.maqam-example-btn:last-child { margin-bottom: 0; }
 </style>
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
 </script>
 
 
@@ -155,13 +167,13 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
 <div class="container">
   <div class="main-tabs-wrapper">
-    <ul class="nav nav-pills main-tabs justify-content-between" id="megaTabs" role="tablist">
+    <ul class="nav nav-pills main-tabs"  id="megaTabs" role="tablist">
       <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-quran"><i class="fas fa-quran fs-4 d-block mb-1"></i>المصحف الشريف</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-tajweed"><i class="fas fa-microphone-alt fs-4 d-block mb-1"></i>موسوعة التجويد</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-audio"><i class="fas fa-headphones fs-4 d-block mb-1"></i>المكتبة الصوتية</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-maqam"><i class="fas fa-music fs-4 d-block mb-1"></i>المقامات الصوتية</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-qiraat"><i class="fas fa-tree fs-4 d-block mb-1"></i>القراءات العشر والأصول</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-legends"><i class="fas fa-crown fs-4 d-block mb-1"></i>مدارس وأساطير التلاوة</button></li>
+      
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-quran-search"><i class="fas fa-search fs-4 d-block mb-1"></i>الباحث القرآني</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ijazah"><i class="fas fa-scroll fs-4 d-block mb-1"></i>الإجازة والمتون</button></li>
     </ul>
@@ -447,11 +459,39 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
       <div class="sec-head">
         <span class="tag">جماليات التصوير القرآني للصوت</span>
         <h3>المقامات <span>الصوتية</span> الثمانية</h3>
-        <p>التوظيف الفني البديع للنغمات في تلاوة القرآن لتصوير المعاني، مجموعة في كلمتي (صنع بسحرك). لكل مقام طابع، ولكل سورة مقام يناسبها.</p>
+        <p>التوظيف الفني البديع للنغمات في تلاوة القرآن لتصوير المعاني، مجموعة في كلمتي (صنع بسحرك). اضغط ▶️ لسماع نموذج من كبار القراء.</p>
         <div class="divider"></div>
       </div>
       
-      <div class="row g-4">
+      <!-- Maqam audio player mini -->
+      <div id="maqamPlayer" class="d-none mb-5 p-4 rounded-4" style="background:linear-gradient(135deg,#0b192c,#0f3460);color:white;box-shadow:0 20px 50px rgba(0,0,0,0.3);">
+        <div class="d-flex align-items-center gap-4 flex-wrap">
+          <div id="maqamPlayerIcon" style="width:60px;height:60px;border-radius:50%;background:rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-music text-warning fs-3"></i>
+          </div>
+          <div class="flex-grow-1">
+            <h6 id="maqamPlayerTitle" class="fw-bold font-amiri mb-1" style="font-size:1.2rem;"></h6>
+            <p id="maqamPlayerDesc" class="small mb-2" style="opacity:0.75;"></p>
+            <audio id="maqamAudio" controls class="w-100" style="border-radius:10px;height:36px;">
+              المتصفح لا يدعم الصوت
+            </audio>
+          </div>
+          <button onclick="closeMaqamPlayer()" class="btn btn-sm btn-outline-light rounded-pill">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Maqam quick filter -->
+      <div class="d-flex gap-2 flex-wrap mb-4">
+        <button class="btn btn-sm btn-success rounded-pill active" onclick="filterMaqam('all', this)">الكل</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="filterMaqam('sad', this)">🔵 الحزن والخشوع</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="filterMaqam('joy', this)">🟡 البهجة والفرح</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="filterMaqam('power', this)">🔴 القوة والجلال</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="filterMaqam('calm', this)">🟢 الهدوء والتأمل</button>
+      </div>
+      
+      <div class="row g-4" id="maqamGrid">
         <!-- Bayati -->
         <div class="col-lg-3 col-md-6">
           <div class="mega-card" style="border-top:5px solid #0f766e;">
@@ -536,173 +576,923 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
           </div>
         </div>
 
-        <!-- Kurd -->
-        <div class="col-lg-3 col-md-6">
-          <div class="mega-card" style="border-top:5px solid #8b5cf6;">
+        <!-- ======= MAQAM CARDS (with examples) ======= -->
+
+        <!-- 1. Saba -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="sad">
+          <div class="mega-card h-100" style="border-top:5px solid #0f766e;">
             <div class="d-flex align-items-center mb-3">
-              <div class="bg-light p-3 rounded-circle me-3"><i class="fas fa-play" style="color:#8b5cf6;"></i></div>
-              <h4 class="fw-bold m-0">الكُرد</h4>
+              <div style="background:rgba(15,118,110,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-water text-cyan fs-5"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">الصَّبَا</h4>
+                <small class="text-muted">مقام الحزن العميق</small>
+              </div>
             </div>
-            <p class="text-muted small mb-3">مقام خالٍ من الربع تون (سهل على غير العرب)، جميل ومبسط ويلامس القلب بشدة وتتلو به المدارس الحديثة كثيراً.</p>
-            <div class="bg-light px-3 py-2 rounded-3 small"><strong>سورة مقترحة:</strong> الملك، طه</div>
+            <p class="text-muted small mb-3">مقام العاطفة والحزن الشديد والروحانية العميقة. يُستعمل لاستدرار الدموع وتصوير القهر والوعيد.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> القيامة، الحاقة</div>
+            <!-- Examples -->
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('عبد الباسط عبد الصمد — سورة القيامة (صبا)','https://server6.mp3quran.net/basit/075.mp3','مقام الصبا — تصوير الحزن والخشية')">
+                <i class="fas fa-play-circle text-success me-2"></i>عبد الباسط — القيامة
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('محمود خليل الحصري — سورة الحاقة (صبا)','https://server8.mp3quran.net/husary/069.mp3','مقام الصبا — الرصانة والوعيد')">
+                <i class="fas fa-play-circle text-success me-2"></i>الحصري — الحاقة
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('محمد صديق المنشاوي — سورة الشعراء (صبا)','https://server8.mp3quran.net/minsh/026.mp3','مقام الصبا — العاطفة والروحانية')">
+                <i class="fas fa-play-circle text-success me-2"></i>المنشاوي — الشعراء
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- 2. Nahawand -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="calm">
+          <div class="mega-card h-100" style="border-top:5px solid #4f46e5;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(79,70,229,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-heart text-primary fs-5"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">النَّهَاوَند</h4>
+                <small class="text-muted">مقام الرقة والحنان</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">مقام الحنان والعاطفة والرقة المتناهية. مناسب لآيات الرحمة وقصص الأنبياء والتفكر في خلق الله.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> مريم، يوسف</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('مشاري راشد العفاسي — سورة مريم (نهاوند)','https://server8.mp3quran.net/afs/019.mp3','مقام النهاوند — الحنان والرقة')">
+                <i class="fas fa-play-circle text-primary me-2"></i>العفاسي — مريم
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('سعد الغامدي — سورة يوسف (نهاوند)','https://server7.mp3quran.net/s_gmd/012.mp3','مقام النهاوند — قصص الأنبياء')">
+                <i class="fas fa-play-circle text-primary me-2"></i>الغامدي — يوسف
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('عمر القزابري — سورة طه (نهاوند)','https://server8.mp3quran.net/basit/020.mp3','مقام النهاوند — التأمل والخشوع')">
+                <i class="fas fa-play-circle text-primary me-2"></i>عبد الباسط — طه
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Ajam -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="power">
+          <div class="mega-card h-100" style="border-top:5px solid #eab308;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(234,179,8,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-crown text-warning fs-5"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">العَجَم</h4>
+                <small class="text-muted">مقام الفخامة والانتصار</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">مقام التعظيم الملوكي والانتصار والقوة والوضوح. لا حزن فيه بل حزم، يُناسب آيات الأحكام والنصر.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> الفتح، الصف</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('محمود خليل الحصري — سورة الفتح (عجم)','https://server8.mp3quran.net/husary/048.mp3','مقام العجم — القوة والانتصار')">
+                <i class="fas fa-play-circle text-warning me-2"></i>الحصري — الفتح
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('أنور الشحات — سورة الصف','https://server8.mp3quran.net/afs/061.mp3','مقام العجم — الجهاد والنصر')">
+                <i class="fas fa-play-circle text-warning me-2"></i>العفاسي — الصف
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('علي عبدالله جابر — سورة الإنسان (عجم)','https://server8.mp3quran.net/afs/076.mp3','مقام العجم — الجنة والأحكام')">
+                <i class="fas fa-play-circle text-warning me-2"></i>العفاسي — الإنسان
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Bayati -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="calm">
+          <div class="mega-card h-100" style="border-top:5px solid #10b981;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(16,185,129,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-star text-success fs-5"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">البَيَاتِي</h4>
+                <small class="text-muted">أم المقامات</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">أم المقامات وأوسعها وأطوعها. مقام الخشوع والتأمل وفيه سعة هائلة، المقام الافتتاحي لأغلب القراء.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> القصص، الأنعام</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('عبد الباسط عبد الصمد — سورة البقرة (بياتي)','https://server6.mp3quran.net/basit/002.mp3','مقام البياتي — الافتتاح والخشوع')">
+                <i class="fas fa-play-circle text-success me-2"></i>عبد الباسط — البقرة
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('محمد صديق المنشاوي — سورة الأنعام (بياتي)','https://server8.mp3quran.net/minsh/006.mp3','مقام البياتي — التأمل في الخلق')">
+                <i class="fas fa-play-circle text-success me-2"></i>المنشاوي — الأنعام
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('عبد الرحمن السديس — سورة القصص (بياتي)','https://server11.mp3quran.net/sds/028.mp3','مقام البياتي — قصص الأنبياء')">
+                <i class="fas fa-play-circle text-success me-2"></i>السديس — القصص
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Sikah -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="joy">
+          <div class="mega-card h-100" style="border-top:5px solid #f59e0b;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(245,158,11,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-sun text-warning fs-5"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">السِّيكَا</h4>
+                <small class="text-muted">مقام البشارة</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">مقام بطيء ذو طابع شرقي عميق يُصوّر معاني النصر والبشائر. يبعث على السرور والبهجة الهادئة والتأمل.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> الضحى، الشرح</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('مشاري العفاسي — سورة الضحى (سيكا)','https://server8.mp3quran.net/afs/093.mp3','مقام السيكا — البشارة والأمل')">
+                <i class="fas fa-play-circle text-warning me-2"></i>العفاسي — الضحى
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('عبد الباسط — سورة الانشراح (سيكا)','https://server6.mp3quran.net/basit/094.mp3','مقام السيكا — السرور الهادئ')">
+                <i class="fas fa-play-circle text-warning me-2"></i>عبد الباسط — الشرح
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('منصور السالمي — سورة النبأ','https://server8.mp3quran.net/afs/078.mp3','مقام السيكا — البهجة والبيان')">
+                <i class="fas fa-play-circle text-warning me-2"></i>العفاسي — النبأ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Hijaz -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="sad">
+          <div class="mega-card h-100" style="border-top:5px solid #ef4444;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(239,68,68,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-mosque text-danger fs-5"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">الحِجَاز</h4>
+                <small class="text-muted">مقام الشوق والجلال</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">مقام أرضي عتيق يُنسب لمكة والمدينة، له نبرة حزينة ممزوجة بالشوق العارم والعظمة والجلال.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> إبراهيم، محمد</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('عبد الرحمن السديس — سورة إبراهيم (حجاز)','https://server11.mp3quran.net/sds/014.mp3','مقام الحجاز — العظمة والجلال')">
+                <i class="fas fa-play-circle text-danger me-2"></i>السديس — إبراهيم
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('ماهر المعيقلي — سورة محمد','https://server12.mp3quran.net/maher/047.mp3','مقام الحجاز — الشوق للمدينة')">
+                <i class="fas fa-play-circle text-danger me-2"></i>المعيقلي — محمد
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('محمد المحيسني — سورة الواقعة (حجاز)','https://server8.mp3quran.net/afs/056.mp3','مقام الحجاز — الخشية والتضرع')">
+                <i class="fas fa-play-circle text-danger me-2"></i>العفاسي — الواقعة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Rast -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="power">
+          <div class="mega-card h-100" style="border-top:5px solid #b45309;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(180,83,9,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-book-quran" style="color:#b45309;font-size:1.2rem;"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">الرَّسْت</h4>
+                <small class="text-muted">أبو المقامات المشرقية</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">مقام الاستقامة والفخامة (أبو المقامات). يناسب آيات الجنة والأحكام والتشريع والطمأنينة.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> البقرة، الرحمن</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('عبد الباسط عبد الصمد — سورة الرحمن (رست)','https://server6.mp3quran.net/basit/055.mp3','مقام الرست — الفخامة والاتزان')">
+                <i class="fas fa-play-circle me-2" style="color:#b45309;"></i>عبد الباسط — الرحمن
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('محمد صديق المنشاوي — سورة التوبة (رست)','https://server8.mp3quran.net/minsh/009.mp3','مقام الرست — الأحكام والتشريع')">
+                <i class="fas fa-play-circle me-2" style="color:#b45309;"></i>المنشاوي — التوبة
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('سعد الغامدي — سورة البقرة (رست)','https://server7.mp3quran.net/s_gmd/002.mp3','مقام الرست — الطمأنينة والفخامة')">
+                <i class="fas fa-play-circle me-2" style="color:#b45309;"></i>الغامدي — البقرة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Kurd -->
+        <div class="col-lg-3 col-md-6 maqam-card" data-mood="joy">
+          <div class="mega-card h-100" style="border-top:5px solid #8b5cf6;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="background:rgba(139,92,246,0.12);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <i class="fas fa-feather-alt" style="color:#8b5cf6;font-size:1.2rem;"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold m-0">الكُرد</h4>
+                <small class="text-muted">مقام البساطة الجميلة</small>
+              </div>
+            </div>
+            <p class="text-muted small mb-3">مقام خالٍ من الربع تون (سهل على غير العرب)، جميل ومبسط ويلامس القلب بشدة وتتلو به المدارس الحديثة.</p>
+            <div class="bg-light px-3 py-2 rounded-3 small mb-3"><strong>سورة مقترحة:</strong> الملك، طه</div>
+            <div class="maqam-examples">
+              <div class="small fw-bold text-success mb-2"><i class="fas fa-headphones me-1"></i>أمثلة من كبار القراء:</div>
+              <button class="maqam-example-btn" onclick="playMaqam('ماهر المعيقلي — سورة الملك (كرد)','https://server12.mp3quran.net/maher/067.mp3','مقام الكرد — اللمسة الحديثة')">
+                <i class="fas fa-play-circle me-2" style="color:#8b5cf6;"></i>المعيقلي — الملك
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('مشاري العفاسي — سورة طه (كرد)','https://server8.mp3quran.net/afs/020.mp3','مقام الكرد — البساطة والعمق')">
+                <i class="fas fa-play-circle me-2" style="color:#8b5cf6;"></i>العفاسي — طه
+              </button>
+              <button class="maqam-example-btn" onclick="playMaqam('علي جابر — سورة الزمر','https://server8.mp3quran.net/afs/039.mp3','مقام الكرد — الرقة والخشوع')">
+                <i class="fas fa-play-circle me-2" style="color:#8b5cf6;"></i>العفاسي — الزمر
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end maqamGrid -->
+
+      <!-- Maqam reference table -->
+      <div class="mt-5 p-4 rounded-4 bg-white shadow-sm border">
+        <h5 class="fw-bold font-amiri mb-4 text-dark"><i class="fas fa-table text-success me-2"></i>جدول مرجعي للمقامات الثمانية</h5>
+        <div class="table-responsive">
+          <table class="table table-hover text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>المقام</th><th>الطابع العام</th><th>أبرز القراء به</th><th>سور مقترحة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="fw-bold font-amiri">الصبا</td><td>حزن عميق — روحانية</td><td>عبد الباسط · المنشاوي</td><td>القيامة · الحاقة</td></tr>
+              <tr><td class="fw-bold font-amiri">النهاوند</td><td>حنان — رقة — رحمة</td><td>مشاري العفاسي · السديس</td><td>مريم · يوسف</td></tr>
+              <tr><td class="fw-bold font-amiri">العجم</td><td>قوة — فخامة — انتصار</td><td>الحصري · المعيقلي</td><td>الفتح · الصف</td></tr>
+              <tr><td class="fw-bold font-amiri">البياتي</td><td>خشوع — تأمل — شامل</td><td>جميع القراء الكبار</td><td>البقرة · الأنعام</td></tr>
+              <tr><td class="fw-bold font-amiri">السيكا</td><td>بشارة — بهجة هادئة</td><td>أنور الشحات · خالد الجليل</td><td>الضحى · الشرح</td></tr>
+              <tr><td class="fw-bold font-amiri">الحجاز</td><td>شوق — جلال — عتيق</td><td>السديس · المعيقلي</td><td>إبراهيم · محمد</td></tr>
+              <tr><td class="fw-bold font-amiri">الرست</td><td>استقامة — فخامة — اتزان</td><td>عبد الباسط · المنشاوي</td><td>الرحمن · التوبة</td></tr>
+              <tr><td class="fw-bold font-amiri">الكرد</td><td>بساطة — جمال — حداثة</td><td>ماهر المعيقلي · مشاري</td><td>الملك · طه</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+
+    </div><!-- end tab-maqam -->
 
     <!-- TAB 4: THE 10 QIRAAT MEGA -->
     <div class="tab-pane fade" id="tab-qiraat">
       <div class="sec-head">
         <span class="tag">تواتر القراءة والسند القطعي</span>
         <h3>القراءات العشر <span>المتواترة والأصول</span></h3>
-        <p>رحلة في علوم القراءات، للتعرف على القراء السبعة والثلاثة المتممين، ورواتهم، وأصول قواعدهم التي بنوا عليها قراءتهم.</p>
+        <p>رحلة علمية في علوم القراءات — التعريف بالأئمة العشرة ورواتهم وأصول قواعدهم، مع نماذج مقارنة تطبيقية من القرآن الكريم.</p>
         <div class="divider"></div>
       </div>
-      
-      <!-- Timeline of Imams -->
+
+      <!-- ===== الأئمة العشرة: بطاقات تفصيلية ===== -->
       <div class="mb-5">
-         <h4 class="font-amiri fw-bold text-dark mb-4 border-bottom pb-2 border-emerald d-inline-block">التسلسل الزمني لأئمة القراءات (حاضرات العالم الإسلامي)</h4>
-         <p class="text-muted mb-4 fs-5">توزع الأئمة العشرة على حواضر الإسلام الكبرى العريقة (المدينة، مكة، الكوفة، البصرة، الشام).</p>
-         
-         <div class="row g-3">
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
-               <div class="mega-card bg-light border-0 py-4">
-                  <div class="badge bg-gold text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">المدينة المنورة</div>
-                  <h5 class="fw-bold text-primary">أبو جعفر المدني</h5><p class="small text-muted mb-1">(ت 130 هـ)</p>
-                  <hr class="w-50 mx-auto">
-                  <h5 class="fw-bold text-primary">نافع المدني</h5><p class="small text-muted mb-0">(ت 169 هـ)</p>
-               </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
-               <div class="mega-card bg-light border-0 py-4">
-                  <div class="badge bg-gold text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">مكة المكرمة</div>
-                  <h5 class="fw-bold text-success">ابن كثير المكي</h5><p class="small text-muted mb-0">(ت 120 هـ)</p>
-               </div>
-            </div>
+        <h4 class="font-amiri fw-bold text-dark mb-4 d-flex align-items-center gap-2">
+          <span style="background:linear-gradient(135deg,#064e3b,#047857);color:white;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;">
+            <i class="fas fa-users fs-5"></i>
+          </span>
+          الأئمة العشرة ورواتهم
+        </h4>
 
-            <div class="col-lg-2 col-md-4 col-sm-6 text-center">
-               <div class="mega-card bg-light border-0 py-4">
-                  <div class="badge bg-gold text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">الشام (دمشق)</div>
-                  <h5 class="fw-bold text-danger">ابن عامر الشامي</h5><p class="small text-muted mb-0">(ت 118 هـ)</p>
-                  <p class="small mt-2 text-warning fw-bold">أعلى القراء سنداً</p>
-               </div>
-            </div>
+        <div class="row g-3">
 
-            <div class="col-lg-4 col-md-6 text-center">
-               <div class="mega-card bg-light border-0 py-4 p-x-2">
-                  <div class="badge bg-gold text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">الكوفة (العراق)</div>
-                  <div class="d-flex justify-content-center gap-3 flex-wrap">
-                     <div><h6 class="fw-bold text-info mb-0">عاصم بن أبي النجود</h6><small class="text-muted">(ت 127 هـ)</small></div>
-                     <div class="border-start border-end px-3"><h6 class="fw-bold text-info mb-0">حمزة الزيات</h6><small class="text-muted">(ت 156 هـ)</small></div>
-                     <div><h6 class="fw-bold text-info mb-0">الكسائي</h6><small class="text-muted">(ت 189 هـ)</small></div>
-                     <div class="w-100 mt-2"><h6 class="fw-bold text-info mb-0">خلف العاشر</h6><small class="text-muted">(ت 229 هـ)</small></div>
+          <!-- 1. نافع المدني -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ن</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">نافع المدني</h5>
+                    <small style="opacity:0.8;">المدينة المنورة &nbsp;·&nbsp; ت 169 هـ</small>
                   </div>
-               </div>
+                  <span class="badge bg-warning text-dark ms-auto rounded-pill">السبعة</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">إمام مقرئ المدينة وشيخها بلا منازع. أخذ عن 70 تابعيًا وتصدّر الإقراء 70 سنة. قراءته تُمثّل مدرسة الحجاز بأصالتها.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#ecfdf5;border-radius:10px;padding:12px;border-right:3px solid #047857;">
+                      <div class="fw-bold text-success small mb-1"><i class="fas fa-user me-1"></i>قالون (راوٍ)</div>
+                      <small class="text-muted">عيسى بن مينا · المدني · صاحب الصلة والإسكان</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#ecfdf5;border-radius:10px;padding:12px;border-right:3px solid #047857;">
+                      <div class="fw-bold text-success small mb-1"><i class="fas fa-user me-1"></i>ورش (راوٍ)</div>
+                      <small class="text-muted">عثمان بن سعيد · المصري · صاحب النقل والمد</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong class="text-success">أبرز خصائصه:</strong> النقل · التقليل · صلة الميم · مد البدل بالمراتب · إمالة ورش الكبرى
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div class="col-lg-2 col-md-6 text-center">
-               <div class="mega-card bg-light border-0 py-4">
-                  <div class="badge bg-gold text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">البصرة (العراق)</div>
-                  <h5 class="fw-bold text-secondary">أبو عمرو البصري</h5><p class="small text-muted mb-1">(ت 154 هـ)</p>
-                  <hr class="w-50 mx-auto">
-                  <h5 class="fw-bold text-secondary">يعقوب الحضرمي</h5><p class="small text-muted mb-0">(ت 205 هـ)</p>
-               </div>
+          <!-- 2. ابن كثير المكي -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#1e1b4b,#312e81);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ك</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">ابن كثير المكي</h5>
+                    <small style="opacity:0.8;">مكة المكرمة &nbsp;·&nbsp; ت 120 هـ</small>
+                  </div>
+                  <span class="badge bg-warning text-dark ms-auto rounded-pill">السبعة</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">أقدم القراء السبعة وفاةً. أخذ القراءة عن أصحاب ابن عباس وعبد الله بن السائب المخزومي. قراءته أعلى سنداً في المكيين.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#eef2ff;border-radius:10px;padding:12px;border-right:3px solid #312e81;">
+                      <div class="fw-bold text-primary small mb-1"><i class="fas fa-user me-1"></i>البزي (راوٍ)</div>
+                      <small class="text-muted">أحمد بن محمد · المكي · إمام الكعبة</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#eef2ff;border-radius:10px;padding:12px;border-right:3px solid #312e81;">
+                      <div class="fw-bold text-primary small mb-1"><i class="fas fa-user me-1"></i>قنبل (راوٍ)</div>
+                      <small class="text-muted">محمد بن عبد الرحمن · المكي</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong class="text-primary">أبرز خصائصه:</strong> صلة الميم مطلقاً · تشديد البسملة · قصر المنفصل · إبدال الهمز
+                </div>
+              </div>
             </div>
-         </div>
+          </div>
+
+          <!-- 3. أبو عمرو البصري -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#422006,#78350f);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ع</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">أبو عمرو البصري</h5>
+                    <small style="opacity:0.8;">البصرة &nbsp;·&nbsp; ت 154 هـ</small>
+                  </div>
+                  <span class="badge bg-warning text-dark ms-auto rounded-pill">السبعة</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">علّامة العربية والنحو واللغة والقراءات. روى عن خلق كثير وتميّز بالإدغام الكبير في رواية السوسي عنه مما يُسهل التلاوة.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#fef3c7;border-radius:10px;padding:12px;border-right:3px solid #78350f;">
+                      <div class="fw-bold small mb-1" style="color:#78350f;"><i class="fas fa-user me-1"></i>الدوري (راوٍ)</div>
+                      <small class="text-muted">حفص الدوري · البغدادي</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#fef3c7;border-radius:10px;padding:12px;border-right:3px solid #78350f;">
+                      <div class="fw-bold small mb-1" style="color:#78350f;"><i class="fas fa-user me-1"></i>السوسي (راوٍ)</div>
+                      <small class="text-muted">صالح السوسي · صاحب الإدغام الكبير</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong style="color:#78350f;">أبرز خصائصه:</strong> الإدغام الكبير (السوسي) · الإمالة · تخفيف الهمز · الغنة
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. ابن عامر الشامي -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#7f1d1d,#991b1b);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ش</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">ابن عامر الشامي</h5>
+                    <small style="opacity:0.8;">دمشق &nbsp;·&nbsp; ت 118 هـ</small>
+                  </div>
+                  <div class="ms-auto d-flex gap-1 flex-wrap">
+                    <span class="badge bg-warning text-dark rounded-pill">السبعة</span>
+                    <span class="badge bg-info text-dark rounded-pill">أعلى سنداً</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">أعلى القراء السبعة سنداً إلى النبي ﷺ وأقدمهم وفاةً. أخذ القراءة عن أصحاب عثمان بن عفان رضي الله عنه مباشرة.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#fef2f2;border-radius:10px;padding:12px;border-right:3px solid #991b1b;">
+                      <div class="fw-bold text-danger small mb-1"><i class="fas fa-user me-1"></i>هشام (راوٍ)</div>
+                      <small class="text-muted">هشام بن عمار · الدمشقي</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#fef2f2;border-radius:10px;padding:12px;border-right:3px solid #991b1b;">
+                      <div class="fw-bold text-danger small mb-1"><i class="fas fa-user me-1"></i>ابن ذكوان (راوٍ)</div>
+                      <small class="text-muted">عبد الله بن ذكوان · الدمشقي</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong class="text-danger">أبرز خصائصه:</strong> فصل آية البسملة · الفتح في الإمالة · تغيير تركيب الآية (مسألة)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. عاصم بن أبي النجود -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#0c4a6e,#0369a1);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ع</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">عاصم بن أبي النجود</h5>
+                    <small style="opacity:0.8;">الكوفة &nbsp;·&nbsp; ت 127 هـ</small>
+                  </div>
+                  <div class="ms-auto d-flex gap-1 flex-wrap">
+                    <span class="badge bg-warning text-dark rounded-pill">السبعة</span>
+                    <span class="badge bg-light text-dark rounded-pill">الأشهر اليوم</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">رواية حفص عنه هي الأكثر انتشاراً في العالم الإسلامي اليوم. أخذ القراءة عن أبي عبد الرحمن السلمي وزر بن حبيش عن ابن مسعود.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#e0f2fe;border-radius:10px;padding:12px;border-right:3px solid #0369a1;">
+                      <div class="fw-bold text-info small mb-1"><i class="fas fa-user me-1"></i>حفص (راوٍ) ⭐</div>
+                      <small class="text-muted">حفص بن سليمان · الكوفي · الأشهر عالمياً</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#e0f2fe;border-radius:10px;padding:12px;border-right:3px solid #0369a1;">
+                      <div class="fw-bold text-info small mb-1"><i class="fas fa-user me-1"></i>شعبة (راوٍ)</div>
+                      <small class="text-muted">شعبة بن عياش · الكوفي</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong class="text-info">أبرز خصائصه (حفص):</strong> مد المنفصل 4-5 · إظهار الميم · سكتة (عوجا) · تحقيق الهمز
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. حمزة الزيات -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ح</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">حمزة بن حبيب الزيات</h5>
+                    <small style="opacity:0.8;">الكوفة &nbsp;·&nbsp; ت 156 هـ</small>
+                  </div>
+                  <span class="badge bg-warning text-dark ms-auto rounded-pill">السبعة</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">إمام الكوفة المشهور بالزهد والورع. تميّزت قراءته بالإمالة الكبرى وتحقيق الهمز وبمد المنفصل الطويل. قراءته أصعب القراءات نطقاً.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#f8fafc;border-radius:10px;padding:12px;border-right:3px solid #374151;">
+                      <div class="fw-bold small mb-1 text-dark"><i class="fas fa-user me-1"></i>خلف (راوٍ)</div>
+                      <small class="text-muted">خلف بن هشام البزار</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#f8fafc;border-radius:10px;padding:12px;border-right:3px solid #374151;">
+                      <div class="fw-bold small mb-1 text-dark"><i class="fas fa-user me-1"></i>خلاد (راوٍ)</div>
+                      <small class="text-muted">خلاد بن خالد الصيرفي</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong class="text-dark">أبرز خصائصه:</strong> الإمالة الكبرى · تحقيق الهمز · السكت · مد المنفصل (6 حركات)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. الكسائي -->
+          <div class="col-xl-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div style="background:linear-gradient(135deg,#701a75,#86198f);padding:16px 20px;color:white;">
+                <div class="d-flex align-items-center gap-3">
+                  <div style="background:rgba(255,255,255,0.15);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;">ك</div>
+                  <div>
+                    <h5 class="font-amiri fw-bold mb-0">علي بن حمزة الكسائي</h5>
+                    <small style="opacity:0.8;">الكوفة &nbsp;·&nbsp; ت 189 هـ</small>
+                  </div>
+                  <span class="badge bg-warning text-dark ms-auto rounded-pill">السبعة</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted small mb-3">إمام النحو والقراءة الكوفي، معلّم ولد الخليفة هارون الرشيد. جمع بين الإمالة والإمالة الكبرى. يُذكر مع الفراء في الكوفة كعلمين.</p>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div style="background:#fdf4ff;border-radius:10px;padding:12px;border-right:3px solid #86198f;">
+                      <div class="fw-bold small mb-1" style="color:#86198f;"><i class="fas fa-user me-1"></i>أبو الحارث (راوٍ)</div>
+                      <small class="text-muted">ليث بن خالد البغدادي</small>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div style="background:#fdf4ff;border-radius:10px;padding:12px;border-right:3px solid #86198f;">
+                      <div class="fw-bold small mb-1" style="color:#86198f;"><i class="fas fa-user me-1"></i>الدوري (راوٍ)</div>
+                      <small class="text-muted">حفص الدوري (راوٍ عنه وعن أبي عمرو)</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light rounded-3 p-3 small">
+                  <strong style="color:#86198f;">أبرز خصائصه:</strong> إمالة (هَدَى) · إدغام (ما كان · بل قيل) · لام التعريف بالإمالة
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8,9,10: الثلاثة المتمّمون -->
+          <div class="col-12">
+            <div style="background:linear-gradient(135deg,#0b192c,#0f3460);border-radius:20px;padding:30px;color:white;">
+              <h5 class="font-amiri fw-bold mb-4 text-warning"><i class="fas fa-plus-circle me-2"></i>الثلاثة المتمّمون للعشر</h5>
+              <div class="row g-4">
+
+                <div class="col-md-4">
+                  <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:20px;border-top:3px solid #d4af37;">
+                    <h6 class="font-amiri fw-bold text-warning mb-2">أبو جعفر المدني <small class="opacity-75">(ت 130 هـ)</small></h6>
+                    <p class="small mb-3" style="opacity:0.8;">من تلاميذ أبي هريرة وعبد الله بن عباس رضي الله عنهما. مشهور بحذف الهمز وإبداله.</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                      <span class="badge bg-warning bg-opacity-20 text-warning border border-warning border-opacity-25">ابن وردان (راوٍ)</span>
+                      <span class="badge bg-warning bg-opacity-20 text-warning border border-warning border-opacity-25">ابن جماز (راوٍ)</span>
+                    </div>
+                    <div class="mt-2 small" style="opacity:0.75;">خصائصه: إسقاط الهمز · صلة الهاء · الغنة في النون</div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:20px;border-top:3px solid #34d399;">
+                    <h6 class="font-amiri fw-bold text-success mb-2">يعقوب الحضرمي <small class="opacity-75">(ت 205 هـ)</small></h6>
+                    <p class="small mb-3" style="opacity:0.8;">إمام البصرة بعد أبي عمرو. اشتهر بالاستقلالية في كثير من الأصول وفصاحة الأداء وإتقان الروم والإشمام.</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                      <span class="badge bg-success bg-opacity-20 text-success border border-success border-opacity-25">رويس (راوٍ)</span>
+                      <span class="badge bg-success bg-opacity-20 text-success border border-success border-opacity-25">روح (راوٍ)</span>
+                    </div>
+                    <div class="mt-2 small" style="opacity:0.75;">خصائصه: الروم والإشمام · إثبات الياء وصلاً · إسكان الياء</div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:20px;border-top:3px solid #60a5fa;">
+                    <h6 class="font-amiri fw-bold text-info mb-2">خلف العاشر <small class="opacity-75">(ت 229 هـ)</small></h6>
+                    <p class="small mb-3" style="opacity:0.8;">هو العاشر في القراء العشرة (وهو أحد راوي حمزة كذلك). اختار قراءة انفرد بها مبنية على أصول الكوفيين.</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                      <span class="badge bg-info bg-opacity-20 text-info border border-info border-opacity-25">إسحاق (راوٍ)</span>
+                      <span class="badge bg-info bg-opacity-20 text-info border border-info border-opacity-25">إدريس (راوٍ)</span>
+                    </div>
+                    <div class="mt-2 small" style="opacity:0.75;">خصائصه: الإمالة الكبرى · الغنة · السكت · تحقيق الهمز</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Origins of Qiraat -->
-      <div class="mb-5 pt-4">
-         <h4 class="font-amiri fw-bold text-dark mb-4 border-bottom pb-2 border-emerald d-inline-block">مبادئ وأصول القراءات الكبرى</h4>
-         <div class="row g-4">
-            <div class="col-md-4">
-               <div class="mega-card border-top border-4 border-primary">
-                  <h5 class="fw-bold text-primary mb-3">الإمالة والتقليل</h5>
-                  <p class="text-muted small">أن تنحو بالفتحة نحو الكسرة، وبالألف نحو الياء (مثل كلمة <i>موسى، الضحى</i>). الإمالة الكبرى اشتهر بها حمزة والكسائي. والتقليل (بين الفتح والإمالة) اشتهر به ورش عن نافع.</p>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="mega-card border-top border-4 border-danger">
-                  <h5 class="fw-bold text-danger mb-3">الهمزتين وتسهيلهما</h5>
-                  <p class="text-muted small">إذا التقت همزتان (مثل <i>ءأنذرتهم</i>)، يميل القراء أهل الحجاز وأبو عمرو لعدم تحقيق الهمزة الثانية، بل يتم تسهيلها (بين الهمزة وحرف المد) لتخفيف النطق.</p>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="mega-card border-top border-4 border-success">
-                  <h5 class="fw-bold text-success mb-3">الإدغام الكبير</h5>
-                  <p class="text-muted small">إدغام حرف متحرك في حرف متحرك آخر بحيث يصيران حرفاً واحداً مشدداً (مثل <i>الرَّحِيمِ مَالِكِ</i>). وهذا الأصل تفرّد به السوسي عن أبي عمرو لسهولة ولين قراءته.</p>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="mega-card border-top border-4 border-warning">
-                  <h5 class="fw-bold text-warning mb-3">صلة ميم الجمع</h5>
-                  <p class="text-muted small">ضم ميم الجمع ووصلها بواو (مثل <i>عَلَيْهِمْ</i> تُقرأ <i>عَلَيْهِمُو</i>). اشتهر بها ابن كثير المكي مطلقاً، وقالون بخلف عنه، وورش إذا جاء بعدها همزة قطع.</p>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="mega-card border-top border-4 border-info">
-                  <h5 class="fw-bold text-info mb-3">النقل والسكت</h5>
-                  <p class="text-muted small">النقل: نقل حركة الهمزة للساكن قبلها (<i>الأَرض</i> تُقرأ <i>لَرض</i>) لورش. السكت: قطع الصوت زمناً يسيراً دون تنفس (السكت على الساكن قبل الهمز) لحمزة.</p>
-               </div>
-            </div>
-         </div>
+      <!-- ===== شجرة السند الذهبي ===== -->
+      <div class="mb-5 p-4 rounded-4 bg-white shadow-sm border">
+        <h4 class="font-amiri fw-bold text-dark mb-4 d-flex align-items-center gap-2">
+          <span style="background:linear-gradient(135deg,#d4af37,#aa8a2a);color:white;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;">
+            <i class="fas fa-project-diagram fs-5"></i>
+          </span>
+          السند المتصل لقراءة حفص عن عاصم
+        </h4>
+        <div class="d-flex align-items-center flex-wrap gap-0 justify-content-center text-center fs-6">
+          <div class="chain-node">النبي ﷺ</div>
+          <div class="chain-arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="chain-node">عبد الله بن مسعود</div>
+          <div class="chain-arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="chain-node">عبد الرحمن السلمي<br><small>+ زر بن حبيش</small></div>
+          <div class="chain-arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="chain-node">عاصم بن أبي النجود</div>
+          <div class="chain-arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="chain-node chain-gold">حفص بن سليمان</div>
+          <div class="chain-arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="chain-node">القراء المتواترون<br><small>حتى اليوم</small></div>
+        </div>
+        <p class="text-center text-muted small mt-4 mb-0">
+          <i class="fas fa-lock text-success me-1"></i>
+          هذه القراءة محفوظة بالتواتر القطعي — نقلها خلق عن خلق بما يستحيل معه التواطؤ على الكذب.
+        </p>
       </div>
 
-      <!-- Mega Compare Table -->
-      <div class="bg-white p-5 rounded-4 shadow-sm border text-center">
-        <h4 class="font-amiri fw-bold mb-4 text-dark">نماذج مقارنة وتطبيق عملي من القرآن</h4>
+      <!-- ===== أصول القراءات: المفاهيم ===== -->
+      <div class="mb-5">
+        <h4 class="font-amiri fw-bold text-dark mb-4 d-flex align-items-center gap-2">
+          <span style="background:linear-gradient(135deg,#0c4a6e,#0369a1);color:white;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;">
+            <i class="fas fa-book-open fs-5"></i>
+          </span>
+          أصول وقواعد القراءات الكبرى
+        </h4>
+        <div class="row g-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 h-100 shadow-sm rounded-4" style="border-top:4px solid #0369a1 !important;">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div style="background:#e0f2fe;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-wave-square text-info"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0 text-info">الإمالة والتقليل</h5>
+                </div>
+                <p class="text-muted small mb-3">الانحياز بالفتحة نحو الكسرة وبالألف نحو الياء. ثلاث مراتب: الفتح الخالص (حفص) · التقليل (ورش) · الإمالة الكبرى (حمزة والكسائي).</p>
+                <div class="bg-light rounded-3 p-3 small font-amiri" style="font-size:1.1rem;">
+                  مثال: <span class="text-danger">وَالضُّحَى</span><br>
+                  حفص: ضُحَى (فتح) / ورش: ضُحَى (تقليل) / حمزة: ضُحِي (إمالة)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 h-100 shadow-sm rounded-4" style="border-top:4px solid #dc2626 !important;">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div style="background:#fef2f2;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-compress-arrows-alt text-danger"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0 text-danger">الإدغام الكبير</h5>
+                </div>
+                <p class="text-muted small mb-3">إدغام حرف متحرك في آخر متحرك مثله أو مقاربٍ له ليصيرا حرفاً مشدداً. تفرّد به السوسي عن أبي عمرو البصري بضوابط دقيقة.</p>
+                <div class="bg-light rounded-3 p-3 small font-amiri" style="font-size:1.1rem;">
+                  مثال: <span class="text-danger">الرَّحِيمِ مَالِكِ</span><br>
+                  السوسي: الرَّحِيمِـمَّالِك (دغام الميم في الميم)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 h-100 shadow-sm rounded-4" style="border-top:4px solid #16a34a !important;">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div style="background:#f0fdf4;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-link text-success"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0 text-success">صلة الميم والهاء</h5>
+                </div>
+                <p class="text-muted small mb-3">ضم ميم الجمع ووصلها بواو (صلة الميم): ابن كثير وقالون بخلف. صلة هاء الكناية بواو أو ياء بحسب ما قبلها: ابن كثير وحمزة وغيرهما.</p>
+                <div class="bg-light rounded-3 p-3 small font-amiri" style="font-size:1.1rem;">
+                  مثال: <span class="text-danger">عَلَيْهِمْ</span><br>
+                  ابن كثير: عَلَيْهِمُوْ ← صلة الميم بواو
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 h-100 shadow-sm rounded-4" style="border-top:4px solid #d97706 !important;">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div style="background:#fffbeb;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-random text-warning"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0 text-warning">النقل والتسهيل</h5>
+                </div>
+                <p class="text-muted small mb-3">النقل (ورش): نقل حركة الهمز إلى الساكن قبله. التسهيل: قراءة الهمزة بين الهمزة وحرف المد تخفيفاً. يشتركان في رواية ورش ونافع الحجازية.</p>
+                <div class="bg-light rounded-3 p-3 small font-amiri" style="font-size:1.1rem;">
+                  مثال: <span class="text-danger">الْأَرْضَ</span><br>
+                  ورش: لَرْض (نقل حركة الهمز للساكن)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 h-100 shadow-sm rounded-4" style="border-top:4px solid #7c3aed !important;">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div style="background:#f5f3ff;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-pause text-purple" style="color:#7c3aed;"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0" style="color:#7c3aed;">السكت والروم</h5>
+                </div>
+                <p class="text-muted small mb-3">السكت: قطع الصوت زمناً يسيراً بلا تنفس قبل الهمز (حمزة). الروم: الإتيان ببعض الضمة أو الكسرة عند الوقف ثلثاً (الكوفيون وغيرهم).</p>
+                <div class="bg-light rounded-3 p-3 small font-amiri" style="font-size:1.1rem;">
+                  مثال: <span class="text-danger">مَنْ آمَنَ</span><br>
+                  حمزة: مَنْ▪آمَنَ (سكت بلا تنفس)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 h-100 shadow-sm rounded-4" style="border-top:4px solid #0f766e !important;">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div style="background:#f0fdfa;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-arrows-alt-h text-cyan" style="color:#0f766e;"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0" style="color:#0f766e;">مد البدل والعوض</h5>
+                </div>
+                <p class="text-muted small mb-3">مد البدل: أن تكون الهمزة سابقة على حرف المد (نحو: آدم، إيمان، أوتي). ورش يمده 2-4-6 حركات بخلاف. غيره يقصره.</p>
+                <div class="bg-light rounded-3 p-3 small font-amiri" style="font-size:1.1rem;">
+                  مثال: <span class="text-danger">آمَنُوا</span><br>
+                  حفص: مد طبيعي / ورش: مد 2 أو 4 أو 6
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== جدول المقارنة الموسّع ===== -->
+      <div class="bg-white p-4 rounded-4 shadow-sm border mb-5">
+        <h4 class="font-amiri fw-bold mb-4 text-dark text-center">
+          <i class="fas fa-table text-success me-2"></i>نماذج مقارنة تطبيقية موسّعة من القرآن الكريم
+        </h4>
         <div class="table-responsive">
-          <table class="table table-bordered table-striped align-middle text-center dir-rtl">
-            <thead class="table-dark">
+          <table class="table table-bordered align-middle text-center" style="font-size:0.9rem;">
+            <thead style="background:linear-gradient(135deg,#0b192c,#0f3460);color:white;">
               <tr>
-                <th width="15%">الموضع</th>
-                <th width="20%">حفص عن عاصم</th>
-                <th width="20%">ورش عن نافع (المدينة)</th>
-                <th width="20%">حمزة الكوفي</th>
-                <th width="25%">السوسي المدغم (البصرة)</th>
+                <th class="py-3">الموضع القرآني</th>
+                <th>حفص عن عاصم<br><small class="fw-normal opacity-75">(الكوفة)</small></th>
+                <th>ورش عن نافع<br><small class="fw-normal opacity-75">(المدينة)</small></th>
+                <th>حمزة الكوفي<br><small class="fw-normal opacity-75">(الكوفة)</small></th>
+                <th>السوسي عن أبي عمرو<br><small class="fw-normal opacity-75">(البصرة)</small></th>
+                <th>ابن كثير<br><small class="fw-normal opacity-75">(مكة)</small></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="bg-light fw-bold text-danger">(مَالِكِ يَوْمِ)</td>
-                <td>مَالِكِ (بإثبات الألف)</td>
-                <td>مَلِكِ (بحذف الألف)</td>
-                <td>مَلِكِ (بحذف الألف)</td>
-                <td>مَلِكِ (بحذف الألف)</td>
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">مَالِكِ يَوْمِ</td>
+                <td class="bg-blue-50">مَالِكِ ✅ (بالألف)</td>
+                <td>مَلِكِ (بلا ألف)</td>
+                <td>مَلِكِ (بلا ألف)</td>
+                <td>مَلِكِ (بلا ألف)</td>
+                <td>مَلِكِ (بلا ألف)</td>
               </tr>
-              <tr>
-                <td class="bg-light fw-bold text-danger">(الصِّرَاطَ)</td>
+              <tr class="table-light">
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">الصِّرَاطَ</td>
                 <td>بالصاد الخالصة</td>
                 <td>بالصاد الخالصة</td>
-                <td>بإشمام الصاد زايا (تُنطق الزراط) لخلف</td>
-                <td>بالصاد</td>
+                <td>بإشمام الصاد زايا (خلف)</td>
+                <td>بالصاد المشمة زاياً</td>
+                <td>بالصاد الخالصة</td>
               </tr>
               <tr>
-                <td class="bg-light fw-bold text-danger">(وَبِالآخِرَةِ)</td>
-                <td>بالتحقيق للهمز ومد البدل حركتين</td>
-                <td>نقل حركة الهمز ومد البدل 2/4/6 (<i>وبِلاخِرَة</i>)</td>
-                <td>تحقيق وتسهيل في الوقف</td>
-                <td>تحقيق الهمز كحفص</td>
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">وَالضُّحَى</td>
+                <td>فتح خالص</td>
+                <td>تقليل (بين الفتح والكسر)</td>
+                <td>إمالة كبرى (نحو الكسر)</td>
+                <td>فتح خالص</td>
+                <td>فتح خالص</td>
+              </tr>
+              <tr class="table-light">
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">ءَأَنذَرْتَهُمْ</td>
+                <td>تحقيق الهمزتين</td>
+                <td>تسهيل الثانية</td>
+                <td>تحقيق + إدخال ألف</td>
+                <td>تحقيق أو تسهيل</td>
+                <td>تسهيل الثانية</td>
               </tr>
               <tr>
-                <td class="bg-light fw-bold text-danger">(فِيهِ هُدىً)</td>
-                <td>إظهار الهاء، والوقف عليها</td>
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">عَلَيْهِمْ</td>
+                <td>عَلَيْهِمْ (إسكان الميم)</td>
+                <td>عَلَيْهِمْ (إسكان)</td>
+                <td>عَلَيْهِمْ (إسكان)</td>
+                <td>عَلَيْهِمْ (إسكان)</td>
+                <td>عَلَيْهِمُو (صلة الميم)</td>
+              </tr>
+              <tr class="table-light">
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">الْأَرْضَ</td>
+                <td>الْأَرْضَ (تحقيق)</td>
+                <td>لَرْض (نقل حركة الهمز)</td>
+                <td>الْأَرْضَ (تحقيق)</td>
+                <td>لَرْض (كورش)</td>
+                <td>الْأَرْضَ (تحقيق)</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-danger font-amiri" style="font-size:1.1rem;">فِيهِ هُدىً</td>
                 <td>إظهار الهاء</td>
                 <td>إظهار الهاء</td>
-                <td>إدغام الهاءين كبيراً (<i>فِيـهُّـدَى</i>)</td>
-              </tr>
-              <tr>
-                <td class="bg-light fw-bold text-danger">(وَالضُّحَىٰ)</td>
-                <td>بفتح الألف الخالصة</td>
-                <td>بالتقليل وجهاً واحداً</td>
-                <td>بالإمالة الكبرى (الكسر الشديد)</td>
-                <td>طبيعي كحفص</td>
+                <td>إظهار الهاء</td>
+                <td class="text-success fw-bold">فِيـهُّدَى (إدغام كبير)</td>
+                <td>إظهار</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+
+      <!-- ===== الكتب والمراجع ===== -->
+      <div class="p-4 rounded-4 border bg-white shadow-sm">
+        <h5 class="fw-bold font-amiri mb-4 text-dark"><i class="fas fa-book text-success me-2"></i>المراجع المعتمدة في علم القراءات</h5>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="background:#ecfdf5;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="fas fa-scroll text-success"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">الشاطبية — القصيدة الكبرى</h6>
+                <small class="text-muted">الإمام الشاطبي (ت 590 هـ) · 1173 بيتاً تضم أصول القراءات السبع كاملة</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="background:#eff6ff;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="fas fa-scroll text-primary"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">الدرة المضية — القراءات الثلاث</h6>
+                <small class="text-muted">ابن الجزري (ت 833 هـ) · أضاف الثلاث المتممين للعشر</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="background:#fef9c3;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="fas fa-scroll text-warning"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">طيبة النشر في القراءات العشر</h6>
+                <small class="text-muted">ابن الجزري (ت 833 هـ) · المرجع الجامع الأشمل للقراءات العشر</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="background:#fdf4ff;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="fas fa-book text-purple" style="color:#7c3aed;"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">النشر في القراءات العشر</h6>
+                <small class="text-muted">ابن الجزري · الموسوعة التفصيلية من مجلدين</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="background:#fff7ed;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="fas fa-book text-warning"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">البدور الزاهرة في القراءات العشر</h6>
+                <small class="text-muted">عبد الفتاح القاضي · بيان وجوه القرآن من رواية التيسير والتبصرة</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="background:#f0fdf4;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="fas fa-book text-success"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">الكافي في القراءات السبع</h6>
+                <small class="text-muted">ابن شريح الرعيني · متن جامع مختصر لتيسير الحفظ</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .chain-node {
+          background: linear-gradient(135deg,#064e3b,#047857);
+          color:white;
+          padding:10px 16px;
+          border-radius:10px;
+          font-family:'Amiri',serif;
+          font-size:0.95rem;
+          min-width:110px;
+          white-space:nowrap;
+        }
+        .chain-gold {
+          background: linear-gradient(135deg,#92400e,#d97706) !important;
+        }
+        .chain-arrow {
+          color:#d4af37;
+          font-size:1.2rem;
+          padding:0 6px;
+          display:flex;
+          align-items:center;
+        }
+        @media(max-width:768px){
+          .chain-node { font-size:0.8rem; padding:8px 10px; min-width:80px; }
+          .chain-arrow { padding:0 3px; font-size:0.9rem; }
+        }
+      </style>
+
     </div>
 
     <!-- TAB 7: AUDIO LIBRARY MEGA -->
@@ -721,17 +1511,57 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
       <!-- Reciter Details (Hidden by Default) -->
       <div id="reciterDetails" style="display:none;">
-         <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+         <!-- Header -->
+         <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3 flex-wrap gap-3">
             <h4 class="font-amiri fw-bold text-success mb-0 d-flex align-items-center">
                <i class="fas fa-headphones-alt me-3 fs-3"></i>
                المصحف المرتل للشيخ: <span id="currentReciterTitle" class="ms-2 text-dark"></span>
             </h4>
-            <button class="btn btn-outline-danger rounded-pill px-4" onclick="closeReciterDetails()"><i class="fas fa-arrow-right me-2"></i>العودة للقراء</button>
+            <div class="d-flex gap-2 flex-wrap">
+               <button class="btn btn-success rounded-pill px-4 fw-bold" onclick="downloadFullQuran()" id="btnDownloadFull">
+                 <i class="fas fa-download me-2"></i>تحميل المصحف كاملاً
+               </button>
+               <button class="btn btn-outline-danger rounded-pill px-4" onclick="closeReciterDetails()">
+                 <i class="fas fa-arrow-right me-2"></i>العودة للقراء
+               </button>
+            </div>
          </div>
 
-         <div class="bg-white p-3 rounded-4 shadow-sm border mb-4 d-flex align-items-center">
-            <i class="fas fa-search text-muted ms-3"></i>
-            <input type="text" id="libSurahSearch" class="form-control border-0 shadow-none bg-transparent" placeholder="ابحث عن سورة للـاستماع (مثال: الكهف)...">
+         <!-- Download info banner (shown after clicking download) -->
+         <div id="downloadBanner" class="alert mb-4 d-none" style="background:linear-gradient(135deg,#064e3b,#047857);color:white;border:none;border-radius:16px;">
+           <div class="d-flex align-items-center gap-3 flex-wrap">
+             <i class="fas fa-cloud-download-alt fa-2x"></i>
+             <div class="flex-grow-1">
+               <h6 class="fw-bold mb-1">تحميل المصحف الكامل — 114 سورة</h6>
+               <p class="mb-2 small opacity-75">يتم تنزيل كل سورة بشكل منفصل مباشرة من خوادم mp3quran.net الموثوقة.</p>
+               <div class="progress mb-2" style="height:8px;border-radius:4px;">
+                 <div id="downloadProgress" class="progress-bar bg-warning" style="width:0%;transition:width 0.3s;"></div>
+               </div>
+               <small id="downloadStatus">جاهز للتحميل...</small>
+             </div>
+             <button class="btn btn-warning btn-sm rounded-pill fw-bold" onclick="startBatchDownload()">
+               <i class="fas fa-play me-2"></i>ابدأ التحميل
+             </button>
+           </div>
+         </div>
+
+         <!-- Search + surah count -->
+         <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <div class="bg-white p-3 rounded-4 shadow-sm border d-flex align-items-center flex-grow-1">
+               <i class="fas fa-search text-muted ms-3"></i>
+               <input type="text" id="libSurahSearch" class="form-control border-0 shadow-none bg-transparent" placeholder="ابحث عن سورة للـاستماع (مثال: الكهف)...">
+            </div>
+            <span class="badge bg-success rounded-pill px-3 py-2 fs-6" id="surahCountBadge">114 سورة</span>
+         </div>
+
+         <!-- View toggle -->
+         <div class="d-flex gap-2 mb-4">
+           <button class="btn btn-sm btn-success rounded-pill active" id="viewGrid" onclick="setLibView('grid',this)">
+             <i class="fas fa-th-large me-1"></i>شبكة
+           </button>
+           <button class="btn btn-sm btn-outline-secondary rounded-pill" id="viewList" onclick="setLibView('list',this)">
+             <i class="fas fa-list me-1"></i>قائمة
+           </button>
          </div>
 
          <div class="row g-3" id="libSurahsGrid">
@@ -842,87 +1672,6 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
       </div>
     </div>
 
-    <!-- TAB 5: LEGENDS & SCHOOLS OF RECITED QURAN -->
-    <div class="tab-pane fade" id="tab-legends">
-      <div class="sec-head">
-        <span class="tag">مدارس الأداء وحناجر الذهب</span>
-        <h3>أساطير التلاوة <span>ومدارسها</span></h3>
-        <p>نظرة متعمقة على المدارس الكبرى التي أسست فن تلاوة وتجويد القرآن المسجل بالصوت في العصر الحديث.</p>
-        <div class="divider"></div>
-      </div>
-      
-      <!-- Schools -->
-      <div class="row g-5 mb-5">
-        <div class="col-lg-6">
-           <div class="mega-card bg-light border-0" style="border-right:6px solid #d4af37;">
-              <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-mosque text-warning me-2"></i>المدرسة المصرية المتأخرة</h4>
-              <p class="text-muted fs-5 line-height-2 mb-4">هي المدرسة المؤسسة لفن التلاوة والمتحكمة بإتقان الأحكام والمقامات، تتميز بإظهار جماليات الصوت مع الحفاظ الصارم على أحكام التجويد ومخارج الحروف. أركانها أربعة لا يجاريهم أحد.</p>
-              
-              <div class="d-flex flex-wrap gap-2">
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-leaf me-1 text-warning"></i> الحصري (الدقة والتحقيق)</span>
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-heart me-1 text-danger"></i> المنشاوي (الخشوع والروحانية)</span>
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-crown me-1 text-warning"></i> عبد الباسط (الطبقة العالية)</span>
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-music me-1 text-info"></i> مصطفى إسماعيل (المقامات)</span>
-              </div>
-           </div>
-        </div>
-        
-        <div class="col-lg-6">
-           <div class="mega-card bg-light border-0" style="border-right:6px solid #0f766e;">
-              <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-kaaba text-success me-2"></i>المدرسة الحجازية (نجد والحرمين)</h4>
-              <p class="text-muted fs-5 line-height-2 mb-4">نشأت في أروقة الحرمين الشريفين، تتميز بالقراءة بمرتبة "الحدر" السريعة المتقنة، وتتسم بالتأثير العاطفي والسهولة والبساطة والتركيز على المعاني دون تكلف في المقامات.</p>
-              
-              <div class="d-flex flex-wrap gap-2">
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-star me-1 text-warning"></i> علي جابر</span>
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-star me-1 text-warning"></i> الحذيفي (الإتقان الحجازي)</span>
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-star me-1 text-warning"></i> السديس والشريم</span>
-                 <span class="badge bg-secondary px-3 py-2 rounded-pill fs-6"><i class="fas fa-star me-1 text-warning"></i> المحيسني</span>
-              </div>
-           </div>
-        </div>
-      </div>
-
-      <div class="row g-4 mt-2">
-        <!-- Legend Cards -->
-        <div class="col-lg-3 col-6">
-          <div class="legend-card">
-            <div class="l-img" style="background:linear-gradient(135deg,#020617,#1e293b);"><img src="https://upload.wikimedia.org/wikipedia/ar/4/4e/%D9%85%D8%AD%D9%85%D8%AF_%D8%B5%D8%AF%D9%8A%D9%82_%D8%A7%D9%84%D9%85%D9%86%D8%B4%D8%A7%D9%88%D9%8A.jpg" style="width:100%;height:100%;object-fit:cover;opacity:.8;mix-blend-mode:luminosity;"><span class="l-badge">الصوت الباكي</span></div>
-            <div class="legend-body">
-              <h4 class="font-amiri">محمد صديق المنشاوي</h4>
-              <button class="btn btn-sm btn-outline-primary rounded-pill w-100 mt-2" onclick="openAudioLibrary('محمد صديق المنشاوي')">المكتبة الصوتية</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-6">
-          <div class="legend-card">
-            <div class="l-img" style="background:linear-gradient(135deg,#1e1b4b,#312e81);"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Abdulbasit_Abdusamad_MBS.jpg" style="width:100%;height:100%;object-fit:cover;opacity:.8;mix-blend-mode:luminosity;"><span class="l-badge">الحنجرة الذهبية</span></div>
-            <div class="legend-body">
-              <h4 class="font-amiri">عبد الباسط عبد الصمد</h4>
-              <button class="btn btn-sm btn-outline-primary rounded-pill w-100 mt-2" onclick="openAudioLibrary('عبد الباسط عبد الصمد')">المكتبة الصوتية</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-6">
-          <div class="legend-card">
-            <div class="l-img" style="background:linear-gradient(135deg,#422006,#78350f);"><img src="https://upload.wikimedia.org/wikipedia/ar/b/bd/%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%AE%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%AD%D8%B5%D8%B1%D9%8A.jpg" style="width:100%;height:100%;object-fit:cover;opacity:.8;mix-blend-mode:luminosity;"><span class="l-badge">شيخ المقارئ</span></div>
-            <div class="legend-body">
-              <h4 class="font-amiri">محمود خليل الحصري</h4>
-              <button class="btn btn-sm btn-outline-primary rounded-pill w-100 mt-2" onclick="openAudioLibrary('محمود خليل الحصري')">المكتبة الصوتية</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-6">
-          <div class="legend-card">
-            <div class="l-img" style="background:linear-gradient(135deg,#064e3b,#0f766e);"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A.jpg" style="width:100%;height:100%;object-fit:cover;opacity:.8;mix-blend-mode:luminosity;"><span class="l-badge">المزمار الخاشع</span></div>
-            <div class="legend-body">
-              <h4 class="font-amiri">مشاري بن راشد العفاسي</h4>
-              <button class="btn btn-sm btn-outline-primary rounded-pill w-100 mt-2" onclick="openAudioLibrary('مشاري العفاسي')">المكتبة الصوتية</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- TAB 6: IJAZAH CHAIN & MATN -->
     <div class="tab-pane fade" id="tab-ijazah">
       <div class="sec-head">
@@ -977,6 +1726,341 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
       </div>
 
     </div>
+
+    <!-- ============================================================= -->
+    <!-- TAB: الباحث القرآني — Quran Search Component (Reusable)        -->
+    <!-- ============================================================= -->
+    <div class="tab-pane fade" id="tab-quran-search">
+
+      <!-- Styles scoped for this component -->
+      <style>
+        /* ── Search Hero ─────────────────────────────── */
+        .qsearch-hero {
+          background: linear-gradient(135deg, #0b192c 0%, #0f766e 100%);
+          border-radius: 24px;
+          padding: 48px 40px 36px;
+          color: white;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 36px;
+        }
+        .qsearch-hero::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+          opacity: .07;
+        }
+        .qsearch-hero h2 { font-family: 'Amiri', serif; font-size: clamp(1.8rem,4vw,3rem); font-weight: 900; }
+        .qsearch-hero p  { opacity: .85; font-size: 1.1rem; line-height: 1.9; }
+
+        /* ── Search Box ──────────────────────────────── */
+        .qsearch-box {
+          background: rgba(255,255,255,.12);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255,255,255,.25);
+          border-radius: 18px;
+          padding: 6px 6px 6px 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          max-width: 760px;
+          margin: 28px auto 0;
+          transition: box-shadow .3s;
+        }
+        .qsearch-box:focus-within { box-shadow: 0 0 0 3px rgba(212,175,55,.45); }
+        .qsearch-box input {
+          background: transparent;
+          border: none;
+          outline: none;
+          flex: 1;
+          color: white;
+          font-size: 1.2rem;
+          font-family: 'Amiri', serif;
+          min-width: 0;
+        }
+        .qsearch-box input::placeholder { color: rgba(255,255,255,.55); }
+        #qsearchBtnMain {
+          background: linear-gradient(135deg, #d4af37, #aa8a2a);
+          color: #0b192c;
+          border: none;
+          border-radius: 14px;
+          padding: 12px 28px;
+          font-weight: 800;
+          font-size: 1rem;
+          white-space: nowrap;
+          transition: transform .2s, box-shadow .2s;
+        }
+        #qsearchBtnMain:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212,175,55,.4); }
+
+        /* ── Autocomplete Dropdown ───────────────────── */
+        .qsearch-autocomplete {
+          position: absolute;
+          top: calc(100% + 6px);
+          right: 0; left: 0;
+          background: white;
+          border-radius: 14px;
+          box-shadow: 0 20px 50px rgba(0,0,0,.15);
+          z-index: 999;
+          overflow: hidden;
+          display: none;
+          border: 1px solid #e2e8f0;
+        }
+        .qsearch-autocomplete.visible { display: block; }
+        .qsearch-ac-item {
+          padding: 12px 20px;
+          cursor: pointer;
+          font-family: 'Amiri', serif;
+          font-size: 1.1rem;
+          color: #1e293b;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          transition: background .15s;
+          border-bottom: 1px solid #f1f5f9;
+        }
+        .qsearch-ac-item:last-child { border-bottom: none; }
+        .qsearch-ac-item:hover { background: #f0fdf4; }
+        .qsearch-ac-item .ac-icon { color: #0f766e; width: 22px; flex-shrink: 0; }
+        .qsearch-ac-item .ac-sub  { font-size: .8rem; color: #94a3b8; font-family: 'Cairo',sans-serif; }
+
+        /* ── Filter Pills ────────────────────────────── */
+        .qs-filter-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; justify-content: center; }
+        .qs-filter-pill {
+          padding: 7px 18px;
+          border-radius: 50px;
+          border: 1px solid #e2e8f0;
+          background: white;
+          color: #475569;
+          font-size: .9rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all .25s;
+        }
+        .qs-filter-pill:hover { border-color: #0f766e; color: #0f766e; }
+        .qs-filter-pill.active { background: #0f766e; color: white; border-color: #0f766e; }
+
+        /* ── Result Card ─────────────────────────────── */
+        .qs-result-card {
+          background: white;
+          border-radius: 20px;
+          padding: 28px;
+          border: 1px solid #e2e8f0;
+          box-shadow: 0 4px 16px rgba(0,0,0,.04);
+          transition: all .35s;
+          margin-bottom: 16px;
+          position: relative;
+          overflow: hidden;
+        }
+        .qs-result-card::before {
+          content: '';
+          position: absolute;
+          right: 0; top: 0; bottom: 0;
+          width: 5px;
+          background: linear-gradient(to bottom, #d4af37, #0f766e);
+          border-radius: 0 0 0 5px;
+        }
+        .qs-result-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(15,118,110,.1); border-color: #d4af37; }
+
+        .qs-verse-text {
+          font-family: 'Amiri', serif;
+          font-size: 1.75rem;
+          line-height: 2.3;
+          color: #1e293b;
+          text-align: right;
+          direction: rtl;
+        }
+        .qs-verse-text mark {
+          background: rgba(212,175,55,.35);
+          color: #7c5b0a;
+          border-radius: 4px;
+          padding: 0 3px;
+        }
+
+        .qs-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .qs-meta-badge {
+          background: #f0fdf4;
+          color: #065f46;
+          border: 1px solid #a7f3d0;
+          border-radius: 20px;
+          padding: 3px 12px;
+          font-size: .82rem;
+          font-weight: 700;
+        }
+        .qs-meta-badge.juz  { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+        .qs-meta-badge.page { background: #fdf4ff; color: #6b21a8; border-color: #e9d5ff; }
+
+        /* ── Result Tabs (Tafsir/Maqam/Share) ───────── */
+        .qs-detail-tabs { border-bottom: 2px solid #f1f5f9; margin: 18px 0 0; }
+        .qs-detail-tabs .nav-link {
+          color: #64748b;
+          font-weight: 700;
+          font-size: .9rem;
+          padding: 8px 16px;
+          border: none;
+          background: transparent;
+          border-bottom: 3px solid transparent;
+          margin-bottom: -2px;
+          transition: .2s;
+        }
+        .qs-detail-tabs .nav-link.active { color: #0f766e; border-bottom-color: #0f766e; }
+        .qs-detail-tabs .nav-link:hover:not(.active) { color: #0f766e; }
+
+        .qs-detail-pane { padding: 16px 0; animation: fadeSlide .25s ease; }
+        @keyframes fadeSlide { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+        .qs-tafsir-box {
+          background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+          border: 1px solid #a7f3d0;
+          border-right: 4px solid #10b981;
+          border-radius: 12px;
+          padding: 18px 20px;
+          font-size: 1.05rem;
+          line-height: 2.1;
+          color: #064e3b;
+        }
+
+        .qs-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+        .qs-btn {
+          border: none;
+          border-radius: 10px;
+          padding: 8px 16px;
+          font-size: .88rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all .2s;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .qs-btn-copy  { background: #eff6ff; color: #1d4ed8; }
+        .qs-btn-share { background: #f0fdf4; color: #065f46; }
+        .qs-btn-audio { background: #fef3c7; color: #92400e; }
+        .qs-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+
+        /* ── Stats Pills ─────────────────────────────── */
+        .qs-stats { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 28px; }
+        .qs-stat-pill {
+          background: white;
+          border: 1px solid #e2e8f0;
+          border-radius: 50px;
+          padding: 10px 22px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: 700;
+          box-shadow: 0 2px 8px rgba(0,0,0,.04);
+        }
+        .qs-stat-pill i { color: #0f766e; font-size: 1.1rem; }
+        .qs-stat-pill span { font-size: .85rem; color: #64748b; }
+
+        /* ── Empty / Loading States ──────────────────── */
+        .qs-state-wrap {
+          text-align: center;
+          padding: 60px 20px;
+          color: #94a3b8;
+        }
+        .qs-state-wrap i { font-size: 4rem; margin-bottom: 18px; opacity: .4; }
+        .qs-state-wrap h5 { font-family: 'Amiri',serif; color: #64748b; }
+
+        .qs-spinner {
+          width: 52px; height: 52px;
+          border: 4px solid #e2e8f0;
+          border-top-color: #0f766e;
+          border-radius: 50%;
+          animation: spin .8s linear infinite;
+          margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Dark Mode ───────────────────────────────── */
+        .dark-mode .qs-result-card { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+        .dark-mode .qs-verse-text  { color: #f1f5f9; }
+        .dark-mode .qs-meta-badge  { background: #0c4a3a; color: #6ee7b7; border-color: #065f46; }
+        .dark-mode .qs-tafsir-box  { background: #0c2a1e; color: #a7f3d0; border-top-color: #10b981; }
+        .dark-mode .qs-filter-pill { background: #1e293b; border-color: #475569; color: #cbd5e1; }
+        .dark-mode .qs-filter-pill.active { background: #0f766e; color: white; }
+        .dark-mode .qs-stat-pill   { background: #1e293b; border-color: #334155; }
+
+        /* ── Responsive ──────────────────────────────── */
+        @media(max-width:576px) {
+          .qsearch-hero { padding: 32px 20px 28px; }
+          .qsearch-box  { flex-wrap: wrap; padding: 12px; }
+          .qsearch-box input { font-size: 1.05rem; }
+          #qsearchBtnMain { width: 100%; justify-content: center; }
+          .qs-verse-text { font-size: 1.4rem; }
+        }
+      </style>
+
+      <!-- ── Search Hero ── -->
+      <div class="qsearch-hero" data-aos="fade-up">
+        <div style="position:relative;z-index:2;">
+          <div class="text-center">
+            <span style="display:inline-block;background:rgba(212,175,55,.2);border:1px solid rgba(212,175,55,.4);color:var(--gold);border-radius:50px;padding:6px 24px;font-size:.95rem;font-weight:700;margin-bottom:18px;">
+              <i class="fas fa-search-plus me-2"></i>الباحث القرآني الذكي
+            </span>
+            <h2 class="mb-3">ابحث في كتاب الله العزيز</h2>
+            <p>ادخل كلمة أو جزءاً من آية — يبحث الباحث فوراً في ٦٢٣٦ آية من القرآن الكريم ويعرض النتائج مع تفسيرها ومعانيها وإمكانية مشاركتها</p>
+          </div>
+
+          <!-- Search Box -->
+          <div style="position:relative;max-width:760px;margin:0 auto;">
+            <div class="qsearch-box">
+              <i class="fas fa-quran" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;"></i>
+              <input
+                type="text"
+                id="qsearchInput"
+                placeholder="ابحث بكلمة أو عبارة... مثال: وما أرسلناك"
+                autocomplete="off"
+                onkeydown="if(event.key==='Enter') runQSearch()"
+                oninput="handleQSearchInput(this.value)"
+              >
+              <button id="qsearchBtnMain" onclick="runQSearch()">
+                <i class="fas fa-search me-2"></i>بحث
+              </button>
+            </div>
+            <!-- Autocomplete -->
+            <div class="qsearch-autocomplete" id="qsearchAC"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Stats Pills ── -->
+      <div class="qs-stats" data-aos="fade-up">
+        <div class="qs-stat-pill"><i class="fas fa-book"></i><div><strong>6,236</strong><span class="d-block">آية قرآنية</span></div></div>
+        <div class="qs-stat-pill"><i class="fas fa-list-ol"></i><div><strong>114</strong><span class="d-block">سورة</span></div></div>
+        <div class="qs-stat-pill"><i class="fas fa-layer-group"></i><div><strong>30</strong><span class="d-block">جزءاً</span></div></div>
+        <div class="qs-stat-pill"><i class="fas fa-scroll"></i><div><strong>3</strong><span class="d-block">مراجع تفسيرية</span></div></div>
+      </div>
+
+      <!-- ── Filter Pills ── -->
+      <div class="qs-filter-wrap" data-aos="fade-up">
+        <span class="qs-filter-pill active" data-filter="all" onclick="setQFilter('all',this)"><i class="fas fa-globe-asia me-1"></i> كل القرآن</span>
+        <span class="qs-filter-pill" data-filter="makkiyya" onclick="setQFilter('makkiyya',this)">السور المكية</span>
+        <span class="qs-filter-pill" data-filter="madaniyya" onclick="setQFilter('madaniyya',this)">السور المدنية</span>
+        <span class="qs-filter-pill" data-filter="short" onclick="setQFilter('short',this)">قصار السور (المفصّل)</span>
+        <span class="qs-filter-pill" data-filter="basmala" onclick="setQFilter('basmala',this)"><i class="fas fa-star text-warning me-1"></i> آيات البسملة</span>
+      </div>
+
+      <!-- ── Results Area ── -->
+      <div id="qsearchResultsWrap">
+        <!-- Initial idle state -->
+        <div class="qs-state-wrap" id="qsearchIdle">
+          <i class="fas fa-search-plus d-block"></i>
+          <h5>أدخل كلمة للبحث في كتاب الله</h5>
+          <p class="small mt-2">ابدأ بكتابة آية أو كلمة قرآنية ليظهر الباحث النتائج مع التفاسير الموثقة</p>
+        </div>
+        <!-- Loading state (hidden) -->
+        <div class="qs-state-wrap d-none" id="qsearchLoading">
+          <div class="qs-spinner"></div>
+          <h5>جارٍ البحث في كلام الله...</h5>
+        </div>
+        <!-- Results list -->
+        <div id="qsearchResults"></div>
+      </div>
+
+    </div><!-- end tab-quran-search -->
 
   </div> <!-- End tabs content mega -->
 </div>
@@ -1089,65 +2173,11 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="surahs.js"></script>
 
 <script>
-// Quran Data & Logic
-const surahs = [
-  {"id":1,"name":"الفاتحة","type":"مكية","verses":7,"category":"mufassal"},
-  {"id":2,"name":"البقرة","type":"مدنية","verses":286,"category":"tiwal"},
-  {"id":3,"name":"آل عمران","type":"مدنية","verses":200,"category":"tiwal"},
-  {"id":4,"name":"النساء","type":"مدنية","verses":176,"category":"tiwal"},
-  {"id":5,"name":"المائدة","type":"مدنية","verses":120,"category":"tiwal"},
-  {"id":6,"name":"الأنعام","type":"مكية","verses":165,"category":"tiwal"},
-  {"id":7,"name":"الأعراف","type":"مكية","verses":206,"category":"tiwal"},
-  {"id":8,"name":"الأنفال","type":"مدنية","verses":75,"category":"miin"},
-  {"id":9,"name":"التوبة","type":"مدنية","verses":129,"category":"miin"},
-  {"id":10,"name":"يونس","type":"مكية","verses":109,"category":"miin"},
-  {"id":11,"name":"هود","type":"مكية","verses":123,"category":"miin"},
-  {"id":12,"name":"يوسف","type":"مكية","verses":111,"category":"miin"},
-  {"id":13,"name":"الرعد","type":"مدنية","verses":43,"category":"miin"},
-  {"id":14,"name":"إبراهيم","type":"مكية","verses":52,"category":"miin"},
-  {"id":15,"name":"الحجر","type":"مكية","verses":99,"category":"miin"},
-  {"id":16,"name":"النحل","type":"مكية","verses":128,"category":"miin"},
-  {"id":17,"name":"الإسراء","type":"مكية","verses":111,"category":"miin"},
-  {"id":18,"name":"الكهف","type":"مكية","verses":110,"category":"miin"},
-  {"id":19,"name":"مريم","type":"مكية","verses":98,"category":"mathani"},
-  {"id":20,"name":"طه","type":"مكية","verses":135,"category":"mathani"},
-  {"id":21,"name":"الأنبياء","type":"مكية","verses":112,"category":"mathani"},
-  {"id":22,"name":"الحج","type":"مدنية","verses":78,"category":"mathani"},
-  {"id":23,"name":"المؤمنون","type":"مكية","verses":118,"category":"mathani"},
-  {"id":24,"name":"النور","type":"مدنية","verses":64,"category":"mathani"},
-  {"id":25,"name":"الفرقان","type":"مكية","verses":77,"category":"mathani"},
-  {"id":26,"name":"الشعراء","type":"مكية","verses":227,"category":"mathani"},
-  {"id":27,"name":"النمل","type":"مكية","verses":93,"category":"mathani"},
-  {"id":28,"name":"القصص","type":"مكية","verses":88,"category":"mathani"},
-  {"id":29,"name":"العنكبوت","type":"مكية","verses":69,"category":"mathani"},
-  {"id":30,"name":"الروم","type":"مكية","verses":60,"category":"mathani"},
-  {"id":31,"name":"لقمان","type":"مكية","verses":34,"category":"mathani"},
-  {"id":32,"name":"السجدة","type":"مكية","verses":30,"category":"mathani"},
-  {"id":33,"name":"الأحزاب","type":"مدنية","verses":73,"category":"mathani"},
-  {"id":34,"name":"سبأ","type":"مكية","verses":54,"category":"mathani"},
-  {"id":35,"name":"فاطر","type":"مكية","verses":45,"category":"mathani"},
-  {"id":36,"name":"يس","type":"مكية","verses":83,"category":"mathani"},
-  {"id":37,"name":"الصافات","type":"مكية","verses":182,"category":"mathani"},
-  {"id":38,"name":"ص","type":"مكية","verses":88,"category":"mathani"},
-  {"id":39,"name":"الزمر","type":"مكية","verses":75,"category":"mathani"},
-  {"id":40,"name":"غافر","type":"مكية","verses":85,"category":"mathani"},
-  {"id":41,"name":"فصلت","type":"مكية","verses":54,"category":"mathani"},
-  {"id":42,"name":"الشورى","type":"مكية","verses":53,"category":"mathani"},
-  {"id":43,"name":"الزخرف","type":"مكية","verses":89,"category":"mathani"},
-  {"id":44,"name":"الدخان","type":"مكية","verses":59,"category":"mathani"},
-  {"id":45,"name":"الجاثية","type":"مكية","verses":37,"category":"mathani"},
-  {"id":46,"name":"الأحقاف","type":"مكية","verses":35,"category":"mathani"},
-  {"id":47,"name":"محمد","type":"مدنية","verses":38,"category":"mathani"},
-  {"id":48,"name":"الفتح","type":"مدنية","verses":29,"category":"mathani"},
-  {"id":49,"name":"الحجرات","type":"مدنية","verses":18,"category":"mathani"}
-];
-// Populate the rest of the 114
-const additional = ["ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
-additional.forEach((n, i) => {
-  surahs.push({"id": 50 + i, "name": n, "type": (50+i)%2?"مكية":"مدنية", "verses": 0, "category": "mufassal"});
-});
+// Surahnya data is now loaded from surahs.js
+const quranSurahs = window.surahs;
 
 // Audio Library API Logic
 let allRecitersCache = [];
@@ -1159,7 +2189,7 @@ let currentSurahId = 1;
 function renderMegaSurahs(filter = 'all', searchQuery = '') {
   const c = document.getElementById('mega-surah-list');
   c.innerHTML = '';
-  const filtered = surahs.filter(s => {
+  const filtered = quranSurahs.filter(s => {
     let matchF = true;
     if(filter !== 'all') {
       if(filter === 'tiwal' && s.category !== 'tiwal') matchF = false;
@@ -1167,20 +2197,22 @@ function renderMegaSurahs(filter = 'all', searchQuery = '') {
       if(filter === 'mathani' && s.category !== 'mathani') matchF = false;
       if(filter === 'mufassal' && s.category !== 'mufassal') matchF = false;
     }
-    let matchS = s.name.includes(searchQuery) || String(s.id).includes(searchQuery);
+    let matchS = s.name.includes(searchQuery) || String(s.number || s.id).includes(searchQuery);
     return matchF && matchS;
   });
 
   filtered.forEach(s => {
+    const sId = s.number || s.id;
+    const sType = s.type === 'Meccan' ? 'مكية' : (s.type === 'Medinan' ? 'مدنية' : s.type);
     c.innerHTML += `
       <div class="col-lg-4 col-md-6">
-        <div class="surah-card" onclick="openMegaReader(${s.id}, '${s.name}')">
-          <div class="surah-num">${s.id}</div>
+        <div class="surah-card" onclick="openMegaReader(${sId}, '${s.name}')">
+          <div class="surah-num">${sId}</div>
           <div class="ms-3">
             <h5 class="fw-bold">${s.name}</h5>
-            <span>${s.type} • رقم ${s.id}</span>
+            <span>${sType} • رقم ${sId}</span>
           </div>
-          <button class="btn-play-s" onclick="event.stopPropagation(); playMegaAudio(${s.id}, '${s.name}', currentReciterServer, currentReciterGlobalName)">
+          <button class="btn-play-s" onclick="event.stopPropagation(); playMegaAudio(${sId}, '${s.name}', currentReciterServer, currentReciterGlobalName)">
             <i class="fas fa-play"></i>
           </button>
         </div>
@@ -1227,15 +2259,35 @@ function renderReciters(reciters) {
 
    reciters.forEach(r => {
       let moshaf = r.moshaf[0];
+      // Build moshaf options for dropdown if multiple
+      let moshafOpts = r.moshaf.length > 1
+        ? `<select class='form-select form-select-sm mt-2 border-0 bg-light' 
+               onclick='event.stopPropagation()' 
+               onchange='openReciter("${r.name}", this.value)'>
+             ${r.moshaf.map(m => `<option value='${m.server}'>${m.name}</option>`).join('')}
+           </select>`
+        : '';
       html += `
          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="reciter-item" onclick="openReciter('${r.name}', '${moshaf.server}')">
-               <div style="background:rgba(15,118,110,0.1);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+            <div class="reciter-item position-relative" style="cursor:pointer;">
+              <div onclick="openReciter('${r.name}', '${moshaf.server}')" style="text-align:center;">
+               <div style="background:linear-gradient(135deg,rgba(6,78,59,0.12),rgba(4,120,87,0.08));width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:2px solid rgba(4,120,87,0.2);">
                   <i class="fas fa-microphone-alt text-success fs-3"></i>
                </div>
-               <h5 class="fw-bold mb-2 font-amiri" style="font-size: 1.1rem; height: 35px; overflow: hidden; text-overflow:ellipsis;">${r.name}</h5>
-               <small class="opacity-75 d-block text-truncate">${moshaf.name}</small>
-               <span class="badge bg-light text-dark mt-2 border">${moshaf.surah_total} سورة</span>
+               <h5 class="fw-bold mb-1 font-amiri" style="font-size:1.05rem;line-height:1.4;">${r.name}</h5>
+               <small class="opacity-75 d-block text-truncate mb-2">${moshaf.name}</small>
+               <div class="d-flex justify-content-center gap-2 flex-wrap">
+                 <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">${moshaf.surah_total} سورة</span>
+                 ${r.moshaf.length > 1 ? `<span class="badge bg-warning bg-opacity-10 text-warning border">${r.moshaf.length} روايات</span>` : ''}
+               </div>
+               ${moshafOpts}
+              </div>
+              <!-- Download full Quran quick button -->
+              <button class="btn btn-sm btn-outline-success rounded-pill w-100 mt-2" 
+                      title="تحميل المصحف كاملاً"
+                      onclick="event.stopPropagation(); quickDownloadReciter('${r.name}', '${moshaf.server}')">
+                <i class="fas fa-download me-1"></i> تحميل المصحف
+              </button>
             </div>
          </div>
       `;
@@ -1273,19 +2325,66 @@ function closeReciterDetails() {
    document.getElementById('reciterDetails').style.display = 'none';
 }
 
-function renderLibrarySurahs(reciterName, serverUrl, searchQuery = '') {
+function renderLibrarySurahs(reciterName, serverUrl, searchQuery = '', viewMode = 'grid') {
    const grid = document.getElementById('libSurahsGrid');
+   const filtered = quranSurahs.filter(s => s.name.includes(searchQuery) || String(s.number || s.id).includes(searchQuery));
+   
+   // Update count badge
+   const badge = document.getElementById('surahCountBadge');
+   if (badge) badge.textContent = filtered.length + ' سورة';
+   
    grid.innerHTML = '';
    
-   surahs.filter(s => s.name.includes(searchQuery) || String(s.id).includes(searchQuery)).forEach(s => {
-      grid.innerHTML += `
-         <div class="col-md-3 col-sm-6">
-            <button class="btn btn-outline-dark w-100 text-start d-flex align-items-center justify-content-between p-3" onclick="playMegaAudio(${s.id}, '${s.name}', '${serverUrl}', '${reciterName}')">
-               <div><span class="badge bg-light text-dark me-2 border">${s.id}</span><strong class="font-amiri fs-5">${s.name}</strong></div>
-               <i class="fas fa-play text-success"></i>
-            </button>
-         </div>
-      `;
+   const isGrid = viewMode !== 'list';
+   const colClass = isGrid ? 'col-lg-3 col-md-4 col-sm-6' : 'col-12';
+   
+   filtered.forEach(s => {
+      const num = String(s.id).padStart(3, '0');
+      const audioUrl = `${serverUrl}${num}.mp3`;
+      
+      if (isGrid) {
+        grid.innerHTML += `
+          <div class="${colClass}">
+            <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100" style="transition:box-shadow 0.2s;">
+              <div class="card-body p-3 d-flex flex-column">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge bg-success bg-opacity-15 text-success rounded-pill fw-bold" style="min-width:36px;">${s.id}</span>
+                  <strong class="font-amiri fs-5">${s.name}</strong>
+                </div>
+                <small class="text-muted mb-3" style="font-size:0.8rem;">${s.type} • ${s.verses} آية</small>
+                <div class="d-flex gap-2 mt-auto">
+                  <button class="btn btn-success btn-sm rounded-pill flex-grow-1" onclick="playMegaAudio(${s.id}, '${s.name}', '${serverUrl}', '${reciterName}')">
+                    <i class="fas fa-play me-1"></i>استماع
+                  </button>
+                  <a class="btn btn-outline-success btn-sm rounded-pill" href="${audioUrl}" download="${s.name}.mp3" title="تحميل سورة ${s.name}">
+                    <i class="fas fa-download"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        grid.innerHTML += `
+          <div class="${colClass}">
+            <div class="d-flex align-items-center gap-3 p-3 border-bottom bg-white rounded-3 mb-1 shadow-sm">
+              <span class="badge bg-success rounded-circle fw-bold" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;">${s.id}</span>
+              <div class="flex-grow-1">
+                <strong class="font-amiri fs-5 d-block">${s.name}</strong>
+                <small class="text-muted">${s.type} • ${s.verses} آية</small>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-success btn-sm rounded-pill" onclick="playMegaAudio(${s.id}, '${s.name}', '${serverUrl}', '${reciterName}')">
+                  <i class="fas fa-play me-1"></i>استماع
+                </button>
+                <a class="btn btn-outline-success btn-sm rounded-pill" href="${audioUrl}" download="${s.name}.mp3">
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }
    });
 }
 
@@ -1305,6 +2404,82 @@ function openAudioLibrary(reciterName) {
         filterReciters(reciterName.split(' ')[0]);
      }
    }, 1000);
+}
+
+// View mode for library
+let libViewMode = 'grid';
+function setLibView(mode, btn) {
+    libViewMode = mode;
+    document.querySelectorAll('[id^=view]').forEach(b => {
+        b.classList.remove('btn-success', 'active');
+        b.classList.add('btn-outline-secondary');
+    });
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-success', 'active');
+    renderLibrarySurahs(currentReciterGlobalName, currentReciterServer, 
+        document.getElementById('libSurahSearch')?.value || '', mode);
+}
+
+// Quick download from reciter card
+function quickDownloadReciter(name, serverUrl) {
+    openReciter(name, serverUrl);
+    setTimeout(() => {
+        const btn = document.getElementById('btnDownloadFull');
+        if (btn) btn.click();
+    }, 400);
+}
+
+// Show download banner
+function downloadFullQuran() {
+    const banner = document.getElementById('downloadBanner');
+    if (banner) banner.classList.remove('d-none');
+    banner.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Batch download all 114 surahs sequentially
+let downloadQueue = [];
+let downloadIdx = 0;
+function startBatchDownload() {
+    const serverUrl = currentReciterServer;
+    const name = currentReciterGlobalName;
+    const statusEl = document.getElementById('downloadStatus');
+    const progressBar = document.getElementById('downloadProgress');
+    
+    statusEl.textContent = 'جاري تجهيز قائمة التحميل...';
+    
+    let completed = 0;
+    const total = surahs.length;
+    
+    function downloadNext(idx) {
+        if (idx >= total) {
+            statusEl.textContent = '✅ تم تحميل جميع السور بنجاح! تحقق من مجلد التنزيلات.';
+            return;
+        }
+        const s = surahs[idx];
+        const num = String(s.id).padStart(3, '0');
+        const url = `${serverUrl}${num}.mp3`;
+        
+        statusEl.textContent = `(${idx+1}/${total}) جاري تحميل سورة ${s.name}...`;
+        progressBar.style.width = `${Math.round(((idx+1)/total)*100)}%`;
+        
+        // Create temporary anchor for download
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${num}_${s.name}_${name}.mp3`;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        // Delay between downloads to avoid server throttling
+        setTimeout(() => downloadNext(idx + 1), 1200);
+    }
+    
+    // Start — browser will prompt for each file
+    const confirmMsg = `سيتم تحميل 114 سورة من مصحف ${name}. المتصفح سيطلب منك الإذن بتحميل ملفات متعددة. هل تريد المتابعة؟`;
+    if (confirm(confirmMsg)) {
+        downloadNext(0);
+    }
 }
 
 // ---------------- GENERAL LOGIC: READER & TAFSIR ----------------
@@ -1393,7 +2568,7 @@ function playNextSurah(direction) {
    let nextId = currentSurahId + direction;
    if(nextId > 114) nextId = 1;
    if(nextId < 1) nextId = 114;
-   const nextSurah = surahs.find(s => s.id === nextId);
+    const nextSurah = quranSurahs.find(s => (s.number || s.id) === nextId);
    playMegaAudio(nextId, nextSurah.name, currentReciterServer, currentReciterGlobalName);
 }
 
@@ -1492,6 +2667,11 @@ function setQMode(mode, btn) {
     }
     autoOpenTafsir = false;
     qMode = mode;
+    
+    // Automatically research if there is an existing term
+    if (document.getElementById('quranSearchInput').value.trim()) {
+        performQuranSearch();
+    }
 }
 
 async function performQuranSearch() {
@@ -1500,93 +2680,97 @@ async function performQuranSearch() {
 
     const resBox  = document.getElementById('quranSearchResults');
     const resList = document.getElementById('quranResultsList');
-    const countBadge   = document.getElementById('quranResultCount');
-    const editionLabel = document.getElementById('qEditionLabel');
-
+    const countBadge = document.getElementById('quranResultCount');
+    
+    // Show results box and loading state
     resBox.classList.remove('d-none');
-    resList.innerHTML = `
-        <div class="text-center py-5">
-          <div class="spinner-border text-success" style="width:3rem;height:3rem;"></div>
-          <p class="mt-3 fw-bold fs-5" style="color:#0f766e;">جاري البحث في آيات القرآن الكريم...</p>
-          <p class="text-muted small">يتم الجلب من خوادم alquran.cloud</p>
-        </div>`;
-
-    const edition = EDITION_MAP[qMode] || 'quran-uthmani';
-    editionLabel.textContent = '(' + (EDITION_LABELS[qMode] || '') + ')';
+    resList.innerHTML = `<div class="text-center py-5">
+                            <i class="fas fa-spinner fa-spin fa-3x text-success mb-3"></i>
+                            <h5 class="text-muted font-amiri d-block">جاري البحث في آيات الذكر الحكيم...</h5>
+                         </div>`;
+    countBadge.textContent = 'جاري البحث...';
 
     try {
+        // Choose edition based on selected script
+        let edition = 'quran-simple-clean';
+        if (qMode === 'tashkeel' || qMode === 'uthmani') edition = 'quran-simple';
+        
         const url = `https://api.alquran.cloud/v1/search/${encodeURIComponent(q)}/all/${edition}`;
-        const res  = await fetch(url);
-        const data = await res.json();
+        const response = await fetch(url);
+        const data = await response.json();
 
-        if (data.code === 200 && data.data && data.data.matches && data.data.matches.length > 0) {
-            countBadge.textContent = data.data.count;
-
-            // Build safe regex from query (no diacritics stripping on query — server handles it)
-            const safeQ    = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const hlRegex  = new RegExp(safeQ, 'g');
-
-            let out = '';
-            data.data.matches.forEach((m, idx) => {
-                const highlighted = m.text.replace(hlRegex,
-                    match => `<span class="qs-highlight">${match}</span>`);
-
-                const surahNum  = m.surah.number;
-                const ayahNum   = m.numberInSurah;
-                const surahName = m.surah.name;
-                const surahEn   = m.surah.englishName || '';
-                const juz       = m.juz   ? `<span class="qresult-badge"><i class="fas fa-layer-group"></i> جزء ${m.juz}</span>` : '';
-                const page      = m.page  ? `<span class="qresult-badge"><i class="fas fa-file"></i> صفحة ${m.page}</span>` : '';
-                const isUthmani = (qMode === 'uthmani');
-
-                out += `
-                <div class="qresult-item" id="qitem-${idx}">
-                  <div class="qresult-verse uthmani-text" style="font-size:${isUthmani ? '2.1' : '1.8'}rem;">
-                    ﴿ ${highlighted} ﴾
-                  </div>
-                  <div class="qresult-meta">
-                    <span class="qresult-badge gold"><i class="fas fa-book-quran"></i> سورة ${surahName}</span>
-                    <span class="qresult-badge"><i class="fas fa-hashtag"></i> آية ${ayahNum}</span>
-                    <span class="qresult-badge"><i class="fas fa-sort-numeric-up-alt"></i> سورة رقم ${surahNum}</span>
-                    ${juz}${page}
-                  </div>
-                  <button class="qtafsir-toggle" onclick="toggleTafsir(${idx}, ${surahNum}, ${ayahNum})">
-                    <i class="fas fa-chevron-down me-1"></i> عرض التفسير الميسّر
-                  </button>
-                  <div class="qtafsir-panel" id="qtafsir-${idx}">
-                    <div class="text-center py-3"><i class="fas fa-spinner fa-spin text-success"></i></div>
-                  </div>
+        if (data.code === 200 && data.data && data.data.count > 0) {
+            countBadge.textContent = data.data.count + ' نتيجة';
+            
+            // Render results
+            let htmlHTML = '';
+            data.data.matches.forEach((match, idx) => {
+                // Highlight the matching word
+                const regex = new RegExp(q, 'g');
+                const highlighted = match.text.replace(regex, `<span class="qs-highlight">${q}</span>`);
+                
+                htmlHTML += `
+                <div class="qresult-item">
+                    <div class="qresult-verse uthmani-text" id="qVerse-${idx}">
+                        ﴿ ${highlighted} ﴾
+                    </div>
+                    <div class="qresult-meta">
+                        <span class="qresult-badge gold">
+                            <i class="fas fa-book-quran"></i> سورة ${match.surah.name}
+                        </span>
+                        <span class="qresult-badge">
+                            <i class="fas fa-list-ol"></i> آية رقم ${match.numberInSurah}
+                        </span>
+                        <span class="qresult-badge" style="background:#e2e8f0;color:#334155;cursor:pointer;border:1px solid #cbd5e1" onclick="copyVerse('${match.text.replace(/'/g, "\\'")} - {سورة ${match.surah.name}: ${match.numberInSurah}}')">
+                            <i class="fas fa-copy"></i> نسخ الآية
+                        </span>
+                    </div>
+                    <button class="qtafsir-toggle" onclick="toggleTafsir(${idx}, ${match.surah.number}, ${match.numberInSurah})">
+                        <i class="fas fa-chevron-down me-1"></i> عرض التفسير الميسّر
+                    </button>
+                    <div class="qtafsir-panel" id="qtafsir-${idx}"></div>
                 </div>`;
             });
-
-            resList.innerHTML = out;
-
-            // If auto-tafsir is on, open all
-            if (autoOpenTafsir) {
-                data.data.matches.forEach((m, idx) => {
-                    fetchAndShowTafsir(idx, m.surah.number, m.numberInSurah);
-                });
+            resList.innerHTML = htmlHTML;
+            
+            if (autoOpenTafsir && data.data.matches.length > 0) {
+                setTimeout(() => toggleTafsir(0, data.data.matches[0].surah.number, data.data.matches[0].numberInSurah), 300);
             }
-
         } else {
-            countBadge.textContent = '0';
+            // No results found
+            countBadge.textContent = '0 نتيجة';
             resList.innerHTML = `
-                <div class="qsearch-empty">
-                  <i class="fas fa-search-minus"></i>
-                  <h4 class="fw-bold text-dark">لا توجد نتائج</h4>
-                  <p>لم نعثر على الكلمة "${q}" في القرآن الكريم بالنسخة المحددة.<br>
-                  <strong>نصيحة:</strong> جرّب البحث بدون تشكيل أو باختيار «نص بدون تشكيل».</p>
-                </div>`;
+                <div class="text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted opacity-50 mb-3"></i>
+                    <h5 class="text-muted font-amiri">لم يتم العثور على تطابق بحثي</h5>
+                    <p class="text-muted small">تأكد من التهجئة (مثال: استخدام التاء المربوطة، الهاء، إزالة التشكيل...)</p>
+                </div>
+            `;
         }
-    } catch (err) {
+    } catch(err) {
+        console.error('Quran search API error:', err);
+        countBadge.textContent = '! خطأ';
         resList.innerHTML = `
-            <div class="alert alert-danger text-center fw-bold">
-              <i class="fas fa-exclamation-triangle me-2"></i>
-              حدث خطأ في الاتصال بالخادم. تأكد من اتصالك بالإنترنت وحاول مجدداً.
-            </div>`;
-        console.error('Quran search error:', err);
+                <div class="text-center py-5">
+                    <i class="fas fa-exclamation-triangle fa-3x text-danger opacity-50 mb-3"></i>
+                    <h5 class="text-danger font-amiri">حدث خطأ أثناء الاتصال بقاعدة البيانات</h5>
+                    <p class="text-muted small">الرجاء التحقق من اتصالك بالإنترنت والمحاولة مجدداً</p>
+                </div>
+            `;
     }
 }
+
+// Ensure copy function exists
+window.copyVerse = window.copyVerse || function(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        if(typeof showToast === 'function') {
+            showToast('تم نسخ الآية الكريمة', 'success');
+        } else {
+            alert('تم تنسخ الآية');
+        }
+    });
+};
+
 
 // Toggle tafsir accordion for a single result
 function toggleTafsir(idx, surahNum, ayahNum) {
@@ -1643,9 +2827,9 @@ function buildTafsirHTML({ tafsirText, uthmaniText }, surahNum, ayahNum) {
       <span class="badge bg-success mb-2"><i class="fas fa-book me-1"></i> التفسير الميسّر</span>
       <span class="badge bg-secondary ms-2 mb-2">سورة ${surahNum} — آية ${ayahNum}</span><br>`;
 
-    if (uthmaniText && qMode !== 'uthmani') {
+    if (uthmaniText) {
         html += `<div class="font-amiri text-dark mt-2 mb-3" style="font-size:1.7rem;line-height:2.2;text-align:center;border:1px dashed #86efac;border-radius:10px;padding:12px;background:rgba(16,185,129,0.05);">
-            <small style="font-size:0.8rem;color:#6b7280;display:block;margin-bottom:8px;">الخط العثماني المشكّل</small>
+            <small style="font-size:0.8rem;color:#6b7280;display:block;margin-bottom:8px;">النص بالرسم العثماني</small>
             ﴿ ${uthmaniText} ﴾
           </div>`;
     }
@@ -1659,6 +2843,414 @@ function buildTafsirHTML({ tafsirText, uthmaniText }, surahNum, ayahNum) {
     html += `</div>`;
     return html;
 }
+
+// ---- MAQAM PLAYER ----
+function playMaqam(title, url, desc) {
+    const player = document.getElementById('maqamPlayer');
+    const audio  = document.getElementById('maqamAudio');
+    const titleEl = document.getElementById('maqamPlayerTitle');
+    const descEl  = document.getElementById('maqamPlayerDesc');
+    
+    player.classList.remove('d-none');
+    titleEl.textContent = title;
+    descEl.textContent  = desc || '';
+    audio.src = url;
+    audio.play().catch(() => {
+      descEl.textContent = '⚠️ تعذر تشغيل الصوت تلقائياً. اضغط زر التشغيل.';
+    });
+    player.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeMaqamPlayer() {
+    const audio = document.getElementById('maqamAudio');
+    audio.pause();
+    document.getElementById('maqamPlayer').classList.add('d-none');
+}
+
+function filterMaqam(mood, btn) {
+    document.querySelectorAll('.maqam-card').forEach(card => {
+        if (mood === 'all' || card.dataset.mood === mood) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    document.querySelectorAll('.tab-pane#tab-maqam .btn').forEach(b => {
+        if (b !== btn) {
+            b.classList.remove('btn-success', 'active');
+            b.classList.add('btn-outline-secondary');
+        }
+    });
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-success', 'active');
+}
+
+
+/* ============================================================
+   QURAN SEARCH COMPONENT — قسم الباحث القرآني
+   ============================================================ */
+
+// ─── State ────────────────────────────────────────────────────
+const QSearch = {
+  currentFilter : 'all',
+  currentQuery  : '',
+  tafsirCache   : {},
+  acDebounce    : null,
+  tafsirEditions: {
+    muyassar  : { id: 'ar.muyassar',     label: 'التفسير الميسّر',   color: '#10b981' },
+    jalalayn  : { id: 'ar.jalalayn',     label: 'تفسير الجلالين',    color: '#6366f1' },
+    saadi     : { id: 'ar.wasitiyyah',   label: 'تفسير السعدي',      color: '#f59e0b' },
+  }
+};
+
+// ─── Surah meta for autocomplete ──────────────────────────────
+const SURAH_META = [
+  {n:1,name:'الفاتحة',type:'makkiyya',ayat:7},   {n:2,name:'البقرة',type:'madaniyya',ayat:286},
+  {n:3,name:'آل عمران',type:'madaniyya',ayat:200},{n:4,name:'النساء',type:'madaniyya',ayat:176},
+  {n:5,name:'المائدة',type:'madaniyya',ayat:120}, {n:6,name:'الأنعام',type:'makkiyya',ayat:165},
+  {n:7,name:'الأعراف',type:'makkiyya',ayat:206},  {n:8,name:'الأنفال',type:'madaniyya',ayat:75},
+  {n:9,name:'التوبة',type:'madaniyya',ayat:129},  {n:10,name:'يونس',type:'makkiyya',ayat:109},
+  {n:11,name:'هود',type:'makkiyya',ayat:123},     {n:12,name:'يوسف',type:'makkiyya',ayat:111},
+  {n:13,name:'الرعد',type:'madaniyya',ayat:43},   {n:14,name:'إبراهيم',type:'makkiyya',ayat:52},
+  {n:15,name:'الحجر',type:'makkiyya',ayat:99},    {n:16,name:'النحل',type:'makkiyya',ayat:128},
+  {n:17,name:'الإسراء',type:'makkiyya',ayat:111}, {n:18,name:'الكهف',type:'makkiyya',ayat:110},
+  {n:19,name:'مريم',type:'makkiyya',ayat:98},     {n:20,name:'طه',type:'makkiyya',ayat:135},
+  {n:21,name:'الأنبياء',type:'makkiyya',ayat:112},{n:22,name:'الحج',type:'madaniyya',ayat:78},
+  {n:23,name:'المؤمنون',type:'makkiyya',ayat:118},{n:24,name:'النور',type:'madaniyya',ayat:64},
+  {n:25,name:'الفرقان',type:'makkiyya',ayat:77},  {n:26,name:'الشعراء',type:'makkiyya',ayat:227},
+  {n:27,name:'النمل',type:'makkiyya',ayat:93},    {n:28,name:'القصص',type:'makkiyya',ayat:88},
+  {n:29,name:'العنكبوت',type:'makkiyya',ayat:69}, {n:30,name:'الروم',type:'makkiyya',ayat:60},
+  {n:31,name:'لقمان',type:'makkiyya',ayat:34},    {n:32,name:'السجدة',type:'makkiyya',ayat:30},
+  {n:33,name:'الأحزاب',type:'madaniyya',ayat:73}, {n:34,name:'سبأ',type:'makkiyya',ayat:54},
+  {n:35,name:'فاطر',type:'makkiyya',ayat:45},     {n:36,name:'يس',type:'makkiyya',ayat:83},
+  {n:37,name:'الصافات',type:'makkiyya',ayat:182}, {n:38,name:'ص',type:'makkiyya',ayat:88},
+  {n:39,name:'الزمر',type:'makkiyya',ayat:75},    {n:40,name:'غافر',type:'makkiyya',ayat:85},
+  {n:41,name:'فصلت',type:'makkiyya',ayat:54},     {n:42,name:'الشورى',type:'makkiyya',ayat:53},
+  {n:43,name:'الزخرف',type:'makkiyya',ayat:89},   {n:44,name:'الدخان',type:'makkiyya',ayat:59},
+  {n:45,name:'الجاثية',type:'makkiyya',ayat:37},  {n:46,name:'الأحقاف',type:'makkiyya',ayat:35},
+  {n:47,name:'محمد',type:'madaniyya',ayat:38},    {n:48,name:'الفتح',type:'madaniyya',ayat:29},
+  {n:49,name:'الحجرات',type:'madaniyya',ayat:18}, {n:50,name:'ق',type:'makkiyya',ayat:45},
+  {n:51,name:'الذاريات',type:'makkiyya',ayat:60}, {n:52,name:'الطور',type:'makkiyya',ayat:49},
+  {n:53,name:'النجم',type:'makkiyya',ayat:62},    {n:54,name:'القمر',type:'makkiyya',ayat:55},
+  {n:55,name:'الرحمن',type:'madaniyya',ayat:78},  {n:56,name:'الواقعة',type:'makkiyya',ayat:96},
+  {n:57,name:'الحديد',type:'madaniyya',ayat:29},  {n:58,name:'المجادلة',type:'madaniyya',ayat:22},
+  {n:59,name:'الحشر',type:'madaniyya',ayat:24},   {n:60,name:'الممتحنة',type:'madaniyya',ayat:13},
+  {n:61,name:'الصف',type:'madaniyya',ayat:14},    {n:62,name:'الجمعة',type:'madaniyya',ayat:11},
+  {n:63,name:'المنافقون',type:'madaniyya',ayat:11},{n:64,name:'التغابن',type:'madaniyya',ayat:18},
+  {n:65,name:'الطلاق',type:'madaniyya',ayat:12},  {n:66,name:'التحريم',type:'madaniyya',ayat:12},
+  {n:67,name:'الملك',type:'makkiyya',ayat:30},    {n:68,name:'القلم',type:'makkiyya',ayat:52},
+  {n:69,name:'الحاقة',type:'makkiyya',ayat:52},   {n:70,name:'المعارج',type:'makkiyya',ayat:44},
+  {n:71,name:'نوح',type:'makkiyya',ayat:28},      {n:72,name:'الجن',type:'makkiyya',ayat:28},
+  {n:73,name:'المزمل',type:'makkiyya',ayat:20},   {n:74,name:'المدثر',type:'makkiyya',ayat:56},
+  {n:75,name:'القيامة',type:'makkiyya',ayat:40},  {n:76,name:'الإنسان',type:'madaniyya',ayat:31},
+  {n:77,name:'المرسلات',type:'makkiyya',ayat:50}, {n:78,name:'النبأ',type:'makkiyya',ayat:40},
+  {n:79,name:'النازعات',type:'makkiyya',ayat:46}, {n:80,name:'عبس',type:'makkiyya',ayat:42},
+  {n:81,name:'التكوير',type:'makkiyya',ayat:29},  {n:82,name:'الانفطار',type:'makkiyya',ayat:19},
+  {n:83,name:'المطففين',type:'makkiyya',ayat:36}, {n:84,name:'الانشقاق',type:'makkiyya',ayat:25},
+  {n:85,name:'البروج',type:'makkiyya',ayat:22},   {n:86,name:'الطارق',type:'makkiyya',ayat:17},
+  {n:87,name:'الأعلى',type:'makkiyya',ayat:19},   {n:88,name:'الغاشية',type:'makkiyya',ayat:26},
+  {n:89,name:'الفجر',type:'makkiyya',ayat:30},    {n:90,name:'البلد',type:'makkiyya',ayat:20},
+  {n:91,name:'الشمس',type:'makkiyya',ayat:15},    {n:92,name:'الليل',type:'makkiyya',ayat:21},
+  {n:93,name:'الضحى',type:'makkiyya',ayat:11},    {n:94,name:'الشرح',type:'makkiyya',ayat:8},
+  {n:95,name:'التين',type:'makkiyya',ayat:8},     {n:96,name:'العلق',type:'makkiyya',ayat:19},
+  {n:97,name:'القدر',type:'makkiyya',ayat:5},     {n:98,name:'البيّنة',type:'madaniyya',ayat:8},
+  {n:99,name:'الزلزلة',type:'madaniyya',ayat:8},  {n:100,name:'العاديات',type:'makkiyya',ayat:11},
+  {n:101,name:'القارعة',type:'makkiyya',ayat:11}, {n:102,name:'التكاثر',type:'makkiyya',ayat:8},
+  {n:103,name:'العصر',type:'makkiyya',ayat:3},    {n:104,name:'الهمزة',type:'makkiyya',ayat:9},
+  {n:105,name:'الفيل',type:'makkiyya',ayat:5},    {n:106,name:'قريش',type:'makkiyya',ayat:4},
+  {n:107,name:'الماعون',type:'makkiyya',ayat:7},  {n:108,name:'الكوثر',type:'makkiyya',ayat:3},
+  {n:109,name:'الكافرون',type:'makkiyya',ayat:6}, {n:110,name:'النصر',type:'madaniyya',ayat:3},
+  {n:111,name:'المسد',type:'makkiyya',ayat:5},    {n:112,name:'الإخلاص',type:'makkiyya',ayat:4},
+  {n:113,name:'الفلق',type:'makkiyya',ayat:5},    {n:114,name:'الناس',type:'makkiyya',ayat:6},
+];
+
+// ─── Filter State ─────────────────────────────────────────────
+function setQFilter(filter, el) {
+  QSearch.currentFilter = filter;
+  document.querySelectorAll('.qs-filter-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  if (QSearch.currentQuery) runQSearch();
+}
+
+// ─── Autocomplete ─────────────────────────────────────────────
+function handleQSearchInput(val) {
+  clearTimeout(QSearch.acDebounce);
+  QSearch.acDebounce = setTimeout(() => showAutocomplete(val), 220);
+}
+
+function showAutocomplete(val) {
+  const ac = document.getElementById('qsearchAC');
+  if (!val || val.length < 2) { ac.classList.remove('visible'); return; }
+
+  const matches = SURAH_META.filter(s =>
+    s.name.includes(val) || val.includes(s.name)
+  ).slice(0, 6);
+
+  if (!matches.length) { ac.classList.remove('visible'); return; }
+
+  ac.innerHTML = matches.map(s => `
+    <div class="qsearch-ac-item" onclick="selectSurahAC(${s.n}, '${s.name}')">
+      <span class="ac-icon"><i class="fas fa-quran"></i></span>
+      <div>
+        <div>سورة ${s.name}</div>
+        <div class="ac-sub">${s.ayat} آية  ·  ${s.type === 'makkiyya' ? 'مكية' : 'مدنية'}</div>
+      </div>
+    </div>
+  `).join('');
+  ac.classList.add('visible');
+}
+
+function selectSurahAC(num, name) {
+  document.getElementById('qsearchInput').value = name;
+  document.getElementById('qsearchAC').classList.remove('visible');
+  QSearch.currentQuery = name;
+  runQSearch();
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('#qsearchAC') && !e.target.closest('.qsearch-box')) {
+    const ac = document.getElementById('qsearchAC');
+    if (ac) ac.classList.remove('visible');
+  }
+});
+
+// ─── Main Search ──────────────────────────────────────────────
+async function runQSearch() {
+  const raw = document.getElementById('qsearchInput').value.trim();
+  if (!raw) return;
+  QSearch.currentQuery = raw;
+
+  const idle    = document.getElementById('qsearchIdle');
+  const loading = document.getElementById('qsearchLoading');
+  const results = document.getElementById('qsearchResults');
+
+  idle.classList.add('d-none');
+  loading.classList.remove('d-none');
+  results.innerHTML = '';
+  document.getElementById('qsearchAC').classList.remove('visible');
+
+  try {
+    const url = `https://api.alquran.cloud/v1/search/${encodeURIComponent(raw)}/all/ar`;
+    const res  = await fetch(url);
+    const data = await res.json();
+
+    loading.classList.add('d-none');
+
+    if (data.code !== 200 || !data.data || data.data.count === 0) {
+      results.innerHTML = renderQEmpty(raw);
+      return;
+    }
+
+    let matches = data.data.matches;
+
+    // Apply filter
+    if (QSearch.currentFilter !== 'all') {
+      const f = QSearch.currentFilter;
+      if (f === 'basmala') {
+        matches = matches.filter(m => m.text.includes('بِسْمِ اللَّهِ'));
+      } else if (f === 'short') {
+        matches = matches.filter(m => m.surah.number >= 78);
+      } else {
+        const typeMap = { makkiyya: 'makkiyya', madaniyya: 'madaniyya' };
+        const filtered = SURAH_META.filter(s => s.type === typeMap[f]).map(s => s.n);
+        matches = matches.filter(m => filtered.includes(m.surah.number));
+      }
+    }
+
+    if (!matches.length) {
+      results.innerHTML = renderQEmpty(raw, true);
+      return;
+    }
+
+    // Header
+    const total   = data.data.count;
+    const showing = matches.length;
+    results.innerHTML = `
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4 p-3 bg-white rounded-3 shadow-sm border">
+        <div>
+          <h6 class="fw-bold mb-0 text-dark"><i class="fas fa-check-circle text-success me-2"></i>تم العثور على <strong>${total}</strong> نتيجة</h6>
+          <small class="text-muted">يُعرض ${showing} نتيجة</small>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="badge bg-success rounded-pill px-3 py-2">${showing} نتيجة ظاهرة</span>
+          <span class="badge bg-secondary rounded-pill px-3 py-2">${QSearch.currentFilter === 'all' ? 'كل القرآن' : 'فلتر مطبق'}</span>
+        </div>
+      </div>
+      ${matches.map((m, i) => renderQResultCard(m, i, raw)).join('')}
+    `;
+
+  } catch (err) {
+    loading.classList.add('d-none');
+    results.innerHTML = `<div class="qs-state-wrap"><i class="fas fa-exclamation-triangle text-danger d-block"></i><h5 class="text-danger">فشل الاتصال بقاعدة البيانات</h5><p class="small">تحقق من الإنترنت وأعد المحاولة</p></div>`;
+  }
+}
+
+// ─── Render a single result card ─────────────────────────────
+function renderQResultCard(m, idx, query) {
+  const highlighted = highlightQuery(m.text, query);
+  const surahMeta   = SURAH_META.find(s => s.n === m.surah.number) || {};
+  const typeLabel   = surahMeta.type === 'makkiyya' ? 'مكية' : 'مدنية';
+  const id          = `qres-${idx}`;
+
+  return `
+    <div class="qs-result-card" id="${id}">
+      <div class="qs-meta">
+        <span class="qs-meta-badge"><i class="fas fa-book-open me-1"></i>سورة ${m.surah.name} (${m.surah.number})</span>
+        <span class="qs-meta-badge"><i class="fas fa-hashtag me-1"></i>الآية ${m.numberInSurah}</span>
+        <span class="qs-meta-badge juz"><i class="fas fa-layer-group me-1"></i>الجزء ${m.juz || '?'}</span>
+        <span class="qs-meta-badge page"><i class="fas fa-file-alt me-1"></i>ص ${m.page || '?'}</span>
+        <span class="qs-meta-badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;">${typeLabel}</span>
+      </div>
+
+      <div class="qs-verse-text mb-3">﴿ ${highlighted} ﴾</div>
+
+      <!-- Action Buttons -->
+      <div class="qs-actions">
+        <button class="qs-btn qs-btn-copy" onclick="qsCopy('${escapeAttrVal(m.text)}', this)">
+          <i class="fas fa-copy"></i> نسخ الآية
+        </button>
+        <button class="qs-btn qs-btn-share" onclick="qsShare('${escapeAttrVal(m.surah.name)}', ${m.numberInSurah}, '${escapeAttrVal(m.text)}')">
+          <i class="fas fa-share-alt"></i> مشاركة
+        </button>
+        <button class="qs-btn qs-btn-audio" onclick="qsPlayAudio(${m.surah.number}, ${m.numberInSurah}, this)">
+          <i class="fas fa-volume-up"></i> الاستماع
+        </button>
+        <button class="qs-btn" style="background:#fdf4ff;color:#6b21a8;" onclick="toggleQTafsirPanel('${id}', ${m.surah.number}, ${m.numberInSurah})">
+          <i class="fas fa-book"></i> التفسير
+        </button>
+      </div>
+
+      <!-- Expandable Tafsir Panel -->
+      <div class="qs-tafsir-panel d-none mt-3" id="${id}-tafsir">
+        <!-- Tab Nav -->
+        <div class="qs-detail-tabs d-flex">
+          <button class="nav-link active" onclick="switchQTafsirTab(event, '${id}', ${m.surah.number}, ${m.numberInSurah}, 'muyassar')">
+            التفسير الميسّر
+          </button>
+          <button class="nav-link" onclick="switchQTafsirTab(event, '${id}', ${m.surah.number}, ${m.numberInSurah}, 'jalalayn')">
+            تفسير الجلالين
+          </button>
+          <button class="nav-link" onclick="switchQTafsirTab(event, '${id}', ${m.surah.number}, ${m.numberInSurah}, 'saadi')">
+            تفسير السعدي
+          </button>
+        </div>
+        <div id="${id}-tafsir-content" class="qs-detail-pane">
+          <div class="qs-spinner" style="width:36px;height:36px;border-width:3px;"></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ─── Tafsir Panel Toggle ──────────────────────────────────────
+async function toggleQTafsirPanel(id, surahN, ayahN) {
+  const panel = document.getElementById(`${id}-tafsir`);
+  if (!panel.classList.contains('d-none')) {
+    panel.classList.add('d-none');
+    return;
+  }
+  panel.classList.remove('d-none');
+  await loadQTafsir(id, surahN, ayahN, 'muyassar');
+}
+
+async function switchQTafsirTab(e, id, surahN, ayahN, edition) {
+  // Highlight active tab
+  const nav = e.target.closest('.qs-detail-tabs');
+  nav.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  await loadQTafsir(id, surahN, ayahN, edition);
+}
+
+async function loadQTafsir(id, surahN, ayahN, editionKey) {
+  const content = document.getElementById(`${id}-tafsir-content`);
+  const cacheKey = `${surahN}:${ayahN}:${editionKey}`;
+
+  if (QSearch.tafsirCache[cacheKey]) {
+    content.innerHTML = renderTafsirBox(QSearch.tafsirCache[cacheKey], editionKey);
+    return;
+  }
+
+  content.innerHTML = '<div class="qs-spinner" style="width:36px;height:36px;border-width:3px;margin-top:16px;"></div>';
+
+  try {
+    const ed  = QSearch.tafsirEditions[editionKey];
+    const res = await fetch(`https://api.alquran.cloud/v1/ayah/${surahN}:${ayahN}/${ed.id}`);
+    const data = await res.json();
+    const text = data.code === 200 ? data.data.text : null;
+    QSearch.tafsirCache[cacheKey] = text;
+    content.innerHTML = renderTafsirBox(text, editionKey);
+  } catch(e) {
+    content.innerHTML = '<p class="text-danger text-center py-3"><i class="fas fa-exclamation-circle me-2"></i>تعذّر جلب التفسير</p>';
+  }
+}
+
+function renderTafsirBox(text, editionKey) {
+  const ed = QSearch.tafsirEditions[editionKey];
+  if (!text) return '<p class="text-muted fst-italic py-2">لا يوجد تفسير متاح لهذه الآية.</p>';
+  return `
+    <div class="qs-tafsir-box" style="border-right-color:${ed.color};">
+      <span class="badge mb-3" style="background:${ed.color};">${ed.label}</span><br>
+      ${text}
+    </div>`;
+}
+
+// ─── Copy ─────────────────────────────────────────────────────
+async function qsCopy(text, btn) {
+  try {
+    await navigator.clipboard.writeText(text);
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+    btn.style.background = '#dcfce7';
+    btn.style.color = '#166534';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background=''; btn.style.color=''; }, 2000);
+  } catch { alert('تعذّر النسخ.'); }
+}
+
+// ─── Share ────────────────────────────────────────────────────
+function qsShare(surahName, ayahN, text) {
+  const msg = `﴿ ${text} ﴾\nسورة ${surahName} — الآية ${ayahN}\n\nمن: الموسوعة الإسلامية الشاملة`;
+  if (navigator.share) {
+    navigator.share({ title: `آية من سورة ${surahName}`, text: msg });
+  } else {
+    navigator.clipboard.writeText(msg)
+      .then(() => alert('تم نسخ نص الآية للمشاركة!'))
+      .catch(() => alert(msg));
+  }
+}
+
+// ─── Audio playback (uses mp3quran CDN) ───────────────────────
+function qsPlayAudio(surahN, ayahN, btn) {
+  const surahStr = String(surahN).padStart(3,'0');
+  const url = `https://www.everyayah.com/data/Abdul_Basit_Murattal_192kbps/${surahStr}${String(ayahN).padStart(3,'0')}.mp3`;
+  const audio = new Audio(url);
+  audio.play().catch(() => {
+    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> تعذّر التشغيل';
+    setTimeout(() => { btn.innerHTML = '<i class="fas fa-volume-up"></i> الاستماع'; }, 2500);
+  });
+  btn.innerHTML = '<i class="fas fa-pause"></i> يُشغّل...';
+  audio.onended = () => { btn.innerHTML = '<i class="fas fa-volume-up"></i> الاستماع'; };
+}
+
+// ─── Helpers ──────────────────────────────────────────────────
+function highlightQuery(text, query) {
+  if (!query) return text;
+  const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return text.replace(new RegExp(`(${safe})`, 'g'), '<mark>$1</mark>');
+}
+
+function escapeAttrVal(str) {
+  return str.replace(/'/g,"\\&#39;").replace(/"/g,'&quot;').replace(/\n/g,' ');
+}
+
+function renderQEmpty(query, filtered = false) {
+  return `
+    <div class="qs-state-wrap">
+      <i class="fas fa-search d-block text-muted"></i>
+      <h5>${filtered ? 'لا توجد نتائج بالفلتر المحدد' : `لم يتم العثور على نتائج لـ "${query}"`}</h5>
+      <p class="small mt-2">جرب كلمة أخرى أو أزل الفلتر المطبق</p>
+    </div>`;
+}
+
 </script>
 
 </body>

@@ -3,6 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المكتبة الإسلامية الشاملة - الموسوعة الإسلامية</title>
 
@@ -72,8 +76,7 @@
             transition: all .3s;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
+        .navbar .nav-link:hover, .navbar .nav-link.active {
             color: var(--gold) !important;
             transform: translateX(-2px);
         }
@@ -447,13 +450,11 @@
         }
     </style>
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
 </script>
 
 
@@ -583,7 +584,7 @@
                 <div class="modal-footer bg-light border-0">
                     <button type="button" class="btn btn-outline-secondary px-4 rounded-pill fw-bold"
                         data-bs-dismiss="modal">إغلاق</button>
-                    <a href="#" class="btn px-4" id="qvDownloadBtn" target="_blank"><i
+                    <a href="#" class="btn px-4" id="qvDownloadBtn" target="_blank" rel="noopener noreferrer"><i
                             class="fas fa-external-link-alt me-2"></i>صفحة التحميل والتصفح</a>
                 </div>
             </div>
@@ -722,8 +723,18 @@
                 return { id: 'seerah', filter: 'seerah', name: 'تاريخ إسلامي', icon: 'history' };
             }
 
-            // Load initial Top 60 books
-            fetchArchiveBooks(defaultQuery, 60);
+            // Check for URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryParam = urlParams.get('q');
+            
+            if (queryParam) {
+                searchInput.value = queryParam;
+                const queryData = `(${defaultQuery}) AND (title:(*${queryParam}*) OR creator:(*${queryParam}*))`;
+                fetchArchiveBooks(queryData, 80);
+            } else {
+                // Load initial Top 60 books
+                fetchArchiveBooks(defaultQuery, 60);
+            }
 
             // Live Web API Search
             function doSearch() {

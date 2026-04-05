@@ -2,6 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>أكاديمية الفقه الإسلامي - الموسوعة الإسلامية الشاملة</title>
 
@@ -25,8 +29,8 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 /* MEGA NAVBAR */
 .navbar {background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
 .navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
-.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
-.nav-link:hover, .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
+.navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+.navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
 
 /* MEGA HERO - FIQH (EMERALD & GOLD) */
 .mega-hero{min-height:90vh;background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
@@ -59,13 +63,13 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 .sec-head .divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:25px auto 0;}
 
 /* TABS NAVIGATION MEGA */
-.main-tabs-wrapper{background:white;padding:20px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.05);margin:40px auto 60px;position:sticky;top:80px;z-index:900;border:1px solid #e2e8f0;}
-.main-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;border-bottom:none;}
+
+
 .main-tabs::-webkit-scrollbar{height:6px;}
 .main-tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
-.main-tabs .nav-link{border:1px solid #e2e8f0;border-radius:12px;color:#475569;font-weight:bold;padding:15px 25px;font-size:1.1rem;white-space:nowrap;transition:all .3s;}
-.main-tabs .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
-.main-tabs .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(4,120,87,0.3);}
+
+.main-tabs .navbar .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
+.main-tabs .navbar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(4,120,87,0.3);}
 
 /* CARDS */
 .mega-card{background:white;border-radius:24px;padding:35px;box-shadow:0 15px 35px rgba(0,0,0,0.04);border:1px solid #d1fae5;transition:all .4s;height:100%;}
@@ -82,13 +86,11 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 .line-height-2{line-height:2 !important;}
 </style>
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
 </script>
 
 
@@ -107,16 +109,20 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
     </button>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
-        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link" href="hadith.html">الحديث الشريف</a></li>
         <li class="nav-item"><a class="nav-link active" href="fiqh.html">الفقه الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
-        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
-        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
-        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+        <li class="nav-item"><a class="nav-link" href="fatwa.html">فتاوى العلماء</a></li>
+        <li class="nav-item"><a class="nav-link" href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link" href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="library.html">المكتبة الشاملة</a></li>
       </ul>
+      <div class="d-flex align-items-center gap-3 mt-lg-0 mt-3">
+        <button class="btn btn-link text-white p-0 nav-search-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle" style="width:35px;height:35px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-moon"></i></button>
+      </div>
     </div>
   </div>
 </nav>
@@ -153,7 +159,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 <div class="container">
   <!-- TABS NAV -->
   <div class="main-tabs-wrapper">
-    <ul class="nav nav-pills main-tabs justify-content-center" id="fiqhTabs" role="tablist">
+    <ul class="nav nav-pills main-tabs"  id="fiqhTabs" role="tablist">
       <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-madhabs"><i class="fas fa-landmark fs-4 d-block mb-1"></i>المذاهب الأربعة</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ibadaat"><i class="fas fa-pray fs-4 d-block mb-1"></i>فقه العبادات</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-muamalat"><i class="fas fa-handshake fs-4 d-block mb-1"></i>المعاملات المالية</button></li>
@@ -179,55 +185,67 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
       <div class="row g-4">
          <!-- Hanafi -->
          <div class="col-lg-6">
-            <div class="mega-card d-flex gap-4 align-items-center">
-               <div style="width:100px;height:100px;background:#fef3c7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <i class="fas fa-balance-scale text-warning fa-3x"></i>
-               </div>
-               <div>
-                  <h3 class="font-amiri fw-bold text-dark">المذهب الحنفي</h3>
-                  <div class="madhab-badge">تأسيس: أبو حنيفة النعمان (ت 150 هـ)</div>
-                  <p class="text-muted">مدرسة الرأي في الكوفة (العراق). يتميز بقوة الاستدلال العقلي، والقياس، وفرض المسائل الفقهية قبل وقوعها. وهو المذهب الأكثر انتشاراً.</p>
-               </div>
-            </div>
+            <a href="fiqh_hanafi.html" class="text-decoration-none">
+                <div class="mega-card d-flex gap-4 align-items-center">
+                   <div style="width:100px;height:100px;background:#fef3c7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fas fa-balance-scale text-warning fa-3x"></i>
+                   </div>
+                   <div>
+                      <h3 class="font-amiri fw-bold text-dark">المذهب الحنفي</h3>
+                      <div class="madhab-badge">تأسيس: أبو حنيفة النعمان (ت 150 هـ)</div>
+                      <p class="text-muted">مدرسة الرأي في الكوفة (العراق). يتميز بقوة الاستدلال العقلي، والقياس، وفرض المسائل الفقهية قبل وقوعها. وهو المذهب الأكثر انتشاراً.</p>
+                      <span class="text-primary fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
+                   </div>
+                </div>
+            </a>
          </div>
          <!-- Maliki -->
          <div class="col-lg-6">
-            <div class="mega-card d-flex gap-4 align-items-center">
-               <div style="width:100px;height:100px;background:#dcfce7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <i class="fas fa-book-reader text-success fa-3x"></i>
-               </div>
-               <div>
-                  <h3 class="font-amiri fw-bold text-dark">المذهب المالكي</h3>
-                  <div class="madhab-badge">تأسيس: مالك بن أنس (ت 179 هـ)</div>
-                  <p class="text-muted">مدرسة أهل الحديث في المدينة المنورة. يتميز بالاعتماد القوي على "عمل أهل المدينة" كمصدر للتشريع وسد الذرائع والمصالح المرسلة.</p>
-               </div>
-            </div>
+            <a href="fiqh_maliki.html" class="text-decoration-none">
+                <div class="mega-card d-flex gap-4 align-items-center">
+                   <div style="width:100px;height:100px;background:#dcfce7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fas fa-book-reader text-success fa-3x"></i>
+                   </div>
+                   <div>
+                      <h3 class="font-amiri fw-bold text-dark">المذهب المالكي</h3>
+                      <div class="madhab-badge">تأسيس: مالك بن أنس (ت 179 هـ)</div>
+                      <p class="text-muted">مدرسة أهل الحديث في المدينة المنورة. يتميز بالاعتماد القوي على "عمل أهل المدينة" كمصدر للتشريع وسد الذرائع والمصالح المرسلة.</p>
+                      <span class="text-success fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
+                   </div>
+                </div>
+            </a>
          </div>
          <!-- Shafi -->
          <div class="col-lg-6">
-            <div class="mega-card d-flex gap-4 align-items-center">
-               <div style="width:100px;height:100px;background:#e0e7ff;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <i class="fas fa-gavel text-primary fa-3x"></i>
-               </div>
-               <div>
-                  <h3 class="font-amiri fw-bold text-dark">المذهب الشافعي</h3>
-                  <div class="madhab-badge">تأسيس: محمد بن إدريس الشافعي (ت 204 هـ)</div>
-                  <p class="text-muted">الوسط بين مدرسة الرأي ومدرسة الحديث. أول من دوّن علم أصول الفقه في كتابه "الرسالة" لضبط قواعد الاستنباط بدقة شديدة.</p>
-               </div>
-            </div>
+            <a href="fiqh_shafi.html" class="text-decoration-none">
+                <div class="mega-card d-flex gap-4 align-items-center">
+                   <div style="width:100px;height:100px;background:#e0e7ff;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fas fa-gavel text-primary fa-3x"></i>
+                   </div>
+                   <div>
+                      <h3 class="font-amiri fw-bold text-dark">المذهب الشافعي</h3>
+                      <div class="madhab-badge">تأسيس: محمد بن إدريس الشافعي (ت 204 هـ)</div>
+                      <p class="text-muted">الوسط بين مدرسة الرأي ومدرسة الحديث. أول من دوّن علم أصول الفقه في كتابه "الرسالة" لضبط قواعد الاستنباط بدقة شديدة.</p>
+                      <span class="text-primary fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
+                   </div>
+                </div>
+            </a>
          </div>
          <!-- Hanbali -->
          <div class="col-lg-6">
-            <div class="mega-card d-flex gap-4 align-items-center">
-               <div style="width:100px;height:100px;background:#fee2e2;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <i class="fas fa-shield-alt text-danger fa-3x"></i>
-               </div>
-               <div>
-                  <h3 class="font-amiri fw-bold text-dark">المذهب الحنبلي</h3>
-                  <div class="madhab-badge">تأسيس: أحمد بن حنبل (ت 241 هـ)</div>
-                  <p class="text-muted">مدرسة الأثر، التزمت بالنص (القرآن والسنة) التزاماً كبيراً، ولا يميلون للقياس إلا لضرورة قصوى. من أشهر أئمته ابن قدامة وابن تيمية.</p>
-               </div>
-            </div>
+            <a href="fiqh_hanbali.html" class="text-decoration-none">
+                <div class="mega-card d-flex gap-4 align-items-center">
+                   <div style="width:100px;height:100px;background:#fee2e2;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fas fa-shield-alt text-danger fa-3x"></i>
+                   </div>
+                   <div>
+                      <h3 class="font-amiri fw-bold text-dark">المذهب الحنبلي</h3>
+                      <div class="madhab-badge">تأسيس: أحمد بن حنبل (ت 241 هـ)</div>
+                      <p class="text-muted">مدرسة الأثر، التزمت بالنص (القرآن والسنة) التزاماً كبيراً، ولا يميلون للقياس إلا لضرورة قصوى. من أشهر أئمته ابن قدامة وابن تيمية.</p>
+                      <span class="text-danger fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
+                   </div>
+                </div>
+            </a>
          </div>
       </div>
     </div>
@@ -241,36 +259,39 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         <div class="divider"></div>
       </div>
 
-      <div class="row g-4 text-center">
-         <div class="col-lg-3 col-md-6">
-            <div class="mega-card border-top border-4 border-primary">
-               <i class="fas fa-tint fa-3x text-primary mb-4"></i>
-               <h4 class="font-amiri fw-bold">الطهارة</h4>
-               <p class="text-muted small">الوضوء، الغسل، التيمم، مسح الخفين، وأحكام إزالة النجاسات والحيض والنفاس.</p>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-6">
-            <div class="mega-card border-top border-4 border-success">
-               <i class="fas fa-pray fa-3x text-success mb-4"></i>
-               <h4 class="font-amiri fw-bold">الصلاة</h4>
-               <p class="text-muted small">شروطها، أركانها، واجباتها، سننها، ومبطلاتها، وصلاة الجماعة والجمعة والأعياد.</p>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-6">
-            <div class="mega-card border-top border-4 border-warning">
-               <i class="fas fa-coins fa-3x text-warning mb-4"></i>
-               <h4 class="font-amiri fw-bold">الزكاة والصوم</h4>
-               <p class="text-muted small">أنصبة الزكاة ومصارفها. وأحكام الصيام، مبطلاته، زكاة الفطر، والاعتكاف.</p>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-6">
-            <div class="mega-card border-top border-4 border-dark">
-               <i class="fas fa-kaaba fa-3x text-dark mb-4"></i>
-               <h4 class="font-amiri fw-bold">الحج والعمرة</h4>
-               <p class="text-muted small">المواقيت، الإحرام، الطواف، السعي، الوقوف بعرفة، وأحكام الهدي والفدية.</p>
-            </div>
-         </div>
-      </div>
+       <div class="row g-4 text-center">
+          <div class="col-lg-3 col-md-6 text-decoration-none">
+             <div class="mega-card border-top border-4 border-primary h-100">
+                <i class="fas fa-tint fa-3x text-primary mb-4"></i>
+                <h4 class="font-amiri fw-bold">الطهارة</h4>
+                <p class="text-muted small">الوضوء، الغسل، التيمم، مسح الخفين، وأحكام إزالة النجاسات والحيض والنفاس.</p>
+             </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+             <div class="mega-card border-top border-4 border-success h-100">
+                <i class="fas fa-pray fa-3x text-success mb-4"></i>
+                <h4 class="font-amiri fw-bold">الصلاة</h4>
+                <p class="text-muted small">شروطها، أركانها، واجباتها، سننها، ومبطلاتها، وصلاة الجماعة والجمعة والأعياد.</p>
+             </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+             <div class="mega-card border-top border-4 border-warning h-100">
+                <i class="fas fa-coins fa-3x text-warning mb-4"></i>
+                <h4 class="font-amiri fw-bold">الزكاة والصوم</h4>
+                <p class="text-muted small">أنصبة الزكاة ومصارفها. وأحكام الصيام، مبطلاته، زكاة الفطر، والاعتكاف.</p>
+             </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+             <div class="mega-card border-top border-4 border-dark h-100">
+                <i class="fas fa-kaaba fa-3x text-dark mb-4"></i>
+                <h4 class="font-amiri fw-bold">الحج والعمرة</h4>
+                <p class="text-muted small">المواقيت، الإحرام، الطواف، السعي، الوقوف بعرفة، وأحكام الهدي والفدية.</p>
+             </div>
+          </div>
+       </div>
+       <div class="text-center mt-5">
+          <a href="fiqh_ibadat.html" class="btn btn-primary rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام العبادات بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+       </div>
     </div>
 
     <!-- TAB 3: المعاملات -->
@@ -282,26 +303,29 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         <div class="divider"></div>
       </div>
 
-      <div class="row g-4 justify-content-center">
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-success">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-shopping-cart text-success me-2"></i> البيوع والمعاوضات</h4>
-               <p class="text-muted mb-0 lh-lg">شروط البيع الصحيح، البيوع المحرمة (كالربا والغرر والجهالة والميسر)، الخيارات في البيع، بيع السَّلَم، بيع التقسيط، المرابحة، والإجارة والاستصناع وتطبيقاتها المعاصرة.</p>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-info">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-handshake text-info me-2"></i> الشركات والتوثيقات</h4>
-               <p class="text-muted mb-0 lh-lg">شركات المضاربة والعنان والوجوه، أحكام الرهن والتوثيق، الضمان، الكفالة بأنواعها، الوديعة، العارية، الوكالة، والحوالة وكيفية تصريفها في المصارف، وصناديق الاستثمار.</p>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-warning">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-seedling text-warning me-2"></i> التبرعات والمساقات</h4>
-               <p class="text-muted mb-0 lh-lg">أحكام المزارعة والمساقاة في الأراضي الزراعية، الجعالة بأنواعها، القصاص والهبة، إحياء الموات، أحكام الوقف والصدقة، والشفعة في العقارات والممتلكات المشتركة.</p>
-            </div>
-         </div>
-      </div>
+       <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-success h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-shopping-cart text-success me-2"></i> البيوع والمعاوضات</h4>
+                <p class="text-muted mb-0 lh-lg">شروط البيع الصحيح، البيوع المحرمة (كالربا والغرر والجهالة والميسر)، الخيارات في البيع، بيع السَّلَم، بيع التقسيط، المرابحة، والإجارة والاستصناع وتطبيقاتها المعاصرة.</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-info h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-handshake text-info me-2"></i> الشركات والتوثيقات</h4>
+                <p class="text-muted mb-0 lh-lg">شركات المضاربة والعنان والوجوه، أحكام الرهن والتوثيق، الضمان، الكفالة بأنواعها، الوديعة، العارية، الوكالة، والحوالة وكيفية تصريفها في المصارف، وصناديق الاستثمار.</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-warning h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-seedling text-warning me-2"></i> التبرعات والمساقات</h4>
+                <p class="text-muted mb-0 lh-lg">أحكام المزارعة والمساقاة في الأراضي الزراعية، الجعالة بأنواعها، القصاص والهبة، إحياء الموات، أحكام الوقف والصدقة، والشفعة في العقارات والممتلكات المشتركة.</p>
+             </div>
+          </div>
+       </div>
+       <div class="text-center mt-5">
+          <a href="fiqh_muamalat.html" class="btn btn-success rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام المعاملات المالية بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+       </div>
     </div>
 
     <!-- TAB: الأسرة -->
@@ -313,26 +337,29 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         <div class="divider"></div>
       </div>
 
-      <div class="row g-4 justify-content-center">
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-primary">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-ring text-primary me-2"></i> أحكام الزواج ومقدماته</h4>
-               <p class="text-muted mb-0 lh-lg">الخطبة وأحكامها، شروط وأركان النكاح (الولي، الشاهدان، المهر، الإيجاب والقبول)، الكفاءة في الزواج، وأنواع الأنكحة المعاصرة، والوليمة وحقوق الزوجين.</p>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-danger">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-house-damage text-danger me-2"></i> إنهاء العلاقة الزوجية</h4>
-               <p class="text-muted mb-0 lh-lg">تفصيل أحكام الطلاق السني والبدعي وشروطه، الخلع وأنواعه، الفسخ للضرر أو العيب، أحكام العدة المتنوعة، والظهار والإيلاء، واللعان.</p>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-success">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-baby text-success me-2"></i> حقوق الأبناء والتبعية</h4>
-               <p class="text-muted mb-0 lh-lg">حقوق الحضانة وشروط الحاضن، النفقة الزوجية ونفقة الأولاد والمقربين، الرضاع وأحكامه وثبوت النسب، اللقيط، وأحكام كفالة اليتيم في الشريعة.</p>
-            </div>
-         </div>
-      </div>
+       <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-primary h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-ring text-primary me-2"></i> أحكام الزواج ومقدماته</h4>
+                <p class="text-muted mb-0 lh-lg">الخطبة وأحكامها، شروط وأركان النكاح (الولي، الشاهدان، المهر، الإيجاب والقبول)، الكفاءة في الزواج، وأنواع الأنكحة المعاصرة، والوليمة وحقوق الزوجين.</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-danger h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-house-damage text-danger me-2"></i> إنهاء العلاقة الزوجية</h4>
+                <p class="text-muted mb-0 lh-lg">تفصيل أحكام الطلاق السني والبدعي وشروطه، الخلع وأنواعه، الفسخ للضرر أو العيب، أحكام العدة المتنوعة، والظهار والإيلاء، واللعان.</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-success h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-baby text-success me-2"></i> حقوق الأبناء والتبعية</h4>
+                <p class="text-muted mb-0 lh-lg">حقوق الحضانة وشروط الحاضن، النفقة الزوجية ونفقة الأولاد والمقربين، الرضاع وأحكامه وثبوت النسب، اللقيط، وأحكام كفالة اليتيم في الشريعة.</p>
+             </div>
+          </div>
+       </div>
+       <div class="text-center mt-5">
+          <a href="fiqh_family.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold border-2">تصفح تفاصيل وأحكام فقه الأسرة بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+       </div>
     </div>
 
     <!-- TAB: الجنايات والمواريث -->
@@ -344,26 +371,29 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         <div class="divider"></div>
       </div>
 
-      <div class="row g-4 justify-content-center">
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4" style="border-color:#be123c;">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-hand-paper text-danger me-2"></i> الجنايات والحدود</h4>
-               <p class="text-muted mb-0 lh-lg">القصاص في العمد والتشفي، دية القتل الخطأ وشبه العمد، وحفظ الضروريات الخمس بحدود شرعية رادعة كالسرقة والزنا والقذف والحرابة التي تضمن أمن المجتمع المطلق.</p>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-info">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-file-contract text-info me-2"></i> الفرائض والمواريث</h4>
-               <p class="text-muted mb-0 lh-lg">تقسيم التركة بإعجاز رباني محكم بناءً على درجة القرابة، يشمل أحكام أصحاب الفروض والعصبات، الحجب بنوعيه، العول والرد، وكيفية حساب المناسخات وتوزيع الوصايا.</p>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6">
-            <div class="mega-card border-top border-4 border-warning">
-               <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-gavel text-warning me-2"></i> القضاء والشهادات</h4>
-               <p class="text-muted mb-0 lh-lg">آداب القاضي وشروط تعيينه، وأحكام الدعوى والبينات، ونصاب الشهادة وشروط الشهود وعدالتهم، والأيمان والنذور، وكيفية الفصل في النزاعات أمام القضاء الشرعي.</p>
-            </div>
-         </div>
-      </div>
+       <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 h-100" style="border-color:#be123c;">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-hand-paper text-danger me-2"></i> الجنايات والحدود</h4>
+                <p class="text-muted mb-0 lh-lg">القصاص في العمد والتشفي، دية القتل الخطأ وشبه العمد، وحفظ الضروريات الخمس بحدود شرعية رادعة كالسرقة والزنا والقذف والحرابة التي تضمن أمن المجتمع المطلق.</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-info h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-file-contract text-info me-2"></i> الفرائض والمواريث</h4>
+                <p class="text-muted mb-0 lh-lg">تقسيم التركة بإعجاز رباني محكم بناءً على درجة القرابة، يشمل أحكام أصحاب الفروض والعصبات، الحجب بنوعيه، العول والرد، وكيفية حساب المناسخات وتوزيع الوصايا.</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+             <div class="mega-card border-top border-4 border-warning h-100">
+                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-gavel text-warning me-2"></i> القضاء والشهادات</h4>
+                <p class="text-muted mb-0 lh-lg">آداب القاضي وشروط تعيينه، وأحكام الدعوى والبينات، ونصاب الشهادة وشروط الشهود وعدالتهم، والأيمان والنذور، وكيفية الفصل في النزاعات أمام القضاء الشرعي.</p>
+             </div>
+          </div>
+       </div>
+       <div class="text-center mt-5">
+          <a href="fiqh_jinayat.html" class="btn btn-danger rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام الجنايات والمواريث بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+       </div>
     </div>
 
     <!-- TAB: فقه النوازل -->
@@ -375,29 +405,32 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         <div class="divider"></div>
       </div>
 
-      <div class="row g-4 text-center">
-         <div class="col-lg-4">
-            <div class="mega-card shadow-sm border border-light">
-               <i class="fas fa-heartbeat fa-3x text-danger mb-4"></i>
-               <h4 class="font-amiri fw-bold">النوازل الطبية</h4>
-               <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: نقل وزراعة الأعضاء، الموت الدماغي وأجهزة الإنعاش، أطفال الأنابيب والتلقيح الصناعي، بنوك الحليب، الجراحة التجميلية بأنواعها، والاستنساخ. تُبنى على مبادئ (لا ضرر ولا ضرار).</p>
-            </div>
-         </div>
-         <div class="col-lg-4">
-            <div class="mega-card shadow-sm border border-light">
-               <i class="fas fa-chart-line fa-3x text-success mb-4"></i>
-               <h4 class="font-amiri fw-bold">النوازل المالية والاقتصادية</h4>
-               <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: حكم العملات الرقمية المشفرة (الكريبتو)، الأسهم والسندات والتداول الإلكتروني، التسويق الهرمي والشبكي، البطاقات الائتمانية، التمويل العقاري والتأمين التجاري والإسلامي التعاوني وإشكالات التضخم.</p>
-            </div>
-         </div>
-         <div class="col-lg-4">
-            <div class="mega-card shadow-sm border border-light">
-               <i class="fas fa-globe-americas fa-3x text-primary mb-4"></i>
-               <h4 class="font-amiri fw-bold">نوازل تقنية وقضايا الأقليات</h4>
-               <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: المصحف الإلكتروني واستخدام الذكاء الاصطناعي في الاستنباط، حقوق الملكية الفكرية وقرصنة البرمجيات. كما تعالج أحكام التجنيس والإقامة للأقليات المسلمة في الغرب والمشاركة السياسية.</p>
-            </div>
-         </div>
-      </div>
+       <div class="row g-4 text-center">
+          <div class="col-lg-4">
+             <div class="mega-card shadow-sm border border-light h-100">
+                <i class="fas fa-heartbeat fa-3x text-danger mb-4"></i>
+                <h4 class="font-amiri fw-bold">النوازل الطبية</h4>
+                <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: نقل وزراعة الأعضاء، الموت الدماغي وأجهزة الإنعاش، أطفال الأنابيب والتلقيح الصناعي، بنوك الحليب، الجراحة التجميلية بأنواعها، والاستنساخ. تُبنى على مبادئ (لا ضرر ولا ضرار).</p>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="mega-card shadow-sm border border-light h-100">
+                <i class="fas fa-chart-line fa-3x text-success mb-4"></i>
+                <h4 class="font-amiri fw-bold">النوازل المالية والاقتصادية</h4>
+                <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: حكم العملات الرقمية المشفرة (الكريبتو)، الأسهم والسندات والتداول الإلكتروني، التسويق الهرمي والشبكي، البطاقات الائتمانية، التمويل العقاري والتأمين التجاري والإسلامي التعاوني وإشكالات التضخم.</p>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="mega-card shadow-sm border border-light h-100">
+                <i class="fas fa-globe-americas fa-3x text-primary mb-4"></i>
+                <h4 class="font-amiri fw-bold">نوازل تقنية وقضايا الأقليات</h4>
+                <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: المصحف الإلكتروني واستخدام الذكاء الاصطناعي في الاستنباط، حقوق الملكية الفكرية وقرصنة البرمجيات. كما تعالج أحكام التجنيس والإقامة للأقليات المسلمة في الغرب والمشاركة السياسية.</p>
+             </div>
+          </div>
+       </div>
+       <div class="text-center mt-5">
+          <a href="fiqh_nawazil.html" class="btn btn-indigo rounded-pill px-5 py-3 fw-bold shadow-lg" style="background:#4f46e5;color:white;">تصفح تفاصيل وأبحاث فقه النوازل بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+       </div>
     </div>
 
     <!-- TAB 4: أصول الفقه -->
@@ -409,147 +442,470 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         <div class="divider"></div>
       </div>
 
-      <div class="row g-5 align-items-center">
-         <div class="col-lg-6">
-            <h4 class="font-amiri text-success fw-bold mb-4">الأدلة الشرعية المتفق عليها</h4>
-            
-            <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-               <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">1</div>
-               <div><strong class="font-amiri fs-5">القرآن الكريم:</strong> المصدر الأول المعصوم.</div>
-            </div>
-            
-            <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-               <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">2</div>
-               <div><strong class="font-amiri fs-5">السنة النبوية:</strong> المبينة والمفصلة للقرآن والمقرة لأحكام جديدة.</div>
-            </div>
+       <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+             <h4 class="font-amiri text-success fw-bold mb-4">الأدلة الشرعية المتفق عليها</h4>
+             
+             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
+                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">1</div>
+                <div><strong class="font-amiri fs-5">القرآن الكريم:</strong> المصدر الأول المعصوم.</div>
+             </div>
+             
+             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
+                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">2</div>
+                <div><strong class="font-amiri fs-5">السنة النبوية:</strong> المبينة والمفصلة للقرآن والمقرة لأحكام جديدة.</div>
+             </div>
+ 
+             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
+                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">3</div>
+                <div><strong class="font-amiri fs-5">الإجماع:</strong> اتفاق مجتهدي الأمة بعد النبي ﷺ على حكم شرعي.</div>
+             </div>
+ 
+             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
+                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">4</div>
+                <div><strong class="font-amiri fs-5">القياس:</strong> إلحاق واقعة لا نص فيها بواقعة منصوص عليها لاتحاد العلة.</div>
+             </div>
 
-            <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-               <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">3</div>
-               <div><strong class="font-amiri fs-5">الإجماع:</strong> اتفاق مجتهدي الأمة بعد النبي ﷺ على حكم شرعي.</div>
-            </div>
-
-            <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-               <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">4</div>
-               <div><strong class="font-amiri fs-5">القياس:</strong> إلحاق واقعة لا نص فيها بواقعة منصوص عليها لاتحاد العلة.</div>
-            </div>
-         </div>
-
-         <div class="col-lg-6">
-            <div class="pe-lg-5" style="border-right:3px solid var(--gold);">
-               <h4 class="font-amiri text-warning fw-bold mb-4 pe-4">القواعد الفقهية الكبرى (الخمسة)</h4>
-               <ul class="list-unstyled pe-4">
-                  <li class="mb-4">
-                     <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 1. الأمور بمقاصدها</h5>
-                     <p class="text-muted small">نية المرء تحدد حكم فعله وقبول عمله.</p>
-                  </li>
-                  <li class="mb-4">
-                     <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 2. اليقين لا يزول بالشك</h5>
-                     <p class="text-muted small">الأصل بقاء ما كان على ما كان حتى يثبت العكس يقيناً.</p>
-                  </li>
-                  <li class="mb-4">
-                     <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 3. المشقة تجلب التيسير</h5>
-                     <p class="text-muted small">أساس الرخص الشرعية لتخفيف العناء والمشقة.</p>
-                  </li>
-                  <li class="mb-4">
-                     <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 4. الضرر يُزال</h5>
-                     <p class="text-muted small">أساس حفظ الحقوق ودفع المفاسد ومنع الأذى.</p>
-                  </li>
-                  <li class="mb-4">
-                     <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 5. العادة مُحَكَّمة</h5>
-                     <p class="text-muted small">العرف السائد يُعول عليه إذا لم يصادم نصاً شرعياً.</p>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </div>
+             <div class="mt-4">
+                <a href="fiqh_usul.html" class="btn btn-success rounded-pill px-4">دراسة علم الأصول والقواعد بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+             </div>
+          </div>
+ 
+          <div class="col-lg-6">
+             <div class="pe-lg-5" style="border-right:3px solid var(--gold);">
+                <h4 class="font-amiri text-warning fw-bold mb-4 pe-4">القواعد الفقهية الكبرى (الخمسة)</h4>
+                <ul class="list-unstyled pe-4">
+                   <li class="mb-4">
+                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 1. الأمور بمقاصدها</h5>
+                      <p class="text-muted small">نية المرء تحدد حكم فعله وقبول عمله.</p>
+                   </li>
+                   <li class="mb-4">
+                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 2. اليقين لا يزول بالشك</h5>
+                      <p class="text-muted small">الأصل بقاء ما كان على ما كان حتى يثبت العكس يقيناً.</p>
+                   </li>
+                   <li class="mb-4">
+                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 3. المشقة تجلب التيسير</h5>
+                      <p class="text-muted small">أساس الرخص الشرعية لتخفيف العناء والمشقة.</p>
+                   </li>
+                   <li class="mb-4">
+                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 4. الضرر يُزال</h5>
+                      <p class="text-muted small">أساس حفظ الحقوق ودفع المفاسد ومنع الأذى.</p>
+                   </li>
+                   <li class="mb-4">
+                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 5. العادة مُحَكَّمة</h5>
+                      <p class="text-muted small">العرف السائد يُعول عليه إذا لم يصادم نصاً شرعياً.</p>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </div>
     </div>
 
   </div> <!-- End Tabs -->
 
-    <!-- TAB 5: حاسبة الزكاة والفتاوى -->
+    <!-- TAB 5: حاسبة الزكاة والمواريث المتطورة -->
     <div class="tab-pane fade" id="tab-tools">
       <div class="sec-head">
-        <span class="tag">تطبيقات عملية</span>
+        <span class="tag">تطبيقات عملية متقدمة</span>
         <h3>حاسبات <span>فقهية ذكية</span></h3>
-        <p>أدوات فقهية تفاعلية تعينك على حساب فريضة الزكاة وقسمة المواريث المبدئية بيسر وسهولة.</p>
+        <p>أدوات تفاعلية دقيقة لحساب الزكاة بأنواعها ومواريث الدرجة الأولى وفق الشريعة الإسلامية.</p>
         <div class="divider"></div>
       </div>
 
-      <div class="row g-5">
-         <!-- Zakat Calculator -->
-         <div class="col-lg-6">
-            <div class="mega-card" style="border-top:5px solid var(--gold);">
-               <h4 class="font-amiri fw-bold mb-4 text-dark"><i class="fas fa-coins text-warning me-2"></i>حاسبة زكاة المال الذكية</h4>
-               <p class="text-muted small mb-4">أدخل المبالغ النقدية وقيمة الذهب والفضة، وسنقوم بحساب الزكاة المستحقة تلقائياً (نصاب الذهب 85 جراماً).</p>
-               
-               <div class="mb-3">
-                  <label class="form-label fw-bold">المال النقدي (العملة المحلية)</label>
-                  <input type="number" id="zakatCash" class="form-control form-control-lg" placeholder="مثال: 50000" min="0">
-               </div>
-               <div class="mb-3">
-                  <label class="form-label fw-bold">قيمة الذهب (للادخار أو التجارة)</label>
-                  <input type="number" id="zakatGold" class="form-control form-control-lg" placeholder="أدخل القيمة النقدية للذهب" min="0">
-               </div>
-               <div class="mb-4">
-                  <label class="form-label fw-bold">قيمة النصاب الحالية (تقريبية بالعملة المحلية)</label>
-                  <input type="number" id="zakatNisab" class="form-control text-muted bg-light" value="25000" min="0">
-               </div>
-               
-               <button class="btn btn-warning w-100 py-3 fw-bold rounded-pill mb-4" onclick="calculateZakat()">احسب الزكاة المستحقة <i class="fas fa-calculator ms-2"></i></button>
-               
-               <div id="zakatResultContainer" class="d-none p-4 rounded-4 text-center text-white" style="background:linear-gradient(135deg,var(--dark),var(--primary));">
-                  <h5 class="font-amiri fw-bold text-warning mb-2">المبلغ الواجب إخراجه (2.5%):</h5>
-                  <h2 class="fw-bold mb-0" id="zakatTotalAmt">0</h2>
-                  <p class="small opacity-75 mt-2 mb-0" id="zakatMessage">تقبل الله طاعاتكم</p>
-               </div>
-            </div>
-         </div>
+      <!-- =====  ZAKAT CALCULATOR  ===== -->
+      <div class="mb-5">
+        <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+          <div style="width:60px;height:60px;background:linear-gradient(135deg,#d4af37,#aa8a2a);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(212,175,55,0.4);flex-shrink:0;">
+            <i class="fas fa-coins text-white fa-2x"></i>
+          </div>
+          <div>
+            <h4 class="font-amiri fw-bold mb-1 text-dark" style="font-size:1.8rem;">حاسبة الزكاة الشاملة</h4>
+            <p class="text-muted mb-0 small">المال النقدي · الذهب والفضة · عروض التجارة · الاستثمارات</p>
+          </div>
+        </div>
 
-         <!-- Inheritance Calculator -->
-         <div class="col-lg-6">
-            <div class="mega-card" style="border-top:5px solid var(--primary);">
-               <h4 class="font-amiri fw-bold mb-4 text-dark"><i class="fas fa-users text-success me-2"></i>حاسبة المواريث المبدئية</h4>
-               <p class="text-muted small mb-4">أدخل عدد الورثة من الدرجة الأولى لحساب النصيب الشرعي التقريبي (للحالات المباشرة فقط).</p>
-               
-               <div class="row g-3 mb-3">
-                  <div class="col-6">
-                     <label class="form-label fw-bold">الزوج/الزوجة</label>
-                     <select id="inhSpouse" class="form-select">
-                        <option value="none">لا يوجد</option>
-                        <option value="husband">زوج (1)</option>
-                        <option value="wife1">زوجة (1)</option>
-                        <option value="wife2">زوجتان (2)</option>
-                        <option value="wife3">3 زوجات</option>
-                        <option value="wife4">4 زوجات</option>
-                     </select>
+        <div class="row g-4">
+          <!-- Left: Inputs -->
+          <div class="col-lg-6">
+            <div style="background:white;border-radius:20px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;">
+              <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:18px 25px;color:white;">
+                <h6 class="mb-0 fw-bold"><i class="fas fa-edit me-2"></i>أدخل بيانات أموالك</h6>
+              </div>
+              <div style="padding:25px;">
+
+                <!-- Currency -->
+                <div class="mb-4">
+                  <label class="fw-bold small text-muted mb-2 d-block">العملة</label>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-sm btn-success" id="cur_dz" onclick="setCur('دج',this)">دج</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_sa" onclick="setCur('ر.س',this)">ر.س</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_ma" onclick="setCur('د.م',this)">د.م</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_eg" onclick="setCur('جنيه',this)">جنيه</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_us" onclick="setCur('$',this)">USD</button>
                   </div>
-                  <div class="col-6">
-                     <label class="form-label fw-bold">إجمالي التركة (اختياري)</label>
-                     <input type="number" id="inhEstate" class="form-control" placeholder="قيمة التركة" min="0">
+                </div>
+
+                <!-- Cash -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-money-bill-wave text-success me-2"></i>المال النقدي (بنك + يد)</label>
+                  <div class="input-group">
+                    <input type="number" id="zCash" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
+                    <span class="input-group-text zCurLabel">دج</span>
                   </div>
-               </div>
-               <div class="row g-3 mb-4">
-                  <div class="col-6">
-                     <label class="form-label fw-bold">أبناء (ذكور)</label>
-                     <input type="number" id="inhSons" class="form-control" value="0" min="0">
+                </div>
+
+                <!-- Debt owed to you -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-hand-holding-usd text-info me-2"></i>ديون يُتوقع استردادها</label>
+                  <div class="input-group">
+                    <input type="number" id="zDebtsOwed" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
+                    <span class="input-group-text zCurLabel">دج</span>
                   </div>
-                  <div class="col-6">
-                     <label class="form-label fw-bold">بنات (إناث)</label>
-                     <input type="number" id="inhDaughters" class="form-control" value="0" min="0">
+                </div>
+
+                <hr class="my-3">
+
+                <!-- Gold -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-ring text-warning me-2"></i>الذهب — وزن (جرام) × سعر الجرام</label>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <div class="input-group">
+                        <input type="number" id="zGoldGrams" class="form-control" placeholder="الوزن" min="0" oninput="previewZakat()">
+                        <span class="input-group-text">جرام</span>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group">
+                        <input type="number" id="zGoldPrice" class="form-control" placeholder="سعر الجرام" min="0" oninput="previewZakat()">
+                        <span class="input-group-text zCurLabel">دج</span>
+                      </div>
+                    </div>
                   </div>
-               </div>
-               
-               <button class="btn btn-success w-100 py-3 fw-bold rounded-pill mb-4" onclick="calculateInheritance()">استخراج الأنصبة <i class="fas fa-sitemap ms-2"></i></button>
-               
-               <div id="inhResultContainer" class="d-none p-3 rounded-4 bg-light border">
-                  <h5 class="font-amiri fw-bold text-success mb-3 border-bottom pb-2">النتيجة الشرعية:</h5>
-                  <ul id="inhResultsList" class="list-unstyled mb-0 lh-lg font-amiri fs-5 text-dark"></ul>
-                  <div class="alert alert-warning mt-3 mb-0 small py-2"><i class="fas fa-exclamation-triangle me-1"></i> تنبيه: هذه الحاسبة للحالات المبسطة جداً، وفي المسائل المعقدة يجب الرجوع للمحاكم الشرعية أو المفتي.</div>
-               </div>
+                  <small class="text-muted"><i class="fas fa-info-circle me-1"></i>نصاب الذهب = <strong>85 جراماً</strong></small>
+                </div>
+
+                <!-- Silver -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-medal me-2" style="color:#aaa;"></i>الفضة — وزن (جرام) × سعر الجرام</label>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <div class="input-group">
+                        <input type="number" id="zSilverGrams" class="form-control" placeholder="الوزن" min="0" oninput="previewZakat()">
+                        <span class="input-group-text">جرام</span>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group">
+                        <input type="number" id="zSilverPrice" class="form-control" placeholder="سعر الجرام" min="0" oninput="previewZakat()">
+                        <span class="input-group-text zCurLabel">دج</span>
+                      </div>
+                    </div>
+                  </div>
+                  <small class="text-muted">نصاب الفضة = <strong>595 جراماً</strong></small>
+                </div>
+
+                <hr class="my-3">
+
+                <!-- Trade -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-store text-primary me-2"></i>عروض التجارة (بسعر السوق)</label>
+                  <div class="input-group">
+                    <input type="number" id="zTrade" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
+                    <span class="input-group-text zCurLabel">دج</span>
+                  </div>
+                </div>
+
+                <!-- Stocks -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-chart-line text-success me-2"></i>أسهم واستثمارات (القيمة الحالية)</label>
+                  <div class="input-group">
+                    <input type="number" id="zStocks" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
+                    <span class="input-group-text zCurLabel">دج</span>
+                  </div>
+                </div>
+
+                <hr class="my-3">
+
+                <!-- Debts Owing -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold"><i class="fas fa-minus-circle text-danger me-2"></i>ديون عليك واجبة السداد الآن (تُطرح)</label>
+                  <div class="input-group">
+                    <input type="number" id="zDebtsOwing" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
+                    <span class="input-group-text zCurLabel">دج</span>
+                  </div>
+                </div>
+
+                <!-- Nisab ref -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="fas fa-balance-scale text-warning me-2"></i>النصاب المرجعي (عدّله حسب سعر الذهب)</label>
+                  <div class="input-group">
+                    <input type="number" id="zNisab" class="form-control" value="200000" min="0" oninput="previewZakat()">
+                    <span class="input-group-text zCurLabel">دج</span>
+                  </div>
+                  <small class="text-muted">≈ قيمة 85 جرام ذهب</small>
+                </div>
+
+                <div class="d-flex gap-3">
+                  <button class="btn btn-warning fw-bold rounded-pill flex-grow-1 py-3" onclick="calcZakat()">
+                    <i class="fas fa-calculator me-2"></i>احسب الزكاة
+                  </button>
+                  <button class="btn btn-outline-secondary rounded-pill px-4" onclick="resetZakat()">
+                    <i class="fas fa-undo"></i>
+                  </button>
+                </div>
+
+              </div>
             </div>
-         </div>
+          </div>
+
+          <!-- Right: Result -->
+          <div class="col-lg-6">
+            <!-- Result Card -->
+            <div id="zakatResultCard" style="background:linear-gradient(135deg,#064e3b,#047857);border-radius:20px;padding:30px;color:white;min-height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 20px 50px rgba(4,120,87,0.3);">
+              <div id="zakatIdleState" class="text-center">
+                <i class="fas fa-coins fa-3x mb-3" style="opacity:0.3;"></i>
+                <p style="opacity:0.5;" class="mb-0">أدخل بيانات أموالك<br>وستظهر النتيجة هنا</p>
+              </div>
+              <div id="zakatActiveState" class="w-100 d-none">
+                <div class="text-center mb-4">
+                  <div id="zakatStatusBadge" class="badge fs-6 px-4 py-2 rounded-pill mb-3"></div>
+                  <div style="font-size:0.9rem;opacity:0.75;margin-bottom:5px;">إجمالي الوعاء الزكوي</div>
+                  <div id="zakatTotal" style="font-size:2.2rem;font-weight:900;font-family:'Amiri',serif;letter-spacing:1px;"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);margin:15px 0;"></div>
+                  <div style="font-size:0.9rem;opacity:0.75;margin-bottom:5px;">الزكاة الواجبة (2.5%)</div>
+                  <div id="zakatDue" style="font-size:3rem;font-weight:900;color:#fcd34d;font-family:'Amiri',serif;text-shadow:0 5px 15px rgba(0,0,0,0.3);"></div>
+                </div>
+                <!-- Breakdown -->
+                <div id="zakatBreakdown" style="background:rgba(255,255,255,0.1);border-radius:12px;padding:15px;font-size:0.9rem;"></div>
+              </div>
+            </div>
+
+            <!-- Haul Reminder -->
+            <div class="mt-3 p-3 rounded-3 border border-warning bg-warning bg-opacity-10">
+              <small><i class="fas fa-clock text-warning me-2"></i><strong>تذكير بالحول:</strong> تجب الزكاة إذا حال الحول (سنة قمرية) على بلوغ النصاب.</small>
+            </div>
+
+            <!-- Nisab Reference -->
+            <div class="mt-3 p-4 rounded-3 bg-white border shadow-sm">
+              <h6 class="fw-bold mb-3 text-dark"><i class="fas fa-info-circle text-warning me-2"></i>مرجع الأنصبة</h6>
+              <div class="row g-2 text-center">
+                <div class="col-4">
+                  <div style="background:#fef9c3;border-radius:10px;padding:12px 5px;">
+                    <div style="font-size:1.5rem;font-weight:900;color:#92400e;">85</div>
+                    <div style="font-size:0.75rem;color:#6b7280;">جرام ذهب</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div style="background:#f1f5f9;border-radius:10px;padding:12px 5px;">
+                    <div style="font-size:1.5rem;font-weight:900;color:#374151;">595</div>
+                    <div style="font-size:0.75rem;color:#6b7280;">جرام فضة</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div style="background:#ecfdf5;border-radius:10px;padding:12px 5px;">
+                    <div style="font-size:1.5rem;font-weight:900;color:#065f46;">2.5%</div>
+                    <div style="font-size:0.75rem;color:#6b7280;">نسبة الإخراج</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 small text-muted">
+                <i class="fas fa-seedling text-success me-1"></i>
+                <strong>زكاة الزروع:</strong> 5% مع الري المؤنة، 10% من مطر أو نهر. وعاء: المحصول لا رأس المال.
+              </div>
+            </div>
+
+            <!-- Print -->
+            <button class="btn btn-outline-secondary rounded-pill w-100 mt-3 btn-sm" onclick="printZakat()">
+              <i class="fas fa-print me-2"></i> طباعة / حفظ نتيجة الزكاة
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <hr style="border-color:rgba(212,175,55,0.4);margin:50px 0;">
+
+      <!-- =====  INHERITANCE CALCULATOR  ===== -->
+      <div>
+        <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+          <div style="width:60px;height:60px;background:linear-gradient(135deg,#064e3b,#047857);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(4,120,87,0.4);flex-shrink:0;">
+            <i class="fas fa-sitemap text-white fa-2x"></i>
+          </div>
+          <div>
+            <h4 class="font-amiri fw-bold mb-1 text-dark" style="font-size:1.8rem;">حاسبة المواريث الشرعية</h4>
+            <p class="text-muted mb-0 small">توزيع التركة على أصحاب الفروض والعصبات</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Left: Inputs -->
+          <div class="col-lg-5">
+            <div style="background:white;border-radius:20px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;">
+              <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:18px 25px;color:white;">
+                <h6 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i>بيانات الورثة والتركة</h6>
+              </div>
+              <div style="padding:25px;">
+
+                <!-- Estate -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="fas fa-landmark text-warning me-2"></i>إجمالي التركة الصافية</label>
+                  <div class="input-group">
+                    <input type="number" id="inhEstate" class="form-control form-control-lg" placeholder="مثال: 500000" min="0">
+                    <span class="input-group-text zCurLabel">دج</span>
+                  </div>
+                  <small class="text-muted">بعد طرح: تجهيز الميت · الديون · الوصية (بحدود 1/3)</small>
+                </div>
+
+                <!-- Spouse -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold">الزوج أو الزوجة</label>
+                  <select id="inhSpouse" class="form-select form-select-lg">
+                    <option value="none">لا يوجد</option>
+                    <option value="husband">زوج (1)</option>
+                    <option value="wife1">زوجة (1)</option>
+                    <option value="wife2">زوجتان (2)</option>
+                    <option value="wife3">3 زوجات</option>
+                    <option value="wife4">4 زوجات</option>
+                  </select>
+                </div>
+
+                <!-- Children -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold">الأبناء والبنات</label>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <label class="small text-muted">أبناء ذكور</label>
+                      <input type="number" id="inhSons" class="form-control" value="0" min="0">
+                    </div>
+                    <div class="col-6">
+                      <label class="small text-muted">بنات إناث</label>
+                      <input type="number" id="inhDaughters" class="form-control" value="0" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Father -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold">الأب</label>
+                  <div class="btn-group w-100" role="group">
+                    <input type="radio" class="btn-check" name="fatherRadio" id="fatherNo" value="absent" checked>
+                    <label class="btn btn-outline-secondary" for="fatherNo">متوفى</label>
+                    <input type="radio" class="btn-check" name="fatherRadio" id="fatherYes" value="alive">
+                    <label class="btn btn-outline-success" for="fatherYes">حيّ ووارث</label>
+                  </div>
+                </div>
+
+                <!-- Mother -->
+                <div class="mb-3">
+                  <label class="form-label fw-bold">الأم</label>
+                  <div class="btn-group w-100" role="group">
+                    <input type="radio" class="btn-check" name="motherRadio" id="motherNo" value="absent" checked>
+                    <label class="btn btn-outline-secondary" for="motherNo">متوفاة</label>
+                    <input type="radio" class="btn-check" name="motherRadio" id="motherYes" value="alive">
+                    <label class="btn btn-outline-success" for="motherYes">حيّة ووارثة</label>
+                  </div>
+                </div>
+
+                <!-- Siblings -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold">الإخوة الأشقاء (إذا لم يوجد أبناء ولا أب)</label>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <label class="small text-muted">أشقاء ذكور</label>
+                      <input type="number" id="inhBros" class="form-control" value="0" min="0">
+                    </div>
+                    <div class="col-6">
+                      <label class="small text-muted">شقيقات إناث</label>
+                      <input type="number" id="inhSisters" class="form-control" value="0" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                  <button class="btn btn-success fw-bold rounded-pill flex-grow-1 py-3" onclick="calcInheritance()">
+                    <i class="fas fa-balance-scale me-2"></i>توزيع التركة
+                  </button>
+                  <button class="btn btn-outline-secondary rounded-pill px-4" onclick="resetInheritance()">
+                    <i class="fas fa-undo"></i>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Results -->
+          <div class="col-lg-7">
+            <!-- Main result panel -->
+            <div id="inhResultPanel" style="background:white;border-radius:20px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;min-height:350px;">
+              <div id="inhIdle" style="display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:350px;opacity:0.4;color:#475569;">
+                <i class="fas fa-balance-scale fa-3x mb-3"></i>
+                <p class="mb-0">حدّد الورثة<br>وستُعرض الأنصبة هنا</p>
+              </div>
+              <div id="inhActive" class="d-none">
+                <!-- Result header -->
+                <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:18px 25px;color:white;">
+                  <h6 class="mb-1 fw-bold"><i class="fas fa-balance-scale me-2"></i>توزيع التركة الشرعي</h6>
+                  <div id="inhEstateBadge" style="font-size:0.9rem;opacity:0.8;"></div>
+                </div>
+                <!-- Visual share bar -->
+                <div id="inhShareBar" style="height:16px;display:flex;gap:0;overflow:hidden;"></div>
+                <!-- Legend -->
+                <div id="inhLegend" class="d-flex flex-wrap gap-2 p-3 pb-0"></div>
+                <!-- Heirs table -->
+                <div id="inhHeirsList" style="padding:5px 20px 20px;"></div>
+                <!-- Warning -->
+                <div class="mx-4 mb-4 p-3 rounded-3 small" style="background:#fef3c7;border-right:4px solid #f59e0b;">
+                  <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                  هذه الحاسبة للتوعية والحالات المبسطة. في النزاعات والمسائل المعقدة يجب الرجوع للقضاء الشرعي أو المفتي.
+                </div>
+              </div>
+            </div>
+
+            <!-- Print -->
+            <button class="btn btn-outline-secondary rounded-pill w-100 mt-3 btn-sm" onclick="printInheritance()">
+              <i class="fas fa-print me-2"></i> طباعة وثيقة التقسيم
+            </button>
+
+            <!-- Fard fractions info -->
+            <div class="mt-4 p-4 bg-white rounded-4 shadow-sm border">
+              <h6 class="fw-bold mb-3"><i class="fas fa-info-circle text-primary me-2"></i>الفروض المقدرة في القرآن الكريم</h6>
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start gap-2 mb-2">
+                    <span class="badge bg-primary" style="min-width:38px;font-size:0.85rem;">1/2</span>
+                    <small class="text-muted">الزوج (بلا فرع) · البنت الواحدة · الأخت الشقيقة</small>
+                  </div>
+                  <div class="d-flex align-items-start gap-2 mb-2">
+                    <span class="badge bg-info text-dark" style="min-width:38px;font-size:0.85rem;">1/4</span>
+                    <small class="text-muted">الزوج (مع فرع) · الزوجة (بلا فرع وارث)</small>
+                  </div>
+                  <div class="d-flex align-items-start gap-2 mb-2">
+                    <span class="badge bg-secondary" style="min-width:38px;font-size:0.85rem;">1/8</span>
+                    <small class="text-muted">الزوجة / الزوجات (مع فرع وارث)</small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start gap-2 mb-2">
+                    <span class="badge bg-warning text-dark" style="min-width:38px;font-size:0.85rem;">2/3</span>
+                    <small class="text-muted">بنتان فأكثر (بلا أخ) · أختان شقيقتان</small>
+                  </div>
+                  <div class="d-flex align-items-start gap-2 mb-2">
+                    <span class="badge bg-success" style="min-width:38px;font-size:0.85rem;">1/3</span>
+                    <small class="text-muted">الأم (بلا فرع وبلا جمع إخوة) · أخوان لأم</small>
+                  </div>
+                  <div class="d-flex align-items-start gap-2 mb-2">
+                    <span class="badge bg-danger" style="min-width:38px;font-size:0.85rem;">1/6</span>
+                    <small class="text-muted">الأب (مع فرع ذكر) · الأم (مع فرع أو إخوة)</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end tab-tools -->
 
 </div>
 
@@ -592,89 +948,302 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// --- Zakat Calculator Logic ---
-function calculateZakat() {
-    const cash = parseFloat(document.getElementById('zakatCash').value) || 0;
-    const gold = parseFloat(document.getElementById('zakatGold').value) || 0;
-    const nisab = parseFloat(document.getElementById('zakatNisab').value) || Number.MAX_VALUE;
-    
-    const totalWealth = cash + gold;
-    const resultBox = document.getElementById('zakatResultContainer');
-    const amountText = document.getElementById('zakatTotalAmt');
-    const msgText = document.getElementById('zakatMessage');
-    
-    resultBox.classList.remove('d-none');
-    
-    if (totalWealth >= nisab) {
-        const zakatDue = totalWealth * 0.025; // 2.5%
-        amountText.innerText = zakatDue.toLocaleString(undefined, { maximumFractionDigits: 2 });
-        amountText.classList.remove('text-danger');
-        msgText.innerHTML = `<i class="fas fa-check-circle text-success me-1"></i> بلغ مالك النصاب وجبت فيه الزكاة. تقبل الله.`;
-    } else {
-        amountText.innerText = '0';
-        amountText.classList.add('text-danger');
-        msgText.innerHTML = `<i class="fas fa-times-circle text-danger me-1"></i> مالك مدخراتك (${totalWealth}) لم يبلغ النصاب (${nisab}). لا زكاة عليك.`;
-    }
+// ===================== CALCULATORS JS =====================
+
+let currentCurrency = 'دج';
+
+function setCur(cur, btn) {
+    currentCurrency = cur;
+    document.querySelectorAll('[id^=cur_]').forEach(b => b.className = 'btn btn-sm btn-outline-secondary');
+    btn.className = 'btn btn-sm btn-success';
+    document.querySelectorAll('.zCurLabel').forEach(el => el.textContent = cur);
+    document.querySelectorAll('#unitEstate').forEach(el => el.textContent = cur);
+    previewZakat();
 }
 
-// --- Inheritance Calculator Logic ---
-function calculateInheritance() {
-    const spouse = document.getElementById('inhSpouse').value;
-    const estate = parseFloat(document.getElementById('inhEstate').value) || 0;
-    const sons = parseInt(document.getElementById('inhSons').value) || 0;
-    const daughters = parseInt(document.getElementById('inhDaughters').value) || 0;
-    
-    const resultsList = document.getElementById('inhResultsList');
-    const resultBox = document.getElementById('inhResultContainer');
-    
-    resultBox.classList.remove('d-none');
-    resultsList.innerHTML = '';
-    
-    let hasChildren = (sons > 0 || daughters > 0);
-    let shares = [];
-    let remainingFraction = 1.0;
-    
-    if (spouse === 'husband') {
-        let frac = hasChildren ? 0.25 : 0.5;
-        let text = hasChildren ? 'الرُّبُع (1/4) لوجود الفرع الوارث' : 'النِّصْف (1/2) لعدم وجود الفرع الوارث';
-        shares.push({ name: 'الزوج', frac: frac, text: text });
-        remainingFraction -= frac;
-    } else if (spouse.startsWith('wife')) {
-        let count = parseInt(spouse.replace('wife', ''));
-        let frac = hasChildren ? 0.125 : 0.25;
-        let text = hasChildren ? 'الثُّمُن (1/8) لوجود الفرع الوارث' : 'الرُّبُع (1/4) لعدم وجود الفرع الوارث';
-        if(count > 1) text += ' (يُقسم بينهن بالسوية)';
-        shares.push({ name: count === 1 ? 'الزوجة' : count + ' زوجات', frac: frac, text: text });
-        remainingFraction -= frac;
+function fmtNum(n) {
+    return n.toLocaleString('ar-DZ', {maximumFractionDigits: 2});
+}
+
+function getVal(id) {
+    return parseFloat(document.getElementById(id)?.value) || 0;
+}
+
+// -------- ZAKAT --------
+
+function previewZakat() { /* live preview placeholder */ }
+
+function calcZakat() {
+    const cash       = getVal('zCash');
+    const debtsOwed  = getVal('zDebtsOwed');
+    const goldGrams  = getVal('zGoldGrams');
+    const goldPrice  = getVal('zGoldPrice');
+    const silverGrams= getVal('zSilverGrams');
+    const silverPrice= getVal('zSilverPrice');
+    const trade      = getVal('zTrade');
+    const stocks     = getVal('zStocks');
+    const debtsOwing = getVal('zDebtsOwing');
+    const nisab      = getVal('zNisab') || 200000;
+
+    const goldVal    = goldGrams * goldPrice;
+    const silverVal  = silverGrams * silverPrice;
+    const gross      = cash + debtsOwed + goldVal + silverVal + trade + stocks;
+    const net        = Math.max(0, gross - debtsOwing);
+    const zakatDue   = net >= nisab ? net * 0.025 : 0;
+    const passed     = net >= nisab;
+
+    // Show result card
+    document.getElementById('zakatIdleState').classList.add('d-none');
+    document.getElementById('zakatActiveState').classList.remove('d-none');
+
+    const cur = currentCurrency;
+    document.getElementById('zakatTotal').textContent = fmtNum(net) + ' ' + cur;
+    document.getElementById('zakatDue').textContent   = fmtNum(zakatDue) + ' ' + cur;
+
+    const badge = document.getElementById('zakatStatusBadge');
+    if (passed) {
+        badge.className = 'badge bg-success fs-6 px-4 py-2 rounded-pill mb-3';
+        badge.innerHTML = '<i class="fas fa-check-circle me-2"></i>بلغ النصاب — تجب الزكاة';
+    } else {
+        badge.className = 'badge bg-danger fs-6 px-4 py-2 rounded-pill mb-3';
+        badge.innerHTML = '<i class="fas fa-times-circle me-2"></i>لم يبلغ النصاب — لا زكاة';
     }
-    
-    if (hasChildren) {
-        if (sons === 0 && daughters > 0) {
-            let frac = daughters === 1 ? 0.5 : (2.0/3.0);
-            let text = daughters === 1 ? 'النِّصْف (1/2) لانفرادها' : 'الثُّلُثَان (2/3) يوزع بينهن بالتساوي';
-            if (frac > remainingFraction) frac = remainingFraction; // simplification
-            shares.push({ name: daughters === 1 ? 'البنت' : daughters + ' بنات', frac: frac, text: text });
-            remainingFraction -= frac;
-        } else if (sons > 0) {
-            let totalParts = (sons * 2) + daughters;
-            let text = 'الباقي تعصيباً للذكر مثل حظ الأنثيين';
-            if(daughters === 0) text = 'الباقي تعصيباً يوزع بينهم بالتساوي';
-            shares.push({ name: 'الأبناء والبنات', frac: remainingFraction, text: text + ` (عدد السهام: ${totalParts})` });
-            remainingFraction = 0;
+
+    // Breakdown
+    const rows = [
+        { label: 'المال النقدي',        val: cash },
+        { label: 'ديون مستردة',         val: debtsOwed },
+        { label: 'الذهب',               val: goldVal },
+        { label: 'الفضة',               val: silverVal },
+        { label: 'عروض التجارة',        val: trade },
+        { label: 'الأسهم والاستثمارات', val: stocks },
+        { label: 'ديون مطروحة',         val: -debtsOwing },
+    ].filter(r => r.val !== 0);
+
+    let breakdown = '';
+    rows.forEach(r => {
+        const isNeg = r.val < 0;
+        const color = isNeg ? '#fca5a5' : '#bbf7d0';
+        const sign  = isNeg ? '−' : '+';
+        breakdown += `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.88rem;">
+            <span>${r.label}</span>
+            <span style="color:${color};">${sign} ${fmtNum(Math.abs(r.val))} ${cur}</span>
+        </div>`;
+    });
+    breakdown += `<div style="display:flex;justify-content:space-between;padding:6px 0;margin-top:4px;font-weight:bold;font-size:0.95rem;">
+        <span>الوعاء الزكوي الصافي</span>
+        <span style="color:#fcd34d;">${fmtNum(net)} ${cur}</span>
+    </div>`;
+    document.getElementById('zakatBreakdown').innerHTML = breakdown;
+}
+
+function resetZakat() {
+    ['zCash','zDebtsOwed','zGoldGrams','zGoldPrice','zSilverGrams','zSilverPrice','zTrade','zStocks','zDebtsOwing'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+    });
+    document.getElementById('zNisab').value = '200000';
+    document.getElementById('zakatIdleState').classList.remove('d-none');
+    document.getElementById('zakatActiveState').classList.add('d-none');
+}
+
+function printZakat() {
+    const content = document.getElementById('zakatActiveState')?.innerHTML || '';
+    if (!content) { alert('الرجاء حساب الزكاة أولاً'); return; }
+    const win = window.open('', '_blank');
+    win.win.print();
+}
+
+// -------- INHERITANCE --------
+
+const COLORS = ['#047857','#d4af37','#1d4ed8','#be123c','#7c3aed','#b45309','#0369a1','#166534'];
+
+function calcInheritance() {
+    const estate    = getVal('inhEstate');
+    const spouse    = document.getElementById('inhSpouse').value;
+    const sons      = parseInt(document.getElementById('inhSons').value) || 0;
+    const daughters = parseInt(document.getElementById('inhDaughters').value) || 0;
+    const fatherAlive = document.querySelector('input[name="fatherRadio"]:checked')?.value === 'alive';
+    const motherAlive = document.querySelector('input[name="motherRadio"]:checked')?.value === 'alive';
+    const bros      = parseInt(document.getElementById('inhBros').value) || 0;
+    const sisters   = parseInt(document.getElementById('inhSisters').value) || 0;
+
+    const hasChildren = sons > 0 || daughters > 0;
+    let heirs = [];
+    let remaining = 1.0;
+
+    // ---- Spouse ----
+    if (spouse === 'husband') {
+        const frac = hasChildren ? 1/4 : 1/2;
+        heirs.push({ name: 'الزوج', frac, note: hasChildren ? 'الرُّبُع (1/4) لوجود الفرع' : 'النِّصف (1/2) لعدم الفرع' });
+        remaining -= frac;
+    } else if (spouse.startsWith('wife')) {
+        const count = parseInt(spouse.replace('wife',''));
+        const frac = hasChildren ? 1/8 : 1/4;
+        const note = (hasChildren ? 'الثُّمُن (1/8)' : 'الرُّبُع (1/4)') + (count > 1 ? ` يُقسَّم على ${count} زوجات` : '');
+        heirs.push({ name: count === 1 ? 'الزوجة' : `${count} زوجات`, frac, note });
+        remaining -= frac;
+    }
+
+    // ---- Father ----
+    if (fatherAlive) {
+        if (hasChildren) {
+            // أب مع فرع: له السدس فرضاً
+            const frac = 1/6;
+            heirs.push({ name: 'الأب', frac, note: 'السُّدُس (1/6) مع الفرع الوارث' });
+            remaining -= frac;
+        } else {
+            // أب بلا فرع: يرث الباقي تعصيباً (يُؤجَّل بعد الأم)
+            // سنضيفه بعد الأم
         }
     }
-    
-    if (remainingFraction > 0.001) {
-       shares.push({ name: 'باقي الورثة (إن وجدوا)', frac: remainingFraction, text: 'باقي التركة يوزع على العصبة من الأقارب (كالأب، الجد، الإخوة، الأعمام) حسب الترتيب الشرعي' });
+
+    // ---- Mother ----
+    if (motherAlive) {
+        const hasSibGroup = (bros + sisters) >= 2;
+        let frac, note;
+        if (hasChildren || hasSibGroup) {
+            frac = 1/6;
+            note = 'السُّدُس (1/6) ' + (hasChildren ? 'مع الفرع' : 'مع جمع الإخوة');
+        } else {
+            frac = 1/3; // لا فرع ولا جمع إخوة
+            note = 'الثُّلُث (1/3) لعدم الفرع وعدم الجمع';
+            // لكن إن كان أب: ثلث الباقي (Umariyatān) — simplification: ثلث كامل
+        }
+        heirs.push({ name: 'الأم', frac, note });
+        remaining -= frac;
     }
-    
-    shares.forEach(s => {
-        let valStr = estate > 0 ? `<br><span class="text-secondary fs-6">القيمة التقريبية: ${(estate * s.frac).toLocaleString(undefined, {maximumFractionDigits:2})}</span>` : '';
-        let li = document.createElement('li');
-        li.innerHTML = `<strong>${s.name}:</strong> <span class="text-primary">${s.text}</span> ${valStr}`;
-        li.className = 'border-bottom border-light pb-2 mb-2';
-        resultsList.appendChild(li);
+
+    // ---- Father (بلا فرع): الباقي تعصيباً ----
+    if (fatherAlive && !hasChildren) {
+        if (remaining > 0.001) {
+            heirs.push({ name: 'الأب', frac: remaining, note: 'الباقي كله تعصيباً (بلا فرع وارث)' });
+            remaining = 0;
+        }
+    }
+
+    // ---- Children ----
+    if (hasChildren) {
+        if (sons === 0 && daughters > 0) {
+            const frac = Math.min(daughters === 1 ? 1/2 : 2/3, remaining);
+            const note = daughters === 1 ? 'النِّصف (1/2) لانفرادها' : `الثُّلُثَان (2/3) يوزع على ${daughters} بنات`;
+            heirs.push({ name: daughters === 1 ? 'البنت' : `${daughters} بنات`, frac, note });
+            remaining -= frac;
+        } else if (sons > 0) {
+            const totalParts = sons * 2 + daughters;
+            const note = daughters > 0
+                ? `الباقي تعصيباً — للذكر مثل حظ الأنثيين (${sons} ذكور + ${daughters} إناث = ${totalParts} سهم)`
+                : `الباقي تعصيباً يوزع على ${sons} بنين بالتساوي`;
+            heirs.push({ name: 'الأبناء والبنات', frac: remaining, note });
+            remaining = 0;
+        }
+    }
+
+    // ---- Siblings (only if no children and no father) ----
+    if (!hasChildren && !fatherAlive && (bros + sisters) > 0) {
+        const total = bros * 2 + sisters;
+        if (bros > 0) {
+            heirs.push({
+                name: `الإخوة الأشقاء (${bros} ذكور + ${sisters} إناث)`,
+                frac: remaining,
+                note: `الباقي تعصيباً — الذكر ضعف الأنثى (${total} سهم)`
+            });
+            remaining = 0;
+        } else if (sisters === 1) {
+            const frac = Math.min(1/2, remaining);
+            heirs.push({ name: 'الأخت الشقيقة', frac, note: 'النِّصف (1/2) لانفرادها' });
+            remaining -= frac;
+        } else if (sisters >= 2) {
+            const frac = Math.min(2/3, remaining);
+            heirs.push({ name: `${sisters} أخوات شقيقات`, frac, note: 'الثُّلُثَان (2/3) لتعددهن' });
+            remaining -= frac;
+        }
+    }
+
+    // ---- Remaining (Asaba) ----
+    if (remaining > 0.005) {
+        heirs.push({
+            name: 'باقي العصبة (الأقارب)',
+            frac: remaining,
+            note: 'الباقي يُوزَّع على الأقارب الأولى بالميراث (أب، جد، إخوة، أعمام...)'
+        });
+    }
+
+    if (heirs.length === 0) {
+        document.getElementById('inhIdle').style.display = 'flex';
+        document.getElementById('inhActive').classList.add('d-none');
+        alert('لا يوجد ورثة محددون. الرجاء إدخال الورثة.');
+        return;
+    }
+
+    // ---- Render ----
+    document.getElementById('inhIdle').style.display = 'none';
+    document.getElementById('inhActive').classList.remove('d-none');
+
+    const cur = currentCurrency;
+    document.getElementById('inhEstateBadge').textContent =
+        estate > 0 ? `التركة الصافية: ${fmtNum(estate)} ${cur}` : 'أدخل قيمة التركة لعرض الأرقام';
+
+    // Share bar
+    const bar = document.getElementById('inhShareBar');
+    bar.innerHTML = '';
+    heirs.forEach((h, i) => {
+        const seg = document.createElement('div');
+        seg.style.cssText = `flex:${h.frac};background:${COLORS[i % COLORS.length]};transition:flex 0.5s;`;
+        seg.title = `${h.name}: ${(h.frac * 100).toFixed(1)}%`;
+        bar.appendChild(seg);
     });
+
+    // Legend
+    const legend = document.getElementById('inhLegend');
+    legend.innerHTML = '';
+    heirs.forEach((h, i) => {
+        const dot = document.createElement('span');
+        dot.innerHTML = `<span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:${COLORS[i%COLORS.length]};margin-left:5px;"></span>${h.name} (${(h.frac*100).toFixed(1)}%)`;
+        dot.className = 'badge bg-light text-dark border small';
+        legend.appendChild(dot);
+    });
+
+    // Heirs table
+    const list = document.getElementById('inhHeirsList');
+    list.innerHTML = '';
+    heirs.forEach((h, i) => {
+        const pct     = (h.frac * 100).toFixed(2);
+        const amount  = estate > 0 ? fmtNum(estate * h.frac) + ' ' + cur : '—';
+        const row = document.createElement('div');
+        row.style.cssText = 'padding:12px 15px;border-right:4px solid '+COLORS[i%COLORS.length]+';background:#f8fafc;margin-bottom:8px;border-radius:0 10px 10px 0;';
+        row.innerHTML = `
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px;">
+                <strong style="font-family:'Amiri',serif;font-size:1.1rem;">${h.name}</strong>
+                <span style="background:${COLORS[i%COLORS.length]};color:white;padding:3px 12px;border-radius:20px;font-weight:bold;font-size:0.9rem;">${pct}%</span>
+            </div>
+            <div style="font-size:0.88rem;color:#475569;margin-top:4px;">${h.note}</div>
+            ${estate > 0 ? `<div style="font-size:1rem;font-weight:bold;color:#064e3b;margin-top:4px;">${amount}</div>` : ''}
+        `;
+        list.appendChild(row);
+    });
+}
+
+function resetInheritance() {
+    ['inhSons','inhDaughters','inhBros','inhSisters'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '0';
+    });
+    document.getElementById('inhEstate').value = '';
+    document.getElementById('inhSpouse').value = 'none';
+    document.getElementById('fatherNo').checked = true;
+    document.getElementById('motherNo').checked = true;
+    document.getElementById('inhIdle').style.display = 'flex';
+    document.getElementById('inhActive').classList.add('d-none');
+}
+
+function printInheritance() {
+    const content = document.getElementById('inhActive')?.innerHTML || '';
+    if (!content || document.getElementById('inhActive').classList.contains('d-none')) {
+        alert('الرجاء توزيع التركة أولاً'); return;
+    }
+    const win = window.open('', '_blank');
+    win.win.print();
 }
 </script>
 </body>

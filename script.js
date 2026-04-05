@@ -303,8 +303,7 @@ function shareContent(title, text, url) {
             text: text,
             url: window.location.origin + '/' + url // Ensure full URL
         }).catch(err => {
-            console.log('Error sharing:', err);
-            // Fallback to clipboard if share was cancelled or failed but not due to lack of support
+// Fallback to clipboard if share was cancelled or failed but not due to lack of support
             copyToClipboard(url);
         });
     } else {

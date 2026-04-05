@@ -2,6 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بوابة الفتاوى - الموسوعة الإسلامية الشاملة</title>
 
@@ -22,8 +26,8 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 /* MEGA NAVBAR */
 .navbar {background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
 .navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
-.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
-.nav-link:hover, .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
+.navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+.navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
 
 /* HERO SECTION */
 .mega-hero{min-height:85vh;background:linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
@@ -70,8 +74,8 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 /* tabs */
 .fatwa-tabs{display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;justify-content:center;margin-bottom:40px;border:none;}
 .fatwa-tabs .nav-link{background:white;border:1px solid #e2e8f0;border-radius:15px;color:#475569;font-weight:bold;padding:15px 30px;font-size:1.1rem;white-space:nowrap;transition:all .3s;}
-.fatwa-tabs .nav-link:hover{border-color:var(--gold);color:var(--dark);}
-.fatwa-tabs .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(4,120,87,0.3);}
+.fatwa-tabs .navbar .nav-link:hover{border-color:var(--gold);color:var(--dark);}
+.fatwa-tabs .navbar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(4,120,87,0.3);}
 
 /* FOOTER */
 .mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;border-top:3px solid var(--gold-dark);}
@@ -80,13 +84,11 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 .line-height-2{line-height:2 !important;}
 </style>
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
 </script>
 
 
@@ -105,16 +107,20 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
     </button>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
-        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
-        <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link active" href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
-        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
-        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
-        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link" href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link" href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link active" href="fatwa.html">فتاوى العلماء</a></li>
+        <li class="nav-item"><a class="nav-link" href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link" href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="library.html">المكتبة الشاملة</a></li>
       </ul>
+      <div class="d-flex align-items-center gap-3 mt-lg-0 mt-3">
+        <button class="btn btn-link text-white p-0 nav-search-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle" style="width:35px;height:35px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-moon"></i></button>
+      </div>
     </div>
   </div>
 </nav>
@@ -161,7 +167,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                 <div class="scholar-img"><i class="fas fa-book-open"></i></div>
                 <h4>الإمام ابن باز</h4>
                 <p>الموقع الرسمي لسماحة الشيخ الإمام عبد العزيز بن عبد الله بن باز رحمه الله، يضم آلاف الفتاوى والدروس الصوتية والمقالات.</p>
-                <a href="https://binbaz.org.sa/" target="_blank" class="scholar-link">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
+                <a href="https://binbaz.org.sa/" target="_blank" class="scholar-link" rel="noopener noreferrer">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -169,7 +175,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                 <div class="scholar-img"><i class="fas fa-pen-fancy"></i></div>
                 <h4>الإمام ابن عثيمين</h4>
                 <p>الموقع الرسمي لفضيلة الشيخ محمد بن صالح العثيمين رحمه الله، يحتوي على فتاوى نور على الدرب والشروحات القيمة والمتون.</p>
-                <a href="https://binothaimeen.net/" target="_blank" class="scholar-link">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
+                <a href="https://binothaimeen.net/" target="_blank" class="scholar-link" rel="noopener noreferrer">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -177,7 +183,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                 <div class="scholar-img"><i class="fas fa-university"></i></div>
                 <h4>اللجنة الدائمة للبحوث والإفتاء</h4>
                 <p>الرئاسة العامة للبحوث العلمية والإفتاء بالمملكة العربية السعودية، وتضم فتاوى هيئة كبار العلماء والمرجعيات المعتمدة.</p>
-                <a href="https://alifta.gov.sa/" target="_blank" class="scholar-link">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
+                <a href="https://alifta.gov.sa/" target="_blank" class="scholar-link" rel="noopener noreferrer">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -185,7 +191,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                 <div class="scholar-img"><i class="fas fa-laptop-house"></i></div>
                 <h4>الإسلام سؤال وجواب</h4>
                 <p>موسوعة علمية شاملة بإشراف الشيخ محمد صالح المنجد، تختص بتقديم الفتاوى المؤصلة وإجابات تفصيلية تناسب العصر.</p>
-                <a href="https://islamqa.info/ar" target="_blank" class="scholar-link">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
+                <a href="https://islamqa.info/ar" target="_blank" class="scholar-link" rel="noopener noreferrer">زيارة الموقع <i class="fas fa-external-link-alt ms-1"></i></a>
             </div>
         </div>
     </div>
@@ -199,64 +205,69 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
     </div>
 
     <!-- TABS -->
-    <ul class="nav nav-pills fatwa-tabs" id="fatwaCategoryTabs" role="tablist">
-        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-aqeedah"><i class="fas fa-star me-2"></i>العقيدة والتوحيد</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-taharah"><i class="fas fa-tint me-2"></i>الطهارة والصلاة</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-zakat"><i class="fas fa-coins me-2"></i>الزكاة والصيام</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-muamalat"><i class="fas fa-handshake me-2"></i>معاملات وحياة</button></li>
-    </ul>
+    <div class="main-tabs-wrapper">
+      <ul class="nav nav-pills main-tabs"  id="fatwaCategoryTabs" role="tablist">
+         <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-aqeedah"><i class="fas fa-star me-2"></i>العقيدة</button></li>
+         <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-taharah"><i class="fas fa-pray me-2"></i>العبادات</button></li>
+         <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-women"><i class="fas fa-venus me-2"></i>فتاوى النساء</button></li>
+         <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-family"><i class="fas fa-users me-2"></i>الأسرة</button></li>
+         <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-muamalat"><i class="fas fa-briefcase me-2"></i>المعاملات</button></li>
+     </ul>
 
     <!-- PANES -->
     <div class="tab-content pb-5 mb-5 border-bottom border-black border-opacity-10">
         
         <!-- العقيدة -->
-        <div class="tab-pane fade show active" id="tab-aqeedah">
-            <div class="accordion fatwa-accordion" id="accAqeedah">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-aq-1">
-                            ما حكم الحلف بغير الله، كالحلف بالأمانة أو بالنبي ﷺ؟
-                        </button>
-                    </h2>
-                    <div id="faq-aq-1" class="accordion-collapse collapse show" data-bs-parent="#accAqeedah">
-                        <div class="accordion-body">
-                            الحلف بغير الله من الشرك الأصغر، وقد يصل إلى الأكبر إذا عظم المحلوف به كتعظيم الله، فلا يجوز الحلف بالنبي ﷺ، ولا بالكعبة، ولا بالأمانة، ولا بحياة فلان؛ لقوله ﷺ: (من كان حالفاً فليحلف بالله أو ليصمت). وقوله ﷺ: (من حلف بغير الله فقد كفر أو أشرك).
-                            <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى الإمام ابن باز رحمه الله</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-aq-2">
-                            هل تجوز قراءة الأبراج وتصديقها لمعرفة المستقبل؟
-                        </button>
-                    </h2>
-                    <div id="faq-aq-2" class="accordion-collapse collapse" data-bs-parent="#accAqeedah">
-                        <div class="accordion-body">
-                            قراءة طالع الأبراج وما يسمى بعلم النجوم لمعرفة المستقبل من الكهانة المحرمة، وتصديق المطالع كفر بما أنزل على محمد ﷺ، لأن الغيب لا يعلمه إلا الله عز وجل. قال تعالى: {قُل لَّا يَعْلَمُ مَن فِي السَّمَاوَاتِ وَالْأَرْضِ الْغَيْبَ إِلَّا اللَّهُ}.
-                            <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: اللجنة الدائمة للبحوث والإفتاء</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-aq-3">
-                            ما هو التوسل الجائز والتوسل الممنوع؟
-                        </button>
-                    </h2>
-                    <div id="faq-aq-3" class="accordion-collapse collapse" data-bs-parent="#accAqeedah">
-                        <div class="accordion-body">
-                            التوسل الجائز هو التوسل إلى الله بأسمائه وصفاته، وبصالح الأعمال كسؤال الله ببر الوالدين أو الصدقة، والتوسل بدعاء الرجل الصالح الحي الحاضر. أما التوسل الممنوع (البدعي) فهو التوسل بجاه الأنبياء أو الأولياء، وسؤال الموتى قضاء الحاجات وهذا من الشرك الأكبر المخرج من الملة.
-                            <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى الشيخ ابن عثيمين رحمه الله</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <div class="tab-pane fade show active" id="tab-aqeedah">
+             <div class="accordion fatwa-accordion" id="accAqeedah">
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-aq-1">
+                             ما حكم الحلف بغير الله، كالحلف بالأمانة أو بالنبي ﷺ؟
+                         </button>
+                     </h2>
+                     <div id="faq-aq-1" class="accordion-collapse collapse show" data-bs-parent="#accAqeedah">
+                         <div class="accordion-body">
+                             الحلف بغير الله من الشرك الأصغر، وقد يصل إلى الأكبر إذا عظم المحلوف به كتعظيم الله، فلا يجوز الحلف بالنبي ﷺ، ولا بالكعبة، ولا بالأمانة، ولا بحياة فلان؛ لقوله ﷺ: (من كان حالفاً فليحلف بالله أو ليصمت). وقوله ﷺ: (من حلف بغير الله فقد كفر أو أشرك).
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى الإمام ابن باز رحمه الله</span>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-aq-2">
+                             هل تجوز قراءة الأبراج وتصديقها لمعرفة المستقبل؟
+                         </button>
+                     </h2>
+                     <div id="faq-aq-2" class="accordion-collapse collapse" data-bs-parent="#accAqeedah">
+                         <div class="accordion-body">
+                             قراءة طالع الأبراج وما يسمى بعلم النجوم لمعرفة المستقبل من الكهانة المحرمة، وتصديق المطالع كفر بما أنزل على محمد ﷺ، لأن الغيب لا يعلمه إلا الله عز وجل. قال تعالى: {قُل لَّا يَعْلَمُ مَن فِي السَّمَاوَاتِ وَالْأَرْضِ الْغَيْبَ إِلَّا اللَّهُ}.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: اللجنة الدائمة للبحوث والإفتاء</span>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-aq-3">
+                             ما هو التوسل الجائز والتوسل الممنوع؟
+                         </button>
+                     </h2>
+                     <div id="faq-aq-3" class="accordion-collapse collapse" data-bs-parent="#accAqeedah">
+                         <div class="accordion-body">
+                             التوسل الجائز هو التوسل إلى الله بأسمائه وصفاته، وبصالح الأعمال كسؤال الله ببر الوالدين أو الصدقة، والتوسل بدعاء الرجل الصالح الحي الحاضر. أما التوسل الممنوع (البدعي) فهو التوسل بجاه الأنبياء أو الأولياء، وسؤال الموتى قضاء الحاجات وهذا من الشرك الأكبر المخرج من الملة.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى الشيخ ابن عثيمين رحمه الله</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="text-center mt-5">
+                <a href="fatwa_aqeedah.html" class="btn btn-outline-primary rounded-pill px-5 py-2 fw-bold">تصفح أرشيف فتاوى العقيدة بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+             </div>
+         </div>
 
-        <!-- الطهارة والصلاة -->
-        <div class="tab-pane fade" id="tab-taharah">
-            <div class="accordion fatwa-accordion" id="accTaharah">
+         <!-- العبادات -->
+         <div class="tab-pane fade" id="tab-taharah">
+             <div class="accordion fatwa-accordion" id="accTaharah">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-th-1">
@@ -283,21 +294,24 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-th-3">
-                            ما حكم من أدرك الإمام في الركوع، هل تحسب له ركعة؟
-                        </button>
-                    </h2>
-                    <div id="faq-th-3" class="accordion-collapse collapse" data-bs-parent="#accTaharah">
-                        <div class="accordion-body">
-                            من كبر تكبيرة الإحرام وهو قائم، ثم ركع وأدرك الإمام راكعاً واطمأن معه قبل أن يرفع الإمام، فقد أدرك الركعة وتمت له، وهذا قول جمهور العلماء لحديث أبي بكرة رضي الله عنه حين دخل والنبي ﷺ راكع.
-                            <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى ابن باز وابن عثيمين</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-th-3">
+                             ما حكم من أدرك الإمام في الركوع، هل تحسب له ركعة؟
+                         </button>
+                     </h2>
+                     <div id="faq-th-3" class="accordion-collapse collapse" data-bs-parent="#accTaharah">
+                         <div class="accordion-body">
+                             من كبر تكبيرة الإحرام وهو قائم، ثم ركع وأدرك الإمام راكعاً واطمأن معه قبل أن يرفع الإمام، فقد أدرك الركعة وتمت له، وهذا قول جمهور العلماء لحديث أبي بكرة رضي الله عنه حين دخل والنبي ﷺ راكع.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى ابن باز وابن عثيمين</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="text-center mt-5">
+                <a href="fatwa_ibadat.html" class="btn btn-outline-success rounded-pill px-5 py-2 fw-bold">تصفح أرشيف فتاوى العبادات بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+             </div>
+         </div>
 
         <!-- الزكاة والصيام -->
         <div class="tab-pane fade" id="tab-zakat">
@@ -331,37 +345,110 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
             </div>
         </div>
 
-        <!-- المعاملات -->
-        <div class="tab-pane fade" id="tab-muamalat">
-            <div class="accordion fatwa-accordion" id="accMuamalat">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-mu-1">
-                            ما حكم الاقتراض من البنوك الربوية لبناء منزل أو شراء سيارة عند الضرورة؟
-                        </button>
-                    </h2>
-                    <div id="faq-mu-1" class="accordion-collapse collapse show" data-bs-parent="#accMuamalat">
-                        <div class="accordion-body">
-                            الاقتراض بفائدة زيادة (الربا) من البنوك وغيرها محرم كبرى، وهو من كبائر الذنوب التي توعد الله صاحبها بالحرب، ولا يجوز ذلك لشراء سيارة أو بناء دار لأنها ليست من الضرورات التي تبيح المحظورات كالمخمصة، بل تطلب بالسبل المشروعة كالمرابحة الإسلامية.
-                            <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: هيئة كبار العلماء بالمملكة</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-mu-2">
-                            ما حكم العملات الرقمية المشفرة (مثل البيتكوين)؟
-                        </button>
-                    </h2>
-                    <div id="faq-mu-2" class="accordion-collapse collapse" data-bs-parent="#accMuamalat">
-                        <div class="accordion-body">
-                            الفتاوى المعاصرة لكبار المجامع الفقهية تتجه إلى تحريم التعامل بالعملات الرقمية المشفرة التي تفتتنع للغرر الشديد، والمخاطرة العمياء، وعدم تغطيتها بأي رصيد حقيقي معتبر عند الدول، مما يجعلها أقرب للمقامرة والميسر وأكل أموال الناس بالباطل، حتى يتم تقنينها وضبطها اقتصادياً وشرعياً.
-                            <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى المجامع الفقهية المعاصرة</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <!-- المعاملات -->
+         <div class="tab-pane fade" id="tab-muamalat">
+             <div class="accordion fatwa-accordion" id="accMuamalat">
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-mu-1">
+                             ما حكم الاقتراض من البنوك الربوية لبناء منزل أو شراء سيارة عند الضرورة؟
+                         </button>
+                     </h2>
+                     <div id="faq-mu-1" class="accordion-collapse collapse show" data-bs-parent="#accMuamalat">
+                         <div class="accordion-body">
+                             الاقتراض بفائدة زيادة (الربا) من البنوك وغيرها محرم كبرى، وهو من كبائر الذنوب التي توعد الله صاحبها بالحرب، ولا يجوز ذلك لشراء سيارة أو بناء دار لأنها ليست من الضرورات التي تبيح المحظورات كالمخمصة، بل تطلب بالسبل المشروعة كالمرابحة الإسلامية.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: هيئة كبار العلماء بالمملكة</span>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-mu-2">
+                             ما حكم العملات الرقمية المشفرة (مثل البيتكوين)؟
+                         </button>
+                     </h2>
+                     <div id="faq-mu-2" class="accordion-collapse collapse" data-bs-parent="#accMuamalat">
+                         <div class="accordion-body">
+                             الفتاوى المعاصرة لكبار المجامع الفقهية تتجه إلى تحريم التعامل بالعملات الرقمية المشفرة التي تفتتنع للغرر الشديد، والمخاطرة العمياء، وعدم تغطيتها بأي رصيد حقيقي معتبر عند الدول، مما يجعلها أقرب للمقامرة والميسر وأكل أموال الناس بالباطل، حتى يتم تقنينها وضبطها اقتصادياً وشرعياً.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى المجامع الفقهية المعاصرة</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="text-center mt-5">
+                <a href="fatwa_muamalat.html" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-bold">تصفح أرشيف فتاوى المعاملات بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+             </div>
+         </div>
+ 
+         <!-- فتاوى النساء -->
+         <div class="tab-pane fade" id="tab-women">
+             <div class="accordion fatwa-accordion" id="accWomen">
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-wm-1">
+                             ما حكم خروج المرأة متعطرة إلى الأسواق؟
+                         </button>
+                     </h2>
+                     <div id="faq-wm-1" class="accordion-collapse collapse show" data-bs-parent="#accWomen">
+                         <div class="accordion-body">
+                             لا يجوز للمرأة أن تخرج متعطرة إذا كانت ستمر على رجال أجانب، لقوله ﷺ: (أيما امرأة استعطرت فمرت على قوم ليجدوا ريحها فهي زانية). فالواجب عليها التستر والحشمة وتجنب ما يثير الفتنة.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى اللجنة الدائمة</span>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-wm-2">
+                             هل يجوز للمرأة الصلاة وهي تلبس "البنطلون" إذا كانت في بيتها؟
+                         </button>
+                     </h2>
+                     <div id="faq-wm-2" class="accordion-collapse collapse" data-bs-parent="#accWomen">
+                         <div class="accordion-body">
+                             الأفضل للمرأة والأحوط لصلاتها أن تصلي في ثياب فضفاضة سابرة لا تصف أعضاء جسمها، والبنطلون يصف حجم الأعضاء (كالفخذ) لذا يكره الصلاة به حتى لو كانت وحدها، والأولى لبس الجلال الواسع.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى الشيخ ابن عثيمين</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="text-center mt-5">
+                <a href="fatwa_women.html" class="btn btn-outline-danger rounded-pill px-5 py-2 fw-bold">تصفح أرشيف فتاوى النساء بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+             </div>
+         </div>
+ 
+         <!-- الأسرة -->
+         <div class="tab-pane fade" id="tab-family">
+             <div class="accordion fatwa-accordion" id="accFamily">
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-fm-1">
+                             ما حكم تحديد النسل أو تنظيم الحمل مخافة الفقر؟
+                         </button>
+                     </h2>
+                     <div id="faq-fm-1" class="accordion-collapse collapse show" data-bs-parent="#accFamily">
+                         <div class="accordion-body">
+                             تحديد النسل (أي إيقافه نهائياً) لا يجوز وهو مصادم للسنة النبوية. أما "تنظيم" النسل لفترة محددة لمصلحة الأم أو الطفل (كضعف الأم أو الرضاعة) فلا بأس به، بشرط ألا يكون ذلك خوفاً من الفقر لأن الله هو الرزاق ذو القوة المتين.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: قرارات المجمع الفقهي الإسلامي</span>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-fm-2">
+                             هل يجب استئذان الأبوين في صيام التطوع؟
+                         </button>
+                     </h2>
+                     <div id="faq-fm-2" class="accordion-collapse collapse" data-bs-parent="#accFamily">
+                         <div class="accordion-body">
+                             البر بالوالدين مقدم على صيام التطوع، فإذا نهاه والده عن صيام التطوع لمصلحة أو شفقة عليه وجب طاعته، لأن طاعة الوالدين واجبة وصيام التطوع سنة، ولا يجوز تقديم السنة على الواجب.
+                             <br><span class="fatwa-source"><i class="fas fa-user-check me-1"></i> المصدر: فتاوى ابن باز</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="text-center mt-5">
+                <a href="fatwa_family.html" class="btn btn-outline-primary rounded-pill px-5 py-2 fw-bold">تصفح أرشيف فتاوى الأسرة بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+             </div>
+         </div>
 
     </div>
 </div>
@@ -408,15 +495,69 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         e.preventDefault();
         const query = document.getElementById('fatwaQuery').value.trim();
         if(!query) return;
-        
-        // Build Google Search Query targeted to official sites
-        // site:binbaz.org.sa OR site:binothaimeen.net OR site:alifta.gov.sa OR site:islamqa.info
         const sites = "site:binbaz.org.sa OR site:binothaimeen.net OR site:alifta.gov.sa OR site:islamqa.info";
         const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query + ' ' + sites)}`;
-        
-        // Open search in a new tab
         window.open(searchUrl, '_blank');
     }
+
+    // Global functionality: Theme & Search (Consistency with index.html)
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        if(link.href === window.location.href || (window.location.pathname.includes(link.getAttribute('href')) && link.getAttribute('href') !== 'index.html')) {
+            link.classList.add('active');
+            link.style.color = "var(--gold)";
+        }
+    });
+
+    const themeBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    themeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    if(localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    const stBtn = document.getElementById('scrollTop');
+    window.onscroll = () => {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        stBtn.style.display = "flex";
+        stBtn.style.alignItems = "center";
+        stBtn.style.justifyContent = "center";
+      } else {
+        stBtn.style.display = "none";
+      }
+    };
+    stBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
 </script>
+
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+      <div class="modal-header border-0 p-4" style="background:var(--dark);">
+        <div class="input-group">
+          <span class="input-group-text bg-transparent border-0 text-warning fs-3"><i class="fas fa-search"></i></span>
+          <input type="text" class="form-control bg-transparent border-0 text-white fs-4 ps-0" placeholder="ابحث في علوم الموسوعة..." style="box-shadow:none;">
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-5 text-center">
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><a href="recitations.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-quran d-block fs-3 mb-2"></i>القرآن</a></div>
+          <div class="col-6 col-md-3"><a href="hadith.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-book-open d-block fs-3 mb-2"></i>الحديث</a></div>
+          <div class="col-6 col-md-3"><a href="fiqh.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-balance-scale d-block fs-3 mb-2"></i>الفقه</a></div>
+          <div class="col-6 col-md-3"><a href="fatwa.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-gavel d-block fs-3 mb-2"></i>الفتاوى</a></div>
+        </div>
+        <p class="mt-4 text-muted small">اكتب كلمة البحث واضغط Enter للبحث الشامل</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" class="btn btn-warning rounded-circle shadow-lg position-fixed" style="bottom:30px;left:30px;width:50px;height:50px;display:none;z-index:9999;transition:0.3s;"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>

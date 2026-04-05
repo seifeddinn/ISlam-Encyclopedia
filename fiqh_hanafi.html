@@ -1,42 +1,71 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المذهب الحنفي - الموسوعة الإسلامية الشاملة</title>
-
-    <meta name="description" content="الموسوعة الإسلامية الشاملة - المنصة الرقمية الموثوقة لعلوم القرآن والسنة والفقه والسيرة والتاريخ بعقيدة صحيحة.">
-    <meta name="keywords" content="قرآن, حديث, إسلام, فقه, عقيدة, سيرة, تاريخ إسلامي, الموسوعة الإسلامية">
-    <meta name="author" content="ST Islamic Web">
-    <meta property="og:title" content="الموسوعة الإسلامية الشاملة">
-    <meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
-    <meta property="og:type" content="website">
+    <title>المذهب الحنفي (مدرسة الرأي) - الموسوعة الإسلامية الشاملة</title>
+    <meta name="description" content="الموسوعة الإسلامية الشاملة - دليل شامل للمذهب الحنفي، أصوله، أئمته، وأهم أحكامه الفقهية بأسلوب عصري.">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        :root{--gold:#d4af37;--gold-light:#f9f1d8;--gold-dark:#aa8a2a;--dark:#422006;--primary:#b45309;--accent:#f59e0b;}
+        body{font-family:'Cairo',sans-serif;background:#fffcf2;color:#1e293b;overflow-x:hidden;}
+        h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
-</script>
+        /* MEGA NAVBAR */
+        .navbar {background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
+        .navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
+        .navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+        .navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
+        
+        /* Mobile Navbar Fix for Hanafi */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(66,32,6,0.98) !important;
+                border: 1px solid var(--gold) !important;
+            }
+        }
 
+        /* MEGA HERO */
+        .mega-hero{min-height:70vh;background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:100px 0;}
+        .hero-glass{background:rgba(66,32,6,0.6);backdrop-filter:blur(15px);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:60px 40px;box-shadow:0 20px 50px rgba(0,0,0,0.5);position:relative;z-index:5;text-align:center;}
+        .hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.1;mix-blend-mode:overlay;}
+        .hero-eyebrow{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#291504;padding:8px 30px;border-radius:50px;font-weight:bold;font-size:1rem;margin-bottom:25px;}
+        .mega-hero h1{font-size:4.5rem;font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.8);line-height:1.2;margin-bottom:20px;}
+        .mega-hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 
+        /* STATS */
+        .stats-bar{background:linear-gradient(90deg,var(--dark),var(--primary));padding:30px 0;border-top:2px solid var(--gold);margin-top:-5px;position:relative;z-index:10;}
+        .stat-item{text-align:center;color:white;padding:15px;border-left:1px solid rgba(212,175,55,0.2);}
+        .stat-item:last-child{border-left:none;}
+        @media (max-width: 991px) { .stat-item { border-left: none; border-bottom: 1px solid rgba(212,175,55,0.1); } .stat-item:last-child { border-bottom: none; } }
+        .stat-num{font-family:'Amiri',serif;font-size:2.5rem;font-weight:bold;color:var(--gold);}
+
+        /* CARDS */
+        .mega-card{background:white;border-radius:24px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border:1px solid #fef3c7;height:100%;transition:0.3s;}
+        .mega-card:hover{transform:translateY(-10px);border-color:var(--gold);}
+        .icon-box{width:70px;height:70px;background:var(--gold-light);color:var(--primary);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:20px;}
+
+        /* RULINGS LIST */
+        .ruling-item{border-right:4px solid var(--gold);padding:15px 25px;background:white;border-radius:0 15px 15px 0;margin-bottom:15px;box-shadow:0 5px 15px rgba(0,0,0,0.02);}
+        .ruling-title{font-family:'Amiri',serif;font-size:1.4rem;font-weight:bold;color:var(--dark);margin-bottom:5px;}
+
+        /* FOOTER */
+        .mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);}
+        .mega-footer-link{color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;}
+        .mega-footer-link:hover{color:var(--gold);padding-right:5px;}
+    </style>
 </head>
-
-
-
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
@@ -44,72 +73,149 @@
     </button>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
-        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link" href="hadith.html">الحديث الشريف</a></li>
         <li class="nav-item"><a class="nav-link active" href="fiqh.html">الفقه الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
-        <li class="nav-item"><a class="nav-link " href="seerah.html">السيرة والصحابة</a></li>
-        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
-        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+        <li class="nav-item"><a class="nav-link" href="fatwa.html">فتاوى العلماء</a></li>
+        <li class="nav-item"><a class="nav-link" href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link" href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="library.html">المكتبة الشاملة</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-    <section class="page-header bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1>المذهب الحنفي</h1>
-            <p class="lead">أقدم المذاهب الفقهية الأربعة، أسسه الإمام أبو حنيفة النعمان</p>
-        </div>
-    </section>
-
-    <section class="container my-5">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="card-title">عن الإمام أبو حنيفة</h3>
-                        <p class="card-text">هو النعمان بن ثابت (80هـ - 150هـ)، فقيه العراق وأحد الأئمة الأربعة عند أهل
-                            السنة والجماعة. اشتهر بالرأي والقياس.</p>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="card-title">أصول المذهب</h3>
-                        <ul>
-                            <li>القرآن الكريم</li>
-                            <li>السنة النبوية</li>
-                            <li>أقوال الصحابة</li>
-                            <li>القياس</li>
-                            <li>الاستحسان</li>
-                            <li>العرف</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="card-title">أبرز تلاميذه</h3>
-                        <p>أبو يوسف القاضي، محمد بن الحسن الشيباني، زفر بن الهذيل.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">أهم كتب المذهب</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">المبسوط للسرخسي</li>
-                        <li class="list-group-item">بدائع الصنائع للكاساني</li>
-                        <li class="list-group-item">رد المحتار (حاشية ابن عابدين)</li>
-                        <li class="list-group-item">الهداية للمرغيناني</li>
-                    </ul>
-                </div>
+<section class="mega-hero">
+    <div class="hero-pattern"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 hero-glass">
+                <div class="hero-eyebrow">مدرسة الرأي والقياس</div>
+                <h1>المذهب <span>الحنفي</span></h1>
+                <p class="text-white opacity-75 fs-5">أقدم المذاهب الفقهية وأكثرها انتشاراً، تميز بالعمق العقلي والمرونة في استنباط الأحكام ومراعاة مصالح العباد عبر الاستحسان والعرف.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div class="stats-bar">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 col-12 stat-item"><div class="stat-num">150 هـ</div><div class="text-white-50">وفاة الإمام المؤسس</div></div>
+            <div class="col-lg-4 col-md-6 col-12 stat-item"><div class="stat-num">3</div><div class="text-white-50">أئمة المذهب العظام</div></div>
+            <div class="col-lg-4 col-12 stat-item"><div class="stat-num">400+</div><div class="text-white-50">مليون متبع حول العالم</div></div>
+        </div>
+    </div>
+</div>
+
+<section class="container my-5 py-5">
+    <div class="row g-5">
+        <div class="col-lg-7">
+            <h2 class="font-amiri fw-bold text-dark mb-4 border-bottom pb-2">عن الإمام وأصول المذهب</h2>
+            <div class="mega-card mb-4">
+                <h4 class="font-amiri fw-bold text-primary">الإمام أبو حنيفة النعمان</h4>
+                <p class="lh-lg">هو النعمان بن ثابت الكوفي، ولد في الكوفة ونشأ فيها. كان تاجراً شهيراً للحرير مما أعطاه بصيرة واسعة في فقه المعاملات. تميز بذكاء وقاد وقدرة فذة على الحوار، حتى قيل فيه: "الناس في الفقه عيال على أبي حنيفة".</p>
+            </div>
+            
+            <h4 class="font-amiri fw-bold text-dark mt-5 mb-3">أصول الاستنباط في المذهب</h4>
+            <div class="row g-3">
+                <div class="col-md-6"><div class="p-3 bg-white rounded shadow-sm border-end border-4 border-warning">القرآن والسنة المتواترة</div></div>
+                <div class="col-md-6"><div class="p-3 bg-white rounded shadow-sm border-end border-4 border-warning">أقوال الصحابة (الإجماع)</div></div>
+                <div class="col-md-6"><div class="p-3 bg-white rounded shadow-sm border-end border-4 border-warning">القياس (التوسع فيه)</div></div>
+                <div class="col-md-6"><div class="p-3 bg-white rounded shadow-sm border-end border-4 border-warning">الاستحسان (ترك القياس لمصلحة)</div></div>
+                <div class="col-md-6"><div class="p-3 bg-white rounded shadow-sm border-end border-4 border-warning">العرف (معايير المجتمع الصحيحة)</div></div>
+            </div>
+        </div>
+        
+        <div class="col-lg-5">
+            <h2 class="font-amiri fw-bold text-dark mb-4 border-bottom pb-2">كتب المذهب المعتمدة</h2>
+            <div class="mega-card">
+                <ul class="list-unstyled">
+                    <li class="mb-4 d-flex gap-3">
+                        <div class="icon-box flex-shrink-0" style="width:50px;height:50px;font-size:1.2rem;"><i class="fas fa-scroll"></i></div>
+                        <div><h5 class="font-amiri fw-bold mb-1">المبسوط للسرخسي</h5><p class="small text-muted">أضخم موسوعة فقهية حنفية (30 مجلداً).</p></div>
+                    </li>
+                    <li class="mb-4 d-flex gap-3">
+                        <div class="icon-box flex-shrink-0" style="width:50px;height:50px;font-size:1.2rem;"><i class="fas fa-scroll"></i></div>
+                        <div><h5 class="font-amiri fw-bold mb-1">بدائع الصنائع</h5><p class="small text-muted">للكاساني، ويتميز بحسن الترتيب المنطقي.</p></div>
+                    </li>
+                    <li class="mb-4 d-flex gap-3">
+                        <div class="icon-box flex-shrink-0" style="width:50px;height:50px;font-size:1.2rem;"><i class="fas fa-scroll"></i></div>
+                        <div><h5 class="font-amiri fw-bold mb-1">حاشية ابن عابدين</h5><p class="small text-muted">رد المحتار، عمدة المتأخرين في الفتوى.</p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5 py-5 bg-white rounded shadow-sm">
+    <div class="text-center mb-5">
+        <h2 class="font-amiri fw-bold text-dark display-5">أحكام فقهية متميزة في المذهب</h2>
+        <p class="text-muted">من انفرادات ومشهور أحكام السادة الحنفية</p>
+    </div>
+    
+    <div class="row g-4 justify-content-center">
+        <div class="col-lg-10">
+            <div class="ruling-item">
+                <div class="ruling-title">وجوب صلاة الوتر</div>
+                <p class="text-muted mb-0">يرى الحنفية أن صلاة الوتر "واجبة" وليست سنة مؤكدة، وهي مرتبة بين الفرض والسنة، ويأثم تاركها عمداً.</p>
+            </div>
+            <div class="ruling-item">
+                <div class="ruling-title">النية في الوضوء</div>
+                <p class="text-muted mb-0">من تيسيرات المذهب أن النية في الوضوء سنة وليست فرضاً، فلو سقط شخص في ماء وعمه بنية التبرد، صح وضوؤه للصلاة.</p>
+            </div>
+            <div class="ruling-item">
+                <div class="ruling-title">نكاح المرأة لنفسها</div>
+                <p class="text-muted mb-0">يجوز للمرأة البالغة العاقلة أن تزوج نفسها دون ولي إذا كان الزوج كفؤاً وبمهر المثل، مراعاة لأهليتها الكاملة.</p>
+            </div>
+            <div class="ruling-item">
+                <div class="ruling-title">زكاة الحلي المستعمل</div>
+                <p class="text-muted mb-0">يوجب الحنفية الزكاة في حلي المرأة من ذهب وفضة ولو كان للاستعمال والزينة، بخلاف الجمهور الذين لا يوجبونها في المستعمل.</p>
+            </div>
+            <div class="ruling-item">
+                <div class="ruling-title">عدم وجوب الفاتحة خلف الإمام</div>
+                <p class="text-muted mb-0">يرى الحنفية أن المأموم لا يقرأ خلف الإمام مطلقاً، لا الفاتحة ولا غيرها، قائلين: (قراءة الإمام قراءة للمأموم).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="mega-footer">
+  <div class="container">
+    <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+      <div class="col-lg-4 text-md-end text-center">
+        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+          <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+          <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+          <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+          <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+          <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-md-start text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+        <a href="contact.html" class="mega-footer-link"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+      </div>
+    </div>
+    <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

@@ -69,28 +69,13 @@ table {
 /* -------------------------------------------------------
    4. TABS NAVIGATION
    ------------------------------------------------------- */
-.main-tabs-wrapper {
-    overflow: hidden;
-}
 
-.main-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #d4af37 #f1f5f9;
-    gap: 8px;
-    padding-bottom: 4px;
-}
 
-.main-tabs::-webkit-scrollbar {
-    height: 4px;
-}
 
-.main-tabs::-webkit-scrollbar-thumb {
-    background: #d4af37;
-    border-radius: 10px;
-}
+
+
+
+
 
 /* -------------------------------------------------------
    5. CARDS — GLOBAL
@@ -355,17 +340,9 @@ table {
     }
 
     /* --- TABS --- */
-    .main-tabs-wrapper {
-        margin: 15px 0 25px !important;
-        padding: 10px 8px !important;
-        top: 56px !important;
-        border-radius: 12px !important;
-        position: relative !important; /* disable sticky on mobile to avoid layout issues */
-    }
+    
 
-    .main-tabs {
-        gap: 6px !important;
-    }
+    
 
     .main-tabs .nav-link {
         font-size: 0.82rem !important;
@@ -748,5 +725,110 @@ table {
         color: #000 !important;
         padding: 20px 0 !important;
         min-height: auto !important;
+    }
+}
+
+
+
+/* BEUTIFUL SECTIONS TABS BAR */
+.main-tabs-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 18px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.03);
+    margin: 30px auto 50px;
+    position: sticky;
+    top: 76px;
+    z-index: 900;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 4px solid var(--primary);
+}
+
+.main-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-tabs .nav-link {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    color: #475569 !important;
+    font-weight: 700;
+    padding: 12px 22px;
+    font-size: 1.05rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.main-tabs .nav-link i {
+    font-size: 1.25rem;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+.main-tabs .nav-link:hover {
+    background: #f8fafc;
+    border-color: var(--primary);
+    color: var(--dark) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.main-tabs .nav-link.active {
+    background: linear-gradient(135deg, var(--dark), var(--primary)) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+    transform: translateY(-4px);
+}
+
+.main-tabs .nav-link.active i {
+    color: var(--gold) !important;
+}
+
+.dark-mode .main-tabs-wrapper {
+    background: rgba(15, 23, 42, 0.95);
+    border-color: rgba(255,255,255,0.05);
+}
+
+.dark-mode .main-tabs .nav-link {
+    background: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .main-tabs .nav-link:hover {
+    background: #334155;
+    color: #fff !important;
+}
+
+@media (max-width: 768px) {
+    .main-tabs-wrapper {
+        margin: 15px 10px 25px !important;
+        padding: 12px 10px !important;
+        top: 60px !important;
+        border-radius: 16px !important;
+        position: relative !important;
+    }
+    
+    .main-tabs .nav-link {
+        font-size: 0.9rem !important;
+        padding: 10px 14px !important;
+        border-radius: 12px !important;
+    }
+    
+    .main-tabs .nav-link i {
+        font-size: 1.1rem !important;
     }
 }

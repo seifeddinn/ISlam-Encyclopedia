@@ -2,6 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>موسوعة السيرة النبوية الشريفة الشاملة - الموسوعة الإسلامية</title>
 <meta name="description" content="أكبر مرجع رقمي للسيرة النبوية الشريفة: الشمائل، الغزوات، الصحابة الكرام، أمهات المؤمنين، السيرة في القرآن الكريم.">
@@ -21,8 +25,8 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
 /* NAV */
 .navbar{background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);border-bottom:2px solid rgba(212,175,55,.2);}
 .navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:#fff!important;}
-.nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;transition:.3s;}
-.nav-link:hover,.nav-link.active{color:var(--gold)!important;}
+.navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;transition:.3s;}
+.navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;}
 
 /* HERO */
 .seerah-hero{min-height:96vh;background:radial-gradient(ellipse at 60% 40%,#075985 0%,var(--dark) 75%);display:flex;align-items:center;position:relative;overflow:hidden;}
@@ -44,13 +48,13 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
 .hero-badge small{font-size:.85rem;opacity:.8;}
 
 /* TABS BAR */
-.tabs-bar{background:#fff;border-radius:22px;padding:14px;box-shadow:0 12px 40px rgba(0,0,0,.07);margin:45px 0 55px;position:sticky;top:76px;z-index:900;border:1px solid #e2e8f0;}
-.tabs-bar .nav{gap:6px;justify-content:center;flex-wrap:wrap;overflow-x:auto;}
-.tabs-bar .nav-link{border:1px solid #e2e8f0;border-radius:14px;color:#475569;font-weight:700;padding:12px 22px;font-size:1rem;white-space:nowrap;transition:.3s;display:flex;align-items:center;gap:7px;}
+
+
+
 .tabs-bar .nav-link i{font-size:1.15rem;color:var(--gold-dark);}
-.tabs-bar .nav-link:hover{background:var(--light-blue);border-color:var(--gold-dark);}
-.tabs-bar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff!important;border-color:transparent;box-shadow:0 8px 22px rgba(3,105,161,.35);}
-.tabs-bar .nav-link.active i{color:var(--gold);}
+.tabs-bar .navbar .nav-link:hover{background:var(--light-blue);border-color:var(--gold-dark);}
+.tabs-bar .navbar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff!important;border-color:transparent;box-shadow:0 8px 22px rgba(3,105,161,.35);}
+.tabs-bar .navbar .nav-link.active i{color:var(--gold);}
 
 /* SEC HEADER */
 .sec-head{text-align:center;margin-bottom:55px;}
@@ -125,13 +129,11 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
 .mfl:hover{color:var(--gold);padding-right:5px;}
 </style>
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
 </script>
 
 
@@ -150,16 +152,20 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
     </button>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link " href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link " href="recitations.html">القرآن والتلاوات</a></li>
-        <li class="nav-item"><a class="nav-link " href="hadith.html">الحديث الشريف</a></li>
-        <li class="nav-item"><a class="nav-link " href="fiqh.html">الفقه الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="fatwa.html">فتاوى العلماء <i class="fas fa-gavel"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link" href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link" href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="fatwa.html">فتاوى العلماء</a></li>
         <li class="nav-item"><a class="nav-link active" href="seerah.html">السيرة والصحابة</a></li>
-        <li class="nav-item"><a class="nav-link " href="aqeedah.html">العقيدة الإسلامية</a></li>
-        <li class="nav-item"><a class="nav-link " href="history.html">التاريخ الإسلامي</a></li>
-        <li class="nav-item"><a class="nav-link " href="library.html">المكتبة الشاملة</a></li>
+        <li class="nav-item"><a class="nav-link" href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="library.html">المكتبة الشاملة</a></li>
       </ul>
+      <div class="d-flex align-items-center gap-3 mt-lg-0 mt-3">
+        <button class="btn btn-link text-white p-0 nav-search-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle" style="width:35px;height:35px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-moon"></i></button>
+      </div>
     </div>
   </div>
 </nav>
@@ -184,14 +190,16 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
 
 <div class="container">
 <!-- TABS NAV -->
-<div class="tabs-bar" data-aos="fade-up">
-  <ul class="nav nav-pills" id="sTabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t1"><i class="fas fa-route"></i>التسلسل الزمني</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t2"><i class="fas fa-seedling"></i>الشمائل المحمدية</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t3_battle"><i class="fas fa-map-marked-alt"></i>المعارك الفاصلة</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t4_quran"><i class="fas fa-quran"></i>السيرة في القرآن</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t5_hadith"><i class="fas fa-scroll"></i>منارات الوحي</button></li>
-  </ul>
+<div class="main-tabs-wrapper">
+  <div class="container">
+    <ul class="nav nav-pills main-tabs"  id="sTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t1"><i class="fas fa-route me-2"></i>التسلسل الزمني</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t2"><i class="fas fa-seedling me-2"></i>الشمائل المحمدية</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t3_battle"><i class="fas fa-map-marked-alt me-2"></i>المعارك الفاصلة</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t4_quran"><i class="fas fa-quran me-2"></i>السيرة في القرآن</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t5_hadith"><i class="fas fa-scroll me-2"></i>منارات الوحي</button></li>
+    </ul>
+  </div>
 </div>
 <div class="tab-content pb-5">
 
@@ -329,12 +337,19 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
     <p>التصوير التكتيكي لأهم الغزوات النبوية الكريمة مع تفاصيل ودروس كل معركة</p>
     <div class="gold-divider"></div>
   </div>
+  
   <ul class="nav justify-content-center gap-3 mb-5 flex-wrap" id="bNav" data-aos="fade-up">
     <li class="nav-item"><button class="btn btn-outline-primary active rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#badr">بدر الكبرى</button></li>
     <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#uhud">أُحُد</button></li>
+    <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#hamra">حمراء الأسد</button></li>
     <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#khnq">الخندق</button></li>
+    <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#quraiza">بني قريظة</button></li>
+    <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#mustaliq">بني المصطلق</button></li>
+    <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#khaibar">خيبر</button></li>
+    <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#mutah">مؤتة</button></li>
     <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#makkah">فتح مكة</button></li>
     <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#hunain">حنين</button></li>
+    <li class="nav-item"><button class="btn btn-outline-primary rounded-pill px-4 fw-bold" data-bs-toggle="tab" data-bs-target="#tabuk">تبوك</button></li>
   </ul>
   <div class="tab-content">
 
@@ -390,6 +405,45 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
       </div>
     </div>
 
+    <div class="tab-pane fade" id="hamra">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map" style="background:#fff1f2;">
+            <div class="b-badge" style="background:#be123c;">حمراء الأسد — 3 هـ</div>
+            <div class="b-label" style="top:15px;left:15px;color:#be123c;">ملاحقة قريش بعد أُحُد</div>
+            <div class="b-team bt-m" style="top:40%;left:50%;transform:translateX(-50%);">المسلمون (الجرحى فقط)</div>
+            <div class="b-label" style="bottom:20px;right:20px;">إظهار القوة والمنعة</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <h3 class="amiri fw-bold text-dark mb-3">غزوة الجراح — استعادة الهيبة</h3>
+            <p class="fs-5 text-muted lh-xl">بعد يوم أُحُد الأليم، أمر النبي ﷺ أصحابه بملاحقة قريش، واشترط ألا يخرج معه إلا من حضر أُحُد (وهم جرحى). خرجوا وهم ينزفون دماً حتى بلغوا حمراء الأسد، فألقى الله الرعب في قلوب المشركين وفرّوا عائدين لمكة.</p>
+            <div class="alert alert-danger mt-4 rounded-4"><strong>الدرس:</strong> قوة الإرادة والمبادأة النفسية كفيلة بترهيب العدو المنتصر وتحويل الهزيمة إلى مكسب سياسي.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quraiza">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map" style="background:#fef2f2;border-color:#991b1b;">
+            <div class="b-badge" style="background:#991b1b;">بني قريظة — 5 هـ</div>
+            <div class="b-label" style="top:50%;left:50%;transform:translate(-50%,-50%);"><i class="fas fa-university fa-3x d-block mb-1"></i>حصون بني قريظة</div>
+            <div class="b-team bt-m" style="top:20%;right:10%;">جيش المسلمين (محاصر)</div>
+            <div class="b-label" style="bottom:15px;left:15px;color:#991b1b;">بعد انقشاع الأحزاب</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <h3 class="amiri fw-bold text-dark mb-3">جزاء الغدر والخيانة الكبرى</h3>
+            <p class="fs-5 text-muted lh-xl">بعد رحيل الأحزاب، أمر النبي ﷺ بالتوجه فوراً لبني قريظة لغدرهم وتحالفهم مع المشركين في أحلك الظروف. حاصرهم المسلمون 25 ليلة حتى نزلوا على حكم سعد بن معاذ، الذي حكم بقطع دابر الخونة حمايةً للدولة.</p>
+            <div class="alert alert-danger mt-4 rounded-4"><strong>الدرس:</strong> لا تهاون مع الخيانة العظمى التي تهدد وجود الأمة وبقاءها.</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="tab-pane fade" id="khnq">
       <div class="row g-5 align-items-stretch">
         <div class="col-lg-6">
@@ -407,6 +461,76 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
             <h3 class="amiri fw-bold text-dark mb-3">النصر الرباني بجنود السماء</h3>
             <p class="fs-5 text-muted lh-xl">تجمع عشرة آلاف من الأحزاب. بفكرة سلمان الفارسي حُفر الخندق في أيام. دام الحصار شهراً مع برد وجوع، حتى أرسل الله ريحاً عاتية وجنوداً من السماء فاقتلعت خيام الأحزاب.</p>
             <div class="alert alert-info mt-4 rounded-4"><strong>الدرس:</strong> الأخذ بالأسباب والشورى ولو جاءت الفكرة من أصغر الأصحاب منزلة.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="mustaliq">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map" style="background:#ecfdf5;">
+            <div class="b-badge" style="background:#059669;">بني المصطلق — 6 هـ</div>
+            <div class="b-label" style="top:15px;right:15px;">ماء المريسيع</div>
+            <div class="b-team bt-m" style="top:50%;left:50%;transform:translate(-50%,-50%);">المسلمون (مباغتة)</div>
+            <div class="b-label" style="bottom:20px;left:20px;color:#065f46;">سياق حادثة الإفك</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <h3 class="amiri fw-bold text-dark mb-3">غزوة المريسيع — فتنة المنافقين</h3>
+            <p class="fs-5 text-muted lh-xl">خرج ﷺ لمباغتة بني المصطلق لهدم تحالفهم. انتصر المسلمون سريعاً، لكن المنافقين بقيادة ابن أبي سلول استغلوا الغزوة لإثارة النعرات العرقية ونشر "حادثة الإفك" ضد أم المؤمنين عائشة، فنزل القرآن ببراءتها.</p>
+            <div class="alert alert-success mt-4 rounded-4"><strong>الدرس:</strong> الحذر من طابور المنافقين الخامس الذي يسعى لتفتيت الصف الداخلي بالأكاذيب عند العجز العسكري.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="khaibar">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map" style="background-image:linear-gradient(135deg, #fef3c7, #fbbf24);">
+            <div class="b-badge">خيبر — 7 هـ</div>
+            <div class="b-label" style="top:40%;left:35%;"><i class="fas fa-fortified-castle fa-3x d-block mb-1"></i>حصن القموص</div>
+            <div class="b-label" style="top:15px;left:15px;color:#92400e;">سلسلة حصون خيبر</div>
+            <div class="b-team bt-m" style="bottom:20%;right:15%;">فاتح الحصن: علي بن أبي طالب <i class="fas fa-hammer ms-1"></i></div>
+            <div class="pulse-dot" style="top:35%;left:40%;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <h3 class="amiri fw-bold text-dark mb-3">فتح الحصون المنيعة</h3>
+            <p class="fs-5 text-muted lh-xl">توجه النبي ﷺ بـ 1400 مقاتل إلى خيبر معقل اليهود. حاصر حصونهم واحداً تلو الآخر. أعطى الراية لعلي بن أبي طالب رضي الله عنه ففتح الله على يديه حصن القموص المنيع. انتهى الوجود العسكري اليهودي في الحجاز.</p>
+            <div class="d-flex gap-3 flex-wrap mt-4">
+              <span class="badge bg-success fs-6 rounded-pill px-3 py-2">الشهداء: 15</span>
+              <span class="badge bg-primary fs-6 rounded-pill px-3 py-2">المسلمين: 1400</span>
+            </div>
+            <div class="alert alert-success mt-4 rounded-4"><strong>الدرس:</strong> فضل الصبر والمصابرة في الحصار، ودور الشجاعة الفردية (علي رضي الله عنه) في حسم المعارك الكبرى.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="mutah">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map" style="background:#e0f2fe;">
+            <div class="b-badge">مؤتة — 8 هـ</div>
+            <div class="b-label" style="top:20px;left:20px;color:var(--primary);">أول مواجهة مع الروم البيزنطيين</div>
+            <div class="b-team bt-m" style="bottom:25%;right:15%;">المسلمون (3000)</div>
+            <div class="b-team bt-e" style="top:25%;left:15%;">الروم وحلفاؤهم (200,000)</div>
+            <div class="b-label" style="top:50%;left:50%;transform:translate(-50%,-50%);font-weight:900;font-size:2rem;color:rgba(239,68,68,.3);">انسحاب تكتيكي</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <h3 class="amiri fw-bold text-dark mb-3">سيف الله المسلول وحرب الاستنزاف</h3>
+            <p class="fs-5 text-muted lh-xl">أول لقاء عسكري مع إمبراطورية الروم. استشهد القادة الثلاثة (زيد، جعفر، ابن رواحة). تولى خالد بن الوليد الراية واستخدم عبقرية عسكرية في تمويه العدو والانسحاب بالجيش دون خسائر تُذكر أمام جيش يفوقهم بسبعين ضعفاً.</p>
+            <div class="d-flex gap-3 flex-wrap mt-4">
+              <span class="badge bg-success fs-6 rounded-pill px-3 py-2">الشهداء: 12</span>
+              <span class="badge bg-primary fs-6 rounded-pill px-3 py-2">لقب خالد: سيف الله المسلول</span>
+            </div>
+            <div class="alert alert-info mt-4 rounded-4"><strong>الدرس:</strong> الحكمة في الانسحاب التكتيكي هي انتصار في حد ذاته إذا حمت دماء المؤمنين وحققت أهدافاً أبعد.</div>
           </div>
         </div>
       </div>
@@ -448,6 +572,26 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
             <h3 class="amiri fw-bold text-dark mb-3">الثبات حين الدنيا تداعت</h3>
             <p class="fs-5 text-muted lh-xl">بعد فتح مكة مباشرة خرج المسلمون بثقة لقتال هوازن. كمن العدو في الوادي فانهزم الناس. وقف النبي ﷺ وحده على بغلته ينادي: "أنا النبي لا كذب، أنا ابن عبد المطلب" حتى تراجع المؤمنون.</p>
             <div class="alert alert-warning mt-4 rounded-4"><strong>الدرس:</strong> الإعجاب بالكثرة آفة تورث الهزيمة. النصر من الله لا من العدد والعدة.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="tabuk">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map" style="background:#fff7ed;">
+            <div class="b-badge">تبوك — 9 هـ</div>
+            <div class="b-label" style="top:15px;right:15px;color:#ea580c;">جيش العسرة</div>
+            <div class="b-team bt-m" style="top:45%;left:50%;transform:translate(-50%,-50%);">المسلمون (30,000)</div>
+            <div class="b-label" style="bottom:15px;left:15px;color:var(--dark);">مواجهة الروم في أقصى الشمال</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <h3 class="amiri fw-bold text-dark mb-3">جيش العسرة والتمكين الأخير</h3>
+            <p class="fs-5 text-muted lh-xl">آخر غزوة للنبي ﷺ. خرج في شدة الحر وبُعد المسافة وبضائقة مالية. أثبتت هذه الغزوة قدرة المسلمين على التحرك في أصعب الظروف. هرب الروم قبل اللقاء، فكان نصراً بلا قتال عزّز هيبة الدولة الإسلامية الجديدة.</p>
+            <div class="alert alert-warning mt-4 rounded-4"><strong>الدرس:</strong> الصدق مع الله في أحلك الظروف (العسرة) هو الذي يصنع التمكين، وتأكيد على وجوب النفير عند دعوة القائد.</div>
           </div>
         </div>
       </div>
@@ -540,31 +684,81 @@ body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-// Init AOS
-AOS.init({duration:800, once:true, offset:80});
+  AOS.init({duration: 800, once: true});
 
-// Tab active state fix for nested tabs (battles)
-document.querySelectorAll('#bNav button').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('#bNav button').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
+  // Global functionality: Theme & Search (Consistency with index.html)
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      if(link.href === window.location.href) {
+          link.classList.add('active');
+          link.style.color = "var(--gold)";
+      }
   });
-});
 
-// Animate stat numbers
-document.querySelectorAll('.hero-badge strong').forEach(el => {
-  const target = parseInt(el.textContent);
-  if (isNaN(target)) return;
-  let count = 0;
-  const inc = Math.ceil(target / 40);
-  const timer = setInterval(() => {
-    count += inc;
-    if (count >= target) { el.textContent = target; clearInterval(timer); }
-    else el.textContent = count;
-  }, 35);
-});
+  const themeBtn = document.getElementById('themeToggle');
+  const body = document.body;
+  themeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  if(localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+
+  const stBtn = document.getElementById('scrollTop');
+  window.onscroll = () => {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      stBtn.style.display = "flex";
+      stBtn.style.alignItems = "center";
+      stBtn.style.justifyContent = "center";
+    } else {
+      stBtn.style.display = "none";
+    }
+  };
+  stBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+
+  // Animate stat numbers
+  document.querySelectorAll('.hero-badge strong').forEach(el => {
+    const target = parseInt(el.textContent);
+    if (isNaN(target)) return;
+    let count = 0;
+    const inc = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+      count += inc;
+      if (count >= target) { el.textContent = target; clearInterval(timer); }
+      else el.textContent = count;
+    }, 35);
+  });
 </script>
+
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+      <div class="modal-header border-0 p-4" style="background:var(--dark);">
+        <div class="input-group">
+          <span class="input-group-text bg-transparent border-0 text-warning fs-3"><i class="fas fa-search"></i></span>
+          <input type="text" class="form-control bg-transparent border-0 text-white fs-4 ps-0" placeholder="ابحث في علوم الموسوعة..." style="box-shadow:none;">
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-5 text-center">
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><a href="recitations.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-quran d-block fs-3 mb-2"></i>القرآن</a></div>
+          <div class="col-6 col-md-3"><a href="hadith.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-book-open d-block fs-3 mb-2"></i>الحديث</a></div>
+          <div class="col-6 col-md-3"><a href="fiqh.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-balance-scale d-block fs-3 mb-2"></i>الفقه</a></div>
+          <div class="col-6 col-md-3"><a href="fatwa.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-gavel d-block fs-3 mb-2"></i>الفتاوى</a></div>
+        </div>
+        <p class="mt-4 text-muted small">اكتب كلمة البحث واضغط Enter للبحث الشامل</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" class="btn btn-warning rounded-circle shadow-lg position-fixed" style="bottom:30px;left:30px;width:50px;height:50px;display:none;z-index:9999;transition:0.3s;"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
