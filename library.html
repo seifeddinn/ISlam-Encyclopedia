@@ -646,7 +646,8 @@
                 if (iso) { iso.destroy(); iso = null; }
 
                 try {
-                    const url = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json`;
+                    const targetUrl = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json`;
+                    const url = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`;
                     const res = await fetch(url);
                     const data = await res.json();
                     const docs = data.response.docs;

@@ -2226,7 +2226,7 @@ function initAudioLibrary() {
    const grid = document.getElementById('recitersGrid');
    grid.innerHTML = '<div class="col-12 text-center my-5"><div class="spinner-border text-success" role="status"></div><h5 class="mt-3 font-amiri text-dark">جاري تحميل أكثر من 200 مقرئ من مصادر Mp3Quran المعتمدة...</h5></div>';
    
-   fetch('https://www.mp3quran.net/api/v3/reciters?language=ar')
+   fetch('https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent('https://www.mp3quran.net/api/v3/reciters?language=ar'))
    .then(r => r.json())
    .then(data => {
       allRecitersCache = data.reciters;

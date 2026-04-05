@@ -416,6 +416,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // --- Theme Management ---
 
 function initTheme() {
+    // Only allow dark mode on index.html
+    const path = window.location.pathname;
+    const isHomePage = path.endsWith('index.html') || path === '/' || path.endsWith('/');
+    
+    if (!isHomePage) {
+        // Enforce light mode on other pages
+        document.documentElement.removeAttribute('data-theme');
+        return;
+    }
+
     // Check localStorage or System Preference
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
