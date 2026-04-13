@@ -648,22 +648,46 @@
                 const cbName = 'archive_cb_' + Date.now() + Math.floor(Math.random() * 1000);
                 
                 window[cbName] = function(data) {
-                    if (data && data.response && data.response.docs) {
-                        renderBooks(data.response.docs);
-                    } else {
-                        grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ متوقع في صيغة البيانات المجلوبة.</h5></div>';
+                    try {
+                        if (data && data.response && data.response.docs) {
+                            renderBooks(data.response.docs);
+                        } else {
+                            grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ متوقع في صيغة البيانات المجلوبة.</h5></div>';
+                        }
+                    } catch (e) {
+                        console.error("Render Error:", e);
+                        grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><h5>حدث خطأ أثناء معالجة البيانات من الأرشيف.</h5></div>';
+                    } finally {
+                        delete window[cbName];
+                        if (script.timeoutId) clearTimeout(script.timeoutId);
+                        const scriptTag = document.getElementById(cbName);
+                        if (scriptTag) scriptTag.remove();
                     }
-                    delete window[cbName];
-                    const scriptTag = document.getElementById(cbName);
-                    if (scriptTag) scriptTag.remove();
                 };
 
                 const script = document.createElement('script');
                 script.id = cbName;
                 script.src = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json&callback=${cbName}`;
                 
+                // Add a timeout of 12 seconds to prevent "hanging"
+                script.timeoutId = setTimeout(() => {
+                    if (window[cbName]) {
+                        console.warn("Library request timed out");
+                        script.onerror();
+                    }
+                }, 12000);
+
                 script.onerror = function() {
-                    grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ وعجز المتصفح عن جلب البيانات. تأكد من الإنترنت أو قد تم حظر الطلب.</h5></div>';
+                    grid.innerHTML = `
+                        <div class="col-12 text-center py-5 text-danger">
+                            <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
+                            <h5 class="fw-bold">لم نتمكن من الاتصال بخوادم الأرشيف العالمي حالياً.</h5>
+                            <p class="text-muted">قد يكون هناك ضغط على السيرفر أو مشكلة في الاتصال بالإنترنت.</p>
+                            <button class="btn btn-primary mt-3 rounded-pill px-4" onclick="location.reload()">
+                                <i class="fas fa-sync-alt me-2"></i>إعادة المحاولة
+                            </button>
+                        </div>`;
+                    if (script.timeoutId) clearTimeout(script.timeoutId);
                     delete window[cbName];
                     script.remove();
                 };
@@ -712,15 +736,19 @@
 
                 // Re-initialize Isotope layout after DOM updates
                 setTimeout(() => {
-                    iso = new Isotope(grid, {
-                        itemSelector: '.book-item',
-                        layoutMode: 'fitRows',
-                        isOriginLeft: false
-                    });
-                    const activeBtn = document.querySelector('[data-filter].active');
-                    if (activeBtn) {
-                        const val = activeBtn.getAttribute('data-filter');
-                        iso.arrange({ filter: val === 'all' ? '*' : `[data-category="${val}"]` });
+                    if (typeof Isotope === 'function') {
+                        iso = new Isotope(grid, {
+                            itemSelector: '.book-item',
+                            layoutMode: 'fitRows',
+                            isOriginLeft: false
+                        });
+                        const activeBtn = document.querySelector('[data-filter].active');
+                        if (activeBtn) {
+                            const val = activeBtn.getAttribute('data-filter');
+                            iso.arrange({ filter: val === 'all' ? '*' : `[data-category="${val}"]` });
+                        }
+                    } else {
+                        console.warn("Isotope not loaded, using standard grid");
                     }
                 }, 100);
             }
