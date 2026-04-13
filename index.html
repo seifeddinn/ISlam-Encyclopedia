@@ -491,7 +491,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getPrayerTimes(lat, lng, locName) {
     const d = new Date();
-    const dateStr = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`;
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = d.getFullYear();
+    const dateStr = `${day}-${month}-${year}`;
     const url = `https://api.aladhan.com/v1/timings/${dateStr}?latitude=${lat}&longitude=${lng}&method=4`;
     
     fetch(url)
