@@ -1500,12 +1500,50 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
       <div class="sec-head">
         <span class="tag">إذا قرئ القرآن فاستمعوا له وأنصتوا</span>
         <h3>المكتبة الصوتية <span>الشاملة</span></h3>
-        <p>استمع للقرآن الكريم كاملاً (114 سورة) بأصوات كبار قراء العالم الإسلامي برواية حفص عن عاصم، واجعل لسانك رطباً بذكر الله.</p>
+        <p>أكثر من <strong>200 قارئ</strong> من كل أنحاء العالم الإسلامي، بالروايات المتواترة الكاملة: حفص، ورش، قالون، الدوري، شعبة، وغيرها. استمع، تصفح، وحمّل.</p>
         <div class="divider"></div>
       </div>
-      
+
+      <!-- ===== فلاتر الروايات ===== -->
+      <div class="bg-white rounded-4 shadow-sm border p-4 mb-5">
+        <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+          <h6 class="fw-bold font-amiri mb-0 text-dark"><i class="fas fa-filter text-success me-2"></i>تصفية حسب الرواية:</h6>
+          <div class="d-flex gap-2 flex-wrap" id="rewayaFilters">
+            <button class="btn btn-sm btn-success rounded-pill active" data-rewaya="all" onclick="filterByRewaya('all',this)">الكل</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="hafs" onclick="filterByRewaya('hafs',this)">🟢 حفص عن عاصم</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="shouba" onclick="filterByRewaya('shouba',this)">🟠 شعبة عن عاصم</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="warsh" onclick="filterByRewaya('warsh',this)">🔵 ورش عن نافع</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="qalon" onclick="filterByRewaya('qalon',this)">🟣 قالون عن نافع</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="douri" onclick="filterByRewaya('douri',this)">🟡 الدوري عن أبي عمرو</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="douri_kasai" onclick="filterByRewaya('douri_kasai',this)">🟡 الدوري عن الكسائي</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="bazi" onclick="filterByRewaya('bazi',this)">🔷 البزي عن ابن كثير</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="qunbol" onclick="filterByRewaya('qunbol',this)">🔷 قنبل عن ابن كثير</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="khalaf" onclick="filterByRewaya('khalaf',this)">🔘 خلف عن حمزة</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="hesham" onclick="filterByRewaya('hesham',this)">🔘 هشام عن ابن عامر</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="ibn_thakwan" onclick="filterByRewaya('ibn_thakwan',this)">🔘 ابن ذكوان عن ابن عامر</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="yaqoob" onclick="filterByRewaya('yaqoob',this)">🟤 رواية يعقوب</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="abou_jafar" onclick="filterByRewaya('abou_jafar',this)">🔘 أبو جعفر</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="mojawwad" onclick="filterByRewaya('mojawwad',this)">🔴 المصحف المجود</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill" data-rewaya="moalim" onclick="filterByRewaya('moalim',this)">⚫ المصحف المعلّم</button>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <h6 class="fw-bold font-amiri mb-0 text-dark"><i class="fas fa-star text-warning me-2"></i>القراء البارزون:</h6>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('عبد الباسط')">عبد الباسط</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('المنشاوي')">المنشاوي</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('الحصري')">الحصري</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('الغامدي')">الغامدي</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('السديس')">السديس</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('العفاسي')">العفاسي</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('المعيقلي')">المعيقلي</button>
+            <button class="btn btn-sm btn-outline-warning rounded-pill" onclick="quickSearchReciter('الشاطري')">الشاطري</button>
+          </div>
+        </div>
+      </div>
+
       <!-- Reciters Grid -->
-      <div id="recitersGrid" class="row g-4 mb-5">
+      <div id="recitersGrid" class="row g-3 mb-5">
          <!-- Injected by JS -->
       </div>
 
@@ -2454,16 +2492,41 @@ function renderMegaSurahs(filter = 'all', searchQuery = '') {
 }
 
 // ---------------- AUDIO LIBRARY LOGIC ----------------
+// Map rewaya_id to label/color/emoji
+const REWAYA_MAP = {
+  1:  { label: 'حفص عن عاصم',         badge: 'bg-success',   emoji: '🟢', key: 'hafs' },
+  15: { label: 'شعبة عن عاصم',         badge: 'bg-warning',   emoji: '🟠', key: 'shouba' },
+  2:  { label: 'ورش عن نافع (الأزرق)',  badge: 'bg-primary',   emoji: '🔵', key: 'warsh' },
+  18: { label: 'ورش عن نافع (الأزرق)',  badge: 'bg-primary',   emoji: '🔵', key: 'warsh' },
+  10: { label: 'ورش عن نافع (الأصبهاني)', badge: 'bg-primary', emoji: '🔵', key: 'warsh' },
+  5:  { label: 'قالون عن نافع',         badge: 'bg-purple',    emoji: '🟣', key: 'qalon' },
+  13: { label: 'الدوري عن أبي عمرو',    badge: 'bg-warning',   emoji: '🟡', key: 'douri' },
+  7:  { label: 'السوسي عن أبي عمرو',    badge: 'bg-warning',   emoji: '🟡', key: 'douri' },
+  12: { label: 'الدوري عن الكسائي',     badge: 'bg-info',      emoji: '🟡', key: 'douri_kasai' },
+  4:  { label: 'البزي عن ابن كثير',     badge: 'bg-info',      emoji: '🔷', key: 'bazi' },
+  11: { label: 'البزي عن ابن كثير',     badge: 'bg-info',      emoji: '🔷', key: 'bazi' },
+  6:  { label: 'قنبل عن ابن كثير',      badge: 'bg-info',      emoji: '🔷', key: 'qunbol' },
+  3:  { label: 'خلف عن حمزة',           badge: 'bg-secondary', emoji: '🔘', key: 'khalaf' },
+  19: { label: 'هشام عن ابن عامر',      badge: 'bg-secondary', emoji: '🔘', key: 'hesham' },
+  16: { label: 'ابن ذكوان عن ابن عامر', badge: 'bg-secondary', emoji: '🔘', key: 'ibn_thakwan' },
+  9:  { label: 'رواية يعقوب الحضرمي',  badge: 'bg-secondary', emoji: '🟤', key: 'yaqoob' },
+  20: { label: 'ابن جماز / أبو جعفر',  badge: 'bg-secondary', emoji: '🔘', key: 'abou_jafar' },
+  22: { label: 'المصحف المجوّد',        badge: 'bg-danger',    emoji: '🔴', key: 'mojawwad' },
+  21: { label: 'المصحف المعلَّم',       badge: 'bg-dark',      emoji: '⚫', key: 'moalim' },
+};
+
+const FEATURED_IDS = [51, 112, 118, 30, 54, 123, 102]; // عبد الباسط، المنشاوي، الحصري، الغامدي، السديس، العفاسي، المعيقلي
+
+let currentRewayaFilter = 'all';
+
 function initAudioLibrary() {
    const grid = document.getElementById('recitersGrid');
    grid.innerHTML = '<div class="col-12 text-center my-5"><div class="spinner-border text-success" role="status"></div><h5 class="mt-3 font-amiri text-dark">جاري تهيئة أكثر من 200 مقرئ...</h5></div>';
    
-   // Use local data if available to bypass CORS
    if (window.RECITERS_DATA && window.RECITERS_DATA.reciters) {
       allRecitersCache = window.RECITERS_DATA.reciters;
       renderReciters(allRecitersCache);
    } else {
-      // Fallback to API if for some reason local fails
       fetch('https://www.mp3quran.net/api/v3/reciters?language=ar')
       .then(r => r.json())
       .then(data => {
@@ -2476,75 +2539,163 @@ function initAudioLibrary() {
    }
 }
 
-function renderReciters(reciters) {
+function filterByRewaya(key, btn) {
+   currentRewayaFilter = key;
+   document.querySelectorAll('#rewayaFilters .btn').forEach(b => {
+      b.classList.remove('btn-success', 'active');
+      b.classList.add('btn-outline-secondary');
+   });
+   btn.classList.remove('btn-outline-secondary');
+   btn.classList.add('btn-success', 'active');
+   // Re-render with current search + new filter
+   const q = document.getElementById('reciterSearchInput');
+   renderReciters(allRecitersCache, q ? q.value : '');
+}
+
+function quickSearchReciter(name) {
+   // Reset rewaya filter
+   currentRewayaFilter = 'all';
+   document.querySelectorAll('#rewayaFilters .btn').forEach(b => {
+     b.classList.remove('btn-success','active');
+     b.classList.add('btn-outline-secondary');
+   });
+   document.querySelector('#rewayaFilters .btn[data-rewaya="all"]').classList.add('btn-success','active');
+   renderReciters(allRecitersCache, name);
+   setTimeout(() => {
+      const inp = document.getElementById('reciterSearchInput');
+      if(inp){ inp.value = name; inp.focus(); }
+   }, 100);
+}
+
+function getRewayaBadgeHTML(moshaf) {
+   const r = REWAYA_MAP[moshaf.rewaya_id];
+   if (!r) return `<span class="badge bg-secondary me-1" style="font-size:0.7rem;">رواية ${moshaf.rewaya_id}</span>`;
+   return `<span class="badge ${r.badge} me-1" style="font-size:0.7rem;opacity:0.9;">${r.emoji} ${r.label}</span>`;
+}
+
+function getMoshafMatchesFilter(r, filterKey) {
+   if (filterKey === 'all') return r.moshaf;
+   return r.moshaf.filter(m => {
+      const rw = REWAYA_MAP[m.rewaya_id];
+      return rw && rw.key === filterKey;
+   });
+}
+
+function renderReciters(reciters, searchQuery) {
+   searchQuery = searchQuery || '';
    const grid = document.getElementById('recitersGrid');
    let html = '';
    
-   // Insert Search Input
-   html += `
-      <div class="col-12 mb-4">
-         <div class="bg-white p-3 rounded-4 shadow-sm border d-flex align-items-center mb-3">
-            <i class="fas fa-search text-muted ms-3 fs-5"></i>
-            <input type="text" class="form-control border-0 shadow-none bg-transparent fs-5 font-amiri" id="reciterSearchInput" placeholder="ابحث في أكثر من 200 مقرئ (مثال: عبد الباسط، المعيقلي، العفاسي)..." oninput="filterReciters(this.value)">
-         </div>
-      </div>
-   `;
+   // Insert Search Input using string concat (safe, no template literal issues)
+   html += '<div class="col-12 mb-3">' +
+      '<div class="bg-white p-3 rounded-4 shadow-sm border d-flex align-items-center">' +
+      '<i class="fas fa-search text-muted ms-3 fs-5"></i>' +
+      '<input type="text" class="form-control border-0 shadow-none bg-transparent fs-5 font-amiri" id="reciterSearchInput" ' +
+      'placeholder="ابحث في أكثر من 200 مقرئ (مثال: عبد الباسط، المعيقلي، الغامدي)..." ' +
+      'value="' + searchQuery.replace(/"/g,'&quot;') + '" ' +
+      'oninput="filterReciters(this.value)">' +
+      '</div></div>';
+
+
+   // Filter by search + rewaya
+   var filtered = reciters.filter(function(r) {
+      var matchSearch = !searchQuery || r.name.indexOf(searchQuery) !== -1;
+      var matchedMoshafs = getMoshafMatchesFilter(r, currentRewayaFilter);
+      return matchSearch && matchedMoshafs.length > 0;
+   });
    
-   if(reciters.length === 0) {
-      html += '<div class="col-12 text-center py-5 text-muted"><i class="fas fa-frown fs-1 mb-3"></i><h4>لم نجد القارئ المطلوب</h4></div>';
+   if (filtered.length === 0) {
+      html += '<div class="col-12 text-center py-5 text-muted"><i class="fas fa-frown fs-1 mb-3"></i><h4>لم نجد القارئ المطلوب</h4><p>جرّب البحث بكلمة مختلفة أو غيّر فلتر الرواية</p></div>';
       grid.innerHTML = html;
       return;
    }
 
-   reciters.forEach(r => {
-      let moshaf = r.moshaf[0];
-      // Build moshaf options for dropdown if multiple
-      let moshafOpts = r.moshaf.length > 1
-        ? `<select class='form-select form-select-sm mt-2 border-0 bg-light' 
-               onclick='event.stopPropagation()' 
-               onchange='openReciter("${r.name}", this.value)'>
-             ${r.moshaf.map(m => `<option value='${m.server}'>${m.name}</option>`).join('')}
-           </select>`
-        : '';
-      html += `
-         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="reciter-item position-relative" style="cursor:pointer;">
-              <div onclick="openReciter('${r.name}', '${moshaf.server}')" style="text-align:center;">
-               <div style="background:linear-gradient(135deg,rgba(6,78,59,0.12),rgba(4,120,87,0.08));width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:2px solid rgba(4,120,87,0.2);">
-                  <i class="fas fa-microphone-alt text-success fs-3"></i>
-               </div>
-               <h5 class="fw-bold mb-1 font-amiri" style="font-size:1.05rem;line-height:1.4;">${r.name}</h5>
-               <small class="opacity-75 d-block text-truncate mb-2">${moshaf.name}</small>
-               <div class="d-flex justify-content-center gap-2 flex-wrap">
-                 <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">${moshaf.surah_total} سورة</span>
-                 ${r.moshaf.length > 1 ? `<span class="badge bg-warning bg-opacity-10 text-warning border">${r.moshaf.length} روايات</span>` : ''}
-               </div>
-               ${moshafOpts}
-              </div>
-              <!-- Download full Quran quick button -->
-              <button class="btn btn-sm btn-outline-success rounded-pill w-100 mt-2" 
-                      title="تحميل المصحف كاملاً"
-                      onclick="event.stopPropagation(); quickDownloadReciter('${r.name}', '${moshaf.server}')">
-                <i class="fas fa-download me-1"></i> تحميل المصحف
-              </button>
-            </div>
-         </div>
-      `;
+   // Sort: featured first
+   filtered.sort(function(a, b) {
+      var aF = FEATURED_IDS.indexOf(a.id) !== -1 ? 0 : 1;
+      var bF = FEATURED_IDS.indexOf(b.id) !== -1 ? 0 : 1;
+      return aF - bF;
    });
+
+   // Store globally for index-based onclick lookup (avoids quote escaping issues)
+   window._renderedReciters = filtered;
+
+   html += '<div class="col-12 mb-2"><small class="text-muted"><i class="fas fa-users me-1"></i>يُعرض <strong>' + filtered.length + '</strong> قارئ</small></div>';
+
+   filtered.forEach(function(r, idx) {
+      var isFeatured = FEATURED_IDS.indexOf(r.id) !== -1;
+      var matchedMoshafs = getMoshafMatchesFilter(r, currentRewayaFilter);
+      var allMoshafs = r.moshaf;
+      var primaryIdx = r.moshaf.indexOf(matchedMoshafs[0]) >= 0 ? r.moshaf.indexOf(matchedMoshafs[0]) : 0;
+
+      // Rewaya pills - use idx + midx for safe onclick
+      var rewayaPills = '';
+      allMoshafs.forEach(function(m, midx) {
+         var rw = REWAYA_MAP[m.rewaya_id];
+         var label = rw ? rw.label : 'رواية';
+         var emoji = rw ? rw.emoji : '▫';
+         rewayaPills += '<button class="badge border-0 me-1 mb-1 px-2 py-1" ' +
+            'style="background:rgba(6,78,59,0.12);color:#064e3b;cursor:pointer;font-size:0.72rem;border-radius:20px;" ' +
+            'onclick="event.stopPropagation();openReciterByIdx(' + idx + ',' + midx + ')">' +
+            emoji + ' ' + label + ' (' + m.surah_total + ')' +
+            '</button>';
+      });
+
+      var featuredBadge = isFeatured
+        ? '<div style="position:absolute;top:8px;right:8px;background:linear-gradient(135deg,#d4af37,#aa8a2a);color:white;font-size:0.7rem;padding:3px 8px;border-radius:20px;"><i class="fas fa-crown"></i></div>'
+        : '';
+
+      var cardBg = isFeatured
+        ? 'background:linear-gradient(135deg,#fffbeb,#fef9c3);border:2px solid rgba(212,175,55,0.4);'
+        : 'background:white;border:1px solid #e2e8f0;';
+
+      var iconBg = isFeatured ? '#d4af37,#aa8a2a' : 'rgba(6,78,59,0.12),rgba(4,120,87,0.08)';
+      var iconColor = isFeatured ? 'white' : '#064e3b';
+      var topMargin = isFeatured ? '20px' : '8px';
+
+      html += '<div class="col-lg-3 col-md-4 col-sm-6">' +
+        '<div class="rounded-3 p-3 position-relative h-100" ' +
+        'style="' + cardBg + 'box-shadow:0 4px 15px rgba(0,0,0,0.04);transition:all 0.3s;" ' +
+        'onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 12px 30px rgba(6,78,59,0.12)\'" ' +
+        'onmouseout="this.style.transform=\'\';this.style.boxShadow=\'0 4px 15px rgba(0,0,0,0.04)\'">' +
+        featuredBadge +
+        '<div onclick="openReciterByIdx(' + idx + ',' + primaryIdx + ')" style="cursor:pointer;text-align:center;">' +
+        '<div style="background:linear-gradient(135deg,' + iconBg + ');width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:' + topMargin + ' auto 10px;">' +
+        '<i class="fas fa-microphone-alt" style="color:' + iconColor + ';font-size:1.4rem;"></i>' +
+        '</div>' +
+        '<h5 class="fw-bold font-amiri mb-1" style="font-size:1rem;line-height:1.4;color:#1e293b;">' + r.name + '</h5>' +
+        '<small class="text-muted d-block mb-2" style="font-size:0.8rem;">' + allMoshafs.length + ' رواية متاحة</small>' +
+        '</div>' +
+        '<div class="mb-2" style="text-align:center;">' + rewayaPills + '</div>' +
+        '<div class="d-flex gap-1">' +
+        '<button class="btn btn-sm btn-success rounded-pill flex-grow-1" onclick="openReciterByIdx(' + idx + ',' + primaryIdx + ')">' +
+        '<i class="fas fa-headphones me-1"></i>استمع' +
+        '</button>' +
+        '<button class="btn btn-sm btn-outline-success rounded-pill" title="تحميل" onclick="quickDownloadReciter(window._renderedReciters[' + idx + '].name, window._renderedReciters[' + idx + '].moshaf[' + primaryIdx + '].server)">' +
+        '<i class="fas fa-download"></i>' +
+        '</button>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+   });
+
    grid.innerHTML = html;
 }
 
+// Safe index-based reciter opener
+function openReciterByIdx(reciterIdx, moshafIdx) {
+   var r = window._renderedReciters && window._renderedReciters[reciterIdx];
+   if (!r) return;
+   var m = r.moshaf[moshafIdx] || r.moshaf[0];
+   openReciter(r.name, m.server);
+}
+
 function filterReciters(query) {
-   const val = query.trim().toLowerCase();
-   if (!val) {
-       renderReciters(allRecitersCache);
-       setTimeout(() => document.getElementById('reciterSearchInput').focus(), 10);
-       return;
-   }
-   const filtered = allRecitersCache.filter(r => r.name.toLowerCase().includes(val));
-   renderReciters(filtered);
-   const input = document.getElementById('reciterSearchInput');
-   if(input) { input.value = val; input.focus(); }
+   renderReciters(allRecitersCache, query || '');
+   setTimeout(function() {
+      var input = document.getElementById('reciterSearchInput');
+      if (input) { input.value = query || ''; input.focus(); }
+   }, 20);
 }
 
 function openReciter(name, url) {
