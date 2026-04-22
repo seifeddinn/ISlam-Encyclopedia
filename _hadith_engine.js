@@ -1,9 +1,10 @@
 /**
- * _hadith_engine.js — محرك الأحاديث الذكي الشامل
+ * _hadith_engine.js — محرك الأحاديث الذكي الشامل v2.0
  * ════════════════════════════════════════════════════════════════
  * المصدر: fawazahmed0/hadith-api via jsDelivr CDN (مفتوح المصدر)
  * يوفر: ~35,000+ حديث من 8 مصادر رئيسية
  * التخزين: IndexedDB (دائم، بدون إنترنت بعد التحميل الأول)
+ * ✨ الجديد: Fuzzy Search عربي، Relevance Scoring، Topic Index
  * ════════════════════════════════════════════════════════════════
  */
 
@@ -11,24 +12,104 @@
   'use strict';
 
   var DB_NAME    = 'IslamicEncyclopedia_Hadiths';
-  var DB_VERSION = 2;
+  var DB_VERSION = 3; // رُفع إلى 3 لإضافة topic index
   var STORE_NAME = 'hadiths';
   var META_STORE = 'meta';
 
   // ── مصادر الأحاديث (CDN مجاني، مفتوح المصدر) ──
   var COLLECTIONS = [
-    { key: 'bukhari',   label: 'صحيح البخاري',      bookKey: 'bukhari',   url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari.min.json',   scholar: 'البخاري',   grade: 'صحيح' },
-    { key: 'muslim',    label: 'صحيح مسلم',          bookKey: 'muslim',    url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim.min.json',    scholar: 'مسلم',      grade: 'صحيح' },
-    { key: 'abudawud',  label: 'سنن أبي داود',       bookKey: 'abudawud',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud.min.json',  scholar: 'أبو داود',  grade: 'صحيح وحسن' },
-    { key: 'tirmidhi',  label: 'سنن الترمذي',        bookKey: 'tirmidhi',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmizi.min.json',   scholar: 'الترمذي',  grade: 'صحيح وحسن' },
-    { key: 'nasai',     label: 'سنن النسائي',        bookKey: 'nasai',     url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nasai.min.json',     scholar: 'النسائي',   grade: 'صحيح والحسن' },
-    { key: 'ibnmajah',  label: 'سنن ابن ماجه',      bookKey: 'ibnmajah',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-ibnmajah.min.json',  scholar: 'ابن ماجه', grade: 'صحيح وحسن' },
-    { key: 'malik',     label: 'موطأ مالك',          bookKey: 'all',       url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-malik.min.json',     scholar: 'الإمام مالك', grade: 'صحيح' },
-    { key: 'nawawi40',  label: 'الأربعون النووية',   bookKey: 'all',       url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nawawi40.min.json',  scholar: 'النووي',   grade: 'صحيح' },
+    { key: 'bukhari',   label: 'صحيح البخاري',      bookKey: 'bukhari',   url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari.min.json',   scholar: 'البخاري',     grade: 'صحيح' },
+    { key: 'muslim',    label: 'صحيح مسلم',          bookKey: 'muslim',    url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim.min.json',    scholar: 'مسلم',        grade: 'صحيح' },
+    { key: 'abudawud',  label: 'سنن أبي داود',       bookKey: 'abudawud',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud.min.json',  scholar: 'أبو داود',    grade: 'صحيح وحسن' },
+    { key: 'tirmidhi',  label: 'سنن الترمذي',        bookKey: 'tirmidhi',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmizi.min.json',   scholar: 'الترمذي',    grade: 'صحيح وحسن' },
+    { key: 'nasai',     label: 'سنن النسائي',        bookKey: 'nasai',     url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nasai.min.json',     scholar: 'النسائي',     grade: 'صحيح والحسن' },
+    { key: 'ibnmajah',  label: 'سنن ابن ماجه',      bookKey: 'ibnmajah',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-ibnmajah.min.json',  scholar: 'ابن ماجه',   grade: 'صحيح وحسن' },
+    { key: 'malik',     label: 'موطأ مالك',          bookKey: 'malik',     url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-malik.min.json',     scholar: 'الإمام مالك', grade: 'صحيح' },
+    { key: 'nawawi40',  label: 'الأربعون النووية',   bookKey: 'all',       url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nawawi40.min.json',  scholar: 'النووي',     grade: 'صحيح' },
   ];
 
   // ════════════════════════════════════════════
-  // IndexedDB  Helpers
+  // تطبيع النص العربي & البحث الضبابي
+  // ════════════════════════════════════════════
+
+  /**
+   * تطبيع النص العربي: إزالة التشكيل، توحيد الألف/الياء/التاء المربوطة
+   */
+  function normalizeArabic(text) {
+    if (!text) return '';
+    return text
+      .replace(/[\u064B-\u065F\u0670]/g, '') // إزالة التشكيل
+      .replace(/[أإآا]/g, 'ا')               // توحيد الألف
+      .replace(/[يى]/g, 'ي')                  // توحيد الياء
+      .replace(/ة/g, 'ه')                     // تاء مربوطة → هاء
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  /**
+   * حساب مسافة Levenshtein للمقارنة الضبابية
+   */
+  function levenshtein(a, b) {
+    if (!a) return b ? b.length : 0;
+    if (!b) return a.length;
+    var m = a.length, n = b.length;
+    var dp = [];
+    for (var i = 0; i <= m; i++) {
+      dp[i] = [i];
+      for (var j = 1; j <= n; j++) {
+        dp[i][j] = i === 0 ? j :
+          (a[i-1] === b[j-1]
+            ? dp[i-1][j-1]
+            : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]));
+      }
+    }
+    return dp[m][n];
+  }
+
+  /**
+   * تحقق من التطابق الضبابي (كلمة × نص)
+   */
+  function fuzzyWordMatch(word, text) {
+    var nWord = normalizeArabic(word);
+    var nText = normalizeArabic(text);
+    if (nText.includes(nWord)) return true;
+    if (nWord.length < 4) return false;
+    var words = nText.split(/\s+/);
+    var threshold = nWord.length <= 5 ? 1 : nWord.length <= 8 ? 2 : 3;
+    for (var i = 0; i < words.length; i++) {
+      if (Math.abs(words[i].length - nWord.length) <= threshold) {
+        if (levenshtein(nWord, words[i]) <= threshold) return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * حساب نقاط الصلة (Relevance Score) 0-130
+   */
+  function relevanceScore(h, query) {
+    var nq = normalizeArabic(query);
+    var nt = normalizeArabic(h.text || '');
+    var nn = normalizeArabic(h.narrator || '');
+    var ntopic = normalizeArabic(h.topic || '');
+    var score = 0;
+
+    if (nt.startsWith(nq))           score += 130;
+    else if (nt.includes(nq))        score += 90;
+    else if (fuzzyWordMatch(nq, nt)) score += 50;
+    if (nn.includes(nq))             score += 45;
+    if (ntopic.includes(nq))         score += 30;
+
+    var g = h.grade || '';
+    if (g.includes('صحيح'))  score += 15;
+    else if (g.includes('حسن')) score += 8;
+
+    return score;
+  }
+
+  // ════════════════════════════════════════════
+  // IndexedDB Helpers
   // ════════════════════════════════════════════
   function openDB() {
     return new Promise(function(resolve, reject) {
@@ -39,6 +120,12 @@
           var store = db.createObjectStore(STORE_NAME, { keyPath: 'id', autoIncrement: true });
           store.createIndex('bookKey', 'bookKey', { unique: false });
           store.createIndex('grade',   'grade',   { unique: false });
+          store.createIndex('topic',   'topic',   { unique: false });
+        } else {
+          var txStore = e.target.transaction.objectStore(STORE_NAME);
+          if (!txStore.indexNames.contains('topic')) {
+            txStore.createIndex('topic', 'topic', { unique: false });
+          }
         }
         if (!db.objectStoreNames.contains(META_STORE)) {
           db.createObjectStore(META_STORE, { keyPath: 'key' });
@@ -77,17 +164,13 @@
 
   function bulkInsert(db, records) {
     return new Promise(function(resolve, reject) {
-      var tx   = db.transaction(STORE_NAME, 'readwrite');
+      var tx    = db.transaction(STORE_NAME, 'readwrite');
       var store = tx.objectStore(STORE_NAME);
       var i = 0;
       function next() {
         if (i >= records.length) return;
         store.add(records[i++]);
-        if (i % 500 === 0) {
-          setTimeout(next, 0); // yield to browser
-        } else {
-          next();
-        }
+        if (i % 500 === 0) { setTimeout(next, 0); } else { next(); }
       }
       next();
       tx.oncomplete = function() { resolve(); };
@@ -95,11 +178,13 @@
     });
   }
 
-  // Full-text search in IndexedDB (iterates cursor)
-  function searchDB(db, query, type, limit) {
+  /**
+   * البحث الكامل مع دعم Fuzzy ومع Relevance Scoring
+   */
+  function searchDB(db, query, type, limit, fuzzy) {
     limit = limit || 100;
     return new Promise(function(resolve) {
-      var results = [];
+      var scored = [];
       var lq = query;
       var tx    = db.transaction(STORE_NAME, 'readonly');
       var store = tx.objectStore(STORE_NAME);
@@ -107,29 +192,56 @@
 
       req.onsuccess = function(e) {
         var cursor = e.target.result;
-        if (!cursor || results.length >= limit) {
-          resolve(results);
+        if (!cursor) {
+          scored.sort(function(a, b) { return b.score - a.score; });
+          resolve(scored.slice(0, limit).map(function(s) { return s.h; }));
           return;
         }
         var h = cursor.value;
         var match = false;
+        var normQ = normalizeArabic(lq);
+        var qWords = normQ.split(' ').filter(function(w) { return w.length > 0; });
+
         if (type === 'narrator') {
-          match = (h.narrator || '').includes(lq);
+          var normNarr = normalizeArabic(h.narrator || '');
+          match = qWords.every(function(w) { return normNarr.includes(w); }) ||
+                  (fuzzy && fuzzyWordMatch(normQ, normNarr));
         } else if (type === 'book') {
-          match = (h.book || '').includes(lq) || (h.bookKey || '').includes(lq);
+          var normBook = normalizeArabic(h.book || '');
+          match = qWords.every(function(w) { return normBook.includes(w); }) || (h.bookKey || '').includes(lq);
+        } else if (type === 'topic') {
+          var normTopic = normalizeArabic(h.topic || '');
+          match = qWords.every(function(w) { return normTopic.includes(w); }) ||
+                  (fuzzy && fuzzyWordMatch(normQ, normTopic));
         } else {
-          match = (h.text     || '').includes(lq) ||
-                  (h.narrator || '').includes(lq);
+          // بحث نصي شامل: يجب أن تتواجد كل الكلمات في الحديث
+          var normText = normalizeArabic(h.text || '');
+          var normNarr = normalizeArabic(h.narrator || '');
+          var normTopic = normalizeArabic(h.topic || '');
+          
+          var textMatch  = qWords.every(function(w) { return normText.includes(w); });
+          var narrMatch  = qWords.every(function(w) { return normNarr.includes(w); });
+          var topicMatch = qWords.every(function(w) { return normTopic.includes(w); });
+          
+          match = textMatch || narrMatch || topicMatch;
+          
+          if (!match && fuzzy) {
+            match = fuzzyWordMatch(normQ, normText) ||
+                    fuzzyWordMatch(normQ, normNarr);
+          }
         }
-        if (match) results.push(h);
+
+        if (match) {
+          scored.push({ h: h, score: relevanceScore(h, lq) });
+        }
         cursor.continue();
       };
-      req.onerror = function() { resolve(results); };
+      req.onerror = function() { resolve([]); };
     });
   }
 
   // ════════════════════════════════════════════
-  // Downloader
+  // تحميل المجموعات من CDN
   // ════════════════════════════════════════════
   async function downloadCollection(col) {
     var resp = await fetch(col.url);
@@ -145,12 +257,13 @@
         narrator: h.narrator_ar || h.narrator || '',
         text:     h.text || h.body || h.hadith || '',
         number:   h.hadithnumber || h.number || 0,
+        topic:    h.chapter || h.chapter_ar || '',
       };
     }).filter(function(h) { return h.text && h.text.length > 10; });
   }
 
   // ════════════════════════════════════════════
-  // UI Progress
+  // واجهة تقدم التحميل
   // ════════════════════════════════════════════
   function showProgress(msg, pct) {
     var bar = document.getElementById('heProgressBar');
@@ -200,7 +313,7 @@
   }
 
   // ════════════════════════════════════════════
-  // Main Init
+  // التهيئة الرئيسية
   // ════════════════════════════════════════════
   window.HadithEngine = {
 
@@ -214,20 +327,16 @@
       var total = await countRecords(db);
       this.totalCount = total;
 
-      // Mark all cols as pending
       COLLECTIONS.forEach(function(col) { renderCollectionStatus(col, 'pending'); });
 
       if (total > 1000) {
-        // Already loaded
         this.ready = true;
         showStatus('قاعدة البيانات جاهزة — ' + total.toLocaleString('ar-EG') + ' حديث نبوي محفوظ على جهازك ✓', 'success');
         updateCountDisplay();
-        // Check if new collections need downloading
         this._checkForNewCollections(db);
         return;
       }
 
-      // Fresh download
       showStatus('جارٍ تحميل قاعدة الأحاديث الشاملة لأول مرة... (مرة واحدة فقط)', 'loading');
       showProgress('التحضير…', 0);
 
@@ -262,7 +371,6 @@
         if (loaded) {
           renderCollectionStatus(col, 'done');
         } else {
-          // Download missing collection in background
           renderCollectionStatus(col, 'loading');
           try {
             var records = await downloadCollection(col);
@@ -278,15 +386,29 @@
       }
     },
 
-    // ── Public search method ──
+    // ── البحث الدقيق (Exact) ──
     async search(query, type, limit) {
       if (!this.db) this.db = await openDB();
       var count = await countRecords(this.db);
-      if (count < 100) return []; // DB not ready, let JSONP handle it
-      return searchDB(this.db, query, type || 'text', limit || 150);
+      if (count < 100) return [];
+      return searchDB(this.db, query, type || 'text', limit || 150, false);
     },
 
-    // ── Clear & re-download ──
+    // ── البحث الضبابي (Fuzzy) ──
+    async searchFuzzy(query, type, limit) {
+      if (!this.db) this.db = await openDB();
+      var count = await countRecords(this.db);
+      if (count < 100) return [];
+      return searchDB(this.db, query, type || 'text', limit || 80, true);
+    },
+
+    // ── تطبيع النص (للاستخدام الخارجي) ──
+    normalize: normalizeArabic,
+    levenshtein: levenshtein,
+    fuzzyMatch: fuzzyWordMatch,
+    relevanceScore: relevanceScore,
+
+    // ── مسح وإعادة تحميل ──
     async reset() {
       if (!this.db) return;
       var tx = this.db.transaction([STORE_NAME, META_STORE], 'readwrite');
@@ -301,7 +423,7 @@
     getCollections: function() { return COLLECTIONS; }
   };
 
-  // Auto-init when DOM is ready
+  // تهيئة تلقائية عند جاهزية DOM
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() { window.HadithEngine.init(); });
   } else {

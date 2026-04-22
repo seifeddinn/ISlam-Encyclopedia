@@ -397,7 +397,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry,.hadith-text{font-family:'Amiri',serif;}
   border-radius:14px;
   overflow:hidden;
   box-shadow:0 8px 32px rgba(0,0,0,.25);
-  max-width:860px; margin:0 auto 16px;
+  width:100%; height:100%;
   border:2px solid rgba(212,175,55,.3);
 }
 [data-hr-mode="dark"] .hr-search-wrap { background:#1e293b; border-color:rgba(165,180,252,.2); }
@@ -435,6 +435,19 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry,.hadith-text{font-family:'Amiri',serif;}
   display:flex; align-items:center; gap:7px;
 }
 .hr-search-btn:hover { filter:brightness(1.1); transform:scale(1.02); }
+
+.hr-search-relative {
+  position:relative; z-index:100; max-width:860px; margin:0 auto 16px;
+}
+.hr-autocomplete {
+  position:absolute; top:100%; left:0; right:0;
+  background:#fff; border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  margin-top:8px; overflow:hidden;
+  display:none; text-align:right; border:1px solid var(--border);
+}
+[data-hr-mode="dark"] .hr-autocomplete { background:#1e293b; border-color:#334155; }
+[data-hr-mode="sepia"] .hr-autocomplete { background:#fdf6ec; border-color:#d9c4a4; }
 
 /* Quick terms */
 .hr-quick-wrap { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
@@ -906,6 +919,169 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry,.hadith-text{font-family:'Amiri',serif;}
 .hr-meta-key { color: var(--text-muted) !important; font-size: 0.8rem !important; display: block !important; margin-bottom: 2px !important; }
 .hr-meta-val { font-weight: 700 !important; color: var(--text-color) !important; font-size: 0.95rem !important; }
 .hr-card-actions { padding: 15px 25px !important; }
+
+/* ═══════════════════════════════════════
+   AUTOCOMPLETE DROPDOWN
+═══════════════════════════════════════ */
+.hr-search-relative { position: relative; max-width: 700px; margin: 0 auto; }
+.hr-autocomplete {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0; left: 0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0,0,0,.22);
+  border: 1.5px solid rgba(99,102,241,.25);
+  overflow: hidden;
+  z-index: 9999;
+  display: none;
+  animation: fadeInUp .2s ease;
+}
+[data-hr-mode="dark"] .hr-autocomplete { background: #1e293b; border-color: rgba(99,102,241,.35); }
+.hr-ac-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 18px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  transition: background .15s;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+.hr-ac-item:last-child { border-bottom: none; }
+.hr-ac-item:hover { background: rgba(99,102,241,.07); }
+[data-hr-mode="dark"] .hr-ac-item:hover { background: rgba(99,102,241,.12); }
+.hr-ac-text {
+  flex: 1;
+  font-size: .9rem;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction: rtl;
+  font-family: 'Amiri', serif;
+}
+.hr-ac-badge {
+  font-size: .72rem;
+  background: rgba(99,102,241,.1);
+  color: #6366f1;
+  border-radius: 50px;
+  padding: 2px 10px;
+  white-space: nowrap;
+  font-weight: 700;
+}
+[data-hr-mode="dark"] .hr-ac-text { color: #e2e8f0; }
+
+/* ═══════════════════════════════════════
+   FUZZY SUGGESTION BANNER
+═══════════════════════════════════════ */
+.hr-fuzzy-banner {
+  display: none;
+  align-items: center; gap: 10px;
+  background: linear-gradient(135deg, rgba(245,158,11,.12), rgba(251,191,36,.06));
+  border: 1px solid rgba(245,158,11,.3);
+  border-radius: 14px;
+  padding: 12px 18px;
+  color: #92400e;
+  font-size: .9rem; font-weight: 600;
+  margin-bottom: 16px;
+  animation: fadeInUp .3s ease;
+}
+[data-hr-mode="dark"] .hr-fuzzy-banner { color: #fbbf24; background: rgba(251,191,36,.08); border-color: rgba(251,191,36,.2); }
+
+/* ═══════════════════════════════════════
+   STATS BREAKDOWN PANEL
+═══════════════════════════════════════ */
+.hr-stats-panel {
+  background: var(--bg-card,#fff);
+  border: 1px solid var(--border,#e2e8f0);
+  border-radius: 20px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  display: none;
+  animation: fadeInUp .35s ease;
+}
+.hr-stats-inner { display: flex; flex-direction: column; gap: 14px; }
+.hr-stats-grades { display: flex; flex-wrap: wrap; gap: 8px; }
+.hr-stat-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 14px; border-radius: 50px;
+  border: 1.5px solid; font-size: .82rem; font-weight: 600;
+}
+.hr-stat-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink:0; }
+.hr-stat-label { color: var(--text-main,#1e293b); }
+.hr-stat-num { font-weight: 800; }
+.hr-stat-pct { color: var(--text-muted,#64748b); font-size: .75rem; }
+.hr-stats-books { display: flex; flex-direction: column; gap: 7px; }
+.hr-book-bar { display: flex; align-items: center; gap: 10px; }
+.hr-book-bar-label { font-size: .8rem; font-weight: 600; color: var(--text-main,#1e293b); min-width: 130px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hr-book-bar-track { flex: 1; height: 7px; background: var(--border,#e2e8f0); border-radius: 50px; overflow: hidden; }
+.hr-book-bar-fill { height: 100%; background: linear-gradient(90deg,#6366f1,#8b5cf6); border-radius: 50px; transition: width .6s ease; }
+.hr-book-bar-count { font-size: .8rem; font-weight: 700; color: #6366f1; min-width: 24px; text-align: left; }
+[data-hr-mode='sepia'] .hr-book-bar-fill { background: linear-gradient(90deg,#a0652a,#c88a4a); }
+[data-hr-mode='sepia'] .hr-book-bar-count { color: #a0652a; }
+
+/* ═══════════════════════════════════════
+   SIMILAR HADITHS PANEL
+═══════════════════════════════════════ */
+.hr-similar-panel {
+  border-top: 1px solid var(--border,#e2e8f0);
+  background: var(--bg-page,#f8fafc);
+  padding: 20px 24px;
+  animation: fadeInUp .3s ease;
+}
+[data-hr-mode="dark"] .hr-similar-panel { background: rgba(255,255,255,.02); }
+.hr-similar-title {
+  font-size: .88rem; font-weight: 700;
+  color: var(--text-muted,#64748b);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 7px;
+}
+.hr-similar-title i { color: #6366f1; }
+[data-hr-mode='sepia'] .hr-similar-title i { color: #a0652a; }
+.hr-similar-item {
+  background: var(--bg-card,#fff);
+  border: 1px solid var(--border,#e2e8f0);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
+  transition: border-color .2s;
+}
+.hr-similar-item:hover { border-color: #a5b4fc; }
+.hr-similar-text {
+  font-family: 'Amiri', serif;
+  font-size: 1.25rem; line-height: 1.9;
+  color: var(--text-hadith,#1a1040);
+  margin-bottom: 8px;
+}
+.hr-similar-meta {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap; font-size: .78rem;
+  color: var(--text-muted,#64748b);
+}
+.hr-similar-grade {
+  background: rgba(99,102,241,.1); color: #6366f1;
+  border-radius: 50px; padding: 2px 10px;
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════
+   TOPIC FILTER SELECT
+═══════════════════════════════════════ */
+.hr-topic-select {
+  border: 1.5px solid var(--border,#e2e8f0);
+  background: var(--bg-card,#fff);
+  color: var(--text-main,#1e293b);
+  border-radius: 50px;
+  padding: 7px 16px;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: .84rem; font-weight: 600;
+  outline: none; cursor: pointer;
+  max-width: 170px;
+  transition: border-color .2s;
+}
+.hr-topic-select:hover, .hr-topic-select:focus { border-color: #6366f1; }
+[data-hr-mode="dark"] .hr-topic-select { background: #1e293b; color: #e2e8f0; border-color: #334155; }
+[data-hr-mode="sepia"] .hr-topic-select { background: #fdf6ec; color: #3b2a14; border-color: #c9ad87; }
 </style>
 
 <script>
@@ -1341,35 +1517,30 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry,.hadith-text{font-family:'Amiri',serif;}
             </div>
          </div>
       </div>
-      
-      <div class="text-center">
-         <button class="btn btn-lg px-5 py-3 text-white rounded-pill fw-bold" style="background:var(--primary);box-shadow:0 10px 20px rgba(55,48,163,0.3);" onclick="document.getElementById('nawawiListModal').style.display='block'; var modal=new bootstrap.Modal(document.getElementById('nawawiListModal')); modal.show();">عرض فهرس الأحاديث الـ 42 كاملة <i class="fas fa-list ms-2"></i></button>
-      </div>
     </div>
 
-    <!-- TAB 4: طبقات المحدثين (Expanded Timeline) -->
-    <div class="tab-pane fade" id="tab-imams">
+    <!-- TAB 4: أشهر أئمة الحديث -->
+    <div class="tab-pane fade" id="tab-scholars">
       <div class="sec-head">
-        <span class="tag">حراس السنة المطهرة</span>
-        <h3>أعلام <span>المحدثين</span> وحفاظها</h3>
-        <p>تسلسل زمني لأبرز أمراء المؤمنين في الحديث الذين أفنوا أعمارهم في تتبع الأسانيد وتدوين وحفظ السنة النبوية العظيمة.</p>
+        <span class="tag">رواة الأحاديث ومُخرجوها</span>
+        <h3>أشهر <span>أئمة</span> الحديث</h3>
+        <p>العلماء الأعلام الذين حفظوا لنا سنة رسول الله ﷺ ونقلوها إلينا غضة طرية بالأسانيد المتصلة، وبذلوا الغالي والنفيس في تدوينها.</p>
         <div class="divider"></div>
       </div>
 
-      <div class="scholar-tree mt-5">
-         
+      <div class="scholar-tree">
          <!-- 1 -->
          <div class="tree-node">
-            <h4 class="text-primary font-amiri fw-bold mb-2">أبو هريرة عبد الرحمن بن صخر (ت 59 هـ)</h4>
-            <div class="badge bg-warning text-dark mb-3">راوية الإسلام الأكبر - الصحابة</div>
-            <p class="text-muted mb-0">أكثر الصحابة رواية للحديث على الإطلاق (5374 حديثاً). دعا له النبي ﷺ بأن لا ينسى شيئاً فكان معجزة الحفظ، وتفرغ لطلب الحديث وملازمة النبي.</p>
+            <h4 class="text-primary font-amiri fw-bold mb-2">أبو هريرة الدوسي (ت 59 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">الصحابة - أكثرهم رواية</div>
+            <p class="text-muted mb-0">حافظ الصحابة، وأكثرهم رواية للحديث (5374 حديثاً). دعا له النبي ﷺ بالحفظ فما نسي حديثاً سمعه منه.</p>
          </div>
-
+         
          <!-- 2 -->
          <div class="tree-node">
-            <h4 class="text-primary font-amiri fw-bold mb-2">الإمام محمد بن مسلم الزهري (ت 124 هـ)</h4>
-            <div class="badge bg-warning text-dark mb-3">التابعين - أول المدونين</div>
-            <p class="text-muted mb-0">أول من دوّن الحديث بشكل رسمي بأمر من الخليفة المرواني عمر بن عبد العزيز لحفظه من الضياع. كان بحراً لا تكدره الدلاء في حفظ السنة المتفرقة بالآفاق.</p>
+            <h4 class="text-primary font-amiri fw-bold mb-2">عائشة بنت أبي بكر (ت 58 هـ)</h4>
+            <div class="badge bg-warning text-dark mb-3">الصحابة - أم المؤمنين</div>
+            <p class="text-muted mb-0">أفقه النساء وأعلمهن، روت (2210 أحاديث). كانت مرجعاً للصحابة في الفقه والسنة، وخاصة أحكام الأسرة.</p>
          </div>
 
          <!-- 3 -->
@@ -1419,134 +1590,109 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry,.hadith-text{font-family:'Amiri',serif;}
     <!-- TAB 5: باحث الحديث المتطور — Research Dashboard -->
     <div class="tab-pane fade" id="tab-search">
 
-      <!-- ════════════════════════════════════════════════════ -->
-      <!-- DATABASE STATUS WIDGET                              -->
-      <!-- ════════════════════════════════════════════════════ -->
-      <div id="heDbWidget" style="margin-bottom:0; border-radius:16px; overflow:hidden;">
-        <div id="heDbHeader" style="background:linear-gradient(135deg,#1e1b4b 0%,#4338ca 100%); color:white; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;" onclick="document.getElementById('heDbBody').classList.toggle('d-none')">
-          <div style="display:flex; align-items:center; gap:12px;">
-            <i class="fas fa-database" style="font-size:1.2rem; color:#a5b4fc;"></i>
-            <div>
-              <div style="font-weight:800; font-size:1rem;">قاعدة الأحاديث النبوية الشاملة</div>
-              <div style="opacity:0.75; font-size:0.8rem;" id="heStatusMsg">جارٍ التهيئة...</div>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; gap:16px;">
-            <span id="heHadithCount" style="background:rgba(255,255,255,0.15); padding:4px 14px; border-radius:50px; font-size:0.85rem; font-weight:700;"></span>
-            <button onclick="event.stopPropagation(); window.HadithEngine && window.HadithEngine.reset()" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.3); color:white; border-radius:8px; padding:5px 12px; font-size:0.8rem; cursor:pointer;"><i class="fas fa-sync-alt me-1"></i>تحديث</button>
-            <i class="fas fa-chevron-down" style="opacity:0.6;"></i>
-          </div>
+      <!-- ════════ MODE BAR ════════ -->
+      <div class="hr-mode-bar mt-3" id="hrModeBar">
+        <span class="mode-label"><i class="fas fa-palette me-1"></i> وضع القراءة</span>
+        <div class="hr-mode-group">
+          <button class="hr-mode-btn active" id="modeLight" onclick="setHRMode('light',this)">
+            <span class="mode-dot dot-light"></span> فاتح
+          </button>
+          <button class="hr-mode-btn" id="modeDark" onclick="setHRMode('dark',this)">
+            <span class="mode-dot dot-dark"></span> داكن
+          </button>
+          <button class="hr-mode-btn" id="modeSepia" onclick="setHRMode('sepia',this)">
+            <span class="mode-dot dot-sepia"></span> بُني
+          </button>
         </div>
-
-        <!-- Progress bar -->
-        <div id="heDbBody" class="d-none" style="background:var(--bg-card); padding:20px 24px; border:1px solid rgba(99,102,241,0.1); border-top:none; border-radius:0 0 16px 16px;">
-          <div class="mb-3">
-            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-              <small id="heProgressLabel" style="color:var(--text-muted);">جارٍ التحميل...</small>
-              <small id="heProgressCount" style="color:#6366f1; font-weight:700;"></small>
-            </div>
-            <div style="background:rgba(99,102,241,0.1); border-radius:50px; height:8px; overflow:hidden;">
-              <div id="heProgressBar" style="width:0%; height:100%; background:linear-gradient(90deg,#6366f1,#8b5cf6); border-radius:50px; transition:width 0.5s ease;"></div>
-            </div>
-          </div>
-          <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:8px;">
-            <!-- Collection status items injected by JS -->
-            <div id="heCol-bukhari"   class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> صحيح البخاري</div>
-            <div id="heCol-muslim"    class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> صحيح مسلم</div>
-            <div id="heCol-abudawud"  class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن أبي داود</div>
-            <div id="heCol-tirmidhi"  class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن الترمذي</div>
-            <div id="heCol-nasai"     class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن النسائي</div>
-            <div id="heCol-ibnmajah"  class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن ابن ماجه</div>
-            <div id="heCol-malik"     class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> موطأ مالك</div>
-            <div id="heCol-nawawi40"  class="he-col-item pending"><i class="fas fa-circle" style="color:#cbd5e1;"></i> الأربعون النووية</div>
-          </div>
-        </div>
+        <span id="heHadithCount" style="font-size:.82rem;font-weight:700;color:#6366f1;"></span>
       </div>
 
-      <style>
-        .he-col-item { display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px; font-size:0.9rem; font-weight:600; transition:all 0.3s; }
-        .he-col-item.pending { background:rgba(0,0,0,0.03); color:var(--text-muted); }
-        .he-col-item.loading { background:rgba(99,102,241,0.05); color:#6366f1; animation: hePulse 1.5s infinite; }
-        .he-col-item.done { background:rgba(16,185,129,0.07); color:#059669; }
-        .he-col-item.error { background:rgba(239,68,68,0.06); color:#dc2626; }
-        .he-col-count { font-weight:400; opacity:0.7; font-size:0.82rem; }
-        .he-col-spinner { display:inline-block; width:12px; height:12px; border:2px solid #6366f1; border-top-color:transparent; border-radius:50%; animation:heSpinAnim 0.7s linear infinite; }
-        @keyframes heSpinAnim { to { transform: rotate(360deg); } }
-        @keyframes hePulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
-        .he-status { padding:6px 14px; border-radius:8px; font-size:0.88rem; font-weight:600; }
-        .he-status-loading { background:rgba(99,102,241,0.1); color:#6366f1; }
-        .he-status-success { background:rgba(16,185,129,0.1); color:#059669; }
-        .he-status-error   { background:rgba(239,68,68,0.1);  color:#dc2626; }
-        .hr-quick-pill { background:rgba(255,255,255,0.15) !important; color:white; transition:all 0.2s; font-size:0.9rem !important; }
-        .hr-quick-pill:hover { background:rgba(255,255,255,0.3) !important; transform:translateY(-2px); }
-      </style>
-
-
-
-      <!-- ══════════════════════════════════════════════════ -->
-      <!-- MODE BAR                                          -->
-      <!-- ══════════════════════════════════════════════════ -->
-      <div class="hr-mode-bar">
-        <div>
-          <span class="hr-hero-sub mb-0" style="color:var(--text-muted);font-size:.85rem;font-weight:600;">
-            <i class="fas fa-book-reader me-2" style="color:#6366f1;"></i>الباحث الحديثي الشامل
-          </span>
-        </div>
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-          <span class="mode-label">وضع القراءة:</span>
-          <div class="hr-mode-group">
-            <button class="hr-mode-btn active" id="modeLight" onclick="setHRMode('light',this)">
-              <span class="mode-dot dot-light"></span> فاتح
-            </button>
-            <button class="hr-mode-btn" id="modeDark" onclick="setHRMode('dark',this)">
-              <span class="mode-dot dot-dark"></span> داكن
-            </button>
-            <button class="hr-mode-btn" id="modeSepia" onclick="setHRMode('sepia',this)">
-              <span class="mode-dot dot-sepia"></span> <i class="fas fa-eye"></i> سيبيا
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ══════════════════════════════════════════════════ -->
-      <!-- SEARCH HERO                                       -->
-      <!-- ══════════════════════════════════════════════════ -->
-      <div class="hr-hero" style="border-radius: 20px; overflow: hidden; position: relative; margin-bottom: 30px;">
-        <div class="hr-hero-inner" style="position: relative; z-index: 2; padding: 4rem 1.5rem;">
-          <div class="text-center mb-5">
-            <h2 style="font-family:'IBM Plex Sans Arabic', sans-serif; font-weight:800; font-size:2.4rem; letter-spacing:-1px;">🔍 الباحث الحديثي الشامل</h2>
-            <p style="opacity:0.85; font-size:1.1rem; max-width:600px; margin: 10px auto;">ابحث في أمهات كتب السنة النبوية — مع التخريج المباشر من الدرر السنية</p>
+      <!-- ════════ SEARCH HERO ════════ -->
+      <div class="hr-hero">
+        <div class="hr-hero-inner">
+          <div class="text-center mb-3">
+            <div class="hsh-icon"><i class="fas fa-search"></i></div>
+            <div class="hr-hero-title">الباحث الحديثي الشامل</div>
+            <div class="hr-hero-sub">ابحث في أكثر من 35,000 حديث نبوي شريف من أمهات كتب السنة</div>
           </div>
 
-          <!-- Search Bar -->
-          <div class="hr-search-wrap" style="max-width:700px; margin: 0 auto; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-radius: 50px; background: var(--bg-card); transition: all 0.3s ease;" id="hadithSearchFocusWrap">
-            <div style="display:flex; align-items:center; width:100%; border-radius:50px; overflow:hidden; border: 2px solid transparent;">
-                <input type="text" id="hadithSearchInput"
-                       class="hr-search-input"
-                       style="border:none; padding:18px 25px; flex-grow:1; font-size:1.2rem; outline:none; background:transparent; font-family:'Amiri', serif;"
-                       placeholder="ابحث في السنّة النبوية... (مثال: اليتيم، الصيام)"
-                       onkeypress="if(event.key==='Enter') searchHadith()"
-                       onfocus="document.getElementById('hadithSearchFocusWrap').style.boxShadow='0 0 0 3px rgba(99,102,241,0.3)'; document.getElementById('hadithSearchFocusWrap').style.borderColor='#6366f1'"
-                       onblur="document.getElementById('hadithSearchFocusWrap').style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'; document.getElementById('hadithSearchFocusWrap').style.borderColor='transparent'">
-                <button class="hr-search-btn" onclick="searchHadith()" style="border:none; border-radius:50px; padding:12px 30px; margin:6px; margin-left:8px; font-weight:bold; background: linear-gradient(135deg, #6366f1, #4338ca); color: white; transition: 0.2s;">
-                  بحث <i class="fas fa-search ms-2"></i>
-                </button>
+          <!-- Search bar -->
+          <div class="hr-search-relative">
+            <div class="hr-search-wrap">
+              <select class="hr-search-type" id="hrSearchType">
+                <option value="text">نص الحديث</option>
+                <option value="narrator">اسم الراوي</option>
+                <option value="topic">الموضوع</option>
+                <option value="book">الكتاب</option>
+              </select>
+              <input id="hadithSearchInput" class="hr-search-input"
+                placeholder="ابحث: إنما الأعمال بالنيات..."
+                dir="rtl" autocomplete="off"
+                oninput="hrAutoComplete(this.value)"
+                onkeydown="if(event.key==='Enter') HR.search()"/>
+              <button class="hr-search-btn" onclick="HR.search()">
+                <i class="fas fa-search"></i> بحث
+              </button>
             </div>
+            <!-- Autocomplete -->
+            <div class="hr-autocomplete" id="hrAutocomplete"></div>
           </div>
+
           <!-- Quick terms -->
-          <div class="mt-4 text-center d-flex justify-content-center flex-wrap gap-2" style="max-width:800px; margin:0 auto;">
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('النية')">النية ✦</span>
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('الصدق')">الصدق ✦</span>
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('الجنة')">الجنة ✦</span>
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('الإيمان')">الإيمان ✦</span>
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('الصلاة')">الصلاة ✦</span>
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('التوبة')">التوبة ✦</span>
-            <span class="badge rounded-pill px-3 py-2 shadow-sm hr-quick-pill" style="cursor:pointer; font-weight:normal;" onclick="quickSearch('الصبر')">الصبر ✦</span>
+          <div class="hr-quick-wrap mt-2">
+            <span class="hr-quick-term" onclick="HR.quickSearch('الصلاة')">الصلاة</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('الصيام')">الصيام</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('النية')">النية</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('الأخلاق')">الأخلاق</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('العلم')">العلم</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('الرحمة')">الرحمة</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('الدعاء')">الدعاء</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('الجنة')">الجنة</span>
+            <span class="hr-quick-term" onclick="HR.quickSearch('التوبة')">التوبة</span>
           </div>
         </div>
       </div>
 
-      <!-- ══════════════════════════════════════════════════ -->
+      <!-- ════════ DB STATUS WIDGET ════════ -->
+      <div id="heDbWidget" style="margin:16px 0; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0;">
+        <div id="heDbHeader" style="background:linear-gradient(135deg,#1e1b4b 0%,#4338ca 100%); color:white; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;" onclick="document.getElementById('heDbBody').classList.toggle('d-none')">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <i class="fas fa-database" style="font-size:1.1rem; color:#a5b4fc;"></i>
+            <div>
+              <div style="font-weight:800; font-size:.95rem;">قاعدة الأحاديث النبوية الشاملة</div>
+              <div id="heStatusMsg" style="font-size:.78rem; opacity:.8; margin-top:2px;">جاري الاتصال...</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div id="heProgressCount" style="font-size:.82rem; font-weight:700; color:#a5b4fc;"></div>
+            <i class="fas fa-chevron-down" style="font-size:.8rem; opacity:.6;"></i>
+          </div>
+        </div>
+        <div id="heDbBody" class="d-none" style="background:#f8fafc; padding:16px 20px;">
+          <div style="margin-bottom:10px;">
+            <div style="height:6px; background:#e2e8f0; border-radius:10px; overflow:hidden;">
+              <div id="heProgressBar" style="height:100%; width:0%; background:linear-gradient(90deg,#6366f1,#8b5cf6); border-radius:10px; transition:width .4s;"></div>
+            </div>
+          </div>
+          <div id="heColsList" style="display:flex; flex-wrap:wrap; gap:8px; font-size:.82rem;">
+            <span id="heCol-bukhari"  class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> صحيح البخاري</span>
+            <span id="heCol-muslim"   class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> صحيح مسلم</span>
+            <span id="heCol-abudawud" class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن أبي داود</span>
+            <span id="heCol-tirmidhi" class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن الترمذي</span>
+            <span id="heCol-nasai"    class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن النسائي</span>
+            <span id="heCol-ibnmajah" class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> سنن ابن ماجه</span>
+            <span id="heCol-malik"    class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> موطأ مالك</span>
+            <span id="heCol-nawawi40" class="he-col-item"><i class="fas fa-circle" style="color:#cbd5e1;"></i> الأربعون النووية</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fuzzy banner -->
+      <div class="hr-fuzzy-banner" id="hrFuzzyBanner" style="display:none; background:rgba(99,102,241,0.1); color:#4f46e5; padding:8px 16px; border-radius:8px; margin-bottom:16px; align-items:center; gap:8px;">
+        <i class="fas fa-magic"></i>
+        <span id="hrFuzzyMsg">تم البحث التقريبي — عرضنا أقرب النتائج</span>
+      </div>
+
       <!-- RESEARCH LAYOUT: SIDEBAR + MAIN                   -->
       <!-- ══════════════════════════════════════════════════ -->
       <div class="hr-layout">
@@ -1579,6 +1725,22 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry,.hadith-text{font-family:'Amiri',serif;}
                 <div class="hr-pill-btn" data-bkey="tirmidhi" onclick="hrSetBook('tirmidhi',this)">الترمذي</div>
                 <div class="hr-pill-btn" data-bkey="nasai" onclick="hrSetBook('nasai',this)">النسائي</div>
                 <div class="hr-pill-btn" data-bkey="ibnmajah" onclick="hrSetBook('ibnmajah',this)">ابن ماجه</div>
+              </div>
+
+              <div class="hr-filter-divider"></div>
+
+              <!-- Topics -->
+              <span class="hr-filter-label"><i class="fas fa-tags text-info"></i> الموضوع:</span>
+              <div id="hrTopicFilters" style="display:contents">
+                <div class="hr-pill-btn active" data-topic="all" onclick="hrSetTopic('all',this)">الكل</div>
+                <div class="hr-pill-btn" data-topic="العقيدة" onclick="hrSetTopic('العقيدة',this)">العقيدة</div>
+                <div class="hr-pill-btn" data-topic="الصلاة" onclick="hrSetTopic('الصلاة',this)">الصلاة</div>
+                <div class="hr-pill-btn" data-topic="الزكاة" onclick="hrSetTopic('الزكاة',this)">الزكاة</div>
+                <div class="hr-pill-btn" data-topic="الصيام" onclick="hrSetTopic('الصيام',this)">الصيام</div>
+                <div class="hr-pill-btn" data-topic="الحج" onclick="hrSetTopic('الحج',this)">الحج</div>
+                <div class="hr-pill-btn" data-topic="الأخلاق" onclick="hrSetTopic('الأخلاق',this)">الأخلاق</div>
+                <div class="hr-pill-btn" data-topic="الدعاء" onclick="hrSetTopic('الدعاء',this)">الدعاء</div>
+                <div class="hr-pill-btn" data-topic="الفتن" onclick="hrSetTopic('الفتن',this)">الفتن</div>
               </div>
 
               <div class="hr-filter-divider"></div>
@@ -1841,10 +2003,10 @@ async function deleteCloudBook(key) {
 <script src="_hadith_engine.js"></script>
 
 <script>
-
 // ================================================================
-// الباحث الحديثي — Engine v4.0 (Clean Rewrite)
-// Works 100% from local hadithDatabase + API fallback
+// الباحث الحديثي — Engine v5.0 (Smart Researcher)
+// Features: Fuzzy Search, Autocomplete, Similar Hadiths,
+//           Topic Filter, Stats Breakdown, Relevance Scoring
 // ================================================================
 
 (function() {
@@ -1853,6 +2015,7 @@ async function deleteCloudBook(key) {
   // ── State ──
   var _book    = 'all';
   var _scholar = 'all';
+  var _topic   = 'all';
   var _grades  = { sahih: true, hasan: true, daif: true };
   var _results = [];   // all results from search
   var _filtered = [];  // after grade/book/scholar filter
@@ -1959,6 +2122,7 @@ async function deleteCloudBook(key) {
         '<div class="hr-card-actions">' +
           '<button class="hr-action-btn" id="hcopy-' + gi + '" onclick="HR.copy(' + gi + ')"><i class="fas fa-copy"></i> نسخ</button>' +
           '<button class="hr-action-btn" onclick="HR.share(' + gi + ')"><i class="fas fa-share-alt"></i> مشاركة</button>' +
+          '<button class="hr-action-btn" onclick="HR.similar(' + gi + ')"><i class="fas fa-project-diagram"></i> شواهد ومتابعات</button>' +
           '<a href="https://dorar.net/hadith/search?q=' + encodeURIComponent((h.text || '').substring(0, 30)) + '" target="_blank" class="hr-action-btn" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> التخريج</a>' +
         '</div>';
       list.appendChild(card);
@@ -1981,7 +2145,10 @@ async function deleteCloudBook(key) {
       var scholOk = _scholar === 'all'
         || (h.scholar || '').includes(_scholar)
         || (h.book    || '').includes(_scholar);
-      return gradeOk && bookOk && scholOk;
+      var topicOk = _topic === 'all'
+        || (h.topic || '').includes(_topic)
+        || (h.text  || '').includes(_topic); // fallback to text search if topic not explicitly labeled
+      return gradeOk && bookOk && scholOk && topicOk;
     });
 
     var badge = el('hrCountBadge');
@@ -2019,19 +2186,34 @@ async function deleteCloudBook(key) {
     });
 
     var lq = query.trim();
+    // Use HadithEngine's normalizer if available, otherwise lowercase
+    var normalize = (window.HadithEngine && window.HadithEngine.normalize) 
+                    ? window.HadithEngine.normalize 
+                    : function(t) { return (t||'').toLowerCase(); };
+                    
+    var normQ = normalize(lq);
+    var qWords = normQ.split(' ').filter(function(w) { return w.length > 0; });
+
     var results = combined.filter(function(h) {
-      if (type === 'narrator') return (h.narrator || '').includes(lq);
-      if (type === 'book')     return (h.book     || '').includes(lq) || (h.source || '').includes(lq);
-      if (type === 'topic')    return (h.topic    || '').includes(lq);
-      return (h.text     || '').includes(lq) ||
-             (h.narrator || '').includes(lq) ||
-             (h.topic    || '').includes(lq);
+      var nNarr = normalize(h.narrator);
+      var nBook = normalize(h.book);
+      var nSrc  = normalize(h.source);
+      var nTop  = normalize(h.topic);
+      var nText = normalize(h.text);
+
+      if (type === 'narrator') return qWords.every(function(w){ return nNarr.includes(w); });
+      if (type === 'book')     return qWords.every(function(w){ return nBook.includes(w) || nSrc.includes(w); });
+      if (type === 'topic')    return qWords.every(function(w){ return nTop.includes(w); });
+      
+      return qWords.every(function(w){ return nText.includes(w); }) ||
+             qWords.every(function(w){ return nNarr.includes(w); }) ||
+             qWords.every(function(w){ return nTop.includes(w); });
     });
 
     // Rank: text match > narrator match
     results.sort(function(a, b) {
-      var aInText = (a.text || '').includes(lq) ? 0 : 1;
-      var bInText = (b.text || '').includes(lq) ? 0 : 1;
+      var aInText = qWords.every(function(w){ return normalize(a.text).includes(w); }) ? 0 : 1;
+      var bInText = qWords.every(function(w){ return normalize(b.text).includes(w); }) ? 0 : 1;
       return aInText - bInText;
     });
 
@@ -2065,58 +2247,60 @@ async function deleteCloudBook(key) {
 
       var apiOk = false;
 
-      // 1. Try live API with Dorar Official JSONP endpoint
+      // 1. Try live API with Dorar Official JSONP endpoint (Fetch multiple pages concurrently for a massive initial result set)
       try {
-        var dorarData = await new Promise(function(resolve, reject) {
-          var cbName = 'dorarCb_' + Math.round(Math.random() * 1000000);
-          var script = document.createElement('script');
-          var tid = setTimeout(function() {
-            if(window[cbName]) { delete window[cbName]; if(script.parentNode) script.parentNode.removeChild(script); reject(new Error('timeout')); }
-          }, 5000);
-          window[cbName] = function(data) {
-            clearTimeout(tid);
-            delete window[cbName];
-            if(script.parentNode) script.parentNode.removeChild(script);
-            resolve(data);
-          };
-          script.src = 'https://dorar.net/dorar_api.json?skey=' + encodeURIComponent(query) + '&page=' + _apiPage + '&callback=' + cbName;
-          script.onerror = function() { clearTimeout(tid); reject(new Error('network')); };
-          document.body.appendChild(script);
-        });
+        var fetchDorarPage = function(pageNum) {
+          return new Promise(function(resolve, reject) {
+            var cbName = 'dorarCb_' + Math.round(Math.random() * 100000000) + '_' + pageNum;
+            var script = document.createElement('script');
+            var tid = setTimeout(function() {
+              if(window[cbName]) { delete window[cbName]; if(script.parentNode) script.parentNode.removeChild(script); resolve(null); }
+            }, 6000);
+            window[cbName] = function(data) {
+              clearTimeout(tid);
+              delete window[cbName];
+              if(script.parentNode) script.parentNode.removeChild(script);
+              resolve(data);
+            };
+            script.src = 'https://dorar.net/dorar_api.json?skey=' + encodeURIComponent(query) + '&page=' + pageNum + '&callback=' + cbName;
+            script.onerror = function() { clearTimeout(tid); resolve(null); };
+            document.body.appendChild(script);
+          });
+        };
 
-        if (dorarData && dorarData.ahadith && dorarData.ahadith.content) {
-          var doc = new DOMParser().parseFromString(dorarData.ahadith.content, 'text/html');
-          var hDivs = doc.querySelectorAll('.hadith');
-          var iDivs = doc.querySelectorAll('.hadith-info');
-          
-          if(hDivs.length > 0) {
-            var parsed = [];
-            for(var i = 0; i < hDivs.length; i++) {
-              var textHtml = hDivs[i].innerHTML.replace(/^[\s\u00A0]*\d+[\s\u00A0]*-[\s\u00A0]*/, '').trim(); 
-              var infoHtml = iDivs[i].innerHTML;
-              
-              var getProp = function(name) {
-                var m = infoHtml.match(new RegExp('<span class="info-subtitle">' + name + ':\\s*<\\/span>\\s*(?:<span[^>]*>)?([^<]+)'));
-                return m ? m[1].trim() : '—';
-              };
-
-              parsed.push({
-                text: textHtml,
-                narrator: getProp('الراوي'),
-                scholar: getProp('المحدث'),
-                source: getProp('المصدر'),
-                book: getProp('المصدر'),
-                grade: getProp('خلاصة حكم المحدث'),
-                bookKey: 'api'
-              });
-            }
-            if(parsed.length > 0) {
-              _results = parsed;
-              setSource('الموسوعة الحديثية المباشرة (الدرر السنية)');
-              apiOk = true;
-              _apiHasMore = true; // Assume there is a page 2 unless we fetch it and it's empty
+        // Fetch pages 1, 2, and 3 concurrently to get ~60 live results instantly!
+        var dorarPages = await Promise.all([fetchDorarPage(1), fetchDorarPage(2), fetchDorarPage(3)]);
+        
+        var parsed = [];
+        for (var p = 0; p < dorarPages.length; p++) {
+          var dorarData = dorarPages[p];
+          if (dorarData && dorarData.ahadith && dorarData.ahadith.content) {
+            var doc = new DOMParser().parseFromString(dorarData.ahadith.content, 'text/html');
+            var hDivs = doc.querySelectorAll('.hadith');
+            var iDivs = doc.querySelectorAll('.hadith-info');
+            if (hDivs.length > 0) {
+              for(var i = 0; i < hDivs.length; i++) {
+                var textHtml = hDivs[i].innerHTML.replace(/^[\s\u00A0]*\d+[\s\u00A0]*-[\s\u00A0]*/, '').trim(); 
+                var infoHtml = iDivs[i].innerHTML;
+                var getProp = function(name) {
+                  var m = infoHtml.match(new RegExp('<span class="info-subtitle">' + name + ':\\s*<\\/span>\\s*(?:<span[^>]*>)?([^<]+)'));
+                  return m ? m[1].trim() : '—';
+                };
+                parsed.push({
+                  text: textHtml, narrator: getProp('الراوي'), scholar: getProp('المحدث'),
+                  source: getProp('المصدر'), book: getProp('المصدر'), grade: getProp('خلاصة حكم المحدث'), bookKey: 'api'
+                });
+              }
             }
           }
+        }
+
+        if(parsed.length > 0) {
+          _results = parsed;
+          _apiPage = 3; // We fetched 3 pages
+          setSource('الموسوعة الحديثية المباشرة (الدرر السنية)');
+          apiOk = true;
+          _apiHasMore = parsed.length >= 40; // If we got a decent amount, assume there is page 4
         }
       } catch(e) {
         // timeout or network error — will fall through below
@@ -2126,7 +2310,7 @@ async function deleteCloudBook(key) {
       if (!apiOk) {
         try {
           if (window.HadithEngine && window.HadithEngine.ready) {
-            var engineResults = await window.HadithEngine.search(query, type, 200);
+            var engineResults = await window.HadithEngine.search(query, type, 1000);
             if (engineResults && engineResults.length > 0) {
               _results = engineResults;
               setSource('قاعدة الأحاديث الشاملة — ' + engineResults.length + ' نتيجة محلية');
@@ -2143,15 +2327,15 @@ async function deleteCloudBook(key) {
       }
 
       // 4. Merge: if API found results + engine has more, add them
-      if (apiOk && _results.length > 0 && window.HadithEngine && window.HadithEngine.ready) {
+      if (apiOk && window.HadithEngine && window.HadithEngine.ready) {
         try {
-          var extra = await window.HadithEngine.search(query, type, 80);
+          var extra = await window.HadithEngine.search(query, type, 1000);
           if (extra && extra.length > 0) {
-            var seen = new Set(_results.map(function(r){ return (r.text||'').substring(0,30); }));
-            var fresh = extra.filter(function(r){ return !seen.has((r.text||'').substring(0,30)); });
+            var seen = new Set(_results.map(function(r){ return (r.text||'').substring(0,25); }));
+            var fresh = extra.filter(function(r){ return !seen.has((r.text||'').substring(0,25)); });
             if (fresh.length > 0) {
               _results = _results.concat(fresh);
-              setSource('الدرر السنية + قاعدة الأحاديث المحلية');
+              setSource('الدرر السنية + قاعدة الأحاديث المحلية (' + _results.length + ' نتيجة)');
             }
           }
         } catch(e) {}
@@ -2296,6 +2480,14 @@ async function deleteCloudBook(key) {
       HR.updateTags();
     },
 
+    setTopic: function(top, elem) {
+      _topic = top;
+      document.querySelectorAll('#hrTopicFilters .hr-chip, [data-topic]').forEach(function(c){ c.classList.remove('active'); });
+      if (elem) elem.classList.add('active');
+      if (_results.length > 0) applyAndShow();
+      HR.updateTags();
+    },
+
     toggleGrade: function(grade, elem) {
       if (_grades[grade]) {
         var active = Object.keys(_grades).filter(function(g){ return _grades[g]; });
@@ -2311,15 +2503,21 @@ async function deleteCloudBook(key) {
     },
 
     reset: function() {
-      _book = 'all'; _scholar = 'all';
+      _book = 'all'; _scholar = 'all'; _topic = 'all';
       _grades = { sahih:true, hasan:true, daif:true };
-      document.querySelectorAll('#hrBookFilters .hr-chip').forEach(function(c){ c.classList.remove('active'); });
+      document.querySelectorAll('#hrBookFilters .hr-chip, [data-bkey]').forEach(function(c){ c.classList.remove('active'); });
       var allBook = document.querySelector('[data-bkey="all"]');
       if (allBook) allBook.classList.add('active');
+      
       document.querySelectorAll('[data-scholar]').forEach(function(c){ c.classList.remove('active'); });
       var allSch = document.querySelector('[data-scholar="all"]');
       if (allSch) allSch.classList.add('active');
-      document.querySelectorAll('.hr-grade-toggle').forEach(function(e){ e.classList.add('active'); });
+
+      document.querySelectorAll('#hrTopicFilters .hr-chip, [data-topic]').forEach(function(c){ c.classList.remove('active'); });
+      var allTop = document.querySelector('[data-topic="all"]');
+      if (allTop) allTop.classList.add('active');
+
+      document.querySelectorAll('.hr-grade-toggle, [id^="gf-"]').forEach(function(e){ e.classList.add('active'); });
       if (_results.length > 0) applyAndShow();
       HR.updateTags();
     },
@@ -2334,6 +2532,9 @@ async function deleteCloudBook(key) {
       }
       if (_scholar !== 'all') {
         tags.push('<span class="hr-filter-tag" onclick="HR.setScholar(\'all\',document.querySelector(\'[data-scholar=\\\"all\\\"]\'))">' + _scholar + ' <span class="tag-x">✕</span></span>');
+      }
+      if (_topic !== 'all') {
+        tags.push('<span class="hr-filter-tag" onclick="HR.setTopic(\'all\',document.querySelector(\'[data-topic=\\\"all\\\"]\'))">' + _topic + ' <span class="tag-x">✕</span></span>');
       }
       var gmap = { sahih:'صحيح', hasan:'حسن', daif:'ضعيف' };
       ['sahih','hasan','daif'].filter(function(g){ return !_grades[g]; }).forEach(function(g) {
@@ -2358,6 +2559,25 @@ async function deleteCloudBook(key) {
       var text = '« ' + h.text + ' »\n' + h.book + ' | ' + h.grade;
       if (navigator.share) { navigator.share({ title: 'حديث شريف', text: text }); }
       else { navigator.clipboard.writeText(text); toast('تم النسخ للمشاركة'); }
+    },
+
+    similar: function(idx) {
+      var h = _filtered[idx];
+      if (!h) return;
+      
+      // Extract first 3-4 significant words
+      var words = (h.text || '').replace(/[^\w\s\u0600-\u06FF]/g, '').split(/\s+/).filter(function(w){ return w.length > 2; }).slice(0, 4);
+      if(words.length === 0) return;
+      var term = words.join(' ');
+      
+      var inp = el('hadithSearchInput');
+      if (inp) inp.value = term;
+      
+      var typeSelect = el('hrSearchType');
+      if (typeSelect) typeSelect.value = 'text';
+      
+      toast('جاري البحث عن شواهد ومتابعات...');
+      HR.search();
     },
 
     setMode: function(mode, btn) {
@@ -2426,6 +2646,7 @@ async function deleteCloudBook(key) {
   window.searchHadith  = function() { HR.search(); };
   window.quickSearch   = function(t) { HR.quickSearch(t); };
   window.hrSetBook     = function(k,e) { HR.setBook(k,e); };
+  window.hrSetTopic    = function(t,e) { HR.setTopic(t,e); };
   window.hrSetScholar  = function(s,e) { HR.setScholar(s,e); };
   window.hrToggleGrade = function(g,e) { HR.toggleGrade(g,e); };
   window.hrResetFilters= function()   { HR.reset(); };
@@ -2442,6 +2663,37 @@ async function deleteCloudBook(key) {
     var q = (el('dorarInput') || {}).value;
     if (q) window.open('https://dorar.net/hadith/search?q=' + encodeURIComponent(q), '_blank');
   };
+
+  // Autocomplete
+  window.hrAutoComplete = function(val) {
+    var list = el('hrAutocomplete');
+    if (!list) return;
+    val = val.trim();
+    if (val.length < 2) { list.style.display = 'none'; return; }
+    
+    var type = el('hrSearchType') ? el('hrSearchType').value : 'text';
+    var res = localSearch(val, type).slice(0, 5);
+    
+    if (res.length === 0) { list.style.display = 'none'; return; }
+    
+    var html = res.map(function(r) {
+      var txt = (r.text || '').substring(0, 60) + '...';
+      var safeTxt = txt.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+      return '<div class="hr-ac-item" style="padding:10px; cursor:pointer; border-bottom:1px solid #eee;" onmouseover="this.style.background=\'#f3f4f6\'" onmouseout="this.style.background=\'transparent\'" onclick="HR.quickSearch(\'' + safeTxt + '\'); document.getElementById(\'hrAutocomplete\').style.display=\'none\';">' +
+             '<i class="fas fa-search text-muted me-2"></i>' + txt + 
+             '<div style="font-size:0.75rem; color:#6b7280; margin-top:4px;">' + (r.book || '') + ' - ' + (r.grade || '') + '</div></div>';
+    }).join('');
+    
+    list.innerHTML = html;
+    list.style.display = 'block';
+  };
+  
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.hr-search-relative')) {
+      var l = el('hrAutocomplete');
+      if (l) l.style.display = 'none';
+    }
+  });
 
   // ── Nawawi viewer helpers (needed globally) ──
   window.currentNawawiIndex = 0;
