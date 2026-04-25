@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موسوعة السيرة النبوية الشريفة الشاملة - الموسوعة الإسلامية</title>
+<meta name="description" content="أكبر مرجع رقمي للسيرة النبوية الشريفة: الشمائل، الغزوات، الصحابة الكرام، أمهات المؤمنين، السيرة في القرآن الكريم.">
+<meta name="keywords" content="سيرة نبوية، محمد رسول الله، صحابة، غزوات، شمائل محمدية، أم المؤمنين">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="responsive.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+:root{--gold:#d4af37;--gold-light:#f9f1d8;--gold-dark:#aa8a2a;--dark:#0b192c;--primary:#0369a1;--light-blue:#f0f9ff;}
+*{box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:hidden;}
+.amiri,h1,h2,h3,h4{font-family:'Amiri',serif;}
+.lh-xl{line-height:2.1;}
+
+/* NAV */
+.navbar{background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);border-bottom:2px solid rgba(212,175,55,.2);}
+.navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:#fff!important;}
+.navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;transition:.3s;}
+.navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;}
+
+/* HERO */
+.seerah-hero{min-height:96vh;background:radial-gradient(ellipse at 60% 40%,#075985 0%,var(--dark) 75%);display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-arabesque{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.09;}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.22;animation:float 12s ease-in-out infinite alternate;}
+.orb1{width:550px;height:550px;background:var(--gold);top:-120px;right:-100px;}
+.orb2{width:450px;height:450px;background:#0ea5e9;bottom:-100px;left:-80px;animation-delay:5s;}
+@keyframes float{to{transform:translate(45px,45px) scale(1.12);}}
+.hero-content{position:relative;z-index:2;text-align:center;}
+.hero-pill{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#0b192c;padding:9px 32px;border-radius:50px;font-weight:700;font-size:1rem;margin-bottom:28px;box-shadow:0 4px 20px rgba(212,175,55,.4);}
+.hero-h1{font-size:clamp(2.6rem,6.5vw,5.8rem);color:#fff;font-weight:900;text-shadow:0 8px 30px rgba(0,0,0,.8);line-height:1.15;}
+.hero-h1 em{font-style:normal;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-ayah{color:rgba(255,255,255,.9);font-size:clamp(1.1rem,2.5vw,1.5rem);font-family:'Amiri',serif;line-height:2;max-width:780px;margin:0 auto 30px;}
+.hero-ayah span{color:var(--gold);}
+.hero-badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.35);border-radius:18px;padding:16px 28px;color:#fff;backdrop-filter:blur(6px);transition:.3s;}
+.hero-badge:hover{background:rgba(212,175,55,.15);border-color:var(--gold);}
+.hero-badge strong{display:block;font-size:2rem;color:var(--gold);font-family:'Amiri',serif;line-height:1.2;}
+.hero-badge small{font-size:.85rem;opacity:.8;}
+
+/* TABS BAR */
+
+
+
+.tabs-bar .nav-link i{font-size:1.15rem;color:var(--gold-dark);}
+.tabs-bar .navbar .nav-link:hover{background:var(--light-blue);border-color:var(--gold-dark);}
+.tabs-bar .navbar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff!important;border-color:transparent;box-shadow:0 8px 22px rgba(3,105,161,.35);}
+.tabs-bar .navbar .nav-link.active i{color:var(--gold);}
+
+/* SEC HEADER */
+.sec-head{text-align:center;margin-bottom:55px;}
+.badge-tag{display:inline-block;background:rgba(212,175,55,.12);color:var(--gold-dark);border:1px solid rgba(212,175,55,.35);border-radius:30px;padding:8px 24px;font-size:.95rem;font-weight:700;margin-bottom:18px;}
+.sec-head h2{font-size:clamp(2rem,4vw,3.2rem);color:var(--dark);font-weight:900;}
+.sec-head h2 span{color:var(--primary);}
+.sec-head p{color:#64748b;font-size:1.1rem;max-width:760px;margin:10px auto 0;line-height:1.9;}
+.gold-divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:22px auto 0;}
+
+/* TIMELINE */
+.seerah-tl{position:relative;max-width:1100px;margin:0 auto;}
+.seerah-tl::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:3px;background:linear-gradient(to bottom,transparent,var(--gold) 8%,var(--primary) 92%,transparent);transform:translateX(-50%);}
+.tl-row{display:flex;margin-bottom:60px;position:relative;align-items:flex-start;}
+.tl-row:nth-child(odd) .tl-card-wrap{order:1;padding-right:55px;text-align:right;}
+.tl-row:nth-child(even) .tl-card-wrap{order:3;padding-left:55px;}
+.tl-center{order:2;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;width:80px;position:relative;}
+.tl-dot{width:24px;height:24px;background:var(--gold);border:4px solid var(--dark);border-radius:50%;box-shadow:0 0 0 6px rgba(212,175,55,.2);}
+.tl-year{font-family:'Amiri',serif;font-weight:700;font-size:1rem;color:#fff;background:var(--dark);padding:5px 12px;border-radius:20px;margin-top:8px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.3);}
+.tl-card-wrap{flex:1;}
+.tl-card{background:#fff;border-radius:22px;padding:35px;box-shadow:0 12px 35px rgba(0,0,0,.05);border:1px solid #e0f2fe;transition:.4s;position:relative;overflow:hidden;}
+.tl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--gold));}
+.tl-card:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(3,105,161,.12);border-color:var(--gold);}
+.tl-card h3{font-size:1.55rem;color:var(--dark);margin-bottom:12px;}
+.tl-card p{color:#64748b;font-size:1.05rem;line-height:1.95;margin:0;}
+.tl-tag{display:inline-block;background:var(--light-blue);color:var(--primary);border-radius:20px;padding:3px 12px;font-size:.82rem;font-weight:700;margin-bottom:10px;}
+@media(max-width:768px){
+  .seerah-tl::before{left:24px;}
+  .tl-row{flex-direction:column;padding-right:60px;}
+  .tl-row:nth-child(odd) .tl-card-wrap,.tl-row:nth-child(even) .tl-card-wrap{order:1;padding:0;text-align:right;}
+  .tl-center{position:absolute;left:0;flex-direction:row;width:auto;gap:8px;}
+  .tl-year{font-size:.78rem;padding:3px 8px;}
+}
+
+/* MORALS */
+.moral-card{background:#fff;border-radius:22px;padding:35px 28px;box-shadow:0 10px 30px rgba(0,0,0,.04);border:1px solid #e0f2fe;transition:.4s;height:100%;text-align:center;position:relative;overflow:hidden;}
+.moral-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:4px;background:var(--gold);transform:scaleX(0);transition:.4s;transform-origin:left;}
+.moral-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(3,105,161,.1);}
+.moral-card:hover::after{transform:scaleX(1);}
+.moral-icon{width:85px;height:85px;border-radius:50%;background:linear-gradient(135deg,rgba(3,105,161,.1),rgba(212,175,55,.1));display:inline-flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--primary);margin-bottom:22px;transition:.4s;}
+.moral-card:hover .moral-icon{background:linear-gradient(135deg,var(--primary),var(--dark));color:#fff;}
+
+/* BATTLES V2 */
+.battle-map {
+  background: linear-gradient(135deg, #efe2c4, #dcb271);
+  border: 4px solid var(--gold-dark);
+  border-radius: 25px;
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.3), 0 15px 35px rgba(0,0,0,0.1);
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+}
+.battle-map::after {
+  content:''; position:absolute; inset:0; box-shadow: inset 0 0 80px rgba(139, 69, 19, 0.4); pointer-events:none; z-index: 1;
+}
+.b-badge {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(11, 25, 44, 0.9); color: var(--gold);
+  font-family: 'Amiri', serif; font-weight: bold; font-size: 1.1rem;
+  padding: 10px 25px; border-radius: 12px; border: 2px solid var(--gold);
+  z-index: 5; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+}
+.b-team {
+  position: absolute; padding: 12px 25px; border-radius: 15px;
+  font-weight: 700; font-family: 'Amiri', serif; font-size: 1rem;
+  color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.4); z-index: 4;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; text-align: center;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.b-team:hover { transform: scale(1.1) translateY(-8px); z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+.bt-m { background: linear-gradient(135deg, #0369a1, #082f49); border-color: var(--gold); }
+.bt-e { background: linear-gradient(135deg, #7f1d1d, #450a0a); border-color: #fca5a5; }
+.bt-leader { display: block; font-size: 0.8rem; color: rgba(255,255,255,0.8); margin-top: 4px; font-family: 'Cairo', sans-serif;}
+.b-label {
+  position: absolute; color: #431407; font-weight: 800; font-size: 0.95rem;
+  z-index: 3; background: rgba(255, 245, 225, 0.85); padding: 6px 14px;
+  border-radius: 8px; border: 1px dashed #b45309; text-shadow: 1px 1px 0 #fff;
+  transition: 0.3s;
+}
+.b-label:hover { background: #fff; transform: scale(1.05); }
+.pulse-dot {
+  position: absolute; width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.5) 0%, transparent 70%);
+  border-radius: 50%; animation: pls 2.5s infinite ease-out; z-index: 2; transform: translate(-50%, -50%);
+}
+@keyframes pls { 0% {transform: translate(-50%, -50%) scale(0.3); opacity: 1;} 100% {transform: translate(-50%, -50%) scale(2.5); opacity: 0;} }
+.battle-info-card {
+  background: #fff; border-radius: 25px; padding: 40px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.06); border: 1px solid #e0f2fe; height: 100%; position: relative;
+  transition: 0.4s;
+}
+.battle-info-card:hover { box-shadow: 0 20px 50px rgba(3,105,161,0.1); border-color: var(--gold-dark); }
+.b-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-top: 30px; }
+.b-stat-box { background: var(--light-blue); padding: 15px; border-radius: 15px; text-align: center; border: 1px solid rgba(3,105,161,0.1); transition: 0.3s; }
+.b-stat-box:hover { background: #fff; border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.b-stat-num { display: block; font-size: 1.8rem; font-weight: 900; color: var(--primary); font-family: 'Amiri', serif; }
+.b-stat-title { font-size: 0.85rem; color: #64748b; font-weight: 700; margin-top: 5px; }
+.b-nav-pills { gap: 12px; margin-bottom: 50px !important; }
+.b-nav-pills .nav-link {
+  color: var(--dark); font-weight: 700; padding: 12px 28px; border-radius: 30px; border: 2px solid #e2e8f0; transition: 0.4s; font-size: 1.05rem; background: #fff;
+}
+.b-nav-pills .nav-link i { color: var(--gold-dark); margin-left: 8px; font-size: 1.2rem; transition: 0.3s; }
+.b-nav-pills .nav-link.active {
+  background: linear-gradient(135deg, var(--dark), var(--primary)); color: #fff; border-color: transparent; box-shadow: 0 8px 25px rgba(3,105,161,0.4); transform: translateY(-3px);
+}
+.b-nav-pills .nav-link.active i { color: var(--gold); }
+.b-nav-pills .nav-link:hover:not(.active) { border-color: var(--primary); background: var(--light-blue); transform: translateY(-2px); }
+
+/* QURAN SEERAH CARDS */
+.quran-seerah-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.04);
+  border: 1px solid rgba(3,105,161,.1);
+  transition: 0.4s;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.quran-seerah-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--gold));
+}
+.quran-seerah-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(3,105,161,.1);
+  border-color: var(--gold);
+}
+.q-icon-wrap {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--light-blue);
+  color: var(--primary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+.q-content { flex: 1; }
+.q-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.q-ayah {
+  font-family: 'Amiri', serif;
+  font-size: 1.25rem;
+  color: var(--dark);
+  line-height: 2;
+  margin: 15px 0;
+  padding: 12px 18px;
+  background: rgba(212,175,55,.05);
+  border-right: 4px solid var(--gold);
+  border-radius: 8px;
+}
+
+/* HADITH CARDS */
+.hadith-card{background:#fff;border-radius:20px;padding:35px;border-right:6px solid var(--primary);box-shadow:0 10px 30px rgba(0,0,0,.04);transition:.3s;}
+.hadith-card:hover{border-right-color:var(--gold);box-shadow:0 18px 40px rgba(3,105,161,.08);}
+.hadith-text{font-family:'Amiri',serif;font-size:1.3rem;line-height:2.2;color:#1e293b;}
+.hadith-source{font-size:.9rem;color:#94a3b8;font-weight:700;}
+
+/* AHL AL BAYT */
+.bayt-card{background:radial-gradient(circle at top right,#fff9f0,#fff);border-radius:22px;padding:35px;text-align:center;border:1px solid rgba(212,175,55,.3);box-shadow:0 10px 30px rgba(0,0,0,.04);transition:.4s;height:100%;}
+.bayt-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(212,175,55,.15);border-color:var(--gold);}
+.bayt-icon{font-size:3rem;color:var(--gold);margin-bottom:18px;}
+
+/* FOOTER */
+.mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:#fff;padding:70px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);}
+.mfl{color:rgba(255,255,255,.7);text-decoration:none;transition:.3s;display:block;margin-bottom:10px;}
+.mfl:hover{color:var(--gold);padding-right:5px;}
+</style>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
+</script>
+
+
+</head>
+
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html">القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link" href="hadith.html">الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link" href="fiqh.html">الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="fatwa.html">فتاوى العلماء</a></li>
+        <li class="nav-item"><a class="nav-link active" href="seerah.html">السيرة والصحابة</a></li>
+        <li class="nav-item"><a class="nav-link" href="aqeedah.html">العقيدة الإسلامية</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html">التاريخ الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="library.html">المكتبة الشاملة</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3 mt-lg-0 mt-3">
+        <button class="btn btn-link text-white p-0 nav-search-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle" style="width:35px;height:35px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="seerah-hero">
+  <div class="hero-arabesque"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="container hero-content">
+    <div class="hero-pill" data-aos="fade-down"><i class="fas fa-star text-warning me-2"></i>أكبر مرجع رقمي للسيرة النبوية الشريفة</div>
+    <h1 class="hero-h1 amiri mb-4" data-aos="fade-up">موسوعة <em>السيرة النبوية</em><br>والصحابة الكرام</h1>
+    <p class="hero-ayah" data-aos="fade-up" data-aos-delay="100">﴿ <span>لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ لِّمَن كَانَ يَرْجُو اللَّهَ وَالْيَوْمَ الْآخِرَ</span> ﴾<br><small style="color:rgba(255,255,255,.6);">— سورة الأحزاب: 21</small></p>
+    <div class="hero-badges" data-aos="fade-up" data-aos-delay="200">
+      <div class="hero-badge"><strong>23</strong><small>سنة النبوة</small></div>
+      <div class="hero-badge"><strong>27+</strong><small>غزوة ومعركة</small></div>
+      <div class="hero-badge"><strong>10</strong><small>مبشرون بالجنة</small></div>
+      <div class="hero-badge"><strong>11</strong><small>أم المؤمنين</small></div>
+      <div class="hero-badge"><strong>∞</strong><small>محبةً وشوقاً</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+<!-- TABS NAV -->
+<div class="main-tabs-wrapper">
+  <div class="container">
+    <ul class="nav nav-pills main-tabs"  id="sTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t1"><i class="fas fa-route me-2"></i>التسلسل الزمني</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t2"><i class="fas fa-seedling me-2"></i>الشمائل المحمدية</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t3_battle"><i class="fas fa-map-marked-alt me-2"></i>المعارك الفاصلة</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t4_quran"><i class="fas fa-quran me-2"></i>السيرة في القرآن</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t5_hadith"><i class="fas fa-scroll me-2"></i>منارات الوحي</button></li>
+    </ul>
+  </div>
+</div>
+<div class="tab-content pb-5">
+
+<!-- TAB 1: TIMELINE -->
+<div class="tab-pane fade show active" id="t1">
+  <div class="sec-head" data-aos="fade-up">
+    <div class="badge-tag">من المولد إلى الرفيق الأعلى</div>
+    <h2 class="amiri">التسلسل الزمني <span>للسيرة الطاهرة</span></h2>
+    <p>المحطات الكبرى في حياة النبي الكريم صلوات الله وسلامه عليه، مرتبةً ترتيباً تاريخياً تفاعلياً.</p>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="seerah-tl">
+
+    <div class="tl-row" data-aos="fade-right">
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">571م — مكة المكرمة</div><h3><i class="fas fa-star text-warning me-2"></i>المولد الشريف والنشأة الطاهرة</h3><p>وُلد النبي محمد ﷺ يتيماً بمكة المكرمة يوم الاثنين من ربيع الأول في عام الفيل. أرضعته حليمة السعدية في بني سعد، وكفله جده عبد المطلب ثم عمه أبو طالب. عُرف منذ شبابه بـ"الصادق الأمين"، واشتغل بالرعي والتجارة، وتزوج السيدة خديجة رضي الله عنها وهو ابن خمس وعشرين سنة.</p></div></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">المولد</span></div>
+      <div class="tl-card-wrap"></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-left">
+      <div class="tl-card-wrap"></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">610م</span></div>
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">610م — غار حراء</div><h3><i class="fas fa-book-reader text-warning me-2"></i>البعثة النبوية ونزول الوحي</h3><p>نزل جبريل عليه السلام في غار حراء بـ"اقرأ باسم ربك الذي خلق" وبدأ عهد الوحي. بدأت الدعوة سراً ثلاث سنوات ثم جهراً. عانى المسلمون الأوائل التعذيب والحصار في شعب أبي طالب ثلاث سنوات كاملة، وكان على رأسهم بلال وياسر وسمية وخباب وعمار.</p></div></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-right">
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">619م — عام الأحزان</div><h3><i class="fas fa-cloud text-warning me-2"></i>عام الحزن ووفاة خديجة وأبي طالب</h3><p>في عام واحد فقد النبي ﷺ زوجته الأولى وناصرته خديجة الكبرى، ثم عمه أبو طالب درعه القبلية. فقد أشد السند والنصرة في وقت واحد، حتى سُمي ذاك العام بـ"عام الحزن". ذهب إلى الطائف يبتغي النصرة فرُدَّ بالحجارة، ولم يجد أحداً يجيره حتى أجاره المطعم بن عدي.</p></div></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">619م</span></div>
+      <div class="tl-card-wrap"></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-left">
+      <div class="tl-card-wrap"></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">620م</span></div>
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">620م — تسليةٌ ربانية</div><h3><i class="fas fa-moon text-warning me-2"></i>الإسراء والمعراج</h3><p>بعد عام الأحزان وتهاطل الابتلاءات، أسرى الله بعبده من المسجد الحرام إلى المسجد الأقصى، ثم عُرج به إلى السماوات العُلى. كلّمه ربه تكليماً وأرسل عليه الصلاة والسلام عليه من الرفيق الأعلى وفُرضت الصلوات الخمس. معجزة كونية هي أعظم تشريف في تاريخ البشر.</p></div></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-right">
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">621-622م — بيعتا العقبة</div><h3><i class="fas fa-handshake text-warning me-2"></i>بيعتا العقبة الأولى والثانية</h3><p>في بيعة العقبة الأولى آمن به بضعة عشر من أهل يثرب وعاهدوه على التوحيد. ثم في الثانية جاءه سبعون رجلاً وامرأتان وبايعوه على المناصرة والدفاع، وقال لهم: "أنتم أصحابي وأنا منكم"، وكانا الأساس الحقيقي لقيام الدولة الإسلامية الأولى.</p></div></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">621م</span></div>
+      <div class="tl-card-wrap"></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-left">
+      <div class="tl-card-wrap"></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">1 هـ</span></div>
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">622م — 1 هجري</div><h3><i class="fas fa-walking text-warning me-2"></i>الهجرة المباركة وتأسيس الدولة</h3><p>خرج مع الصديق أبي بكر خلسةً ليلاً إلى يثرب التي أضاءت بقدومه وأصبحت المدينة المنورة. شيّد المسجد النبوي الجامع، وآخى بين المهاجرين والأنصار مؤاخاةً شهيرةً في التاريخ، وأصدر وثيقة المدينة أول دستور مكتوب في العالم ينظم العلاقة بين مكونات المجتمع الجديد.</p></div></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-right">
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">6 هـ — صلح الحديبية</div><h3><i class="fas fa-dove text-warning me-2"></i>صلح الحديبية — الفتح المبين</h3><p>خرج النبي ﷺ ومعه ألف وأربعمائة صحابي معتمرين، فصدهم المشركون. عقد صلحاً مع قريش على هدنة عشر سنوات بشروط ظاهرها إجحاف. لكن الله سمّاه "فتحاً مبيناً" لأنه أتاح الفرصة للدعوة وجاء بعده إسلام الآلاف وبيعة الرضوان تحت الشجرة.</p></div></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">6 هـ</span></div>
+      <div class="tl-card-wrap"></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-left">
+      <div class="tl-card-wrap"></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">8 هـ</span></div>
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">8 هـ — مكة المكرمة</div><h3><i class="fas fa-kaaba text-warning me-2"></i>الفتح الأعظم لمكة المكرمة</h3><p>دخل النبي ﷺ مكة فاتحاً منتصراً، مُطأطئَ الرأس شكراً وتواضعاً لله، يردد سورة الفتح. طاف بالبيت وحطّم الأصنام، ثم جمع أهل مكة وقال لهم: "يا معشر قريش، ما تظنون أني فاعلٌ بكم؟ اذهبوا فأنتم الطلقاء". كان فتحاً بلا سفك دماء يُعجز التاريخ عن مثيله.</p></div></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-right">
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">9 هـ — العسرة</div><h3><i class="fas fa-thermometer-full text-warning me-2"></i>غزوة تبوك — آخر الغزوات الكبرى</h3><p>خرج ﷺ في حر الصيف الشديد بثلاثين ألف مقاتل لمواجهة الروم البيزنطيين المحتشدين على الحدود الشامية. سُمي جيشه بـ"جيش العسرة" لشدة الضائقة الاقتصادية. بلغ تبوك فلم يلقَ قتالاً وعقد معاهدات سلام مع أهل دَوْمة الجندل وأيلة، ثم عاد منتصراً دون قتال.</p></div></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">9 هـ</span></div>
+      <div class="tl-card-wrap"></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-left">
+      <div class="tl-card-wrap"></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">10 هـ</span></div>
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">10 هـ — حجة الوداع</div><h3><i class="fas fa-people-arrows text-warning me-2"></i>حجة الوداع وخطبة الحقوق</h3><p>حج النبي ﷺ حجته الوحيدة وألقى خطبة الوداع الخالدة أمام أكثر من مئة ألف صحابي: "أيها الناس، إن دماءكم وأموالكم وأعراضكم حرام..." — أول ميثاق لحقوق الإنسان في التاريخ. ونزلت: ﴿الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ﴾.</p></div></div>
+    </div>
+
+    <div class="tl-row" data-aos="fade-right">
+      <div class="tl-card-wrap"><div class="tl-card"><div class="tl-tag">11 هـ — الرحيل الأخير</div><h3><i class="fas fa-moon text-warning me-2"></i>الانتقال إلى الرفيق الأعلى</h3><p>بعد مرض دام أيانا، صعدت روحه الطاهرة ﷺ إلى بارئها ضحنى يوم الاثنين 12 ربيع الأول، في حجرة زوجته عائشة رضي الله عنها التي وضع رأسه على صدرها لحظة الوفاة، ودُفن في مكانه تحت الحجرة الشريفة ملاصقةً للمسجد النبوي.</p></div></div>
+      <div class="tl-center"><span class="tl-dot"></span><span class="tl-year">11 هـ</span></div>
+      <div class="tl-card-wrap"></div>
+    </div>
+
+  </div>
+</div><!-- end t1 -->
+
+<!-- TAB 2: MORALS (SHAMA'IL) -->
+<div class="tab-pane fade" id="t2">
+  <div class="sec-head" data-aos="fade-up">
+    <div class="badge-tag">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</div>
+    <h2 class="amiri">الشمائل <span>المحمدية</span></h2>
+    <p>صفاته الخلقية والخُلقية ومعجزاته الحسية الشريفة صلوات الله وسلامه عليه اجمعين</p>
+    <div class="gold-divider"></div>
+  </div>
+
+  <div class="bg-white rounded-4 shadow-lg p-5 mb-5 border-start border-5 border-primary" data-aos="fade-up">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <h3 class="amiri fw-bold text-dark mb-3"><i class="fas fa-quote-right text-primary me-2"></i>كَانَ خُلُقُهُ الْقُرْآن</h3>
+        <p class="fs-4 text-muted lh-xl mb-0">سئلت السيدة عائشة رضي الله عنها عن خُلُق النبي ﷺ فقالت: "كان خلقه القرآن. أما تقرأ القرآن؟ قول الله: ﴿وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ﴾." — رواه مسلم. فكل خُلق حسن أمر به القرآن كان النبي ﷺ ذروته وتجسيده الحي والأتم.</p>
+      </div>
+      <div class="col-lg-4 text-center"><i class="fas fa-sun fa-6x text-warning" style="filter:drop-shadow(0 0 25px rgba(212,175,55,.6));"></i></div>
+    </div>
+  </div>
+
+  <h3 class="amiri fw-bold text-dark mb-4 mt-4 text-center fs-2" data-aos="fade-up">أولاً: الصفة الخَلقية (الوصف الجسدي)</h3>
+  <div class="bg-white rounded-4 p-4 mb-5 shadow" data-aos="fade-up">
+    <p class="fs-5 text-muted lh-xl text-center amiri mb-0">قالت أم معبد في وصفها للنبي ﷺ: <strong class="text-dark">"ظاهر الوضاءة، أبلج الوجه، حسن الخَلق، لم تعبه نُحلة، ولم تُزرِ به صُعلة، جليٌّ مُشرب، في عينيه دعج، وفي أشفاره وطف، في صوته صحل، أحور أكحل، أزج، أقرن، شديد سواد الشعر... أبهى الناس وأجملهم من بعيد، وأحلاهم وأجملهم عند الدنو والمقاربة."</strong></p>
+  </div>
+
+  <h3 class="amiri fw-bold text-dark mb-4 text-center fs-2" data-aos="fade-up">ثانياً: الصفات الخُلقية</h3>
+  <div class="row g-4 mb-5">
+    <div class="col-lg-6 col-md-6" data-aos="fade-up"><div class="moral-card"><div class="moral-icon"><i class="fas fa-hand-holding-heart"></i></div><h3 class="amiri fw-bold mb-3">الرحمة الشاملة</h3><p class="text-muted fs-5">﴿وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ﴾. رحمته شملت الأعداء كفتح مكة، والأطفال، والحيوانات، وحتى الجماد كحنين جذع النخلة.</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="50"><div class="moral-card"><div class="moral-icon"><i class="fas fa-balance-scale"></i></div><h3 class="amiri fw-bold mb-3">العدل المطلق</h3><p class="text-muted fs-5">"لو أن فاطمة بنت محمد سرقت لقطعت يدها." لا محاباة في الحق ولا ظلم، وكان أعدل حاكم وقاضٍ عرفه التاريخ.</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up"><div class="moral-card"><div class="moral-icon"><i class="fas fa-heart"></i></div><h3 class="amiri fw-bold mb-3">التواضع والبشاشة</h3><p class="text-muted fs-5">كان يخيط ثوبه ويحلب شاته ويجالس الفقراء. يدخل الغريب المسجد فلا يعرفه من بينهم. كان تبسمه في وجه كل من يلقاه صدقةً.</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="50"><div class="moral-card"><div class="moral-icon"><i class="fas fa-shield-alt"></i></div><h3 class="amiri fw-bold mb-3">الشجاعة الثابتة</h3><p class="text-muted fs-5">في حنين حين ولّى الناس ثبت وحده على بغلته ينادي: "أنا النبي لا كذب". كانت الصحابة تحتمي به أشد ما يكون الكفاح.</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up"><div class="moral-card"><div class="moral-icon"><i class="fas fa-hands-helping"></i></div><h3 class="amiri fw-bold mb-3">الكرم والسخاء</h3><p class="text-muted fs-5">كان أجود الناس، لم يرد سائلاً قط. قال جابر: "ما سُئل ﷺ شيئاً قط فقال لا." وكان يعطي عطاء من لا يخشى الفقر.</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="50"><div class="moral-card"><div class="moral-icon"><i class="fas fa-laugh-beam"></i></div><h3 class="amiri fw-bold mb-3">المزاح والمداعبة</h3><p class="text-muted fs-5">كان يمزح ولا يقول إلا حقاً. قال للعجوز: "لا تدخل العجائز الجنة" ثم أراها: يدخلن وهن شابات بنص القرآن. وناداه ابن عمر "يا رسول الله" فقال: هدأ يا أبا عبد الرحمن!</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up"><div class="moral-card"><div class="moral-icon"><i class="fas fa-pray"></i></div><h3 class="amiri fw-bold mb-3">العبادة والزهد</h3><p class="text-muted fs-5">كان يقوم الليل حتى تتفطر قدماه، فتقول له عائشة: قد غفر الله لك ما تقدم من ذنبك وما تأخر. فيقول: "أفلا أكون عبداً شكوراً؟"</p></div></div>
+    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="50"><div class="moral-card"><div class="moral-icon"><i class="fas fa-user-friends"></i></div><h3 class="amiri fw-bold mb-3">الوفاء والحياء</h3><p class="text-muted fs-5">كان أشد حياءً من العذراء في خدرها. وكان أوفى الناس بالعهود؛ ظل يكرم صواحب خديجة بعد وفاتها تكريماً لعهدها.</p></div></div>
+  </div>
+
+  <h3 class="amiri fw-bold text-dark mb-4 text-center fs-2" data-aos="fade-up">ثالثاً: المعجزات الحسية الكبرى</h3>
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in"><div class="bayt-card"><div class="bayt-icon"><i class="fas fa-moon"></i></div><h4 class="amiri fw-bold text-dark">انشقاق القمر</h4><p class="text-muted">طلب المشركون آيةً فانشق القمر فلقتين بإذن الله. قال تعالى: ﴿اقْتَرَبَتِ السَّاعَةُ وَانشَقَّ الْقَمَر﴾.</p></div></div>
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="50"><div class="bayt-card"><div class="bayt-icon"><i class="fas fa-tree"></i></div><h4 class="amiri fw-bold text-dark">حنين الجذع</h4><p class="text-muted">لما انتقل ﷺ من جذع نخلة كان يخطب عليه إلى المنبر، حنّ الجذعُ حنين الولد وبكى الصحابة.</p></div></div>
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100"><div class="bayt-card"><div class="bayt-icon"><i class="fas fa-faucet"></i></div><h4 class="amiri fw-bold text-dark">نبع الماء من أصابعه</h4><p class="text-muted">في الحديبية أخرج يده من الإناء فانبجس الماء من بين أصابعه وشرب منه الجيش كله.</p></div></div>
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="150"><div class="bayt-card"><div class="bayt-icon"><i class="fas fa-bread-slice"></i></div><h4 class="amiri fw-bold text-dark">تكثير الطعام</h4><p class="text-muted">طعام جابر اليسير أشبع جيش الخندق كله. وطعام أبي هريرة أكل منه أهل الصُفّة جميعاً.</p></div></div>
+  </div>
+</div><!-- end t2 -->
+
+
+
+<!-- TAB 4: BATTLES -->
+<div class="tab-pane fade" id="t3_battle">
+  <div class="sec-head" data-aos="fade-up">
+    <div class="badge-tag">أيام الله الخالدة</div>
+    <h2 class="amiri">المعارك <span>الفاصلة</span></h2>
+    <p>التصوير التكتيكي التفاعلي لأهم الغزوات النبوية الكريمة، مع الإحصائيات الدقيقة والدروس العميقة.</p>
+    <div class="gold-divider"></div>
+  </div>
+  
+  <ul class="nav nav-pills justify-content-center flex-wrap b-nav-pills" id="bNav" data-aos="fade-up">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#badr"><i class="fas fa-flag"></i>بدر الكبرى</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#uhud"><i class="fas fa-mountain"></i>أُحُد</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#hamra"><i class="fas fa-running"></i>حمراء الأسد</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#khnq"><i class="fas fa-shield-alt"></i>الخندق</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#quraiza"><i class="fas fa-university"></i>بني قريظة</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#mustaliq"><i class="fas fa-water"></i>المصطلق</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#khaibar"><i class="fas fa-fort-awesome"></i>خيبر</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#mutah"><i class="fas fa-khanda"></i>مؤتة</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#makkah"><i class="fas fa-kaaba"></i>فتح مكة</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#hunain"><i class="fas fa-archway"></i>حنين</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabuk"><i class="fas fa-sun"></i>تبوك</button></li>
+  </ul>
+  
+  <div class="tab-content">
+
+    <!-- BADR -->
+    <div class="tab-pane fade show active" id="badr">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">غزوة بدر الكبرى — 2 هـ</div>
+            <div class="b-label" style="top:12%;left:10%;"><i class="fas fa-mountain text-warning me-1"></i>العدوة القصوى</div>
+            <div class="b-label" style="bottom:12%;right:10%;"><i class="fas fa-mountain text-warning me-1"></i>العدوة الدنيا</div>
+            <div class="b-label" style="top:50%;left:50%;transform:translate(-50%,-50%);color:#0284c7;background:rgba(255,255,255,0.9);"><i class="fas fa-tint fa-2x d-block mb-1 text-center"></i>آبار بدر</div>
+            <div class="b-team bt-m" style="bottom:25%;right:20%;" title="313 مقاتل، 2 فرس، 70 بعير">
+              جيش المسلمين (313)<span class="bt-leader">القيادة: النبي ﷺ</span>
+            </div>
+            <div class="b-team bt-e" style="top:20%;left:20%;" title="1000 مقاتل، 100 فرس، 700 بعير">
+              قريش (1000)<span class="bt-leader">القيادة: أبو جهل</span>
+            </div>
+            <div class="pulse-dot" style="top:35%;left:35%;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill mb-3 fs-6">يوم الفرقان</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">الانتصار الأول الحاسم</h3>
+            <p class="fs-5 text-muted lh-xl">قصد المسلمون اعتراض قافلة قريش، فخرجت قريش بجيش جرار لنصرتها. بفضل الثبات والتوكل والتأييد الإلهي بالملائكة، تحقق نصر مدوٍ قُتل فيه طواغيت الشرك كأبي جهل.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">14</span><span class="b-stat-title">شهيداً مسلماً</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#dc2626;">70</span><span class="b-stat-title">قتيلاً من قريش</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#d97706;">70</span><span class="b-stat-title">أسيراً مشركاً</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(212,175,55,.1);">
+              <h5 class="fw-bold amiri text-dark"><i class="fas fa-lightbulb text-warning me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-muted">الشورى أساس النجاح (كمشورة الحباب بن المنذر في التمركز عند الآبار)، والنصر من عند الله لا يعتمد على الكثرة بل على اليقين.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UHUD -->
+    <div class="tab-pane fade" id="uhud">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">غزوة أُحُد — 3 هـ</div>
+            <div class="b-label" style="top:10%;left:10%;font-size:1rem;background:transparent;border:none;"><i class="fas fa-mountain fa-4x text-dark opacity-50 d-block mb-1"></i>جبل أُحُد</div>
+            <div class="b-label" style="top:45%;left:40%;background:#f59e0b;color:#fff;border-color:#b45309;"><i class="fas fa-bullseye me-1"></i>جبل الرماة</div>
+            <div class="b-team bt-m" style="top:30%;left:25%;" title="700 مقاتل">
+              جيش المسلمين (700)<span class="bt-leader">القيادة: النبي ﷺ</span>
+            </div>
+            <div class="b-team bt-e" style="bottom:20%;right:15%;" title="3000 مقاتل، فرقة خيالة للالتفاف">
+              قريش (3000)<span class="bt-leader">القيادة: أبو سفيان</span>
+            </div>
+            <div class="pulse-dot" style="top:50%;left:50%;background:radial-gradient(circle, rgba(202, 138, 4, 0.6) 0%, transparent 70%);"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-danger text-white px-3 py-2 rounded-pill mb-3 fs-6">سنة التمحيص</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">الابتلاء الإلهي العظيم</h3>
+            <p class="fs-5 text-muted lh-xl">أرادت قريش الثأر. أقام النبي ﷺ 50 رامياً لحماية الظهر. لمّا لاحت بوادر النصر نزل بعضهم لجمع الغنائم، فالتفّ خالد بن الوليد وانقلبت الموازين واستشهد كبار الصحابة.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">70</span><span class="b-stat-title">شهيداً (منهم حمزة)</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#dc2626;">22</span><span class="b-stat-title">قتيلاً من العدو</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#d97706;">1</span><span class="b-stat-title">أمر مخالف أدى للهزيمة</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(220,38,38,.1);">
+              <h5 class="fw-bold amiri text-danger"><i class="fas fa-exclamation-triangle me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">خطورة عصيان أوامر القائد العسكري مهما كانت المغريات ظاهرة، والانضباط التام شرط أساسي للنجاح الدائم.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAMRA AL ASAD -->
+    <div class="tab-pane fade" id="hamra">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">حمراء الأسد — 3 هـ</div>
+            <div class="b-label" style="top:15%;left:15%;color:#be123c;border-color:#be123c;"><i class="fas fa-horse-head me-1"></i>ملاحقة فلول قريش</div>
+            <div class="b-team bt-m" style="top:40%;left:50%;transform:translateX(-50%);">
+              المسلمون (الجرحى فقط)<span class="bt-leader">إرادة لا تنكسر</span>
+            </div>
+            <div class="b-label" style="bottom:15%;right:15%;"><i class="fas fa-fire me-1"></i>إشعال 500 نار للترهيب</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-danger text-white px-3 py-2 rounded-pill mb-3 fs-6">استعادة الهيبة</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">غزوة الجراح والمبادأة</h3>
+            <p class="fs-5 text-muted lh-xl">في اليوم التالي لأُحُد، أمر النبي ﷺ الجرحى فقط بملاحقة قريش لمنعهم من التفكير في العودة للمدينة. أمر بإشعال مئات النيران ليلاً، فألقى الله الرعب في قلوب المشركين وفرّوا إلى مكة.</p>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(190,18,60,.1);">
+              <h5 class="fw-bold amiri text-danger"><i class="fas fa-brain me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الحرب النفسية والمبادأة السريعة كفيلة بتحجيم نشوة العدو المنتصر وتحويل الهزيمة العسكرية إلى مكسب معنوي وسياسي.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KHANDAQ -->
+    <div class="tab-pane fade" id="khnq">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">غزوة الخندق (الأحزاب) — 5 هـ</div>
+            <div class="b-label" style="top:25%;left:20%;background:#fcd34d;padding:6px 20px;color:#0b192c;border:2px dashed #b45309;"><i class="fas fa-ruler-horizontal me-1"></i>الخنـدق الحصين</div>
+            <div class="b-team bt-m" style="top:55%;left:50%;transform:translateX(-50%);">
+              المدينة المنورة (3000)<span class="bt-leader">دفاع مستميت</span>
+            </div>
+            <div class="b-team bt-e" style="top:8%;left:50%;transform:translateX(-50%);">
+              الأحزاب (10,000+)<span class="bt-leader">تحالف المشركين واليهود</span>
+            </div>
+            <div class="b-label" style="bottom:20%;right:15%;color:#b91c1c;border-color:#b91c1c;"><i class="fas fa-skull-crossbones me-1"></i>غدر بني قريظة من الداخل</div>
+            <div class="pulse-dot" style="top:15%;left:50%;width:200px;height:60px;border-radius:30px;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fs-6">جنود السماء</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">حصار المدينة وزلزال النفوس</h3>
+            <p class="fs-5 text-muted lh-xl">تجمعت قبائل العرب لاستئصال الإسلام. باقتراح سلمان الفارسي، حُفر خندق غير مسبوق في العرب لحماية المدينة. دام الحصار شهراً في برد شديد، حتى أرسل الله ريحاً عاتية وملائكة اقتلعت خيام الأحزاب وشتتتهم.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">30</span><span class="b-stat-title">يوماً من الحصار</span></div>
+              <div class="b-stat-box"><span class="b-stat-num">6</span><span class="b-stat-title">شهداء فقط</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#0284c7;">10k</span><span class="b-stat-title">عدو مهزوم بالريح</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(8,145,178,.1);">
+              <h5 class="fw-bold amiri text-info-emphasis"><i class="fas fa-wind me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الابتكار في التكتيكات العسكرية (الخندق) يربك أقوى التحالفات، والنصر الرباني يأتي بعد بلوغ القلوب الحناجر والصبر المطلق.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QURAIZA -->
+    <div class="tab-pane fade" id="quraiza">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">بني قريظة — 5 هـ</div>
+            <div class="b-label" style="top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.2rem;background:#fff;border:2px solid #991b1b;"><i class="fas fa-university fa-3x d-block mb-1 text-center" style="color:#991b1b;"></i>حصون بني قريظة</div>
+            <div class="b-team bt-m" style="top:20%;right:15%;">
+              جيش المسلمين<span class="bt-leader">محاصرة الخونة</span>
+            </div>
+            <div class="b-label" style="bottom:15%;left:15%;color:#991b1b;"><i class="fas fa-clock me-1"></i>حصار 25 يوماً</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-danger text-white px-3 py-2 rounded-pill mb-3 fs-6">القصاص العادل</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">جزاء الخيانة العظمى</h3>
+            <p class="fs-5 text-muted lh-xl">فور انتهاء غزوة الخندق، نزل جبريل يأمر النبي ﷺ بالتوجه لمحاسبة يهود بني قريظة الذين نقضوا العهد وتحالفوا مع العدو. حوصروا حتى استسلموا لحكم سعد بن معاذ الذي حكم بإعدام المقاتلة لحماية الأمن القومي للمدينة.</p>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(153,27,27,.1);">
+              <h5 class="fw-bold amiri text-danger"><i class="fas fa-balance-scale-right me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الخيانة العظمى من الداخل (الطابور الخامس) أشد خطراً من العدو الخارجي، والتساهل معها يؤدي لانهيار الدول.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSTALIQ -->
+    <div class="tab-pane fade" id="mustaliq">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">بني المصطلق — 6 هـ</div>
+            <div class="b-label" style="top:15%;right:15%;color:#064e3b;"><i class="fas fa-water me-1"></i>ماء المريسيع</div>
+            <div class="b-team bt-m" style="top:50%;left:50%;transform:translate(-50%,-50%);">
+              المسلمون<span class="bt-leader">مباغتة عسكرية سريعة</span>
+            </div>
+            <div class="b-label" style="bottom:20%;left:20%;color:#065f46;background:rgba(255,255,255,0.9);"><i class="fas fa-masks-theater me-1"></i>بروز فتنة المنافقين وحادثة الإفك</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-success text-white px-3 py-2 rounded-pill mb-3 fs-6">كشف الأقنعة</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">غزوة المريسيع وبراءة العفيفة</h3>
+            <p class="fs-5 text-muted lh-xl">انتصر المسلمون فيها عسكرياً بسرعة مباغتة، لكن خطورتها كانت في استغلال المنافقين بقيادة ابن أبي سلول للحدث لبث الفتن العرقية ونشر "حادثة الإفك" لضرب بيت النبوة، فتدخل القرآن لتبرئة أم المؤمنين عائشة ووضع قوانين الشائعات.</p>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(5,150,105,.1);">
+              <h5 class="fw-bold amiri text-success-emphasis"><i class="fas fa-shield-virus me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الشائعات والحرب الإعلامية الموجهة للقيادة هي السلاح الأخطر للمنافقين عند عجزهم العسكري، وتمحيص الصف الداخلي ضرورة مستمرة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KHAIBAR -->
+    <div class="tab-pane fade" id="khaibar">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">خيبر — 7 هـ</div>
+            <div class="b-label" style="top:40%;left:40%;background:#fff;"><i class="fas fa-fortified-castle fa-4x text-warning d-block mb-1 text-center"></i>حصن القموص المنيع</div>
+            <div class="b-label" style="top:15%;left:15%;color:#92400e;"><i class="fas fa-link me-1"></i>سلسلة حصون يهود خيبر</div>
+            <div class="b-team bt-m" style="bottom:15%;right:15%;">
+              فاتح الحصن: علي بن أبي طالب <i class="fas fa-hammer ms-1 text-warning"></i>
+            </div>
+            <div class="pulse-dot" style="top:45%;left:48%;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fs-6">إنهاء النفوذ المالي</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">اقتحام الحصون المنيعة</h3>
+            <p class="fs-5 text-muted lh-xl">بعد صلح الحديبية، توجه النبي ﷺ لتأمين الجبهة الداخلية من مركز المؤامرات المتبقي (خيبر). تم اقتحام الحصون واحداً تلو الآخر حتى استعصى حصن القموص، فأعطى الراية لعلي بن أبي طالب الذي فتحه بشجاعة منقطعة النظير.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">1400</span><span class="b-stat-title">مقاتل مسلم</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#b45309;">8</span><span class="b-stat-title">حصون ضخمة سقطت</span></div>
+              <div class="b-stat-box"><span class="b-stat-num">15</span><span class="b-stat-title">شهيداً</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(245,158,11,.1);">
+              <h5 class="fw-bold amiri text-warning-emphasis"><i class="fas fa-key me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">القدرة على خوض حروب الحصار الطويلة والمستنزفة، وأهمية تحييد القواعد العسكرية والاقتصادية التي تدعم أعداء الدولة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUTAH -->
+    <div class="tab-pane fade" id="mutah">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">مؤتة — 8 هـ</div>
+            <div class="b-label" style="top:15%;left:15%;color:#0369a1;background:#fff;"><i class="fas fa-globe me-1"></i>أول مواجهة مع إمبراطورية الروم</div>
+            <div class="b-team bt-m" style="bottom:25%;right:15%;" title="3 قادة استشهدوا تباعاً">
+              المسلمون (3000)<span class="bt-leader">3 قادة شهداء</span>
+            </div>
+            <div class="b-team bt-e" style="top:25%;left:15%;" title="جيش جرار مجهز بالكامل">
+              الروم والغساسنة (200,000)<span class="bt-leader">القيادة: هرقل/شرحبيل</span>
+            </div>
+            <div class="b-label" style="top:50%;left:50%;transform:translate(-50%,-50%);font-weight:900;font-size:1.5rem;color:rgba(239,68,68,.8);background:transparent;border:none;">انسحاب تكتيكي مذهل</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill mb-3 fs-6">سيف الله المسلول</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">الاصطدام بالقوى العظمى</h3>
+            <p class="fs-5 text-muted lh-xl">أُرسل الجيش تأديباً لقتل سفير رسول الله. استشهد القادة الثلاثة الذين عينهم النبي (زيد، جعفر، ابن رواحة). تسلم خالد بن الوليد الراية، وبحيلة عسكرية عبقرية أعاد تشكيل الجيش ليلاً وأوهم الروم بوصول إمدادات، فانسحب بجيشه بسلام دون خسائر إضافية.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">3k vs 200k</span><span class="b-stat-title">فارق العدد المخيف</span></div>
+              <div class="b-stat-box"><span class="b-stat-num">12</span><span class="b-stat-title">شهيداً فقط!</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(3,105,161,.1);">
+              <h5 class="fw-bold amiri text-primary-emphasis"><i class="fas fa-chess-knight me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الانسحاب التكتيكي للحفاظ على الأرواح يُعد انتصاراً عسكرياً باهراً إذا تم أمام جيش يفوقك بسبعين ضعفاً ولم تُكسر شوكتك.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAKKAH -->
+    <div class="tab-pane fade" id="makkah">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">فتح مكة — 8 هـ</div>
+            <div class="b-label" style="top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;background:transparent;border:none;"><i class="fas fa-kaaba fa-5x d-block mb-2" style="color:var(--dark);filter:drop-shadow(0 10px 15px rgba(0,0,0,.3));"></i><strong class="fs-5 text-dark">الكعبة المشرفة</strong></div>
+            <div class="b-team bt-m" style="top:15%;right:10%;">
+              جيش الفتح (10,000)<span class="bt-leader">القيادة: النبي ﷺ</span>
+            </div>
+            <div class="b-label" style="bottom:15%;left:15%;background:#fff;"><i class="fas fa-arrows-alt me-1"></i>الدخول من 4 محاور استراتيجية</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-3 fs-6">الفتح الأعظم</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">تتويج المسيرة.. اذهبوا فأنتم الطلقاء</h3>
+            <p class="fs-5 text-muted lh-xl">نقضت قريش صلح الحديبية، فزحف النبي ﷺ بعشرة آلاف مقاتل. دخل مكة مطأطئ الرأس تواضعاً لله، وحطم 360 صنماً حول الكعبة. عفا عن أهل مكة بكلمته الخالدة الدالة على عظمة الإسلام ورحمته المطلقة.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">10k</span><span class="b-stat-title">مقاتل فاتح</span></div>
+              <div class="b-stat-box"><span class="b-stat-num">360</span><span class="b-stat-title">صنماً دُمرت</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#10b981;">0</span><span class="b-stat-title">قطرة دم (في المعظم)</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(15,23,42,.05);">
+              <h5 class="fw-bold amiri text-dark"><i class="fas fa-dove text-success me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-muted">الانتصار الأخلاقي والعفو عند المقدرة التامة هو ما يؤسس الحضارات ويفتح القلوب قبل المدن (دخل الناس في دين الله أفواجاً).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HUNAIN -->
+    <div class="tab-pane fade" id="hunain">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">غزوة حنين — 8 هـ</div>
+            <div class="b-label" style="top:15%;left:15%;"><i class="fas fa-mountain me-1"></i>وادي حنين المتعرج</div>
+            <div class="b-team bt-e" style="top:25%;left:15%;background:rgba(69, 10, 10, 0.9);">
+              هوازن وثقيف<span class="bt-leader">كمين النبال الكثيف</span>
+            </div>
+            <div class="b-team bt-m" style="bottom:25%;right:15%;">
+              12,000 مسلم<span class="bt-leader">النبي ﷺ يثبت منفرداً</span>
+            </div>
+            <div class="pulse-dot" style="top:45%;left:45%;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-secondary text-white px-3 py-2 rounded-pill mb-3 fs-6">اختبار الغرور</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">الثبات في أحلك اللحظات</h3>
+            <p class="fs-5 text-muted lh-xl">بعد فتح مكة، خرج المسلمون بجيش ضخم لأول مرة (12 ألفاً) فاغتروا بكثرتهم. تعرضوا لكمين مميت في الوادي فانهزموا وتفرقوا. وقف النبي ﷺ وحيداً شامخاً ينادي بثبات أسطوري، فعاد الصحابة واصطفوا وانتصروا.</p>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(100,116,139,.1);">
+              <h5 class="fw-bold amiri text-secondary-emphasis"><i class="fas fa-hand-paper me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الإعجاب بالكثرة والغرور العسكري هو أولى خطوات الهزيمة المؤكدة (وَيَوْمَ حُنَيْنٍ إِذْ أَعْجَبَتْكُمْ كَثْرَتُكُمْ)، وثبات القائد في الأزمات هو صمام الأمان للجيش.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABUK -->
+    <div class="tab-pane fade" id="tabuk">
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="battle-map">
+            <div class="b-badge">غزوة تبوك — 9 هـ</div>
+            <div class="b-label" style="top:15%;right:15%;color:#c2410c;border-color:#c2410c;"><i class="fas fa-sun me-1"></i>حرّ شديد ومسافة شاسعة</div>
+            <div class="b-team bt-m" style="top:45%;left:50%;transform:translate(-50%,-50%);">
+              جيش العسرة (30,000)<span class="bt-leader">أضخم حشد إسلامي</span>
+            </div>
+            <div class="b-label" style="bottom:15%;left:15%;background:#fff;"><i class="fas fa-map-marked-alt me-1"></i>الحدود الشمالية مع الروم</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="battle-info-card">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fs-6">جيش العسرة</span>
+            <h3 class="amiri fw-bold text-dark mb-4 fs-1">التمكين الأخير والنصر بالرعب</h3>
+            <p class="fs-5 text-muted lh-xl">آخر غزوات الرسول ﷺ. جاءت في وقت جدب وحر شديد ومسافة بعيدة جداً لمواجهة إمبراطورية الروم. تسابق الصحابة بالتبرع لتجهيز الجيش. لما وصلوا تبوك، ألقى الله الرعب في قلوب الروم فتفرقوا دون قتال.</p>
+            <div class="b-stats-grid">
+              <div class="b-stat-box"><span class="b-stat-num">30,000</span><span class="b-stat-title">مقاتل مسلم</span></div>
+              <div class="b-stat-box"><span class="b-stat-num">10,000</span><span class="b-stat-title">فرس للفرسان</span></div>
+              <div class="b-stat-box"><span class="b-stat-num" style="color:#10b981;">0</span><span class="b-stat-title">قتال (نصر بالرعب)</span></div>
+            </div>
+            <div class="alert mt-4 rounded-4 border-0" style="background:rgba(234,88,12,.1);">
+              <h5 class="fw-bold amiri text-warning-emphasis"><i class="fas fa-star me-2"></i>الدرس الاستراتيجي:</h5>
+              <p class="mb-0 text-dark">الصدق مع الله في الاستجابة للنفير العام رغم الظروف القاسية (العسرة) يورث الهيبة في قلوب الأعداء، ويدفعهم للانسحاب بلا مواجهة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end t3_battle -->
+
+
+
+<!-- TAB 6: QURAN -->
+<div class="tab-pane fade" id="t4_quran">
+  <div class="sec-head" data-aos="fade-up">
+    <div class="badge-tag">القرآن ومرايا السيرة</div>
+    <h2 class="amiri">السيرة النبوية <span>في القرآن الكريم</span></h2>
+    <p>ارتبطت أحداث السيرة ارتباطاً عضوياً بنزول القرآن الكريم، حتى صار القرآن المرجع الأول لفهم السيرة</p>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="row g-4">
+    <!-- البعثة -->
+    <div class="col-lg-6" data-aos="fade-up">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-book-open"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">بدء الوحي والبعثة</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة العلق: 1-5</span>
+          </div>
+          <div class="q-ayah">﴿ اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ (1) خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ ﴾</div>
+          <p class="text-muted mb-0">أول ما نزل من القرآن الكريم في غار حراء، إيذاناً ببدء الرسالة الخاتمة التي أخرجت البشرية من الظلمات إلى النور.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- الإسراء والمعراج -->
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-moon"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">الإسراء والمعراج</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة الإسراء: 1</span>
+          </div>
+          <div class="q-ayah">﴿ سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى ﴾</div>
+          <p class="text-muted mb-0">تخليد لرحلة الإسراء التي جاءت تسلية لرسول الله ﷺ بعد عام الحزن، وتأكيداً على ربط المسجد الحرام بالمسجد الأقصى.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الهجرة -->
+    <div class="col-lg-6" data-aos="fade-up">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-walking"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">الهجرة النبوية</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة التوبة: 40</span>
+          </div>
+          <div class="q-ayah">﴿ إِذْ أَخْرَجَهُ الَّذِينَ كَفَرُوا ثَانِيَ اثْنَيْنِ إِذْ هُمَا فِي الْغَارِ إِذْ يَقُولُ لِصَاحِبِهِ لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا ﴾</div>
+          <p class="text-muted mb-0">وصف دقيق للحظات العصيبة في غار ثور، وبيان لعناية الله وحفظه لنبيه وصاحبه أبي بكر الصديق.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- غزوة بدر -->
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-flag"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">غزوة بدر الكبرى</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة الأنفال: 17</span>
+          </div>
+          <div class="q-ayah">﴿ وَمَا رَمَيْتَ إِذْ رَمَيْتَ وَلَٰكِنَّ اللَّهَ رَمَىٰ ۚ وَلِيُبْلِيَ الْمُؤْمِنِينَ مِنْهُ بَلَاءً حَسَنًا ﴾</div>
+          <p class="text-muted mb-0">سورة الأنفال هي سورة بدر، وثقت أحداث المعركة وأكدت أن النصر المحقق كان بتدبير إلهي مباشر وتأييد من الملائكة.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- غزوة أحد -->
+    <div class="col-lg-6" data-aos="fade-up">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-mountain"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">غزوة أُحُد</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة آل عمران: 139</span>
+          </div>
+          <div class="q-ayah">﴿ وَلَا تَهِنُوا وَلَا تَحْزَنُوا وَأَنتُمُ الْأَعْلَوْنَ إِن كُنتُم مِّؤْمِنِينَ ﴾</div>
+          <p class="text-muted mb-0">نزلت آيات آل عمران تواسي المؤمنين بعد الجراح التي أصابتهم، وتبين سنن الله في النصر والهزيمة والتمحيص.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- غزوة الخندق -->
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">غزوة الخندق (الأحزاب)</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة الأحزاب: 9</span>
+          </div>
+          <div class="q-ayah">﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ إِذْ جَاءَتْكُمْ جُنُودٌ فَأَرْسَلْنَا عَلَيْهِمْ رِيحًا ﴾</div>
+          <p class="text-muted mb-0">صورت السورة مشهد الزلزال النفسي وحصار الأحزاب، ثم التدخل الإلهي بإرسال الريح والملائكة لهزيمتهم.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- صلح الحديبية -->
+    <div class="col-lg-6" data-aos="fade-up">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-dove"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">صلح الحديبية</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة الفتح: 1</span>
+          </div>
+          <div class="q-ayah">﴿ إِنَّا فَتَحْنَا لَكَ فَتْحًا مُّبِينًا (1) لِّيَغْفِرَ لَكَ اللَّهُ مَا تَقَدَّمَ مِن ذَنبِكَ وَمَا تَأَخَّرَ ﴾</div>
+          <p class="text-muted mb-0">رغم ظاهر الصلح الذي بدا مجحفاً، سماه القرآن "فتحاً مبيناً" لأنه مهد لانتشار الإسلام ودخول الناس فيه أفواجاً.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- حجة الوداع -->
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="quran-seerah-card">
+        <div class="q-icon-wrap"><i class="fas fa-kaaba"></i></div>
+        <div class="q-content">
+          <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <h3 class="amiri text-dark mb-0">حجة الوداع</h3>
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">سورة المائدة: 3</span>
+          </div>
+          <div class="q-ayah">﴿ الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي وَرَضِيتُ لَكُمُ الْإِسْلَامَ دِينًا ﴾</div>
+          <p class="text-muted mb-0">الآية التي أبكت عمر بن الخطاب رضي الله عنه إدراكاً منه لاقتراب أجل النبي ﷺ بعد أن اكتملت الرسالة وتم البلاغ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end t6 -->
+
+<!-- TAB 7: HADITH LANDMARKS -->
+<div class="tab-pane fade" id="t5_hadith">
+  <div class="sec-head" data-aos="fade-up">
+    <div class="badge-tag">من الوحي المشرق</div>
+    <h2 class="amiri">منارات <span>الوحي</span></h2>
+    <p>أبرز الأحاديث النبوية المتعلقة بالسيرة الشريفة وأحداثها الكبرى</p>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="row g-4">
+    <div class="col-12" data-aos="fade-up"><div class="hadith-card"><p class="hadith-text">"كان أول ما بُدئ به رسول الله ﷺ من الوحي الرؤيا الصادقة في النوم، فكان لا يرى رؤيا إلا جاءت مثل فَلَق الصبح"</p><div class="hadith-source mt-3">رواه البخاري ومسلم — حديث بدء الوحي الشريف</div></div></div>
+    <div class="col-12" data-aos="fade-up"><div class="hadith-card"><p class="hadith-text">"اللهم إن قريشاً أخذتني وأذلتني وكذّبتني، اللهم فأسألك نصرك الذي وعدتني، اللهم إن شئت لم تُعبد في الأرض" — دعاء النبي ﷺ يوم بدر وهو يناشد ربه</p><div class="hadith-source mt-3">رواه مسلم</div></div></div>
+    <div class="col-12" data-aos="fade-up"><div class="hadith-card"><p class="hadith-text">"أيها الناس، إن دماءكم وأموالكم وأعراضكم عليكم حرام كحرمة يومكم هذا في شهركم هذا في بلدكم هذا. ألا هل بلغت؟ اللهم فاشهد"</p><div class="hadith-source mt-3">خطبة حجة الوداع — رواه البخاري ومسلم</div></div></div>
+    <div class="col-12" data-aos="fade-up"><div class="hadith-card"><p class="hadith-text">"إن الله وملائكته يصلون على النبي، يا أيها الذين آمنوا صلوا عليه وسلموا تسليماً." — وقال ﷺ: "من صلى عليّ واحدة صلى الله عليه بها عشراً"</p><div class="hadith-source mt-3">رواه مسلم</div></div></div>
+  </div>
+</div><!-- end t7 -->
+
+</div><!-- end tab-content -->
+</div><!-- end container -->
+
+<!-- MEGA FOOTER -->
+<footer class="mega-footer" style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+  <div class="container">
+    <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
+      <div class="col-lg-4 text-md-end text-center">
+        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
+          <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
+          <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
+          <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
+          <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
+          <a href="library.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">المكتبة الشاملة</a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-md-start text-center">
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
+        <a href="contact.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+      </div>
+    </div>
+    <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
+      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({duration: 800, once: true});
+
+  // Global functionality: Theme & Search (Consistency with index.html)
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      if(link.href === window.location.href) {
+          link.classList.add('active');
+          link.style.color = "var(--gold)";
+      }
+  });
+
+  const themeBtn = document.getElementById('themeToggle');
+  const body = document.body;
+  themeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  if(localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+
+  const stBtn = document.getElementById('scrollTop');
+  window.onscroll = () => {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      stBtn.style.display = "flex";
+      stBtn.style.alignItems = "center";
+      stBtn.style.justifyContent = "center";
+    } else {
+      stBtn.style.display = "none";
+    }
+  };
+  stBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+
+  // Animate stat numbers
+  document.querySelectorAll('.hero-badge strong').forEach(el => {
+    const target = parseInt(el.textContent);
+    if (isNaN(target)) return;
+    let count = 0;
+    const inc = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+      count += inc;
+      if (count >= target) { el.textContent = target; clearInterval(timer); }
+      else el.textContent = count;
+    }, 35);
+  });
+</script>
+
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+      <div class="modal-header border-0 p-4" style="background:var(--dark);">
+        <div class="input-group">
+          <span class="input-group-text bg-transparent border-0 text-warning fs-3"><i class="fas fa-search"></i></span>
+          <input type="text" class="form-control bg-transparent border-0 text-white fs-4 ps-0" placeholder="ابحث في علوم الموسوعة..." style="box-shadow:none;">
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-5 text-center">
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><a href="recitations.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-quran d-block fs-3 mb-2"></i>القرآن</a></div>
+          <div class="col-6 col-md-3"><a href="hadith.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-book-open d-block fs-3 mb-2"></i>الحديث</a></div>
+          <div class="col-6 col-md-3"><a href="fiqh.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-balance-scale d-block fs-3 mb-2"></i>الفقه</a></div>
+          <div class="col-6 col-md-3"><a href="fatwa.html" class="p-3 d-block border rounded-4 text-decoration-none text-dark hover-gold"><i class="fas fa-gavel d-block fs-3 mb-2"></i>الفتاوى</a></div>
+        </div>
+        <p class="mt-4 text-muted small">اكتب كلمة البحث واضغط Enter للبحث الشامل</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" class="btn btn-warning rounded-circle shadow-lg position-fixed" style="bottom:30px;left:30px;width:50px;height:50px;display:none;z-index:9999;transition:0.3s;"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>
