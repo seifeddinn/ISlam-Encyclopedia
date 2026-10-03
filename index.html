@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -15,7 +15,9 @@
     <meta property="og:title" content="الموسوعة الإسلامية الشاملة">
     <meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
     <meta property="og:type" content="website">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png" sizes="192x192">
     
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
@@ -104,6 +106,164 @@ body.dark-mode .mega-cat-card p, body.dark-mode .dw-text { color:#94a3b8;}
 body.dark-mode .modal-content { background:#0b192c; color:white;}
 body.dark-mode .modal-body .border { border-color:rgba(255,255,255,0.1)!important; color:white!important;}
 body.dark-mode .modal-body .text-dark { color:white!important;}
+
+/* ═══════════════════════════════════════
+   BOTTOM NAVIGATION BAR — MOBILE APP STYLE
+   ═══════════════════════════════════════ */
+@media (max-width: 991.98px) {
+  body { padding-bottom: 76px; }
+  /* hide top navbar toggle on mobile — bottom nav replaces it */
+  .navbar { display:none !important; }
+}
+
+/* Bottom Nav Shell */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 68px;
+  background: rgba(11, 25, 44, 0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.45);
+  z-index: 9998;
+  padding: 0 4px;
+  align-items: stretch;
+  justify-content: space-around;
+}
+@media (max-width: 991.98px) {
+  .bottom-nav { display: flex; }
+}
+
+/* Each Tab Item */
+.bn-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px 2px 10px;
+  position: relative;
+  transition: color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.bn-item:active { transform: scale(0.92); }
+
+/* Icon wrapper */
+.bn-icon {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: transparent;
+}
+
+/* Active Tab */
+.bn-item.active {
+  color: var(--gold);
+}
+.bn-item.active .bn-icon {
+  background: rgba(212, 175, 55, 0.18);
+  transform: translateY(-6px) scale(1.15);
+  box-shadow: 0 4px 16px rgba(212,175,55,0.3);
+}
+.bn-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 22px; height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--gold);
+}
+
+/* Hover (desktop fallback off, but safe) */
+.bn-item:hover { color: rgba(255,255,255,0.8); }
+
+/* More Drawer Overlay */
+.more-drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9996;
+  animation: fadeInBd 0.2s ease;
+}
+.more-drawer-backdrop.open { display: block; }
+@keyframes fadeInBd { from{opacity:0} to{opacity:1} }
+
+/* More Drawer Panel */
+.more-drawer {
+  display: none;
+  position: fixed;
+  bottom: 68px; left: 0; right: 0;
+  background: #0b192c;
+  border-radius: 24px 24px 0 0;
+  border-top: 1px solid rgba(212,175,55,0.25);
+  padding: 20px 16px 16px;
+  z-index: 9997;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.more-drawer.open {
+  display: block;
+  transform: translateY(0);
+}
+.drawer-handle {
+  width: 40px; height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 auto 18px;
+}
+.drawer-title {
+  font-family: 'Amiri', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+.drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.drawer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 12px 6px;
+  transition: all 0.2s;
+}
+.drawer-link:active { background: rgba(212,175,55,0.15); color: var(--gold); transform: scale(0.95); }
+.drawer-link i { font-size: 1.3rem; }
+
+/* Scroll-to-top button: avoid overlap with bottom nav on mobile */
+@media (max-width: 991.98px) {
+  #scrollTop { bottom: 84px !important; left: 16px !important; width:42px !important; height:42px !important; }
+}
 </style>
 
 <script>
@@ -114,16 +274,67 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
 </script>
 
 
+
+    <!-- PWA Primary Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b192c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Islam Encyclopedia">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+<style id="splash-critical">
+#islamicSplashScreen{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 40% 30%,#0d2240 0%,#0b192c 50%,#040c18 100%);overflow:hidden;transition:opacity .7s cubic-bezier(.4,0,.2,1),visibility .7s}
+#islamicSplashScreen.splash-hide{opacity:0;visibility:hidden;pointer-events:none}
+</style>
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://your-username.github.io/islamic-encyclopedia">
+  <meta property="og:title"       content="الموسوعة الإسلامية الشاملة">
+  <meta property="og:description" content="موسوعة إسلامية شاملة تعمل بدون إنترنت - قرآن، حديث، فقه، سيرة، أذكار وأكثر">
+  <meta property="og:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <meta property="og:locale"      content="ar_SA">
+  <meta property="og:site_name"   content="الموسوعة الإسلامية الشاملة">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="الموسوعة الإسلامية الشاملة">
+  <meta name="twitter:description" content="موسوعة إسلامية شاملة تعمل بدون إنترنت - قرآن، حديث، فقه، سيرة، أذكار وأكثر">
+  <meta name="twitter:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://your-username.github.io/islamic-encyclopedia">
 </head>
 
 
 
 <body>
+<div id="islamicSplashScreen" role="status" aria-label="جاري تحميل الموسوعة الإسلامية الشاملة">
+  <div class="splash-pattern"></div>
+  <div class="splash-orb splash-orb-1"></div>
+  <div class="splash-orb splash-orb-2"></div>
+  <div class="splash-content">
+    <div class="splash-logo-wrap">
+      <div class="splash-logo-ring"></div>
+      <div class="splash-logo-ring splash-logo-ring-2"></div>
+      <img class="splash-logo-emblem" src="icons/logo-emblem.png" alt="الموسوعة الإسلامية الشاملة" width="140" height="145" fetchpriority="high">
+    </div>
+    <div class="splash-basmala">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="splash-divider"></div>
+    <div class="splash-site-name">الموسوعة الإسلامية الشاملة</div>
+    <div class="splash-site-sub">Comprehensive Islamic Encyclopedia</div>
+    <div class="splash-progress-track">
+      <div class="splash-progress-fill"></div>
+    </div>
+    <div class="splash-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
 
 <!-- MEGA NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <a class="navbar-brand fw-bold" href="index.html">
+      <img src="icons/logo-emblem.png" alt="شعار الموسوعة" width="32" height="32" class="me-2 align-middle d-inline-block" style="object-fit:contain;">الموسوعة الإسلامية الشاملة</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -138,6 +349,8 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
         <li class="nav-item"><a class="nav-link" href="aqeedah.html">العقيدة الإسلامية</a></li>
         <li class="nav-item"><a class="nav-link" href="history.html">التاريخ الإسلامي</a></li>
         <li class="nav-item"><a class="nav-link" href="library.html">المكتبة الشاملة</a></li>
+        <li class="nav-item"><a class="nav-link" href="azkar.html"><i class="fas fa-leaf me-1 text-success"></i>حصن المسلم</a></li>
+        <li class="nav-item"><a class="nav-link" href="asma-allah.html"><i class="fas fa-star me-1 text-warning"></i>الأسماء الحسنى</a></li>
       </ul>
       <div class="d-flex align-items-center gap-3 mt-lg-0 mt-3">
         <button class="btn btn-link text-white p-0 nav-search-btn" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search fs-5"></i></button>
@@ -155,6 +368,9 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <div class="hero-glass">
+            <div class="mb-3 text-center">
+              <img src="icons/logo-emblem.png" alt="شعار الموسوعة الإسلامية الشاملة" class="img-fluid" style="max-height: 125px; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));">
+            </div>
             <div class="hero-eyebrow"><i class="fas fa-star-and-crescent me-2"></i>منصة معرفية كبرى، مبنية على الجمال واليقين</div>
             <h1>الموسوعة الإسلامية <span>الشاملة</span></h1>
             <div id="liveClock" class="mt-2 mb-4 text-warning fw-bold fs-5" dir="ltr"></div>
@@ -215,6 +431,18 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
       <div class="cat-icon"><i class="fas fa-book-reader"></i></div>
       <h4>المكتبة الشاملة</h4>
       <p>مكتبة ضخمة تضم آلاف الكتب الإسلامية القيمة للتحميل المباشر والقراءة بضغطة زر.</p>
+    </a>
+    <!-- 9 — NEW OFFLINE -->
+    <a href="azkar.html" class="mega-cat-card" style="border-color:rgba(16,185,129,.35);">
+      <div class="cat-icon" style="background:linear-gradient(135deg,#064e3b,#047857);"><i class="fas fa-leaf"></i></div>
+      <h4>حصن المسلم</h4>
+      <p>أذكار الصباح والمساء، أذكار الصلاة والنوم، ومسبحة إلكترونية ذكية — <strong style="color:#047857;">أوفلاين 100%</strong>.</p>
+    </a>
+    <!-- 10 — NEW OFFLINE -->
+    <a href="asma-allah.html" class="mega-cat-card" style="border-color:rgba(99,102,241,.35);">
+      <div class="cat-icon" style="background:linear-gradient(135deg,#1e1b4b,#3730a3);"><i class="fas fa-star"></i></div>
+      <h4>أسماء الله الحسنى</h4>
+      <p>الـ 99 اسماً مع المعنى والدليل القرآني والأثر الإيماني، وتتبع الحفظ واختبار تفاعلي — <strong style="color:#4f46e5;">أوفلاين 100%</strong>.</p>
     </a>
   </div>
 </div>
@@ -317,7 +545,7 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
   <div class="container">
     <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
       <div class="col-lg-4 text-md-end text-center">
-        <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
+        <img src="icons/logo-arabic.png" alt="الموسوعة الإسلامية الشاملة" class="img-fluid mb-3" style="max-height: 110px; filter: drop-shadow(0 5px 15px rgba(212,175,55,0.3));">
         <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
         <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
       </div>
@@ -342,7 +570,6 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
     </div>
     <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
       <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
-      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
     </div>
   </div>
 </footer>
@@ -373,7 +600,57 @@ body.dark-mode .modal-body .text-dark { color:white!important;}
 
 <button id="scrollTop" class="btn btn-warning rounded-circle shadow-lg position-fixed" style="bottom:30px;left:30px;width:50px;height:50px;display:none;z-index:9999;transition:0.3s;"><i class="fas fa-arrow-up"></i></button>
 
+<!-- ═══ BOTTOM NAVIGATION BAR ═══ -->
+<nav class="bottom-nav" id="bottomNav" role="navigation" aria-label="التنقل السفلي">
+  <!-- الرئيسية -->
+  <a href="index.html" class="bn-item" id="bn-home" data-page="index">
+    <span class="bn-icon"><i class="fas fa-home"></i></span>
+    <span>الرئيسية</span>
+  </a>
+  <!-- القرآن -->
+  <a href="recitations.html" class="bn-item" id="bn-quran" data-page="recitations">
+    <span class="bn-icon"><i class="fas fa-quran"></i></span>
+    <span>القرآن</span>
+  </a>
+  <!-- الحديث -->
+  <a href="hadith.html" class="bn-item" id="bn-hadith" data-page="hadith">
+    <span class="bn-icon"><i class="fas fa-book-open"></i></span>
+    <span>الحديث</span>
+  </a>
+  <!-- الفقه -->
+  <a href="fiqh.html" class="bn-item" id="bn-fiqh" data-page="fiqh">
+    <span class="bn-icon"><i class="fas fa-balance-scale"></i></span>
+    <span>الفقه</span>
+  </a>
+  <!-- المزيد -->
+  <button class="bn-item" id="bn-more" onclick="toggleMoreDrawer()" aria-label="المزيد" aria-expanded="false">
+    <span class="bn-icon"><i class="fas fa-grid-2" id="moreIcon"></i></span>
+    <span>المزيد</span>
+  </button>
+</nav>
+
+<!-- More Drawer Backdrop -->
+<div class="more-drawer-backdrop" id="moreBackdrop" onclick="closeMoreDrawer()"></div>
+
+<!-- More Drawer Panel -->
+<div class="more-drawer" id="moreDrawer" role="dialog" aria-label="المزيد من الأقسام">
+  <div class="drawer-handle"></div>
+  <div class="drawer-title">أقسام الموسوعة</div>
+  <div class="drawer-grid">
+    <a href="seerah.html" class="drawer-link"><i class="fas fa-route"></i><span>السيرة</span></a>
+    <a href="aqeedah.html" class="drawer-link"><i class="fas fa-pray"></i><span>العقيدة</span></a>
+    <a href="history.html" class="drawer-link"><i class="fas fa-globe-asia"></i><span>التاريخ</span></a>
+    <a href="fatwa.html" class="drawer-link"><i class="fas fa-gavel"></i><span>الفتاوى</span></a>
+    <a href="library.html" class="drawer-link"><i class="fas fa-book-reader"></i><span>المكتبة</span></a>
+    <a href="azkar.html" class="drawer-link"><i class="fas fa-leaf"></i><span>حصن المسلم</span></a>
+    <a href="asma-allah.html" class="drawer-link"><i class="fas fa-star"></i><span>الأسماء الحسنى</span></a>
+    <a href="contact.html" class="drawer-link"><i class="fas fa-envelope"></i><span>تواصل</span></a>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="praytimes.js"></script>
 <script>
 // Navbar Active Link Logic
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
@@ -383,19 +660,48 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     }
 });
 
-// Theme Toggle Logic
-const themeBtn = document.getElementById('themeToggle');
-const body = document.body;
-themeBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
-if(localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+// ═══ BOTTOM NAV ACTIVE STATE ═══
+(function(){
+  const page = location.pathname.split('/').pop().replace('.html','') || 'index';
+  const items = document.querySelectorAll('.bn-item[data-page]');
+  items.forEach(el => { if(el.dataset.page === page) el.classList.add('active'); });
+})();
+
+// ═══ MORE DRAWER LOGIC ═══
+function toggleMoreDrawer() {
+  const drawer = document.getElementById('moreDrawer');
+  const backdrop = document.getElementById('moreBackdrop');
+  const btn = document.getElementById('bn-more');
+  const isOpen = drawer.classList.contains('open');
+  if (isOpen) {
+    closeMoreDrawer();
+  } else {
+    drawer.style.display = 'block';
+    backdrop.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    btn.classList.add('active');
+    setTimeout(() => drawer.classList.add('open'), 10);
+  }
 }
+function closeMoreDrawer() {
+  const drawer = document.getElementById('moreDrawer');
+  const backdrop = document.getElementById('moreBackdrop');
+  const btn = document.getElementById('bn-more');
+  drawer.classList.remove('open');
+  backdrop.classList.remove('open');
+  btn.setAttribute('aria-expanded','false');
+  btn.classList.remove('active');
+  setTimeout(() => { if(!drawer.classList.contains('open')) drawer.style.display = ''; }, 360);
+}
+// close drawer on swipe down
+(function(){
+  let startY = 0;
+  const drawer = document.getElementById('moreDrawer');
+  drawer.addEventListener('touchstart', e => startY = e.touches[0].clientY, {passive:true});
+  drawer.addEventListener('touchend', e => { if(e.changedTouches[0].clientY - startY > 60) closeMoreDrawer(); }, {passive:true});
+})();
+
+// Theme handled globally by script.js
 
 // Scroll Top Logic
 const stBtn = document.getElementById('scrollTop');
@@ -474,32 +780,100 @@ document.getElementById('dailyHadithRef').textContent = todayHadith.ref;
 document.getElementById('dailyDua').textContent = todayDua.text;
 document.getElementById('dailyDuaRef').textContent = todayDua.ref;
 
-// 2. Prayer Times Logic (Using Aladhan API)
+// 2. Prayer Times Logic (With Offline Astronomical Fallback & City Selector)
+let currentSelectedCity = null;
+
+function renderCitiesModal() {
+  const container = document.getElementById('prayerCitiesList');
+  if (!container || !window.PrayTimes) return;
+  const cities = window.PrayTimes.CITIES || [];
+  let html = '';
+  cities.forEach(c => {
+    html += '<button type="button" class="btn btn-outline-light text-start d-flex justify-content-between align-items-center py-2 px-3 rounded-3 border-secondary border-opacity-25 font-cairo" onclick="selectPrayerCity(\'' + c.name + '\', ' + c.lat + ', ' + c.lng + ', ' + c.tz + ', \'' + c.method + '\')">' +
+      '<span><i class="fas fa-location-dot text-warning me-2"></i>' + c.name + '</span>' +
+      '<span class="badge bg-warning text-dark font-amiri" style="font-size:0.75rem;">اختيار</span>' +
+    '</button>';
+  });
+  container.innerHTML = html;
+}
+
+function filterPrayerCities(query) {
+  const container = document.getElementById('prayerCitiesList');
+  if (!container || !window.PrayTimes) return;
+  const q = (query || '').trim().toLowerCase();
+  const cities = window.PrayTimes.CITIES || [];
+  const filtered = cities.filter(c => c.name.toLowerCase().includes(q));
+  let html = '';
+  filtered.forEach(c => {
+    html += '<button type="button" class="btn btn-outline-light text-start d-flex justify-content-between align-items-center py-2 px-3 rounded-3 border-secondary border-opacity-25 font-cairo" onclick="selectPrayerCity(\'' + c.name + '\', ' + c.lat + ', ' + c.lng + ', ' + c.tz + ', \'' + c.method + '\')">' +
+      '<span><i class="fas fa-location-dot text-warning me-2"></i>' + c.name + '</span>' +
+      '<span class="badge bg-warning text-dark font-amiri" style="font-size:0.75rem;">اختيار</span>' +
+    '</button>';
+  });
+  container.innerHTML = html || '<div class="text-center py-4 text-muted font-cairo">لا توجد مدينة مطابقة للبحث</div>';
+}
+
+function openPrayerCityModal() {
+  renderCitiesModal();
+  const modalEl = document.getElementById('prayerCityModal');
+  if (modalEl && window.bootstrap) {
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+  }
+}
+
+function selectPrayerCity(name, lat, lng, tz, method) {
+  const modalEl = document.getElementById('prayerCityModal');
+  if (modalEl && window.bootstrap) {
+    bootstrap.Modal.getOrCreateInstance(modalEl).hide();
+  }
+  localStorage.setItem('selected_prayer_city', JSON.stringify({ name, lat, lng, tz, method }));
+  computeAndRenderOfflineTimes(name, lat, lng, tz, method);
+  if (typeof showToast === 'function') {
+    showToast('تم ضبط المواقيت لمدينة: ' + name, 'success');
+  }
+}
+
+function computeAndRenderOfflineTimes(cityName, lat, lng, tz, method) {
+  if (window.PrayTimes) {
+    const times = window.PrayTimes.getTimes(new Date(), lat, lng, tz, method || 'Makkah');
+    renderPrayerTimes(times, cityName, true);
+    localStorage.setItem('prayers_cache', JSON.stringify({ timings: times, locName: cityName, isOfflineMath: true }));
+    localStorage.setItem('prayers_cache_time', new Date().getTime().toString());
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Check local storage so we don't spam location prompt if cached
+    const savedCity = localStorage.getItem('selected_prayer_city');
+    if (savedCity) {
+      try {
+        const c = JSON.parse(savedCity);
+        computeAndRenderOfflineTimes(c.name, c.lat, c.lng, c.tz, c.method);
+        return;
+      } catch(e) {}
+    }
+
     const cachedLoc = localStorage.getItem('prayers_cache');
     const cacheTime = localStorage.getItem('prayers_cache_time');
     const now = new Date().getTime();
     
-    // Use cache if less than 6 hours old
     if(cachedLoc && cacheTime && (now - cacheTime < 6 * 60 * 60 * 1000)) {
         const d = JSON.parse(cachedLoc);
-        renderPrayerTimes(d.timings, d.locName);
+        renderPrayerTimes(d.timings, d.locName, d.isOfflineMath);
         return;
     }
 
-    if ("geolocation" in navigator) {
+    if ("geolocation" in navigator && navigator.onLine) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 getPrayerTimes(position.coords.latitude, position.coords.longitude, "موقعك الحالي");
             },
             (error) => {
-                getPrayerTimes(21.4225, 39.8262, "مكة المكرمة");
+                computeAndRenderOfflineTimes("مكة المكرمة", 21.4225, 39.8262, 3, "Makkah");
             },
-            {timeout: 5000} // Don't hang forever
+            {timeout: 4000}
         );
     } else {
-        getPrayerTimes(21.4225, 39.8262, "مكة المكرمة");
+        computeAndRenderOfflineTimes("مكة المكرمة", 21.4225, 39.8262, 3, "Makkah");
     }
 });
 
@@ -508,44 +882,77 @@ function getPrayerTimes(lat, lng, locName) {
     const day = String(d.getDate()).padStart(2, '0');
     const month = String(d.getMonth() + 1).padStart(2, '0');
     const year = d.getFullYear();
-    const dateStr = `${day}-${month}-${year}`;
-    const url = `https://api.aladhan.com/v1/timings/${dateStr}?latitude=${lat}&longitude=${lng}&method=4`;
+    const dateStr = day + '-' + month + '-' + year;
+    const url = 'https://api.aladhan.com/v1/timings/' + dateStr + '?latitude=' + lat + '&longitude=' + lng + '&method=4';
     
     fetch(url)
         .then(response => response.json())
         .then(data => {
             if(data.code !== 200) throw new Error("API Error");
-            renderPrayerTimes(data.data.timings, locName);
-            // Cache it
-            localStorage.setItem('prayers_cache', JSON.stringify({timings: data.data.timings, locName: locName}));
+            renderPrayerTimes(data.data.timings, locName, false);
+            localStorage.setItem('prayers_cache', JSON.stringify({timings: data.data.timings, locName: locName, isOfflineMath: false}));
             localStorage.setItem('prayers_cache_time', new Date().getTime().toString());
         })
         .catch(err => {
-            document.getElementById('prayerTimesContainer').innerHTML = `<div class="text-center text-white-50 mt-4"><i class="fas fa-exclamation-triangle mb-3 fa-2x"></i><br>تعذر جلب المواقيت اليوم</div>`;
+            computeAndRenderOfflineTimes(locName || "مكة المكرمة", lat || 21.4225, lng || 39.8262, 3, "Makkah");
         });
 }
 
-function renderPrayerTimes(timings, locName) {
+function renderPrayerTimes(timings, locName, isOffline = false) {
     const formatTime = (t) => {
-        let [h, m] = t.split(':');
-        let hInt = parseInt(h);
+        if (!t) return '--:--';
+        let parts = t.split(':');
+        let hInt = parseInt(parts[0]);
         let ampm = hInt >= 12 ? 'م' : 'ص';
         if(hInt > 12) hInt -= 12;
         if(hInt === 0) hInt = 12;
-        return `${hInt}:${m} <span class="small opacity-75">${ampm}</span>`;
+        return hInt + ':' + parts[1] + ' <span class="small opacity-75">' + ampm + '</span>';
     };
     
-    const html = `
-        <div class="pt-item"><span class="pt-name">الفجر</span><span class="pt-time">${formatTime(timings.Fajr)}</span></div>
-        <div class="pt-item"><span class="pt-name">الشروق</span><span class="pt-time">${formatTime(timings.Sunrise)}</span></div>
-        <div class="pt-item"><span class="pt-name">الظهر</span><span class="pt-time">${formatTime(timings.Dhuhr)}</span></div>
-        <div class="pt-item"><span class="pt-name">العصر</span><span class="pt-time">${formatTime(timings.Asr)}</span></div>
-        <div class="pt-item"><span class="pt-name">المغرب</span><span class="pt-time">${formatTime(timings.Maghrib)}</span></div>
-        <div class="pt-item"><span class="pt-name" style="color:var(--gold);">العشاء</span><span class="pt-time">${formatTime(timings.Isha)}</span></div>
-    `;
+    const html = [
+      '<div class="pt-item"><span class="pt-name">الفجر</span><span class="pt-time">' + formatTime(timings.Fajr) + '</span></div>',
+      '<div class="pt-item"><span class="pt-name">الشروق</span><span class="pt-time">' + formatTime(timings.Sunrise) + '</span></div>',
+      '<div class="pt-item"><span class="pt-name">الظهر</span><span class="pt-time">' + formatTime(timings.Dhuhr) + '</span></div>',
+      '<div class="pt-item"><span class="pt-name">العصر</span><span class="pt-time">' + formatTime(timings.Asr) + '</span></div>',
+      '<div class="pt-item"><span class="pt-name">المغرب</span><span class="pt-time">' + formatTime(timings.Maghrib) + '</span></div>',
+      '<div class="pt-item"><span class="pt-name" style="color:var(--gold);">العشاء</span><span class="pt-time">' + formatTime(timings.Isha) + '</span></div>'
+    ].join('');
+    
     document.getElementById('prayerTimesContainer').innerHTML = html;
-    document.getElementById('ptLocation').innerHTML = `<i class="fas fa-map-marker-alt me-1 text-warning"></i> ${locName}`;
+    
+    const offlineTag = isOffline ? ' <span class="badge bg-warning text-dark font-cairo ms-1" style="font-size:0.65rem;">حساب فلكي أوفلاين</span>' : '';
+    document.getElementById('ptLocation').innerHTML = 
+      '<div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mt-1">' +
+        '<span><i class="fas fa-map-marker-alt text-warning me-1"></i>' + locName + offlineTag + '</span>' +
+        '<button type="button" class="btn btn-outline-warning btn-sm rounded-pill py-0 px-2 font-cairo" style="font-size:0.75rem;" onclick="openPrayerCityModal()" title="تغيير المدينة">' +
+          '<i class="fas fa-city me-1"></i>تغيير' +
+        '</button>' +
+      '</div>';
 }
 </script>
+<!-- CITY SELECTOR MODAL (OFFLINE PRAYER TIMES) -->
+<div class="modal fade" id="prayerCityModal" tabindex="-1" aria-labelledby="prayerCityModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background:var(--dark); color:#fff; border:1px solid rgba(212,175,55,0.4); border-radius:24px;">
+      <div class="modal-header border-bottom border-secondary border-opacity-25 pb-3">
+        <h5 class="modal-title font-amiri fs-4 text-warning" id="prayerCityModalLabel">
+          <i class="fas fa-city me-2"></i>اختر مدينتك لحساب المواقيت (أوفلاين)
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-3">
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-dark border-secondary text-warning"><i class="fas fa-search"></i></span>
+          <input type="text" id="citySearchInput" class="form-control bg-dark text-white border-secondary font-cairo" placeholder="ابحث عن مدينتك أو دولتك..." oninput="filterPrayerCities(this.value)">
+        </div>
+        <div id="prayerCitiesList" class="d-flex flex-column gap-2" style="max-height:350px; overflow-y:auto;">
+        </div>
+      </div>
+      <div class="modal-footer border-top border-secondary border-opacity-25 py-2">
+        <small class="text-white-50"><i class="fas fa-calculator text-warning me-1"></i>حساب فلكي رياضي دقيق محلياً دون نت</small>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

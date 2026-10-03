@@ -13,7 +13,8 @@ window.OfflineEngine = (function() {
         'bukhari':   { title: 'صحيح البخاري', size: '2.5MB', endpoint: 'ara-bukhari.min.json' },
         'muslim':    { title: 'صحيح مسلم', size: '2.2MB', endpoint: 'ara-muslim.min.json' },
         'abudawud':  { title: 'سنن أبي داود', size: '1.4MB', endpoint: 'ara-abudawud.min.json' },
-        'tirmidhi':  { title: 'جامع الترمذي', size: '1.1MB', endpoint: 'ara-tirmidhi.min.json' },
+        'tirmidhi':  { title: 'جامع الترمذي', size: '1.1MB', endpoint: 'ara-tirmizi.min.json' },
+
         'nasai':     { title: 'سنن النسائي', size: '1.6MB', endpoint: 'ara-nasai.min.json' },
         'ibnmajah':  { title: 'سنن ابن ماجه', size: '1.2MB', endpoint: 'ara-ibnmajah.min.json' },
         'malik':     { title: 'موطأ مالك', size: '0.6MB', endpoint: 'ara-malik.min.json' },

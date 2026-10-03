@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أرشيف فتاوى الأسرة وتربية الأبناء - الموسوعة الإسلامية الشاملة</title>
     <meta name="description" content="فتاوى شاملة عن العلاقات الزوجية، حقوق الوالدين، تربية الأطفال، وأحكام الطلاق والخلع بتصميم عصري.">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png" sizes="192x192">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,18 +42,78 @@
         /* FOOTER */
         .mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;border-top:3px solid var(--gold-dark);margin-top:60px;}
     </style>
+
+    <!-- PWA Primary Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b192c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Islam Encyclopedia">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
+<style id="splash-critical">
+#islamicSplashScreen{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 40% 30%,#0d2240 0%,#0b192c 50%,#040c18 100%);overflow:hidden;transition:opacity .7s cubic-bezier(.4,0,.2,1),visibility .7s}
+#islamicSplashScreen.splash-hide{opacity:0;visibility:hidden;pointer-events:none}
+</style>
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://your-username.github.io/islamic-encyclopedia/fatwa_family.html">
+  <meta property="og:title"       content="الموسوعة الإسلامية الشاملة">
+  <meta property="og:description" content="موسوعة إسلامية شاملة تعمل بدون إنترنت - قرآن، حديث، فقه، سيرة وأكثر">
+  <meta property="og:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <meta property="og:locale"      content="ar_SA">
+  <meta property="og:site_name"   content="الموسوعة الإسلامية الشاملة">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="الموسوعة الإسلامية الشاملة">
+  <meta name="twitter:description" content="موسوعة إسلامية شاملة تعمل بدون إنترنت - قرآن، حديث، فقه، سيرة وأكثر">
+  <meta name="twitter:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://your-username.github.io/islamic-encyclopedia/fatwa_family.html">
 </head>
 <body>
+<div id="islamicSplashScreen" role="status" aria-label="جاري تحميل الموسوعة الإسلامية الشاملة">
+  <div class="splash-pattern"></div>
+  <div class="splash-orb splash-orb-1"></div>
+  <div class="splash-orb splash-orb-2"></div>
+  <div class="splash-content">
+    <div class="splash-logo-wrap">
+      <div class="splash-logo-ring"></div>
+      <div class="splash-logo-ring splash-logo-ring-2"></div>
+      <img class="splash-logo-emblem" src="icons/logo-emblem.png" alt="الموسوعة الإسلامية الشاملة" width="140" height="145" fetchpriority="high">
+    </div>
+    <div class="splash-basmala">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="splash-divider"></div>
+    <div class="splash-site-name">الموسوعة الإسلامية الشاملة</div>
+    <div class="splash-site-sub">Comprehensive Islamic Encyclopedia</div>
+    <div class="splash-progress-track">
+      <div class="splash-progress-fill"></div>
+    </div>
+    <div class="splash-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <a class="navbar-brand fw-bold" href="index.html">
+      <img src="icons/logo-emblem.png" alt="شعار الموسوعة" width="32" height="32" class="me-2 align-middle d-inline-block" style="object-fit:contain;">الموسوعة الإسلامية الشاملة</a>
     <div class="collapse navbar-collapse" id="nav1">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
         <li class="nav-item"><a class="nav-link active" href="fatwa.html">بوابة الفتاوى</a></li>
         <li class="nav-item"><a class="nav-link" href="fiqh.html">الفقه الإسلامي</a></li>
       </ul>
+      <div class="d-flex align-items-center gap-3 mt-lg-0 mt-3">
+        <a href="search.html" class="btn btn-link text-white p-0 nav-search-btn" aria-label="البحث في الموقع" title="بحث"><i class="fas fa-search fs-5"></i></a>
+        <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle" style="width:35px;height:35px;display:flex;align-items:center;justify-content:center;" title="الوضع الليلي" aria-label="الوضع الليلي"><i class="fas fa-moon"></i></button>
+      </div>
     </div>
   </div>
 </nav>
@@ -119,5 +181,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

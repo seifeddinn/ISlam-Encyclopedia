@@ -1,0 +1,75 @@
+{
+  "id": "com.islam.encyclopedia",
+  "name": "الموسوعة الإسلامية الشاملة",
+  "short_name": "الموسوعة",
+  "description": "موسوعة إسلامية شاملة - القرآن الكريم، الحديث الشريف، الفقه، السيرة، الأذكار، وأسماء الله الحسنى. يعمل دون إنترنت.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b192c",
+  "theme_color": "#1a3c5d",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["education", "books", "lifestyle"],
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/logo-emblem.png",
+      "sizes": "436x456",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/logo.png",
+      "sizes": "531x585",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "القرآن والتلاوات",
+      "short_name": "القرآن",
+      "url": "./recitations.html",
+      "icons": [{ "src": "icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "الحديث الشريف",
+      "short_name": "الحديث",
+      "url": "./hadith.html",
+      "icons": [{ "src": "icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "حصن المسلم",
+      "short_name": "الأذكار",
+      "url": "./azkar.html",
+      "icons": [{ "src": "icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "أسماء الله الحسنى",
+      "short_name": "الأسماء",
+      "url": "./asma-allah.html",
+      "icons": [{ "src": "icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

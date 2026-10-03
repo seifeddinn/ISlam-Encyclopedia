@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -7,103 +7,255 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أكاديمية الفقه الإسلامي - الموسوعة الإسلامية الشاملة</title>
+<title>أكاديمية الفقه الإسلامي وأصوله - الموسوعة الإسلامية الشاملة</title>
 
-    <meta name="description" content="الموسوعة الإسلامية الشاملة - المنصة الرقمية الموثوقة لعلوم القرآن والسنة والفقه والسيرة والتاريخ بعقيدة صحيحة.">
-    <meta name="keywords" content="قرآن, حديث, إسلام, فقه, عقيدة, سيرة, تاريخ إسلامي, الموسوعة الإسلامية">
-    <meta name="author" content="ST Islamic Web">
-    <meta property="og:title" content="الموسوعة الإسلامية الشاملة">
-    <meta property="og:description" content="مرجعك الشامل للعلوم الشرعية الموثقة بتصميم عصري وتقنيات حديثة.">
+    <meta name="description" content="موسوعة الفقه الإسلامي الشاملة - المذاهب الأربعة، فقه العبادات، المعاملات المالية، الأحوال الشخصية، الجنايات والمواريث، أصول الفقه، فقه النوازل، وحاسبات الزكاة والفرائض.">
+    <meta name="keywords" content="فقه, المذاهب الأربعة, أصول الفقه, فقه العبادات, معاملات مالية, مواريث, زكاة, حاسبة الزكاة, حاسبة المواريث, فقه النوازل, الموسوعة الإسلامية">
+    <meta name="author" content="الموسوعة الإسلامية الشاملة">
+    <meta property="og:title" content="أكاديمية الفقه الإسلامي وأصوله - الموسوعة الإسلامية الشاملة">
+    <meta property="og:description" content="مرجعك الفقهي الشامل والموثق بتصميم تفاعلي متقدم وأدوات حسابية شرعية.">
     <meta property="og:type" content="website">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png" type="image/png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png" sizes="192x192">
     
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="responsive.css">
 <style>
-:root{--gold:#d4af37;--gold-light:#f9f1d8;--gold-dark:#aa8a2a;--dark:#064e3b;--primary:#047857;}
+:root{
+  --gold:#d4af37;
+  --gold-light:#fef9c3;
+  --gold-dark:#aa8a2a;
+  --dark:#064e3b;
+  --dark-2:#022c22;
+  --primary:#047857;
+  --primary-light:#10b981;
+  --emerald-bg:#ecfdf5;
+  --slate-bg:#f8fafc;
+}
 body{font-family:'Cairo',sans-serif;background:#f8fafc;color:#1e293b;overflow-x:hidden;}
-h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
+h1,h2,h3,h4,h5,h6,.ar,.font-amiri{font-family:'Amiri',serif;}
 
 /* MEGA NAVBAR */
-.navbar {background:linear-gradient(135deg,var(--dark),var(--primary))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.2);}
+.navbar {background:linear-gradient(135deg,var(--dark-2),var(--dark))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);z-index:1000;border-bottom:2px solid rgba(212,175,55,0.25);}
 .navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;text-shadow:0 2px 10px rgba(212,175,55,0.5);}
-.navbar .nav-link{color:rgba(255,255,255,.8)!important;font-weight:700;letter-spacing:0.5px;transition:all .3s;}
+.navbar .nav-link{color:rgba(255,255,255,.85)!important;font-weight:700;letter-spacing:0.3px;transition:all .3s;}
 .navbar .nav-link:hover, .navbar .nav-link.active{color:var(--gold)!important;transform:translateX(-2px);}
 
 /* MEGA HERO - FIQH (EMERALD & GOLD) */
-.mega-hero{min-height:90vh;background:radial-gradient(circle at 50% 50%, var(--primary) 0%, var(--dark) 80%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 0;}
-.hero-glass{background:rgba(6,78,59,0.5);backdrop-filter:blur(15px);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:60px 40px;box-shadow:0 20px 50px rgba(0,0,0,0.5);position:relative;z-index:5;text-align:center;}
-.hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.1;mix-blend-mode:overlay;}
-.hero-eyebrow{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#022c22;padding:8px 30px;border-radius:50px;font-weight:bold;font-size:1rem;margin-bottom:25px;box-shadow:0 4px 15px rgba(212,175,55,0.4);}
-.mega-hero h1{font-size:5.5rem;font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.8);line-height:1.2;margin-bottom:20px;}
-.mega-hero h1 span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-moz-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.tagline{color:#d1fae5;font-size:1.3rem;line-height:2.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);max-width:800px;margin:0 auto;}
+.mega-hero{min-height:75vh;background:radial-gradient(circle at 50% 40%, #065f46 0%, #064e3b 45%, #022c22 90%);position:relative;overflow:hidden;display:flex;align-items:center;padding:100px 0 80px;}
+.hero-glass{background:rgba(6,78,59,0.55);backdrop-filter:blur(18px);border:1px solid rgba(212,175,55,0.35);border-radius:32px;padding:60px 40px;box-shadow:0 25px 60px rgba(0,0,0,0.55);position:relative;z-index:5;text-align:center;}
+.hero-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/arabesque.png');opacity:.12;mix-blend-mode:overlay;}
+.hero-eyebrow{display:inline-flex;align-items:center;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#022c22;padding:8px 30px;border-radius:50px;font-weight:800;font-size:1.05rem;margin-bottom:25px;box-shadow:0 4px 18px rgba(212,175,55,0.45);}
+.mega-hero h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:900;color:white;text-shadow:0 10px 30px rgba(0,0,0,0.85);line-height:1.2;margin-bottom:20px;}
+.mega-hero h1 span{background:linear-gradient(135deg,#fff,#fde68a,var(--gold));-webkit-background-clip:text;-moz-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.tagline{color:#d1fae5;font-size:1.25rem;line-height:2.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);max-width:850px;margin:0 auto;}
 
 /* ANIMATED ORBS */
-.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3;animation:floatOrb 15s ease-in-out infinite alternate;}
+.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.28;animation:floatOrb 15s ease-in-out infinite alternate;}
 .orb-1{width:600px;height:600px;background:var(--gold);top:-150px;right:-100px;}
 .orb-2{width:500px;height:500px;background:#10b981;bottom:-100px;left:-50px;animation-delay:5s;}
 @keyframes floatOrb{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,50px) scale(1.1);}}
 
 /* STATS MEGA */
-.stats-mega{background:linear-gradient(90deg,var(--dark),var(--primary));border-top:2px solid var(--gold-dark);border-bottom:2px solid var(--gold-dark);padding:40px 0;position:relative;z-index:10;margin-top:-5px;}
-.stat-box{text-align:center;color:white;padding:20px;border-left:1px solid rgba(212,175,55,0.2);}
+.stats-mega{background:linear-gradient(90deg,var(--dark-2),var(--dark),var(--dark-2));border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:35px 0;position:relative;z-index:10;}
+.stat-box{text-align:center;color:white;padding:15px;border-left:1px solid rgba(212,175,55,0.25);}
 .stat-box:last-child{border-left:none;}
-.stat-num{font-family:'Amiri',serif;font-size:3.5rem;font-weight:bold;color:var(--gold);line-height:1;margin-bottom:10px;text-shadow:0 5px 15px rgba(212,175,55,0.3);}
-.stat-label{font-size:1.1rem;font-weight:bold;letter-spacing:1px;color:#a7f3d0;}
+.stat-num{font-family:'Amiri',serif;font-size:3.2rem;font-weight:bold;color:var(--gold);line-height:1;margin-bottom:8px;text-shadow:0 5px 15px rgba(212,175,55,0.3);}
+.stat-label{font-size:1.05rem;font-weight:700;letter-spacing:0.5px;color:#a7f3d0;}
+
+/* TABS NAVIGATION BAR (STICKY & RESPONSIVE) */
+.main-tabs-wrapper {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid #e2e8f0;
+  padding: 16px 0;
+  position: sticky;
+  top: 56px;
+  z-index: 99;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.main-tabs {
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+}
+.main-tabs::-webkit-scrollbar{height:5px;}
+.main-tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
+.main-tabs .nav-link {
+  color: var(--dark) !important;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1.5px solid #d1fae5;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.main-tabs .nav-link i {
+  color: var(--primary);
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+.main-tabs .nav-link:hover {
+  background: var(--emerald-bg);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  color: var(--dark) !important;
+}
+.main-tabs .nav-link:hover i {
+  transform: scale(1.15);
+  color: var(--gold-dark);
+}
+.main-tabs .nav-link.active {
+  background: linear-gradient(135deg, var(--dark), var(--primary)) !important;
+  color: #ffffff !important;
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(4, 120, 87, 0.35);
+  transform: translateY(-2px);
+}
+.main-tabs .nav-link.active i {
+  color: var(--gold) !important;
+}
 
 /* SECTION HEADERS */
-.sec-head{text-align:center;margin-bottom:60px;position:relative;}
-.sec-head .tag{display:inline-block;background:rgba(212,175,55,0.1);color:var(--gold-dark);border:1px solid rgba(212,175,55,0.3);border-radius:30px;padding:8px 25px;font-size:1rem;font-weight:bold;margin-bottom:20px;}
-.sec-head h3{font-size:3rem;font-family:'Amiri',serif;color:var(--dark);font-weight:900;margin-bottom:15px;}
+.sec-head{text-align:center;margin:50px 0 40px;position:relative;}
+.sec-head .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,0.12);color:var(--gold-dark);border:1px solid rgba(212,175,55,0.35);border-radius:30px;padding:6px 22px;font-size:0.95rem;font-weight:700;margin-bottom:15px;}
+.sec-head h3{font-size:clamp(2rem,4vw,3.2rem);font-family:'Amiri',serif;color:var(--dark);font-weight:900;margin-bottom:12px;}
 .sec-head h3 span{color:var(--primary);}
-.sec-head p{color:#64748b;font-size:1.2rem;max-width:800px;margin:0 auto;line-height:1.8;}
-.sec-head .divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:25px auto 0;}
-
-/* TABS NAVIGATION MEGA */
-
-
-.main-tabs::-webkit-scrollbar{height:6px;}
-.main-tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
-
-.main-tabs .navbar .nav-link:hover{background:#f8fafc;border-color:var(--gold-dark);color:var(--dark);transform:translateY(-2px);}
-.main-tabs .navbar .nav-link.active{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;border-color:transparent;box-shadow:0 10px 20px rgba(4,120,87,0.3);}
+.sec-head p{color:#64748b;font-size:1.15rem;max-width:820px;margin:0 auto;line-height:1.9;}
+.sec-head .divider{width:80px;height:5px;background:linear-gradient(90deg,var(--gold),var(--primary));border-radius:5px;margin:22px auto 0;}
 
 /* CARDS */
-.mega-card{background:white;border-radius:24px;padding:35px;box-shadow:0 15px 35px rgba(0,0,0,0.04);border:1px solid #d1fae5;transition:all .4s;height:100%;}
-.mega-card:hover{transform:translateY(-8px);box-shadow:0 25px 50px rgba(4,120,87,0.1);border-color:var(--gold);}
-.mega-icon{font-size:3.5rem;background:linear-gradient(135deg,var(--primary),var(--dark));-webkit-background-clip:text;-moz-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;display:inline-block;}
+.mega-card{background:white;border-radius:24px;padding:32px;box-shadow:0 12px 35px rgba(0,0,0,0.04);border:1px solid #e2e8f0;transition:all .35s;height:100%;position:relative;overflow:hidden;}
+.mega-card:hover{transform:translateY(-6px);box-shadow:0 22px 45px rgba(4,120,87,0.12);border-color:var(--gold);}
+.madhab-badge{background:rgba(212,175,55,0.12);color:var(--gold-dark);padding:5px 14px;border-radius:20px;font-size:0.88rem;font-weight:bold;margin-bottom:12px;display:inline-block;border:1px solid rgba(212,175,55,0.25);}
+
+/* SUB-TAB PILLS */
+.sub-tabs-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:30px;}
+.sub-tab-btn{background:#ffffff;border:1.5px solid #cbd5e1;color:#475569;font-weight:700;padding:8px 20px;border-radius:25px;transition:0.3s;cursor:pointer;}
+.sub-tab-btn:hover{background:var(--emerald-bg);border-color:var(--primary);color:var(--primary);}
+.sub-tab-btn.active{background:var(--primary);border-color:var(--primary);color:white;box-shadow:0 6px 18px rgba(4,120,87,0.25);}
+
+/* COMPARISON MATRIX TABLE */
+.fiqh-table-wrap{border-radius:20px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.04);background:white;}
+.fiqh-table thead{background:linear-gradient(135deg,var(--dark),var(--primary));color:white;}
+.fiqh-table thead th{padding:18px 15px;font-family:'Amiri',serif;font-size:1.2rem;font-weight:bold;border:none;}
+.fiqh-table tbody td{padding:16px 15px;vertical-align:middle;font-size:0.95rem;line-height:1.8;border-color:#f1f5f9;}
+.fiqh-table tbody tr:nth-child(even){background:#f8fafc;}
+.fiqh-table tbody tr:hover{background:#ecfdf5;}
+
+/* SCHOLARLY CHAIN (ROADMAP) */
+.chain-step{background:white;border-radius:20px;padding:24px;border:2px solid #e2e8f0;transition:0.3s;position:relative;height:100%;box-shadow:0 6px 20px rgba(0,0,0,0.03);}
+.chain-step:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 15px 30px rgba(212,175,55,0.15);}
+.chain-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#022c22;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3rem;margin-bottom:15px;box-shadow:0 4px 12px rgba(212,175,55,0.4);}
+
+/* ACCORDION BEAUTIFIER */
+.accordion-fiqh .accordion-item{border:1px solid #e2e8f0;border-radius:18px !important;overflow:hidden;margin-bottom:14px;box-shadow:0 4px 15px rgba(0,0,0,0.02);}
+.accordion-fiqh .accordion-button{background:#ffffff;color:var(--dark);font-family:'Amiri',serif;font-size:1.3rem;font-weight:bold;padding:18px 24px;}
+.accordion-fiqh .accordion-button:not(.collapsed){background:linear-gradient(135deg,rgba(4,120,87,0.08),rgba(212,175,55,0.08));color:var(--dark);box-shadow:none;border-bottom:1px solid #e2e8f0;}
+.accordion-fiqh .accordion-button::after{margin-right:auto;margin-left:0;}
+.accordion-fiqh .accordion-body{padding:25px;background:#ffffff;line-height:1.9;font-size:1rem;}
+
+/* QUICK ISSUE SEARCH */
+.search-pill{cursor:pointer;background:#f1f5f9;border:1px solid #cbd5e1;padding:6px 16px;border-radius:20px;font-size:0.88rem;font-weight:600;color:#334155;transition:0.25s;display:inline-block;}
+.search-pill:hover, .search-pill.active{background:var(--primary);color:white;border-color:var(--primary);}
+.issue-card{background:#ffffff;border-radius:18px;border:1px solid #e2e8f0;padding:24px;box-shadow:0 6px 18px rgba(0,0,0,0.03);transition:0.3s;height:100%;}
+.issue-card:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 12px 28px rgba(4,120,87,0.08);}
+
+/* RULING BADGES */
+.badge-fard{background:#dc2626;color:white;padding:4px 12px;border-radius:12px;font-size:0.82rem;font-weight:bold;}
+.badge-sunnah{background:#059669;color:white;padding:4px 12px;border-radius:12px;font-size:0.82rem;font-weight:bold;}
+.badge-mubah{background:#0284c7;color:white;padding:4px 12px;border-radius:12px;font-size:0.82rem;font-weight:bold;}
+.badge-makruh{background:#d97706;color:white;padding:4px 12px;border-radius:12px;font-size:0.82rem;font-weight:bold;}
+.badge-haram{background:#991b1b;color:white;padding:4px 12px;border-radius:12px;font-size:0.82rem;font-weight:bold;}
+
+/* QUOTE CALLOUT */
+.fiqh-quote{background:linear-gradient(135deg,rgba(4,120,87,0.05),rgba(212,175,55,0.05));border-right:4px solid var(--gold);border-radius:0 16px 16px 0;padding:20px;margin:20px 0;}
 
 /* MEGA FOOTER */
-.mega-footer{background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);}
-.mega-footer-link{color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;}
-.mega-footer-link:hover{color:var(--gold);padding-right:5px;}
+.mega-footer{background:linear-gradient(135deg,var(--dark-2),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold);}
+.mega-footer-link{color:rgba(255,255,255,.75);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;}
+.mega-footer-link:hover{color:var(--gold);padding-right:6px;}
 
-/* Specific Styles */
-.madhab-badge {background:rgba(212,175,55,0.1);color:var(--gold-dark);padding:5px 15px;border-radius:20px;font-size:0.9rem;font-weight:bold;margin-bottom:15px;display:inline-block;}
 .line-height-2{line-height:2 !important;}
 </style>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DISABLED'); // استبدل XXXXXXXXXX بمعرف التتبع الخاص بك
-</script>
+    <!-- PWA Primary Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#064e3b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Islam Encyclopedia">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
+<style id="splash-critical">
+#islamicSplashScreen{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 40% 30%,#0d2240 0%,#0b192c 50%,#040c18 100%);overflow:hidden;transition:opacity .7s cubic-bezier(.4,0,.2,1),visibility .7s}
+#islamicSplashScreen.splash-hide{opacity:0;visibility:hidden;pointer-events:none}
+</style>
 
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://your-username.github.io/islamic-encyclopedia/fiqh.html">
+  <meta property="og:title"       content="الفقه الإسلامي | الموسوعة الإسلامية">
+  <meta property="og:description" content="المذاهب الفقهية الأربعة - الحنفي والمالكي والشافعي والحنبلي">
+  <meta property="og:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <meta property="og:locale"      content="ar_SA">
+  <meta property="og:site_name"   content="الموسوعة الإسلامية الشاملة">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="الفقه الإسلامي | الموسوعة الإسلامية">
+  <meta name="twitter:description" content="المذاهب الفقهية الأربعة - الحنفي والمالكي والشافعي والحنبلي">
+  <meta name="twitter:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://your-username.github.io/islamic-encyclopedia/fiqh.html">
 </head>
 
-
-
 <body>
+<div id="islamicSplashScreen" role="status" aria-label="جاري تحميل الموسوعة الإسلامية الشاملة">
+  <div class="splash-pattern"></div>
+  <div class="splash-orb splash-orb-1"></div>
+  <div class="splash-orb splash-orb-2"></div>
+  <div class="splash-content">
+    <div class="splash-logo-wrap">
+      <div class="splash-logo-ring"></div>
+      <div class="splash-logo-ring splash-logo-ring-2"></div>
+      <img class="splash-logo-emblem" src="icons/logo-emblem.png" alt="الموسوعة الإسلامية الشاملة" width="140" height="145" fetchpriority="high">
+    </div>
+    <div class="splash-basmala">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="splash-divider"></div>
+    <div class="splash-site-name">الموسوعة الإسلامية الشاملة</div>
+    <div class="splash-site-sub">Comprehensive Islamic Encyclopedia</div>
+    <div class="splash-progress-track">
+      <div class="splash-progress-fill"></div>
+    </div>
+    <div class="splash-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
 
 <!-- MEGA NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2 text-warning"></i>الموسوعة الإسلامية الشاملة</a>
+    <a class="navbar-brand fw-bold" href="index.html">
+      <img src="icons/logo-emblem.png" alt="شعار الموسوعة" width="32" height="32" class="me-2 align-middle d-inline-block" style="object-fit:contain;">الموسوعة الإسلامية الشاملة</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -131,13 +283,29 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 <section class="mega-hero">
   <div class="orb orb-1"></div><div class="orb orb-2"></div>
   <div class="hero-pattern"></div>
-  <div class="container relative z-10">
+  <div class="container position-relative" style="z-index: 10;">
     <div class="row justify-content-center text-center">
-      <div class="col-lg-10">
+      <div class="col-lg-11 col-xl-10">
         <div class="hero-glass">
-            <div class="hero-eyebrow"><i class="fas fa-balance-scale me-2"></i>منهاج الحياة وأحكام العباد</div>
-            <h1>موسوعة <span>الفقه</span> الإسلامي</h1>
-            <p class="tagline mt-4">العلم بالأحكام الشرعية العملية المكتسبة من أدلتها التفصيلية. تصفح فقه العبادات، المعاملات، الأحوال الشخصية والمذاهب الأربعة وأصول الفقه والنوازل المعاصرة.</p>
+            <div class="hero-eyebrow"><i class="fas fa-balance-scale me-2"></i>منهاج الحياة وأحكام العباد والأدلة التفصيلية</div>
+            <h1>أكاديمية <span>الفقه الإسلامي</span> وأصوله</h1>
+            <p class="tagline mt-3">العلم بالأحكام الشرعية العملية المكتسبة من أدلتها التفصيلية. تصفح أدق المسائل عبر المذاهب الأربعة، فقه العبادات والمعاملات، فقه الأسرة والجنايات، أصول الاستنباط، النوازل المعاصرة، وحاسبات الزكاة والمواريث المعتمدة.</p>
+            
+            <!-- Hero Search Quick Bar -->
+            <div class="mt-4 mx-auto" style="max-width:650px;">
+              <div class="input-group input-group-lg shadow-lg" style="border-radius:50px;overflow:hidden;border:2px solid rgba(212,175,55,0.4);">
+                <span class="input-group-text bg-white border-0 pe-4"><i class="fas fa-search text-success"></i></span>
+                <input type="text" id="fiqhHeroSearch" class="form-control border-0 px-2" placeholder="ابحث في أي مسألة فقهية، نازلة، حكم، أو قاعدة..." oninput="onHeroSearch(this.value)">
+                <button class="btn btn-warning fw-bold px-4 text-dark" onclick="triggerHeroSearch()"><i class="fas fa-arrow-left"></i></button>
+              </div>
+              <div class="d-flex justify-content-center flex-wrap gap-2 mt-3 text-white small">
+                <span class="opacity-75">مسائل رائجة:</span>
+                <a href="#tab-qa" onclick="filterByTag('صيام')" class="badge bg-white bg-opacity-25 text-white text-decoration-none rounded-pill px-3 py-1">مفطرات الصيام المعاصرة</a>
+                <a href="#tab-qa" onclick="filterByTag('معاملات')" class="badge bg-white bg-opacity-25 text-white text-decoration-none rounded-pill px-3 py-1">العملات الرقمية</a>
+                <a href="#tab-qa" onclick="filterByTag('صلاة')" class="badge bg-white bg-opacity-25 text-white text-decoration-none rounded-pill px-3 py-1">سجود السهو</a>
+                <a href="#tab-tools" onclick="showToolsTab()" class="badge bg-warning text-dark text-decoration-none rounded-pill px-3 py-1 fw-bold">حاسبة الزكاة والمواريث</a>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -147,407 +315,1177 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 <!-- STATS BAR -->
 <div class="stats-mega">
   <div class="container">
-    <div class="row g-0">
+    <div class="row g-0 text-center">
       <div class="col-6 col-md-3 stat-box"><div class="stat-num">4</div><div class="stat-label">مذاهب فقهية متبوعة</div></div>
-      <div class="col-6 col-md-3 stat-box"><div class="stat-num">7</div><div class="stat-label">أبواب ومقاصد تشريعية</div></div>
       <div class="col-6 col-md-3 stat-box"><div class="stat-num">5</div><div class="stat-label">قواعد فقهية كبرى حاكمة</div></div>
-      <div class="col-6 col-md-3 stat-box"><div class="stat-num">100+</div><div class="stat-label">مسألة فقهية معاصرة</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">8</div><div class="stat-label">أبواب تشريعية كبرى</div></div>
+      <div class="col-6 col-md-3 stat-box"><div class="stat-num">100%</div><div class="stat-label">موثقة بالأدلة المعتمدة</div></div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <!-- TABS NAV -->
-  <div class="main-tabs-wrapper">
-    <ul class="nav nav-pills main-tabs"  id="fiqhTabs" role="tablist">
-      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-madhabs"><i class="fas fa-landmark fs-4 d-block mb-1"></i>المذاهب الأربعة</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ibadaat"><i class="fas fa-pray fs-4 d-block mb-1"></i>فقه العبادات</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-muamalat"><i class="fas fa-handshake fs-4 d-block mb-1"></i>المعاملات المالية</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-usra"><i class="fas fa-home fs-4 d-block mb-1"></i>فقه الأسرة</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-jinayat"><i class="fas fa-balance-scale-right fs-4 d-block mb-1"></i>الجنايات والمواريث</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-nawazil"><i class="fas fa-laptop-medical fs-4 d-block mb-1"></i>النوازل والمستجدات</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-usul"><i class="fas fa-sitemap fs-4 d-block mb-1"></i>أصول الفقه والقواعد</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-tools"><i class="fas fa-calculator fs-4 d-block mb-1"></i>حاسبات فقهية</button></li>
+<!-- TABS NAVIGATION WRAPPER -->
+<div class="main-tabs-wrapper">
+  <div class="container">
+    <ul class="nav nav-pills main-tabs" id="fiqhTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-madhabs"><i class="fas fa-landmark"></i>المذاهب الأربعة</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-matrix"><i class="fas fa-table-columns"></i>المقارنة الفقهية</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ibadaat"><i class="fas fa-pray"></i>فقه العبادات</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-muamalat"><i class="fas fa-handshake"></i>المعاملات المالية</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-usra"><i class="fas fa-home"></i>فقه الأسرة</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-jinayat"><i class="fas fa-scale-balanced"></i>الجنايات والمواريث</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-nawazil"><i class="fas fa-laptop-medical"></i>النوازل والمستجدات</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-usul"><i class="fas fa-sitemap"></i>أصول الفقه والقواعد</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-qa"><i class="fas fa-question-circle"></i>بنك المسائل والبحث</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-tools"><i class="fas fa-calculator"></i>حاسبات فقهية ذكية</button></li>
     </ul>
   </div>
+</div>
 
-  <div class="tab-content pb-5">
+<div class="container my-5">
+  <div class="tab-content" id="fiqhTabContent">
     
-    <!-- TAB 1: المذاهب الأربعة -->
+    <!-- ==========================================
+         TAB 1: المذاهب الأربعة وسلسلة الأئمة
+         ========================================== -->
     <div class="tab-pane fade show active" id="tab-madhabs">
       <div class="sec-head">
-        <span class="tag">مدارس التشريع السنية</span>
-        <h3>المذاهب <span>الفقهية</span> المعتبرة</h3>
-        <p>المدارس الفقهية الأربع التي تلقتها الأمة بالقبول والتسليم، وتفرغت لضبط أحكام الشرع وجمع الأدلة.</p>
+        <span class="tag"><i class="fas fa-scroll"></i> مدارس التشريع الإسلامي السنية</span>
+        <h3>المذاهب <span>الفقهية</span> الأربعة المعتمدة</h3>
+        <p>المدارس الفقهية الكبرى التي تلقتها الأمة بالقبول والتسليم، وتفرغ أئمتها لتقعيد الأحكام وجمع الأدلة وصياغة الفروع الفقهية.</p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- 4 Madhabs Cards -->
+      <div class="row g-4">
+         <!-- Hanafi -->
+         <div class="col-lg-6">
+            <div class="mega-card border-top border-4 border-warning">
+               <div class="d-flex gap-4 align-items-start flex-sm-nowrap flex-wrap">
+                  <div style="width:90px;height:90px;background:#fef3c7;border-radius:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(212,175,55,0.25);">
+                     <i class="fas fa-balance-scale text-warning fa-3x"></i>
+                  </div>
+                  <div>
+                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <h3 class="font-amiri fw-bold text-dark mb-0 fs-2">المذهب الحنفي</h3>
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold">إمام أهل الرأي</span>
+                     </div>
+                     <div class="madhab-badge mt-2">المؤسس: أبو حنيفة النعمان (80 - 150 هـ)</div>
+                     <p class="text-muted lh-lg mb-3">مدرسة الكوفة بالعراق. يتميز بقوة الاستدلال العقلي، دقة القياس، والتوسع في الفقه التقديري (فرض المسائل قبل وقوعها). تلاميذه الكبار: أبو يوسف ومحمد بن الحسن الشيباني.</p>
+                     
+                     <div class="p-3 rounded-3 bg-light border mb-3 small">
+                        <div class="fw-bold text-dark mb-1"><i class="fas fa-book-bookmark text-warning me-2"></i>أهم المتون المعتمدة:</div>
+                        <span class="text-muted">مختصر القدوري، كنز الدقائق للنسفي، الهداية للمرغيناني، رد المحتار لابن عابدين.</span>
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <span class="small text-muted"><i class="fas fa-globe text-primary me-1"></i>الانتشار: تركيا، الهند، باكستان، آسيا الوسطى، مصر، بلاد الشام.</span>
+                        <a href="fiqh_hanafi.html" class="btn btn-sm btn-outline-warning text-dark fw-bold rounded-pill px-3">تفاصيل المذهب <i class="fas fa-arrow-left ms-1"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Maliki -->
+         <div class="col-lg-6">
+            <div class="mega-card border-top border-4 border-success">
+               <div class="d-flex gap-4 align-items-start flex-sm-nowrap flex-wrap">
+                  <div style="width:90px;height:90px;background:#dcfce7;border-radius:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(16,185,129,0.25);">
+                     <i class="fas fa-book-reader text-success fa-3x"></i>
+                  </div>
+                  <div>
+                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <h3 class="font-amiri fw-bold text-dark mb-0 fs-2">المذهب المالكي</h3>
+                        <span class="badge bg-success text-white px-3 py-1 rounded-pill fw-bold">إمام دار الهجرة</span>
+                     </div>
+                     <div class="madhab-badge mt-2">المؤسس: مالك بن أنس الأصبحي (93 - 179 هـ)</div>
+                     <p class="text-muted lh-lg mb-3">مدرسة المدينة المنورة. يتميز بالاعتماد الراسخ على "عمل أهل المدينة" باعتباره سنة متوارثة قطعية، والتوسع في المصالح المرسلة وسد الذرائع والعرف الشرعي.</p>
+                     
+                     <div class="p-3 rounded-3 bg-light border mb-3 small">
+                        <div class="fw-bold text-dark mb-1"><i class="fas fa-book-bookmark text-success me-2"></i>أهم المتون المعتمدة:</div>
+                        <span class="text-muted">الموطأ لمالك، المدونة لسحنون، الرسالة لابن أبي زيد القيرواني، مختصر خليل.</span>
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <span class="small text-muted"><i class="fas fa-globe text-success me-1"></i>الانتشار: المغرب العربي، السودان، غرب إفريقيا، صعيد مصر، الخليج العربي.</span>
+                        <a href="fiqh_maliki.html" class="btn btn-sm btn-outline-success fw-bold rounded-pill px-3">تفاصيل المذهب <i class="fas fa-arrow-left ms-1"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Shafi -->
+         <div class="col-lg-6">
+            <div class="mega-card border-top border-4 border-primary">
+               <div class="d-flex gap-4 align-items-start flex-sm-nowrap flex-wrap">
+                  <div style="width:90px;height:90px;background:#e0e7ff;border-radius:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(59,130,246,0.25);">
+                     <i class="fas fa-gavel text-primary fa-3x"></i>
+                  </div>
+                  <div>
+                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <h3 class="font-amiri fw-bold text-dark mb-0 fs-2">المذهب الشافعي</h3>
+                        <span class="badge bg-primary text-white px-3 py-1 rounded-pill fw-bold">ناصر الحديث ومؤسس الأصول</span>
+                     </div>
+                     <div class="madhab-badge mt-2">المؤسس: محمد بن إدريس الشافعي (150 - 204 هـ)</div>
+                     <p class="text-muted lh-lg mb-3">المنهج الجامع بين مدرسة الأثر بالحجاز ومدرسة الرأي بالعراق. أول من دون علم أصول الفقه بكتابه "الرسالة"، وضبط قواعد الاستنباط ومفهوم المخالفة وشروط صحة الحديث والقياس.</p>
+                     
+                     <div class="p-3 rounded-3 bg-light border mb-3 small">
+                        <div class="fw-bold text-dark mb-1"><i class="fas fa-book-bookmark text-primary me-2"></i>أهم المتون المعتمدة:</div>
+                        <span class="text-muted">الأم للشافعي، متن أبي شجاع (غاية الاختصار)، منهاج الطالبين للنووي، روضة الطالبين.</span>
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <span class="small text-muted"><i class="fas fa-globe text-primary me-1"></i>الانتشار: إندونيسيا، ماليزيا، اليمن، مصر، الشام، كينيا، تنزانيا، كردستان.</span>
+                        <a href="fiqh_shafi.html" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">تفاصيل المذهب <i class="fas fa-arrow-left ms-1"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Hanbali -->
+         <div class="col-lg-6">
+            <div class="mega-card border-top border-4 border-danger">
+               <div class="d-flex gap-4 align-items-start flex-sm-nowrap flex-wrap">
+                  <div style="width:90px;height:90px;background:#fee2e2;border-radius:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(239,68,68,0.25);">
+                     <i class="fas fa-shield-alt text-danger fa-3x"></i>
+                  </div>
+                  <div>
+                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <h3 class="font-amiri fw-bold text-dark mb-0 fs-2">المذهب الحنبلي</h3>
+                        <span class="badge bg-danger text-white px-3 py-1 rounded-pill fw-bold">إمام أهل السنة والصبر</span>
+                     </div>
+                     <div class="madhab-badge mt-2">المؤسس: أحمد بن حنبل الشيباني (164 - 241 هـ)</div>
+                     <p class="text-muted lh-lg mb-3">مدرسة الأثر والنص المطلق. التزام تام بالنصوص والآثار المروية عن الصحابة، وتقديم الحديث ولو ضعيفاً على القياس المجرد. برز منه كبار المحققين كابن قدامة وابن تيمية وابن القيم.</p>
+                     
+                     <div class="p-3 rounded-3 bg-light border mb-3 small">
+                        <div class="fw-bold text-dark mb-1"><i class="fas fa-book-bookmark text-danger me-2"></i>أهم المتون المعتمدة:</div>
+                        <span class="text-muted">مختصر الخرقي، عمدة الفقه والمقنع والمغني لابن قدامة، زاد المستقنع للحجاوي.</span>
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <span class="small text-muted"><i class="fas fa-globe text-danger me-1"></i>الانتشار: السعودية، دول الخليج العربي، فلسطين، وأجزاء من العراق والشام.</span>
+                        <a href="fiqh_hanbali.html" class="btn btn-sm btn-outline-danger fw-bold rounded-pill px-3">تفاصيل المذهب <i class="fas fa-arrow-left ms-1"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Scholarly Chain Roadmap -->
+      <div class="mt-5 p-4 p-md-5 rounded-4 bg-white border shadow-sm">
+        <div class="text-center mb-4">
+          <span class="tag"><i class="fas fa-link"></i> التوارث العلمي النبيل</span>
+          <h4 class="font-amiri fw-bold fs-2 text-dark">سلسلة تلاقي وأخذ الأئمة الأربعة عن بعضهم</h4>
+          <p class="text-muted max-w-700 mx-auto">لم تكن المذاهب متنافرة، بل كانت بنياناً واحداً يسقي بعضه بعضاً في سلسلة ذهبية مباركة من التتلمذ والاحترام المتبادل.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch text-center">
+          <div class="col-md-3">
+            <div class="chain-step">
+              <div class="chain-num mx-auto">1</div>
+              <h5 class="font-amiri fw-bold text-dark fs-4">أبو حنيفة النعمان</h5>
+              <div class="badge bg-warning text-dark mb-2">توفي 150 هـ</div>
+              <p class="text-muted small mb-0">أخذ عن حماد بن أبي سليمان عن إبراهيم النخعي عن علقمة والأسود عن الصحابي الجليل <strong>عبد الله بن مسعود</strong> رضي الله عنه.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="chain-step">
+              <div class="chain-num mx-auto">2</div>
+              <h5 class="font-amiri fw-bold text-dark fs-4">مالك بن أنس</h5>
+              <div class="badge bg-success text-white mb-2">توفي 179 هـ</div>
+              <p class="text-muted small mb-0">أخذ عن نافع مولى ابن عمر، وعن ابن شهاب الزهري وربيعة الرأي، حاملاً ميراث الصحابي الجليل <strong>عبد الله بن عمر</strong> وفقهاء المدينة السبعة.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="chain-step">
+              <div class="chain-num mx-auto">3</div>
+              <h5 class="font-amiri fw-bold text-dark fs-4">محمد بن إدريس الشافعي</h5>
+              <div class="badge bg-primary text-white mb-2">توفي 204 هـ</div>
+              <p class="text-muted small mb-0"><strong>تلميذ الإمام مالك</strong> وحفظ موطأه وقرأه عليه، ثم ارتحل للعراق وتفقه على <strong>محمد بن الحسن الشيباني</strong> تلميذ أبي حنيفة، فجمع بين المدرستين.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="chain-step">
+              <div class="chain-num mx-auto">4</div>
+              <h5 class="font-amiri fw-bold text-dark fs-4">أحمد بن حنبل</h5>
+              <div class="badge bg-danger text-white mb-2">توفي 241 هـ</div>
+              <p class="text-muted small mb-0"><strong>التلميذ الأكبر للإمام الشافعي</strong>، لازمه في بغداد وقال عنه الشافعي: «خرجت من بغداد فما خلّفت بها أحداً أورع ولا أتقى ولا أفقه من أحمد بن حنبل».</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fiqh-quote text-center mt-4">
+          <i class="fas fa-quote-right fa-2x text-warning mb-2 d-block opacity-50"></i>
+          <p class="font-amiri fs-4 mb-1 text-dark">«الناس في الفقه عيال على أبي حنيفة، وكان مالك كالنجم الثاقب، والشافعي للشمس للدنيا والعافية للناس، وما رأيت أحداً أجمع للعلم والورع من أحمد»</p>
+          <small class="text-muted fw-bold">— شهادات متواترة لأئمة الإسلام وعلماء الجرح والتعديل</small>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==========================================
+         TAB 2: المقارنة الفقهية التطبيقية بين المذاهب
+         ========================================== -->
+    <div class="tab-pane fade" id="tab-matrix">
+      <div class="sec-head">
+        <span class="tag"><i class="fas fa-balance-scale"></i> الفقه المقارن المعتمد</span>
+        <h3>جدول <span>المقارنة الفقهية</span> بين المذاهب الأربعة</h3>
+        <p>مقارنة علمية رصينة لأبرز المسائل الخلافية المشهورة، تبيّن سعة الشريعة وسبب اختلاف الفقهاء في فهم النصوص والأدلة.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="fiqh-table-wrap table-responsive mb-4">
+        <table class="table fiqh-table table-bordered mb-0 text-center">
+          <thead>
+            <tr>
+              <th style="width:20%;" class="text-start pe-4">المسألة الفقهية</th>
+              <th style="width:20%;">المذهب الحنفي</th>
+              <th style="width:20%;">المذهب المالكي</th>
+              <th style="width:20%;">المذهب الشافعي</th>
+              <th style="width:20%;">المذهب الحنبلي</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark"><i class="fas fa-check-circle text-success me-2"></i>قراءة الفاتحة للمأموم في الصلاة الجهرية</td>
+              <td><span class="badge bg-danger mb-1">لا تجوز (مكروهة تحريماً)</span><br><small class="text-muted">ينصت لقراءة الإمام مطلقاً لعموم: «وإذا قرئ القرآن فاستمعوا له»</small></td>
+              <td><span class="badge bg-warning text-dark mb-1">مكروهة في الجهرية</span><br><small class="text-muted">يستمع للجهرية ويقرؤها في السرية استحباباً</small></td>
+              <td><span class="badge bg-success mb-1">فرض وركن في كل ركعة</span><br><small class="text-muted">يقرأ بها سراً بعد فراغ الإمام أو في سكتاته: «لا صلاة لمن لم يقرأ بفاتحة الكتاب»</small></td>
+              <td><span class="badge bg-primary mb-1">مستحبة في سكتات الإمام</span><br><small class="text-muted">فإن لم يسكت استمع له، وتجزئه قراءة الإمام</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark"><i class="fas fa-check-circle text-success me-2"></i>القدر المجزئ في مسح الرأس بالوضوء</td>
+              <td><span class="badge bg-info text-dark mb-1">ربع الرأس (1/4)</span><br><small class="text-muted">تقدير بالناصية لحديث المغيرة بن شعبة</small></td>
+              <td><span class="badge bg-success mb-1">استيعاب جميع الرأس فرض</span><br><small class="text-muted">من منابت شعر الرأس المعتاد إلى نقرة القفا</small></td>
+              <td><span class="badge bg-primary mb-1">ما يقع عليه اسم المسح</span><br><small class="text-muted">يجزئ مسح بعض شعرة واحدة في حدود الرأس</small></td>
+              <td><span class="badge bg-success mb-1">استيعاب جميع الرأس والأذنين</span><br><small class="text-muted">والأذنان من الرأس عند الحنابلة</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark"><i class="fas fa-check-circle text-success me-2"></i>نقض الوضوء بلمس المرأة الأجنبية</td>
+              <td><span class="badge bg-secondary mb-1">لا ينقض مطلقاً</span><br><small class="text-muted">إلا بالمباشرة الفاحشة التي يتبعها مذي</small></td>
+              <td><span class="badge bg-warning text-dark mb-1">ينقض إن كان بشهوة ولذة</span><br><small class="text-muted">قصد اللذة أو وجدها، أما اللمس العارض فلا ينقض</small></td>
+              <td><span class="badge bg-danger mb-1">ينقض مطلقاً لكل من اللامس والملموس</span><br><small class="text-muted">لظاهر قوله تعالى: «أو لامستم النساء» دون حائل</small></td>
+              <td><span class="badge bg-warning text-dark mb-1">ينقض إن كان بشهوة فقط</span><br><small class="text-muted">جمعاً بين ظاهر الآية وأحاديث تقبيل النبي ﷺ لنسائه</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark"><i class="fas fa-check-circle text-success me-2"></i>زكاة حلي الذهب والفضة المعد للاستعمال المباح</td>
+              <td><span class="badge bg-danger mb-1">تجب فيه الزكاة (2.5%)</span><br><small class="text-muted">لعموم نصوص وجوب زكاة الذهب والفضة إذا بلغ النصاب</small></td>
+              <td><span class="badge bg-success mb-1">لا زكاة فيه</span><br><small class="text-muted">لأنه أُعد للاستعمال الشخصي المباح كالثياب والدور</small></td>
+              <td><span class="badge bg-success mb-1">لا زكاة فيه</span><br><small class="text-muted">ما دام في حد المعتاد بلا إسراف ولا كنز</small></td>
+              <td><span class="badge bg-success mb-1">لا زكاة فيه</span><br><small class="text-muted">وهو قول جماهير الصحابة كابن عمر وعائشة وأنس</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark"><i class="fas fa-check-circle text-success me-2"></i>دعاء القنوت في صلاة الفجر الدائمة</td>
+              <td><span class="badge bg-secondary mb-1">لا يقنت إلا في الوتر والنوازل</span><br><small class="text-muted">ويرون أن قنوت الفجر كان منسوخاً</small></td>
+              <td><span class="badge bg-primary mb-1">مستحب سراً قبل الركوع</span><br><small class="text-muted">في الركعة الثانية من الصبح</small></td>
+              <td><span class="badge bg-success mb-1">سنة مؤكدة بعد الرفع من ركوع الثانية</span><br><small class="text-muted">يسجد للسهو بتركه عمداً أو سهواً</small></td>
+              <td><span class="badge bg-secondary mb-1">لا يسن القنوت في الفجر</span><br><small class="text-muted">إلا في النوازل التي تنزل بعامة المسلمين</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark"><i class="fas fa-check-circle text-success me-2"></i>اشتراط الولي في زواج المرأة البالغة الرشيدة</td>
+              <td><span class="badge bg-info text-dark mb-1">يجوز أن تزوج نفسها بكفء</span><br><small class="text-muted">وللولي حق الاعتراض وفسخ النكاح إن تزوجت غير كفء</small></td>
+              <td><span class="badge bg-danger mb-1">شرط صحة وركن لا يصح بدونه</span><br><small class="text-muted">«لا نكاح إلا بولي وشاهدي عدل»</small></td>
+              <td><span class="badge bg-danger mb-1">شرط صحة وركن لا ينعقد إلا به</span><br><small class="text-muted">«أيما امرأة نكحت بغير إذن وليها فنكاحها باطل»</small></td>
+              <td><span class="badge bg-danger mb-1">شرط صحة وركن حتمي</span><br><small class="text-muted">لا يصح عقد النكاح للمرأة ثيباً كانت أو بكراً إلا بوليها</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Comparison takeaways -->
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="p-3 rounded-4 bg-white border">
+            <h6 class="fw-bold text-dark mb-2"><i class="fas fa-lightbulb text-warning me-2"></i>سبب اختلاف الأئمة</h6>
+            <p class="text-muted small mb-0">يرجع الاختلاف إلى: ثبوت الحديث أو عدم بلوغه للإمام، دلالة الألفاظ اللغوية (حقيقة أو مجاز)، الجمع بين الأدلة المتعارضة ظاهرياً، والاعتداد ببعض الأصول كعمل أهل المدينة أو القياس.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 rounded-4 bg-white border">
+            <h6 class="fw-bold text-dark mb-2"><i class="fas fa-shield-halved text-success me-2"></i>مشروعية التمذهب</h6>
+            <p class="text-muted small mb-0">دراسة مذهب معتمد هو السبيل الأقوم لطالب العلم لضبط الفقه على أصول محكمة وتجنب التخبط في الفتاوى والأهواء، مع اتباع الدليل الراجح عند وضوحه بلا تعصب مذموم.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 rounded-4 bg-white border">
+            <h6 class="fw-bold text-dark mb-2"><i class="fas fa-hand-holding-heart text-primary me-2"></i>أدب الاختلاف</h6>
+            <p class="text-muted small mb-0">كان أئمة الإسلام يعذر بعضهم بعضاً ويصلون خلف بعضهم مع اختلاف فروعهم، ممتثلين مقولة سفيان الثوري: «إذا رأيت الرجل يعمل بالعمل الذي قد اختلف فيه وأنت ترى غيره فلا تنهه».</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TAB 3: فقه العبادات (المفصل والموسع)
+         ========================================== -->
+    <div class="tab-pane fade" id="tab-ibadaat">
+      <div class="sec-head">
+        <span class="tag"><i class="fas fa-hands-praying"></i> وما خلقت الجن والإنس إلا ليعبدون</span>
+        <h3>فقه <span>العبادات</span> الإسلامية التفصيلي</h3>
+        <p>الأحكام المنظمة لأعظم صلة بين العبد وربه: الطهارة، الصلاة، الزكاة، الصيام، ومناسك الحج والعمرة وفق الكتاب وصحيح السنة.</p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- 4 Pillars of Worship Detailed Accordion -->
+      <div class="accordion accordion-fiqh" id="worshipAccordion">
+        
+        <!-- Accordion 1: الطهارة -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-taharah">
+              <i class="fas fa-tint text-primary me-3 fs-3"></i>
+              <div>
+                <strong class="d-block text-dark">1. كتاب الطهارة — مفتاح الصلاة وشروط صحتها</strong>
+                <small class="text-muted fw-normal fs-6">فرائض الوضوء، نواقضه، موجبات الغسل، المسح على الخفين، والتيمم</small>
+              </div>
+            </button>
+          </h2>
+          <div id="acc-taharah" class="accordion-collapse collapse show" data-bs-parent="#worshipAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h5 class="font-amiri fw-bold text-primary mb-3"><i class="fas fa-list-check me-2"></i>فرائض الوضوء الستة (الأركان)</h5>
+                    <ol class="mb-0 pe-3 lh-lg">
+                      <li><strong>النية:</strong> ومحلها القلب (لقوله ﷺ: «إنما الأعمال بالنيات»).</li>
+                      <li><strong>غسل الوجه كاملاً:</strong> حده طولاً من منابت الشعر إلى أسفل الذقن، وعرضاً ما بين شحمتي الأذنين.</li>
+                      <li><strong>غسل اليدين مع المرفقين:</strong> إدخال المرفقين في الغسل فرض قطعي.</li>
+                      <li><strong>مسح الرأس:</strong> لقوله تعالى: «وامسحوا برءوسكم».</li>
+                      <li><strong>غسل الرجلين مع الكعبين:</strong> إدخال الكعبين (العظمان الناتئان) في الغسل.</li>
+                      <li><strong>الترتيب والموالاة:</strong> البدء بما بدأ الله به، وألا يؤخر غسل عضو حتى يجف الذي قبله في زمن معتدل.</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h5 class="font-amiri fw-bold text-danger mb-3"><i class="fas fa-ban me-2"></i>نواقض الوضوء المتفق والمشهور منها</h5>
+                    <ul class="mb-0 pe-3 lh-lg">
+                      <li><strong>الخارج من السبيلين:</strong> بول، غائط، ريح، مذي، أو ودي بإجماع العلماء.</li>
+                      <li><strong>زوال العقل أو تغطيته:</strong> بالإغماء، السكر، الجنون، أو النوم المستغرق الذي لا يشعر معه بنقضه.</li>
+                      <li><strong>مس الفرج باليد:</strong> بباطن الكف لحديث: «من مس ذكره فليتوضأ».</li>
+                      <li><strong>أكل لحم الإبل:</strong> لحديث جابر بن سمرة في صحيح مسلم: «توضؤوا من لحوم الإبل».</li>
+                      <li><strong>الردة عن الإسلام:</strong> محبطة للأعمال كلها.</li>
+                      <li><strong>موجبات الغسل:</strong> خروج المني بشهوة، التقاء الختانين (الجماع ولو بلا إنزال)، انقطاع دم الحيض والنفاس، والموت.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="p-3 rounded-3 border bg-white" style="border-right:4px solid var(--gold)!important;">
+                    <h6 class="fw-bold text-dark mb-2"><i class="fas fa-shoe-prints text-warning me-2"></i>رخصة المسح على الخفين والجوربين</h6>
+                    <p class="text-muted small mb-0 lh-lg">
+                      <strong>شروطه:</strong> أن يلبسهما على طهارة مائية كاملة، وأن يكونا طاهرين ساترين لمحل الفرض. <strong>مدته:</strong> يوم وليلة (24 ساعة) للمقيم، وثلاثة أيام بلياليها (72 ساعة) للمسافر، وتبدأ المدة من أول مسح بعد أول حدث.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 2: الصلاة -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-salah">
+              <i class="fas fa-mosque text-success me-3 fs-3"></i>
+              <div>
+                <strong class="d-block text-dark">2. كتاب الصلاة — عمود الدين والركن الثاني</strong>
+                <small class="text-muted fw-normal fs-6">شروط الصلاة (9)، أركانها (14)، واجباتها (8)، وسجود السهو</small>
+              </div>
+            </button>
+          </h2>
+          <div id="acc-salah" class="accordion-collapse collapse" data-bs-parent="#worshipAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-4">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h6 class="fw-bold text-dark mb-2 text-center text-primary"><i class="fas fa-key me-1"></i>شروط صحة الصلاة (9)</h6>
+                    <small class="text-muted d-block mb-3 text-center">تتقدم على الصلاة وتستمر معها</small>
+                    <ol class="small pe-3 mb-0 lh-lg">
+                      <li>الإسلام</li>
+                      <li>العقل</li>
+                      <li>التمييز (سن السابعة)</li>
+                      <li>رفع الحدث (بالوضوء أو الغسل)</li>
+                      <li>طهارة البدن والثوب والمكان</li>
+                      <li>ستر العورة</li>
+                      <li>دخول الوقت بيقين أو غلبة ظن</li>
+                      <li>استقبال القبلة</li>
+                      <li>النية المقترنة بالتحريمة</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h6 class="fw-bold text-dark mb-2 text-center text-danger"><i class="fas fa-cubes me-1"></i>أركان الصلاة (14)</h6>
+                    <small class="text-muted d-block mb-3 text-center">لا تسقط عمداً ولا سهواً ويجب الإتيان بها</small>
+                    <ol class="small pe-3 mb-0 lh-lg">
+                      <li>القيام مع القدرة في الفريضة</li>
+                      <li>تكبيرة الإحرام</li>
+                      <li>قراءة سورة الفاتحة</li>
+                      <li>الركوع</li>
+                      <li>الرفع والاعتدال من الركوع</li>
+                      <li>السجود على الأعضاء السبعة</li>
+                      <li>الرفع من السجود</li>
+                      <li>الجلسة بين السجدتين</li>
+                      <li>الطمأنينة في جميع الأركان</li>
+                      <li>التشهد الأخير</li>
+                      <li>الجلوس للتشهد الأخير</li>
+                      <li>الصلاة على النبي ﷺ</li>
+                      <li>الترتيب بين الأركان</li>
+                      <li>التسليمتان</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h6 class="fw-bold text-dark mb-2 text-center text-warning"><i class="fas fa-clipboard-check me-1"></i>واجبات الصلاة (8)</h6>
+                    <small class="text-muted d-block mb-3 text-center">تبطل بتعمد تركها وتجبر بسجود السهو</small>
+                    <ol class="small pe-3 mb-0 lh-lg">
+                      <li>التكبيرات لغير الإحرام (الانتقال)</li>
+                      <li>قول «سمع الله لمن حمده» للإمام والمنفرد</li>
+                      <li>قول «ربنا ولك الحمد» للكل</li>
+                      <li>قول «سبحان ربي العظيم» في الركوع مرة</li>
+                      <li>قول «سبحان ربي الأعلى» في السجود مرة</li>
+                      <li>قول «رب اغفر لي» بين السجدتين</li>
+                      <li>التشهد الأول</li>
+                      <li>الجلوس للتشهد الأول</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="p-3 rounded-3 bg-warning bg-opacity-10 border border-warning">
+                    <h6 class="fw-bold text-dark mb-2"><i class="fas fa-clock-rotate-left text-warning me-2"></i>ضابط سجود السهو — متى يكون قبل السلام ومتى بعده؟</h6>
+                    <div class="row g-2 small text-muted lh-lg">
+                      <div class="col-md-6">
+                        <strong>سجود قبل السلام:</strong> إذا كان السهو عن <span class="badge bg-danger">نقص واجب</span> (كنسيان التشهد الأول)، أو <span class="badge bg-warning text-dark">شك لم يترجح فيه شيء</span> فبنى على الأقل المتيقن.
+                      </div>
+                      <div class="col-md-6">
+                        <strong>سجود بعد السلام:</strong> إذا كان السهو عن <span class="badge bg-success">زيادة</span> (كركعة خامسة أو ركوع زائد)، أو <span class="badge bg-info text-dark">شك مع ترجيح أحد الأمرين</span> فيبني على غالب ظنه ويسلم ثم يسجد ويسلم.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: الزكاة والصيام -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-zakat-sawm">
+              <i class="fas fa-coins text-warning me-3 fs-3"></i>
+              <div>
+                <strong class="d-block text-dark">3. كتاب الزكاة والصيام — تطهير المال وتزكية النفس</strong>
+                <small class="text-muted fw-normal fs-6">شروط الزكاة، مصارفها الثمانية، مفسدات الصيام، والمفطرات المعاصرة</small>
+              </div>
+            </button>
+          </h2>
+          <div id="acc-zakat-sawm" class="accordion-collapse collapse" data-bs-parent="#worshipAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <h5 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-hand-holding-dollar text-warning me-2"></i>أحكام الزكاة ومصارفها الثمانية</h5>
+                  <p class="text-muted small lh-lg">تجب الزكاة في: النقدين (الذهب والفضة والعملات)، عروض التجارة، بهيمة الأنعام، والخارج من الأرض (الحبوب والثمار) بشروط: ملك النصاب، وحولان الحول (إلا الزروع فتجب يوم حصادها).</p>
+                  
+                  <div class="p-3 rounded-3 bg-light border mb-3 small">
+                    <strong class="text-dark d-block mb-1">مصارف الزكاة الثمانية بنص القرآن (التوبة: 60):</strong>
+                    <ol class="pe-3 mb-0 lh-lg text-muted">
+                      <li><strong>الفقراء:</strong> الذين لا يجدون شيئاً أو يجدون دون نصف الكفاية.</li>
+                      <li><strong>المساكين:</strong> الذين يجدون نصف الكفاية أو أكثر ولا تكفيهم تماماً.</li>
+                      <li><strong>العاملون عليها:</strong> جباتها وحفظتها المشتغلون بها بأمر الحاكم.</li>
+                      <li><strong>المؤلفة قلوبهم:</strong> السادة المطاعون الذين يُرجى إسلامهم أو كف شرهم.</li>
+                      <li><strong>في الرقاب:</strong> تحرير العبيد وعتق الأسرى المسلمين.</li>
+                      <li><strong>الغارمون:</strong> المدينون العاجزون عن سداد ديونهم في غير معصية.</li>
+                      <li><strong>في سبيل الله:</strong> الغزاة والمجاهدون وسبل الدفاع عن الإسلام.</li>
+                      <li><strong>ابن السبيل:</strong> المسافر المنقطع عن بلده ونفقته.</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <h5 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-moon text-success me-2"></i>مفطرات الصيام المعاصرة والقديمة</h5>
+                  <div class="table-responsive">
+                    <table class="table table-sm table-bordered small text-center mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>النازلة / الشيء</th>
+                          <th>الحكم الفقهي</th>
+                          <th>العلة والضابط</th>
+                        </tr>
+                      </thead>
+                      <tbody class="align-middle">
+                        <tr>
+                          <td class="text-start pe-3">بخاخ الربو الموضعي</td>
+                          <td><span class="badge bg-success">لا يفطر</span></td>
+                          <td class="text-muted">غاز يذهب للرئة للتوسيع وليس طعاماً ولا شراباً</td>
+                        </tr>
+                        <tr>
+                          <td class="text-start pe-3">الإبر العضلية والجلدية غير المغذية</td>
+                          <td><span class="badge bg-success">لا تفطر</span></td>
+                          <td class="text-muted">دواء علاجي لا ينوب عن الأكل والشرب</td>
+                        </tr>
+                        <tr>
+                          <td class="text-start pe-3">المحاليل والحقن المغذية بالوريد</td>
+                          <td><span class="badge bg-danger">مفطرة قطعاً</span></td>
+                          <td class="text-muted">لأنها تقوم مقام الطعام والشراب وتغني عنهما</td>
+                        </tr>
+                        <tr>
+                          <td class="text-start pe-3">قطرة العين والأذن وغسول الفم</td>
+                          <td><span class="badge bg-success">لا تفطر</span></td>
+                          <td class="text-muted">العين ليست منفذاً معتاداً مع وجوب مج ما يصل للحلق</td>
+                        </tr>
+                        <tr>
+                          <td class="text-start pe-3">قطرة الأنف وبخاخ الأنف</td>
+                          <td><span class="badge bg-warning text-dark">تفطر إن ابتلعها</span></td>
+                          <td class="text-muted">الأنف منفذ مباشر للمعدة؛ لحديث: «وبالغ في الاستنشاق إلا أن تكون صائماً»</td>
+                        </tr>
+                        <tr>
+                          <td class="text-start pe-3">سحب الدم للتحليل أو فحص السكر</td>
+                          <td><span class="badge bg-success">لا يفطر</span></td>
+                          <td class="text-muted">كمية يسيرة لا تضعف البدن كالحجامة</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 4: الحج والعمرة -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-hajj">
+              <i class="fas fa-kaaba text-dark me-3 fs-3"></i>
+              <div>
+                <strong class="d-block text-dark">4. كتاب الحج والعمرة — الركن الخامس وقصد البيت الحرام</strong>
+                <small class="text-muted fw-normal fs-6">أركان الحج الأربعة، واجباته السبعة، محظورات الإحرام، ومخطط المناسك</small>
+              </div>
+            </button>
+          </h2>
+          <div id="acc-hajj" class="accordion-collapse collapse" data-bs-parent="#worshipAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h6 class="fw-bold text-dark mb-2 text-danger"><i class="fas fa-cube me-2"></i>أركان الحج الأربعة (لا يجبر تركها بدم)</h6>
+                    <ol class="pe-3 lh-lg mb-0 text-muted">
+                      <li><strong>الإحرام:</strong> وهو نية الدخول في النسك من الميقات المحدد.</li>
+                      <li><strong>الوقوف بعرفة:</strong> أعظم أركان الحج؛ لقوله ﷺ: «الحج عرفة».</li>
+                      <li><strong>طواف الإفاضة:</strong> بعد الإفاضة من عرفة ومزدلفة يوم النحر.</li>
+                      <li><strong>السعي بين الصفا والمروة:</strong> سبعة أشواط تبدأ بالصفا وتنتهي بالمروة.</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="p-3 rounded-3 bg-light border h-100">
+                    <h6 class="fw-bold text-dark mb-2 text-warning"><i class="fas fa-list-numeric me-2"></i>واجبات الحج السبعة (يجبر تركها بذبح شاة)</h6>
+                    <ol class="pe-3 lh-lg mb-0 text-muted">
+                      <li>الإحرام من الميقات المكاني المحدد شرعاً.</li>
+                      <li>الوقوف بعرفة إلى غروب الشمس لمن وقف نهاراً.</li>
+                      <li>المبيت بمزدلفة ليلة النحر حتى بعد نصف الليل.</li>
+                      <li>المبيت بمنى ليالي أيام التشريق (ليلتان للمتعجل وثلاث للمتأخر).</li>
+                      <li>رمي الجمار مرتباً (الصغرى فالوسطى فالكبرى).</li>
+                      <li>الحلق أو التقصير (والحلق للرجال أفضل).</li>
+                      <li>طواف الوداع لغير الحائض والنفساء.</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="p-3 rounded-3 bg-white border">
+                    <h6 class="fw-bold text-dark mb-2"><i class="fas fa-triangle-exclamation text-danger me-2"></i>محظورات الإحرام التسعة</h6>
+                    <div class="d-flex flex-wrap gap-2 small">
+                      <span class="badge bg-light text-dark border p-2">1. حلق شعر الرأس والبدن</span>
+                      <span class="badge bg-light text-dark border p-2">2. تقليم الأظافر</span>
+                      <span class="badge bg-light text-dark border p-2">3. الطيب في البدن والثوب</span>
+                      <span class="badge bg-light text-dark border p-2">4. تغطية الرأس بملاصق للرجل</span>
+                      <span class="badge bg-light text-dark border p-2">5. لبس المخيط للرجل</span>
+                      <span class="badge bg-light text-dark border p-2">6. قتل صيد البر</span>
+                      <span class="badge bg-light text-dark border p-2">7. عقد النكاح</span>
+                      <span class="badge bg-light text-dark border p-2">8. المباشرة بشهوة</span>
+                      <span class="badge bg-danger text-white p-2">9. الجماع (مفسد للحج قبل التحلل الأول)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center mt-4">
+                <a href="fiqh_ibadat.html" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">تصفح موسوعة العبادات الكاملة بالتفصيل <i class="fas fa-arrow-left ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TAB 4: فقه المعاملات المالية والاقتصادية
+         ========================================== -->
+    <div class="tab-pane fade" id="tab-muamalat">
+      <div class="sec-head">
+        <span class="tag"><i class="fas fa-handshake-angle"></i> وأحل الله البيع وحرم الربا</span>
+        <h3>فقه <span>المعاملات المالية</span> والاستثمار الإسلامي</h3>
+        <p>الضوابط الحاكمة لحركة الأموال والتجارة والعقود الحديثة لضمان العدل والشفافية ومنع الظلم وأكل أموال الناس بالباطل.</p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- 4 Core Pillars of Islamic Finance -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-3 col-6">
+          <div class="p-3 rounded-4 bg-white border text-center h-100 shadow-sm">
+            <div class="chain-num mx-auto bg-danger text-white"><i class="fas fa-ban"></i></div>
+            <h5 class="font-amiri fw-bold text-dark fs-4">تحريم الربا</h5>
+            <p class="text-muted small mb-0">بنوعيه: <strong>ربا الفضل</strong> (التفاضل في الجنس الربوي الواحد)، و<strong>ربا النسيئة</strong> (الزيادة المشروطة مقابل الأجل).</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="p-3 rounded-4 bg-white border text-center h-100 shadow-sm">
+            <div class="chain-num mx-auto bg-warning text-dark"><i class="fas fa-eye-slash"></i></div>
+            <h5 class="font-amiri fw-bold text-dark fs-4">تحريم الغرر</h5>
+            <p class="text-muted small mb-0">بيع المجهول العاقبة أو ما لا يقدر على تسليمه، كالسمك في الماء أو الثمار قبل بدو صلاحها؛ حمايةً للتراضي والأمانة.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="p-3 rounded-4 bg-white border text-center h-100 shadow-sm">
+            <div class="chain-num mx-auto bg-dark text-white"><i class="fas fa-dice"></i></div>
+            <h5 class="font-amiri fw-bold text-dark fs-4">تحريم الميسر والقمار</h5>
+            <p class="text-muted small mb-0">كل معاملة يتردد فيها العاقد بين أن يغنم غنماً مجاناً أو يغرم غُرماً محضاً دون نشاط اقتصادي حقيقي أو إنتاج.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="p-3 rounded-4 bg-white border text-center h-100 shadow-sm">
+            <div class="chain-num mx-auto bg-success text-white"><i class="fas fa-seedling"></i></div>
+            <h5 class="font-amiri fw-bold text-dark fs-4">ربط المال بالجهد</h5>
+            <p class="text-muted small mb-0">القاعدة الذهبية: <strong>«الغُنم بالغُرم»</strong> و<strong>«الخراج بالضمان»</strong>، فلا يستحق الربح إلا برأس مال معرَّض للمخاطرة أو بعمل مبذول.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modern Contracts Guide -->
+      <div class="p-4 p-md-5 rounded-4 bg-white border shadow-sm mb-5">
+        <h4 class="font-amiri fw-bold text-dark fs-2 mb-4 text-center"><i class="fas fa-file-contract text-success me-2"></i>دليل العقود الاستثمارية والتمويلية في البنوك الإسلامية</h4>
+        
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="p-3 rounded-3 bg-light border h-100">
+              <h5 class="font-amiri fw-bold text-primary mb-2"><i class="fas fa-store me-2"></i>1. عقد المرابحة للآمر بالشراء</h5>
+              <p class="text-muted small lh-lg mb-2">أن يطلب العميل من المصرف شراء سلعة محددة (سيارة، عقار، بضاعة)، فيشتريها المصرف لنفسه ويقبضها قبضاً صحيحاً، ثم يعيد بيعها للعميل بثمن الشراء مضافاً إليه ربح معلوم، مقسطاً على فترات محددة.</p>
+              <div class="badge bg-primary bg-opacity-10 text-primary border border-primary px-3 py-1">الشرط الأساسي: أن يتملك البنك السلعة وتدخل في ضمانه قبل بيعها للعميل</div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-3 rounded-3 bg-light border h-100">
+              <h5 class="font-amiri fw-bold text-success mb-2"><i class="fas fa-building me-2"></i>2. الإجارة المنتهية بالتمليك</h5>
+              <p class="text-muted small lh-lg mb-2">عقد إيجار عين (عقار أو آلة صناعية) مع وعد منفصل بتمليكها للمستأجر عند نهاية مدة الإجارة وسداد كامل الأقساط، إما عن طريق الهبة أو البيع بثمن رمزي، ولا يجوز الجمع بين صفتي البيع والإجارة في عقد واحد في وقت واحد.</p>
+              <div class="badge bg-success bg-opacity-10 text-success border border-success px-3 py-1">الشرط الأساسي: فصل عقد الإيجار عن وعد التمليك لضمان عدم الغرر</div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-3 rounded-3 bg-light border h-100">
+              <h5 class="font-amiri fw-bold text-warning mb-2"><i class="fas fa-industry me-2"></i>3. عقد السَّلَم وعقد الاستصناع</h5>
+              <p class="text-muted small lh-lg mb-2"><strong>السَّلَم:</strong> بيع آجل بعاجل (تسليم كامل الثمن نقداً في مجلس العقد مقابل سلعة موصوفة في الذمة تسلم بعد أجل، كالمحاصيل الزراعية). <strong>الاستصناع:</strong> عقد مع صانع لصناعة شيء بمواصفات محددة ومواد من عند الصانع ويجوز تقسيط ثمنه.</p>
+              <div class="badge bg-warning bg-opacity-10 text-dark border border-warning px-3 py-1">تطبيقات معاصرة: تمويل المقاولات، الزراعة، والمشاريع الإنشائية الكبرى</div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-3 rounded-3 bg-light border h-100">
+              <h5 class="font-amiri fw-bold text-danger mb-2"><i class="fas fa-chart-pie me-2"></i>4. المضاربة والمشاركة المتناقصة</h5>
+              <p class="text-muted small lh-lg mb-2"><strong>المضاربة:</strong> رأس المال من طرف، والعمل والخبرة من طرف آخر، والربح يُقتسم بنسبة شائعة متفق عليها (كالنصف أو 30%)، والخسارة المالية على رب المال حصراً. <strong>المشاركة المتناقصة:</strong> يدخل البنك شريكاً في عقار ثم يتنازل عن حصته تدريجياً للعميل مقابل سداد قيمتها.</p>
+              <div class="badge bg-danger bg-opacity-10 text-danger border border-danger px-3 py-1">الشرط الأساسي: تحريم ضمان رأس المال من قِبل المضارب إلا بتعدٍّ أو تفريط</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Islamic Banking vs Conventional Comparison -->
+      <div class="fiqh-table-wrap table-responsive mb-4">
+        <table class="table fiqh-table table-bordered mb-0 text-center">
+          <thead>
+            <tr>
+              <th style="width:25%;" class="text-start pe-4">وجه المقارنة</th>
+              <th style="width:37%;">المصارف الإسلامية</th>
+              <th style="width:38%;">البنوك التقليدية التجارية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark">طبيعة العلاقة مع العميل</td>
+              <td><span class="badge bg-success mb-1">شريك / بائع ومشترٍ / مؤجر ومستأجر</span><br><small class="text-muted">علاقة تجارية استثمارية قائمة على البيوع والمشاركات</small></td>
+              <td><span class="badge bg-danger mb-1">دائن ومدين ومقرض ومقترض</span><br><small class="text-muted">علاقة إقراض نقدية بحتة قائمة على بيع النقد بالنقد</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark">أساس توليد الأرباح</td>
+              <td><span class="badge bg-success mb-1">نشاط تجاري وأصول عينية حقيقية</span><br><small class="text-muted">الربح ناتج عن تقليب السلع وتأجير الأعيان والمضاربة</small></td>
+              <td><span class="badge bg-danger mb-1">الفائدة الربوية المشروطة على القرض</span><br><small class="text-muted">توليد المال من المال المجرد عبر الزمن (الربا الصريح)</small></td>
+            </tr>
+            <tr>
+              <td class="text-start fw-bold pe-4 text-dark">التعامل مع تأخر العميل المعسر</td>
+              <td><span class="badge bg-success mb-1">الإنظار شرعاً وتحريم غرامات التأخير لنفسها</span><br><small class="text-muted">وإن فُرضت تعويضات فتُصرف في وجوه الخير والصدقات ولا تدخل أرباح البنك</small></td>
+              <td><span class="badge bg-danger mb-1">مضاعفة الفوائد الربوية التراكمية</span><br><small class="text-muted">كلما تأخر العميل زادت فوائد التأخير كربا الجاهلية (إما أن تقضي وإما أن تربي)</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="fiqh_muamalat.html" class="btn btn-success rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح أحكام البيوع والمعاملات المالية بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TAB 5: فقه الأسرة والأحوال الشخصية
+         ========================================== -->
+    <div class="tab-pane fade" id="tab-usra">
+      <div class="sec-head">
+        <span class="tag"><i class="fas fa-people-roof"></i> الأسرة المسلمة ميثاق غليظ</span>
+        <h3>فقه <span>الأسرة والأحوال الشخصية</span></h3>
+        <p>التشريعات الإلهية الضامنة لتكوين أسرة صالحة، وحفظ حقوق الزوجين، ورعاية الأبناء، والحلول العادلة عند تعذر استمرار الحياة الزوجية.</p>
         <div class="divider"></div>
       </div>
 
       <div class="row g-4">
-         <!-- Hanafi -->
-         <div class="col-lg-6">
-            <a href="fiqh_hanafi.html" class="text-decoration-none">
-                <div class="mega-card d-flex gap-4 align-items-center">
-                   <div style="width:100px;height:100px;background:#fef3c7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fas fa-balance-scale text-warning fa-3x"></i>
-                   </div>
-                   <div>
-                      <h3 class="font-amiri fw-bold text-dark">المذهب الحنفي</h3>
-                      <div class="madhab-badge">تأسيس: أبو حنيفة النعمان (ت 150 هـ)</div>
-                      <p class="text-muted">مدرسة الرأي في الكوفة (العراق). يتميز بقوة الاستدلال العقلي، والقياس، وفرض المسائل الفقهية قبل وقوعها. وهو المذهب الأكثر انتشاراً.</p>
-                      <span class="text-primary fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
-                   </div>
-                </div>
-            </a>
-         </div>
-         <!-- Maliki -->
-         <div class="col-lg-6">
-            <a href="fiqh_maliki.html" class="text-decoration-none">
-                <div class="mega-card d-flex gap-4 align-items-center">
-                   <div style="width:100px;height:100px;background:#dcfce7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fas fa-book-reader text-success fa-3x"></i>
-                   </div>
-                   <div>
-                      <h3 class="font-amiri fw-bold text-dark">المذهب المالكي</h3>
-                      <div class="madhab-badge">تأسيس: مالك بن أنس (ت 179 هـ)</div>
-                      <p class="text-muted">مدرسة أهل الحديث في المدينة المنورة. يتميز بالاعتماد القوي على "عمل أهل المدينة" كمصدر للتشريع وسد الذرائع والمصالح المرسلة.</p>
-                      <span class="text-success fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
-                   </div>
-                </div>
-            </a>
-         </div>
-         <!-- Shafi -->
-         <div class="col-lg-6">
-            <a href="fiqh_shafi.html" class="text-decoration-none">
-                <div class="mega-card d-flex gap-4 align-items-center">
-                   <div style="width:100px;height:100px;background:#e0e7ff;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fas fa-gavel text-primary fa-3x"></i>
-                   </div>
-                   <div>
-                      <h3 class="font-amiri fw-bold text-dark">المذهب الشافعي</h3>
-                      <div class="madhab-badge">تأسيس: محمد بن إدريس الشافعي (ت 204 هـ)</div>
-                      <p class="text-muted">الوسط بين مدرسة الرأي ومدرسة الحديث. أول من دوّن علم أصول الفقه في كتابه "الرسالة" لضبط قواعد الاستنباط بدقة شديدة.</p>
-                      <span class="text-primary fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
-                   </div>
-                </div>
-            </a>
-         </div>
-         <!-- Hanbali -->
-         <div class="col-lg-6">
-            <a href="fiqh_hanbali.html" class="text-decoration-none">
-                <div class="mega-card d-flex gap-4 align-items-center">
-                   <div style="width:100px;height:100px;background:#fee2e2;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fas fa-shield-alt text-danger fa-3x"></i>
-                   </div>
-                   <div>
-                      <h3 class="font-amiri fw-bold text-dark">المذهب الحنبلي</h3>
-                      <div class="madhab-badge">تأسيس: أحمد بن حنبل (ت 241 هـ)</div>
-                      <p class="text-muted">مدرسة الأثر، التزمت بالنص (القرآن والسنة) التزاماً كبيراً، ولا يميلون للقياس إلا لضرورة قصوى. من أشهر أئمته ابن قدامة وابن تيمية.</p>
-                      <span class="text-danger fw-bold small">تصفح أصول وأحكام المذهب <i class="fas fa-arrow-left ms-1"></i></span>
-                   </div>
-                </div>
-            </a>
-         </div>
+        <!-- Marriage Pillars -->
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-primary">
+            <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-ring text-primary me-2"></i>أركان وشروط عقد النكاح</h4>
+            <ul class="pe-3 lh-lg text-muted small mb-3">
+              <li><strong>الإيجاب والقبول:</strong> الصيغة الدالة على الرضا الصريح بين الطرفين.</li>
+              <li><strong>الولي:</strong> للأثر النبوي: «لا نكاح إلا بولي» (وهو شرط صحة عند الجمهور).</li>
+              <li><strong>الشاهدان العدلان:</strong> لإشهار النكاح وحفظ الأنساب.</li>
+              <li><strong>خلو الزوجين من الموانع:</strong> كالرضاع المحرّم أو اختلاف الدين المحرِّم أو النسب المحظور.</li>
+              <li><strong>الصداق (المهر):</strong> حق خالص للمرأة تفرضه الشريعة تكريماً لها.</li>
+            </ul>
+            <div class="p-2 rounded bg-light border text-center small text-muted">
+              «ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها»
+            </div>
+          </div>
+        </div>
+
+        <!-- Divorce Rulings -->
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-danger">
+            <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-heart-crack text-danger me-2"></i>أحكام الطلاق والفرقة الشرعية</h4>
+            <ul class="pe-3 lh-lg text-muted small mb-3">
+              <li><strong>الطلاق السني:</strong> طلقة واحدة في طهر لم يجامعها فيه ويتركها تعتد.</li>
+              <li><strong>الطلاق البدعي:</strong> في حيض أو طهر جامعها فيه (حرام ويأثم فاعله).</li>
+              <li><strong>الطلاق الرجعي:</strong> الطلقة الأولى والثانية، يملك الزوج إرجاعها في العدة دون عقد أو مهر جديدين.</li>
+              <li><strong>البينونة الصغرى:</strong> انقضاء العدة في الرجعي، لا ترجع إلا بعقد ومهر جديدين ورضاها.</li>
+              <li><strong>البينونة الكبرى:</strong> بعد تمام ثلاث طلقات، لا تحل له حتى تنكح زوجاً غيره نكاح رغبة شرعياً.</li>
+              <li><strong>الخلع والفسخ:</strong> مفارقة الزوجة بعوض تدفعه لافتدائها، أو بفسخ القاضي للضرر.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Idah Summary -->
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-success">
+            <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-hourglass-half text-success me-2"></i>أنواع العِدد ومقاديرها الشرعية</h4>
+            <div class="table-responsive">
+              <table class="table table-sm table-bordered small text-center mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>حالة المرأة</th>
+                    <th>مقدار العدة</th>
+                  </tr>
+                </thead>
+                <tbody class="align-middle">
+                  <tr>
+                    <td class="text-start pe-2">المتوفى عنها زوجها (غير حامل)</td>
+                    <td><strong class="text-primary">4 أشهر و10 أيام</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start pe-2">الحامل (مطلقة أو متوفى عنها)</td>
+                    <td><strong class="text-success">وضع الحمل كله</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start pe-2">المطلقة ذوات الحيض</td>
+                    <td><strong class="text-dark">ثلاث حيضات (قروء)</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start pe-2">الآيسة والصغيرة</td>
+                    <td><strong class="text-muted">ثلاثة أشهر قمرية</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start pe-2">المطلقة قبل الدخول والخلوة</td>
+                    <td><strong class="text-danger">لا عدة عليها إطلاقاً</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-3 p-2 rounded bg-light border small text-muted">
+              <strong>الحكمة من العدة:</strong> التأكد من براءة الرحم، وإتاحة فرصة التراجع للزوجين، والوفاء لحق الزوج المتوفى.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="fiqh_family.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold border-2">تصفح تفاصيل وأحكام فقه الأسرة بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
       </div>
     </div>
 
-    <!-- TAB 2: العبادات -->
-    <div class="tab-pane fade" id="tab-ibadaat">
-      <div class="sec-head">
-        <span class="tag">وما خلقت الجن والإنس إلا ليعبدون</span>
-        <h3>فقه <span>العبادات</span></h3>
-        <p>الأحكام المنظمة لعلاقة المخلوق بخالقه، وهي الركيزة الأساسية للمكلف.</p>
-        <div class="divider"></div>
-      </div>
-
-       <div class="row g-4 text-center">
-          <div class="col-lg-3 col-md-6 text-decoration-none">
-             <div class="mega-card border-top border-4 border-primary h-100">
-                <i class="fas fa-tint fa-3x text-primary mb-4"></i>
-                <h4 class="font-amiri fw-bold">الطهارة</h4>
-                <p class="text-muted small">الوضوء، الغسل، التيمم، مسح الخفين، وأحكام إزالة النجاسات والحيض والنفاس.</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-             <div class="mega-card border-top border-4 border-success h-100">
-                <i class="fas fa-pray fa-3x text-success mb-4"></i>
-                <h4 class="font-amiri fw-bold">الصلاة</h4>
-                <p class="text-muted small">شروطها، أركانها، واجباتها، سننها، ومبطلاتها، وصلاة الجماعة والجمعة والأعياد.</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-             <div class="mega-card border-top border-4 border-warning h-100">
-                <i class="fas fa-coins fa-3x text-warning mb-4"></i>
-                <h4 class="font-amiri fw-bold">الزكاة والصوم</h4>
-                <p class="text-muted small">أنصبة الزكاة ومصارفها. وأحكام الصيام، مبطلاته، زكاة الفطر، والاعتكاف.</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-             <div class="mega-card border-top border-4 border-dark h-100">
-                <i class="fas fa-kaaba fa-3x text-dark mb-4"></i>
-                <h4 class="font-amiri fw-bold">الحج والعمرة</h4>
-                <p class="text-muted small">المواقيت، الإحرام، الطواف، السعي، الوقوف بعرفة، وأحكام الهدي والفدية.</p>
-             </div>
-          </div>
-       </div>
-       <div class="text-center mt-5">
-          <a href="fiqh_ibadat.html" class="btn btn-primary rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام العبادات بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
-       </div>
-    </div>
-
-    <!-- TAB 3: المعاملات -->
-    <div class="tab-pane fade" id="tab-muamalat">
-      <div class="sec-head">
-        <span class="tag">وأحل الله البيع وحرم الربا</span>
-        <h3>فقه <span>المعاملات المالية</span></h3>
-        <p>الأحكام المنظمة للعلاقات المالية والاقتصادية وحفظ أموال العباد والتجارات.</p>
-        <div class="divider"></div>
-      </div>
-
-       <div class="row g-4 justify-content-center">
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-success h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-shopping-cart text-success me-2"></i> البيوع والمعاوضات</h4>
-                <p class="text-muted mb-0 lh-lg">شروط البيع الصحيح، البيوع المحرمة (كالربا والغرر والجهالة والميسر)، الخيارات في البيع، بيع السَّلَم، بيع التقسيط، المرابحة، والإجارة والاستصناع وتطبيقاتها المعاصرة.</p>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-info h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-handshake text-info me-2"></i> الشركات والتوثيقات</h4>
-                <p class="text-muted mb-0 lh-lg">شركات المضاربة والعنان والوجوه، أحكام الرهن والتوثيق، الضمان، الكفالة بأنواعها، الوديعة، العارية، الوكالة، والحوالة وكيفية تصريفها في المصارف، وصناديق الاستثمار.</p>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-warning h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-seedling text-warning me-2"></i> التبرعات والمساقات</h4>
-                <p class="text-muted mb-0 lh-lg">أحكام المزارعة والمساقاة في الأراضي الزراعية، الجعالة بأنواعها، القصاص والهبة، إحياء الموات، أحكام الوقف والصدقة، والشفعة في العقارات والممتلكات المشتركة.</p>
-             </div>
-          </div>
-       </div>
-       <div class="text-center mt-5">
-          <a href="fiqh_muamalat.html" class="btn btn-success rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام المعاملات المالية بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
-       </div>
-    </div>
-
-    <!-- TAB: الأسرة -->
-    <div class="tab-pane fade" id="tab-usra">
-      <div class="sec-head">
-        <span class="tag">الأسرة لبنة المجتمع</span>
-        <h3>فقه <span>الأسرة والأحوال الشخصية</span></h3>
-        <p>التشريعات الإلهية العظيمة التي تحافظ على تماسك الأسرة وبناء مجتمع مستقر أخلاقياً ونفسياً.</p>
-        <div class="divider"></div>
-      </div>
-
-       <div class="row g-4 justify-content-center">
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-primary h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-ring text-primary me-2"></i> أحكام الزواج ومقدماته</h4>
-                <p class="text-muted mb-0 lh-lg">الخطبة وأحكامها، شروط وأركان النكاح (الولي، الشاهدان، المهر، الإيجاب والقبول)، الكفاءة في الزواج، وأنواع الأنكحة المعاصرة، والوليمة وحقوق الزوجين.</p>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-danger h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-house-damage text-danger me-2"></i> إنهاء العلاقة الزوجية</h4>
-                <p class="text-muted mb-0 lh-lg">تفصيل أحكام الطلاق السني والبدعي وشروطه، الخلع وأنواعه، الفسخ للضرر أو العيب، أحكام العدة المتنوعة، والظهار والإيلاء، واللعان.</p>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-success h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-baby text-success me-2"></i> حقوق الأبناء والتبعية</h4>
-                <p class="text-muted mb-0 lh-lg">حقوق الحضانة وشروط الحاضن، النفقة الزوجية ونفقة الأولاد والمقربين، الرضاع وأحكامه وثبوت النسب، اللقيط، وأحكام كفالة اليتيم في الشريعة.</p>
-             </div>
-          </div>
-       </div>
-       <div class="text-center mt-5">
-          <a href="fiqh_family.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold border-2">تصفح تفاصيل وأحكام فقه الأسرة بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
-       </div>
-    </div>
-
-    <!-- TAB: الجنايات والمواريث -->
+    <!-- ==========================================
+         TAB 6: فقه الجنايات والمواريث
+         ========================================== -->
     <div class="tab-pane fade" id="tab-jinayat">
       <div class="sec-head">
-        <span class="tag">حفظ الدماء والحقوق</span>
-        <h3>فقه <span>الجنايات والمواريث</span></h3>
-        <p>الأحكام المنظمة لحفظ النفس والدماء، وقواعد تقسيم التركات والحقوق بعد الموت لضمان العدل الإلهي المطلق.</p>
+        <span class="tag"><i class="fas fa-scale-balanced"></i> حفظ الدماء والحقوق والضروريات الخمس</span>
+        <h3>فقه <span>الجنايات والمواريث</span> والعدالة الشرعية</h3>
+        <p>الأحكام الرادعة لحفظ دماء وأموال وأعراض المجتمع، والفرائض الربانية المقدرة في تقسيم التركات بمنتهى الدقة والعدل الإلهي.</p>
         <div class="divider"></div>
       </div>
 
-       <div class="row g-4 justify-content-center">
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 h-100" style="border-color:#be123c;">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-hand-paper text-danger me-2"></i> الجنايات والحدود</h4>
-                <p class="text-muted mb-0 lh-lg">القصاص في العمد والتشفي، دية القتل الخطأ وشبه العمد، وحفظ الضروريات الخمس بحدود شرعية رادعة كالسرقة والزنا والقذف والحرابة التي تضمن أمن المجتمع المطلق.</p>
-             </div>
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-danger">
+            <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-gavel text-danger me-2"></i>القصاص والديات</h4>
+            <p class="text-muted small lh-lg">شرع القصاص لحفظ حياة المجتمع: «ولكم في القصاص حياة يا أولي الألباب». يُشترط فيه: العمد المحض، التكليف، ومكافأة المقتول. ويسقط القصاص بعفو أولياء الدم مجاناً أو بالصلح على الدية، وهي مئة من الإبل أو قيمتها النقدية المعتبرة شرعاً.</p>
           </div>
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-info h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-file-contract text-info me-2"></i> الفرائض والمواريث</h4>
-                <p class="text-muted mb-0 lh-lg">تقسيم التركة بإعجاز رباني محكم بناءً على درجة القرابة، يشمل أحكام أصحاب الفروض والعصبات، الحجب بنوعيه، العول والرد، وكيفية حساب المناسخات وتوزيع الوصايا.</p>
-             </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-warning">
+            <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-shield-halved text-warning me-2"></i>الحدود والتعازير</h4>
+            <p class="text-muted small lh-lg"><strong>الحدود:</strong> عقوبات مقدرة حقاً لله تعالى (كالسرقة، الزنا، القذف، المسكر، والحرابة)، وتدرأ بالشبهات الدقيقة لقوله ﷺ: «ادرؤوا الحدود بالشبهات». <strong>التعزير:</strong> عقوبة غير مقدرة متروكة لاجتهاد القاضي في كل معصية لا حد فيها ولا كفارة.</p>
           </div>
-          <div class="col-lg-4 col-md-6">
-             <div class="mega-card border-top border-4 border-warning h-100">
-                <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-gavel text-warning me-2"></i> القضاء والشهادات</h4>
-                <p class="text-muted mb-0 lh-lg">آداب القاضي وشروط تعيينه، وأحكام الدعوى والبينات، ونصاب الشهادة وشروط الشهود وعدالتهم، والأيمان والنذور، وكيفية الفصل في النزاعات أمام القضاء الشرعي.</p>
-             </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-info">
+            <h4 class="font-amiri fw-bold text-dark mb-3"><i class="fas fa-file-invoice text-info me-2"></i>موانع الإرث وقواعد التوزيع</h4>
+            <p class="text-muted small lh-lg">موانع الإرث المتفق عليها ثلاثة يجمعها قول الشاعر: <em>«رقٌّ وقتلٌ واختلافُ دينِ»</em>، فلا يرث القاتل عمداً من مال مقتوله شيئاً معاملةً له بنقيض قصده، ولا يرث المسلم الكافر ولا الكافر المسلم. ويقدم أصحاب الفروض ثم العصبات ثم ذوو الأرحام.</p>
           </div>
-       </div>
-       <div class="text-center mt-5">
-          <a href="fiqh_jinayat.html" class="btn btn-danger rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام الجنايات والمواريث بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
-       </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <a href="fiqh_jinayat.html" class="btn btn-danger rounded-pill px-5 py-3 fw-bold shadow-lg">تصفح تفاصيل وأحكام الجنايات والمواريث بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+      </div>
     </div>
 
-    <!-- TAB: فقه النوازل -->
+    <!-- ==========================================
+         TAB 7: فقه النوازل والمستجدات المعاصرة
+         ========================================== -->
     <div class="tab-pane fade" id="tab-nawazil">
       <div class="sec-head">
-        <span class="tag">الفقه المواكب للعصر والحداثة</span>
-        <h3>فقه <span>النوازل والمستجدات</span></h3>
-        <p>الاجتهادات الفقهية الجماعية للمجامع الفقهية المعاصرة في المسائل المستحدثة، مما يبرز مرونة الشريعة وحيويتها.</p>
+        <span class="tag"><i class="fas fa-laptop-medical"></i> الشريعة صالحة لكل زمان ومكان</span>
+        <h3>فقه <span>النوازل والمستجدات</span> المعاصرة</h3>
+        <p>قرارات المجامع الفقهية المعتمدة (مجمع الفقه الإسلامي الدولي، هيئة كبار العلماء، والأزهر) في القضايا الطبية والمالية والتكنولوجية الحديثة.</p>
         <div class="divider"></div>
       </div>
 
-       <div class="row g-4 text-center">
-          <div class="col-lg-4">
-             <div class="mega-card shadow-sm border border-light h-100">
-                <i class="fas fa-heartbeat fa-3x text-danger mb-4"></i>
-                <h4 class="font-amiri fw-bold">النوازل الطبية</h4>
-                <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: نقل وزراعة الأعضاء، الموت الدماغي وأجهزة الإنعاش، أطفال الأنابيب والتلقيح الصناعي، بنوك الحليب، الجراحة التجميلية بأنواعها، والاستنساخ. تُبنى على مبادئ (لا ضرر ولا ضرار).</p>
-             </div>
+      <div class="row g-4">
+        <!-- Medical Issues -->
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-danger">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="fas fa-heartbeat fa-2x text-danger"></i>
+              <h4 class="font-amiri fw-bold text-dark mb-0 fs-3">النوازل الطبية</h4>
+            </div>
+            <ul class="pe-3 lh-lg text-muted small mb-0">
+              <li><strong>نقل وزراعة الأعضاء:</strong> جائز من حي إلى آخر بشرط عدم الإضرار بالمتبرع، وجائز من الميت بإذنه أو إذن ورثته بعد ثبوت الموت قطعاً، ويحرم بيع الأعضاء قطعاً.</li>
+              <li><strong>الموت الدماغي:</strong> توقف جذع المخ تماماً بتقرير لجنة طبية معتبرة يبيح رفع أجهزة الإنعاش الصناعية.</li>
+              <li><strong>أطفال الأنابيب:</strong> جائزة بضوابط صارمة: نطفة الزوج وبويضة الزوجة في رحم الزوجة نفسها حال قيام الزوجية، وتحريم تأجير الأرحام.</li>
+              <li><strong>الجراحة التجميلية:</strong> التجميل العلاجي (إزالة العيوب والتشوهات) جائز، وتغيير خلق الله لطلب الحسن المجرد منهي عنه.</li>
+            </ul>
           </div>
-          <div class="col-lg-4">
-             <div class="mega-card shadow-sm border border-light h-100">
-                <i class="fas fa-chart-line fa-3x text-success mb-4"></i>
-                <h4 class="font-amiri fw-bold">النوازل المالية والاقتصادية</h4>
-                <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: حكم العملات الرقمية المشفرة (الكريبتو)، الأسهم والسندات والتداول الإلكتروني، التسويق الهرمي والشبكي، البطاقات الائتمانية، التمويل العقاري والتأمين التجاري والإسلامي التعاوني وإشكالات التضخم.</p>
-             </div>
+        </div>
+
+        <!-- Crypto & Financial Issues -->
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-success">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="fas fa-bitcoin-sign fa-2x text-success"></i>
+              <h4 class="font-amiri fw-bold text-dark mb-0 fs-3">النوازل المالية الرقمية</h4>
+            </div>
+            <ul class="pe-3 lh-lg text-muted small mb-0">
+              <li><strong>العملات الرقمية المشفرة (الكريبتو):</strong> أصدرت معظم دور الإفتاء والمجامع (الأزهر، الإفتاء المصرية، كبار العلماء) فتاوى بالمنع والتوقف لشدة التذبذب والغرر والجهالة وغياب الضامن الرسمي.</li>
+              <li><strong>التداول بالهامش (الرافعة المالية / Forex):</strong> محرم بقرار المجمع الفقهي الدولي لاشتماله على الجمع بين القرض والمعاوضة والربا المشروط.</li>
+              <li><strong>التسويق الشبكي والهرمي:</strong> محرم باتفاق المجامع لأنه ميسر وقمار مقنع وعمولات على التجنيد لا بيع السلع.</li>
+              <li><strong>التأمين التجاري:</strong> محرم لما فيه من الغرر والميسر، والبديل الشرعي هو التأمين التكافلي التعاوني.</li>
+            </ul>
           </div>
-          <div class="col-lg-4">
-             <div class="mega-card shadow-sm border border-light h-100">
-                <i class="fas fa-globe-americas fa-3x text-primary mb-4"></i>
-                <h4 class="font-amiri fw-bold">نوازل تقنية وقضايا الأقليات</h4>
-                <p class="text-muted small text-start px-2 mt-3 border-top pt-3 lh-lg">تشمل: المصحف الإلكتروني واستخدام الذكاء الاصطناعي في الاستنباط، حقوق الملكية الفكرية وقرصنة البرمجيات. كما تعالج أحكام التجنيس والإقامة للأقليات المسلمة في الغرب والمشاركة السياسية.</p>
-             </div>
+        </div>
+
+        <!-- Tech & Minority Issues -->
+        <div class="col-lg-4">
+          <div class="mega-card border-top border-4 border-primary">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="fas fa-robot fa-2x text-primary"></i>
+              <h4 class="font-amiri fw-bold text-dark mb-0 fs-3">الذكاء الاصطناعي والأقليات</h4>
+            </div>
+            <ul class="pe-3 lh-lg text-muted small mb-0">
+              <li><strong>الملكية الفكرية والبرمجية:</strong> حقوق البرامج والكتب وبراءات الاختراع أموال محترمة شرعاً لا يحل قرصنتها أو الاعتداء عليها.</li>
+              <li><strong>الذكاء الاصطناعي والاستنباط:</strong> أداة مساعدة للبحث والترتيب، ولا يجوز الاعتماد عليها في استنباط فتاوى مستقلة دون مراجعة الفقيه المؤهل.</li>
+              <li><strong>فقه الأقليات المسلمة بالغرب:</strong> جواز المشاركة السياسية للدفاع عن حقوق المسلمين، وضوابط شراء المسكن بالتمويلات البديلة عند الضرورة القصوى.</li>
+            </ul>
           </div>
-       </div>
-       <div class="text-center mt-5">
-          <a href="fiqh_nawazil.html" class="btn btn-indigo rounded-pill px-5 py-3 fw-bold shadow-lg" style="background:#4f46e5;color:white;">تصفح تفاصيل وأبحاث فقه النوازل بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
-       </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="fiqh_nawazil.html" class="btn btn-indigo rounded-pill px-5 py-3 fw-bold shadow-lg" style="background:#4f46e5;color:white;">تصفح تفاصيل وأبحاث فقه النوازل بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
+      </div>
     </div>
 
-    <!-- TAB 4: أصول الفقه -->
+    <!-- ==========================================
+         TAB 8: أصول الفقه والقواعد الكبرى
+         ========================================== -->
     <div class="tab-pane fade" id="tab-usul">
       <div class="sec-head">
-        <span class="tag">علم الدليل والاستنباط</span>
-        <h3>أصول <span>الفقه</span> والقواعد</h3>
-        <p>القواعد والمنهجيات التي يستخدمها الفقيه لاستخراج الأحكام الشرعية العملية من أدلتها التفصيلية.</p>
+        <span class="tag"><i class="fas fa-sitemap"></i> علم الدليل وقانون الاستنباط</span>
+        <h3>أصول <span>الفقه</span> والقواعد الفقهية الكبرى</h3>
+        <p>المنهج الذي وضعه أئمة الإسلام لعصمة العقل من الخطأ في استخراج الأحكام الشرعية من أدلتها التفصيلية.</p>
         <div class="divider"></div>
       </div>
 
-       <div class="row g-5 align-items-center">
-          <div class="col-lg-6">
-             <h4 class="font-amiri text-success fw-bold mb-4">الأدلة الشرعية المتفق عليها</h4>
-             
-             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">1</div>
-                <div><strong class="font-amiri fs-5">القرآن الكريم:</strong> المصدر الأول المعصوم.</div>
-             </div>
-             
-             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">2</div>
-                <div><strong class="font-amiri fs-5">السنة النبوية:</strong> المبينة والمفصلة للقرآن والمقرة لأحكام جديدة.</div>
-             </div>
- 
-             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">3</div>
-                <div><strong class="font-amiri fs-5">الإجماع:</strong> اتفاق مجتهدي الأمة بعد النبي ﷺ على حكم شرعي.</div>
-             </div>
- 
-             <div class="d-flex align-items-center mb-3 bg-white p-3 rounded-4 shadow-sm border">
-                <div style="background:var(--primary);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;">4</div>
-                <div><strong class="font-amiri fs-5">القياس:</strong> إلحاق واقعة لا نص فيها بواقعة منصوص عليها لاتحاد العلة.</div>
-             </div>
+      <div class="row g-5">
+        <!-- Usul al-Fiqh Evidences -->
+        <div class="col-lg-6">
+          <h4 class="font-amiri text-success fw-bold mb-4 fs-2"><i class="fas fa-book-open me-2"></i>الأدلة الشرعية المتفق عليها والمختلف فيها</h4>
+          
+          <div class="mb-4">
+            <h6 class="fw-bold text-dark mb-3"><span class="badge bg-success me-2">أولاً</span> الأدلة الأربعة المتفق عليها بين جماهير الأمة:</h6>
+            <div class="d-flex align-items-center mb-2 bg-white p-3 rounded-4 shadow-sm border">
+               <div style="background:var(--primary);color:white;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;flex-shrink:0;">1</div>
+               <div><strong class="font-amiri fs-5 text-dark">القرآن الكريم:</strong> المصدر الأول المعصوم قطعي الثبوت.</div>
+            </div>
+            <div class="d-flex align-items-center mb-2 bg-white p-3 rounded-4 shadow-sm border">
+               <div style="background:var(--primary);color:white;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;flex-shrink:0;">2</div>
+               <div><strong class="font-amiri fs-5 text-dark">السنة النبوية الصحيحة:</strong> المبينة للقرآن والمقرة لأحكام استقلالية.</div>
+            </div>
+            <div class="d-flex align-items-center mb-2 bg-white p-3 rounded-4 shadow-sm border">
+               <div style="background:var(--primary);color:white;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;flex-shrink:0;">3</div>
+               <div><strong class="font-amiri fs-5 text-dark">الإجماع:</strong> اتفاق مجتهدي أمة محمد ﷺ بعد وفاته في عصر من الأعصار على حكم شرعي.</div>
+            </div>
+            <div class="d-flex align-items-center mb-2 bg-white p-3 rounded-4 shadow-sm border">
+               <div style="background:var(--primary);color:white;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-left:15px;flex-shrink:0;">4</div>
+               <div><strong class="font-amiri fs-5 text-dark">القياس:</strong> إلحاق فرع بأصل في حكم لعلة جامعة بينهما (كتحريم المخدرات قياساً على الخمر لإسكارها).</div>
+            </div>
+          </div>
 
-             <div class="mt-4">
-                <a href="fiqh_usul.html" class="btn btn-success rounded-pill px-4">دراسة علم الأصول والقواعد بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
-             </div>
+          <div>
+            <h6 class="fw-bold text-dark mb-3"><span class="badge bg-warning text-dark me-2">ثانياً</span> أبرز الأدلة التبعية المختلف فيها:</h6>
+            <div class="p-3 rounded-4 bg-light border small text-muted lh-lg">
+              <span class="badge bg-secondary me-1">الاستحسان</span> العدول عن مقتضى قياس جلي إلى قياس خفي لمصلحة راجحة. <br>
+              <span class="badge bg-secondary me-1">المصالح المرسلة</span> المصلحة التي لم يشهد لها الشرع باعتبار ولا بإلغاء محدد. <br>
+              <span class="badge bg-secondary me-1">الاستصحاب</span> الحكم ببقاء ما كان على ما كان حتى يثبت الناقل. <br>
+              <span class="badge bg-secondary me-1">سد الذرائع</span> منع الوسائل المباحة في الأصل إذا كانت تفضي قطعاً أو غالباً إلى مفسدة محرمة. <br>
+              <span class="badge bg-secondary me-1">عمل أهل المدينة</span> حجة قطعية عند الإمام مالك فيما طريقه النقل والتوارث.
+            </div>
           </div>
- 
-          <div class="col-lg-6">
-             <div class="pe-lg-5" style="border-right:3px solid var(--gold);">
-                <h4 class="font-amiri text-warning fw-bold mb-4 pe-4">القواعد الفقهية الكبرى (الخمسة)</h4>
-                <ul class="list-unstyled pe-4">
-                   <li class="mb-4">
-                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 1. الأمور بمقاصدها</h5>
-                      <p class="text-muted small">نية المرء تحدد حكم فعله وقبول عمله.</p>
-                   </li>
-                   <li class="mb-4">
-                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 2. اليقين لا يزول بالشك</h5>
-                      <p class="text-muted small">الأصل بقاء ما كان على ما كان حتى يثبت العكس يقيناً.</p>
-                   </li>
-                   <li class="mb-4">
-                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 3. المشقة تجلب التيسير</h5>
-                      <p class="text-muted small">أساس الرخص الشرعية لتخفيف العناء والمشقة.</p>
-                   </li>
-                   <li class="mb-4">
-                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 4. الضرر يُزال</h5>
-                      <p class="text-muted small">أساس حفظ الحقوق ودفع المفاسد ومنع الأذى.</p>
-                   </li>
-                   <li class="mb-4">
-                      <h5 class="font-amiri fw-bold text-dark"><i class="fas fa-check-circle text-success ms-2"></i> 5. العادة مُحَكَّمة</h5>
-                      <p class="text-muted small">العرف السائد يُعول عليه إذا لم يصادم نصاً شرعياً.</p>
-                   </li>
-                </ul>
-             </div>
+
+          <div class="mt-4">
+             <a href="fiqh_usul.html" class="btn btn-success rounded-pill px-4">دراسة علم الأصول والقواعد بالكامل <i class="fas fa-arrow-left ms-2"></i></a>
           </div>
-       </div>
+        </div>
+
+        <!-- 5 Major Maxims -->
+        <div class="col-lg-6">
+          <div class="pe-lg-4" style="border-right:3px solid var(--gold);">
+             <h4 class="font-amiri text-warning fw-bold mb-4 pe-3 fs-2"><i class="fas fa-star me-2"></i>القواعد الفقهية الكبرى الخمس</h4>
+             <ul class="list-unstyled pe-3">
+                <li class="mb-4 p-3 rounded-3 bg-white shadow-sm border">
+                   <h5 class="font-amiri fw-bold text-dark fs-4 mb-2"><i class="fas fa-check-circle text-success ms-2"></i>1. الأمور بمقاصدها</h5>
+                   <p class="text-muted small mb-1"><strong>مستندها:</strong> حديث «إنما الأعمال بالنيات». الحكم يدور مع نية الفاعل في العبادات والمعاملات.</p>
+                   <small class="text-primary fw-bold">يتفرع عنها: العبرة في العقود بالمقاصد والمعاني لا بالألفاظ والمباني.</small>
+                </li>
+                <li class="mb-4 p-3 rounded-3 bg-white shadow-sm border">
+                   <h5 class="font-amiri fw-bold text-dark fs-4 mb-2"><i class="fas fa-check-circle text-success ms-2"></i>2. اليقين لا يزول بالشك</h5>
+                   <p class="text-muted small mb-1"><strong>مستندها:</strong> حديث شُكي إلى النبي ﷺ الرجل يخيل إليه أنه يجد الشيء في الصلاة فقال: «لا ينصرف حتى يسمع صوتاً أو يجد ريحاً».</p>
+                   <small class="text-primary fw-bold">يتفرع عنها: الأصل بقاء ما كان على ما كان، والأصل براءة الذمة.</small>
+                </li>
+                <li class="mb-4 p-3 rounded-3 bg-white shadow-sm border">
+                   <h5 class="font-amiri fw-bold text-dark fs-4 mb-2"><i class="fas fa-check-circle text-success ms-2"></i>3. المشقة تجلب التيسير</h5>
+                   <p class="text-muted small mb-1"><strong>مستندها:</strong> قوله تعالى: «وما جعل عليكم في الدين من حرج». أساس الرخص الشرعية كالقصر والجمع والتيمم والفطر للمريض.</p>
+                   <small class="text-primary fw-bold">يتفرع عنها: الضرورات تبيح المحظورات، والضرورة تُقدَّر بقدرها.</small>
+                </li>
+                <li class="mb-4 p-3 rounded-3 bg-white shadow-sm border">
+                   <h5 class="font-amiri fw-bold text-dark fs-4 mb-2"><i class="fas fa-check-circle text-success ms-2"></i>4. الضرر يُزال</h5>
+                   <p class="text-muted small mb-1"><strong>مستندها:</strong> الحديث النبوي الشريف: «لا ضرر ولا ضرار». تحريم الإضرار بالغير ووجوب رفعه والتعويض عنه.</p>
+                   <small class="text-primary fw-bold">يتفرع عنها: الضرر لا يُزال بمثله، ودَرءُ المفاسد أولى من جلب المصالح.</small>
+                </li>
+                <li class="mb-3 p-3 rounded-3 bg-white shadow-sm border">
+                   <h5 class="font-amiri fw-bold text-dark fs-4 mb-2"><i class="fas fa-check-circle text-success ms-2"></i>5. العادة مُحَكَّمة</h5>
+                   <p class="text-muted small mb-1"><strong>مستندها:</strong> قوله تعالى: «خُذ العفو وأمر بالعرف». تحكيم الأعراف والعادات السائدة ما لم تصادم نصاً شرعياً ثابتاً.</p>
+                   <small class="text-primary fw-bold">يتفرع عنها: المعروف عرفاً كالمشروط شرطاً.</small>
+                </li>
+             </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-  </div> <!-- End Tabs -->
+    <!-- ==========================================
+         TAB 9: بنك المسائل الفقهية والبحث التفاعلي
+         ========================================== -->
+    <div class="tab-pane fade" id="tab-qa">
+      <div class="sec-head">
+        <span class="tag"><i class="fas fa-magnifying-glass"></i> إجابات شافية موثقة</span>
+        <h3>بنك <span>المسائل الفقهية</span> والبحث السريع</h3>
+        <p>ابحث فورياً في المسائل الفقهية المعاصرة والشائعة وتعرّف على حكمها، دليلها، وأقوال أئمة المذاهب فيها.</p>
+        <div class="divider"></div>
+      </div>
 
-    <!-- TAB 5: حاسبة الزكاة والمواريث المتطورة -->
+      <!-- Filter Buttons & Search -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8">
+          <div class="input-group input-group-lg shadow-sm mb-3">
+            <span class="input-group-text bg-white"><i class="fas fa-search text-success"></i></span>
+            <input type="text" id="fiqhQuestionSearch" class="form-control border-start-0" placeholder="اكتب كلمتك هنا (مثال: بخاخ، قطرة، سجود السهو، الذهب، العملات، الطلاق...)" oninput="filterIssues()">
+          </div>
+          <div class="d-flex justify-content-center flex-wrap gap-2">
+            <button class="search-pill active" onclick="setIssueFilter('all', this)">جميع المسائل</button>
+            <button class="search-pill" onclick="setIssueFilter('صلاة', this)">الصلاة والطهارة</button>
+            <button class="search-pill" onclick="setIssueFilter('صيام', this)">الصيام والزكاة</button>
+            <button class="search-pill" onclick="setIssueFilter('معاملات', this)">المعاملات والبيوع</button>
+            <button class="search-pill" onclick="setIssueFilter('أسرة', this)">الأسرة والزواج</button>
+            <button class="search-pill" onclick="setIssueFilter('نوازل', this)">النوازل والطب</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issues Grid -->
+      <div class="row g-4" id="issuesContainer">
+        
+        <!-- Issue 1 -->
+        <div class="col-lg-6 issue-item" data-category="صيام" data-title="بخاخ الربو هل يفطر الصائم">
+          <div class="issue-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success">فقه الصيام</span>
+              <span class="badge-mubah">لا يفطر الصائم</span>
+            </div>
+            <h5 class="font-amiri fw-bold text-dark fs-4 mb-2">هل استخدام بخاخ الربو يفسد الصيام؟</h5>
+            <p class="text-muted small lh-lg mb-3"><strong>الفتوى المعتمدة:</strong> قرر مجمع الفقه الإسلامي الدولي وهيئة كبار العلماء أن بخاخ الربو لا يفطر الصائم؛ لأن المادة المنبعثة منه عبارة عن غاز مضغوط يذهب إلى القصبات الهوائية لتوسيعها، وليس أكلاً ولا شرباً ولا في معناهما.</p>
+            <div class="p-2 rounded bg-light border small text-muted"><strong>الدليل:</strong> قياساً على المضمضة والسواك المستحب للصائم.</div>
+          </div>
+        </div>
+
+        <!-- Issue 2 -->
+        <div class="col-lg-6 issue-item" data-category="صلاة" data-title="سجود السهو إذا شك في عدد الركعات">
+          <div class="issue-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-primary">فقه الصلاة</span>
+              <span class="badge-sunnah">سنة مؤكدة</span>
+            </div>
+            <h5 class="font-amiri fw-bold text-dark fs-4 mb-2">إذا شك المصلي: هل صلى ثلاثاً أم أربعاً؟</h5>
+            <p class="text-muted small lh-lg mb-3"><strong>الفتوى المعتمدة:</strong> يبني على اليقين وهو الأقل (فيجعلها ثلاثاً ويأتي بركعة رابعة)، ثم يسجد سجدتين للسهو قبل السلام؛ لحديث النبي ﷺ: «إذا شك أحدكم في صلاته فلم يدر كم صلى أثلاثاً أم أربعاً فليطرح الشك وليبن على ما استيقن، ثم يسجد سجدتين قبل أن يسلم».</p>
+            <div class="p-2 rounded bg-light border small text-muted"><strong>القاعدة الفقهية:</strong> اليقين لا يزول بالشك.</div>
+          </div>
+        </div>
+
+        <!-- Issue 3 -->
+        <div class="col-lg-6 issue-item" data-category="معاملات" data-title="شراء الذهب بالتقسيط أو بالبطاقة الائتمانية">
+          <div class="issue-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-warning text-dark">فقه المعاملات</span>
+              <span class="badge-haram">محرم بالتقسيط</span>
+            </div>
+            <h5 class="font-amiri fw-bold text-dark fs-4 mb-2">حكم شراء الذهب بالتقسيط أو عبر البطاقات البنكية</h5>
+            <p class="text-muted small lh-lg mb-3"><strong>الفتوى المعتمدة:</strong> لا يجوز شراء الذهب أو الفضة بالتقسيط بإجماع المجامع الفقهية؛ لاشتراط التقابض الفوري في بيع الأموال الربوية (يداً بيد) منعاً لربا النسيئة. أما الشراء ببطاقة الخصم المباشر (Debit) فهو جائز؛ لأن الخصم يتم لحظياً فيعتبر قبضاً حكمياً.</p>
+            <div class="p-2 rounded bg-light border small text-muted"><strong>الحديث:</strong> «الذهب بالذهب، والفضة بالفضة... يداً بيد، مثلاً بمثل» (صحيح مسلم).</div>
+          </div>
+        </div>
+
+        <!-- Issue 4 -->
+        <div class="col-lg-6 issue-item" data-category="معاملات" data-title="حكم العملات الرقمية المشفرة بيتكوين">
+          <div class="issue-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-danger">فقه النوازل المالية</span>
+              <span class="badge-haram">منهي عنها / مخاطرة عالية</span>
+            </div>
+            <h5 class="font-amiri fw-bold text-dark fs-4 mb-2">حكم التداول في العملات الرقمية المشفرة (Bitcoin وغيرها)</h5>
+            <p class="text-muted small lh-lg mb-3"><strong>الفتوى المعتمدة:</strong> أصدرت دور الإفتاء الكبرى (الأزهر، الإفتاء المصرية، كبار العلماء) فتاوى بالمنع والتحريم في وضعها الراهن لعدم استنادها إلى أصل مالي معتبر، وجهالة مصدرها، وشدة تقلبها التي تجعلها شبيهة بالقمار والميسر، وغياب الرقابة والضمان الحكومي.</p>
+            <div class="p-2 rounded bg-light border small text-muted"><strong>العلة:</strong> الغرر الفاحش وأكل أموال الناس بالمضاربات الوهمية.</div>
+          </div>
+        </div>
+
+        <!-- Issue 5 -->
+        <div class="col-lg-6 issue-item" data-category="أسرة" data-title="طلاق الغضبان والطلاق المعلق">
+          <div class="issue-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-info text-dark">فقه الأسرة</span>
+              <span class="badge-makruh">تفصيل دقيق</span>
+            </div>
+            <h5 class="font-amiri fw-bold text-dark fs-4 mb-2">حكم وقوع طلاق الغضبان والطلاق المعلق على شرط</h5>
+            <p class="text-muted small lh-lg mb-3"><strong>الفتوى المعتمدة:</strong> الغضب الشديد الذي يُغلق على العقل فلا يعي صاحبه ما يقول لا يقع معه الطلاق؛ لقوله ﷺ: «لا طلاق ولا عتاق في إغلاق». والطلاق المعلق بقصد الحث أو المنع دون قصد إيقاع الفرقة يُعامل معاملة اليمين وتلزمه كفارة يمين عند جمع من المحققين كابن تيمية.</p>
+            <div class="p-2 rounded bg-light border small text-muted"><strong>ملاحظة:</strong> مسائل الطلاق تقتضي مراجعة المحاكم الشرعية ومجالس الإفتاء الرسمية.</div>
+          </div>
+        </div>
+
+        <!-- Issue 6 -->
+        <div class="col-lg-6 issue-item" data-category="نوازل" data-title="زراعة ونقل الأعضاء بعد الموت">
+          <div class="issue-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-secondary">فقه النوازل الطبية</span>
+              <span class="badge-mubah">جائز بالضوابط</span>
+            </div>
+            <h5 class="font-amiri fw-bold text-dark fs-4 mb-2">حكم التبرع بالأعضاء بعد الموت لإنقاذ مريض</h5>
+            <p class="text-muted small lh-lg mb-3"><strong>الفتوى المعتمدة:</strong> قرر مجمع الفقه الإسلامي الدولي وهيئة كبار العلماء جواز التبرع بالأعضاء من الشخص الميت لإنقاذ حياة مريض مسلم مضطر، بشرط ألا يكون ذلك بمقابل مالي، وأن يثبت الموت قطعيّاً، وبوصية خطية موثقة من المتوفى أو بموافقة ورثته.</p>
+            <div class="p-2 rounded bg-light border small text-muted"><strong>القاعدة:</strong> «ومن أحياها فكأنما أحيا الناس جميعاً».</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TAB 10: حاسبة الزكاة والمواريث الذكية
+         ========================================== -->
     <div class="tab-pane fade" id="tab-tools">
       <div class="sec-head">
-        <span class="tag">تطبيقات عملية متقدمة</span>
-        <h3>حاسبات <span>فقهية ذكية</span></h3>
-        <p>أدوات تفاعلية دقيقة لحساب الزكاة بأنواعها ومواريث الدرجة الأولى وفق الشريعة الإسلامية.</p>
+        <span class="tag"><i class="fas fa-calculator"></i> حلول تقنية رقمية دقيقة</span>
+        <h3>حاسبات <span>فقهية ذكية</span> معتمدة</h3>
+        <p>أدوات برمجية متقدمة لحساب الزكاة بأنواعها ومواريث الدرجة الأولى وفق الأحكام الشرعية وقواعد الفروض والعصبات.</p>
         <div class="divider"></div>
       </div>
 
       <!-- =====  ZAKAT CALCULATOR  ===== -->
       <div class="mb-5">
         <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
-          <div style="width:60px;height:60px;background:linear-gradient(135deg,#d4af37,#aa8a2a);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(212,175,55,0.4);flex-shrink:0;">
+          <div style="width:60px;height:60px;background:linear-gradient(135deg,#d4af37,#aa8a2a);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(212,175,55,0.4);flex-shrink:0;">
             <i class="fas fa-coins text-white fa-2x"></i>
           </div>
           <div>
-            <h4 class="font-amiri fw-bold mb-1 text-dark" style="font-size:1.8rem;">حاسبة الزكاة الشاملة</h4>
-            <p class="text-muted mb-0 small">المال النقدي · الذهب والفضة · عروض التجارة · الاستثمارات</p>
+            <h4 class="font-amiri fw-bold mb-1 text-dark" style="font-size:1.9rem;">حاسبة الزكاة الشاملة</h4>
+            <p class="text-muted mb-0 small">حساب الأموال النقدية · الذهب والفضة · عروض التجارة · الأسهم والاستثمارات · خصم الديون</p>
           </div>
         </div>
 
         <div class="row g-4">
           <!-- Left: Inputs -->
           <div class="col-lg-6">
-            <div class="bg-white" style="border-radius:20px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;">
+            <div class="bg-white" style="border-radius:22px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;">
               <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:18px 25px;color:white;">
-                <h6 class="mb-0 fw-bold"><i class="fas fa-edit me-2"></i>أدخل بيانات أموالك</h6>
+                <h6 class="mb-0 fw-bold"><i class="fas fa-edit me-2"></i>أدخل بيانات أموالك الزكوية</h6>
               </div>
               <div style="padding:25px;">
 
                 <!-- Currency -->
                 <div class="mb-4">
-                  <label class="fw-bold small text-muted mb-2 d-block">العملة</label>
+                  <label class="fw-bold small text-muted mb-2 d-block">اختر العملة</label>
                   <div class="d-flex gap-2 flex-wrap">
-                    <button class="btn btn-sm btn-success" id="cur_dz" onclick="setCur('دج',this)">دج</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="cur_sa" onclick="setCur('ر.س',this)">ر.س</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="cur_ma" onclick="setCur('د.م',this)">د.م</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="cur_eg" onclick="setCur('جنيه',this)">جنيه</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="cur_us" onclick="setCur('$',this)">USD</button>
+                    <button class="btn btn-sm btn-success" id="cur_dz" onclick="setCur('دج',this)">دج (الجزائر)</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_sa" onclick="setCur('ر.س',this)">ر.س (السعودية)</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_ma" onclick="setCur('د.م',this)">د.م (المغرب)</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_eg" onclick="setCur('جنيه',this)">جنيه (مصر)</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="cur_us" onclick="setCur('$',this)">USD ($)</button>
                   </div>
                 </div>
 
                 <!-- Cash -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-money-bill-wave text-success me-2"></i>المال النقدي (بنك + يد)</label>
+                  <label class="form-label fw-bold"><i class="fas fa-money-bill-wave text-success me-2"></i>المال النقدي (في البنك + المحفظة)</label>
                   <div class="input-group">
                     <input type="number" id="zCash" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
                     <span class="input-group-text zCurLabel">دج</span>
@@ -556,7 +1494,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Debt owed to you -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-hand-holding-usd text-info me-2"></i>ديون يُتوقع استردادها</label>
+                  <label class="form-label fw-bold"><i class="fas fa-hand-holding-usd text-info me-2"></i>ديون جيدة لك عند الآخرين (يُرجى قضاؤها)</label>
                   <div class="input-group">
                     <input type="number" id="zDebtsOwed" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
                     <span class="input-group-text zCurLabel">دج</span>
@@ -567,31 +1505,31 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Gold -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-ring text-warning me-2"></i>الذهب — وزن (جرام) × سعر الجرام</label>
+                  <label class="form-label fw-bold"><i class="fas fa-ring text-warning me-2"></i>الذهب (للتجارة أو الادخار) — جرام × سعر الجرام</label>
                   <div class="row g-2">
                     <div class="col-6">
                       <div class="input-group">
-                        <input type="number" id="zGoldGrams" class="form-control" placeholder="الوزن" min="0" oninput="previewZakat()">
+                        <input type="number" id="zGoldGrams" class="form-control" placeholder="الوزن بالجرام" min="0" oninput="previewZakat()">
                         <span class="input-group-text">جرام</span>
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="input-group">
-                        <input type="number" id="zGoldPrice" class="form-control" placeholder="سعر الجرام" min="0" oninput="previewZakat()">
+                        <input type="number" id="zGoldPrice" class="form-control" placeholder="سعر الجرام اليوم" min="0" oninput="previewZakat()">
                         <span class="input-group-text zCurLabel">دج</span>
                       </div>
                     </div>
                   </div>
-                  <small class="text-muted"><i class="fas fa-info-circle me-1"></i>نصاب الذهب = <strong>85 جراماً</strong></small>
+                  <small class="text-muted"><i class="fas fa-info-circle me-1"></i>نصاب الذهب الشرعي = <strong>85 جراماً خالصاً عيار 24</strong></small>
                 </div>
 
                 <!-- Silver -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-medal me-2" style="color:#aaa;"></i>الفضة — وزن (جرام) × سعر الجرام</label>
+                  <label class="form-label fw-bold"><i class="fas fa-medal me-2" style="color:#aaa;"></i>الفضة — جرام × سعر الجرام</label>
                   <div class="row g-2">
                     <div class="col-6">
                       <div class="input-group">
-                        <input type="number" id="zSilverGrams" class="form-control" placeholder="الوزن" min="0" oninput="previewZakat()">
+                        <input type="number" id="zSilverGrams" class="form-control" placeholder="الوزن بالجرام" min="0" oninput="previewZakat()">
                         <span class="input-group-text">جرام</span>
                       </div>
                     </div>
@@ -602,14 +1540,14 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                       </div>
                     </div>
                   </div>
-                  <small class="text-muted">نصاب الفضة = <strong>595 جراماً</strong></small>
+                  <small class="text-muted">نصاب الفضة الشرعي = <strong>595 جراماً</strong></small>
                 </div>
 
                 <hr class="my-3">
 
                 <!-- Trade -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-store text-primary me-2"></i>عروض التجارة (بسعر السوق)</label>
+                  <label class="form-label fw-bold"><i class="fas fa-store text-primary me-2"></i>عروض التجارة (البضائع بسعر البيع الحالي)</label>
                   <div class="input-group">
                     <input type="number" id="zTrade" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
                     <span class="input-group-text zCurLabel">دج</span>
@@ -618,7 +1556,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Stocks -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-chart-line text-success me-2"></i>أسهم واستثمارات (القيمة الحالية)</label>
+                  <label class="form-label fw-bold"><i class="fas fa-chart-line text-success me-2"></i>الأسهم والاستثمارات المتداولة</label>
                   <div class="input-group">
                     <input type="number" id="zStocks" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
                     <span class="input-group-text zCurLabel">دج</span>
@@ -629,7 +1567,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Debts Owing -->
                 <div class="mb-3">
-                  <label class="form-label fw-bold"><i class="fas fa-minus-circle text-danger me-2"></i>ديون عليك واجبة السداد الآن (تُطرح)</label>
+                  <label class="form-label fw-bold"><i class="fas fa-minus-circle text-danger me-2"></i>ديون عاجلة عليك واجبة السداد الآن (تُطرح من الوعاء)</label>
                   <div class="input-group">
                     <input type="number" id="zDebtsOwing" class="form-control" placeholder="0" min="0" oninput="previewZakat()">
                     <span class="input-group-text zCurLabel">دج</span>
@@ -638,17 +1576,17 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Nisab ref -->
                 <div class="mb-4">
-                  <label class="form-label fw-bold"><i class="fas fa-balance-scale text-warning me-2"></i>النصاب المرجعي (عدّله حسب سعر الذهب)</label>
+                  <label class="form-label fw-bold"><i class="fas fa-balance-scale text-warning me-2"></i>قيمة النصاب المرجعي (85 جرام ذهب)</label>
                   <div class="input-group">
                     <input type="number" id="zNisab" class="form-control" value="200000" min="0" oninput="previewZakat()">
                     <span class="input-group-text zCurLabel">دج</span>
                   </div>
-                  <small class="text-muted">≈ قيمة 85 جرام ذهب</small>
+                  <small class="text-muted">عدل القيمة بما يوافق بلدك وسعر الذهب الحالي</small>
                 </div>
 
                 <div class="d-flex gap-3">
-                  <button class="btn btn-warning fw-bold rounded-pill flex-grow-1 py-3" onclick="calcZakat()">
-                    <i class="fas fa-calculator me-2"></i>احسب الزكاة
+                  <button class="btn btn-warning fw-bold rounded-pill flex-grow-1 py-3 text-dark" onclick="calcZakat()">
+                    <i class="fas fa-calculator me-2"></i>احسب الزكاة الواجبة
                   </button>
                   <button class="btn btn-outline-secondary rounded-pill px-4" onclick="resetZakat()">
                     <i class="fas fa-undo"></i>
@@ -661,88 +1599,84 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
           <!-- Right: Result -->
           <div class="col-lg-6">
-            <!-- Result Card -->
-            <div id="zakatResultCard" style="background:linear-gradient(135deg,#064e3b,#047857);border-radius:20px;padding:30px;color:white;min-height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 20px 50px rgba(4,120,87,0.3);">
+            <div id="zakatResultCard" style="background:linear-gradient(135deg,#064e3b,#047857);border-radius:22px;padding:35px;color:white;min-height:350px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 20px 50px rgba(4,120,87,0.35);">
               <div id="zakatIdleState" class="text-center">
-                <i class="fas fa-coins fa-3x mb-3" style="opacity:0.3;"></i>
-                <p style="opacity:0.5;" class="mb-0">أدخل بيانات أموالك<br>وستظهر النتيجة هنا</p>
+                <i class="fas fa-coins fa-4x mb-3" style="opacity:0.35;"></i>
+                <h5 class="font-amiri fs-3 mb-2">أدخل بيانات أموالك</h5>
+                <p style="opacity:0.65;" class="mb-0">ستظهر نتيجة الحساب الفوري والوعاء الصافي والزكاة الواجبة هنا</p>
               </div>
               <div id="zakatActiveState" class="w-100 d-none">
                 <div class="text-center mb-4">
                   <div id="zakatStatusBadge" class="badge fs-6 px-4 py-2 rounded-pill mb-3"></div>
-                  <div style="font-size:0.9rem;opacity:0.75;margin-bottom:5px;">إجمالي الوعاء الزكوي</div>
-                  <div id="zakatTotal" style="font-size:2.2rem;font-weight:900;font-family:'Amiri',serif;letter-spacing:1px;"></div>
+                  <div style="font-size:0.95rem;opacity:0.8;margin-bottom:5px;">إجمالي الوعاء الزكوي الصافي</div>
+                  <div id="zakatTotal" style="font-size:2.4rem;font-weight:900;font-family:'Amiri',serif;letter-spacing:1px;"></div>
                   <div style="height:2px;background:rgba(255,255,255,0.2);margin:15px 0;"></div>
-                  <div style="font-size:0.9rem;opacity:0.75;margin-bottom:5px;">الزكاة الواجبة (2.5%)</div>
-                  <div id="zakatDue" style="font-size:3rem;font-weight:900;color:#fcd34d;font-family:'Amiri',serif;text-shadow:0 5px 15px rgba(0,0,0,0.3);"></div>
+                  <div style="font-size:0.95rem;opacity:0.8;margin-bottom:5px;">الزكاة الواجبة إخراجها شرعاً (2.5%)</div>
+                  <div id="zakatDue" style="font-size:3.2rem;font-weight:900;color:#fcd34d;font-family:'Amiri',serif;text-shadow:0 5px 15px rgba(0,0,0,0.3);"></div>
                 </div>
                 <!-- Breakdown -->
-                <div id="zakatBreakdown" style="background:rgba(255,255,255,0.1);border-radius:12px;padding:15px;font-size:0.9rem;"></div>
+                <div id="zakatBreakdown" style="background:rgba(255,255,255,0.1);border-radius:14px;padding:18px;font-size:0.92rem;"></div>
               </div>
             </div>
 
             <!-- Haul Reminder -->
             <div class="mt-3 p-3 rounded-3 border border-warning bg-warning bg-opacity-10">
-              <small><i class="fas fa-clock text-warning me-2"></i><strong>تذكير بالحول:</strong> تجب الزكاة إذا حال الحول (سنة قمرية) على بلوغ النصاب.</small>
+              <small><i class="fas fa-clock text-warning me-2"></i><strong>شرط الحول:</strong> تجب الزكاة إذا حال الحول (سنة هجرية قمرية كاملة 354 يوماً) على بقاء المال بالغاً النصاب.</small>
             </div>
 
             <!-- Nisab Reference -->
-            <div class="mt-3 p-4 rounded-3 bg-white border shadow-sm">
-              <h6 class="fw-bold mb-3 text-dark"><i class="fas fa-info-circle text-warning me-2"></i>مرجع الأنصبة</h6>
+            <div class="mt-3 p-4 rounded-4 bg-white border shadow-sm">
+              <h6 class="fw-bold mb-3 text-dark"><i class="fas fa-info-circle text-warning me-2"></i>مرجع الأنصبة الشرعية</h6>
               <div class="row g-2 text-center">
                 <div class="col-4">
-                  <div style="background:#fef9c3;border-radius:10px;padding:12px 5px;">
+                  <div style="background:#fef9c3;border-radius:12px;padding:12px 5px;">
                     <div style="font-size:1.5rem;font-weight:900;color:#92400e;">85</div>
-                    <div style="font-size:0.75rem;color:#6b7280;">جرام ذهب</div>
+                    <div style="font-size:0.8rem;color:#6b7280;">جرام ذهب عيار 24</div>
                   </div>
                 </div>
                 <div class="col-4">
-                  <div style="background:#f1f5f9;border-radius:10px;padding:12px 5px;">
+                  <div style="background:#f1f5f9;border-radius:12px;padding:12px 5px;">
                     <div style="font-size:1.5rem;font-weight:900;color:#374151;">595</div>
-                    <div style="font-size:0.75rem;color:#6b7280;">جرام فضة</div>
+                    <div style="font-size:0.8rem;color:#6b7280;">جرام فضة خالصة</div>
                   </div>
                 </div>
                 <div class="col-4">
-                  <div style="background:#ecfdf5;border-radius:10px;padding:12px 5px;">
+                  <div style="background:#ecfdf5;border-radius:12px;padding:12px 5px;">
                     <div style="font-size:1.5rem;font-weight:900;color:#065f46;">2.5%</div>
-                    <div style="font-size:0.75rem;color:#6b7280;">نسبة الإخراج</div>
+                    <div style="font-size:0.8rem;color:#6b7280;">ربع العشر المفروض</div>
                   </div>
                 </div>
-              </div>
-              <div class="mt-3 small text-muted">
-                <i class="fas fa-seedling text-success me-1"></i>
-                <strong>زكاة الزروع:</strong> 5% مع الري المؤنة، 10% من مطر أو نهر. وعاء: المحصول لا رأس المال.
               </div>
             </div>
 
             <!-- Print -->
-            <button class="btn btn-outline-secondary rounded-pill w-100 mt-3 btn-sm" onclick="printZakat()">
-              <i class="fas fa-print me-2"></i> طباعة / حفظ نتيجة الزكاة
+            <button class="btn btn-outline-secondary rounded-pill w-100 mt-3 btn-sm py-2" onclick="printZakat()">
+              <i class="fas fa-print me-2"></i> طباعة / حفظ وثيقة حساب الزكاة
             </button>
           </div>
         </div>
       </div>
 
-      <hr style="border-color:rgba(212,175,55,0.4);margin:50px 0;">
+      <hr style="border-color:rgba(212,175,55,0.4);margin:60px 0;">
 
       <!-- =====  INHERITANCE CALCULATOR  ===== -->
       <div>
         <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
-          <div style="width:60px;height:60px;background:linear-gradient(135deg,#064e3b,#047857);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(4,120,87,0.4);flex-shrink:0;">
+          <div style="width:60px;height:60px;background:linear-gradient(135deg,#064e3b,#047857);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(4,120,87,0.4);flex-shrink:0;">
             <i class="fas fa-sitemap text-white fa-2x"></i>
           </div>
           <div>
-            <h4 class="font-amiri fw-bold mb-1 text-dark" style="font-size:1.8rem;">حاسبة المواريث الشرعية</h4>
-            <p class="text-muted mb-0 small">توزيع التركة على أصحاب الفروض والعصبات</p>
+            <h4 class="font-amiri fw-bold mb-1 text-dark" style="font-size:1.9rem;">حاسبة المواريث الشرعية التفاعلية</h4>
+            <p class="text-muted mb-0 small">توزيع التركة على أصحاب الفروض والعصبات استناداً لقواعد الفرائض القرآنية</p>
           </div>
         </div>
 
         <div class="row g-4">
           <!-- Left: Inputs -->
           <div class="col-lg-5">
-            <div class="bg-white" style="border-radius:20px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;">
+            <div class="bg-white" style="border-radius:22px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;">
               <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:18px 25px;color:white;">
-                <h6 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i>بيانات الورثة والتركة</h6>
+                <h6 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i>بيانات التركة والورثة</h6>
               </div>
               <div style="padding:25px;">
 
@@ -750,19 +1684,19 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
                 <div class="mb-4">
                   <label class="form-label fw-bold"><i class="fas fa-landmark text-warning me-2"></i>إجمالي التركة الصافية</label>
                   <div class="input-group">
-                    <input type="number" id="inhEstate" class="form-control form-control-lg" placeholder="مثال: 500000" min="0">
+                    <input type="number" id="inhEstate" class="form-control form-control-lg" placeholder="مثال: 1000000" min="0">
                     <span class="input-group-text zCurLabel">دج</span>
                   </div>
-                  <small class="text-muted">بعد طرح: تجهيز الميت · الديون · الوصية (بحدود 1/3)</small>
+                  <small class="text-muted">التركة الصافية بعد خصم: نفقات التجهيز، الديون، والوصايا المشروعة (بحدود الثلث)</small>
                 </div>
 
                 <!-- Spouse -->
                 <div class="mb-4">
-                  <label class="form-label fw-bold">الزوج أو الزوجة</label>
+                  <label class="form-label fw-bold">الزوج أو الزوجات الباقيات على قيد الحياة</label>
                   <select id="inhSpouse" class="form-select form-select-lg">
-                    <option value="none">لا يوجد</option>
+                    <option value="none">لا يوجد زوج ولا زوجة</option>
                     <option value="husband">زوج (1)</option>
-                    <option value="wife1">زوجة (1)</option>
+                    <option value="wife1">زوجة واحدة (1)</option>
                     <option value="wife2">زوجتان (2)</option>
                     <option value="wife3">3 زوجات</option>
                     <option value="wife4">4 زوجات</option>
@@ -771,14 +1705,14 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Children -->
                 <div class="mb-4">
-                  <label class="form-label fw-bold">الأبناء والبنات</label>
+                  <label class="form-label fw-bold">الأبناء والبنات الصلبيين</label>
                   <div class="row g-2">
                     <div class="col-6">
-                      <label class="small text-muted">أبناء ذكور</label>
+                      <label class="small text-muted">عدد الأبناء (ذكور)</label>
                       <input type="number" id="inhSons" class="form-control" value="0" min="0">
                     </div>
                     <div class="col-6">
-                      <label class="small text-muted">بنات إناث</label>
+                      <label class="small text-muted">عدد البنات (إناث)</label>
                       <input type="number" id="inhDaughters" class="form-control" value="0" min="0">
                     </div>
                   </div>
@@ -808,7 +1742,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <!-- Siblings -->
                 <div class="mb-4">
-                  <label class="form-label fw-bold">الإخوة الأشقاء (إذا لم يوجد أبناء ولا أب)</label>
+                  <label class="form-label fw-bold">الإخوة الأشقاء (في حال عدم وجود أبناء ولا أب)</label>
                   <div class="row g-2">
                     <div class="col-6">
                       <label class="small text-muted">أشقاء ذكور</label>
@@ -823,7 +1757,7 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
                 <div class="d-flex gap-3">
                   <button class="btn btn-success fw-bold rounded-pill flex-grow-1 py-3" onclick="calcInheritance()">
-                    <i class="fas fa-balance-scale me-2"></i>توزيع التركة
+                    <i class="fas fa-balance-scale me-2"></i>توزيع التركة الشرعي
                   </button>
                   <button class="btn btn-outline-secondary rounded-pill px-4" onclick="resetInheritance()">
                     <i class="fas fa-undo"></i>
@@ -836,67 +1770,66 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
 
           <!-- Right: Results -->
           <div class="col-lg-7">
-            <!-- Main result panel -->
-            <div id="inhResultPanel" class="bg-white" style="border-radius:20px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;min-height:350px;">
+            <div id="inhResultPanel" class="bg-white" style="border-radius:22px;border:1px solid #e2e8f0;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;min-height:350px;">
               <div id="inhIdle" style="display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:350px;opacity:0.4;color:#475569;">
-                <i class="fas fa-balance-scale fa-3x mb-3"></i>
-                <p class="mb-0">حدّد الورثة<br>وستُعرض الأنصبة هنا</p>
+                <i class="fas fa-balance-scale fa-4x mb-3"></i>
+                <h5 class="font-amiri fs-3 mb-2">حدّد الورثة والتركة</h5>
+                <p class="mb-0">ستُعرض هنا نسب التوزيع والأنصبة بالأرقام والتمثيل البياني</p>
               </div>
               <div id="inhActive" class="d-none">
-                <!-- Result header -->
                 <div style="background:linear-gradient(135deg,#064e3b,#047857);padding:18px 25px;color:white;">
-                  <h6 class="mb-1 fw-bold"><i class="fas fa-balance-scale me-2"></i>توزيع التركة الشرعي</h6>
-                  <div id="inhEstateBadge" style="font-size:0.9rem;opacity:0.8;"></div>
+                  <h6 class="mb-1 fw-bold fs-5"><i class="fas fa-balance-scale me-2"></i>وثيقة تقسيم التركة الشرعية</h6>
+                  <div id="inhEstateBadge" style="font-size:0.95rem;opacity:0.85;"></div>
                 </div>
                 <!-- Visual share bar -->
-                <div id="inhShareBar" style="height:16px;display:flex;gap:0;overflow:hidden;"></div>
+                <div id="inhShareBar" style="height:18px;display:flex;gap:0;overflow:hidden;"></div>
                 <!-- Legend -->
                 <div id="inhLegend" class="d-flex flex-wrap gap-2 p-3 pb-0"></div>
                 <!-- Heirs table -->
-                <div id="inhHeirsList" style="padding:5px 20px 20px;"></div>
+                <div id="inhHeirsList" style="padding:10px 20px 20px;"></div>
                 <!-- Warning -->
                 <div class="mx-4 mb-4 p-3 rounded-3 small" style="background:#fef3c7;border-right:4px solid #f59e0b;">
                   <i class="fas fa-exclamation-triangle text-warning me-2"></i>
-                  هذه الحاسبة للتوعية والحالات المبسطة. في النزاعات والمسائل المعقدة يجب الرجوع للقضاء الشرعي أو المفتي.
+                  <strong>تنبيه شرعي:</strong> هذه الحاسبة مخصصة للتثقيف وللحالات المبسطة. في حالات النزاع ووجود الجدات أو العول والرد والمناسخات والوصايا الواجبة يجب مراجعة المحاكم الشرعية الرسمية.
                 </div>
               </div>
             </div>
 
             <!-- Print -->
-            <button class="btn btn-outline-secondary rounded-pill w-100 mt-3 btn-sm" onclick="printInheritance()">
-              <i class="fas fa-print me-2"></i> طباعة وثيقة التقسيم
+            <button class="btn btn-outline-secondary rounded-pill w-100 mt-3 btn-sm py-2" onclick="printInheritance()">
+              <i class="fas fa-print me-2"></i> طباعة وثيقة التقسيم الشرعي
             </button>
 
             <!-- Fard fractions info -->
             <div class="mt-4 p-4 bg-white rounded-4 shadow-sm border">
-              <h6 class="fw-bold mb-3"><i class="fas fa-info-circle text-primary me-2"></i>الفروض المقدرة في القرآن الكريم</h6>
+              <h6 class="fw-bold mb-3"><i class="fas fa-info-circle text-primary me-2"></i>الفروض المقدرة في كتاب الله تعالى</h6>
               <div class="row g-2">
                 <div class="col-md-6">
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <span class="badge bg-primary" style="min-width:38px;font-size:0.85rem;">1/2</span>
+                    <span class="badge bg-primary" style="min-width:40px;font-size:0.9rem;">1/2</span>
                     <small class="text-muted">الزوج (بلا فرع) · البنت الواحدة · الأخت الشقيقة</small>
                   </div>
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <span class="badge bg-info text-dark" style="min-width:38px;font-size:0.85rem;">1/4</span>
-                    <small class="text-muted">الزوج (مع فرع) · الزوجة (بلا فرع وارث)</small>
+                    <span class="badge bg-info text-dark" style="min-width:40px;font-size:0.9rem;">1/4</span>
+                    <small class="text-muted">الزوج (مع الفرع) · الزوجة (بلا فرع وارث)</small>
                   </div>
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <span class="badge bg-secondary" style="min-width:38px;font-size:0.85rem;">1/8</span>
-                    <small class="text-muted">الزوجة / الزوجات (مع فرع وارث)</small>
+                    <span class="badge bg-secondary" style="min-width:40px;font-size:0.9rem;">1/8</span>
+                    <small class="text-muted">الزوجة أو الزوجات (مع الفرع الوارث)</small>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <span class="badge bg-warning text-dark" style="min-width:38px;font-size:0.85rem;">2/3</span>
-                    <small class="text-muted">بنتان فأكثر (بلا أخ) · أختان شقيقتان</small>
+                    <span class="badge bg-warning text-dark" style="min-width:40px;font-size:0.9rem;">2/3</span>
+                    <small class="text-muted">بنتان فأكثر · أختان شقيقتان فأكثر</small>
                   </div>
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <span class="badge bg-success" style="min-width:38px;font-size:0.85rem;">1/3</span>
+                    <span class="badge bg-success" style="min-width:40px;font-size:0.9rem;">1/3</span>
                     <small class="text-muted">الأم (بلا فرع وبلا جمع إخوة) · أخوان لأم</small>
                   </div>
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <span class="badge bg-danger" style="min-width:38px;font-size:0.85rem;">1/6</span>
-                    <small class="text-muted">الأب (مع فرع ذكر) · الأم (مع فرع أو إخوة)</small>
+                    <span class="badge bg-danger" style="min-width:40px;font-size:0.9rem;">1/6</span>
+                    <small class="text-muted">الأب (مع الفرع الذكر) · الأم (مع الفرع أو الإخوة)</small>
                   </div>
                 </div>
               </div>
@@ -905,27 +1838,27 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         </div>
       </div>
 
-    </div><!-- end tab-tools -->
+    </div>
 
-</div>
-
+  </div> <!-- End Tab Content -->
+</div> <!-- End Container -->
 
 <!-- MEGA FOOTER -->
-<footer class="mega-footer" style="background:linear-gradient(135deg,var(--dark),#020617);color:white;padding:80px 0 30px;margin-top:80px;border-top:3px solid var(--gold-dark);">
+<footer class="mega-footer">
   <div class="container">
     <div class="row g-5 mb-5 border-bottom border-light border-opacity-10 pb-5">
       <div class="col-lg-4 text-md-end text-center">
         <i class="fas fa-mosque fa-4x text-warning mb-4 d-block"></i>
         <h4 class="fw-bold font-amiri fs-2 mb-3">الموسوعة الإسلامية الشاملة</h4>
-        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى، وفقهاء المذاهب، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات.</p>
+        <p class="opacity-75 fs-6 line-height-2">أضخم صرح رقمي يجمع علوم القرآن العظيم، وأحاديث المصطفى ﷺ، وفقهاء المذاهب الأربعة، والتاريخ المجيد في منصة موثقة مصممة بأحدث التقنيات العصرية.</p>
       </div>
       <div class="col-lg-4 text-center">
-        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">تصفح الموسوعة</h5>
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">أقسام الموسوعة الكبرى</h5>
         <div class="d-flex flex-wrap justify-content-center gap-2">
           <a href="recitations.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">أكاديمية القرآن</a>
           <a href="hadith.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الحديث النبوي</a>
           <a href="seerah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">السيرة والصحابة</a>
-          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">الفقه وأصوله</a>
+          <a href="fiqh.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75 active">الفقه وأصوله</a>
           <a href="fatwa.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">فتاوى العلماء</a>
           <a href="aqeedah.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">العقيدة الإسلامية</a>
           <a href="history.html" class="btn btn-sm btn-outline-light rounded-pill opacity-75">التاريخ المجيد</a>
@@ -933,20 +1866,94 @@ h1,h2,h3,h4,h5,h6,.ar,.poetry{font-family:'Amiri',serif;}
         </div>
       </div>
       <div class="col-lg-4 text-md-start text-center">
-        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط سريعة</h5>
-        <a href="contact.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> اتصل بالمطور</a>
-        <a href="share.html" class="mega-footer-link" style="color:rgba(255,255,255,.7);text-decoration:none;transition:0.3s;display:block;margin-bottom:10px;"><i class="fas fa-chevron-left me-2 ms-1 text-gold small"></i> شارك الأجر</a>
+        <h5 class="text-warning mb-4 font-amiri fw-bold fs-3">روابط وتواصل</h5>
+        <a href="contact.html" class="mega-footer-link"><i class="fas fa-chevron-left me-2 ms-1 text-warning small"></i> اتصل بالمطور</a>
+        <a href="share.html" class="mega-footer-link"><i class="fas fa-chevron-left me-2 ms-1 text-warning small"></i> شارك الأجر وانشر الموقع</a>
       </div>
     </div>
     <div class="text-center font-amiri fs-5 d-flex flex-column gap-2">
-      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | عمل مجاني لوجه الله</span>
-      <span class="text-warning fw-bold fs-4 mt-2">تصميم وتطوير: لخذاري محمد سيف الدين</span>
+      <span class="opacity-75">الموسوعة الإسلامية الشاملة &copy; 2026 تم التصميم للإفادة | وقف رقمي خالص لوجه الله تعالى</span>
     </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 <script>
+// ===================== NAVIGATION & SEARCH HELPERS =====================
+
+function showToolsTab() {
+  const tabTrigger = document.querySelector('button[data-bs-target="#tab-tools"]');
+  if (tabTrigger) {
+    const tab = new bootstrap.Tab(tabTrigger);
+    tab.show();
+  }
+}
+
+function onHeroSearch(query) {
+  query = query.trim().toLowerCase();
+  if (query.length > 1) {
+    const tabTrigger = document.querySelector('button[data-bs-target="#tab-qa"]');
+    if (tabTrigger) {
+      const tab = new bootstrap.Tab(tabTrigger);
+      tab.show();
+    }
+    const searchInput = document.getElementById('fiqhQuestionSearch');
+    if (searchInput) {
+      searchInput.value = query;
+      filterIssues();
+    }
+  }
+}
+
+function triggerHeroSearch() {
+  const query = document.getElementById('fiqhHeroSearch')?.value || '';
+  onHeroSearch(query);
+}
+
+function filterByTag(tag) {
+  const tabTrigger = document.querySelector('button[data-bs-target="#tab-qa"]');
+  if (tabTrigger) {
+    const tab = new bootstrap.Tab(tabTrigger);
+    tab.show();
+  }
+  setTimeout(() => {
+    const btn = Array.from(document.querySelectorAll('.search-pill')).find(b => b.textContent.includes(tag) || (tag === 'معاملات' && b.textContent.includes('المعاملات')) || (tag === 'صيام' && b.textContent.includes('الصيام')) || (tag === 'صلاة' && b.textContent.includes('الصلاة')));
+    if (btn) {
+      setIssueFilter(tag, btn);
+    }
+  }, 100);
+}
+
+let activeFilter = 'all';
+
+function setIssueFilter(category, btn) {
+  activeFilter = category;
+  document.querySelectorAll('.search-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterIssues();
+}
+
+function filterIssues() {
+  const query = (document.getElementById('fiqhQuestionSearch')?.value || '').toLowerCase().trim();
+  const items = document.querySelectorAll('.issue-item');
+  
+  items.forEach(item => {
+    const cat = item.getAttribute('data-category');
+    const title = (item.getAttribute('data-title') || '').toLowerCase();
+    const content = item.textContent.toLowerCase();
+    
+    const matchesCat = (activeFilter === 'all' || cat === activeFilter);
+    const matchesQuery = !query || title.includes(query) || content.includes(query);
+    
+    if (matchesCat && matchesQuery) {
+      item.classList.remove('d-none');
+    } else {
+      item.classList.add('d-none');
+    }
+  });
+}
+
 // ===================== CALCULATORS JS =====================
 
 let currentCurrency = 'دج';
@@ -956,8 +1963,10 @@ function setCur(cur, btn) {
     document.querySelectorAll('[id^=cur_]').forEach(b => b.className = 'btn btn-sm btn-outline-secondary');
     btn.className = 'btn btn-sm btn-success';
     document.querySelectorAll('.zCurLabel').forEach(el => el.textContent = cur);
-    document.querySelectorAll('#unitEstate').forEach(el => el.textContent = cur);
     previewZakat();
+    if (!document.getElementById('inhActive').classList.contains('d-none')) {
+      calcInheritance();
+    }
 }
 
 function fmtNum(n) {
@@ -970,7 +1979,15 @@ function getVal(id) {
 
 // -------- ZAKAT --------
 
-function previewZakat() { /* live preview placeholder */ }
+function previewZakat() {
+    const cash = getVal('zCash');
+    const gold = getVal('zGoldGrams');
+    const trade = getVal('zTrade');
+    const stocks = getVal('zStocks');
+    if (cash > 0 || gold > 0 || trade > 0 || stocks > 0) {
+        calcZakat();
+    }
+}
 
 function calcZakat() {
     const cash       = getVal('zCash');
@@ -991,7 +2008,6 @@ function calcZakat() {
     const zakatDue   = net >= nisab ? net * 0.025 : 0;
     const passed     = net >= nisab;
 
-    // Show result card
     document.getElementById('zakatIdleState').classList.add('d-none');
     document.getElementById('zakatActiveState').classList.remove('d-none');
 
@@ -1002,21 +2018,20 @@ function calcZakat() {
     const badge = document.getElementById('zakatStatusBadge');
     if (passed) {
         badge.className = 'badge bg-success fs-6 px-4 py-2 rounded-pill mb-3';
-        badge.innerHTML = '<i class="fas fa-check-circle me-2"></i>بلغ النصاب — تجب الزكاة';
+        badge.innerHTML = '<i class="fas fa-check-circle me-2"></i>بلغ المال النصاب — تجب الزكاة شرعاً (2.5%)';
     } else {
         badge.className = 'badge bg-danger fs-6 px-4 py-2 rounded-pill mb-3';
-        badge.innerHTML = '<i class="fas fa-times-circle me-2"></i>لم يبلغ النصاب — لا زكاة';
+        badge.innerHTML = '<i class="fas fa-times-circle me-2"></i>لم يبلغ النصاب المعتبر — لا زكاة واجبة';
     }
 
-    // Breakdown
     const rows = [
-        { label: 'المال النقدي',        val: cash },
-        { label: 'ديون مستردة',         val: debtsOwed },
-        { label: 'الذهب',               val: goldVal },
-        { label: 'الفضة',               val: silverVal },
-        { label: 'عروض التجارة',        val: trade },
-        { label: 'الأسهم والاستثمارات', val: stocks },
-        { label: 'ديون مطروحة',         val: -debtsOwing },
+        { label: 'المال النقدي المتاح',   val: cash },
+        { label: 'ديون مرجوة السداد',     val: debtsOwed },
+        { label: 'قيمة الذهب المدخر',      val: goldVal },
+        { label: 'قيمة الفضة',             val: silverVal },
+        { label: 'عروض التجارة والسلع',   val: trade },
+        { label: 'الأسهم والاستثمارات',   val: stocks },
+        { label: 'ديون عاجلة مطروحة',      val: -debtsOwing },
     ].filter(r => r.val !== 0);
 
     let breakdown = '';
@@ -1024,13 +2039,13 @@ function calcZakat() {
         const isNeg = r.val < 0;
         const color = isNeg ? '#fca5a5' : '#bbf7d0';
         const sign  = isNeg ? '−' : '+';
-        breakdown += `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.88rem;">
+        breakdown += `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.9rem;">
             <span>${r.label}</span>
             <span style="color:${color};">${sign} ${fmtNum(Math.abs(r.val))} ${cur}</span>
         </div>`;
     });
-    breakdown += `<div style="display:flex;justify-content:space-between;padding:6px 0;margin-top:4px;font-weight:bold;font-size:0.95rem;">
-        <span>الوعاء الزكوي الصافي</span>
+    breakdown += `<div style="display:flex;justify-content:space-between;padding:8px 0;margin-top:6px;font-weight:bold;font-size:1rem;">
+        <span>الوعاء الزكوي الخاضع للإخراج</span>
         <span style="color:#fcd34d;">${fmtNum(net)} ${cur}</span>
     </div>`;
     document.getElementById('zakatBreakdown').innerHTML = breakdown;
@@ -1047,10 +2062,27 @@ function resetZakat() {
 }
 
 function printZakat() {
-    const content = document.getElementById('zakatActiveState')?.innerHTML || '';
-    if (!content) { alert('الرجاء حساب الزكاة أولاً'); return; }
+    const el = document.getElementById('zakatActiveState');
+    if (!el || el.classList.contains('d-none')) { alert('الرجاء حساب الزكاة أولاً'); return; }
     const win = window.open('', '_blank');
-    win.win.print();
+    win.document.write(`
+      <html lang="ar" dir="rtl">
+      <head>
+        <title>وثيقة حساب الزكاة الشرعية</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+        <style>body { font-family: 'Amiri', serif, sans-serif; padding: 40px; background: #fff; color: #111; }</style>
+      </head>
+      <body>
+        <div class="text-center mb-4 pb-3 border-bottom">
+          <h2 style="color:#064e3b;font-weight:bold;">الموسوعة الإسلامية الشاملة - تقرير حساب الزكاة</h2>
+          <small class="text-muted">صدر بتاريخ: ${new Date().toLocaleDateString('ar-DZ')}</small>
+        </div>
+        <div class="card p-4 border shadow-sm">${el.innerHTML}</div>
+        <script>setTimeout(() => { window.print(); window.close(); }, 500);<\/script>
+      </body>
+      </html>
+    `);
+    win.document.close();
 }
 
 // -------- INHERITANCE --------
@@ -1071,119 +2103,112 @@ function calcInheritance() {
     let heirs = [];
     let remaining = 1.0;
 
-    // ---- Spouse ----
+    // 1. Spouse
     if (spouse === 'husband') {
         const frac = hasChildren ? 1/4 : 1/2;
-        heirs.push({ name: 'الزوج', frac, note: hasChildren ? 'الرُّبُع (1/4) لوجود الفرع' : 'النِّصف (1/2) لعدم الفرع' });
+        heirs.push({ name: 'الزوج', frac, note: hasChildren ? 'الرُّبُع (1/4) فرضاً لوجود الفرع الوارث' : 'النِّصف (1/2) فرضاً لعدم الفرع الوارث' });
         remaining -= frac;
     } else if (spouse.startsWith('wife')) {
         const count = parseInt(spouse.replace('wife',''));
         const frac = hasChildren ? 1/8 : 1/4;
-        const note = (hasChildren ? 'الثُّمُن (1/8)' : 'الرُّبُع (1/4)') + (count > 1 ? ` يُقسَّم على ${count} زوجات` : '');
+        const note = (hasChildren ? 'الثُّمُن (1/8) فرضاً' : 'الرُّبُع (1/4) فرضاً') + (count > 1 ? ` يُقسَّم على ${count} زوجات بالتساوي` : '');
         heirs.push({ name: count === 1 ? 'الزوجة' : `${count} زوجات`, frac, note });
         remaining -= frac;
     }
 
-    // ---- Father ----
-    if (fatherAlive) {
-        if (hasChildren) {
-            // أب مع فرع: له السدس فرضاً
-            const frac = 1/6;
-            heirs.push({ name: 'الأب', frac, note: 'السُّدُس (1/6) مع الفرع الوارث' });
-            remaining -= frac;
-        } else {
-            // أب بلا فرع: يرث الباقي تعصيباً (يُؤجَّل بعد الأم)
-            // سنضيفه بعد الأم
-        }
+    // 2. Father (with children)
+    if (fatherAlive && hasChildren) {
+        const frac = 1/6;
+        heirs.push({ name: 'الأب', frac, note: 'السُّدُس (1/6) فرضاً لوجود الفرع الوارث' });
+        remaining -= frac;
     }
 
-    // ---- Mother ----
+    // 3. Mother
     if (motherAlive) {
         const hasSibGroup = (bros + sisters) >= 2;
         let frac, note;
         if (hasChildren || hasSibGroup) {
             frac = 1/6;
-            note = 'السُّدُس (1/6) ' + (hasChildren ? 'مع الفرع' : 'مع جمع الإخوة');
+            note = 'السُّدُس (1/6) فرضاً ' + (hasChildren ? 'لوجود الفرع الوارث' : 'لوجود جمع من الإخوة');
         } else {
-            frac = 1/3; // لا فرع ولا جمع إخوة
-            note = 'الثُّلُث (1/3) لعدم الفرع وعدم الجمع';
-            // لكن إن كان أب: ثلث الباقي (Umariyatān) — simplification: ثلث كامل
+            frac = 1/3;
+            note = 'الثُّلُث (1/3) فرضاً لعدم الفرع الوارث والجمع من الإخوة';
         }
         heirs.push({ name: 'الأم', frac, note });
         remaining -= frac;
     }
 
-    // ---- Father (بلا فرع): الباقي تعصيباً ----
+    // 4. Father (without children: Takes rest by Asaba)
     if (fatherAlive && !hasChildren) {
         if (remaining > 0.001) {
-            heirs.push({ name: 'الأب', frac: remaining, note: 'الباقي كله تعصيباً (بلا فرع وارث)' });
+            heirs.push({ name: 'الأب', frac: remaining, note: 'الباقي كله تعصيباً لعدم وجود فرع وارث' });
             remaining = 0;
         }
     }
 
-    // ---- Children ----
+    // 5. Children
     if (hasChildren) {
         if (sons === 0 && daughters > 0) {
             const frac = Math.min(daughters === 1 ? 1/2 : 2/3, remaining);
-            const note = daughters === 1 ? 'النِّصف (1/2) لانفرادها' : `الثُّلُثَان (2/3) يوزع على ${daughters} بنات`;
+            const note = daughters === 1 ? 'النِّصف (1/2) فرضاً لانفرادها' : `الثُّلُثَان (2/3) فرضاً يُوزَّع على ${daughters} بنات بالتساوي`;
             heirs.push({ name: daughters === 1 ? 'البنت' : `${daughters} بنات`, frac, note });
             remaining -= frac;
         } else if (sons > 0) {
             const totalParts = sons * 2 + daughters;
             const note = daughters > 0
-                ? `الباقي تعصيباً — للذكر مثل حظ الأنثيين (${sons} ذكور + ${daughters} إناث = ${totalParts} سهم)`
-                : `الباقي تعصيباً يوزع على ${sons} بنين بالتساوي`;
+                ? `الباقي تعصيباً — للذكر مثل حظ الأنثيين (${sons} ذكور + ${daughters} إناث = ${totalParts} سهماً)`
+                : `الباقي تعصيباً يُوزَّع على ${sons} بنين بالتساوي`;
             heirs.push({ name: 'الأبناء والبنات', frac: remaining, note });
             remaining = 0;
         }
     }
 
-    // ---- Siblings (only if no children and no father) ----
+    // 6. Siblings (only if no children and no father)
     if (!hasChildren && !fatherAlive && (bros + sisters) > 0) {
         const total = bros * 2 + sisters;
         if (bros > 0) {
             heirs.push({
                 name: `الإخوة الأشقاء (${bros} ذكور + ${sisters} إناث)`,
                 frac: remaining,
-                note: `الباقي تعصيباً — الذكر ضعف الأنثى (${total} سهم)`
+                note: `الباقي تعصيباً — للذكر ضعف الأنثى (${total} سهماً)`
             });
             remaining = 0;
         } else if (sisters === 1) {
             const frac = Math.min(1/2, remaining);
-            heirs.push({ name: 'الأخت الشقيقة', frac, note: 'النِّصف (1/2) لانفرادها' });
+            heirs.push({ name: 'الأخت الشقيقة', frac, note: 'النِّصف (1/2) فرضاً لانفرادها' });
             remaining -= frac;
         } else if (sisters >= 2) {
             const frac = Math.min(2/3, remaining);
-            heirs.push({ name: `${sisters} أخوات شقيقات`, frac, note: 'الثُّلُثَان (2/3) لتعددهن' });
+            heirs.push({ name: `${sisters} أخوات شقيقات`, frac, note: 'الثُّلُثَان (2/3) فرضاً لتعددهن بالتساوي' });
             remaining -= frac;
         }
     }
 
-    // ---- Remaining (Asaba) ----
+    // 7. Remaining (Asaba)
     if (remaining > 0.005) {
         heirs.push({
-            name: 'باقي العصبة (الأقارب)',
+            name: 'باقي العصبة من الأقارب',
             frac: remaining,
-            note: 'الباقي يُوزَّع على الأقارب الأولى بالميراث (أب، جد، إخوة، أعمام...)'
+            note: 'الباقي يُصرف لأقرب رجل عصبة للميت (جد، إخوة، أعمام...)'
         });
     }
 
     if (heirs.length === 0) {
         document.getElementById('inhIdle').style.display = 'flex';
         document.getElementById('inhActive').classList.add('d-none');
-        alert('لا يوجد ورثة محددون. الرجاء إدخال الورثة.');
+        alert('الرجاء تحديد الورثة على قيد الحياة أولاً.');
         return;
     }
 
-    // ---- Render ----
+    // Render
     document.getElementById('inhIdle').style.display = 'none';
     document.getElementById('inhActive').classList.remove('d-none');
 
     const cur = currentCurrency;
     document.getElementById('inhEstateBadge').textContent =
-        estate > 0 ? `التركة الصافية: ${fmtNum(estate)} ${cur}` : 'أدخل قيمة التركة لعرض الأرقام';
+        estate > 0 ? `التركة الصافية الموزعة: ${fmtNum(estate)} ${cur}` : 'أدخل قيمة التركة النقدية لعرض نصيب كل وارث بالأرقام';
 
-    // Share bar
+    // Share Bar
     const bar = document.getElementById('inhShareBar');
     bar.innerHTML = '';
     heirs.forEach((h, i) => {
@@ -1203,21 +2228,21 @@ function calcInheritance() {
         legend.appendChild(dot);
     });
 
-    // Heirs table
+    // Heirs List
     const list = document.getElementById('inhHeirsList');
     list.innerHTML = '';
     heirs.forEach((h, i) => {
         const pct     = (h.frac * 100).toFixed(2);
         const amount  = estate > 0 ? fmtNum(estate * h.frac) + ' ' + cur : '—';
         const row = document.createElement('div');
-        row.style.cssText = 'padding:12px 15px;border-right:4px solid '+COLORS[i%COLORS.length]+';background:#f8fafc;margin-bottom:8px;border-radius:0 10px 10px 0;';
+        row.style.cssText = 'padding:14px 18px;border-right:5px solid '+COLORS[i%COLORS.length]+';background:#f8fafc;margin-bottom:10px;border-radius:0 12px 12px 0;';
         row.innerHTML = `
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px;">
-                <strong style="font-family:'Amiri',serif;font-size:1.1rem;">${h.name}</strong>
-                <span style="background:${COLORS[i%COLORS.length]};color:white;padding:3px 12px;border-radius:20px;font-weight:bold;font-size:0.9rem;">${pct}%</span>
+                <strong style="font-family:'Amiri',serif;font-size:1.2rem;" class="text-dark">${h.name}</strong>
+                <span style="background:${COLORS[i%COLORS.length]};color:white;padding:3px 14px;border-radius:20px;font-weight:bold;font-size:0.92rem;">${pct}%</span>
             </div>
-            <div style="font-size:0.88rem;color:#475569;margin-top:4px;">${h.note}</div>
-            ${estate > 0 ? `<div style="font-size:1rem;font-weight:bold;color:#064e3b;margin-top:4px;">${amount}</div>` : ''}
+            <div style="font-size:0.9rem;color:#475569;margin-top:4px;">${h.note}</div>
+            ${estate > 0 ? `<div style="font-size:1.15rem;font-weight:bold;color:#064e3b;margin-top:6px;font-family:'Amiri',serif;">النصيب المالي المستحق: ${amount}</div>` : ''}
         `;
         list.appendChild(row);
     });
@@ -1237,12 +2262,29 @@ function resetInheritance() {
 }
 
 function printInheritance() {
-    const content = document.getElementById('inhActive')?.innerHTML || '';
-    if (!content || document.getElementById('inhActive').classList.contains('d-none')) {
+    const el = document.getElementById('inhActive');
+    if (!el || el.classList.contains('d-none')) {
         alert('الرجاء توزيع التركة أولاً'); return;
     }
     const win = window.open('', '_blank');
-    win.win.print();
+    win.document.write(`
+      <html lang="ar" dir="rtl">
+      <head>
+        <title>وثيقة توزيع التركة الشرعية</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+        <style>body { font-family: 'Amiri', serif, sans-serif; padding: 40px; background: #fff; color: #111; }</style>
+      </head>
+      <body>
+        <div class="text-center mb-4 pb-3 border-bottom">
+          <h2 style="color:#064e3b;font-weight:bold;">الموسوعة الإسلامية الشاملة - تقرير توزيع التركة</h2>
+          <small class="text-muted">صدر بتاريخ: ${new Date().toLocaleDateString('ar-DZ')}</small>
+        </div>
+        <div class="card p-4 border shadow-sm">${el.innerHTML}</div>
+        <script>setTimeout(() => { window.print(); window.close(); }, 500);<\/script>
+      </body>
+      </html>
+    `);
+    win.document.close();
 }
 </script>
 </body>

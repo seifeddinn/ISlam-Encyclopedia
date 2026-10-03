@@ -26,6 +26,8 @@
     { key: 'ibnmajah',  label: 'سنن ابن ماجه',      bookKey: 'ibnmajah',  url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-ibnmajah.min.json',  scholar: 'ابن ماجه',   grade: 'صحيح وحسن' },
     { key: 'malik',     label: 'موطأ مالك',          bookKey: 'malik',     url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-malik.min.json',     scholar: 'الإمام مالك', grade: 'صحيح' },
     { key: 'nawawi40',  label: 'الأربعون النووية',   bookKey: 'all',       url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nawawi40.min.json',  scholar: 'النووي',     grade: 'صحيح' },
+    { key: 'riyad',     label: 'رياض الصالحين',     bookKey: 'all',       url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-riyadassalihin.min.json', scholar: 'النووي', grade: 'صحيح' },
+    { key: 'adab',      label: 'الأدب المفرد',       bookKey: 'bukhari',   url: 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-adabalmufrad.min.json', scholar: 'البخاري', grade: 'صحيح وحسن' },
   ];
 
   // ════════════════════════════════════════════

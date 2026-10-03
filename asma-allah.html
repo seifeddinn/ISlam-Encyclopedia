@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أسماء الله الحسنى الـ 99 ومعانيها - الموسوعة الإسلامية الشاملة</title>
+<meta name="description" content="موسوعة أسماء الله الحسنى الـ 99 الشاملة: المعنى، الدليل من القرآن والسنة، الأثر الإيماني، وتعلم الأسماء بطريقة تفاعلية. يعمل 100% بدون إنترنت.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="responsive.css">
+<style>
+:root{
+  --blue-deep:#0f172a; --blue:#1e40af; --blue-light:#3b82f6;
+  --gold:#d4af37; --gold-dark:#aa8a2a; --gold-light:#fef9c3;
+  --indigo:#312e81; --violet:#4c1d95; --text:#1e293b;
+  --sky:#0ea5e9; --teal:#0d9488;
+}
+*{box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:#f8fafc;color:var(--text);overflow-x:hidden;}
+.amiri{font-family:'Amiri',serif;}
+
+/* NAVBAR */
+.navbar{background:linear-gradient(135deg,var(--blue-deep),var(--indigo))!important;box-shadow:0 4px 30px rgba(0,0,0,.5);border-bottom:2px solid rgba(212,175,55,.25);z-index:1000;}
+.navbar-brand{font-family:'Amiri',serif;font-size:1.8rem;color:white!important;}
+.navbar .nav-link{color:rgba(255,255,255,.85)!important;font-weight:700;transition:.3s;}
+.navbar .nav-link:hover,.navbar .nav-link.active{color:var(--gold)!important;}
+
+/* HERO */
+.asma-hero{min-height:55vh;background:radial-gradient(ellipse at 50% 40%,#312e81 0%,#1e1b4b 50%,#0f172a 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 70px;}
+.star-field{position:absolute;inset:0;background-image:
+  radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,.7) 0%, transparent 100%),
+  radial-gradient(2px 2px at 30% 60%, rgba(255,255,255,.5) 0%, transparent 100%),
+  radial-gradient(1px 1px at 50% 30%, rgba(255,255,255,.8) 0%, transparent 100%),
+  radial-gradient(1px 1px at 70% 70%, rgba(255,255,255,.6) 0%, transparent 100%),
+  radial-gradient(2px 2px at 90% 15%, rgba(255,255,255,.7) 0%, transparent 100%),
+  radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,.5) 0%, transparent 100%),
+  radial-gradient(2px 2px at 80% 45%, rgba(255,255,255,.7) 0%, transparent 100%);
+  animation:twinkle 4s ease-in-out infinite alternate;}
+@keyframes twinkle{to{opacity:.6;}}
+.hero-pill{display:inline-block;background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:#0f172a;padding:8px 28px;border-radius:50px;font-weight:800;font-size:.95rem;margin-bottom:22px;box-shadow:0 4px 18px rgba(212,175,55,.4);}
+.asma-hero h1{font-size:clamp(2rem,5vw,4.5rem);font-weight:900;color:#fff;text-shadow:0 8px 30px rgba(0,0,0,.8);line-height:1.2;}
+.asma-hero h1 .highlight{background:linear-gradient(135deg,#c7d2fe,#a5b4fc,#818cf8,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-desc{color:#c7d2fe;font-size:1.1rem;line-height:2;max-width:700px;margin:0 auto;}
+.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.15;animation:floatOrb 14s ease-in-out infinite alternate;}
+.orb-1{width:600px;height:600px;background:#818cf8;top:-200px;right:-100px;}
+.orb-2{width:500px;height:500px;background:var(--gold);bottom:-150px;left:-100px;animation-delay:5s;}
+@keyframes floatOrb{to{transform:translate(50px,50px) scale(1.1);}}
+
+/* ASMAA STATS BAR */
+.stats-bar{background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a);padding:28px 0;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);}
+.stat-box{text-align:center;color:#fff;}
+.stat-num{font-family:'Amiri',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;}
+.stat-lbl{font-size:.9rem;color:#a5b4fc;font-weight:600;}
+
+/* FILTER BAR */
+.filter-bar{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:2px solid #e2e8f0;padding:14px 0;position:sticky;top:60px;z-index:99;box-shadow:0 8px 25px rgba(0,0,0,.06);}
+.filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;}
+.filter-input{border:2px solid #e2e8f0;border-radius:50px;padding:9px 20px;font-family:'Cairo',sans-serif;font-size:.95rem;outline:none;transition:.3s;width:250px;font-weight:600;}
+.filter-input:focus{border-color:var(--blue-light);box-shadow:0 0 0 4px rgba(59,130,246,.12);}
+.filter-btn{padding:9px 20px;border-radius:25px;border:2px solid #e2e8f0;font-family:'Cairo',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;transition:.3s;background:#f8fafc;color:var(--text);}
+.filter-btn:hover{background:#ede9fe;border-color:#a78bfa;}
+.filter-btn.active{background:linear-gradient(135deg,var(--indigo),var(--blue))!important;color:#fff!important;border-color:transparent;box-shadow:0 6px 18px rgba(79,70,229,.3);}
+
+/* SECTION HEAD */
+.sec-head{text-align:center;margin:60px 0 40px;}
+.badge-tag{display:inline-block;background:rgba(212,175,55,.12);color:var(--gold-dark);border:1px solid rgba(212,175,55,.35);border-radius:30px;padding:7px 22px;font-size:.9rem;font-weight:700;margin-bottom:16px;}
+.sec-head h2{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--text);font-weight:900;}
+.sec-head h2 .hl{color:#4f46e5;}
+.gold-divider{width:70px;height:5px;background:linear-gradient(90deg,var(--gold),#818cf8);border-radius:5px;margin:18px auto 0;}
+
+/* NAME CARD */
+.asma-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;margin-bottom:80px;}
+.name-card{background:#fff;border-radius:22px;border:1px solid #e8eaf6;box-shadow:0 6px 20px rgba(0,0,0,.04);transition:.4s;cursor:pointer;position:relative;overflow:hidden;}
+.name-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--indigo),var(--blue));opacity:0;transition:.4s;}
+.name-card:hover::before{opacity:.04;}
+.name-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(79,70,229,.12);border-color:#a5b4fc;}
+.name-card.known{border-color:#86efac;background:#f0fdf4;}
+.name-card.known::after{content:'✓';position:absolute;top:12px;left:12px;width:24px;height:24px;background:#22c55e;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;}
+.card-top{padding:24px 22px 14px;text-align:center;}
+.card-num{position:absolute;top:14px;right:14px;width:32px;height:32px;background:linear-gradient(135deg,var(--indigo),var(--blue));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;}
+.card-arabic{font-family:'Amiri',serif;font-size:2.4rem;font-weight:700;color:var(--indigo);line-height:1.2;margin-bottom:8px;text-shadow:0 2px 8px rgba(79,70,229,.15);}
+.card-transliteration{font-size:.8rem;color:#94a3b8;font-weight:600;font-family:'Cairo',sans-serif;letter-spacing:.5px;margin-bottom:10px;}
+.card-meaning{background:linear-gradient(135deg,#ede9fe,#e0e7ff);border-radius:12px;padding:10px 14px;font-weight:700;font-size:.95rem;color:#3730a3;font-family:'Cairo',sans-serif;margin-bottom:0;}
+.card-bottom{padding:14px 22px 20px;border-top:1px solid #f1f5f9;}
+.card-source{font-size:.8rem;color:#94a3b8;font-family:'Cairo',sans-serif;display:flex;align-items:center;gap:6px;}
+.card-source span{background:#ede9fe;color:#5b21b6;border-radius:8px;padding:3px 10px;font-weight:700;}
+
+/* DETAIL MODAL */
+.name-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9990;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);animation:fadeIn .25s;}
+@keyframes fadeIn{from{opacity:0;}}
+.name-modal{background:#fff;border-radius:28px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 40px 80px rgba(0,0,0,.3);}
+.modal-header-custom{background:linear-gradient(135deg,var(--indigo),var(--blue));padding:35px 30px;border-radius:28px 28px 0 0;text-align:center;position:relative;}
+.modal-close{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer;transition:.3s;}
+.modal-close:hover{background:rgba(255,255,255,.3);}
+.modal-arabic{font-family:'Amiri',serif;font-size:3.5rem;color:#fff;text-shadow:0 5px 20px rgba(0,0,0,.3);line-height:1;}
+.modal-num{display:inline-block;background:var(--gold);color:#0f172a;border-radius:50px;padding:4px 18px;font-weight:800;font-size:.9rem;margin-top:10px;}
+.modal-body-custom{padding:30px;}
+.detail-row{margin-bottom:20px;}
+.detail-label{font-weight:800;color:var(--indigo);font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.detail-content{background:#f8fafc;border-radius:14px;padding:16px;line-height:2;font-size:1rem;color:#334155;font-family:'Amiri',serif;font-size:1.1rem;}
+.detail-meaning-big{font-family:'Amiri',serif;font-size:1.8rem;color:var(--indigo);text-align:center;padding:20px;background:#ede9fe;border-radius:14px;margin-bottom:20px;}
+.learn-btn{background:linear-gradient(135deg,var(--indigo),var(--blue));color:#fff;border:none;border-radius:50px;padding:12px 30px;font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(79,70,229,.3);}
+.learn-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(79,70,229,.4);}
+
+/* QUIZ SECTION */
+.quiz-card{background:linear-gradient(135deg,var(--indigo),#1e40af);border-radius:28px;padding:50px 40px;text-align:center;color:#fff;box-shadow:0 25px 60px rgba(0,0,0,.3);}
+.quiz-question{font-family:'Amiri',serif;font-size:3rem;margin-bottom:30px;text-shadow:0 5px 15px rgba(0,0,0,.3);}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
+.quiz-opt{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:14px;padding:15px;font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem;color:#fff;cursor:pointer;transition:.3s;}
+.quiz-opt:hover{background:rgba(255,255,255,.2);}
+.quiz-opt.correct{background:rgba(34,197,94,.25);border-color:#22c55e;}
+.quiz-opt.wrong{background:rgba(239,68,68,.2);border-color:#ef4444;}
+.quiz-score{font-family:'Cairo',sans-serif;font-size:1.1rem;color:rgba(255,255,255,.8);margin-bottom:20px;}
+.quiz-next{background:var(--gold);color:#0f172a;border:none;border-radius:50px;padding:12px 30px;font-family:'Cairo',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:.3s;}
+.quiz-next:hover{background:var(--gold-dark);}
+
+/* Progress bar */
+.progress-bar-asma{width:100%;height:8px;background:#e2e8f0;border-radius:10px;margin:16px 0;}
+.progress-fill{height:8px;background:linear-gradient(90deg,var(--gold),#818cf8);border-radius:10px;transition:.5s;}
+
+/* Category pills */
+.cat-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:30px;}
+.cat-pill{padding:6px 18px;border-radius:50px;border:2px solid #e2e8f0;background:#f8fafc;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;transition:.3s;color:var(--text);}
+.cat-pill:hover{background:#ede9fe;border-color:#a78bfa;}
+.cat-pill.active{background:linear-gradient(135deg,var(--indigo),var(--blue));color:#fff;border-color:transparent;box-shadow:0 4px 15px rgba(79,70,229,.3);}
+
+/* Offline badge */
+.offline-badge{background:linear-gradient(90deg,#1e1b4b,#312e81);color:#fff;border-radius:12px;padding:10px 22px;font-size:.9rem;font-family:'Cairo',sans-serif;display:inline-flex;align-items:center;gap:8px;}
+
+@media(max-width:768px){
+  .asma-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
+  .card-arabic{font-size:1.8rem;}
+  .quiz-options{grid-template-columns:1fr;}
+  .name-modal{border-radius:20px;}
+  .quiz-card{padding:30px 18px;}
+}
+</style>
+<style id="splash-critical">
+#islamicSplashScreen{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 40% 30%,#0d2240 0%,#0b192c 50%,#040c18 100%);overflow:hidden;transition:opacity .7s cubic-bezier(.4,0,.2,1),visibility .7s}
+#islamicSplashScreen.splash-hide{opacity:0;visibility:hidden;pointer-events:none}
+</style>
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://your-username.github.io/islamic-encyclopedia/asma-allah.html">
+  <meta property="og:title"       content="أسماء الله الحسنى | الموسوعة الإسلامية">
+  <meta property="og:description" content="الأسماء الحسنى الـ99 مع المعاني والشرح واختبار تفاعلي">
+  <meta property="og:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <meta property="og:locale"      content="ar_SA">
+  <meta property="og:site_name"   content="الموسوعة الإسلامية الشاملة">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="أسماء الله الحسنى | الموسوعة الإسلامية">
+  <meta name="twitter:description" content="الأسماء الحسنى الـ99 مع المعاني والشرح واختبار تفاعلي">
+  <meta name="twitter:image"       content="https://your-username.github.io/islamic-encyclopedia/icons/logo.png">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://your-username.github.io/islamic-encyclopedia/asma-allah.html">
+</head>
+<body>
+<div id="islamicSplashScreen" role="status" aria-label="جاري تحميل الموسوعة الإسلامية الشاملة">
+  <div class="splash-pattern"></div>
+  <div class="splash-orb splash-orb-1"></div>
+  <div class="splash-orb splash-orb-2"></div>
+  <div class="splash-content">
+    <div class="splash-logo-wrap">
+      <div class="splash-logo-ring"></div>
+      <div class="splash-logo-ring splash-logo-ring-2"></div>
+      <img class="splash-logo-emblem" src="icons/logo-emblem.png" alt="الموسوعة الإسلامية الشاملة" width="140" height="145" fetchpriority="high">
+    </div>
+    <div class="splash-basmala">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="splash-divider"></div>
+    <div class="splash-site-name">الموسوعة الإسلامية الشاملة</div>
+    <div class="splash-site-sub">Comprehensive Islamic Encyclopedia</div>
+    <div class="splash-progress-track">
+      <div class="splash-progress-fill"></div>
+    </div>
+    <div class="splash-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="icons/logo-emblem.png" alt="شعار الموسوعة" width="32" height="32" class="me-2 align-middle d-inline-block" style="object-fit:contain;">الموسوعة الإسلامية
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <a href="search.html" class="btn btn-link text-white p-0" aria-label="بحث"><i class="fas fa-search fs-5"></i></a>
+      <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle" style="width:35px;height:35px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-moon"></i></button>
+      <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <i class="fas fa-bars text-warning"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav me-auto mt-3 mt-lg-0 gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-house me-1"></i>الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html"><i class="fas fa-quran me-1"></i>القرآن</a></li>
+        <li class="nav-item"><a class="nav-link" href="azkar.html"><i class="fas fa-heart me-1"></i>الأذكار</a></li>
+        <li class="nav-item"><a class="nav-link active" href="asma-allah.html" style="color:var(--gold)!important;"><i class="fas fa-star me-1"></i>الأسماء الحسنى</a></li>
+        <li class="nav-item"><a class="nav-link" href="fiqh.html"><i class="fas fa-scale-balanced me-1"></i>الفقه</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="asma-hero">
+  <div class="star-field"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="container text-center position-relative" style="z-index:2;">
+    <div class="hero-pill"><i class="fas fa-star me-2"></i>الأسماء الحسنى — أوفلاين 100%</div>
+    <h1 class="amiri mb-3">
+      أسماء الله <span class="highlight">الحسنى</span><br>
+      <span style="font-size:70%;">«وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا»</span>
+    </h1>
+    <p class="hero-desc">تسعةٌ وتسعون اسماً جليلاً لله عزَّ وجل — مع المعنى العميق، الدليل من القرآن والسنة، والأثر الإيماني لكل اسم. مع اختبار تفاعلي لحفظها.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+      <div class="offline-badge"><i class="fas fa-check-circle text-warning"></i>أوفلاين 100%</div>
+      <div class="offline-badge"><i class="fas fa-book-open text-warning"></i>دليل قرآني وحديثي</div>
+      <div class="offline-badge"><i class="fas fa-graduation-cap text-warning"></i>اختبار تفاعلي</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="row justify-content-center g-3">
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">99</div><div class="stat-lbl">اسماً وصفة</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" id="knownCount">0</div><div class="stat-lbl">اسم محفوظ</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" id="quizScoreDisplay">0</div><div class="stat-lbl">نتيجة الاختبار</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">10</div><div class="stat-lbl">تصنيف رئيسي</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-row">
+      <input type="search" class="filter-input" id="asmaSearch" placeholder="🔍 ابحث باسم أو معنى...">
+      <button class="filter-btn active" data-filter="all">الكل (99)</button>
+      <button class="filter-btn" data-filter="known">المحفوظة</button>
+      <button class="filter-btn" data-filter="unknown">غير محفوظة</button>
+      <button class="filter-btn" id="quizBtn"><i class="fas fa-question-circle me-1"></i>الاختبار</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="container py-5" style="margin-bottom:100px;">
+  
+  <!-- CATEGORY PILLS -->
+  <div class="sec-head">
+    <div class="badge-tag"><i class="fas fa-layer-group me-1"></i>تصفح حسب المعنى</div>
+    <h2 class="amiri">موسوعة <span class="hl">الأسماء الحسنى</span></h2>
+    <div class="gold-divider"></div>
+  </div>
+
+  <div class="cat-pills" id="catPills">
+    <button class="cat-pill active" data-cat="all">الجميع</button>
+    <button class="cat-pill" data-cat="jalal">الجلال والعظمة</button>
+    <button class="cat-pill" data-cat="rahma">الرحمة واللطف</button>
+    <button class="cat-pill" data-cat="ilm">العلم والخبرة</button>
+    <button class="cat-pill" data-cat="qudra">القدرة والملك</button>
+    <button class="cat-pill" data-cat="sifa">الصفات الذاتية</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-bar-asma"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="text-center mb-4" style="font-size:.9rem;color:#64748b;font-family:'Cairo',sans-serif;">
+    تقدمك في حفظ الأسماء: <span id="progressText" style="color:var(--indigo);font-weight:800;">0 / 99</span>
+  </div>
+
+  <!-- NAMES GRID -->
+  <div class="asma-grid" id="asmaGrid"></div>
+
+  <!-- QUIZ SECTION -->
+  <div id="quizSection" style="display:none;margin-bottom:60px;">
+    <div class="sec-head">
+      <div class="badge-tag"><i class="fas fa-trophy me-1"></i>اختبار الأسماء الحسنى</div>
+      <h2 class="amiri">اختبر <span class="hl">حفظك</span></h2>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-score" id="quizScore">السؤال <strong id="qNum">1</strong> من 10 | النتيجة: <strong id="qScore">0</strong></div>
+      <p style="font-family:'Cairo',sans-serif;color:rgba(255,255,255,.75);margin-bottom:16px;">ما معنى الاسم:</p>
+      <div class="quiz-question" id="quizQuestion">الرحمن</div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <button class="quiz-next" id="quizNextBtn" onclick="nextQuestion()" style="display:none;">السؤال التالي <i class="fas fa-arrow-left ms-2"></i></button>
+    </div>
+  </div>
+
+</main>
+
+<!-- NAME DETAIL MODAL -->
+<div id="nameModal" style="display:none;" onclick="if(event.target===this)closeModal()">
+  <div class="name-modal-overlay" style="display:contents;">
+    <div class="name-modal">
+      <div class="modal-header-custom">
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div class="modal-arabic" id="modalArabic">الله</div>
+        <div class="modal-num" id="modalNum">الاسم الأول</div>
+      </div>
+      <div class="modal-body-custom">
+        <div class="detail-meaning-big" id="modalMeaning">الله</div>
+        <div class="detail-row">
+          <div class="detail-label"><i class="fas fa-book-quran" style="color:var(--gold);"></i>الدليل من القرآن الكريم</div>
+          <div class="detail-content amiri" id="modalQuran">—</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label"><i class="fas fa-scroll" style="color:var(--gold);"></i>الأثر الإيماني والعملي</div>
+          <div class="detail-content amiri" id="modalAthar">—</div>
+        </div>
+        <div class="text-center mt-3">
+          <button class="learn-btn" id="modalLearnBtn" onclick="toggleKnown()">
+            <i class="fas fa-check me-1"></i>حفظت هذا الاسم
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+// ════════════════════════════════════════
+// 99 NAMES OF ALLAH — FULL DATABASE (OFFLINE)
+// ════════════════════════════════════════
+const ASMA_DATA = [
+  {ar:'الله',tr:'Allah',en:'اسم الجلالة',src:'﴿هُوَ اللَّهُ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ﴾ — الحشر:22',athar:'الاسم الأعظم الجامع لكل الصفات، الدال على الذات العلية المقدسة. قيل هو الاسم الأعظم الذي إذا دُعي به أُجيب.',cat:'sifa'},
+  {ar:'الرحمن',tr:'Ar-Rahman',en:'الرحيم الواسع الرحمة بجميع الخلق في الدنيا',src:'﴿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ﴾',athar:'رحمته وسعت كل شيء. من تدبَّر هذا الاسم عرف أن الله يحب له التيسير ويكره العسر.',cat:'rahma'},
+  {ar:'الرحيم',tr:'Ar-Rahim',en:'الرحيم بالمؤمنين خاصة في الآخرة',src:'﴿وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا﴾ — الأحزاب:43',athar:'رحمة خاصة بالمؤمنين — من لجأ إليه بالتوبة الصادقة وجد رحمته موصولة.',cat:'rahma'},
+  {ar:'الملك',tr:'Al-Malik',en:'المالك لكل شيء، المتصرف المطلق',src:'﴿الْمَلِكُ الْقُدُّوسُ السَّلَامُ﴾ — الحشر:23',athar:'يذكّر العبد بأن كل ما في يده وديعة، فيزهد في الدنيا ويتعلق بالملك الحق.',cat:'qudra'},
+  {ar:'القدوس',tr:'Al-Quddus',en:'البالغ الطهارة والتنزيه عن كل نقص',src:'﴿يُسَبِّحُ لِلَّهِ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ الْمَلِكِ الْقُدُّوسِ﴾ — الجمعة:1',athar:'استشعار قداسة الله يوجب تطهير القلب وتنزيه اللسان.',cat:'jalal'},
+  {ar:'السلام',tr:'As-Salam',en:'ذو السلامة من كل عيب ونقص، مصدر كل سلام',src:'﴿الْمَلِكُ الْقُدُّوسُ السَّلَامُ الْمُؤْمِنُ﴾ — الحشر:23',athar:'منه يُستنزل السلام والأمان. ومن ذكره بعد الصلاة ثلاثاً أجار الله قلبه من الخوف.',cat:'sifa'},
+  {ar:'المؤمن',tr:'Al-Mu\'min',en:'المصدق لعباده، المعطي الأمان',src:'﴿الْمُؤْمِنُ الْمُهَيْمِنُ الْعَزِيزُ الْجَبَّارُ﴾ — الحشر:23',athar:'من لجأ إليه بصدق آمنه من الخوف والفزع في الدنيا والآخرة.',cat:'rahma'},
+  {ar:'المهيمن',tr:'Al-Muhaymin',en:'الرقيب الحافظ على كل شيء',src:'﴿الْمُهَيْمِنُ الْعَزِيزُ الْجَبَّارُ الْمُتَكَبِّرُ﴾ — الحشر:23',athar:'هيمنته على الكون تبعث الطمأنينة بأن كل شيء تحت رقابته وحفظه.',cat:'ilm'},
+  {ar:'العزيز',tr:'Al-Aziz',en:'الغالب الذي لا يُغلب',src:'﴿وَهُوَ الْعَزِيزُ الْحَكِيمُ﴾ — البقرة:129',athar:'من استعزَّ بالله أعزَّه الله. العزة كلها لله، وما أُعطيَ العبد من عزة فمن الله.',cat:'qudra'},
+  {ar:'الجبار',tr:'Al-Jabbar',en:'القاهر، الجابر لكسر المؤمنين',src:'﴿الْعَزِيزُ الْجَبَّارُ الْمُتَكَبِّرُ﴾ — الحشر:23',athar:'يجبر الله كسر القلوب المنكسرة له. من أحس بالضعف فليلجأ إلى الجبار.',cat:'qudra'},
+  {ar:'المتكبر',tr:'Al-Mutakabbir',en:'المتعظم عن كل سوء، صاحب الكبرياء المطلقة',src:'﴿وَلَهُ الْكِبْرِيَاءُ فِي السَّمَاوَاتِ وَالْأَرْضِ﴾ — الجاثية:37',athar:'الكبرياء والعظمة لله وحده. يجب على العبد التواضع وترك الكبر.',cat:'jalal'},
+  {ar:'الخالق',tr:'Al-Khaliq',en:'الموجِد للأشياء من العدم',src:'﴿هُوَ اللَّهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ﴾ — الحشر:24',athar:'من تأمل في الخلق عرف عظمة الخالق وهان عليه ما سواه.',cat:'sifa'},
+  {ar:'البارئ',tr:'Al-Bari\'',en:'المبدع للخلق على غير مثال سابق',src:'﴿هُوَ اللَّهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ﴾ — الحشر:24',athar:'براءة الخلق من العيوب دليلٌ على كمال البارئ.',cat:'sifa'},
+  {ar:'المصور',tr:'Al-Musawwir',en:'الذي صوَّر الخلق وأعطى كل صورة شكلها',src:'﴿يُصَوِّرُكُمْ فِي الْأَرْحَامِ كَيْفَ يَشَاءُ﴾ — آل عمران:6',athar:'قدرته على التصوير لا حدود لها — تتجلى في كل وجه مختلف.',cat:'sifa'},
+  {ar:'الغفار',tr:'Al-Ghaffar',en:'كثير المغفرة، يستر الذنوب ويعفو',src:'﴿إِنَّهُ كَانَ غَفَّارًا﴾ — نوح:10',athar:'صيغة المبالغة تدل على كثرة المغفرة. لا يُقنط من رحمة الله مهما تكررت الذنوب.',cat:'rahma'},
+  {ar:'القهار',tr:'Al-Qahhar',en:'الغالب لكل شيء بقهره وسلطانه',src:'﴿وَهُوَ الْوَاحِدُ الْقَهَّارُ﴾ — الرعد:16',athar:'القهر لله وحده — يُهوِّن على العبد كل قاهر في الدنيا.',cat:'qudra'},
+  {ar:'الوهاب',tr:'Al-Wahhab',en:'كثير العطاء بلا عوض ولا مِنَّة',src:'﴿رَبَّنَا لَا تُزِغْ قُلُوبَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً﴾ — آل عمران:8',athar:'الله يهب العبد بغير حساب — فالدعاء به يُفتح به كل مغلق.',cat:'rahma'},
+  {ar:'الرزاق',tr:'Ar-Razzaq',en:'الذي يتكفل بأرزاق جميع خلقه',src:'﴿إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ﴾ — الذاريات:58',athar:'اليقين بهذا الاسم يُريح القلب ويُبعد عنه الهم والحرص الشديد.',cat:'rahma'},
+  {ar:'الفتاح',tr:'Al-Fattah',en:'فاتح أبواب الرزق والرحمة والفرج',src:'﴿قُلْ يَجْمَعُ بَيْنَنَا رَبُّنَا ثُمَّ يَفْتَحُ بَيْنَنَا بِالْحَقِّ﴾ — سبأ:26',athar:'الدعاء بيا فتاح عند كل باب مُغلق — أُجيب.',cat:'rahma'},
+  {ar:'العليم',tr:'Al-Alim',en:'المحيط علمه بكل شيء ظاهر وخفي',src:'﴿وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ﴾ — البقرة:29',athar:'استشعاره يوجب الحياء من الله في الخلوات.',cat:'ilm'},
+  {ar:'القابض',tr:'Al-Qabid',en:'القابض للأرزاق والأرواح وفق حكمته',src:'﴿وَاللَّهُ يَقْبِضُ وَيَبْسُطُ﴾ — البقرة:245',athar:'القبض والبسط بيد الله — فلا يُقلقك ضيق رزق ولا يُغرك سعة.',cat:'qudra'},
+  {ar:'الباسط',tr:'Al-Basit',en:'الباسط للرزق والرحمة بسعة وكرم',src:'﴿وَاللَّهُ يَقْبِضُ وَيَبْسُطُ﴾ — البقرة:245',athar:'يتعاقب مع القابض — كلاهما بحكمته تعالى.',cat:'qudra'},
+  {ar:'الخافض',tr:'Al-Khafid',en:'الخافض للجبارين والكافرين',src:'الحديث: إن الله هو الخافض الرافع',athar:'يُطمئن المؤمن أن الظالم لن يُفلت — الله يخفضه في وقته.',cat:'qudra'},
+  {ar:'الرافع',tr:'Ar-Rafi\'',en:'الرافع لأوليائه ولمن يشاء',src:'﴿يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ﴾ — المجادلة:11',athar:'الرفعة من الله لمن تواضع له — اطلبها بالعلم والعمل الصالح.',cat:'qudra'},
+  {ar:'المعز',tr:'Al-Mu\'iz',en:'المعطي العزة لمن يشاء من عباده',src:'﴿تُعِزُّ مَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ﴾ — آل عمران:26',athar:'العزة الحقيقية بطاعة الله. من أراد العزة فليلزم عز الله.',cat:'qudra'},
+  {ar:'المذل',tr:'Al-Mudhill',en:'المُذل للكافرين والمتكبرين',src:'﴿وَتُذِلُّ مَن تَشَاءُ﴾ — آل عمران:26',athar:'الذل الذي يُبتلى به المؤمن مُؤقت — والذل الحقيقي للمعرض عن الله.',cat:'qudra'},
+  {ar:'السميع',tr:'As-Sami\'',en:'الذي يسمع كل الأصوات خفيها وجليها',src:'﴿إِنَّهُ سَمِيعٌ قَرِيبٌ﴾ — سبأ:50',athar:'يسمع دعاءك حتى وإن كان همساً في قلبك. ادعُه بيقين.',cat:'ilm'},
+  {ar:'البصير',tr:'Al-Basir',en:'المحيط بصره بكل مرئي',src:'﴿وَهُوَ السَّمِيعُ الْبَصِيرُ﴾ — الشورى:11',athar:'مراقبة الله بالقلب والجوارح — يراك حيثما كنت.',cat:'ilm'},
+  {ar:'الحكم',tr:'Al-Hakam',en:'الحاكم العدل الذي لا يجور',src:'﴿أَفَغَيْرَ اللَّهِ أَبْتَغِي حَكَمًا﴾ — الأنعام:114',athar:'حكمه لا مرد له — ما قضاه فهو العدل المطلق.',cat:'sifa'},
+  {ar:'العدل',tr:'Al-Adl',en:'المنصف في كل أفعاله وأحكامه',src:'﴿وَتَمَّتْ كَلِمَتُ رَبِّكَ صِدْقًا وَعَدْلًا﴾ — الأنعام:115',athar:'العدل الإلهي يمنع الظالم من الإفلات — فلا تيأس من حقك عند الله.',cat:'sifa'},
+  {ar:'اللطيف',tr:'Al-Latif',en:'العليم بدقائق الأمور، المُيسِّر للعباد بلطفه',src:'﴿اللَّهُ لَطِيفٌ بِعِبَادِهِ﴾ — الشورى:19',athar:'لطفه يصل إلى الأماكن التي لا يبلغها خيال العبد. قصة يوسف نموذجه.',cat:'rahma'},
+  {ar:'الخبير',tr:'Al-Khabir',en:'المطلع على بواطن الأمور وخفاياها',src:'﴿وَهُوَ اللَّطِيفُ الْخَبِيرُ﴾ — الأنعام:103',athar:'لا تخفى عليه خافية — يعلم دوافعك أكثر مما تعلم أنت.',cat:'ilm'},
+  {ar:'الحليم',tr:'Al-Halim',en:'الصفوح عن المذنبين مع القدرة على العقوبة',src:'﴿إِنَّ اللَّهَ لَغَفُورٌ حَلِيمٌ﴾ — البقرة:225',athar:'حلمه يمهل ولا يُهمل — فرصة التوبة مفتوحة ما لم تأت الساعة.',cat:'rahma'},
+  {ar:'العظيم',tr:'Al-Azim',en:'البالغ الغاية في العظمة',src:'﴿وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾ — البقرة:255',athar:'عظمته تُصغِّر الدنيا في عيون المؤمنين — فلا يستكبرون عليه.',cat:'jalal'},
+  {ar:'الغفور',tr:'Al-Ghafur',en:'الساتر لذنوب عباده، الغافر لها',src:'﴿وَهُوَ الْغَفُورُ الرَّحِيمُ﴾ — يونس:107',athar:'يقرن بالرحيم — المغفرة والرحمة معاً. باب التوبة مفتوح دائماً.',cat:'rahma'},
+  {ar:'الشكور',tr:'Ash-Shakur',en:'الذي يُضاعف الجزاء على اليسير من العمل',src:'﴿إِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ﴾ — البقرة:158',athar:'حتى الابتسامة في وجه أخيك يشكرها الله — فلا تستصغر شيئاً.',cat:'rahma'},
+  {ar:'العلي',tr:'Al-Ali',en:'المتعالي على كل شيء بذاته وقهره',src:'﴿وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾ — البقرة:255',athar:'علوه المطلق يوجب التواضع والخشوع.',cat:'jalal'},
+  {ar:'الكبير',tr:'Al-Kabir',en:'الكبير في ذاته وصفاته',src:'﴿وَهُوَ الْعَلِيُّ الْكَبِيرُ﴾ — الرعد:9',athar:'كبرياؤه وعظمته تُهوِّن كل كبير سواه.',cat:'jalal'},
+  {ar:'الحفيظ',tr:'Al-Hafiz',en:'الحافظ لأعمال عباده وكل شيء',src:'﴿وَرَبُّكَ عَلَىٰ كُلِّ شَيْءٍ حَفِيظٌ﴾ — سبأ:21',athar:'من التجأ إليه حفظه من الآفات والشرور.',cat:'ilm'},
+  {ar:'المقيت',tr:'Al-Muqit',en:'المتكفل بأقوات جميع المخلوقات',src:'﴿وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقِيتًا﴾ — النساء:85',athar:'قُوتك مكفول عنده — فلا قلق من فقر مع يقين بهذا الاسم.',cat:'rahma'},
+  {ar:'الحسيب',tr:'Al-Hasib',en:'الكافي لعباده، الحاسب لأعمالهم',src:'﴿إِنَّ اللَّهَ كَانَ عَلَىٰ كُلِّ شَيْءٍ حَسِيبًا﴾ — النساء:86',athar:'يكفي العبد ما أهمه — ومن توكل على الله كفاه.',cat:'sifa'},
+  {ar:'الجليل',tr:'Al-Jalil',en:'ذو الجلال والعظمة في صفاته',src:'حديث: الكبرياء ردائي والعظمة إزاري',athar:'الجلال يقتضي التعظيم والإجلال وإلزام الأدب معه.',cat:'jalal'},
+  {ar:'الكريم',tr:'Al-Karim',en:'الجواد الكثير الكرم والعطاء',src:'﴿يَا أَيُّهَا الْإِنسَانُ مَا غَرَّكَ بِرَبِّكَ الْكَرِيمِ﴾ — الانفطار:6',athar:'كرمه لا حد له — حتى الإسراف والذنوب يقابلها بباب مفتوح للتوبة.',cat:'rahma'},
+  {ar:'الرقيب',tr:'Ar-Raqib',en:'المراقب لجميع الأعمال والنيات',src:'﴿وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ رَّقِيبًا﴾ — الأحزاب:52',athar:'استشعار رقابته يُورث الحياء والتقوى في السر والعلانية.',cat:'ilm'},
+  {ar:'المجيب',tr:'Al-Mujib',en:'المجيب لدعاء الداعين',src:'﴿إِنَّ رَبِّي قَرِيبٌ مُّجِيبٌ﴾ — هود:61',athar:'وعد الله بالإجابة مطلق — الدعاء لا يُرد ولو بُدِّل إلى ما هو خير.',cat:'rahma'},
+  {ar:'الواسع',tr:'Al-Wasi\'',en:'الواسع علمه ورحمته وعطاؤه',src:'﴿وَاللَّهُ وَاسِعٌ عَلِيمٌ﴾ — البقرة:261',athar:'سعة رحمته تَسَع كل ذنب وكل عبد — ادعُه باتساع.',cat:'rahma'},
+  {ar:'الحكيم',tr:'Al-Hakim',en:'الذي يضع كل شيء في موضعه اللائق به',src:'﴿وَهُوَ الْعَزِيزُ الْحَكِيمُ﴾',athar:'ما قضاه الله فهو الأحكم والأصوب — الرضا بقضائه راحة القلوب.',cat:'ilm'},
+  {ar:'الودود',tr:'Al-Wadud',en:'المحب لعباده الصالحين',src:'﴿وَهُوَ الْغَفُورُ الْوَدُودُ﴾ — البروج:14',athar:'محبته تُولِّد في قلب العبد محبته والتعلق به.',cat:'rahma'},
+  {ar:'المجيد',tr:'Al-Majid',en:'الواسع المجد والشرف والكرم',src:'﴿ذُو الْعَرْشِ الْمَجِيدُ﴾ — البروج:15',athar:'مجده يوجب تمجيده وتعظيمه بالذكر والثناء.',cat:'jalal'},
+  {ar:'الباعث',tr:'Al-Ba\'ith',en:'الباعث الخلائق يوم القيامة',src:'﴿ثُمَّ إِنَّكُمْ يَوْمَ الْقِيَامَةِ تُبْعَثُونَ﴾ — المؤمنون:16',athar:'اليقين بالبعث يُصلح الأعمال ويُرقّق القلب.',cat:'sifa'},
+  {ar:'الشهيد',tr:'Ash-Shahid',en:'الشاهد على كل شيء في كل وقت',src:'﴿وَاللَّهُ شَهِيدٌ عَلَىٰ مَا تَعْمَلُونَ﴾ — آل عمران:98',athar:'شهادته المستمرة توجب الإتقان والإخلاص في كل عمل.',cat:'ilm'},
+  {ar:'الحق',tr:'Al-Haq',en:'الثابت الوجود الذي لا يزول',src:'﴿فَذَٰلِكُمُ اللَّهُ رَبُّكُمُ الْحَقُّ﴾ — يونس:32',athar:'الحق المطلق — ما سواه باطل زائل.',cat:'sifa'},
+  {ar:'الوكيل',tr:'Al-Wakil',en:'المتوكَّل عليه في كل الأمور',src:'﴿حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾ — آل عمران:173',athar:'التوكل عليه يُريح القلب ويكفل الأمان.',cat:'sifa'},
+  {ar:'القوي',tr:'Al-Qawi',en:'الذي اكتملت قوته ولا يعتريه ضعف',src:'﴿إِنَّ اللَّهَ قَوِيٌّ عَزِيزٌ﴾ — الحديد:25',athar:'قوته تُهوِّن الشدائد — من استند إليها لم يُذَل.',cat:'qudra'},
+  {ar:'المتين',tr:'Al-Matin',en:'الشديد القوة والقدرة',src:'﴿إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ﴾ — الذاريات:58',athar:'متانة قوته لا تتزعزع — يُثبِّت المؤمن أمام الشدائد.',cat:'qudra'},
+  {ar:'الولي',tr:'Al-Wali',en:'الناصر والمتولي لشؤون عباده المؤمنين',src:'﴿وَهُوَ الْوَلِيُّ الْحَمِيدُ﴾ — الشورى:28',athar:'من تولّاه كفاه وحفظه ونصره.',cat:'rahma'},
+  {ar:'الحميد',tr:'Al-Hamid',en:'المحمود في ذاته وأفعاله',src:'﴿وَاللَّهُ الْغَنِيُّ الْحَمِيدُ﴾ — لقمان:26',athar:'هو المحمود أبداً — حمده وشكره يزيد النعم.',cat:'jalal'},
+  {ar:'المحصي',tr:'Al-Muhsi',en:'الذي أحصى كل شيء وعلم عدده',src:'﴿وَأَحْصَىٰ كُلَّ شَيْءٍ عَدَدًا﴾ — الجن:28',athar:'علمه بالتفاصيل يوجب الدقة والإتقان.',cat:'ilm'},
+  {ar:'المبدئ',tr:'Al-Mubdi\'',en:'البادئ للخلق من العدم',src:'﴿إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ﴾ — البروج:13',athar:'قدرته على الإبداء تُؤكد قدرته على الإعادة — البعث حق.',cat:'sifa'},
+  {ar:'المعيد',tr:'Al-Mu\'id',en:'المُعيد للخلق بعد فنائهم',src:'﴿إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ﴾ — البروج:13',athar:'إعادة الخلق بعد الموت أيسر عليه من خلقهم أول مرة.',cat:'sifa'},
+  {ar:'المحيي',tr:'Al-Muhyi',en:'الذي بيده الحياة يمنحها ويرفعها',src:'﴿فَانظُرْ إِلَىٰ آثَارِ رَحْمَتِ اللَّهِ كَيْفَ يُحْيِي الْأَرْضَ﴾ — الروم:50',athar:'إحياء الأرض الميتة آية على إحياء الموتى.',cat:'qudra'},
+  {ar:'المميت',tr:'Al-Mumit',en:'الذي يُنزِل الموت بعباده',src:'﴿الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ﴾ — الملك:2',athar:'الموت في يده — فلا خوف من غيره.',cat:'qudra'},
+  {ar:'الحي',tr:'Al-Hayy',en:'الدائم الحياة التي لا تنتهي',src:'﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ﴾ — البقرة:255',athar:'حياته مطلقة — وكل حياة سواه مُستعارة منه.',cat:'sifa'},
+  {ar:'القيوم',tr:'Al-Qayyum',en:'القائم بنفسه، القائم على كل شيء',src:'﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ﴾ — البقرة:255',athar:'قيوميته تعني أن الكون كله يقوم به — لا قوام له بدونه.',cat:'sifa'},
+  {ar:'الواجد',tr:'Al-Wajid',en:'الذي لا يفتقر إلى شيء',src:'في السنة النبوية ضمن أسماء الله الحسنى',athar:'غناه المطلق يجعل العطاء منه خالصاً لوجوه العباد.',cat:'sifa'},
+  {ar:'الماجد',tr:'Al-Majid',en:'الكريم الواسع الشرف والمجد',src:'ورد في الأدعية النبوية المأثورة',athar:'مجده يوجب الثناء عليه بأجمل الأوصاف.',cat:'jalal'},
+  {ar:'الواحد',tr:'Al-Wahid',en:'المنفرد بالوحدانية المطلقة',src:'﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾ — الإخلاص:1',athar:'التوحيد الخالص لله — قلب الإسلام ورأسه.',cat:'sifa'},
+  {ar:'الصمد',tr:'As-Samad',en:'المقصود في كل الحاجات، الكامل',src:'﴿اللَّهُ الصَّمَدُ﴾ — الإخلاص:2',athar:'كل مخلوق يحتاج وهو المُحتاج إليه — فأليق به أن تلجأ إليه.',cat:'sifa'},
+  {ar:'القادر',tr:'Al-Qadir',en:'الذي يفعل ما يريد لا يعجزه شيء',src:'﴿وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ قَدِيرًا﴾ — الأحزاب:27',athar:'قدرته على إجابة دعائك أكبر من أي مانع تتوهمه.',cat:'qudra'},
+  {ar:'المقتدر',tr:'Al-Muqtadir',en:'البالغ الغاية في القدرة',src:'﴿عِندَ مَلِيكٍ مُّقْتَدِرٍ﴾ — القمر:55',athar:'قدرته غير محدودة — فلا تستعجز من الطلب منه.',cat:'qudra'},
+  {ar:'المقدم',tr:'Al-Muqaddim',en:'الذي يُقدم من يشاء من عباده',src:'في الأدعية النبوية المأثورة',athar:'من قدَّمه الله لا يمكن تأخيره — والسعي مطلوب مع التوكل.',cat:'qudra'},
+  {ar:'المؤخر',tr:'Al-Mu\'akhkhir',en:'الذي يُؤخر من يشاء',src:'في الأدعية النبوية المأثورة',athar:'تأخيره حكمة — ما يبدو تأخراً قد يكون رعاية.',cat:'qudra'},
+  {ar:'الأول',tr:'Al-Awwal',en:'الذي لا بداية له',src:'﴿هُوَ الْأَوَّلُ وَالْآخِرُ﴾ — الحديد:3',athar:'كان ولم يكن معه شيء — فمنه المبدأ وإليه المنتهى.',cat:'sifa'},
+  {ar:'الآخر',tr:'Al-Akhir',en:'الذي لا نهاية له، الباقي بعد فناء الخلق',src:'﴿هُوَ الْأَوَّلُ وَالْآخِرُ وَالظَّاهِرُ وَالْبَاطِنُ﴾ — الحديد:3',athar:'بقاؤه المطلق يُثبِّت أن الدار الآخرة دار الحق.',cat:'sifa'},
+  {ar:'الظاهر',tr:'Az-Zahir',en:'الغالب الظاهر فوق كل شيء',src:'﴿وَالظَّاهِرُ وَالْبَاطِنُ﴾ — الحديد:3',athar:'ظهوره في آياته واضح لكل من فتح عينيه.',cat:'sifa'},
+  {ar:'الباطن',tr:'Al-Batin',en:'المحتجب عن إدراك الأبصار والعقول',src:'﴿وَالْبَاطِنُ﴾ — الحديد:3',athar:'يعلم البواطن — ما يُخفيه القلب يعلمه ويسمعه.',cat:'sifa'},
+  {ar:'الوالي',tr:'Al-Wali',en:'المتولي لتدبير أمور خلقه وملكه',src:'﴿وَاللَّهُ وَلِيُّ الْأَمْرِ﴾ — الرعد:11',athar:'تدبيره للأمور يوجب التسليم والرضا بقضائه.',cat:'sifa'},
+  {ar:'المتعالي',tr:'Al-Muta\'ali',en:'المتنزه عن كل ما لا يليق بجلاله',src:'﴿عَالِمُ الْغَيْبِ وَالشَّهَادَةِ الْكَبِيرُ الْمُتَعَالِ﴾ — الرعد:9',athar:'تعاليه يوجب تنزيهه عن كل نقص وتشبيه.',cat:'jalal'},
+  {ar:'البر',tr:'Al-Barr',en:'الواسع البر والإحسان والخير للعباد',src:'﴿إِنَّهُ هُوَ الْبَرُّ الرَّحِيمُ﴾ — الطور:28',athar:'يجمع البر والرحمة — خير الدنيا والآخرة من عنده.',cat:'rahma'},
+  {ar:'التواب',tr:'At-Tawwab',en:'الكثير القبول للتوبة، المتفضل بقبولها',src:'﴿إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ﴾ — البقرة:37',athar:'كلما تاب العبد تاب الله عليه — لا ييأس مستغفر.',cat:'rahma'},
+  {ar:'المنتقم',tr:'Al-Muntaqim',en:'المنتقم من الكافرين المجرمين',src:'﴿إِنَّا مِنَ الْمُجْرِمِينَ مُنتَقِمُونَ﴾ — السجدة:22',athar:'انتقامه من الظالمين حق وعدل — فلا يغتر ظالم بإمهاله.',cat:'qudra'},
+  {ar:'العفو',tr:'Al-Afuww',en:'الذي يمحو الذنوب ويتجاوز عنها',src:'﴿وَكَانَ اللَّهُ عَفُوًّا غَفُورًا﴾ — النساء:43',athar:'دعاء ليلة القدر: اللهم إنك عفو تحب العفو فاعفُ عني.',cat:'rahma'},
+  {ar:'الرؤوف',tr:'Ar-Ra\'uf',en:'الشديد الرحمة والعطف على عباده',src:'﴿إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَّحِيمٌ﴾ — البقرة:143',athar:'رأفته أخص من رحمته — تلطُّفٌ خاص بالمؤمنين.',cat:'rahma'},
+  {ar:'مالك الملك',tr:'Malik al-Mulk',en:'مالك كل ملك دون استثناء',src:'﴿قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ﴾ — آل عمران:26',athar:'ملكه الحقيقي لا ينتهي — كل ملك بشري مُستعار.',cat:'qudra'},
+  {ar:'ذو الجلال والإكرام',tr:'Dhu al-Jalal wal-Ikram',en:'صاحب الجلال والإكرام، المستحق للتعظيم',src:'﴿وَيَبْقَىٰ وَجْهُ رَبِّكَ ذُو الْجَلَالِ وَالْإِكْرَامِ﴾ — الرحمن:27',athar:'قال ﷺ: ألظُّوا بيا ذا الجلال والإكرام — أي الزموا هذا الدعاء.',cat:'jalal'},
+  {ar:'المقسط',tr:'Al-Muqsit',en:'العادل في قضاياه المنصف لعباده',src:'﴿وَهُوَ خَيْرُ الْحَاكِمِينَ﴾ — الأعراف:87',athar:'قسطه المطلق يجعل الظلم مستحيلاً في حكمه.',cat:'sifa'},
+  {ar:'الجامع',tr:'Al-Jami\'',en:'الذي يجمع الخلق ليوم الحساب',src:'﴿رَبَّنَا إِنَّكَ جَامِعُ النَّاسِ لِيَوْمٍ لَّا رَيْبَ فِيهِ﴾ — آل عمران:9',athar:'جمعه للخلق يوم القيامة يوجب الاستعداد.',cat:'sifa'},
+  {ar:'الغني',tr:'Al-Ghani',en:'الغني المطلق الذي لا يحتاج لأحد',src:'﴿إِنَّ اللَّهَ لَهُوَ الْغَنِيُّ الْحَمِيدُ﴾ — لقمان:26',athar:'غناه يجعل كل عطاياه خالصة — لا يعطي لحاجة فيه.',cat:'sifa'},
+  {ar:'المغني',tr:'Al-Mughni',en:'الذي يُغني عباده ويكفيهم',src:'﴿وَأَغْنَاكُم مِّن فَضْلِهِ﴾ — التوبة:74',athar:'الغنى الحقيقي بالقناعة التي يهبها الله.',cat:'rahma'},
+  {ar:'المانع',tr:'Al-Mani\'',en:'الذي يمنع عن عباده ما يضرهم',src:'في الحديث النبوي المأثور عن الأسماء',athar:'منعه لبعض الدنيا قد يكون حماية من ضرر.',cat:'qudra'},
+  {ar:'الضار',tr:'Ad-Darr',en:'الذي يُوجد الضر بحكمته',src:'في الحديث النبوي المأثور',athar:'الضر والنفع كلاهما بيده — فلا يُطلب الكشف إلا منه.',cat:'qudra'},
+  {ar:'النافع',tr:'An-Nafi\'',en:'الذي يُوجد النفع لمن يشاء',src:'في الحديث النبوي المأثور',athar:'النفع الحقيقي منه وحده — لا نفع بدون إذنه.',cat:'qudra'},
+  {ar:'النور',tr:'An-Nur',en:'النور الذي استنار به كل شيء',src:'﴿اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ﴾ — النور:35',athar:'من طلب النور فليطلبه من مصدر كل نور.',cat:'sifa'},
+  {ar:'الهادي',tr:'Al-Hadi',en:'الذي يهدي من يشاء إلى الصراط المستقيم',src:'﴿وَكَفَىٰ بِرَبِّكَ هَادِيًا وَنَصِيرًا﴾ — الفرقان:31',athar:'الهداية منه — ادعُه دائماً: اهدنا الصراط المستقيم.',cat:'rahma'},
+  {ar:'البديع',tr:'Al-Badi\'',en:'المبتدع للأشياء بلا مثال سابق',src:'﴿بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ﴾ — البقرة:117',athar:'إبداعه في الخلق لا يتكرر — كل آن يبدع جديداً.',cat:'sifa'},
+  {ar:'الباقي',tr:'Al-Baqi',en:'الدائم الذي لا يفنى ولا يزول',src:'﴿وَيَبْقَىٰ وَجْهُ رَبِّكَ﴾ — الرحمن:27',athar:'بقاؤه يجعل الالتجاء إليه الخيار الأوحد.',cat:'sifa'},
+  {ar:'الوارث',tr:'Al-Warith',en:'الذي يرث الخلق بعد فنائهم',src:'﴿وَإِنَّا لَنَحْنُ نُحْيِي وَنُمِيتُ وَنَحْنُ الْوَارِثُونَ﴾ — الحجر:23',athar:'كل ما نملكه إلى الله يرجع — فلا يغتر بالدنيا.',cat:'sifa'},
+  {ar:'الرشيد',tr:'Ar-Rashid',en:'الذي يُدبر الأمور بالرشد والصواب',src:'في الحديث النبوي ضمن الأسماء',athar:'تدبيره رشيد محكم — حتى ما يبدو مُبهماً له حكمة.',cat:'ilm'},
+  {ar:'الصبور',tr:'As-Sabur',en:'الذي لا يُعاجل بالعقوبة',src:'في الحديث النبوي ضمن أسماء الله الحسنى',athar:'صبره لا لعجز بل لكرم — فرصة التوبة ممتدة.',cat:'rahma'}
+];
+
+// ═══════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════
+let knownNames = new Set(JSON.parse(localStorage.getItem('known_asma') || '[]'));
+let currentFilter = 'all';
+let currentCat = 'all';
+let searchQuery = '';
+let currentModalIdx = -1;
+
+// QUIZ
+let quizQuestions = [];
+let quizIdx = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+// ═══════════════════════════════════════
+// RENDER GRID
+// ═══════════════════════════════════════
+function renderGrid() {
+  const grid = document.getElementById('asmaGrid');
+  let data = ASMA_DATA.map((item, i) => ({...item, idx: i}));
+  
+  if (searchQuery) {
+    data = data.filter(d => d.ar.includes(searchQuery) || d.en.includes(searchQuery) || (d.tr && d.tr.toLowerCase().includes(searchQuery.toLowerCase())));
+  }
+  if (currentFilter === 'known') data = data.filter(d => knownNames.has(d.idx));
+  if (currentFilter === 'unknown') data = data.filter(d => !knownNames.has(d.idx));
+  if (currentCat !== 'all') data = data.filter(d => d.cat === currentCat);
+  
+  grid.innerHTML = data.map(item => `
+    <div class="name-card ${knownNames.has(item.idx) ? 'known' : ''}" onclick="openModal(${item.idx})">
+      <div class="card-top">
+        <div class="card-num">${item.idx + 1}</div>
+        <div class="card-arabic">${item.ar}</div>
+        <div class="card-transliteration">${item.tr}</div>
+        <div class="card-meaning">${item.en}</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-source">
+          <i class="fas fa-book-open" style="color:var(--gold);"></i>
+          <span>دليل قرآني</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Update stats
+  const known = knownNames.size;
+  document.getElementById('knownCount').textContent = known;
+  document.getElementById('progressFill').style.width = (known / 99 * 100) + '%';
+  document.getElementById('progressText').textContent = known + ' / 99';
+}
+
+// ═══════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════
+function openModal(idx) {
+  currentModalIdx = idx;
+  const item = ASMA_DATA[idx];
+  document.getElementById('modalArabic').textContent = item.ar;
+  document.getElementById('modalNum').textContent = 'الاسم رقم ' + (idx + 1);
+  document.getElementById('modalMeaning').textContent = item.en;
+  document.getElementById('modalQuran').innerHTML = item.src;
+  document.getElementById('modalAthar').textContent = item.athar;
+  const learnBtn = document.getElementById('modalLearnBtn');
+  if (knownNames.has(idx)) {
+    learnBtn.innerHTML = '<i class="fas fa-times me-1"></i>إلغاء الحفظ';
+    learnBtn.style.background = '#dc2626';
+  } else {
+    learnBtn.innerHTML = '<i class="fas fa-check me-1"></i>حفظت هذا الاسم';
+    learnBtn.style.background = '';
+  }
+  document.getElementById('nameModal').style.display = 'flex';
+  document.getElementById('nameModal').style.position = 'fixed';
+  document.getElementById('nameModal').style.inset = '0';
+  document.getElementById('nameModal').style.alignItems = 'center';
+  document.getElementById('nameModal').style.justifyContent = 'center';
+  document.getElementById('nameModal').style.zIndex = '9990';
+  document.getElementById('nameModal').style.background = 'rgba(0,0,0,.6)';
+  document.getElementById('nameModal').style.backdropFilter = 'blur(4px)';
+  document.getElementById('nameModal').style.padding = '20px';
+  document.getElementById('nameModal').style.animation = 'fadeIn .25s';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('nameModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function toggleKnown() {
+  const idx = currentModalIdx;
+  if (knownNames.has(idx)) {
+    knownNames.delete(idx);
+  } else {
+    knownNames.add(idx);
+  }
+  localStorage.setItem('known_asma', JSON.stringify([...knownNames]));
+  closeModal();
+  renderGrid();
+}
+
+// ═══════════════════════════════════════
+// QUIZ ENGINE
+// ═══════════════════════════════════════
+function startQuiz() {
+  quizQuestions = [...ASMA_DATA].sort(() => Math.random() - .5).slice(0, 10);
+  quizIdx = 0;
+  quizScore = 0;
+  document.getElementById('quizSection').style.display = 'block';
+  document.getElementById('asmaGrid').style.display = 'none';
+  document.getElementById('quizSection').scrollIntoView({behavior:'smooth'});
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (quizIdx >= quizQuestions.length) {
+    endQuiz();
+    return;
+  }
+  quizAnswered = false;
+  const q = quizQuestions[quizIdx];
+  document.getElementById('quizQuestion').textContent = q.ar;
+  document.getElementById('qNum').textContent = quizIdx + 1;
+  document.getElementById('qScore').textContent = quizScore;
+  document.getElementById('quizNextBtn').style.display = 'none';
+  
+  // Generate options
+  const wrong = ASMA_DATA.filter(a => a.ar !== q.ar).sort(() => Math.random() - .5).slice(0, 3);
+  const all = [...wrong, q].sort(() => Math.random() - .5);
+  
+  document.getElementById('quizOptions').innerHTML = all.map((opt, i) => `
+    <button class="quiz-opt" id="qopt-${i}" onclick="answerQuiz(${i}, '${opt.ar}', '${q.ar}')">
+      ${opt.en}
+    </button>
+  `).join('');
+}
+
+function answerQuiz(optIdx, chosen, correct) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+  
+  document.querySelectorAll('.quiz-opt').forEach((btn, i) => {
+    const isCorrect = btn.textContent.trim() === ASMA_DATA.find(a => a.ar === correct).en;
+    if (isCorrect) btn.classList.add('correct');
+    else if (i === optIdx) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  
+  if (chosen === correct) {
+    quizScore++;
+    if (navigator.vibrate) navigator.vibrate([50, 30, 50]);
+  } else {
+    if (navigator.vibrate) navigator.vibrate([200]);
+  }
+  
+  document.getElementById('quizNextBtn').style.display = 'inline-block';
+}
+
+function nextQuestion() {
+  quizIdx++;
+  if (quizIdx >= quizQuestions.length) { endQuiz(); return; }
+  renderQuestion();
+}
+
+function endQuiz() {
+  document.getElementById('quizOptions').innerHTML = '';
+  document.getElementById('quizQuestion').textContent = '🎉';
+  document.getElementById('quizNextBtn').style.display = 'none';
+  document.getElementById('qNum').textContent = quizQuestions.length;
+  document.getElementById('quizScore').innerHTML = `انتهى الاختبار! نتيجتك: <strong style="color:var(--gold);font-size:1.5rem;">${quizScore} / 10</strong>`;
+  document.getElementById('quizScoreDisplay').textContent = quizScore;
+  document.getElementById('quizOptions').innerHTML = `
+    <div style="grid-column:span 2;text-align:center;">
+      <button class="quiz-next" onclick="startQuiz()"><i class="fas fa-rotate me-1"></i>إعادة الاختبار</button>
+      <button class="quiz-next ms-3" onclick="closeQuiz()" style="background:rgba(255,255,255,.2);"><i class="fas fa-times me-1"></i>إغلاق</button>
+    </div>`;
+}
+
+function closeQuiz() {
+  document.getElementById('quizSection').style.display = 'none';
+  document.getElementById('asmaGrid').style.display = 'grid';
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  renderGrid();
+  
+  // Search
+  document.getElementById('asmaSearch').addEventListener('input', e => {
+    searchQuery = e.target.value.trim();
+    renderGrid();
+  });
+  
+  // Filter buttons
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderGrid();
+    });
+  });
+  
+  // Category pills
+  document.querySelectorAll('[data-cat]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-cat]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      renderGrid();
+    });
+  });
+  
+  // Quiz button
+  document.getElementById('quizBtn').addEventListener('click', startQuiz);
+  
+  // Close modal on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+});
+</script>
+</body>
+</html>

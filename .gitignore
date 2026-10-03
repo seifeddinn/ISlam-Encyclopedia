@@ -1,0 +1,42 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Dev tools (already deleted but safety)
+node_modules/
+www/
+android/
+ios/
+
+# Build/dev scripts
+inject_pwa_tags.js
+prepare_www.js
+create_icons.js
+update_android_icons.js
+capacitor.config.json
+package.json
+package-lock.json
+
+# Duplicates
+seraah.html
+_quran_section.html
+
+# Environment & Secrets
+.env
+.env.*
+*.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# AI & Temporary Scratch
+.gemini/
+.agents/
+
