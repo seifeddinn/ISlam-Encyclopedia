@@ -3,6 +3,7 @@ const CACHE_NAME = 'islam-encyclopedia-v1.5.2';
 const STATIC_ASSETS = [
   './',
   './index.html',
+  './qibla.html',
   './recitations.html',
   './hadith.html',
   './fiqh.html',

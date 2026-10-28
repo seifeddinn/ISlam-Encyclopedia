@@ -1,30 +1,56 @@
 // Islamic Encyclopedia - Main JavaScript File
 
 // ===========================================================
-// SPLASH SCREEN — Dismiss Logic Only
-// HTML is injected directly in each page's <body> for instant first-paint
+// SPLASH SCREEN — Smooth & Session-Aware Preloader
+// Shows an elegant entrance on first visit; seamless navigation afterwards
 // ===========================================================
 (function manageSplash() {
-    var MIN_DISPLAY = 2000;
+    var el = document.getElementById('islamicSplashScreen');
+    if (!el) return;
+
+    var alreadyShown = false;
+    try {
+        alreadyShown = sessionStorage.getItem('islamic_splash_shown') === 'true';
+    } catch (e) {}
+
+    // If already viewed in current session, dismiss immediately without blocking navigation
+    if (alreadyShown) {
+        document.documentElement.classList.add('splash-dismissed');
+        el.style.display = 'none';
+        el.classList.add('splash-instant-hide');
+        if (el.parentNode) el.parentNode.removeChild(el);
+        return;
+    }
+
+    // Mark as shown for the rest of this session
+    try {
+        sessionStorage.setItem('islamic_splash_shown', 'true');
+    } catch (e) {}
+
+    var MIN_DISPLAY = 1000; // Elegant, swift 1.0s first-time display
     var startTime = Date.now();
 
-    function dismissSplash() {
-        var el = document.getElementById('islamicSplashScreen');
-        if (!el || el.classList.contains('splash-hide')) return;
-        var fill = el.querySelector('.splash-progress-fill');
-        if (fill) {
-            fill.style.transition = 'width 0.3s ease';
+    var fill = el.querySelector('.splash-progress-fill');
+    if (fill) {
+        fill.style.transition = 'width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        requestAnimationFrame(function () {
             fill.style.width = '100%';
-        }
+        });
+    }
+
+    function dismissSplash() {
+        if (!el || el.classList.contains('splash-hide')) return;
+        if (fill) fill.style.width = '100%';
         setTimeout(function () {
             el.classList.add('splash-hide');
+            document.documentElement.classList.add('splash-dismissed');
             el.addEventListener('transitionend', function () {
                 if (el.parentNode) el.parentNode.removeChild(el);
             }, { once: true });
             setTimeout(function () {
                 if (el && el.parentNode) el.parentNode.removeChild(el);
-            }, 1000);
-        }, 320);
+            }, 800);
+        }, 200);
     }
 
     function tryDismiss() {
@@ -38,13 +64,21 @@
     } else {
         window.addEventListener('load', tryDismiss, { once: true });
     }
-    setTimeout(dismissSplash, 5000);
+    setTimeout(dismissSplash, 3500);
 })();
 
 // --- Configuration & Data ---
 
 // Static Content Index for Client-Side Search
 const searchIndex = [
+    {
+        title: "بوصلة تحديد القبلة التفاعلية",
+        type: "qibla",
+        category: "زاد المسلم",
+        desc: "تحديد اتجاه الكعبة المشرفة ومكة المكرمة مباشرة بمستشعر البوصلة بالهاتف بدقة فلكية 100% دون إنترنت.",
+        url: "qibla.html",
+        keywords: "قبلة, بوصلة, كعبة, اتجاه, صلاة, مكة, compass, qibla"
+    },
     {
         title: "سورة البقرة",
         type: "quran",
@@ -100,8 +134,82 @@ const searchIndex = [
         desc: "الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره.",
         url: "aqeedah.html",
         keywords: "ايمان, عقيدة, توحيد, ملائكة, رسل"
+    },
+    {
+        title: "سورة الفاتحة",
+        type: "quran",
+        category: "القرآن الكريم",
+        desc: "أم الكتاب والسبع المثاني والشفاء التام، أعظم سورة في كتاب الله تعالى.",
+        url: "recitations.html",
+        keywords: "فاتحة, ام الكتاب, سبع مثاني, حمد, قران"
+    },
+    {
+        title: "سورة الكهف",
+        type: "quran",
+        category: "القرآن الكريم",
+        desc: "سورة مكية يستحب قراءتها يوم الجمعة، نور ما بين الجمعتين وعصمة من فتنة الدجال.",
+        url: "recitations.html",
+        keywords: "كهف, دجال, جمعة, نور, قران"
+    },
+    {
+        title: "الأربعون النووية",
+        type: "hadith",
+        category: "الحديث الشريف",
+        desc: "أربعون حديثاً شريفاً جمعها الإمام النووي تمثل جوامع كلم النبي ﷺ وقواعد الدين.",
+        url: "hadith.html",
+        keywords: "اربعون, نووية, نووي, جوامع, حديث"
+    },
+    {
+        title: "صحيح البخاري ومسلم",
+        type: "hadith",
+        category: "الحديث الشريف",
+        desc: "أصح كتب الحديث النبوي الشريف بعد كتاب الله، بحث وتخريج أوفلاين.",
+        url: "hadith.html",
+        keywords: "بخاري, مسلم, صحاح, سنة"
+    },
+    {
+        title: "أذكار الصباح والمساء - حصن المسلم",
+        type: "azkar",
+        category: "زاد المسلم",
+        desc: "الأذكار اليومية المأثورة عن رسول الله ﷺ مع مسبحة إلكترونية وتتبع الأذكار.",
+        url: "azkar.html",
+        keywords: "اذكار, حصن, مسلم, صباح, مساء, تسبيح, استغفار"
+    },
+    {
+        title: "أسماء الله الحسنى",
+        type: "aqeedah",
+        category: "العقيدة الإسلامية",
+        desc: "الـ 99 اسماً مع المعاني اللغوية والأدلة القرآنية والآثار الإيمانية واختبار الحفظ.",
+        url: "asma-allah.html",
+        keywords: "اسماء, حسنى, رحمن, رحيم, قدوس, معاني"
+    },
+    {
+        title: "أصول الفقه وقواعد الاستنباط",
+        type: "fiqh",
+        category: "الفقه الإسلامي",
+        desc: "الأدلة الشرعية وطرق استنباط الأحكام والقواعد الفقهية الكبرى.",
+        url: "usul.html",
+        keywords: "اصول, فقه, ادلة, قواعد, استنباط"
+    },
+    {
+        title: "فتاوى كبار العلماء",
+        type: "fatwa",
+        category: "الفتاوى الشرعية",
+        desc: "فتاوى موثوقة في العبادات والمعاملات للإمامين ابن باز وابن عثيمين والمجامع الفقهية.",
+        url: "fatwa.html",
+        keywords: "فتوى, فتاوى, ابن باز, ابن عثيمين, سؤال, جواب"
+    },
+    {
+        title: "المكتبة الشاملة للكتب الإسلامية",
+        type: "library",
+        category: "المكتبة والكتب",
+        desc: "آلاف الكتب الإسلامية والمصادر في شتى العلوم الشرعية للتحميل والقراءة المباشرة.",
+        url: "library.html",
+        keywords: "مكتبة, كتب, تحميل, pdf, مراجع"
     }
 ];
+
+window.searchIndex = searchIndex;
 
 // Daily Verses Data
 const dailyVerses = [
@@ -209,7 +317,11 @@ document.addEventListener('click', function (e) {
 
 // Search Functionality
 function performSearch(query) {
-    if (!query || query.trim() === '') {
+    if (!query || typeof query !== 'string' || query.trim() === '') {
+        const input = document.getElementById('searchInput') || document.getElementById('heroSearchInput');
+        if (input && input.value) query = input.value;
+    }
+    if (!query || typeof query !== 'string' || query.trim() === '') {
         showToast('الرجاء إدخال كلمة البحث', 'warning');
         return;
     }
@@ -457,48 +569,29 @@ document.addEventListener('DOMContentLoaded', function () {
 // --- Theme Management ---
 
 function initTheme() {
-    // Only allow dark mode on index.html
-    const path = window.location.pathname;
-    const isHomePage = path.endsWith('index.html') || path === '/' || path.endsWith('/');
-    
-    if (!isHomePage) {
-        // Enforce light mode on other pages
-        document.documentElement.removeAttribute('data-theme');
-        return;
-    }
-
-    // Check localStorage or System Preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-
-    // Inject Toggle Button into Navbar
+    // Applies to ALL pages — the global theme manager handles persistence & toggling
+    // Just inject the toggle button into the navbar if not already present
     injectThemeToggle();
 }
 
 function injectThemeToggle() {
-    const navbarContainer = document.querySelector('.navbar .container');
-    const navbarNav = document.querySelector('.navbar-nav');
+    // Avoid duplicate injection
+    if (document.querySelector('.theme-toggle-btn')) return;
 
-    // We want to place it before the navbar toggler on mobile, or at the start/end of actions on desktop.
-    // Let's create the button element
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentlyDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+
     const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'theme-toggle-btn ms-2'; // ms-2 for margin
-    toggleBtn.setAttribute('aria-label', 'Toggle Dark Mode');
-    toggleBtn.innerHTML = isDark() ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-
-    toggleBtn.addEventListener('click', toggleTheme);
-
-    // Insert logic: Try to insert before the navbar-toggler if it exists (for mobile layout consistency)
-    // or append to the container if simpler.
-    // Best place: Before the 'navbar-toggler' button if present, otherwise inside container.
+    toggleBtn.className = 'theme-toggle-btn ms-2';
+    toggleBtn.setAttribute('aria-label', currentlyDark ? 'الوضع النهاري' : 'الوضع الليلي');
+    toggleBtn.setAttribute('title', currentlyDark ? 'الوضع النهاري' : 'الوضع الليلي');
+    toggleBtn.innerHTML = currentlyDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    // Note: click handler is bound by initGlobalThemeManager via setupThemeToggleButtons()
 
     const toggler = document.querySelector('.navbar-toggler');
+    const navbarContainer = document.querySelector('.navbar .container, .navbar > .container-fluid');
     if (toggler) {
-        // Insert before the hamburger menu on mobile
         toggler.parentNode.insertBefore(toggleBtn, toggler);
     } else if (navbarContainer) {
         navbarContainer.appendChild(toggleBtn);
@@ -506,19 +599,12 @@ function injectThemeToggle() {
 }
 
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-
-    // Update button icon
-    const icon = document.querySelector('.theme-toggle-btn i');
-    if (icon) {
-        icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-
-    showToast(newTheme === 'dark' ? 'تم تفعيل الوضع الليلي' : 'تم تفعيل الوضع النهاري', 'info');
+    // Delegate to the unified global theme manager
+    const willBeDark = localStorage.getItem('theme') !== 'dark';
+    localStorage.setItem('theme', willBeDark ? 'dark' : 'light');
+    // Dispatch storage event to trigger initGlobalThemeManager listener
+    window.dispatchEvent(new StorageEvent('storage', { key: 'theme', newValue: willBeDark ? 'dark' : 'light' }));
+    showToast(willBeDark ? 'تم تفعيل الوضع الليلي' : 'تم تفعيل الوضع النهاري', 'info');
 }
 
 function isDark() {
@@ -579,6 +665,8 @@ window.addEventListener('appinstalled', () => {
 function initPwaInstallUI() {
     if (isPwaStandalone()) return;
     if (document.getElementById('pwaInstallBtn')) return;
+    // If desktop has navbar button, avoid persistent overlapping floating button
+    if (document.getElementById('navInstallBtn') && window.innerWidth > 991) return;
 
     // Create floating install button
     const installBtn = document.createElement('button');
@@ -588,8 +676,8 @@ function initPwaInstallUI() {
     installBtn.setAttribute('title', 'تثبيت تطبيق الموسوعة الإسلامية على جهازك');
     installBtn.style.cssText = `
         position: fixed;
-        bottom: 25px;
-        left: 25px;
+        bottom: 85px;
+        left: 20px;
         z-index: 9999;
         display: flex;
         align-items: center;
@@ -712,9 +800,9 @@ function initMobileBottomNav() {
 
     const isHome = currentPath === 'index.html' || currentPath === '';
     const isQuran = currentPath === 'recitations.html' || currentPath.includes('quran');
-    const isHadith = currentPath === 'hadith.html';
-    const isFiqh = currentPath.startsWith('fiqh');
-    const isMoreActive = !isHome && !isQuran && !isHadith && !isFiqh;
+    const isAzkar = currentPath === 'azkar.html';
+    const isQibla = currentPath === 'qibla.html';
+    const isMoreActive = !isHome && !isQuran && !isAzkar && !isQibla;
 
     // Create Bottom Nav Bar
     const nav = document.createElement('nav');
@@ -730,17 +818,17 @@ function initMobileBottomNav() {
             <i class="fas fa-quran"></i>
             <span>القرآن</span>
         </a>
-        <a href="hadith.html" class="bottom-nav-item ${isHadith ? 'active' : ''}">
-            <i class="fas fa-book-open"></i>
-            <span>الحديث</span>
+        <a href="azkar.html" class="bottom-nav-item ${isAzkar ? 'active' : ''}">
+            <i class="fas fa-leaf"></i>
+            <span>الأذكار</span>
         </a>
-        <a href="fiqh.html" class="bottom-nav-item ${isFiqh ? 'active' : ''}">
-            <i class="fas fa-scale-balanced"></i>
-            <span>الفقه</span>
+        <a href="qibla.html" class="bottom-nav-item ${isQibla ? 'active' : ''}">
+            <i class="fas fa-compass"></i>
+            <span>القبلة</span>
         </a>
         <button type="button" id="bottomNavMoreBtn" class="bottom-nav-item ${isMoreActive ? 'active' : ''}" aria-label="عرض باقي الأقسام">
             <i class="fas fa-grip"></i>
-            <span>الأقسام</span>
+            <span>المزيد</span>
         </button>
     `;
     document.body.appendChild(nav);
@@ -771,13 +859,25 @@ function initMobileBottomNav() {
         </form>
 
         <div class="mobile-sheet-grid">
-            <a href="fatwa.html" class="mobile-sheet-card ${currentPath.startsWith('fatwa') ? 'border-warning shadow-sm' : ''}">
-                <i class="fas fa-gavel"></i>
-                <span>فتاوى العلماء</span>
+            <a href="hadith.html" class="mobile-sheet-card ${currentPath.startsWith('hadith') ? 'border-warning shadow-sm' : ''}">
+                <i class="fas fa-book-open"></i>
+                <span>الحديث النبوي</span>
+            </a>
+            <a href="fiqh.html" class="mobile-sheet-card ${currentPath.startsWith('fiqh') ? 'border-warning shadow-sm' : ''}">
+                <i class="fas fa-scale-balanced"></i>
+                <span>الفقه الإسلامي</span>
             </a>
             <a href="seerah.html" class="mobile-sheet-card ${currentPath.startsWith('seerah') ? 'border-warning shadow-sm' : ''}">
                 <i class="fas fa-route"></i>
                 <span>السيرة النبوية</span>
+            </a>
+            <a href="asma-allah.html" class="mobile-sheet-card ${currentPath.startsWith('asma') ? 'border-warning shadow-sm' : ''}">
+                <i class="fas fa-star text-warning"></i>
+                <span>أسماء الله الحسنى</span>
+            </a>
+            <a href="fatwa.html" class="mobile-sheet-card ${currentPath.startsWith('fatwa') ? 'border-warning shadow-sm' : ''}">
+                <i class="fas fa-gavel"></i>
+                <span>فتاوى العلماء</span>
             </a>
             <a href="aqeedah.html" class="mobile-sheet-card ${currentPath.startsWith('aqeedah') ? 'border-warning shadow-sm' : ''}">
                 <i class="fas fa-pray"></i>
@@ -795,6 +895,10 @@ function initMobileBottomNav() {
                 <i class="fas fa-scroll"></i>
                 <span>أصول الفقه</span>
             </a>
+            <a href="azkar.html#tasbih" class="mobile-sheet-card">
+                <i class="fas fa-fingerprint text-info"></i>
+                <span>المسبحة الذكية</span>
+            </a>
             <a href="share.html" class="mobile-sheet-card ${currentPath.startsWith('share') ? 'border-warning shadow-sm' : ''}">
                 <i class="fas fa-share-nodes"></i>
                 <span>شارك الأجر</span>
@@ -802,10 +906,6 @@ function initMobileBottomNav() {
             <a href="contact.html" class="mobile-sheet-card ${currentPath.startsWith('contact') ? 'border-warning shadow-sm' : ''}">
                 <i class="fas fa-envelope"></i>
                 <span>اتصل بنا</span>
-            </a>
-            <a href="register.html" class="mobile-sheet-card ${currentPath.startsWith('register') ? 'border-warning shadow-sm' : ''}">
-                <i class="fas fa-user-circle"></i>
-                <span>حسابي</span>
             </a>
         </div>
 

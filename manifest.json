@@ -46,6 +46,12 @@
   ],
   "shortcuts": [
     {
+      "name": "بوصلة القبلة",
+      "short_name": "القبلة",
+      "url": "./qibla.html",
+      "icons": [{ "src": "icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
       "name": "القرآن والتلاوات",
       "short_name": "القرآن",
       "url": "./recitations.html",

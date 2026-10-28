@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+    <script>!function(){var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");document.documentElement.classList.add("dark-mode");}else if(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.setAttribute("data-theme","dark");document.documentElement.classList.add("dark-mode");}}();</script>
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="robots" content="index, follow">
@@ -16,6 +17,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="dark-mode.css">
 <style>
 :root{
   --emerald:#064e3b; --emerald-2:#047857; --emerald-3:#10b981;
@@ -292,7 +294,7 @@ body{font-family:'Cairo',sans-serif;background:var(--slate);color:var(--text);ov
   </div>
 
   <!-- TASBIH TAB -->
-  <div id="tab-tasbih" class="azkar-pane" style="display:none;">
+  <div id="tab-tasbih" class="azkar-pane" style="display:none;"><span id="tasbih"></span>
     <div class="sec-head">
       <div class="badge-tag"><i class="fas fa-pray me-1"></i>المسبحة الإلكترونية الذكية</div>
       <h2 class="amiri"><span>المسبحة</span> الذكية</h2>
@@ -598,6 +600,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (tab === 'tasbih') loadTasbih();
     });
   });
+
+  // Auto-switch tab if URL has hash (e.g. #tasbih)
+  const currentHash = (window.location.hash || '').replace('#', '').toLowerCase();
+  if (currentHash === 'tasbih' || currentHash === 'tab-tasbih') {
+    const targetBtn = document.querySelector('[data-tab="tasbih"]');
+    if (targetBtn) targetBtn.click();
+  } else if (currentHash && document.getElementById('tab-' + currentHash)) {
+    const targetBtn = document.querySelector('[data-tab="' + currentHash + '"]');
+    if (targetBtn) targetBtn.click();
+  }
 
   // Keyboard shortcut: Space for tasbih when on tasbih tab
   document.addEventListener('keydown', e => {

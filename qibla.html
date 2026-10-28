@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>!function(){try{if(sessionStorage.getItem("islamic_splash_shown")==="true"){document.documentElement.classList.add("splash-dismissed");}}catch(e){}var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");document.documentElement.classList.add("dark-mode");}else if(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.setAttribute("data-theme","dark");document.documentElement.classList.add("dark-mode");}}();</script>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوصلة تحديد القبلة التفاعلية - الموسوعة الإسلامية الشاملة</title>
+
+    <meta name="description" content="بوصلة تحديد اتجاه القبلة التفاعلية الدقيقة أوفلاين 100% دون إنترنت باستخدام مستشعر البوصلة بالهاتف DeviceOrientation وحساب زاوية الكعبة فلكياً.">
+    <meta name="keywords" content="بوصلة القبلة, اتجاه القبلة, تحديد القبلة, الكعبة المشرفة, مكة المكرمة, Qibla Finder, قبلة الصلاة أوفلاين">
+    <meta name="author" content="الموسوعة الإسلامية الشاملة">
+    <meta property="og:title" content="بوصلة تحديد القبلة التفاعلية - الموسوعة الإسلامية">
+    <meta property="og:description" content="حدد اتجاه الكعبة المشرفة في أي مكان بدقة فلكية عالية ومستشعر بوصلة الهاتف 100% دون إنترنت.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="icons/logo-emblem.png">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png" sizes="192x192">
+    <link rel="canonical" href="https://seifeddinn.github.io/ISlam-Encyclopedia/qibla.html">
+    
+    <!-- PWA Primary Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b192c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+    <!-- Fonts & Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="dark-mode.css">
+
+    <style id="splash-critical">
+    #islamicSplashScreen{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 40% 30%,#0d2240 0%,#0b192c 50%,#040c18 100%);overflow:hidden;transition:opacity .7s cubic-bezier(.4,0,.2,1),visibility .7s}
+    #islamicSplashScreen.splash-hide,#islamicSplashScreen.splash-instant-hide,html.splash-dismissed #islamicSplashScreen{opacity:0!important;visibility:hidden!important;pointer-events:none!important;display:none!important}
+    </style>
+
+    <style>
+    :root {
+      --gold: #d4af37;
+      --gold-light: #fef08a;
+      --gold-dark: #aa8a2a;
+      --primary: #0369a1;
+      --primary-light: #38bdf8;
+      --dark: #0b192c;
+      --dark-card: #112238;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.45);
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    h1, h2, h3, h4, h5, h6, .font-amiri {
+      font-family: 'Amiri', serif;
+    }
+
+    /* ════ NAVBAR ════ */
+    .glass-nav {
+      background: rgba(11, 25, 44, 0.94) !important;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      z-index: 1030;
+      padding: 10px 0;
+    }
+    .navbar-brand {
+      font-family: 'Amiri', serif;
+      font-size: 1.65rem;
+      color: #ffffff !important;
+      text-shadow: 0 2px 12px rgba(212, 175, 55, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.85) !important;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 8px 14px !important;
+      border-radius: 12px;
+      transition: all 0.25s ease;
+    }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+      color: var(--gold) !important;
+      background: rgba(212, 175, 55, 0.12);
+    }
+    .dropdown-menu {
+      background: rgba(11, 25, 44, 0.98) !important;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+      padding: 10px;
+    }
+    .dropdown-item {
+      color: #e2e8f0;
+      border-radius: 10px;
+      font-weight: 600;
+      padding: 10px 14px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-item:hover {
+      background: rgba(212, 175, 55, 0.18);
+      color: var(--gold);
+      transform: translateX(-4px);
+    }
+
+    /* ════ HERO ════ */
+    .qibla-hero {
+      background: radial-gradient(circle at 50% 40%, var(--primary) 0%, var(--dark) 85%);
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0 60px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+      color: #0b192c;
+      padding: 8px 30px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+    }
+    .qibla-hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 8px 25px rgba(0,0,0,0.7);
+      margin-bottom: 15px;
+    }
+    .qibla-hero h1 span {
+      background: linear-gradient(135deg, #ffffff, var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .qibla-hero p {
+      color: #e2e8f0;
+      font-size: 1.15rem;
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    /* ════ COMPASS CARD & HOUSING ════ */
+    .compass-card {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 35px 25px;
+      box-shadow: 0 20px 60px rgba(11, 25, 44, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      position: relative;
+      margin-top: -45px;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    html[data-theme="dark"] .compass-card {
+      background: var(--dark-card);
+      border-color: rgba(212, 175, 55, 0.35);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    /* ════ THE COMPASS VISUAL ════ */
+    .compass-stage {
+      position: relative;
+      width: min(340px, 85vw);
+      height: min(340px, 85vw);
+      margin: 25px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Ambient Outer Glow */
+    .compass-ambient-glow {
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 70%);
+      transition: all 0.4s ease;
+      pointer-events: none;
+    }
+    .compass-stage.aligned .compass-ambient-glow {
+      background: radial-gradient(circle, var(--emerald-glow) 0%, transparent 75%);
+      filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.8));
+      animation: pulseGreenGlow 1.4s ease-in-out infinite alternate;
+    }
+    @keyframes pulseGreenGlow {
+      from { transform: scale(0.98); opacity: 0.75; }
+      to   { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Top Reference Notch / Phone Heading Pointer */
+    .phone-notch {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--gold);
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    }
+    .phone-notch i {
+      font-size: 1.5rem;
+      animation: notchBob 1.5s ease-in-out infinite;
+    }
+    @keyframes notchBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .compass-stage.aligned .phone-notch {
+      color: var(--emerald);
+    }
+
+    /* Outer Compass Astrolabe Rim */
+    .compass-housing {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #1e293b 0%, #0b192c 85%);
+      border: 8px solid #c9a738;
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.8), 0 15px 35px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .compass-stage.aligned .compass-housing {
+      border-color: var(--emerald);
+      box-shadow: inset 0 0 25px rgba(16, 185, 129, 0.4), 0 0 35px rgba(16, 185, 129, 0.5);
+    }
+
+    /* Inner Rotating Dial */
+    .compass-dial {
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      will-change: transform;
+      transition: transform 0.12s cubic-bezier(0.1, 0.8, 0.2, 1);
+    }
+
+    /* Astrolabe Circular Pattern inside dial */
+    .dial-pattern {
+      position: absolute;
+      inset: 22px;
+      border-radius: 50%;
+      border: 1px dashed rgba(212, 175, 55, 0.3);
+      pointer-events: none;
+    }
+    .dial-inner-ring {
+      position: absolute;
+      inset: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+    }
+
+    /* Cardinal Points (N, E, S, W) on Dial */
+    .cardinal-mark {
+      position: absolute;
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.85);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -16px;
+      margin-top: -16px;
+      left: 50%;
+      top: 50%;
+      user-select: none;
+    }
+    .mark-n { transform: translateY(-120px); color: #ef4444; font-weight: 900; }
+    .mark-e { transform: translateX(120px); }
+    .mark-s { transform: translateY(120px); }
+    .mark-w { transform: translateX(-120px); }
+
+    /* Degree Ticks (Every 30 degrees) */
+    .degree-tick {
+      position: absolute;
+      width: 2px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.25);
+      left: 50%;
+      top: 50%;
+      margin-left: -1px;
+      margin-top: -1px;
+      transform-origin: center -135px;
+    }
+
+    /* ════ KAABA DIRECTION MARKER ════ */
+    .kaaba-marker {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 44px;
+      height: 44px;
+      margin-left: -22px;
+      margin-top: -22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center center;
+      z-index: 20;
+      pointer-events: none;
+      transition: filter 0.3s ease;
+    }
+    .kaaba-badge {
+      width: 38px;
+      height: 38px;
+      background: radial-gradient(circle, #0b192c 0%, #000000 100%);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.6);
+      transform: translateY(-98px);
+      transition: all 0.3s ease;
+    }
+    .compass-stage.aligned .kaaba-badge {
+      border-color: var(--emerald);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.9);
+      transform: translateY(-98px) scale(1.15);
+    }
+    .kaaba-arrow-pointer {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 24px solid var(--gold);
+      top: 50%;
+      left: 50%;
+      margin-left: -6px;
+      margin-top: -72px;
+    }
+    .compass-stage.aligned .kaaba-arrow-pointer {
+      border-bottom-color: var(--emerald);
+    }
+
+    /* Center Needle / Crosshair Pivot */
+    .center-pivot {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fde047 0%, var(--gold-dark) 100%);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+      z-index: 25;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ════ STATUS & INFO BADGES ════ */
+    .status-alert {
+      border-radius: 20px;
+      padding: 14px 22px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .status-neutral {
+      background: rgba(3, 105, 161, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(3, 105, 161, 0.25);
+    }
+    html[data-theme="dark"] .status-neutral {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary-light);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .status-success {
+      background: rgba(16, 185, 129, 0.15) !important;
+      color: #065f46 !important;
+      border: 2px solid var(--emerald) !important;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+      animation: alertPulse 1.2s ease-in-out infinite alternate;
+    }
+    html[data-theme="dark"] .status-success {
+      background: rgba(16, 185, 129, 0.22) !important;
+      color: #6ee7b7 !important;
+    }
+    @keyframes alertPulse {
+      from { transform: scale(1); }
+      to   { transform: scale(1.02); }
+    }
+
+    .data-pill {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    html[data-theme="dark"] .data-pill {
+      background: #162032;
+      border-color: rgba(255,255,255,0.08);
+    }
+    .data-pill .pill-val {
+      font-family: 'Amiri', serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    html[data-theme="dark"] .data-pill .pill-val {
+      color: var(--gold);
+    }
+    .data-pill .pill-lbl {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin: 0;
+    }
+    html[data-theme="dark"] .data-pill .pill-lbl {
+      color: #94a3b8;
+    }
+
+    /* Calibration card */
+    .info-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 26px;
+      border: 1px solid #f1f5f9;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      margin-bottom: 25px;
+    }
+    html[data-theme="dark"] .info-card {
+      background: var(--dark-card);
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    </style>
+</head>
+
+<body>
+
+<!-- SPLASH SCREEN PRELOADER -->
+<div id="islamicSplashScreen" role="status" aria-label="جاري تحميل بوصلة القبلة">
+  <div class="splash-pattern"></div>
+  <div class="splash-content">
+    <div class="splash-logo-wrap">
+      <img class="splash-logo-emblem" src="icons/logo-emblem.png" alt="الموسوعة الإسلامية الشاملة" width="130" height="135">
+    </div>
+    <div class="splash-basmala">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="splash-site-name">بوصلة تحديد القبلة التفاعلية</div>
+    <div class="splash-site-sub">Interactive Qibla Finder Compass</div>
+    <div class="splash-progress-track">
+      <div class="splash-progress-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top glass-nav" id="mainNavbar">
+  <div class="container-fluid px-lg-5">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <img src="icons/logo-emblem.png" alt="شعار الموسوعة" width="34" height="34" class="align-middle d-inline-block" style="object-fit:contain;">
+      <span>الموسوعة الإسلامية الشاملة</span>
+    </a>
+    
+    <div class="d-flex align-items-center gap-2 d-lg-none">
+      <button class="btn btn-outline-warning btn-sm rounded-circle" onclick="toggleTheme()" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" aria-label="تبديل المظهر">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navQibla" aria-controls="navQibla" aria-expanded="false" aria-label="تبديل القائمة">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="navQibla">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="recitations.html"><i class="fas fa-quran me-1 text-gold"></i>القرآن والتلاوات</a></li>
+        <li class="nav-item"><a class="nav-link" href="hadith.html"><i class="fas fa-book-open me-1 text-warning"></i>الحديث الشريف</a></li>
+        <li class="nav-item"><a class="nav-link" href="fiqh.html"><i class="fas fa-balance-scale me-1 text-warning"></i>الفقه الإسلامي</a></li>
+        <li class="nav-item"><a class="nav-link" href="azkar.html"><i class="fas fa-leaf me-1 text-success"></i>الأذكار والمسبحة</a></li>
+        <li class="nav-item"><a class="nav-link active" href="qibla.html"><i class="fas fa-compass me-1 text-warning"></i>بوصلة القبلة</a></li>
+      </ul>
+      
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        <button class="btn btn-outline-warning btn-sm rounded-circle d-none d-lg-flex" onclick="toggleTheme()" style="width:38px;height:38px;align-items:center;justify-content:center;" title="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="index.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+          <i class="fas fa-arrow-right me-1"></i>الرئيسية
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="qibla-hero">
+  <div class="container position-relative z-1">
+    <span class="hero-eyebrow"><i class="fas fa-kaaba me-2"></i>أدوات المسلم الذكية أوفلاين</span>
+    <h1>بوصلة تحديد <span>القبلة</span> التفاعلية</h1>
+    <p>حدد اتجاه الكعبة المشرفة في مكة المكرمة مباشرة عبر مستشعر البوصلة بهاتفك 100% دون إنترنت بحساب فلكي دقيق.</p>
+  </div>
+</section>
+
+<!-- MAIN COMPASS SECTION -->
+<div class="container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-xl-7">
+      
+      <div class="compass-card text-center">
+        <!-- City and Location Header -->
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 border-bottom pb-3 mb-3 border-secondary border-opacity-10">
+          <div class="text-start">
+            <span class="text-muted small d-block">موقعك الحالي:</span>
+            <span class="fw-bold fs-5 font-amiri text-dark" id="displayLocationName">
+              <i class="fas fa-map-marker-alt text-warning me-1"></i>جاري التحديد...
+            </span>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-warning btn-sm rounded-pill px-3 font-cairo" onclick="openCityModal()">
+              <i class="fas fa-city me-1"></i>تغيير المدينة
+            </button>
+            <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 font-cairo" onclick="detectGPSLocation()" title="تحديد موقعي الدقيق عبر GPS">
+              <i class="fas fa-location-crosshairs me-1"></i>GPS
+            </button>
+          </div>
+        </div>
+
+        <!-- IOS SENSOR PERMISSION BUTTON (shown only when needed) -->
+        <div id="iosPermissionWrap" class="mb-3 d-none">
+          <button type="button" class="btn btn-warning rounded-pill px-4 py-2 fw-bold font-cairo shadow-sm" onclick="requestIOSOrientationPermission()">
+            <i class="fas fa-magnet me-2"></i>اضغط هنا لتفعيل مستشعر البوصلة (iPhone)
+          </button>
+        </div>
+
+        <!-- COMPASS STAGE -->
+        <div class="compass-stage" id="compassStage">
+          <!-- Top Phone Notch (reference pointer) -->
+          <div class="phone-notch" id="phoneNotch">
+            <i class="fas fa-caret-down"></i>
+          </div>
+
+          <!-- Ambient Outer Glow -->
+          <div class="compass-ambient-glow"></div>
+
+          <!-- Housing / Outer Ring -->
+          <div class="compass-housing">
+            <!-- Rotating Dial -->
+            <div class="compass-dial" id="compassDial">
+              <!-- Internal astrolabe aesthetic rings -->
+              <div class="dial-pattern"></div>
+              <div class="dial-inner-ring"></div>
+
+              <!-- Cardinal Directions -->
+              <div class="cardinal-mark mark-n">ش</div>
+              <div class="cardinal-mark mark-e">شـ</div>
+              <div class="cardinal-mark mark-s">ج</div>
+              <div class="cardinal-mark mark-w">غ</div>
+
+              <!-- Kaaba Marker on Dial -->
+              <div class="kaaba-marker" id="kaabaMarker">
+                <div class="kaaba-arrow-pointer"></div>
+                <div class="kaaba-badge">🕋</div>
+              </div>
+            </div>
+
+            <!-- Central Pivot Jewel -->
+            <div class="center-pivot"></div>
+          </div>
+        </div>
+
+        <!-- ALIGNMENT STATUS ALERT -->
+        <div class="status-alert status-neutral" id="statusAlert">
+          <i class="fas fa-compass fa-spin" id="statusIcon"></i>
+          <span id="statusText">قم بتدوير هاتفك حتى يتطابق السهم الذهبي 🕋 مع رأس الهاتف</span>
+        </div>
+
+        <!-- LIVE DATA ROW -->
+        <div class="row g-2 mt-2">
+          <div class="col-4">
+            <div class="data-pill">
+              <div class="pill-val" id="valQiblaBearing">--°</div>
+              <p class="pill-lbl">زاوية القبلة</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="data-pill">
+              <div class="pill-val" id="valDeviceHeading">--°</div>
+              <p class="pill-lbl">اتجاه الهاتف</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="data-pill">
+              <div class="pill-val" id="valDistance">-- كم</div>
+              <p class="pill-lbl">المسافة لمكة</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MANUAL ROTATION CONTROLLER (Desktop & Non-Sensor fallback) -->
+        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10" id="manualFallbackBlock">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="small text-muted"><i class="fas fa-sliders me-1"></i>محاكاة البوصلة يدوياً (للحواسيب والأجهزة بدون مستشعر):</span>
+            <span class="badge bg-secondary font-cairo" id="manualSliderVal">0°</span>
+          </div>
+          <input type="range" class="form-range" id="manualHeadingSlider" min="0" max="360" value="0" oninput="onManualSliderChange(this.value)">
+          <small class="text-muted d-block mt-1 font-cairo" style="font-size:0.8rem;">
+            <i class="fas fa-mobile-screen text-warning me-1"></i>عند فتح الصفحة من هاتفك المحمول، تدور البوصلة تلقائياً مع حركة يدك عبر مستشعر الجهاز.
+          </small>
+        </div>
+
+      </div>
+
+      <!-- INSTRUCTIONS & CALIBRATION CARD -->
+      <div class="info-card mt-4">
+        <h5 class="font-amiri fw-bold text-warning mb-3">
+          <i class="fas fa-circle-info me-2"></i>إرشادات دقة المعايرة والتوجيه
+        </h5>
+        <div class="row g-3 align-items-center">
+          <div class="col-md-8">
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-2 font-cairo small text-muted">
+              <li><i class="fas fa-check text-success me-2"></i><strong>المستوى الأفقي:</strong> أمسك الهاتف مسطحاً ومستوياً في راحة يدك مثل البوصلة الحقيقية.</li>
+              <li><i class="fas fa-check text-success me-2"></i><strong>حركة الرقم 8:</strong> إذا بدت البوصلة غير مستقرة، حرك هاتفك في الهواء على شكل الرقم 8 لمعايرة المستشعر المغناطيسي.</li>
+              <li><i class="fas fa-check text-success me-2"></i><strong>تجنب التشويش:</strong> ابتعد عن الأجسام المعدنية السميكة، أجهزة الكمبيوتر، والجرابات المحتوية على مغناطيس.</li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="p-3 rounded-4 bg-light text-dark font-amiri" style="border:1px dashed rgba(212,175,55,0.4);">
+              <i class="fas fa-infinity text-warning fs-1 mb-1"></i>
+              <div class="fw-bold small">معايرة الشكل 8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ISLAMIC RULING CARD -->
+      <div class="info-card">
+        <h5 class="font-amiri fw-bold text-success mb-2">
+          <i class="fas fa-kaaba me-2"></i>فضل استقبال القبلة والدعاء المأثور
+        </h5>
+        <p class="font-amiri fs-5 text-dark mb-2 text-center py-2 px-3 rounded-3" style="background:rgba(212,175,55,0.1); border-right:4px solid var(--gold);">
+          «وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ»
+        </p>
+        <p class="small text-muted font-cairo mb-0">
+          استقبال عين الكعبة للقريب، أو جهتها للبعيد هو شرط أساسي من شروط صحة الصلاة لقول الله تعالى: 
+          <strong>{فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ ۚ وَحَيْثُ مَا كُنتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ}</strong>.
+          وتسقط القبلة في صلاة النافلة للمسافر على الراحلة، وعند العجز التام أو الخوف الشديد.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CITY SELECTOR MODAL (OFFLINE CITIES) -->
+<div class="modal fade" id="qiblaCityModal" tabindex="-1" aria-labelledby="qiblaCityModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background:var(--dark); color:#fff; border:1px solid rgba(212,175,55,0.4); border-radius:24px;">
+      <div class="modal-header border-bottom border-secondary border-opacity-25 pb-3">
+        <h5 class="modal-title font-amiri fs-4 text-warning" id="qiblaCityModalLabel">
+          <i class="fas fa-city me-2"></i>اختر مدينتك لحساب القبلة (أوفلاين)
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-3">
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-dark border-secondary text-warning"><i class="fas fa-search"></i></span>
+          <input type="text" id="citySearchInput" class="form-control bg-dark text-white border-secondary font-cairo" placeholder="ابحث عن مدينتك أو دولتك..." oninput="filterCities(this.value)">
+        </div>
+        <div id="citiesListContainer" class="d-flex flex-column gap-2" style="max-height:350px; overflow-y:auto;">
+        </div>
+      </div>
+      <div class="modal-footer border-top border-secondary border-opacity-25 py-2">
+        <small class="text-white-50"><i class="fas fa-calculator text-warning me-1"></i>حساب فلكي رياضي محلي 100% دون إنترنت</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="praytimes.js"></script>
+
+<script>
+// ══════════════════════════════════════════════════════════
+// QIBLA FINDER ENGINE — DeviceOrientation & Astronomy
+// ══════════════════════════════════════════════════════════
+(function () {
+  'use strict';
+
+  // Kaaba Coordinates
+  const MECCA_LAT = 21.422487;
+  const MECCA_LNG = 39.826206;
+
+  // State
+  let currentLat = 21.4225;
+  let currentLng = 39.8262;
+  let currentCityName = 'مكة المكرمة (السعودية)';
+  let qiblaBearing = 0;
+  let currentHeading = 0;
+  let currentDialRotation = 0;
+  let isAligned = false;
+  let lastHapticTime = 0;
+  let audioCtx = null;
+  let sensorListening = false;
+
+  // DOM Elements
+  const stageEl = document.getElementById('compassStage');
+  const dialEl = document.getElementById('compassDial');
+  const kaabaMarkerEl = document.getElementById('kaabaMarker');
+  const alertEl = document.getElementById('statusAlert');
+  const alertTextEl = document.getElementById('statusText');
+  const alertIconEl = document.getElementById('statusIcon');
+  const valBearingEl = document.getElementById('valQiblaBearing');
+  const valHeadingEl = document.getElementById('valDeviceHeading');
+  const valDistanceEl = document.getElementById('valDistance');
+  const locNameEl = document.getElementById('displayLocationName');
+  const iosBtnWrap = document.getElementById('iosPermissionWrap');
+
+  // Mathematical Qibla Calculation (Azimuth + Haversine distance)
+  function computeQibla(lat1, lon1) {
+    if (window.PrayTimes && typeof window.PrayTimes.getQibla === 'function') {
+      return window.PrayTimes.getQibla(lat1, lon1);
+    }
+    const lat2 = MECCA_LAT * Math.PI / 180.0;
+    const lon2 = MECCA_LNG * Math.PI / 180.0;
+    const phi1 = lat1 * Math.PI / 180.0;
+    const deltaLambda = lon2 - (lon1 * Math.PI / 180.0);
+    const y = Math.sin(deltaLambda) * Math.cos(lat2);
+    const x = Math.cos(phi1) * Math.sin(lat2) - Math.sin(phi1) * Math.cos(lat2) * Math.cos(deltaLambda);
+    const qibla = (Math.atan2(y, x) * 180.0 / Math.PI + 360.0) % 360.0;
+
+    const R = 6371;
+    const deltaPhi = (MECCA_LAT - lat1) * Math.PI / 180.0;
+    const a = Math.sin(deltaPhi / 2) ** 2 + Math.cos(phi1) * Math.cos(lat2) * Math.sin(deltaLambda / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return {
+      bearing: Math.round(qibla * 10) / 10,
+      distance: Math.round(R * c)
+    };
+  }
+
+  // Update Compass for City
+  function updateCoordinates(lat, lng, name) {
+    currentLat = lat;
+    currentLng = lng;
+    currentCityName = name;
+
+    const res = computeQibla(lat, lng);
+    qiblaBearing = res.bearing;
+
+    if (locNameEl) locNameEl.innerHTML = `<i class="fas fa-map-marker-alt text-warning me-1"></i>${name}`;
+    if (valBearingEl) valBearingEl.textContent = `${qiblaBearing.toFixed(1)}°`;
+    if (valDistanceEl) valDistanceEl.textContent = `${res.distance.toLocaleString('ar-EG')} كم`;
+
+    // Position Kaaba marker on the rotating dial at angle = qiblaBearing
+    if (kaabaMarkerEl) {
+      kaabaMarkerEl.style.transform = `rotate(${qiblaBearing}deg)`;
+    }
+
+    refreshCompassView();
+  }
+
+  // Smooth angle interpolation without 360° spin glitches
+  function smoothRotateDial(targetAngle) {
+    let delta = (targetAngle - currentDialRotation) % 360;
+    if (delta > 180) delta -= 360;
+    if (delta < -180) delta += 360;
+    currentDialRotation += delta;
+    if (dialEl) {
+      dialEl.style.transform = `rotate(${currentDialRotation}deg)`;
+    }
+  }
+
+  // Refresh Compass alignment and UI feedback
+  function refreshCompassView() {
+    // Dial rotates by -currentHeading so North on dial points to true North
+    smoothRotateDial(-currentHeading);
+
+    if (valHeadingEl) {
+      valHeadingEl.textContent = `${Math.round(currentHeading)}°`;
+    }
+
+    // Check angle difference
+    let diff = Math.abs(currentHeading - qiblaBearing) % 360;
+    if (diff > 180) diff = 360 - diff;
+
+    // Within ±3.5 degrees considered aligned
+    const nowAligned = (diff <= 3.5);
+
+    if (nowAligned !== isAligned) {
+      isAligned = nowAligned;
+      if (isAligned) {
+        stageEl.classList.add('aligned');
+        alertEl.classList.remove('status-neutral');
+        alertEl.classList.add('status-success');
+        alertTextEl.innerHTML = '<strong>أنت تواجه القبلة الآن مباشرة! 🕋 تقبل الله صلاتكم</strong>';
+        alertIconEl.className = 'fas fa-check-circle text-success fs-5';
+        triggerAlignmentFeedback();
+      } else {
+        stageEl.classList.remove('aligned');
+        alertEl.classList.remove('status-success');
+        alertEl.classList.add('status-neutral');
+        alertTextEl.textContent = `وجّه هاتفك حتى يتطابق السهم الذهبي مع رأس الهاتف (متبقي ${Math.round(diff)}°)`;
+        alertIconEl.className = 'fas fa-compass fa-spin';
+      }
+    }
+  }
+
+  // Web Audio Chime + Vibration
+  function triggerAlignmentFeedback() {
+    const now = Date.now();
+    if (now - lastHapticTime < 1800) return;
+    lastHapticTime = now;
+
+    if (navigator.vibrate) {
+      try { navigator.vibrate([100, 50, 100]); } catch(e) {}
+    }
+
+    try {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.18); // A5
+      gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.45);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.45);
+    } catch(e) {}
+  }
+
+  // Handle Orientation Events from phone magnetometer
+  function handleDeviceOrientation(e) {
+    let heading = null;
+
+    if (e.webkitCompassHeading !== undefined && e.webkitCompassHeading !== null) {
+      // iOS Safari (Direct magnetic compass heading 0-360)
+      heading = e.webkitCompassHeading;
+    } else if (e.absolute === true || e.alpha !== null) {
+      // Android / Chrome
+      if (e.alpha !== null && !isNaN(e.alpha)) {
+        heading = (360 - e.alpha) % 360;
+      }
+    }
+
+    if (heading !== null && !isNaN(heading)) {
+      currentHeading = heading;
+      refreshCompassView();
+
+      // Update manual slider visually without overriding
+      const slider = document.getElementById('manualHeadingSlider');
+      if (slider) slider.value = Math.round(heading);
+      const sliderVal = document.getElementById('manualSliderVal');
+      if (sliderVal) sliderVal.textContent = `${Math.round(heading)}°`;
+    }
+  }
+
+  // Start Device Orientation Listener
+  function startCompassListener() {
+    if (sensorListening) return;
+
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+      // iOS 13+ requires user gesture
+      if (iosBtnWrap) iosBtnWrap.classList.remove('d-none');
+    } else {
+      if (window.ondeviceorientationabsolute !== undefined) {
+        window.addEventListener('deviceorientationabsolute', handleDeviceOrientation, true);
+      } else {
+        window.addEventListener('deviceorientation', handleDeviceOrientation, true);
+      }
+      sensorListening = true;
+    }
+  }
+
+  // Request iOS permission on user click
+  window.requestIOSOrientationPermission = function () {
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission()
+        .then(function (permissionState) {
+          if (permissionState === 'granted') {
+            window.addEventListener('deviceorientation', handleDeviceOrientation, true);
+            sensorListening = true;
+            if (iosBtnWrap) iosBtnWrap.classList.add('d-none');
+            if (typeof showToast === 'function') showToast('تم تفعيل مستشعر البوصلة بنجاح ✅', 'success');
+          } else {
+            alert('يرجى السماح بالوصول للمستشعر لتحديد اتجاه القبلة تلقائياً.');
+          }
+        })
+        .catch(function (err) {
+          console.warn('Orientation permission error:', err);
+        });
+    }
+  };
+
+  // Manual Slider fallback for PC / Desktop
+  window.onManualSliderChange = function (val) {
+    currentHeading = parseFloat(val);
+    const sliderVal = document.getElementById('manualSliderVal');
+    if (sliderVal) sliderVal.textContent = `${Math.round(currentHeading)}°`;
+    refreshCompassView();
+  };
+
+  // City Selection
+  window.openCityModal = function () {
+    renderCitiesList();
+    const modalEl = document.getElementById('qiblaCityModal');
+    if (modalEl && window.bootstrap) {
+      bootstrap.Modal.getOrCreateInstance(modalEl).show();
+    }
+  };
+
+  function renderCitiesList(filterQuery) {
+    const cont = document.getElementById('citiesListContainer');
+    if (!cont || !window.PrayTimes) return;
+    const cities = window.PrayTimes.CITIES || [];
+    const q = (filterQuery || '').trim().toLowerCase();
+
+    let html = '';
+    cities.forEach((c, idx) => {
+      if (!q || c.name.toLowerCase().includes(q)) {
+        html += `<button type="button" class="btn btn-outline-light text-start d-flex justify-content-between align-items-center py-2 px-3 rounded-3 border-secondary border-opacity-25 font-cairo" onclick="selectCityByIndex(${idx})">
+          <span><i class="fas fa-location-dot text-warning me-2"></i>${c.name}</span>
+          <span class="badge bg-warning text-dark font-amiri" style="font-size:0.75rem;">اختيار</span>
+        </button>`;
+      }
+    });
+    cont.innerHTML = html || '<div class="text-center py-4 text-muted font-cairo">لا توجد مدينة مطابقة</div>';
+  }
+
+  window.filterCities = function (val) {
+    renderCitiesList(val);
+  };
+
+  window.selectCityByIndex = function (idx) {
+    const modalEl = document.getElementById('qiblaCityModal');
+    if (modalEl && window.bootstrap) {
+      bootstrap.Modal.getOrCreateInstance(modalEl).hide();
+    }
+    if (!window.PrayTimes || !window.PrayTimes.CITIES) return;
+    const c = window.PrayTimes.CITIES[idx];
+    if (c) {
+      localStorage.setItem('selected_prayer_city', JSON.stringify(c));
+      updateCoordinates(c.lat, c.lng, c.name);
+      if (typeof showToast === 'function') showToast(`تم ضبط القبلة لمدينة: ${c.name}`, 'success');
+    }
+  };
+
+  // GPS Geolocation auto-detection
+  window.detectGPSLocation = function () {
+    if (!navigator.geolocation) {
+      alert('متصفحك لا يدعم خاصية تحديد الموقع الجغرافي.');
+      return;
+    }
+    if (locNameEl) locNameEl.innerHTML = '<i class="fas fa-spinner fa-spin text-warning me-1"></i>جاري تحديد إحداثياتك عبر GPS...';
+    navigator.geolocation.getCurrentPosition(
+      function (pos) {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        updateCoordinates(lat, lng, 'موقعك الدقيق عبر GPS');
+        if (typeof showToast === 'function') showToast('تم تحديد موقعك بدقة فلكية ✅', 'success');
+      },
+      function () {
+        alert('تعذر الوصول إلى موقع GPS، يرجى تفعيل إذن الموقع أو اختيار مدينتك من القائمة.');
+        if (locNameEl) locNameEl.innerHTML = `<i class="fas fa-map-marker-alt text-warning me-1"></i>${currentCityName}`;
+      },
+      { timeout: 7000, enableHighAccuracy: true }
+    );
+  };
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', function () {
+    // Check saved city from localStorage
+    const saved = localStorage.getItem('selected_prayer_city');
+    if (saved) {
+      try {
+        const c = JSON.parse(saved);
+        updateCoordinates(c.lat, c.lng, c.name);
+      } catch (e) {
+        updateCoordinates(MECCA_LAT, MECCA_LNG, 'مكة المكرمة (السعودية)');
+      }
+    } else {
+      updateCoordinates(MECCA_LAT, MECCA_LNG, 'مكة المكرمة (السعودية)');
+    }
+
+    startCompassListener();
+  });
+
+})();
+</script>
+
+</body>
+</html>

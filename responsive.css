@@ -1814,10 +1814,13 @@ body.player-active {
     transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.7s;
 }
 
-#islamicSplashScreen.splash-hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+#islamicSplashScreen.splash-hide,
+#islamicSplashScreen.splash-instant-hide,
+html.splash-dismissed #islamicSplashScreen {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    display: none !important;
 }
 
 /* Arabesque background pattern */
@@ -1934,7 +1937,7 @@ body.player-active {
     line-height: 1.8;
     margin-bottom: 10px;
     opacity: 0;
-    animation: splashTextIn 0.7s ease-out 0.85s forwards;
+    animation: splashTextIn 0.5s ease-out 0.2s forwards;
 }
 
 /* Site name */
@@ -1946,7 +1949,7 @@ body.player-active {
     text-shadow: 0 5px 20px rgba(0,0,0,0.6);
     margin-bottom: 4px;
     opacity: 0;
-    animation: splashTextIn 0.7s ease-out 1.05s forwards;
+    animation: splashTextIn 0.5s ease-out 0.35s forwards;
 }
 
 /* English subtitle */
@@ -1958,7 +1961,7 @@ body.player-active {
     text-transform: uppercase;
     margin-bottom: 32px;
     opacity: 0;
-    animation: splashTextIn 0.7s ease-out 1.2s forwards;
+    animation: splashTextIn 0.5s ease-out 0.45s forwards;
 }
 
 @keyframes splashTextIn {
@@ -1974,7 +1977,7 @@ body.player-active {
     border-radius: 10px;
     overflow: hidden;
     opacity: 0;
-    animation: splashTextIn 0.5s ease-out 1.35s forwards;
+    animation: splashTextIn 0.4s ease-out 0.5s forwards;
     margin-bottom: 18px;
 }
 
@@ -1986,15 +1989,14 @@ body.player-active {
     background-size: 200% 100%;
     border-radius: 10px;
     animation:
-        splashProgress 2s cubic-bezier(0.4, 0, 0.2, 1) 1.4s forwards,
-        splashShimmer 1.5s linear 1.4s infinite;
+        splashProgress 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.55s forwards,
+        splashShimmer 1.5s linear 0.55s infinite;
 }
 
 @keyframes splashProgress {
     0%   { width: 0%; }
-    30%  { width: 45%; }
-    70%  { width: 75%; }
-    90%  { width: 92%; }
+    40%  { width: 60%; }
+    80%  { width: 90%; }
     100% { width: 100%; }
 }
 
@@ -2046,3 +2048,139 @@ body.player-active {
     .splash-logo-ring-2 { width: 175px; height: 175px; }
 }
 
+
+
+/* =========================================================
+   MODERN MOBILE APP UI/UX ENGINE FOR ALL SUBPAGES (< 992px)
+   تحويل كافة أقسام وصفحات الموسوعة إلى تجربة تطبيق محمول حديث
+   ========================================================= */
+@media (max-width: 991.98px) {
+  /* 1. Subpage App Header */
+  .navbar.glass-nav, .navbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+    padding: 8px 12px !important;
+    min-height: 56px !important;
+    background: rgba(11, 25, 44, 0.95) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
+  }
+  .navbar-brand {
+    font-size: 1.15rem !important;
+    gap: 8px !important;
+  }
+  .navbar-brand img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  /* 2. Hero Sections Compact App Banner */
+  .rec-hero, .fiqh-hero, .mega-hero, .page-header, .seerah-hero, .aqeedah-hero, .history-hero, .fatwa-hero {
+    min-height: unset !important;
+    padding: 24px 14px 20px !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-glass, .page-header-box {
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+  }
+  .rec-hero h1, .fiqh-hero h1, .mega-hero h1, .page-header h1, .hero-glass h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
+  }
+  .tagline, .hero-sub, .page-header p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-eyebrow, .badge-tag {
+    font-size: 0.76rem !important;
+    padding: 4px 14px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* 3. Category & Filter Tabs Horizontal Snap Scroll (iOS/Android Chips) */
+  .azkar-tabs, .rec-tabs, .hadith-tabs, .fiqh-tabs, .category-tabs, .subpage-tabs, .filter-tabs, .tabs-scroll-snap,
+  .nav-pills:not(.flex-column), .azkar-presets, .tasbih-presets {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 8px !important;
+    padding: 8px 12px !important;
+    margin: 0 -12px 16px !important;
+    scrollbar-width: none !important;
+  }
+  .azkar-tabs::-webkit-scrollbar, .rec-tabs::-webkit-scrollbar, .hadith-tabs::-webkit-scrollbar,
+  .fiqh-tabs::-webkit-scrollbar, .nav-pills::-webkit-scrollbar {
+    display: none !important;
+  }
+  .azkar-tab-btn, .rec-tab-btn, .hadith-tab-btn, .fiqh-tab-btn, .nav-pills .nav-link,
+  .category-tab-btn, .tasbih-preset, .tab-chip {
+    flex: 0 0 auto !important;
+    scroll-snap-align: start !important;
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
+    font-size: 0.82rem !important;
+    border-radius: 50px !important;
+    touch-action: manipulation !important;
+  }
+  .azkar-tabs-bar {
+    position: sticky !important;
+    top: 56px !important;
+    z-index: 1020 !important;
+    padding: 6px 0 !important;
+  }
+
+  /* 4. Touch-Friendly Cards (Dhikr, Hadith, Fiqh, Seerah, Fatwa, Reciter) */
+  .dhikr-card, .hadith-card, .fatwa-card, .seerah-card, .fiqh-card, .scholar-card,
+  .reciter-item, .reciter-card, .asma-card, .mega-card, .cat-detail-card {
+    border-radius: 20px !important;
+    padding: 18px 14px !important;
+    margin-bottom: 14px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.2s ease !important;
+  }
+  .dhikr-card:active, .hadith-card:active, .reciter-item:active {
+    transform: scale(0.98) !important;
+  }
+  .dhikr-body {
+    padding: 16px 8px !important;
+  }
+  .dhikr-text {
+    font-size: 1.35rem !important;
+    line-height: 2 !important;
+  }
+  .counter-btn {
+    padding: 10px 22px !important;
+    font-size: 0.95rem !important;
+    border-radius: 50px !important;
+  }
+
+  /* 5. Mobile App Spacing & Safe Area */
+  body {
+    padding-bottom: 84px !important;
+  }
+  .mega-footer {
+    padding-bottom: 95px !important;
+  }
+}
+
+/* Thumb Lighting on Bottom Nav Item */
+.bottom-nav-item.active {
+  position: relative !important;
+}
+.bottom-nav-item.active::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 28px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent) !important;
+  border-radius: 0 0 4px 4px !important;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.7) !important;
+}
