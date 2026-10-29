@@ -1,4 +1,4 @@
-const CACHE_NAME = 'islam-encyclopedia-v1.5.4';
+const CACHE_NAME = 'islam-encyclopedia-v1.5.5';
 
 const STATIC_ASSETS = [
   './',
@@ -48,6 +48,7 @@ const STATIC_ASSETS = [
   './nawawi.js',
   './reciters.js',
   './surahs.js',
+  './notifications.js',
   './manifest.json',
   './icons/logo.png',
   './icons/logo-emblem.png',
@@ -191,3 +192,46 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
+
+// ══════════════════════════════════════════════════════════
+// NOTIFICATION HANDLERS — الإشعارات الإسلامية
+// ══════════════════════════════════════════════════════════
+
+// استقبال رسالة من الصفحة لإظهار إشعار (يعمل حتى عند إغلاق التبويب)
+self.addEventListener('message', (event) => {
+  if (!event.data || event.data.type !== 'SHOW_NOTIFICATION') return;
+  const { title, options } = event.data;
+  event.waitUntil(
+    self.registration.showNotification(title, options || {})
+  );
+});
+
+// نقر على الإشعار — فتح الصفحة المناسبة
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const targetUrl = (event.notification.data && event.notification.data.url)
+    ? event.notification.data.url
+    : '/';
+
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+      // إن كانت الصفحة مفتوحة بالفعل، انتقل إليها
+      for (const client of clients) {
+        if (client.url.includes(self.location.origin) && 'focus' in client) {
+          client.focus();
+          client.navigate(targetUrl);
+          return;
+        }
+      }
+      // وإلا افتح نافذة جديدة
+      if (self.clients.openWindow) {
+        return self.clients.openWindow(targetUrl);
+      }
+    })
+  );
+});
+
+// إغلاق الإشعار
+self.addEventListener('notificationclose', (event) => {
+  console.log('[SW] Notification closed:', event.notification.tag);
+});

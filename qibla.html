@@ -469,6 +469,84 @@
       border-color: rgba(255,255,255,0.08);
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
+
+    /* ════ ACCURACY BAR ════ */
+    .accuracy-bar-wrap {
+      background: #f1f5f9;
+      border-radius: 50px;
+      height: 8px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    html[data-theme="dark"] .accuracy-bar-wrap {
+      background: rgba(255,255,255,0.08);
+    }
+    .accuracy-bar-fill {
+      height: 100%;
+      border-radius: 50px;
+      transition: width 0.6s ease, background 0.4s ease;
+    }
+
+    /* ════ DIRECTION TEXT BADGE ════ */
+    .direction-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 50px;
+      padding: 5px 16px;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+    }
+    html[data-theme="dark"] .direction-badge {
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.18);
+    }
+
+    /* ════ QUICK ACTIONS ════ */
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 14px 0 6px;
+    }
+    .quick-actions .btn {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 50px;
+      padding: 7px 18px;
+    }
+
+    /* ════ SMOOTHING INDICATOR ════ */
+    .smooth-indicator {
+      font-size: 0.78rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .smooth-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      animation: smoothPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes smoothPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+    html[data-theme="dark"] .smooth-indicator {
+      color: #94a3b8;
+    }
     </style>
 </head>
 
@@ -611,6 +689,14 @@
           <span id="statusText">قم بتدوير هاتفك حتى يتطابق السهم الذهبي 🕋 مع رأس الهاتف</span>
         </div>
 
+        <!-- QIBLA DIRECTION TEXT BADGE -->
+        <div class="text-center mt-2">
+          <span class="direction-badge" id="qiblaDirectionBadge">
+            <i class="fas fa-compass"></i>
+            <span id="qiblaDirectionText">جاري الحساب...</span>
+          </span>
+        </div>
+
         <!-- LIVE DATA ROW -->
         <div class="row g-2 mt-2">
           <div class="col-4">
@@ -631,6 +717,36 @@
               <p class="pill-lbl">المسافة لمكة</p>
             </div>
           </div>
+        </div>
+
+        <!-- SENSOR ACCURACY BAR -->
+        <div class="mt-3 px-1" id="accuracySection">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <span class="small text-muted"><i class="fas fa-signal me-1"></i>دقة المستشعر</span>
+            <span class="small fw-bold font-cairo" id="accuracyLabel">--</span>
+          </div>
+          <div class="accuracy-bar-wrap">
+            <div class="accuracy-bar-fill" id="accuracyBar" style="width:0%; background: #ef4444;"></div>
+          </div>
+        </div>
+
+        <!-- QUICK ACTIONS -->
+        <div class="quick-actions mt-3">
+          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="recalibrateCompass()" title="إعادة معايرة المستشعر">
+            <i class="fas fa-rotate me-1"></i>معايرة
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="toggleSmoothing()" id="smoothBtn" title="تمهيد الحركة">
+            <i class="fas fa-wave-square me-1"></i>تمهيد مُفعَّل
+          </button>
+          <button type="button" class="btn btn-outline-success btn-sm" id="copyQiblaBtn" onclick="copyQiblaInfo()" title="نسخ بيانات القبلة">
+            <i class="fas fa-copy me-1"></i>نسخ
+          </button>
+        </div>
+
+        <!-- SMOOTHING LIVE INDICATOR -->
+        <div class="smooth-indicator" id="liveIndicator" style="display:none!important;">
+          <div class="smooth-dot"></div>
+          <span>يُستقبل المستشعر مباشرة</span>
         </div>
 
         <!-- MANUAL ROTATION CONTROLLER (Desktop & Non-Sensor fallback) -->
@@ -717,6 +833,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 <script src="praytimes.js"></script>
+<script src="notifications.js"></script>
 
 <script>
 // ══════════════════════════════════════════════════════════
@@ -741,6 +858,16 @@
   let audioCtx = null;
   let sensorListening = false;
 
+  // ── Smoothing (Low-pass filter) ──
+  let smoothingEnabled = true;
+  const ALPHA = 0.15; // lower = smoother, higher = more responsive
+  let smoothedHeading = 0;
+  let headingInitialized = false;
+
+  // ── Accuracy tracking ──
+  let readingHistory = [];
+  const HISTORY_SIZE = 20;
+
   // DOM Elements
   const stageEl = document.getElementById('compassStage');
   const dialEl = document.getElementById('compassDial');
@@ -753,6 +880,18 @@
   const valDistanceEl = document.getElementById('valDistance');
   const locNameEl = document.getElementById('displayLocationName');
   const iosBtnWrap = document.getElementById('iosPermissionWrap');
+  const accuracyBarEl = document.getElementById('accuracyBar');
+  const accuracyLabelEl = document.getElementById('accuracyLabel');
+  const liveIndicatorEl = document.getElementById('liveIndicator');
+
+  // ── Cardinal direction label (Arabic) ──
+  function bearingToDirection(deg) {
+    const dirs = [
+      'شمال','شمال شرقي','شرق','جنوب شرقي',
+      'جنوب','جنوب غربي','غرب','شمال غربي'
+    ];
+    return dirs[Math.round(deg / 45) % 8];
+  }
 
   // Mathematical Qibla Calculation (Azimuth + Haversine distance)
   function computeQibla(lat1, lon1) {
@@ -790,6 +929,12 @@
     if (valBearingEl) valBearingEl.textContent = `${qiblaBearing.toFixed(1)}°`;
     if (valDistanceEl) valDistanceEl.textContent = `${res.distance.toLocaleString('ar-EG')} كم`;
 
+    // Update direction text badge
+    const dirTextEl = document.getElementById('qiblaDirectionText');
+    if (dirTextEl) {
+      dirTextEl.textContent = `اتجاه القبلة: ${bearingToDirection(qiblaBearing)} (${qiblaBearing.toFixed(1)}°)`;
+    }
+
     // Position Kaaba marker on the rotating dial at angle = qiblaBearing
     if (kaabaMarkerEl) {
       kaabaMarkerEl.style.transform = `rotate(${qiblaBearing}deg)`;
@@ -806,6 +951,49 @@
     currentDialRotation += delta;
     if (dialEl) {
       dialEl.style.transform = `rotate(${currentDialRotation}deg)`;
+    }
+  }
+
+  // ── Low-pass filter to stabilize noisy sensor ──
+  function applySmoothing(newHeading) {
+    if (!headingInitialized) {
+      smoothedHeading = newHeading;
+      headingInitialized = true;
+      return newHeading;
+    }
+    if (!smoothingEnabled) return newHeading;
+
+    // Handle 360→0 wraparound
+    let delta = newHeading - smoothedHeading;
+    if (delta > 180) delta -= 360;
+    if (delta < -180) delta += 360;
+    smoothedHeading = (smoothedHeading + ALPHA * delta + 360) % 360;
+    return smoothedHeading;
+  }
+
+  // ── Calculate sensor stability (low variance = high accuracy) ──
+  function updateAccuracy(rawHeading) {
+    readingHistory.push(rawHeading);
+    if (readingHistory.length > HISTORY_SIZE) readingHistory.shift();
+    if (readingHistory.length < 4) return;
+
+    // Circular variance
+    const sinSum = readingHistory.reduce((s, h) => s + Math.sin(h * Math.PI / 180), 0);
+    const cosSum = readingHistory.reduce((s, h) => s + Math.cos(h * Math.PI / 180), 0);
+    const R = Math.sqrt(sinSum * sinSum + cosSum * cosSum) / readingHistory.length;
+    // R close to 1 = very stable, close to 0 = scattered
+    const pct = Math.round(R * 100);
+
+    if (accuracyBarEl) {
+      accuracyBarEl.style.width = pct + '%';
+      accuracyBarEl.style.background = pct >= 80 ? '#10b981'
+        : pct >= 50 ? '#f59e0b' : '#ef4444';
+    }
+    if (accuracyLabelEl) {
+      accuracyLabelEl.textContent = pct >= 80 ? `ممتاز (${pct}%)`
+        : pct >= 50 ? `متوسط (${pct}%)` : `ضعيف — حرّك هاتفك بشكل 8 (${pct}%)`;
+      accuracyLabelEl.style.color = pct >= 80 ? '#10b981'
+        : pct >= 50 ? '#f59e0b' : '#ef4444';
     }
   }
 
@@ -841,6 +1029,9 @@
         alertTextEl.textContent = `وجّه هاتفك حتى يتطابق السهم الذهبي مع رأس الهاتف (متبقي ${Math.round(diff)}°)`;
         alertIconEl.className = 'fas fa-compass fa-spin';
       }
+    } else if (!nowAligned) {
+      // Update remaining degrees even if alignment state didn't change
+      alertTextEl.textContent = `وجّه هاتفك حتى يتطابق السهم الذهبي مع رأس الهاتف (متبقي ${Math.round(diff)}°)`;
     }
   }
 
@@ -886,7 +1077,8 @@
     }
 
     if (heading !== null && !isNaN(heading)) {
-      currentHeading = heading;
+      updateAccuracy(heading);
+      currentHeading = applySmoothing(heading);
       refreshCompassView();
 
       // Update manual slider visually without overriding
@@ -894,6 +1086,9 @@
       if (slider) slider.value = Math.round(heading);
       const sliderVal = document.getElementById('manualSliderVal');
       if (sliderVal) sliderVal.textContent = `${Math.round(heading)}°`;
+
+      // Show live indicator
+      if (liveIndicatorEl) liveIndicatorEl.style.removeProperty('display');
     }
   }
 
@@ -940,6 +1135,41 @@
     const sliderVal = document.getElementById('manualSliderVal');
     if (sliderVal) sliderVal.textContent = `${Math.round(currentHeading)}°`;
     refreshCompassView();
+  };
+
+  // ── Recalibrate: reset smoothing history ──
+  window.recalibrateCompass = function () {
+    readingHistory = [];
+    headingInitialized = false;
+    smoothedHeading = 0;
+    if (accuracyBarEl) { accuracyBarEl.style.width = '0%'; accuracyBarEl.style.background = '#ef4444'; }
+    if (accuracyLabelEl) { accuracyLabelEl.textContent = 'جارٍ إعادة المعايرة...'; accuracyLabelEl.style.color = ''; }
+    if (typeof showToast === 'function') showToast('حرّك هاتفك على شكل 8 لإعادة المعايرة 🔄', 'info');
+  };
+
+  // ── Toggle smoothing filter ──
+  window.toggleSmoothing = function () {
+    smoothingEnabled = !smoothingEnabled;
+    const btn = document.getElementById('smoothBtn');
+    if (btn) {
+      btn.innerHTML = smoothingEnabled
+        ? '<i class="fas fa-wave-square me-1"></i>تمهيد مُفعَّل'
+        : '<i class="fas fa-bolt me-1"></i>تمهيد مُعطَّل';
+      btn.className = smoothingEnabled
+        ? 'btn btn-outline-primary btn-sm'
+        : 'btn btn-outline-warning btn-sm';
+    }
+    if (typeof showToast === 'function') showToast(smoothingEnabled ? 'تمهيد الحركة مُفعَّل ✅' : 'وضع الاستجابة السريعة ⚡', 'info');
+  };
+
+  // ── Copy Qibla Info to clipboard ──
+  window.copyQiblaInfo = function () {
+    const text = `📍 الموقع: ${currentCityName}\n🕋 اتجاه القبلة: ${qiblaBearing.toFixed(1)}° (${bearingToDirection(qiblaBearing)})\n🗺️ المسافة إلى مكة المكرمة: ${document.getElementById('valDistance').textContent}\n🔗 الموسوعة الإسلامية الشاملة`;
+    navigator.clipboard.writeText(text).then(() => {
+      if (typeof showToast === 'function') showToast('تم نسخ بيانات القبلة ✅', 'success');
+    }).catch(() => {
+      if (typeof showToast === 'function') showToast('تعذّر النسخ، جرّب يدوياً', 'warning');
+    });
   };
 
   // City Selection

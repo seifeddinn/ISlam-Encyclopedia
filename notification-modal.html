@@ -1,0 +1,139 @@
+<!--
+  notification-modal.html — مكوّن نافذة إعدادات الإشعارات
+  يُدرج كـ include في الصفحات عبر JS أو يُنسخ مباشرة
+-->
+
+<!-- ═══ زر جرس الإشعارات (يُضاف في Navbar) ═══ -->
+<!--
+<button class="btn btn-outline-warning btn-sm rounded-circle"
+        onclick="IslamicNotifications && openNotifModal()"
+        id="notifBellBtn"
+        style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;"
+        title="إعدادات الإشعارات" aria-label="الإشعارات">
+  <i class="fas fa-bell"></i>
+</button>
+-->
+
+<!-- ═══ Modal إعدادات الإشعارات ═══ -->
+<div class="modal fade" id="notifSettingsModal" tabindex="-1" aria-labelledby="notifModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width:480px;">
+    <div class="modal-content border-0 shadow-lg" style="border-radius:24px; overflow:hidden;">
+
+      <!-- Header -->
+      <div class="modal-header text-white" style="background:linear-gradient(135deg,#0b192c,#0369a1); border-bottom:2px solid rgba(212,175,55,0.4);">
+        <h5 class="modal-title font-amiri fs-4" id="notifModalLabel">
+          <i class="fas fa-bell me-2 text-warning"></i>إعدادات الإشعارات الإسلامية
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body p-4" style="background:#f8fafc;">
+
+        <!-- حالة الإذن -->
+        <div id="notifPermissionStatus" class="alert py-2 px-3 rounded-3 mb-3 small font-cairo d-flex align-items-center gap-2"></div>
+
+        <!-- مفتاح التفعيل الرئيسي -->
+        <div class="d-flex align-items-center justify-content-between p-3 rounded-4 mb-4" style="background:#0b192c;">
+          <div>
+            <div class="fw-bold text-white font-cairo">تفعيل الإشعارات</div>
+            <small class="text-white-50">تلقّ تنبيهات يومية وإشعارات الصلاة</small>
+          </div>
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input" type="checkbox" id="notifMainToggle" role="switch" style="width:3rem;height:1.5rem;cursor:pointer;">
+          </div>
+        </div>
+
+        <!-- الإشعارات التفصيلية -->
+        <div id="notifDetailsSection">
+          <h6 class="text-muted fw-bold mb-3 font-cairo" style="font-size:0.85rem; letter-spacing:0.5px;">نوع الإشعارات</h6>
+
+          <!-- مواقيت الصلاة -->
+          <div class="notif-option-row d-flex align-items-center justify-content-between p-3 rounded-3 mb-2" style="background:#fff; border:1px solid #e2e8f0;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="notif-icon" style="width:42px;height:42px;border-radius:12px;background:rgba(3,105,161,0.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🕌</div>
+              <div>
+                <div class="fw-bold font-cairo" style="font-size:0.95rem;">مواقيت الصلاة</div>
+                <small class="text-muted">تنبيه قبل كل صلاة وعند حلول وقتها</small>
+              </div>
+            </div>
+            <input class="form-check-input" type="checkbox" id="notifPrayers" style="width:2.2rem;height:1.2rem;cursor:pointer;">
+          </div>
+
+          <!-- دقائق قبل الصلاة -->
+          <div class="ps-5 mb-3 pe-2" id="notifBeforeRow">
+            <label class="form-label small text-muted font-cairo mb-1">التنبيه قبل الصلاة بـ</label>
+            <div class="d-flex align-items-center gap-2">
+              <input type="range" class="form-range flex-grow-1" id="notifMinutesBefore" min="0" max="30" step="5" value="5">
+              <span class="badge bg-primary font-cairo" id="notifMinutesLabel" style="min-width:60px;">5 دقائق</span>
+            </div>
+          </div>
+
+          <!-- آية اليوم -->
+          <div class="notif-option-row d-flex align-items-center justify-content-between p-3 rounded-3 mb-2" style="background:#fff; border:1px solid #e2e8f0;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="notif-icon" style="width:42px;height:42px;border-radius:12px;background:rgba(16,185,129,0.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">📖</div>
+              <div>
+                <div class="fw-bold font-cairo" style="font-size:0.95rem;">آية اليوم</div>
+                <small class="text-muted">يومياً الساعة 7:00 صباحاً</small>
+              </div>
+            </div>
+            <input class="form-check-input" type="checkbox" id="notifAyah" style="width:2.2rem;height:1.2rem;cursor:pointer;">
+          </div>
+
+          <!-- حديث اليوم -->
+          <div class="notif-option-row d-flex align-items-center justify-content-between p-3 rounded-3 mb-2" style="background:#fff; border:1px solid #e2e8f0;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="notif-icon" style="width:42px;height:42px;border-radius:12px;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">📜</div>
+              <div>
+                <div class="fw-bold font-cairo" style="font-size:0.95rem;">حديث اليوم</div>
+                <small class="text-muted">يومياً الساعة 7:30 صباحاً</small>
+              </div>
+            </div>
+            <input class="form-check-input" type="checkbox" id="notifHadith" style="width:2.2rem;height:1.2rem;cursor:pointer;">
+          </div>
+
+          <!-- تذكير القراءة -->
+          <div class="notif-option-row d-flex align-items-center justify-content-between p-3 rounded-3 mb-2" style="background:#fff; border:1px solid #e2e8f0;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="notif-icon" style="width:42px;height:42px;border-radius:12px;background:rgba(146,64,14,0.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">📚</div>
+              <div>
+                <div class="fw-bold font-cairo" style="font-size:0.95rem;">تذكير القراءة اليومية</div>
+                <small class="text-muted">يومياً الساعة 9:00 صباحاً</small>
+              </div>
+            </div>
+            <input class="form-check-input" type="checkbox" id="notifReading" style="width:2.2rem;height:1.2rem;cursor:pointer;">
+          </div>
+
+          <!-- أذكار المساء -->
+          <div class="notif-option-row d-flex align-items-center justify-content-between p-3 rounded-3 mb-2" style="background:#fff; border:1px solid #e2e8f0;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="notif-icon" style="width:42px;height:42px;border-radius:12px;background:rgba(30,41,59,0.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🌙</div>
+              <div>
+                <div class="fw-bold font-cairo" style="font-size:0.95rem;">أذكار المساء</div>
+                <small class="text-muted">يومياً الساعة 9:00 مساءً</small>
+              </div>
+            </div>
+            <input class="form-check-input" type="checkbox" id="notifAzkar" style="width:2.2rem;height:1.2rem;cursor:pointer;">
+          </div>
+        </div>
+
+        <!-- زر اختبار -->
+        <button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-3 font-cairo" onclick="testNotification()">
+          <i class="fas fa-paper-plane me-1"></i>إرسال إشعار تجريبي الآن
+        </button>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer" style="background:#f1f5f9; border-top:1px solid #e2e8f0;">
+        <button type="button" class="btn btn-outline-secondary rounded-pill px-4 font-cairo" data-bs-dismiss="modal">إغلاق</button>
+        <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold font-cairo" onclick="saveNotifSettings()">
+          <i class="fas fa-save me-1"></i>حفظ الإعدادات
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

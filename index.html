@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -982,6 +982,9 @@
     <button type="button" class="mobile-top-btn" onclick="toggleTheme()" title="تبديل الوضع الليلي / النهاري" aria-label="تبديل المظهر">
       <i class="fas fa-moon"></i>
     </button>
+    <button type="button" class="mobile-top-btn" id="notifBellBtnMobile" onclick="openNotifModal()" title="الإشعارات">
+      <i class="fas fa-bell"></i>
+    </button>
   </div>
 </header>
 
@@ -1052,6 +1055,9 @@
         </button>
         <button id="themeToggle" class="btn btn-outline-warning btn-sm rounded-circle d-flex" style="width:38px;height:38px;align-items:center;justify-content:center;" title="الوضع الليلي / النهاري" aria-label="تبديل المظهر">
           <i class="fas fa-moon"></i>
+        </button>
+        <button type="button" class="btn btn-outline-warning btn-sm rounded-circle me-1" id="notifBellBtnDesktop" onclick="openNotifModal()" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="إعدادات الإشعارات">
+          <i class="fas fa-bell"></i>
         </button>
         <button type="button" class="btn btn-warning btn-sm rounded-pill px-3 py-2 fw-bold text-dark d-flex align-items-center gap-1" id="navInstallBtn" onclick="triggerPwaInstall();" title="تثبيت التطبيق على جهازك">
           <i class="fas fa-download"></i>
@@ -1506,6 +1512,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 <script src="praytimes.js"></script>
+<script src="notifications.js"></script>
 
 <script>
 // ═══ GLOBAL KEYBOARD SHORTCUT (CTRL+K / CMD+K) FOR SEARCH ═══
@@ -2025,5 +2032,415 @@ function renderPrayerTimes(timings, locName, isOffline = false) {
   </div>
 </div>
 
-</body>
+
+<!-- NOTIFICATION SETTINGS MODAL — Professional Islamic Design -->
+<style>
+#notifSettingsModal .modal-content { border-radius: 28px; overflow: hidden; }
+#notifSettingsModal .notif-header {
+  background: linear-gradient(135deg, #0b192c 0%, #0a2540 50%, #0d1f3c 100%);
+  padding: 28px 28px 20px;
+  position: relative;
+  overflow: hidden;
+}
+#notifSettingsModal .notif-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+#notifSettingsModal .notif-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+.notif-bell-anim {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(212,175,55,0.08));
+  border: 2px solid rgba(212,175,55,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  animation: bellRing 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes bellRing {
+  0%,100% { transform: rotate(0deg); }
+  10%,30% { transform: rotate(-12deg); }
+  20%,40% { transform: rotate(12deg); }
+  50% { transform: rotate(0deg); }
+}
+.notif-status-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 50px;
+  font-size: 0.82rem; font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+}
+.notif-status-granted { background: rgba(16,185,129,0.18); color: #34d399; border: 1px solid rgba(16,185,129,0.35); }
+.notif-status-denied  { background: rgba(239,68,68,0.18);  color: #f87171; border: 1px solid rgba(239,68,68,0.35); }
+.notif-status-default { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.35); }
+.notif-status-unsup   { background: rgba(100,116,139,0.18);color: #94a3b8; border: 1px solid rgba(100,116,139,0.35); }
+
+/* Master Toggle */
+.notif-master-row {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 16px; padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.notif-master-label { color: #f8fafc; }
+.notif-master-label small { color: rgba(255,255,255,0.45); }
+
+/* Custom toggle switch */
+.notif-switch { position: relative; display: inline-block; width: 52px; height: 28px; }
+.notif-switch input { opacity: 0; width: 0; height: 0; }
+.notif-slider {
+  position: absolute; inset: 0; cursor: pointer;
+  background: rgba(255,255,255,0.15); border-radius: 28px;
+  transition: 0.3s ease;
+}
+.notif-slider:before {
+  content: ''; position: absolute;
+  height: 20px; width: 20px; left: 4px; bottom: 4px;
+  background: #fff; border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.notif-switch input:checked + .notif-slider { background: #d4af37; }
+.notif-switch input:checked + .notif-slider:before { transform: translateX(24px); background: #0b192c; }
+
+/* Option rows */
+.notif-option {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-radius: 14px; margin-bottom: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.notif-option:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.2); }
+.notif-option.active-opt { background: rgba(212,175,55,0.1); border-color: rgba(212,175,55,0.3); }
+.notif-opt-icon {
+  width: 44px; height: 44px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.35rem; flex-shrink: 0;
+}
+.notif-opt-title { color: #f1f5f9; font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.95rem; }
+.notif-opt-sub { color: rgba(255,255,255,0.4); font-family: 'Cairo', sans-serif; font-size: 0.78rem; margin-top: 2px; }
+
+/* Prayer before slider */
+.notif-slider-wrap {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 12px 16px; margin: -4px 0 8px 0;
+}
+.notif-slider-wrap input[type=range] { accent-color: #d4af37; }
+.notif-slider-wrap .badge { background: rgba(212,175,55,0.2) !important; color: #d4af37; border: 1px solid rgba(212,175,55,0.4); }
+
+/* Test button */
+.notif-test-btn {
+  width: 100%; padding: 12px;
+  background: rgba(212,175,55,0.08); color: #d4af37;
+  border: 1px dashed rgba(212,175,55,0.35); border-radius: 12px;
+  font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.9rem;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.notif-test-btn:hover { background: rgba(212,175,55,0.15); border-style: solid; }
+
+/* Footer */
+#notifSettingsModal .notif-footer {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 16px 24px;
+  display: flex; gap: 10px; justify-content: flex-end;
+}
+.notif-btn-cancel {
+  padding: 10px 24px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6); background: transparent;
+  font-family: 'Cairo', sans-serif; font-weight: 700; cursor: pointer; transition: all 0.2s;
+}
+.notif-btn-cancel:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
+.notif-btn-save {
+  padding: 10px 28px; border-radius: 50px; border: none;
+  background: linear-gradient(135deg, #d4af37, #aa8a2a);
+  color: #0b192c; font-family: 'Cairo', sans-serif; font-weight: 800;
+  cursor: pointer; transition: all 0.25s;
+  box-shadow: 0 4px 15px rgba(212,175,55,0.35);
+}
+.notif-btn-save:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212,175,55,0.5); }
+
+/* Limitation note */
+.notif-limitation {
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 10px; padding: 10px 14px; margin-top: 12px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.5); font-family: 'Cairo', sans-serif;
+  line-height: 1.6;
+}
+.notif-limitation i { color: #f59e0b; }
+
+html[data-theme="dark"] #notifSettingsModal .modal-content,
+#notifSettingsModal .modal-content {
+  background: #0d1b2e;
+  border: 1px solid rgba(212,175,55,0.2);
+}
+</style>
+
+<div class="modal fade" id="notifSettingsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width:480px;">
+    <div class="modal-content border-0 shadow-lg">
+
+      <!-- Header -->
+      <div class="notif-header">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="notif-bell-anim">🔔</div>
+          <div>
+            <h5 class="mb-1 text-white fw-bold font-amiri fs-4" style="text-shadow:0 2px 10px rgba(212,175,55,0.4);">الإشعارات الإسلامية</h5>
+            <div id="notifPermissionStatus"></div>
+          </div>
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" style="opacity:0.6;"></button>
+        </div>
+        <!-- Master toggle -->
+        <div class="notif-master-row">
+          <div class="notif-master-label">
+            <div class="fw-bold font-cairo">تفعيل جميع الإشعارات</div>
+            <small>تنبيهات يومية + مواقيت الصلاة</small>
+          </div>
+          <label class="notif-switch mb-0">
+            <input type="checkbox" id="notifMainToggle">
+            <span class="notif-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body p-0" style="background:#0d1b2e; max-height:60vh; overflow-y:auto;">
+        <div class="p-4">
+          <div class="text-muted small fw-bold mb-3 font-cairo" style="color:rgba(255,255,255,0.35) !important; letter-spacing:1px; text-transform:uppercase; font-size:0.72rem;">اختر نوع الإشعارات</div>
+
+          <!-- Prayer times -->
+          <div class="notif-option" id="optPrayers" onclick="toggleOpt('notifPrayers','optPrayers')">
+            <div class="d-flex align-items-center gap-3 flex-grow-1">
+              <div class="notif-opt-icon" style="background:rgba(3,105,161,0.2);">🕌</div>
+              <div>
+                <div class="notif-opt-title">مواقيت الصلاة</div>
+                <div class="notif-opt-sub">تنبيه قبل كل صلاة وعند حلولها</div>
+              </div>
+            </div>
+            <label class="notif-switch mb-0" onclick="event.stopPropagation()">
+              <input type="checkbox" id="notifPrayers" onchange="document.getElementById('optPrayers').classList.toggle('active-opt',this.checked); document.getElementById('prayerBeforeRow').style.display=this.checked?'block':'none'">
+              <span class="notif-slider"></span>
+            </label>
+          </div>
+
+          <!-- Minutes before -->
+          <div id="prayerBeforeRow" class="notif-slider-wrap" style="display:none;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="small font-cairo" style="color:rgba(255,255,255,0.5);">التنبيه المسبق قبل الصلاة</span>
+              <span class="badge font-cairo" id="notifMinutesLabel">5 دقائق</span>
+            </div>
+            <input type="range" class="form-range w-100" id="notifMinutesBefore" min="0" max="30" step="5" value="5" oninput="document.getElementById('notifMinutesLabel').textContent=this.value==0?'عند الوقت فقط':this.value+' دقائق'">
+            <div class="d-flex justify-content-between mt-1" style="font-size:0.7rem;color:rgba(255,255,255,0.25);">
+              <span>عند الوقت</span><span>15 دق</span><span>30 دق</span>
+            </div>
+          </div>
+
+          <!-- Ayah -->
+          <div class="notif-option" id="optAyah" onclick="toggleOpt('notifAyah','optAyah')">
+            <div class="d-flex align-items-center gap-3 flex-grow-1">
+              <div class="notif-opt-icon" style="background:rgba(16,185,129,0.15);">📖</div>
+              <div>
+                <div class="notif-opt-title">آية اليوم</div>
+                <div class="notif-opt-sub">آية قرآنية كريمة — 7:00 صباحاً</div>
+              </div>
+            </div>
+            <label class="notif-switch mb-0" onclick="event.stopPropagation()">
+              <input type="checkbox" id="notifAyah" onchange="document.getElementById('optAyah').classList.toggle('active-opt',this.checked)">
+              <span class="notif-slider"></span>
+            </label>
+          </div>
+
+          <!-- Hadith -->
+          <div class="notif-option" id="optHadith" onclick="toggleOpt('notifHadith','optHadith')">
+            <div class="d-flex align-items-center gap-3 flex-grow-1">
+              <div class="notif-opt-icon" style="background:rgba(212,175,55,0.12);">📜</div>
+              <div>
+                <div class="notif-opt-title">حديث اليوم</div>
+                <div class="notif-opt-sub">حديث نبوي شريف — 7:30 صباحاً</div>
+              </div>
+            </div>
+            <label class="notif-switch mb-0" onclick="event.stopPropagation()">
+              <input type="checkbox" id="notifHadith" onchange="document.getElementById('optHadith').classList.toggle('active-opt',this.checked)">
+              <span class="notif-slider"></span>
+            </label>
+          </div>
+
+          <!-- Reading -->
+          <div class="notif-option" id="optReading" onclick="toggleOpt('notifReading','optReading')">
+            <div class="d-flex align-items-center gap-3 flex-grow-1">
+              <div class="notif-opt-icon" style="background:rgba(139,92,246,0.15);">📚</div>
+              <div>
+                <div class="notif-opt-title">تذكير القراءة</div>
+                <div class="notif-opt-sub">ورد القرآن اليومي — 9:00 صباحاً</div>
+              </div>
+            </div>
+            <label class="notif-switch mb-0" onclick="event.stopPropagation()">
+              <input type="checkbox" id="notifReading" onchange="document.getElementById('optReading').classList.toggle('active-opt',this.checked)">
+              <span class="notif-slider"></span>
+            </label>
+          </div>
+
+          <!-- Azkar -->
+          <div class="notif-option" id="optAzkar" onclick="toggleOpt('notifAzkar','optAzkar')">
+            <div class="d-flex align-items-center gap-3 flex-grow-1">
+              <div class="notif-opt-icon" style="background:rgba(30,41,59,0.4);border:1px solid rgba(255,255,255,0.08);">🌙</div>
+              <div>
+                <div class="notif-opt-title">أذكار المساء</div>
+                <div class="notif-opt-sub">تذكير بأذكار المساء — 9:00 مساءً</div>
+              </div>
+            </div>
+            <label class="notif-switch mb-0" onclick="event.stopPropagation()">
+              <input type="checkbox" id="notifAzkar" onchange="document.getElementById('optAzkar').classList.toggle('active-opt',this.checked)">
+              <span class="notif-slider"></span>
+            </label>
+          </div>
+
+          <!-- Test button -->
+          <button class="notif-test-btn mt-2" onclick="testNotification()">
+            <i class="fas fa-paper-plane"></i>
+            إرسال إشعار تجريبي الآن
+          </button>
+
+          <!-- Limitation note -->
+          <div class="notif-limitation">
+            <i class="fas fa-info-circle me-1"></i>
+            <strong style="color:rgba(255,255,255,0.6);">ملاحظة:</strong> الإشعارات تعمل ما دام المتصفح مشغّلاً. عند إغلاق المتصفح كلياً تتوقف — ثبّت التطبيق كـ PWA للحصول على أفضل تجربة.
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="notif-footer">
+        <button class="notif-btn-cancel" data-bs-dismiss="modal">إغلاق</button>
+        <button class="notif-btn-save" onclick="saveNotifSettings()">
+          <i class="fas fa-check me-1"></i>حفظ الإعدادات
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function toggleOpt(checkId, rowId) {
+    var cb = document.getElementById(checkId);
+    if (cb) {
+      cb.checked = !cb.checked;
+      cb.dispatchEvent(new Event('change'));
+    }
+  }
+  window.toggleOpt = toggleOpt;
+
+  function openNotifModal() {
+    if (!window.IslamicNotifications) return;
+    var s = IslamicNotifications.loadSettings();
+    var perm = ('Notification' in window) ? Notification.permission : 'unsupported';
+    var statusEl = document.getElementById('notifPermissionStatus');
+    var cls, icon, txt;
+    if (perm === 'granted') {
+      cls='notif-status-granted'; icon='fa-check-circle'; txt='الإشعارات مفعّلة';
+    } else if (perm === 'denied') {
+      cls='notif-status-denied'; icon='fa-ban'; txt='محظورة — افتح إعدادات المتصفح';
+    } else if (perm === 'unsupported') {
+      cls='notif-status-unsup'; icon='fa-times-circle'; txt='غير مدعوم في هذا المتصفح';
+    } else {
+      cls='notif-status-default'; icon='fa-exclamation-circle'; txt='يتطلب منح الإذن';
+    }
+    statusEl.className = 'notif-status-pill ' + cls;
+    statusEl.innerHTML = '<i class="fas '+icon+' me-1"></i>' + txt;
+
+    // Fill settings
+    document.getElementById('notifMainToggle').checked = !!s.enabled;
+    var opts = {notifPrayers:'optPrayers', notifAyah:'optAyah', notifHadith:'optHadith', notifReading:'optReading', notifAzkar:'optAzkar'};
+    Object.keys(opts).forEach(function(id){
+      var cb = document.getElementById(id);
+      var row = document.getElementById(opts[id]);
+      var val = s[id.replace('notif','').toLowerCase()] !== false;
+      if(cb){ cb.checked = val; if(row) row.classList.toggle('active-opt', val); }
+    });
+    var mb = document.getElementById('notifMinutesBefore');
+    var ml = document.getElementById('notifMinutesLabel');
+    var mins = s.minutesBefore || 5;
+    if(mb) mb.value = mins;
+    if(ml) ml.textContent = mins===0 ? 'عند الوقت فقط' : mins+' دقائق';
+    var pr = document.getElementById('prayerBeforeRow');
+    var prCb = document.getElementById('notifPrayers');
+    if(pr && prCb) pr.style.display = prCb.checked ? 'block' : 'none';
+
+    bootstrap.Modal.getOrCreateInstance(document.getElementById('notifSettingsModal')).show();
+  }
+  window.openNotifModal = openNotifModal;
+
+  window.saveNotifSettings = async function() {
+    if (!window.IslamicNotifications) return;
+    var enabled = document.getElementById('notifMainToggle').checked;
+    var s = {
+      enabled: enabled,
+      prayers: document.getElementById('notifPrayers').checked,
+      ayah: document.getElementById('notifAyah').checked,
+      hadith: document.getElementById('notifHadith').checked,
+      reading: document.getElementById('notifReading').checked,
+      azkar: document.getElementById('notifAzkar').checked,
+      minutesBefore: parseInt(document.getElementById('notifMinutesBefore').value)||5
+    };
+    if (enabled) {
+      var result = await IslamicNotifications.requestAndEnable();
+      if (!result.success) {
+        if(typeof showToast==='function') showToast(result.reason==='denied'?'الإشعارات محظورة — افتح إعدادات المتصفح':'متصفحك لا يدعم الإشعارات','warning');
+        document.getElementById('notifMainToggle').checked=false;
+        return;
+      }
+      IslamicNotifications.saveSettings(s);
+      IslamicNotifications.startAll(s);
+      if(typeof showToast==='function') showToast('✅ تم تفعيل الإشعارات وجدولتها بنجاح','success');
+    } else {
+      IslamicNotifications.disable();
+      IslamicNotifications.saveSettings(s);
+      if(typeof showToast==='function') showToast('🔕 تم إيقاف الإشعارات','info');
+    }
+    updateBellIcon(enabled && 'Notification' in window && Notification.permission==='granted');
+    bootstrap.Modal.getOrCreateInstance(document.getElementById('notifSettingsModal')).hide();
+  };
+
+  window.testNotification = function() {
+    if (!window.IslamicNotifications) return;
+    if (Notification.permission !== 'granted') {
+      if(typeof showToast==='function') showToast('فعّل الإشعارات أولاً من المفتاح أعلاه','warning'); return;
+    }
+    IslamicNotifications.sendNotification('🕌 الموسوعة الإسلامية الشاملة','أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ✨\nإشعار تجريبي — يعمل بنجاح','test-notif','./index.html');
+  };
+
+  function updateBellIcon(active) {
+    ['notifBellBtnMobile','notifBellBtnDesktop'].forEach(function(id){
+      var btn = document.getElementById(id);
+      if(!btn) return;
+      var icon = btn.querySelector('i');
+      if(active){ btn.style.color='#f59e0b'; if(icon){icon.className='fas fa-bell';icon.style.color='#f59e0b';} btn.title='الإشعارات مُفعَّلة 🔔'; }
+      else { btn.style.color=''; if(icon){icon.style.color='';} btn.title='إعدادات الإشعارات'; }
+    });
+  }
+  window.updateBellIcon = updateBellIcon;
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(window.IslamicNotifications){
+      var s = IslamicNotifications.loadSettings();
+      updateBellIcon(s.enabled && 'Notification' in window && Notification.permission==='granted');
+    }
+  });
+})();
+</script>
+/body>
 </html>

@@ -603,6 +603,20 @@
                 <h4 class="mt-3 font-amiri">جاري تحميل رفوف المكتبة من الأرشيف العالمي...</h4>
             </div>
         </div>
+
+        <!-- RESULTS COUNTER AND LOAD MORE -->
+        <div class="text-center mt-4">
+            <span id="resultsCounter" class="badge bg-secondary fs-6 px-4 py-2 mb-3 d-none font-cairo"></span>
+            <div>
+                <button id="btnLoadMore" class="btn btn-outline-primary rounded-pill px-5 py-2 fw-bold font-cairo d-none" onclick="loadMoreBooks()">
+                    <i class="fas fa-plus-circle me-2"></i>تحميل المزيد من الكتب
+                </button>
+                <div id="loadMoreSpinner" class="d-none mt-3">
+                    <div class="spinner-border text-primary"></div>
+                    <p class="text-muted font-cairo mt-2">جاري تحميل الصفحة التالية...</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Quick View Modal -->
@@ -693,6 +707,7 @@
     <script src="offline-library-data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
+<script src="notifications.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
     <script>
@@ -701,21 +716,37 @@
             const searchInput = document.getElementById('bookSearch');
             const searchBtn = document.getElementById('btnSearchSubmit');
             let iso;
+            let currentPage = 1;
+            let currentQuery = '';
+            let isLoading = false;
+            let totalFound = 0;
+            const PAGE_SIZE = 60;
 
-            // Default query: Focus on Islamic Arabic books, mostly texts.
-            const defaultQuery = 'subject:(islam OR quran OR hadith OR fiqh OR seerah OR aqeedah OR "الفقه" OR "تفسير" OR "حديث" OR "إسلام") AND language:(ara) AND mediatype:(texts)';
+            // =====================================================
+            // BASE QUERY — واسع يشمل كل الكتب الاسلامية
+            // =====================================================
+            const BASE_QUERY = 'subject:(islam OR quran OR hadith OR fiqh OR seerah OR aqeedah OR tafsir OR "الفقه" OR "تفسير" OR "حديث" OR "إسلام" OR "السيرة" OR "العقيدة" OR "الفتوى" OR "الشريعة" OR "التوحيد" OR "sunnah" OR "islamic" OR "muslim") AND mediatype:(texts)';
 
-                        // Render Golden Classical Books (Offline Supported)
+            const CATEGORY_QUERIES = {
+                quran:   'subject:(quran OR "تفسير" OR "القرآن" OR "المصحف" OR "علوم القرآن" OR "تجويد") AND mediatype:(texts)',
+                hadith:  'subject:(hadith OR "الحديث" OR "السنة" OR "صحيح" OR "سنن" OR "مسند" OR "bukhari" OR "muslim") AND mediatype:(texts)',
+                fiqh:    'subject:(fiqh OR "الفقه" OR "الفتاوى" OR "أصول الفقه" OR "fatwa" OR "المذهب" OR "الفقهية") AND mediatype:(texts)',
+                aqeedah: 'subject:(aqeedah OR "العقيدة" OR "التوحيد" OR "الإيمان" OR "tawheed" OR "التزكية" OR "السلوك") AND mediatype:(texts)',
+                seerah:  'subject:(seerah OR "السيرة" OR "التاريخ الإسلامي" OR "الصحابة" OR "النبوة" OR "islamic history") AND mediatype:(texts)',
+                all:     BASE_QUERY
+            };
+
+            // =====================================================
+            // GOLDEN OFFLINE BOOKS
+            // =====================================================
             function renderGoldenBooks(filterCat, searchQuery) {
                 if (!window.OFFLINE_GOLDEN_BOOKS) return;
                 filterCat = filterCat || "all";
                 searchQuery = (searchQuery || "").toLowerCase().trim();
                 let books = window.OFFLINE_GOLDEN_BOOKS;
-
                 if (filterCat && filterCat !== "all" && filterCat !== "golden") {
                     books = books.filter(function(b) { return b.category === filterCat; });
                 }
-
                 if (searchQuery) {
                     books = books.filter(function(b) {
                         return b.title.toLowerCase().includes(searchQuery) ||
@@ -723,291 +754,294 @@
                                b.overview.toLowerCase().includes(searchQuery);
                     });
                 }
-
-                let htmlContent = "<div class=\"col-12\"><div class=\"alert alert-warning py-3 px-4 rounded-4 text-center font-cairo shadow-sm border border-warning border-opacity-50\"><i class=\"fas fa-crown text-warning me-2 fs-5\"></i><strong>الرف الذهبي لأمهات الكتب الإسلامية:</strong> تصفح أدق مراجع التفسير، الحديث، الفقه، العقيدة، والسيرة مع بطاقاتها وأبوابها (متاحة أوفلاين 100%).</div></div>";
-
-                if (books.length === 0) {
-                    htmlContent += "<div class=\"col-12 text-center py-5 text-muted\"><h5>لا توجد كتب مطابقة لبحثك في الرف الذهبي</h5></div>";
-                    grid.innerHTML = htmlContent;
-                    return;
-                }
-
+                let h = '<div class="col-12"><div class="alert alert-warning py-3 px-4 rounded-4 text-center font-cairo shadow-sm border border-warning border-opacity-50"><i class="fas fa-crown text-warning me-2 fs-5"></i><strong>الرف الذهبي لأمهات الكتب الإسلامية:</strong> تصفح أدق مراجع التفسير، الحديث، الفقه، العقيدة، والسيرة مع بطاقاتها وأبوابها (متاحة أوفلاين 100%).</div></div>';
+                if (books.length === 0) { h += '<div class="col-12 text-center py-5 text-muted"><h5>لا توجد كتب مطابقة لبحثك في الرف الذهبي</h5></div>'; grid.innerHTML = h; return; }
                 books.forEach(function(b) {
-                    let badgeClass = "badge-seerah";
-                    if (b.category === "quran") badgeClass = "badge-quran";
-                    else if (b.category === "hadith") badgeClass = "badge-hadith";
-                    else if (b.category === "fiqh") badgeClass = "badge-fiqh";
-                    else if (b.category === "aqeedah") badgeClass = "badge-aqeedah";
-
-                    htmlContent += "<div class=\"col-md-4 col-lg-3 book-item\" data-category=\"" + b.category + "\" data-is-golden=\"true\" data-golden-id=\"" + b.id + "\">" +
-                        "<div class=\"card book-card h-100 border border-warning border-opacity-25 shadow-sm\">" +
-                            "<div class=\"card-body text-center p-4\">" +
-                                "<div class=\"icon-wrapper\" style=\"background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(146,64,14,0.15));color:var(--gold-dark);\"><i class=\"fas fa-" + b.icon + "\"></i></div>" +
-                                "<h5 class=\"card-title fw-bold font-amiri\" title=\"" + b.title + "\" style=\"color:var(--dark);\">" + b.title + "</h5>" +
-                                "<p class=\"card-text fw-bold mb-1 text-primary-emphasis\" style=\"font-size:0.95rem;\"><i class=\"fas fa-feather-pointed me-1 opacity-75\"></i>" + b.author + "</p>" +
-                                "<small class=\"text-muted d-block mb-3 font-cairo\" style=\"font-size:0.8rem;\">" + b.deathYear + " • " + b.volumes + "</small>" +
-                                "<span class=\"badge custom-badge " + badgeClass + " mb-0\">" + b.categoryName + "</span>" +
-                            "</div>" +
-                            "<button type=\"button\" class=\"btn quick-view-btn mt-auto font-cairo fw-bold\" data-bs-toggle=\"modal\" data-bs-target=\"#quickViewModal\" onclick=\"openGoldenBookDetails(\'" + b.id + "\')\">" +
-                                "<i class=\"fas fa-book-reader me-2\"></i>بطاقة الكتاب ودراسته" +
-                            "</button>" +
-                        "</div>" +
-                    "</div>";
+                    let bc = "badge-seerah";
+                    if (b.category==="quran") bc="badge-quran";
+                    else if (b.category==="hadith") bc="badge-hadith";
+                    else if (b.category==="fiqh") bc="badge-fiqh";
+                    else if (b.category==="aqeedah") bc="badge-aqeedah";
+                    h += '<div class="col-md-4 col-lg-3 book-item" data-category="'+b.category+'" data-is-golden="true" data-golden-id="'+b.id+'">' +
+                        '<div class="card book-card h-100 border border-warning border-opacity-25 shadow-sm">' +
+                            '<div class="card-body text-center p-4">' +
+                                '<div class="icon-wrapper" style="background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(146,64,14,0.15));color:var(--gold-dark);"><i class="fas fa-'+b.icon+'"></i></div>' +
+                                '<h5 class="card-title fw-bold font-amiri" title="'+b.title+'" style="color:var(--dark);">'+b.title+'</h5>' +
+                                '<p class="card-text fw-bold mb-1 text-primary-emphasis" style="font-size:0.95rem;"><i class="fas fa-feather-pointed me-1 opacity-75"></i>'+b.author+'</p>' +
+                                '<small class="text-muted d-block mb-3 font-cairo" style="font-size:0.8rem;">'+b.deathYear+' • '+b.volumes+'</small>' +
+                                '<span class="badge custom-badge '+bc+' mb-0">'+b.categoryName+'</span>' +
+                            '</div>' +
+                            '<button type="button" class="btn quick-view-btn mt-auto font-cairo fw-bold" data-bs-toggle="modal" data-bs-target="#quickViewModal" onclick="openGoldenBookDetails(\''+b.id+'\')">' +
+                                '<i class="fas fa-book-reader me-2"></i>بطاقة الكتاب ودراسته' +
+                            '</button>' +
+                        '</div>' +
+                    '</div>';
                 });
-
-                grid.innerHTML = htmlContent;
+                grid.innerHTML = h;
             }
 
             window.openGoldenBookDetails = function(bookId) {
                 if (!window.OFFLINE_GOLDEN_BOOKS) return;
                 const b = window.OFFLINE_GOLDEN_BOOKS.find(function(x) { return x.id === bookId; });
                 if (!b) return;
-
                 document.getElementById("qvTitle").textContent = b.title;
-                document.getElementById("qvAuthor").innerHTML = "<i class=\"fas fa-feather-pointed me-2 text-warning\"></i>" + b.author + " <span class=\"badge bg-secondary ms-2\" style=\"font-size:0.75rem;\">" + b.deathYear + "</span>";
-
+                document.getElementById("qvAuthor").innerHTML = '<i class="fas fa-feather-pointed me-2 text-warning"></i>'+b.author+' <span class="badge bg-secondary ms-2" style="font-size:0.75rem;">'+b.deathYear+'</span>';
                 const catElem = document.getElementById("qvCategory");
                 catElem.textContent = b.categoryName;
-                catElem.className = "badge custom-badge mb-3 px-4 py-2 fs-6 badge-" + b.category;
-
+                catElem.className = "badge custom-badge mb-3 px-4 py-2 fs-6 badge-"+b.category;
                 const iconEl = document.getElementById("qvIcon");
-                if (iconEl) iconEl.className = "fas fa-" + b.icon + " fa-5x";
-
-                document.getElementById("qvDesc").innerHTML = "<strong><i class=\"fas fa-circle-info text-warning me-1\"></i>نبذة عن الكتاب ومنهجه:</strong><br>" + b.overview + "<br><br><strong><i class=\"fas fa-star text-warning me-1\"></i>مكانته وأهميته:</strong><br>" + b.importance;
-
+                if (iconEl) iconEl.className = "fas fa-"+b.icon+" fa-5x";
+                document.getElementById("qvDesc").innerHTML = '<strong><i class="fas fa-circle-info text-warning me-1"></i>نبذة عن الكتاب ومنهجه:</strong><br>'+b.overview+'<br><br><strong><i class="fas fa-star text-warning me-1"></i>مكانته وأهميته:</strong><br>'+b.importance;
                 const listEl = document.querySelector("#quickViewModal ul.list-unstyled");
                 if (listEl) {
-                    let topicsHtml = "";
-                    (b.keyTopics || []).forEach(function(t) {
-                        topicsHtml += "<li class=\"mb-2\"><i class=\"fas fa-check-circle text-success me-2\"></i>" + t + "</li>";
-                    });
-                    if (b.famousQuote) {
-                        topicsHtml += "<li class=\"mt-3 p-3 rounded-3 bg-light border-start border-4 border-warning font-amiri fs-5 text-dark\"><i class=\"fas fa-quote-right text-warning me-2\"></i>«" + b.famousQuote + "»</li>";
-                    }
-                    listEl.innerHTML = topicsHtml;
+                    let th = "";
+                    (b.keyTopics||[]).forEach(function(t){ th += '<li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>'+t+'</li>'; });
+                    if (b.famousQuote) th += '<li class="mt-3 p-3 rounded-3 bg-light border-start border-4 border-warning font-amiri fs-5 text-dark"><i class="fas fa-quote-right text-warning me-2"></i>«'+b.famousQuote+'»</li>';
+                    listEl.innerHTML = th;
                 }
             };
 
-            function fetchArchiveBooks(queryStr, rows = 60) {
-                // Loading State
-                grid.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-primary" style="width:4rem;height:4rem;"></div><h4 class="mt-4 font-amiri fw-bold text-dark">جاري جلب الكتب من الأرشيف العالمي...</h4></div>';
-                if (iso) { iso.destroy(); iso = null; }
+            // =====================================================
+            // ARCHIVE.ORG FETCH + PAGINATION
+            // =====================================================
+            function fetchArchiveBooks(queryStr, page, rows, append) {
+                if (isLoading) return;
+                isLoading = true;
+                if (!append) {
+                    grid.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-primary" style="width:4rem;height:4rem;"></div><h4 class="mt-4 font-amiri fw-bold">جاري البحث في ملايين الكتب الإسلامية...</h4><p class="text-muted font-cairo">يتم جلب النتائج من الأرشيف العالمي</p></div>';
+                    if (iso) { iso.destroy(); iso = null; }
+                    const loadMoreBtn = document.getElementById('btnLoadMore');
+                    if (loadMoreBtn) loadMoreBtn.classList.add('d-none');
+                    const counterEl = document.getElementById('resultsCounter');
+                    if (counterEl) counterEl.classList.add('d-none');
+                } else {
+                    const sp = document.getElementById('loadMoreSpinner');
+                    if (sp) sp.classList.remove('d-none');
+                }
 
-                const cbName = 'archive_cb_' + Date.now() + Math.floor(Math.random() * 1000);
-                
+                const cbName = 'archive_cb_' + Date.now() + Math.floor(Math.random()*9999);
+                const fields = 'identifier,title,creator,downloads,subject,language,year';
+                const url = 'https://archive.org/advancedsearch.php?q='+encodeURIComponent(queryStr)+'&fl[]='+fields+'&sort[]=downloads+desc&rows='+rows+'&page='+page+'&output=json&callback='+cbName;
+
                 window[cbName] = function(data) {
                     try {
                         if (data && data.response && data.response.docs) {
-                            renderBooks(data.response.docs);
+                            totalFound = parseInt(data.response.numFound) || 0;
+                            renderBooks(data.response.docs, append);
+                            updateResultsCounter(totalFound, page, rows);
                         } else {
-                            grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><i class="fas fa-exclamation-triangle fa-3x mb-3"></i><h5>حدث خطأ متوقع في صيغة البيانات المجلوبة.</h5></div>';
+                            if (!append) showNoResults();
                         }
-                    } catch (e) {
+                    } catch(e) {
                         console.error("Render Error:", e);
-                        grid.innerHTML = '<div class="col-12 text-center py-5 text-danger"><h5>حدث خطأ أثناء معالجة البيانات من الأرشيف.</h5></div>';
+                        if (!append) showNoResults();
                     } finally {
+                        isLoading = false;
                         delete window[cbName];
                         if (script.timeoutId) clearTimeout(script.timeoutId);
-                        const scriptTag = document.getElementById(cbName);
-                        if (scriptTag) scriptTag.remove();
+                        const st = document.getElementById(cbName);
+                        if (st) st.remove();
+                        const sp = document.getElementById('loadMoreSpinner');
+                        if (sp) sp.classList.add('d-none');
                     }
                 };
 
                 const script = document.createElement('script');
                 script.id = cbName;
-                script.src = `https://archive.org/advancedsearch.php?q=${encodeURIComponent(queryStr)}&fl[]=identifier,title,creator,downloads,subject&sort[]=downloads+desc&rows=${rows}&page=1&output=json&callback=${cbName}`;
-                
-                // Add a timeout of 12 seconds to prevent "hanging"
-                script.timeoutId = setTimeout(() => {
-                    if (window[cbName]) {
-                        console.warn("Library request timed out");
-                        script.onerror();
-                    }
-                }, 12000);
-
+                script.src = url;
+                script.timeoutId = setTimeout(function() {
+                    if (window[cbName]) { script.onerror(); }
+                }, 15000);
                 script.onerror = function() {
-                    console.warn("Archive.org unreachable. Loading Golden Offline Books Shelf.");
+                    isLoading = false;
                     renderGoldenBooks("all", searchInput ? searchInput.value : "");
                     if (script.timeoutId) clearTimeout(script.timeoutId);
                     delete window[cbName];
-                    script.remove();
-                    return;
-                    grid.innerHTML = `
-                        <div class="col-12 text-center py-5 text-danger">
-                            <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
-                            <h5 class="fw-bold">لم نتمكن من الاتصال بخوادم الأرشيف العالمي حالياً.</h5>
-                            <p class="text-muted">قد يكون هناك ضغط على السيرفر أو مشكلة في الاتصال بالإنترنت.</p>
-                            <button class="btn btn-primary mt-3 rounded-pill px-4" onclick="location.reload()">
-                                <i class="fas fa-sync-alt me-2"></i>إعادة المحاولة
-                            </button>
-                        </div>`;
-                    if (script.timeoutId) clearTimeout(script.timeoutId);
-                    delete window[cbName];
-                    script.remove();
+                    const s = document.getElementById(cbName);
+                    if (s) s.remove();
+                    const sp = document.getElementById('loadMoreSpinner');
+                    if (sp) sp.classList.add('d-none');
                 };
-                
                 document.body.appendChild(script);
             }
 
-            function renderBooks(docs) {
-                if (!docs || docs.length === 0) {
-                    grid.innerHTML = '<div class="col-12 text-center py-5"><i class="fas fa-search-minus fa-3x text-muted mb-3"></i><h5>لم يتم العثور على كتب مطابقة لبحثك في الأرشيف العالمي.</h5></div>';
-                    return;
-                }
+            function showNoResults() {
+                grid.innerHTML = '<div class="col-12 text-center py-5"><i class="fas fa-search-minus fa-3x text-muted mb-3"></i><h5>لم يتم العثور على كتب مطابقة لبحثك.</h5><p class="text-muted">جرّب كلمات مختلفة أو اختر فئة أخرى.</p></div>';
+            }
 
-                let htmlContent = '';
-                docs.forEach(book => {
-                    const title = book.title || 'بدون عنوان';
+            function updateResultsCounter(total, page, rows) {
+                const counterEl = document.getElementById('resultsCounter');
+                if (counterEl) {
+                    const shown = Math.min(page * rows, total);
+                    counterEl.textContent = 'عرض ' + shown.toLocaleString('ar-EG') + ' من ' + total.toLocaleString('ar-EG') + ' كتاب';
+                    counterEl.classList.remove('d-none');
+                }
+                const loadMoreBtn = document.getElementById('btnLoadMore');
+                if (loadMoreBtn) {
+                    const shown = Math.min(page * rows, total);
+                    if (shown < total) { loadMoreBtn.classList.remove('d-none'); }
+                    else { loadMoreBtn.classList.add('d-none'); }
+                }
+            }
+
+            // =====================================================
+            // RENDER BOOKS
+            // =====================================================
+            function renderBooks(docs, append) {
+                if (!docs || docs.length === 0) { if (!append) showNoResults(); return; }
+                let h = '';
+                docs.forEach(function(book) {
+                    const title = (book.title || 'بدون عنوان').replace(/"/g, '&quot;');
                     const author = book.creator ? (Array.isArray(book.creator) ? book.creator[0] : book.creator) : 'مؤلف غير معروف';
                     const cat = categorizeBook(book.subject || []);
                     const id = book.identifier;
-
-                    let badgeClass = "badge-seerah";
-                    if (cat.id === 'quran') badgeClass = "badge-quran";
-                    else if (cat.id === 'hadith') badgeClass = "badge-hadith";
-                    else if (cat.id === 'fiqh') badgeClass = "badge-fiqh";
-                    else if (cat.id === 'aqeedah') badgeClass = "badge-aqeedah";
-                    else if (cat.id === 'tazkiyah') badgeClass = "badge-tazkiyah";
-
-                    htmlContent += `
-            <div class="col-md-4 col-lg-3 book-item" data-category="${cat.filter}" data-original-id="${id}">
-                <div class="card book-card h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="icon-wrapper"><i class="fas fa-${cat.icon}"></i></div>
-                        <h5 class="card-title" title="${title}">${title}</h5>
-                        <p class="card-text fw-bold mb-2"><i class="fas fa-pen-nib me-1 opacity-50"></i>${author}</p>
-                        <span class="badge custom-badge ${badgeClass} mb-0">${cat.name}</span>
-                        <div class="d-none full-subject">${Array.isArray(book.subject) ? book.subject.join('، ') : (book.subject || 'عام')}</div>
-                    </div>
-                    <button type="button" class="btn quick-view-btn mt-auto" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                        <i class="fas fa-eye me-2"></i>معاينة وتحميل
-                    </button>
-                </div>
-            </div>`;
+                    const year = book.year ? '<small class="text-muted d-block" style="font-size:0.78rem;">📅 '+book.year+'</small>' : '';
+                    const dl = book.downloads ? '<small class="text-muted" style="font-size:0.78rem;"><i class="fas fa-download me-1 opacity-50"></i>'+parseInt(book.downloads).toLocaleString('ar-EG')+'</small>' : '';
+                    let bc = "badge-seerah";
+                    if (cat.id==='quran') bc="badge-quran";
+                    else if (cat.id==='hadith') bc="badge-hadith";
+                    else if (cat.id==='fiqh') bc="badge-fiqh";
+                    else if (cat.id==='aqeedah') bc="badge-aqeedah";
+                    const subj = Array.isArray(book.subject) ? book.subject.join('، ') : (book.subject || 'عام');
+                    h += '<div class="col-md-4 col-lg-3 book-item" data-category="'+cat.filter+'" data-original-id="'+id+'">' +
+                        '<div class="card book-card h-100">' +
+                            '<div class="card-body text-center p-4">' +
+                                '<div class="icon-wrapper"><i class="fas fa-'+cat.icon+'"></i></div>' +
+                                '<h5 class="card-title" title="'+title+'">'+title+'</h5>' +
+                                '<p class="card-text fw-bold mb-1"><i class="fas fa-pen-nib me-1 opacity-50"></i>'+author+'</p>' +
+                                year + dl +
+                                '<span class="badge custom-badge '+bc+' mb-0 mt-2">'+cat.name+'</span>' +
+                                '<div class="d-none full-subject">'+subj+'</div>' +
+                            '</div>' +
+                            '<button type="button" class="btn quick-view-btn mt-auto" data-bs-toggle="modal" data-bs-target="#quickViewModal">' +
+                                '<i class="fas fa-eye me-2"></i>معاينة وتحميل' +
+                            '</button>' +
+                        '</div>' +
+                    '</div>';
                 });
-
-                grid.innerHTML = htmlContent;
-
-                // Re-initialize Isotope layout after DOM updates
-                setTimeout(() => {
+                if (append) { grid.insertAdjacentHTML('beforeend', h); }
+                else { grid.innerHTML = h; }
+                setTimeout(function() {
                     if (typeof Isotope === 'function') {
-                        iso = new Isotope(grid, {
-                            itemSelector: '.book-item',
-                            layoutMode: 'fitRows',
-                            isOriginLeft: false
-                        });
+                        if (iso) iso.destroy();
+                        iso = new Isotope(grid, { itemSelector: '.book-item', layoutMode: 'fitRows', isOriginLeft: false });
                         const activeBtn = document.querySelector('[data-filter].active');
                         if (activeBtn) {
                             const val = activeBtn.getAttribute('data-filter');
-                            iso.arrange({ filter: val === 'all' ? '*' : `[data-category="${val}"]` });
+                            iso.arrange({ filter: val === 'all' ? '*' : '[data-category="'+val+'"]' });
                         }
-                    } else {
-                        console.warn("Isotope not loaded, using standard grid");
                     }
                 }, 100);
             }
 
+            // =====================================================
+            // CATEGORIZE
+            // =====================================================
             function categorizeBook(subjects) {
-                if (!subjects) return { id: 'seerah', filter: 'seerah', name: 'كتب عامة', icon: 'book' };
+                if (!subjects) return { id:'seerah', filter:'seerah', name:'كتب إسلامية', icon:'book' };
                 const s = Array.isArray(subjects) ? subjects.join(' ').toLowerCase() : subjects.toLowerCase();
-
-                if (s.includes('quran') || s.includes('قرآن') || s.includes('تفسير') || s.includes('المصحف')) return { id: 'quran', filter: 'quran', name: 'علوم القرآن', icon: 'quran' };
-                if (s.includes('hadith') || s.includes('حديث') || s.includes('bukhari') || s.includes('صحيح') || s.includes('سنة')) return { id: 'hadith', filter: 'hadith', name: 'الحديث الشريف', icon: 'scroll' };
-                if (s.includes('fiqh') || s.includes('فقه') || s.includes('اصول') || s.includes('fatwa') || s.includes('مذهب')) return { id: 'fiqh', filter: 'fiqh', name: 'الفقه وأصوله', icon: 'balance-scale' };
-                if (s.includes('aqeedah') || s.includes('عقيدة') || s.includes('تزكية') || s.includes('تصوف') || s.includes('tazkiyah')) return { id: 'aqeedah', filter: 'aqeedah', name: 'العقيدة والتزكية', icon: 'heart' };
-
-                return { id: 'seerah', filter: 'seerah', name: 'تاريخ إسلامي', icon: 'history' };
+                if (/quran|قرآن|تفسير|مصحف|tajweed|تجويد|قراءات|علوم القرآن|koran/.test(s))
+                    return { id:'quran', filter:'quran', name:'علوم القرآن', icon:'quran' };
+                if (/hadith|حديث|سنة|صحيح|سنن|مسند|bukhari|muslim|نبوي/.test(s))
+                    return { id:'hadith', filter:'hadith', name:'الحديث الشريف', icon:'scroll' };
+                if (/fiqh|فقه|فتاوى|أصول|fatwa|مذهب|حنفي|مالكي|شافعي|حنبلي|شريعة/.test(s))
+                    return { id:'fiqh', filter:'fiqh', name:'الفقه وأصوله', icon:'balance-scale' };
+                if (/aqeedah|عقيدة|توحيد|إيمان|tawheed|تزكية|سلوك|تصوف|أخلاق/.test(s))
+                    return { id:'aqeedah', filter:'aqeedah', name:'العقيدة والتزكية', icon:'heart' };
+                if (/seerah|سيرة|تاريخ إسلامي|صحابة|نبوة|islamic history|biography|خلافة/.test(s))
+                    return { id:'seerah', filter:'seerah', name:'السيرة والتاريخ', icon:'mosque' };
+                return { id:'seerah', filter:'seerah', name:'كتب إسلامية', icon:'book-open' };
             }
 
-            // Check for URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const queryParam = urlParams.get('q');
-            
-            if (!navigator.onLine) {
-                renderGoldenBooks("all", queryParam || "");
-            } else if (queryParam) {
-                searchInput.value = queryParam;
-                const queryData = `(${defaultQuery}) AND (title:(*${queryParam}*) OR creator:(*${queryParam}*))`;
-                fetchArchiveBooks(queryData, 80);
-            } else {
-                // Load initial Top 60 books
-                fetchArchiveBooks(defaultQuery, 60);
-            }
-
-            // Live Web API Search
+            // =====================================================
+            // SEARCH — بحث حر شامل بلا قيود لغة
+            // =====================================================
             function doSearch() {
                 const q = searchInput.value.trim();
+                currentPage = 1;
                 if (q) {
-                    const queryData = `(${defaultQuery}) AND (title:(*${q}*) OR creator:(*${q}*))`;
-                    fetchArchiveBooks(queryData, 80);
+                    currentQuery = '(title:('+q+') OR creator:('+q+') OR subject:('+q+')) AND mediatype:(texts) AND (subject:(islam OR quran OR hadith OR fiqh OR "إسلام" OR "قرآن") OR language:(ara) OR language:(urd) OR language:(per))';
                 } else {
-                    fetchArchiveBooks(defaultQuery, 60);
+                    currentQuery = BASE_QUERY;
                 }
+                fetchArchiveBooks(currentQuery, 1, PAGE_SIZE, false);
             }
 
+            // =====================================================
+            // LOAD MORE
+            // =====================================================
+            window.loadMoreBooks = function() {
+                currentPage++;
+                fetchArchiveBooks(currentQuery, currentPage, PAGE_SIZE, true);
+            };
+
+            // =====================================================
+            // EVENTS
+            // =====================================================
             searchBtn.addEventListener('click', doSearch);
-            searchInput.addEventListener('keypress', (e) => {
+            searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') doSearch();
             });
 
-            // Filtering Tabs logic
             const filterButtons = document.querySelectorAll('[data-filter]');
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
+            filterButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
                     const filterValue = btn.getAttribute('data-filter');
+                    filterButtons.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
                     if (filterValue === 'golden') {
-                        filterButtons.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
                         renderGoldenBooks('all', searchInput ? searchInput.value : '');
                         return;
                     }
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    if (iso) {
-                        const filterValue = btn.getAttribute('data-filter');
-                        iso.arrange({
-                            filter: filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`
-                        });
-                    }
+                    currentPage = 1;
+                    currentQuery = CATEGORY_QUERIES[filterValue] || BASE_QUERY;
+                    fetchArchiveBooks(currentQuery, 1, PAGE_SIZE, false);
                 });
             });
 
-            // Dynamic Modal Populating
-            grid.addEventListener('click', function (e) {
+            // Modal — dynamic fill for archive books
+            grid.addEventListener('click', function(e) {
                 const btn = e.target.closest('.quick-view-btn');
                 if (!btn) return;
-
+                const isGolden = btn.closest('.book-item') && btn.closest('.book-item').getAttribute('data-is-golden');
+                if (isGolden) return;
                 const card = btn.closest('.book-card');
                 const title = card.querySelector('.card-title').textContent.trim();
                 const author = card.querySelector('.card-text').textContent.trim();
                 const badge = card.querySelector('.badge').textContent.trim();
                 const iconClass = card.querySelector('.icon-wrapper i').className;
-                const badgeClass = card.querySelector('.badge').className.match(/badge-[a-z]+/)[0];
+                const badgeMatch = card.querySelector('.badge').className.match(/badge-[a-z]+/);
+                const badgeClass = badgeMatch ? badgeMatch[0] : 'badge-seerah';
                 const subject = card.querySelector('.full-subject').textContent;
                 const identifier = card.closest('.book-item').getAttribute('data-original-id');
-
                 document.getElementById('qvTitle').textContent = title;
-                document.getElementById('qvAuthor').innerHTML = `<i class="fas fa-user-edit me-2 text-warning"></i>${author}`;
-
+                document.getElementById('qvAuthor').innerHTML = '<i class="fas fa-user-edit me-2 text-warning"></i>'+author;
                 const catElem = document.getElementById('qvCategory');
                 catElem.textContent = badge;
-                catElem.className = `badge custom-badge mb-3 px-4 py-2 fs-6 ${badgeClass}`;
-
-                document.getElementById('qvIcon').className = iconClass + " fa-5x";
-
-                document.getElementById('qvDesc').innerHTML = `
-            <strong>تصنيف الأرشيف:</strong> <span class="text-muted">${subject}</span>
-            <br><br>
-            هذا الكتاب متاح للقراءة والتحميل المباشر من مكتبة الأرشيف العالمي عبر منصتنا لتوفير عناء البحث. يتميز الأرشيف بتوفير نسخ أصلية للكتب بصيغة PDF وأحياناً Word.
-        `;
-
-                // Link to Archive Details page where the actual PDFs live
-                const downloadUrl = `https://archive.org/details/${identifier}`;
+                catElem.className = 'badge custom-badge mb-3 px-4 py-2 fs-6 '+badgeClass;
+                document.getElementById('qvIcon').className = iconClass+' fa-5x';
+                document.getElementById('qvDesc').innerHTML = '<strong>تصنيف الأرشيف:</strong> <span class="text-muted">'+subject+'</span><br><br>هذا الكتاب متاح للقراءة والتحميل المباشر من مكتبة الأرشيف العالمي. يتميز الأرشيف بتوفير نسخ أصلية للكتب بصيغة PDF.';
+                const downloadUrl = 'https://archive.org/details/'+identifier;
                 const downloadBtn = document.getElementById('qvDownloadBtn');
                 downloadBtn.setAttribute('href', downloadUrl);
                 downloadBtn.setAttribute('target', '_blank');
-                downloadBtn.innerHTML = `<i class="fas fa-external-link-alt me-2"></i>عرض صفحة التحميل بالمكتبة`;
+                downloadBtn.innerHTML = '<i class="fas fa-external-link-alt me-2"></i>عرض صفحة التحميل بالمكتبة';
             });
+
+            // =====================================================
+            // INIT
+            // =====================================================
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryParam = urlParams.get('q');
+            if (!navigator.onLine) {
+                renderGoldenBooks("all", queryParam || "");
+            } else if (queryParam) {
+                searchInput.value = queryParam;
+                doSearch();
+            } else {
+                currentQuery = BASE_QUERY;
+                fetchArchiveBooks(currentQuery, 1, PAGE_SIZE, false);
+            }
         });
     </script>
 </body>
