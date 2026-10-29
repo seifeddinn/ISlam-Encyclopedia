@@ -1,4 +1,4 @@
-const CACHE_NAME = 'islam-encyclopedia-v1.5.2';
+const CACHE_NAME = 'islam-encyclopedia-v1.5.3';
 
 const STATIC_ASSETS = [
   './',
@@ -56,7 +56,9 @@ const STATIC_ASSETS = [
   './icons/icon-512x512.png',
   './icons/apple-touch-icon.png',
   './icons/favicon-32x32.png',
-  './favicon.ico'
+  './favicon.ico',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+  'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'
 ];
 
 // Install Event - Pre-cache core assets safely with Promise.allSettled
@@ -99,6 +101,10 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
 
+  // Skip browser extensions, chrome-devtools, and vercel preview live scripts
+  if (!url.protocol.startsWith('http')) return;
+  if (url.hostname.includes('vercel.live') || url.hostname.includes('pusher.com')) return;
+
   // External dynamic APIs (skip aggressive caching, use network first)
   if (
     url.hostname.includes('api.aladhan.com') ||
@@ -121,7 +127,7 @@ self.addEventListener('fetch', (event) => {
         .then((networkResponse) => {
           if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
             const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone)).catch(() => {});
           }
           return networkResponse;
         })
@@ -142,13 +148,11 @@ self.addEventListener('fetch', (event) => {
           .then((networkResponse) => {
             if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
               const responseClone = networkResponse.clone();
-              caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+              caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone)).catch(() => {});
             }
             return networkResponse;
           })
-          .catch((err) => {
-            // Network failure is expected when offline; cached response will be used
-          });
+          .catch(() => null);
 
         return cachedResponse || fetchPromise;
       })
@@ -156,19 +160,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Third-party CDN libraries (Bootstrap, FontAwesome, Google Fonts)
+  // Third-party CDN libraries (Bootstrap, FontAwesome, Google Fonts, Patterns): Cache First with Network Fallback
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
-      return (
-        cachedResponse ||
-        fetch(request).then((networkResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(request)
+        .then((networkResponse) => {
           if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
             const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone)).catch(() => {});
           }
           return networkResponse;
-        }).catch(() => null)
-      );
+        });
     })
   );
 });
