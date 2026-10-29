@@ -1,4 +1,4 @@
-const CACHE_NAME = 'islam-encyclopedia-v1.5.3';
+const CACHE_NAME = 'islam-encyclopedia-v1.5.4';
 
 const STATIC_ASSETS = [
   './',
@@ -105,14 +105,27 @@ self.addEventListener('fetch', (event) => {
   if (!url.protocol.startsWith('http')) return;
   if (url.hostname.includes('vercel.live') || url.hostname.includes('pusher.com')) return;
 
-  // External dynamic APIs (skip aggressive caching, use network first)
+  // Never intercept audio media files, streams, and HTTP 206 Range requests
+  // Let the browser handle audio playback, streaming, seeking, and buffering natively
+  if (
+    request.destination === 'audio' ||
+    request.destination === 'video' ||
+    url.pathname.endsWith('.mp3') ||
+    url.pathname.endsWith('.wav') ||
+    url.pathname.endsWith('.ogg') ||
+    url.pathname.endsWith('.m4a') ||
+    request.headers.has('range')
+  ) {
+    return;
+  }
+
+  // External dynamic JSON APIs (skip aggressive caching, use network first)
   if (
     url.hostname.includes('api.aladhan.com') ||
     url.hostname.includes('api.alquran.cloud') ||
     url.hostname.includes('api.quran.com') ||
     url.hostname.includes('dorar.net') ||
-    url.hostname.includes('mp3quran.net') ||
-    url.hostname.includes('everyayah.com')
+    (url.hostname.includes('mp3quran.net') && url.pathname.includes('/api/'))
   ) {
     event.respondWith(
       fetch(request).catch(() => caches.match(request))
