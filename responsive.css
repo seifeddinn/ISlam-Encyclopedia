@@ -2103,8 +2103,9 @@ html.splash-dismissed #islamicSplashScreen {
   }
 
   /* 3. Category & Filter Tabs Horizontal Snap Scroll (iOS/Android Chips) */
+  /* ملاحظة: main-tabs مستثناة لأنها تعرض أيقونات فوق النصوص وتحتاج تنسيقاً خاصاً */
   .azkar-tabs, .rec-tabs, .hadith-tabs, .fiqh-tabs, .category-tabs, .subpage-tabs, .filter-tabs, .tabs-scroll-snap,
-  .nav-pills:not(.flex-column), .azkar-presets, .tasbih-presets {
+  .nav-pills:not(.flex-column):not(.main-tabs), .azkar-presets, .tasbih-presets {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -2116,10 +2117,11 @@ html.splash-dismissed #islamicSplashScreen {
     scrollbar-width: none !important;
   }
   .azkar-tabs::-webkit-scrollbar, .rec-tabs::-webkit-scrollbar, .hadith-tabs::-webkit-scrollbar,
-  .fiqh-tabs::-webkit-scrollbar, .nav-pills::-webkit-scrollbar {
+  .fiqh-tabs::-webkit-scrollbar, .nav-pills:not(.main-tabs)::-webkit-scrollbar {
     display: none !important;
   }
-  .azkar-tab-btn, .rec-tab-btn, .hadith-tab-btn, .fiqh-tab-btn, .nav-pills .nav-link,
+  .azkar-tab-btn, .rec-tab-btn, .hadith-tab-btn, .fiqh-tab-btn,
+  .nav-pills:not(.main-tabs) .nav-link,
   .category-tab-btn, .tasbih-preset, .tab-chip {
     flex: 0 0 auto !important;
     scroll-snap-align: start !important;
